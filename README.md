@@ -1,6 +1,8 @@
 Tree for C++
 ============
 
+[![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://raw.githubusercontent.com/francoiscarouge/tree/develop/LICENSE)
+
 ## License
 
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
