@@ -1,7 +1,8 @@
 Tree for C++
 ============
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://raw.githubusercontent.com/francoiscarouge/tree/develop/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/francoiscarouge/tree)](https://raw.githubusercontent.com/francoiscarouge/tree/develop/LICENSE)
+[![GitHub Issues](https://img.shields.io/github/issues-raw/francoiscarouge/tree)](https://github.com/francoiscarouge/tree/issues)
 
 ## License
 
