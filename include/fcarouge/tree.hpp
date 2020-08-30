@@ -1,5 +1,5 @@
 /*_______ _____  ______ ______
- |__   __|  __ \|  ____|  ____|  Tree data structure for modern C++
+ |__   __|  __ \|  ____|  ____|  Tree data structure for C++
     | |  | |__) | |__  | |__     version 0.1.0
     | |  |  _  /|  __| |  __|    https://github.com/FrancoisCarouge/Tree
     | |  | | \ \| |____| |____
@@ -49,18 +49,22 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 // std::optional
 
 #include <utility>
-// std::move
+// std::forward
 
 //! @namespace fcarouge Francois Carouge's projects namespace. Lowers the name
 //! conflict probability in large projects. Use using-declarations or
 //! namespace-alias-definition per your project preferences.
 namespace fcarouge
 {
-//! @brief Tree data structure.
+//! @brief A tree data structure for C++.
 //!
-//! @details fcarouge::tree is a hierarchical tree data structure container with
-//! a root value and subtrees of children with a parent node, represented as a
-//! set of linked nodes.
+//! @details The fcarouge::tree type is a hierarchical tree data structure.
+//! The container is a non-linear non-associative unordered recursively
+//! referenced collection of nodes, each containing a value. The container is
+//! influenced by the Standard Template Library principles and the C++ Core
+//! Guidelines. The container is a standard layout class type which may help
+//! with memory and cross language communication. The traversal order of the
+//! container is not specified.
 //!
 //! @tparam Type The type of the contained data elements. The requirements that
 //! are imposed on the elements depend on the actual operations performed on the
@@ -828,35 +832,39 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   constexpr iterator insert(const_iterator position, InputIterator first,
                             InputIterator last);
 
-  //! @brief Inserts a new element into the container directly before the
-  //! `position` iterator as the left sibling.
+  //! @brief Inserts a new element into the container constructed in-place
+  //! directly before the `position` iterator as the new left sibling.
   //!
   //! @details The element is constructed through
   //! `std::allocator_traits::construct`, which typically uses placement-new
   //! to construct the element in-place at a location provided by the
   //! container. The `arguments` are forwarded to the constructor as
   //! `std::forward<ArgumentsType>(arguments)...`. No iterators or references
-  //! are invalidated.
-  //! Inserts before the root as the new root.
-  //! Inserts before the `end()` as the last child of the last node.
+  //! are invalidated. Inserts at the root position as the new root. Inserts
+  //! before the beginning `begin()` position as the new root. Inserts before
+  //! the ending `end()` position.
   //!
   //! @tparam ArgumentsType The argument types to forward to the constructor of
   //! the element.
   //!
-  //! @param position Iterator before which the new element will be
-  //! constructed.
-  //! @param arguments Arguments to forward to the constructor of the element.
+  //! @param position The iterator before which the new element will be
+  //! constructed. The iterator may be the beginning `begin()` or ending `end()`
+  //! iterator.
+  //! @param arguments The arguments to forward to the constructor of the
+  //! element.
   //!
-  //! @return Iterator pointing to the emplaced element.
+  //! @return The iterator pointing to the inserted element.
   //!
   //! @complexity Constant.
   template <class... ArgumentsType>
   constexpr iterator emplace(const_iterator position,
                              ArgumentsType &&... arguments)
   {
+    // The allocated node is in-place construced and recorded in every
+    // following statements.
     internal_node_type *node = node_allocator.allocate(1);
 
-    // Emplacing the new node...
+    // Insert the new node...
     // ...before the position node...
     if (internal_node_type *position_node = position.node) {
       // ...as the new left child...
@@ -867,11 +875,11 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
                       nullptr, position_node, position_node->left_sibling,
                       position_node->parent }));
         position_node->left_sibling = node;
-        // ...with a left node.
+        // ...with a left sibling node.
         if (internal_node_type *left_node = node->left_sibling) {
           left_node->right_sibling = node;
         }
-        // ...without a left node.
+        // ...without a left sibling node.
         else {
           position_node->parent->child = node;
         }
@@ -888,7 +896,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     }
     // ...as the new last node...
     else {
-      // ... after the last node.
+      // ... as the sole, first, and last child of the previous last node.
       if (last) {
         std::construct_at<internal_node_type, internal_node_type &&>(
             node, std::forward<internal_node_type>(internal_node_type{
@@ -897,7 +905,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
         last->child = node;
         last = node;
       }
-      // ...as the sole, last, root node.
+      // ...as the sole, last, and root node.
       else {
         std::construct_at<internal_node_type, internal_node_type &&>(
             node, std::forward<internal_node_type>(internal_node_type{
@@ -932,8 +940,10 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       return end();
     }
 
+    // Identify the node following this subtree which will become the next node.
     iterator next{ position.node->next_ancestor_sibling() };
 
+    // Isolate the node from its siblings.
     if (position.node->left_sibling) {
       position.node->left_sibling->right_sibling = position.node->right_sibling;
     }
@@ -942,6 +952,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       position.node->right_sibling->left_sibling = position.node->left_sibling;
     }
 
+    // Orphan the node.
     if (position.node->parent) {
       if (position.node->parent->child == position.node) {
         position.node->parent->child = position.node->right_sibling;
@@ -996,16 +1007,17 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   }
 
   public:
-  //! @brief Exchanges the contents of this container with those of the `other`
-  //! container.
+  //! @brief Exchanges the contents of this container with those of the
+  //! `other` container.
   //!
-  //! @details Does not invoke any move, copy, or swap operations on individual
-  //! elements. All iterators and references remain valid. The `Compare` objects
-  //! must be Swappable, and they are exchanged using unqualified call to
-  //! non-member swap. If `std:: allocator_traits<allocator_type>::
-  //! propagate_on_container_swap:: value` is `true`, then the allocators are
-  //! exchanged using an unqualified call to non-member swap. Otherwise, they
-  //! are not swapped (and if `get_allocator()
+  //! @details Does not invoke any move, copy, or swap operations on
+  //! individual elements. All iterators and references remain valid. The
+  //! `Compare` objects must be Swappable, and they are exchanged using
+  //! unqualified call to non-member swap. If `std::
+  //! allocator_traits<allocator_type>:: propagate_on_container_swap:: value`
+  //! is `true`, then the allocators are exchanged using an unqualified call
+  //! to non-member swap. Otherwise, they are not swapped (and if
+  //! `get_allocator()
   //! != other.get_allocator()`, the behavior is undefined).
   //!
   //! @param other The container to exchange the contents with.
