@@ -811,10 +811,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     erase(root);
   }
 
-  constexpr iterator insert(const_iterator position, const tree &other);
-
-  constexpr iterator insert(const_iterator position, tree &&other);
-
   constexpr iterator insert(const_iterator position, const_reference value);
 
   constexpr iterator insert(const_iterator position, value_type &&value);
@@ -825,6 +821,12 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   template <class InputIterator>
   constexpr iterator insert(const_iterator position, InputIterator first,
                             InputIterator last);
+
+  template <class... ArgumentsType>
+  constexpr reference emplace_back(ArgumentsType &&... arguments);
+
+  template <class... ArgumentsType>
+  constexpr reference emplace_front(ArgumentsType &&... arguments);
 
   //! @brief Inserts a new element into the container constructed in-place
   //! directly before the `position` iterator as the new left sibling.
@@ -967,8 +969,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   constexpr size_type erase(const_reference data);
 
-  constexpr size_type erase(const tree &other);
-
   private:
   constexpr void erase(internal_node_type *&node)
   {
@@ -1001,6 +1001,24 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   }
 
   public:
+
+  constexpr iterator push(const_iterator position, value_type &&value);
+
+  constexpr iterator push(const_iterator position,
+                          std::initializer_list<value_type> initializer_list);
+
+  template <class InputIterator>
+  constexpr iterator push(const_iterator position, InputIterator first,
+                          InputIterator last);
+
+  constexpr void push_back(const_reference value);
+
+  constexpr void push_back(value_type &&value);
+
+  constexpr void push_front(const_reference value);
+
+  constexpr void push_front(value_type &&value);
+
   //! @brief Exchanges the contents of this container with those of the
   //! `other` container.
   //!
