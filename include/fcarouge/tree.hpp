@@ -935,21 +935,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! to the last element, then the `end()` iterator is returned.
   constexpr iterator erase(iterator position)
   {
-    if (!position.node) {
-      return end();
-    }
-
     // Identify the node following this subtree which will become the next node.
     iterator next{ position.node->next_ancestor_sibling() };
-
-    // Isolate the node from its siblings.
-    if (position.node->left_sibling) {
-      position.node->left_sibling->right_sibling = position.node->right_sibling;
-    }
-
-    if (position.node->right_sibling) {
-      position.node->right_sibling->left_sibling = position.node->left_sibling;
-    }
 
     // Orphan the node.
     if (position.node->parent) {
@@ -961,8 +948,23 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       }
     }
 
-    position.node->left_sibling = nullptr;
-    position.node->right_sibling = nullptr;
+    // Isolate the node from its siblings.
+    if (position.node->left_sibling) {
+      position.node->left_sibling->right_sibling = position.node->right_sibling;
+      position.node->left_sibling = nullptr;
+    }
+    if (position.node->right_sibling) {
+      position.node->right_sibling->left_sibling = position.node->left_sibling;
+      position.node->right_sibling = nullptr;
+    }
+
+    if (position.node == root) {
+      root = nullptr;
+    }
+
+    if (position.node == last) {
+      last = nullptr;
+    }
 
     erase(position.node);
 
@@ -982,32 +984,15 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       erase(node->first_child);
       erase(node->right_sibling);
 
-      if (node == last) {
-        if (node->left_sibling) {
-          last = node->left_sibling;
-        } else {
-          last = node->parent;
-        }
-      }
-
       std::destroy_at<internal_node_type>(node);
       node_allocator.deallocate(node, 1);
-      node_count--;
-
-      if (node == root) {
-        root = nullptr;
-      }
-
-      if (node == last) {
-        last = nullptr;
-      }
-
       node = nullptr;
+
+      node_count--;
     }
   }
 
   public:
-
   constexpr iterator push(const_iterator position, value_type &&value);
 
   constexpr iterator push(const_iterator position,
