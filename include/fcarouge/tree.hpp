@@ -120,7 +120,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @}
 
     value_type data;
-    internal_node_type *child = nullptr;
+    internal_node_type *first_child = nullptr;
+    internal_node_type *last_child = nullptr;
     internal_node_type *right_sibling = nullptr;
     internal_node_type *left_sibling = nullptr;
     internal_node_type *parent = nullptr;
@@ -183,8 +184,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @return Reference to the next iterator.
     constexpr internal_const_iterator_type &operator++() noexcept
     {
-      if (node->child) {
-        node = node->child;
+      if (node->first_child) {
+        node = node->first_child;
       } else {
         node = node->next_ancestor_sibling();
       }
@@ -240,8 +241,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @return Reference to the next iterator.
     constexpr internal_iterator_type &operator++() noexcept
     {
-      if (node->child) {
-        node = node->child;
+      if (node->first_child) {
+        node = node->first_child;
       } else {
         node = node->next_ancestor_sibling();
       }
@@ -868,8 +869,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
         std::construct_at<internal_node_type, internal_node_type &&>(
             node, std::forward<internal_node_type>(internal_node_type{
                       std::forward<value_type>(value_type(arguments...)),
-                      nullptr, position_node, position_node->left_sibling,
-                      position_node->parent }));
+                      nullptr, nullptr, position_node,
+                      position_node->left_sibling, position_node->parent }));
         position_node->left_sibling = node;
         // ...with a left sibling node.
         if (internal_node_type *left_node = node->left_sibling) {
@@ -877,15 +878,16 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
         }
         // ...without a left sibling node.
         else {
-          position_node->parent->child = node;
+          position_node->parent->first_child = node;
         }
       }
       // ...as the new root.
       else {
         std::construct_at<internal_node_type, internal_node_type &&>(
-            node, std::forward<internal_node_type>(internal_node_type{
-                      std::forward<value_type>(value_type(arguments...)),
-                      position_node, nullptr, nullptr, nullptr }));
+            node,
+            std::forward<internal_node_type>(internal_node_type{
+                std::forward<value_type>(value_type(arguments...)),
+                position_node, position_node, nullptr, nullptr, nullptr }));
         position_node->parent = node;
         root = node;
       }
@@ -897,8 +899,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
         std::construct_at<internal_node_type, internal_node_type &&>(
             node, std::forward<internal_node_type>(internal_node_type{
                       std::forward<value_type>(value_type(arguments...)),
-                      nullptr, nullptr, nullptr, last }));
-        last->child = node;
+                      nullptr, nullptr, nullptr, nullptr, last }));
+        last->first_child = node;
+        last->last_child = node;
         last = node;
       }
       // ...as the sole, last, and root node.
@@ -906,7 +909,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
         std::construct_at<internal_node_type, internal_node_type &&>(
             node, std::forward<internal_node_type>(internal_node_type{
                       std::forward<value_type>(value_type(arguments...)),
-                      nullptr, nullptr, nullptr, nullptr }));
+                      nullptr, nullptr, nullptr, nullptr, nullptr }));
         root = node;
         last = node;
       }
@@ -950,8 +953,11 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     // Orphan the node.
     if (position.node->parent) {
-      if (position.node->parent->child == position.node) {
-        position.node->parent->child = position.node->right_sibling;
+      if (position.node->parent->first_child == position.node) {
+        position.node->parent->first_child = position.node->right_sibling;
+      }
+      if (position.node->parent->last_child == position.node) {
+        position.node->parent->last_child = position.node->left_sibling;
       }
     }
 
@@ -973,7 +979,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   constexpr void erase(internal_node_type *&node)
   {
     if (node) {
-      erase(node->child);
+      erase(node->first_child);
       erase(node->right_sibling);
 
       if (node == last) {
