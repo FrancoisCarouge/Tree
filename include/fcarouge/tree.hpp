@@ -38,15 +38,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <iterator>
 // std::reverse_iterator std::input_iterator_tag
 
-#include <functional>
-// std::function
-
 #include <memory>
 // std::allocator std::allocator_traits std::addressof std::construct_at
 // std::destroy_at
-
-#include <optional>
-// std::optional
 
 #include <utility>
 // std::forward
