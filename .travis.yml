@@ -1,0 +1,17 @@
+language: cpp
+os:
+- linux
+dist: focal
+arch:
+- amd64
+- arm64
+- ppc64le
+- s390x
+compiler:
+- g++-10
+install:
+- sudo apt-get update
+- sudo apt-get -y install $TRAVIS_COMPILER
+script:
+- $TRAVIS_COMPILER test/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2a
+- ./a.out
