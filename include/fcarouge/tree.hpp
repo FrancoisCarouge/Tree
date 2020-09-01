@@ -26,8 +26,8 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
-#ifndef INCLUDE_FCAROUGE_TREE_HPP_
-#define INCLUDE_FCAROUGE_TREE_HPP_
+#ifndef FCAROUGE_TREE_HPP
+#define FCAROUGE_TREE_HPP
 
 #include <cstddef>
 // std::size_t std::ptrdiff_t
@@ -377,7 +377,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! elements of the container with.
   //!
   //! @complexity Constant.
-  constexpr explicit tree(tree &&other) noexcept;
+  constexpr tree(tree &&other) noexcept;
 
   //! @brief Allocator-extended move constructor.
   //!
@@ -401,7 +401,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! the container with.
   //!
   //! @complexity Linear in the size of the initializer list.
-  constexpr explicit tree(std::initializer_list<value_type> initializer_list);
+  constexpr tree(std::initializer_list<value_type> initializer_list);
 
   //! @brief Constructs the container with the contents of the initializer
   //! list.
@@ -1189,4 +1189,4 @@ template <class Type, class AllocatorType>
 operator<=>(const fcarouge::tree<Type, AllocatorType> &lhs,
             const fcarouge::tree<Type, AllocatorType> &rhs);
 
-#endif
+#endif // FCAROUGE_TREE_HPP
