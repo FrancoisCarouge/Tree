@@ -147,59 +147,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     }
   };
 
-  //! @brief Type to identify and traverse the elements of the constant
-  //! container.
-  struct internal_const_iterator_type {
-    //! @name Member types
-    //! @{
-
-    //! @brief The type of the contained data elements.
-    using value_type = tree::value_type;
-
-    //! @brief Signed integer type to represent element distances.
-    using difference_type = tree::difference_type;
-
-    //! @brief The reference type of the contained data elements.
-    using reference = tree::reference;
-
-    //! @brief The pointer type of the contained data elements.
-    using pointer = tree::pointer;
-
-    //! @brief The category of the iterator.
-    using iterator_category = std::input_iterator_tag;
-
-    //! @}
-
-    //! @brief Dereferences the iterator to obtain the stored value. The
-    //! behavior is undefined if the iterator is invalid.
-    //!
-    //! @return Reference to the element if the iterator is dereferencable.
-    [[nodiscard]] constexpr reference operator*() const noexcept
-    {
-      return node->data;
-    }
-
-    //! @brief Increments the iterator.
-    //!
-    //! @return Reference to the next iterator.
-    constexpr internal_const_iterator_type &operator++() noexcept
-    {
-      if (node->first_child) {
-        node = node->first_child;
-      } else {
-        node = node->next_ancestor_sibling();
-      }
-
-      return *this;
-    }
-
-    [[nodiscard]] constexpr bool operator==(
-        const internal_const_iterator_type &other) const noexcept = default;
-
-    //! @brief The pointer to the node.
-    internal_node_type *node = nullptr;
-  };
-
   //! @brief Type to identify and traverse the elements of the container.
   struct internal_iterator_type {
     //! @name Member types
@@ -221,11 +168,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     using iterator_category = std::input_iterator_tag;
 
     //! @}
-
-    [[nodiscard]] constexpr operator internal_const_iterator_type() const
-    {
-      return internal_const_iterator_type{ node };
-    }
 
     //! @brief Dereferences the iterator to obtain the stored value. The
     //! behavior is undefined if the iterator is invalid.
@@ -252,6 +194,86 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     [[nodiscard]] constexpr bool
     operator==(const internal_iterator_type &other) const noexcept = default;
+
+    //! @brief The pointer to the node.
+    internal_node_type *node = nullptr;
+  };
+
+  //! @brief Type to identify and traverse the constant elements of the
+  //! container.
+  struct internal_const_iterator_type {
+    //! @name Member types
+    //! @{
+
+    //! @brief The type of the contained data elements.
+    using value_type = tree::value_type;
+
+    //! @brief Signed integer type to represent element distances.
+    using difference_type = tree::difference_type;
+
+    //! @brief The reference type of the contained data elements.
+    using reference = tree::reference;
+
+    //! @brief The pointer type of the contained data elements.
+    using pointer = tree::pointer;
+
+    //! @brief The category of the iterator.
+    using iterator_category = std::input_iterator_tag;
+
+    //! @}
+
+    //! @brief Implicit iterator to constant iterator conversion.
+    //!
+    //! @details The regular, i.e. non-constant, iterator type is implicitely
+    //! convertible to the constant iterator type per requirements. The
+    //! conversion is performed through a (non-explicit) converting constructor.
+    //! A conversion operator is not implemented to avoid disabling implicit
+    //! move. Consequently the constant iterator is no longer an aggregate type
+    //! hence disabling aggregate initialization.
+    //!
+    //! @note No conversion assignment operator is supported following the
+    //! majority of STL vendors implementation.
+    constexpr internal_const_iterator_type(
+        const internal_iterator_type &iterator)
+            : node{ iterator.node }
+    {
+    }
+
+    //! @brief Implicit node pointer to constant iterator conversion.
+    //!
+    //! @details Aggregate initialization is not available per implicit iterator
+    //! conversion construction. The node pointer type is implicitely
+    //! convertible to the constant iterator type to allow list initialization.
+    constexpr internal_const_iterator_type(internal_node_type *node)
+            : node{ node }
+    {
+    }
+
+    //! @brief Dereferences the iterator to obtain the stored value. The
+    //! behavior is undefined if the iterator is invalid.
+    //!
+    //! @return Reference to the element if the iterator is dereferencable.
+    [[nodiscard]] constexpr reference operator*() const noexcept
+    {
+      return node->data;
+    }
+
+    //! @brief Increments the iterator.
+    //!
+    //! @return Reference to the next iterator.
+    constexpr internal_const_iterator_type &operator++() noexcept
+    {
+      if (node->first_child) {
+        node = node->first_child;
+      } else {
+        node = node->next_ancestor_sibling();
+      }
+
+      return *this;
+    }
+
+    [[nodiscard]] constexpr bool operator==(
+        const internal_const_iterator_type &other) const noexcept = default;
 
     //! @brief The pointer to the node.
     internal_node_type *node = nullptr;
