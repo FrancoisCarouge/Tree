@@ -1,0 +1,9 @@
+Checks: '*,
+        -fuchsia-overloaded-operator,
+        -google-explicit-constructor,
+        -hicpp-explicit-conversions,
+        -modernize-use-trailing-return-type'
+
+CheckOptions:
+  - key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
+    value: 1
