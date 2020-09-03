@@ -1075,7 +1075,55 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return iterator{ node };
   }
 
-  constexpr iterator push(const_iterator position, value_type &&value);
+  constexpr iterator push(const_iterator position, value_type &&value)
+  {
+    // The allocated node is in-place construced and recorded in every
+    // following statements.
+    internal_node_type *node = node_allocator.allocate(1);
+
+    // Insert the new node...
+    // ...as the last child of the position node...
+    if (internal_node_type *position_node = position.node) {
+      std::construct_at(node, std::move(value), nullptr, nullptr, nullptr,
+                        position_node->last_child, position_node);
+      position_node->last_child = node;
+      // ...which was the last node...
+      if (position_node == last) {
+        last = node;
+      }
+      // ...with a left sibling node.
+      if (node->left_sibling) {
+        node->left_sibling->right_sibling = node;
+        // ...which was the last node.
+        if (node->left_sibling == last) {
+          last = node;
+        }
+      }
+      // ...without a left sibling node.
+      else {
+        position_node->first_child = node;
+      }
+    }
+    // ...as the new last node...
+    else {
+      // ...as child of the previous last node.
+      if (last) {
+        std::construct_at(node, std::move(value), nullptr, nullptr, nullptr,
+                          nullptr, last);
+        last->first_child = node;
+        last = node;
+      }
+      // ...as the sole, last, and root node.
+      else {
+        std::construct_at(node, std::move(value));
+        root = node;
+        last = node;
+      }
+    }
+
+    node_count++;
+    return iterator{ node };
+  }
 
   constexpr iterator push(const_iterator position,
                           std::initializer_list<value_type> initializer_list);
