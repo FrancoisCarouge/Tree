@@ -30,20 +30,20 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #define FCAROUGE_TREE_HPP
 
 #include <cstddef>
-// std::size_t std::ptrdiff_t
+// std::ptrdiff_t std::size_t
 
 #include <initializer_list>
 // std::initializer_list
 
 #include <iterator>
-// std::reverse_iterator std::input_iterator_tag
+// std::input_iterator_tag std::reverse_iterator
 
 #include <memory>
-// std::allocator std::allocator_traits std::addressof std::construct_at
+// std::addressof std::allocator std::allocator_traits std::construct_at
 // std::destroy_at
 
 #include <utility>
-// std::forward
+// std::forward std::move
 
 //! @namespace fcarouge Francois Carouge's projects namespace. Lowers the name
 //! conflict probability in large projects. Use using-declarations or
