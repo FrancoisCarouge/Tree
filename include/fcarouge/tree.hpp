@@ -445,8 +445,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   constexpr explicit tree(const_reference value)
           : root{ node_allocator.allocate(1) }, last{ root }, node_count{ 1 }
   {
-    std::construct_at<internal_node_type, internal_node_type &&>(
-        root, std::forward<internal_node_type>(internal_node_type{ value }));
+    std::construct_at(root, value);
   }
 
   //! @brief Constructs the container with by copying the value for its root.
@@ -466,9 +465,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   constexpr explicit tree(value_type &&value)
           : root{ node_allocator.allocate(1) }, last{ root }, node_count{ 1 }
   {
-    std::construct_at<internal_node_type, internal_node_type &&>(
-        root, std::forward<internal_node_type>(
-                  internal_node_type{ std::forward<value_type>(value) }));
+    std::construct_at(root, std::move(value));
   }
 
   //! @brief Constructs the container with by moving the value for its root.
@@ -888,11 +885,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     if (internal_node_type *position_node = position.node) {
       // ...as the new left child...
       if (position_node->parent) {
-        std::construct_at<internal_node_type, internal_node_type &&>(
-            node, std::forward<internal_node_type>(internal_node_type{
-                      std::forward<value_type>(value_type(arguments...)),
-                      nullptr, nullptr, position_node,
-                      position_node->left_sibling, position_node->parent }));
+        std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
+                          nullptr, nullptr, position_node,
+                          position_node->left_sibling, position_node->parent);
         position_node->left_sibling = node;
         // ...with a left sibling node.
         if (internal_node_type *left_node = node->left_sibling) {
@@ -905,11 +900,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       }
       // ...as the new root.
       else {
-        std::construct_at<internal_node_type, internal_node_type &&>(
-            node,
-            std::forward<internal_node_type>(internal_node_type{
-                std::forward<value_type>(value_type(arguments...)),
-                position_node, position_node, nullptr, nullptr, nullptr }));
+        std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
+                          position_node, position_node);
         position_node->parent = node;
         root = node;
       }
@@ -918,20 +910,15 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     else {
       // ... as the sole, first, and last child of the previous last node.
       if (last) {
-        std::construct_at<internal_node_type, internal_node_type &&>(
-            node, std::forward<internal_node_type>(internal_node_type{
-                      std::forward<value_type>(value_type(arguments...)),
-                      nullptr, nullptr, nullptr, nullptr, last }));
+        std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
+                          nullptr, nullptr, nullptr, nullptr, last);
         last->first_child = node;
         last->last_child = node;
         last = node;
       }
       // ...as the sole, last, and root node.
       else {
-        std::construct_at<internal_node_type, internal_node_type &&>(
-            node, std::forward<internal_node_type>(internal_node_type{
-                      std::forward<value_type>(value_type(arguments...)),
-                      nullptr, nullptr, nullptr, nullptr, nullptr }));
+        std::construct_at(node, std::forward<ArgumentsType>(arguments)...);
         root = node;
         last = node;
       }
@@ -1047,10 +1034,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     // Insert the new node...
     // ...as the last child of the position node...
     if (internal_node_type *position_node = position.node) {
-      std::construct_at<internal_node_type, internal_node_type &&>(
-          node, std::forward<internal_node_type>(internal_node_type{
-                    value, nullptr, nullptr, nullptr, position_node->last_child,
-                    position_node }));
+      std::construct_at(node, value, nullptr, nullptr, nullptr,
+                        position_node->last_child, position_node);
       position_node->last_child = node;
       // ...which was the last node...
       if (position_node == last) {
@@ -1073,17 +1058,14 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     else {
       // ...as child of the previous last node.
       if (last) {
-        std::construct_at<internal_node_type, internal_node_type &&>(
-            node, std::forward<internal_node_type>(internal_node_type{
-                      value, nullptr, nullptr, nullptr, nullptr, last }));
+        std::construct_at(node, value, nullptr, nullptr, nullptr, nullptr,
+                          last);
         last->first_child = node;
         last = node;
       }
       // ...as the sole, last, and root node.
       else {
-        std::construct_at<internal_node_type, internal_node_type &&>(
-            node, std::forward<internal_node_type>(internal_node_type{
-                      value, nullptr, nullptr, nullptr, nullptr, nullptr }));
+        std::construct_at(node, value);
         root = node;
         last = node;
       }
