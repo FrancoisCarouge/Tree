@@ -122,8 +122,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     value_type data;
     internal_node_type *first_child = nullptr;
     internal_node_type *last_child = nullptr;
-    internal_node_type *right_sibling = nullptr;
     internal_node_type *left_sibling = nullptr;
+    internal_node_type *right_sibling = nullptr;
     internal_node_type *parent = nullptr;
 
     //! @brief Find the nearest right sibling of itself or
@@ -886,8 +886,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       // ...as the new left child...
       if (position_node->parent) {
         std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
-                          nullptr, nullptr, position_node,
-                          position_node->left_sibling, position_node->parent);
+                          nullptr, nullptr, position_node->left_sibling,
+                          position_node, position_node->parent);
         position_node->left_sibling = node;
         // ...with a left sibling node.
         if (internal_node_type *left_node = node->left_sibling) {
@@ -1034,8 +1034,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     // Insert the new node...
     // ...as the last child of the position node...
     if (internal_node_type *position_node = position.node) {
-      std::construct_at(node, value, nullptr, nullptr, nullptr,
-                        position_node->last_child, position_node);
+      std::construct_at(node, value, nullptr, nullptr,
+                        position_node->last_child, nullptr, position_node);
       position_node->last_child = node;
       // ...which was the last node...
       if (position_node == last) {
@@ -1084,8 +1084,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     // Insert the new node...
     // ...as the last child of the position node...
     if (internal_node_type *position_node = position.node) {
-      std::construct_at(node, std::move(value), nullptr, nullptr, nullptr,
-                        position_node->last_child, position_node);
+      std::construct_at(node, std::move(value), nullptr, nullptr,
+                        position_node->last_child, nullptr, position_node);
       position_node->last_child = node;
       // ...which was the last node...
       if (position_node == last) {
