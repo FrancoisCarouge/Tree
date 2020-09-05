@@ -57,8 +57,8 @@ namespace fcarouge
 //! referenced collection of nodes, each containing a value. The container is
 //! influenced by the Standard Template Library principles and the C++ Core
 //! Guidelines. The container is a standard layout class type which may help
-//! with memory and cross language communication. The traversal order of the
-//! container is not specified.
+//! with memory and cross language communication. The iteration order is
+//! unspecified, except that each element is visited only once.
 //!
 //! @tparam Type The type of the contained data elements. The requirements that
 //! are imposed on the elements depend on the actual operations performed on the
