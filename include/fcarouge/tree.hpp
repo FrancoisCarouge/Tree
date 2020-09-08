@@ -39,7 +39,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 // std::input_iterator_tag std::reverse_iterator
 
 #include <memory>
-// std::addressof std::allocator std::allocator_traits std::construct_at
+// std::allocator std::allocator_traits std::construct_at
 // std::destroy_at
 
 #include <utility>
