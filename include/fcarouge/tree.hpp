@@ -317,9 +317,12 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @}
 
-  //! @brief Constructs an empty container.
+  //! @brief Constructs an empty container with a default-constructed allocator.
   //!
   //! @complexity Constant.
+  //!
+  //! @exceptions Same exception(s) and throwing specification as the allocator
+  //! `AllocatorType` default constructor, if any.
   constexpr tree() noexcept(noexcept(AllocatorType())) = default;
 
   //! @brief Constructs an empty container with the given allocator.
