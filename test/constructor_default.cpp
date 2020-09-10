@@ -43,7 +43,8 @@ constexpr auto ctest_traits = []() {
   static_assert(
       std::is_default_constructible_v<tree<char>>,
       "The container must satisfy the DefaultConstructible requirement.");
-
+  // The container cannot satisty trivial default construction because it has
+  // non-static members with default initializers.
   static_assert(
       std::is_nothrow_default_constructible_v<tree<char>>,
       "The container must satisfy the non-throwing "
@@ -75,7 +76,7 @@ constexpr auto ctest_post_conditions = []() {
 
 //! @test Validate the default construction post-conditions in runtime context.
 auto test_post_conditions = []() {
-  tree<char> gouy_yew;
+  const tree<char> gouy_yew;
 
   assert(gouy_yew.empty() &&
          "The container must be empty on default construction.");
