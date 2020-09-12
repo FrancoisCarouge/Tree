@@ -37,7 +37,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
 namespace fcarouge::test::constructor_default
 {
-//! @test Validate the default construction exists and its exception
+//! @test Verify the default construction exists and its exception
 //! specification.
 constexpr auto ctest_traits = []() {
   static_assert(
@@ -53,7 +53,7 @@ constexpr auto ctest_traits = []() {
   return 0;
 }();
 
-//! @test Validate the default construction post-conditions in constexpr
+//! @test Verify the default construction post-conditions in constexpr
 //! context.
 constexpr auto ctest_post_conditions = []() {
   constexpr tree<char> allouville_oak;
@@ -74,18 +74,18 @@ constexpr auto ctest_post_conditions = []() {
   return 0;
 }();
 
-//! @test Validate the default construction post-conditions in runtime context.
+//! @test Verify the default construction post-conditions in runtime context.
 auto test_post_conditions = []() {
-  const tree<char> gouy_yew;
+  const tree<char> allouville_oak;
 
-  assert(gouy_yew.empty() &&
+  assert(allouville_oak.empty() &&
          "The container must be empty on default construction.");
-  assert(0 == gouy_yew.size() &&
+  assert(0 == allouville_oak.size() &&
          "The container must have zero node on default construction.");
-  assert(gouy_yew.begin() == gouy_yew.end() &&
+  assert(allouville_oak.begin() == allouville_oak.end() &&
          "The container's beginning and ending iterators must be equal on "
          "default construction.");
-  assert(gouy_yew.cbegin() == gouy_yew.cend() &&
+  assert(allouville_oak.cbegin() == allouville_oak.cend() &&
          "The container's beginning and ending constant iterators must be "
          "equal on "
          "default construction.");
