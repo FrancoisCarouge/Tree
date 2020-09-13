@@ -1,0 +1,21 @@
+name: Test Ubuntu 18.04 GCC 9
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: update
+      run: sudo apt update
+    - name: install
+      run: sudo apt install gcc-9 g++-9
+    - name: build
+      run: gcc-9 test/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2a
+    - name: run
+      run: ./a.out
