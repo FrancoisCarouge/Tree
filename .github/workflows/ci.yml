@@ -21,6 +21,6 @@ jobs:
     - name: install
       run: sudo apt-get install -y $CC $CXX
     - name: build
-      run: gcc test/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2a
+      run: $CC test/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2a
     - name: run
       run: ./a.out
