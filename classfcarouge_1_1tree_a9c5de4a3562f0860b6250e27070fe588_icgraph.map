@@ -1,0 +1,6 @@
+<map id="fcarouge::tree::erase" name="fcarouge::tree::erase">
+<area shape="rect" id="node1" title="Prune specified element sub&#45;tree from the container." alt="" coords="192,56,331,83"/>
+<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#aa83d14fd7cd74b86556786b1bd0f4393" title="Erases all elements from the container." alt="" coords="7,5,142,32"/>
+<area shape="rect" id="node3" href="$classfcarouge_1_1tree.html#a97eb4037913e853ba4af2ec9a756f57e" title=" " alt="" coords="5,56,144,83"/>
+<area shape="rect" id="node4" href="$classfcarouge_1_1tree.html#a3e97ce6cb6385676b59aae76e18fef31" title="Destructs the container." alt="" coords="7,107,142,133"/>
+</map>

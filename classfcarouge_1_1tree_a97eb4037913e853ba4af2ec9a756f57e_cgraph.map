@@ -1,0 +1,5 @@
+<map id="fcarouge::tree::erase" name="fcarouge::tree::erase">
+<area shape="rect" id="node1" title=" " alt="" coords="5,44,144,71"/>
+<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588" title="Prune specified element sub&#45;tree from the container." alt="" coords="192,44,331,71"/>
+<area shape="rect" id="node3" href="$structfcarouge_1_1tree_1_1internal__node__type.html#ad267c5ade8dd24d9baae39cb5eaae27f" title="Find the nearest right sibling of itself or ancestor." alt="" coords="379,29,553,85"/>
+</map>

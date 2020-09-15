@@ -1,0 +1,9 @@
+<map id="fcarouge::tree::internal_node_type::next_ancestor_sibling" name="fcarouge::tree::internal_node_type::next_ancestor_sibling">
+<area shape="rect" id="node1" title="Find the nearest right sibling of itself or ancestor." alt="" coords="448,100,623,156"/>
+<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588" title="Prune specified element sub&#45;tree from the container." alt="" coords="227,56,365,83"/>
+<area shape="rect" id="node6" href="$structfcarouge_1_1tree_1_1internal__iterator__type.html#a764f016619698d0f861c9d591083e145" title="Increments the iterator." alt="" coords="211,107,381,149"/>
+<area shape="rect" id="node7" href="$structfcarouge_1_1tree_1_1internal__const__iterator__type.html#aeea82fdd87a299ff23cf746777baf150" title="Increments the iterator." alt="" coords="192,173,400,214"/>
+<area shape="rect" id="node3" href="$classfcarouge_1_1tree.html#aa83d14fd7cd74b86556786b1bd0f4393" title="Erases all elements from the container." alt="" coords="7,5,142,32"/>
+<area shape="rect" id="node4" href="$classfcarouge_1_1tree.html#a97eb4037913e853ba4af2ec9a756f57e" title=" " alt="" coords="5,56,144,83"/>
+<area shape="rect" id="node5" href="$classfcarouge_1_1tree.html#a3e97ce6cb6385676b59aae76e18fef31" title="Destructs the container." alt="" coords="7,107,142,133"/>
+</map>
