@@ -1,7 +1,9 @@
 <map id="include/fcarouge/tree.hpp" name="include/fcarouge/tree.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="248,5,415,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="448,5,615,32"/>
 <area shape="rect" id="node2" href="$clear_8cpp.html" title=" " alt="" coords="5,80,105,107"/>
 <area shape="rect" id="node3" href="$constructor__allocator_8cpp.html" title=" " alt="" coords="129,80,323,107"/>
 <area shape="rect" id="node4" href="$constructor__default_8cpp.html" title=" " alt="" coords="347,80,529,107"/>
-<area shape="rect" id="node5" href="$standard__layout_8cpp.html" title=" " alt="" coords="554,80,717,107"/>
+<area shape="rect" id="node5" href="$push__lvalue_8cpp.html" title=" " alt="" coords="554,80,695,107"/>
+<area shape="rect" id="node6" href="$push__rvalue_8cpp.html" title=" " alt="" coords="719,80,861,107"/>
+<area shape="rect" id="node7" href="$standard__layout_8cpp.html" title=" " alt="" coords="886,80,1049,107"/>
 </map>

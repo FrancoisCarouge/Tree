@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['test_5fclearing_209',['test_clearing',['../namespacefcarouge_1_1test_1_1constructor__allocator.html#a6f055f555ef40195ca008eefa9126a5d',1,'fcarouge::test::constructor_allocator']]],
-  ['test_5fconstruction_210',['test_construction',['../namespacefcarouge_1_1test_1_1constructor__allocator.html#aa1a9b2a25cde8b605f213644b18f62a6',1,'fcarouge::test::constructor_allocator']]],
-  ['test_5fdefault_211',['test_default',['../namespacefcarouge_1_1test_1_1clear.html#a1276d552bf3018118dae8d897e0d1ac4',1,'fcarouge::test::clear']]],
-  ['test_5flvalue_212',['test_lvalue',['../namespacefcarouge_1_1test_1_1clear.html#a3c38aff99214c060f2f920e53fd95bd4',1,'fcarouge::test::clear']]],
-  ['test_5fmultiple_213',['test_multiple',['../namespacefcarouge_1_1test_1_1clear.html#a2249429f10bfa2f0cc9bf717b72e9e1f',1,'fcarouge::test::clear']]],
-  ['test_5fpost_5fconditions_214',['test_post_conditions',['../namespacefcarouge_1_1test_1_1constructor__default.html#aee31e613d4704aacc198220d8464a30e',1,'fcarouge::test::constructor_default']]]
+  ['test_5fclearing_221',['test_clearing',['../namespacefcarouge_1_1test_1_1constructor__allocator.html#a6f055f555ef40195ca008eefa9126a5d',1,'fcarouge::test::constructor_allocator']]],
+  ['test_5fconstruction_222',['test_construction',['../namespacefcarouge_1_1test_1_1constructor__allocator.html#aa1a9b2a25cde8b605f213644b18f62a6',1,'fcarouge::test::constructor_allocator']]],
+  ['test_5fdefault_223',['test_default',['../namespacefcarouge_1_1test_1_1clear.html#a1276d552bf3018118dae8d897e0d1ac4',1,'fcarouge::test::clear']]],
+  ['test_5flvalue_224',['test_lvalue',['../namespacefcarouge_1_1test_1_1clear.html#a3c38aff99214c060f2f920e53fd95bd4',1,'fcarouge::test::clear']]],
+  ['test_5fmultiple_225',['test_multiple',['../namespacefcarouge_1_1test_1_1clear.html#a2249429f10bfa2f0cc9bf717b72e9e1f',1,'fcarouge::test::clear::test_multiple()'],['../namespacefcarouge_1_1test_1_1push__lvalue.html#a0c5e36fa193b237c9bc3a3030e36d5ee',1,'fcarouge::test::push_lvalue::test_multiple()'],['../namespacefcarouge_1_1test_1_1push__rvalue.html#ac53558d29aaf7d7fcc67c9713ed7e2a6',1,'fcarouge::test::push_rvalue::test_multiple()']]],
+  ['test_5fone_5fbeginning_226',['test_one_beginning',['../namespacefcarouge_1_1test_1_1push__lvalue.html#a27461938785c5443b4684ec578031955',1,'fcarouge::test::push_lvalue::test_one_beginning()'],['../namespacefcarouge_1_1test_1_1push__rvalue.html#a3f12187d77535b88022b188c8f4f45a1',1,'fcarouge::test::push_rvalue::test_one_beginning()']]],
+  ['test_5fone_5fending_227',['test_one_ending',['../namespacefcarouge_1_1test_1_1push__lvalue.html#a60ffd9e75cbc49dc13d03c011f34fb34',1,'fcarouge::test::push_lvalue::test_one_ending()'],['../namespacefcarouge_1_1test_1_1push__rvalue.html#a9b15872c852f717238deacedc06fd457',1,'fcarouge::test::push_rvalue::test_one_ending()']]],
+  ['test_5fpost_5fconditions_228',['test_post_conditions',['../namespacefcarouge_1_1test_1_1constructor__default.html#aee31e613d4704aacc198220d8464a30e',1,'fcarouge::test::constructor_default']]],
+  ['test_5ftwo_5fbeginning_229',['test_two_beginning',['../namespacefcarouge_1_1test_1_1push__lvalue.html#ac0566fa23d190ad4d0a337d139cef707',1,'fcarouge::test::push_lvalue::test_two_beginning()'],['../namespacefcarouge_1_1test_1_1push__rvalue.html#a264352c16acd9538f1b1795d72b64c53',1,'fcarouge::test::push_rvalue::test_two_beginning()']]],
+  ['test_5ftwo_5fending_230',['test_two_ending',['../namespacefcarouge_1_1test_1_1push__lvalue.html#ae6e0e6fc97de3661e4d459fd3456e18c',1,'fcarouge::test::push_lvalue::test_two_ending()'],['../namespacefcarouge_1_1test_1_1push__rvalue.html#a1f7f389cc27fe1d421336985333053bc',1,'fcarouge::test::push_rvalue::test_two_ending()']]]
 ];
