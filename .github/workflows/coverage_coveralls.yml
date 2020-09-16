@@ -1,0 +1,27 @@
+name: Unit Test Coverage
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: update
+      run: sudo apt update
+    - name: install
+      run: sudo apt install gcc-10 g++-10 lcov
+    - name: build
+      run: gcc-10 test/*.cpp -Iinclude -O0 -g -std=c++2a -lstdc++ --coverage
+    - name: run
+      run: ./a.out
+    - name: coverage
+      run: lcov --capture --directory . --output-file coverage.info
+    - name: coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
