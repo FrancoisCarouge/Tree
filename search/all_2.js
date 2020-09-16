@@ -12,13 +12,14 @@ var searchData=
   ['const_5fpointer_13',['const_pointer',['../classfcarouge_1_1tree.html#a03614438bc62228f67b08f2eeadfa803',1,'fcarouge::tree']]],
   ['const_5freference_14',['const_reference',['../classfcarouge_1_1tree.html#abc9bb13758156a46bc7230dd86f58716',1,'fcarouge::tree']]],
   ['const_5freverse_5fiterator_15',['const_reverse_iterator',['../classfcarouge_1_1tree.html#af4d06a98aefea2d23cc1be73784dbd2e',1,'fcarouge::tree']]],
-  ['constructor_5fdefault_2ecpp_16',['constructor_default.cpp',['../constructor__default_8cpp.html',1,'']]],
-  ['contract_17',['CONTRACT',['../_l_i_c_e_n_s_e_8txt.html#a4e72eede8034420f86b6d1d2da775777',1,'LICENSE.txt']]],
-  ['copy_18',['copy',['../_l_i_c_e_n_s_e_8txt.html#ab4b4f82f609f8a7da88c1f556c53c2a5',1,'LICENSE.txt']]],
-  ['copyright_19',['Copyright',['../_l_i_c_e_n_s_e_8txt.html#aa8fa0120e14706bc3dafe9d71c200782',1,'LICENSE.txt']]],
-  ['crbegin_20',['crbegin',['../classfcarouge_1_1tree.html#a1e676b99a81a2e996764f579c8e860d9',1,'fcarouge::tree']]],
-  ['crend_21',['crend',['../classfcarouge_1_1tree.html#aea71a86734633e30ebfcd6b3f49b3191',1,'fcarouge::tree']]],
-  ['ctest_5fpost_5fconditions_22',['ctest_post_conditions',['../namespacefcarouge_1_1test_1_1constructor__default.html#a91160aa23431fa161e8b15fb8c43cafe',1,'fcarouge::test::constructor_default']]],
-  ['ctest_5ftraits_23',['ctest_traits',['../namespacefcarouge_1_1test_1_1constructor__default.html#a0cdfb43a6d9ce4273684ce6af96b47f0',1,'fcarouge::test::constructor_default::ctest_traits()'],['../namespacefcarouge_1_1test_1_1standard__layout.html#a46335497a88621d4795b944dc1dd1b3c',1,'fcarouge::test::standard_layout::ctest_traits()']]],
-  ['contributor_20covenant_20code_20of_20conduct_24',['Contributor Covenant Code of Conduct',['../md__c_o_d_e__o_f__c_o_n_d_u_c_t.html',1,'']]]
+  ['constructor_5fallocator_2ecpp_16',['constructor_allocator.cpp',['../constructor__allocator_8cpp.html',1,'']]],
+  ['constructor_5fdefault_2ecpp_17',['constructor_default.cpp',['../constructor__default_8cpp.html',1,'']]],
+  ['contract_18',['CONTRACT',['../_l_i_c_e_n_s_e_8txt.html#a4e72eede8034420f86b6d1d2da775777',1,'LICENSE.txt']]],
+  ['copy_19',['copy',['../_l_i_c_e_n_s_e_8txt.html#ab4b4f82f609f8a7da88c1f556c53c2a5',1,'LICENSE.txt']]],
+  ['copyright_20',['Copyright',['../_l_i_c_e_n_s_e_8txt.html#aa8fa0120e14706bc3dafe9d71c200782',1,'LICENSE.txt']]],
+  ['crbegin_21',['crbegin',['../classfcarouge_1_1tree.html#a1e676b99a81a2e996764f579c8e860d9',1,'fcarouge::tree']]],
+  ['crend_22',['crend',['../classfcarouge_1_1tree.html#aea71a86734633e30ebfcd6b3f49b3191',1,'fcarouge::tree']]],
+  ['ctest_5fpost_5fconditions_23',['ctest_post_conditions',['../namespacefcarouge_1_1test_1_1constructor__default.html#a91160aa23431fa161e8b15fb8c43cafe',1,'fcarouge::test::constructor_default']]],
+  ['ctest_5ftraits_24',['ctest_traits',['../namespacefcarouge_1_1test_1_1constructor__default.html#a0cdfb43a6d9ce4273684ce6af96b47f0',1,'fcarouge::test::constructor_default::ctest_traits()'],['../namespacefcarouge_1_1test_1_1standard__layout.html#a46335497a88621d4795b944dc1dd1b3c',1,'fcarouge::test::standard_layout::ctest_traits()']]],
+  ['contributor_20covenant_20code_20of_20conduct_25',['Contributor Covenant Code of Conduct',['../md__c_o_d_e__o_f__c_o_n_d_u_c_t.html',1,'']]]
 ];
