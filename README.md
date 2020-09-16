@@ -6,6 +6,7 @@ A tree data structure for C++. Defined as a non-linear non-associative unordered
 [![GitHub license](https://img.shields.io/github/license/francoiscarouge/tree)](https://raw.githubusercontent.com/francoiscarouge/tree/develop/LICENSE)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree?ref=badge_shield)
 [![GitHub Issues](https://img.shields.io/github/issues-raw/francoiscarouge/tree)](https://github.com/francoiscarouge/tree/issues)
+[![Coverage Status](https://coveralls.io/repos/github/FrancoisCarouge/Tree/badge.svg?branch=develop)](https://coveralls.io/github/FrancoisCarouge/Tree?branch=develop)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4221/badge)](https://bestpractices.coreinfrastructure.org/projects/4221)
 
 ## License
