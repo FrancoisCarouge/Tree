@@ -1,0 +1,21 @@
+name: Test Memory
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: update
+      run: sudo apt update
+    - name: install
+      run: sudo apt install gcc-10 g++-10 valgrind
+    - name: build
+      run: gcc-10 test/*.cpp -Iinclude -g -O0 -std=c++2a -lstdc++
+    - name: test
+      run: valgrind --verbose ./a.out
