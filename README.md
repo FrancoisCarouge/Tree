@@ -1,7 +1,7 @@
 Tree for C++
 ============
 
-A tree data structure for C++. Defined as a non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.
+Tree data structure for C++: non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.
 
 ## Properties Tree
 
