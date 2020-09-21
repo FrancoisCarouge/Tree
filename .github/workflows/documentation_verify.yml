@@ -1,4 +1,4 @@
-name: Verify Documentation
+name: Documentation Verification
 
 on:
   push:
