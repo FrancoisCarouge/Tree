@@ -132,7 +132,7 @@ auto test_two_ending = []() {
 //! elements.
 //!
 //! @dot
-//! digraph example {
+//! digraph {
 //!   node [shape=circle fontsize="10"];
 //!   0 -> {1, 2, 3}
 //!   1 -> {11, 12, 13}
@@ -157,7 +157,7 @@ auto test_multiple = []() {
   auffay_linden.push(node3, 33);
 
   assert(13 == auffay_linden.size() &&
-         "The container must have ten nodes upon pushing 10 element values.");
+         "The container must have 13 nodes upon pushing 13 element values.");
   assert(node0 == auffay_linden.begin() &&
          "The container's beginning iterator must be equal to the expected "
          "root node.");
