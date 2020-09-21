@@ -26,7 +26,8 @@ var NAVTREE =
 [
   [ "Tree", "index.html", [
     [ "Tree for C++", "index.html", [
-      [ "License", "index.html#autotoc_md7", null ]
+      [ "Properties Tree", "index.html#autotoc_md7", null ],
+      [ "License", "index.html#autotoc_md8", null ]
     ] ],
     [ "Contributor Covenant Code of Conduct", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html", [
       [ "Our Pledge", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md1", null ],
@@ -37,8 +38,8 @@ var NAVTREE =
       [ "Attribution", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md6", null ]
     ] ],
     [ "Security Policy", "md__s_e_c_u_r_i_t_y.html", [
-      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md9", null ],
-      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md10", null ]
+      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md10", null ],
+      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md11", null ]
     ] ],
     [ "Test List", "test.html", null ],
     [ "Namespaces", "namespaces.html", [

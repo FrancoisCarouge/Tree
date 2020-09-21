@@ -88,9 +88,33 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a></p>
-<p>A tree data structure for C++. Defined as a non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. The container is influenced by the Standard Template Library principles and the C++ Core Guidelines.</p>
-<p><a href="https://raw.githubusercontent.com/francoiscarouge/tree/develop/LICENSE"><img src="https://img.shields.io/github/license/francoiscarouge/tree" alt="GitHub license" class="inline"/></a> <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree?ref=badge_shield"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree.svg?type=shield" alt="FOSSA Status" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/francoiscarouge/tree/issues"><img src="https://img.shields.io/github/issues-raw/francoiscarouge/tree" alt="GitHub Issues" class="inline"/></a> <a href="https://coveralls.io/github/FrancoisCarouge/Tree?branch=develop"><img src="https://coveralls.io/repos/github/FrancoisCarouge/Tree/badge.svg?branch=develop" alt="Coverage Status" style="pointer-events: none;" class="inline"/></a> <a href="https://bestpractices.coreinfrastructure.org/projects/4221"><img src="https://bestpractices.coreinfrastructure.org/projects/4221/badge" alt="CII Best Practices" class="inline"/></a></p>
+<p>A tree data structure for C++. Defined as a non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.</p>
 <h1><a class="anchor" id="autotoc_md7"></a>
+Properties Tree</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Leaf  </th><th class="markdownTableHeadNone">Value   </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Code  </td><td class="markdownTableBodyNone"><a href="https://github.com/FrancoisCarouge/Tree"><img src="https://img.shields.io/badge/repository-%F0%9F%94%97-brightgreen" alt="Code Repository" class="inline"/></a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Documentation  </td><td class="markdownTableBodyNone"><a href="https://francoiscarouge.github.io/Tree/"><img src="https://img.shields.io/badge/documentation-%F0%9F%94%97-brightgreen" alt="Doxygen Documentation" class="inline"/></a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Licensing  </td><td class="markdownTableBodyNone"><a href="https://raw.githubusercontent.com/francoiscarouge/tree/develop/LICENSE.txt"><img src="https://img.shields.io/github/license/francoiscarouge/tree" alt="GitHub license" class="inline"/></a> <br  />
+ <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree?ref=badge_shield"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree.svg?type=shield" alt="FOSSA Status" style="pointer-events: none;" class="inline"/></a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Tests Coverage  </td><td class="markdownTableBodyNone"><a href="https://coveralls.io/github/FrancoisCarouge/Tree?branch=develop"><img src="https://coveralls.io/repos/github/FrancoisCarouge/Tree/badge.svg?branch=develop" alt="Coverage Status" style="pointer-events: none;" class="inline"/></a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Continuous Integration  </td><td class="markdownTableBodyNone"><a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3ATidy+branch%3Adevelop"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Tidy/badge.svg" alt="Tidy" style="pointer-events: none;" class="inline"/></a> <br  />
+ <a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3AFormat+branch%3Adevelop"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Format/badge.svg" alt="Format" style="pointer-events: none;" class="inline"/></a> <br  />
+ <a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Test+Ubuntu+20.04+GCC+10%22+branch%3Adevelop"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Test%20Ubuntu%2020.04%20GCC%2010/badge.svg" alt="Test Ubuntu 20.04 GCC 10" style="pointer-events: none;" class="inline"/></a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Report and Participate  </td><td class="markdownTableBodyNone"><a href="https://github.com/francoiscarouge/tree/issues"><img src="https://img.shields.io/github/issues-raw/francoiscarouge/tree" alt="GitHub Issues" class="inline"/></a>   </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Best Practices  </td><td class="markdownTableBodyNone"><a href="https://bestpractices.coreinfrastructure.org/projects/4221"><img src="https://bestpractices.coreinfrastructure.org/projects/4221/badge" alt="CII Best Practices" class="inline"/></a>   </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Support Open Free Software  </td><td class="markdownTableBodyNone"><a href="http://paypal.me/francoiscarouge"><img src="https://img.shields.io/badge/sponsor-%F0%9F%92%B2-brightgreen" alt="Documentation" class="inline"/></a>   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md8"></a>
 License</h1>
 <p><img src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png" alt="" align="right" class="inline"/></p>
 <p>Tree for C++ is licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a>:</p>
@@ -104,7 +128,7 @@ License</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Sep 18 2020 05:46:07 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Mon Sep 21 2020 00:33:46 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>
