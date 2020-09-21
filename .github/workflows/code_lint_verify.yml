@@ -1,4 +1,4 @@
-name: Tidy
+name: Code Lint Verification
 
 on:
   push:
