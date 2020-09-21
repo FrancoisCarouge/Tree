@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['data_228',['data',['../structfcarouge_1_1tree_1_1internal__node__type.html#a0678b7a0857922263963001b0b7e70bc',1,'fcarouge::tree::internal_node_type']]],
-  ['distribute_229',['distribute',['../_l_i_c_e_n_s_e_8txt.html#aec5ade9f051e74f7fe224e82c859f117',1,'LICENSE.txt']]]
+  ['data_227',['data',['../structfcarouge_1_1tree_1_1internal__node__type.html#a0678b7a0857922263963001b0b7e70bc',1,'fcarouge::tree::internal_node_type']]],
+  ['distribute_228',['distribute',['../_l_i_c_e_n_s_e_8txt.html#aec5ade9f051e74f7fe224e82c859f117',1,'LICENSE.txt']]]
 ];

@@ -94,51 +94,8 @@ $(document).ready(function(){initNavTree('namespacefcarouge_1_1test_1_1construct
 Variables</h2></td></tr>
 <tr class="memitem:aa1a9b2a25cde8b605f213644b18f62a6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1constructor__allocator.html#aa1a9b2a25cde8b605f213644b18f62a6">test_construction</a></td></tr>
 <tr class="separator:aa1a9b2a25cde8b605f213644b18f62a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f055f555ef40195ca008eefa9126a5d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1constructor__allocator.html#a6f055f555ef40195ca008eefa9126a5d">test_clearing</a></td></tr>
-<tr class="separator:a6f055f555ef40195ca008eefa9126a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a6f055f555ef40195ca008eefa9126a5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f055f555ef40195ca008eefa9126a5d">&#9670;&nbsp;</a></span>test_clearing</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::test::constructor_allocator::test_clearing</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
-<div class="line">  std::allocator&lt;int&gt; allocator;</div>
-<div class="line">  tree&lt;int, decltype(allocator)&gt; allouville_oak(allocator);</div>
-<div class="line">  tree&lt;int, decltype(allocator)&gt;::iterator n3 =</div>
-<div class="line">      allouville_oak.emplace(allouville_oak.begin(), 3);</div>
-<div class="line">  allouville_oak.emplace(allouville_oak.begin(), 0);</div>
-<div class="line">  allouville_oak.emplace(n3, 1);</div>
-<div class="line">  allouville_oak.emplace(n3, 2);</div>
-<div class="line">  allouville_oak.emplace(allouville_oak.end(), 4);</div>
-<div class="line">  allouville_oak.clear();</div>
-<div class="line"> </div>
-<div class="line">  assert(0 == allouville_oak.size() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The cleared container must contain zero node.&quot;</span>);</div>
-<div class="line">  assert(allouville_oak.empty() &amp;&amp; <span class="stringliteral">&quot;The cleared container must be empty.&quot;</span>);</div>
-<div class="line">  assert(</div>
-<div class="line">      allouville_oak.begin() == allouville_oak.end() &amp;&amp;</div>
-<div class="line">      <span class="stringliteral">&quot;The cleared container&#39;s beginning and ending iterators must be equal.&quot;</span>);</div>
-<div class="line">  assert(</div>
-<div class="line">      allouville_oak.cbegin() == allouville_oak.cend() &amp;&amp;</div>
-<div class="line">      <span class="stringliteral">&quot;The cleared container&#39;s beginning and ending constant iterators must be &quot;</span></div>
-<div class="line">      <span class="stringliteral">&quot;equal.&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">return</span> 0;</div>
-<div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000005">Test:</a></b></dt><dd>Verify the post-conditions on clearing a populated a container with a standard allocator. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="constructor__allocator_8cpp_source.html#l00064">64</a> of file <a class="el" href="constructor__allocator_8cpp_source.html">constructor_allocator.cpp</a>.</p>
-
-</div>
-</div>
 <a id="aa1a9b2a25cde8b605f213644b18f62a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa1a9b2a25cde8b605f213644b18f62a6">&#9670;&nbsp;</a></span>test_construction</h2>
 
@@ -153,11 +110,11 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  std::allocator&lt;int&gt; allocator;</div>
 <div class="line">  tree&lt;int, decltype(allocator)&gt; allouville_oak(allocator);</div>
-<div class="line">  tree&lt;int, decltype(allocator)&gt;::iterator n3 =</div>
+<div class="line">  tree&lt;int, decltype(allocator)&gt;::iterator node3 =</div>
 <div class="line">      allouville_oak.emplace(allouville_oak.begin(), 3);</div>
 <div class="line">  allouville_oak.emplace(allouville_oak.begin(), 0);</div>
-<div class="line">  allouville_oak.emplace(n3, 1);</div>
-<div class="line">  allouville_oak.emplace(n3, 2);</div>
+<div class="line">  allouville_oak.emplace(node3, 1);</div>
+<div class="line">  allouville_oak.emplace(node3, 2);</div>
 <div class="line">  allouville_oak.emplace(allouville_oak.end(), 4);</div>
 <div class="line"> </div>
 <div class="line">  assert(!allouville_oak.empty() &amp;&amp;</div>
@@ -181,7 +138,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test.html">test</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test_1_1constructor__allocator.html">constructor_allocator</a></li>
-    <li class="footer">Generated on Mon Sep 21 2020 05:49:54 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Mon Sep 21 2020 06:01:36 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>
