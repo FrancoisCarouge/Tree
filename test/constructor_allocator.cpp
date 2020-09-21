@@ -42,11 +42,11 @@ namespace fcarouge::test::constructor_allocator
 auto test_construction = []() {
   std::allocator<int> allocator;
   tree<int, decltype(allocator)> allouville_oak(allocator);
-  tree<int, decltype(allocator)>::iterator n3 =
+  tree<int, decltype(allocator)>::iterator node3 =
       allouville_oak.emplace(allouville_oak.begin(), 3);
   allouville_oak.emplace(allouville_oak.begin(), 0);
-  allouville_oak.emplace(n3, 1);
-  allouville_oak.emplace(n3, 2);
+  allouville_oak.emplace(node3, 1);
+  allouville_oak.emplace(node3, 2);
   allouville_oak.emplace(allouville_oak.end(), 4);
 
   assert(!allouville_oak.empty() &&
@@ -55,33 +55,6 @@ auto test_construction = []() {
   assert(5 == allouville_oak.size() &&
          "The container must have five elements on this construction with an "
          "allocator and elements.");
-
-  return 0;
-}();
-
-//! @test Verify the post-conditions on clearing a populated a container
-//! with a standard allocator.
-auto test_clearing = []() {
-  std::allocator<int> allocator;
-  tree<int, decltype(allocator)> allouville_oak(allocator);
-  tree<int, decltype(allocator)>::iterator n3 =
-      allouville_oak.emplace(allouville_oak.begin(), 3);
-  allouville_oak.emplace(allouville_oak.begin(), 0);
-  allouville_oak.emplace(n3, 1);
-  allouville_oak.emplace(n3, 2);
-  allouville_oak.emplace(allouville_oak.end(), 4);
-  allouville_oak.clear();
-
-  assert(0 == allouville_oak.size() &&
-         "The cleared container must contain zero node.");
-  assert(allouville_oak.empty() && "The cleared container must be empty.");
-  assert(
-      allouville_oak.begin() == allouville_oak.end() &&
-      "The cleared container's beginning and ending iterators must be equal.");
-  assert(
-      allouville_oak.cbegin() == allouville_oak.cend() &&
-      "The cleared container's beginning and ending constant iterators must be "
-      "equal.");
 
   return 0;
 }();

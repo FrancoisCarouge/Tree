@@ -70,6 +70,12 @@ constexpr auto ctest_post_conditions = []() {
       allouville_oak.cbegin() == allouville_oak.cend(),
       "The container's beginning and ending constant iterators must be "
       "equal on default construction.");
+  assert(allouville_oak.rbegin() == allouville_oak.rend() &&
+         "The container's beginning and ending reverse iterators must "
+         "be equal on default construction.");
+  assert(allouville_oak.crbegin() == allouville_oak.crend() &&
+         "The container's beginning and ending constant reverse "
+         "iterators must be equal on default construction.");
 
   return 0;
 }();
@@ -87,8 +93,13 @@ auto test_post_conditions = []() {
          "default construction.");
   assert(allouville_oak.cbegin() == allouville_oak.cend() &&
          "The container's beginning and ending constant iterators must be "
-         "equal on "
-         "default construction.");
+         "equal on default construction.");
+  assert(allouville_oak.rbegin() == allouville_oak.rend() &&
+         "The container's beginning and ending reverse iterators must "
+         "be equal on default construction.");
+  assert(allouville_oak.crbegin() == allouville_oak.crend() &&
+         "The container's beginning and ending constant reverse "
+         "iterators must be equal on default construction.");
 
   return 0;
 }();

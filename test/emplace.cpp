@@ -38,7 +38,7 @@ namespace fcarouge::test::emplace
 //! elements.
 //!
 //! @dot
-//! digraph example {
+//! digraph {
 //!   node [shape=circle fontsize="10"];
 //!   0 -> {1, 2, 3}
 //!   3 -> {31, 32, 33}
@@ -73,8 +73,7 @@ auto test_multiple = []() {
       "root node value.");
   assert(*node0 == *allouville_oak.cbegin() &&
          "The container's constant beginning iterator value must be equal to "
-         "the expected "
-         "root node value.");
+         "the expected root node value.");
   assert(*node0 == allouville_oak.front() &&
          "The container's front node value must be equal to the expected root "
          "node value.");

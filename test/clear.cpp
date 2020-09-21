@@ -91,7 +91,7 @@ auto test_lvalue = []() {
 //! nodes.
 //!
 //! @dot
-//! digraph "Test Tree" {
+//! digraph {
 //!   node [shape=circle fontsize="10"];
 //!   0 -> {1, 2, 3}
 //!   1 -> {11, 12, 13}
