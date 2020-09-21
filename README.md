@@ -1,13 +1,20 @@
 Tree for C++
 ============
 
-A tree data structure for C++. Defined as a non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. The container is influenced by the Standard Template Library principles and the C++ Core Guidelines.
+A tree data structure for C++. Defined as a non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.
 
-[![GitHub license](https://img.shields.io/github/license/francoiscarouge/tree)](https://raw.githubusercontent.com/francoiscarouge/tree/develop/LICENSE)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree?ref=badge_shield)
-[![GitHub Issues](https://img.shields.io/github/issues-raw/francoiscarouge/tree)](https://github.com/francoiscarouge/tree/issues)
-[![Coverage Status](https://coveralls.io/repos/github/FrancoisCarouge/Tree/badge.svg?branch=develop)](https://coveralls.io/github/FrancoisCarouge/Tree?branch=develop)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4221/badge)](https://bestpractices.coreinfrastructure.org/projects/4221)
+## Properties Tree
+
+| Leaf | Value |
+| --- | --- |
+| Code | [![Code Repository](https://img.shields.io/badge/repository-%F0%9F%94%97-brightgreen)](https://github.com/FrancoisCarouge/Tree) |
+| Documentation | [![Doxygen Documentation](https://img.shields.io/badge/documentation-%F0%9F%94%97-brightgreen)](https://francoiscarouge.github.io/Tree/) |
+| Licensing | [![GitHub license](https://img.shields.io/github/license/francoiscarouge/tree)](https://raw.githubusercontent.com/francoiscarouge/tree/develop/LICENSE.txt) <br> [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree?ref=badge_shield) |
+| Tests Coverage | [![Coverage Status](https://coveralls.io/repos/github/FrancoisCarouge/Tree/badge.svg?branch=develop)](https://coveralls.io/github/FrancoisCarouge/Tree?branch=develop) |
+| Continuous Integration | [![Tidy](https://github.com/FrancoisCarouge/Tree/workflows/Tidy/badge.svg)](https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3ATidy+branch%3Adevelop) <br> [![Format](https://github.com/FrancoisCarouge/Tree/workflows/Format/badge.svg)](https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3AFormat+branch%3Adevelop) <br> [![Test Ubuntu 20.04 GCC 10](https://github.com/FrancoisCarouge/Tree/workflows/Test%20Ubuntu%2020.04%20GCC%2010/badge.svg)](https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Test+Ubuntu+20.04+GCC+10%22+branch%3Adevelop) |
+| Report and Participate | [![GitHub Issues](https://img.shields.io/github/issues-raw/francoiscarouge/tree)](https://github.com/francoiscarouge/tree/issues) |
+| Best Practices | [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4221/badge)](https://bestpractices.coreinfrastructure.org/projects/4221) |
+| Support Open Free Software | [![Documentation](https://img.shields.io/badge/sponsor-%F0%9F%92%B2-brightgreen)](http://paypal.me/francoiscarouge) |
 
 ## License
 
