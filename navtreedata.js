@@ -26,7 +26,7 @@ var NAVTREE =
 [
   [ "Tree", "index.html", [
     [ "Tree for C++", "index.html", [
-      [ "Properties Tree", "index.html#autotoc_md7", null ],
+      [ "Information Tree", "index.html#autotoc_md7", null ],
       [ "License", "index.html#autotoc_md8", null ]
     ] ],
     [ "Contributor Covenant Code of Conduct", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html", [
