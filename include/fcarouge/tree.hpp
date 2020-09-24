@@ -54,11 +54,12 @@ namespace fcarouge
 //!
 //! @details The fcarouge::tree type is a hierarchical tree data structure.
 //! The container is a non-linear non-associative unordered recursively
-//! referenced collection of nodes, each containing a value. The container is
-//! influenced by the Standard Template Library principles and the C++ Core
-//! Guidelines. The container is a standard layout class type which may help
-//! with memory and cross language communication. The iteration order is
-//! unspecified, except that each element is visited only once.
+//! referenced collection of nodes, each containing a value. The design
+//! tradeoffs are influenced by the Standard Template Library principles and the
+//! C++ Core Guidelines. The container is a standard layout class type which may
+//! help with memory and cross language communication. The iteration order of
+//! the standard iterator is unspecified, except that each element is visited
+//! only once.
 //!
 //! @tparam Type The type of the contained data elements. The requirements that
 //! are imposed on the elements depend on the actual operations performed on the
@@ -483,8 +484,10 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @brief Destructs the container.
   //!
   //! @details The destructors of the elements are called and the used
-  //! storage is deallocated. Note, that if the elements are pointers, the
-  //! pointed-to objects are not destroyed.
+  //! storage is deallocated.
+  //!
+  //! @note If the elements are pointers, the pointed-to objects are not
+  //! destroyed.
   //!
   //! @complexity Linear in the size of the container.
   constexpr ~tree() noexcept
