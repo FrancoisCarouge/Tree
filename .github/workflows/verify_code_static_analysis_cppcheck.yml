@@ -1,4 +1,4 @@
-name: Test Ubuntu 20.04 GCC 10
+name: "Test Static Analysis: CppCheck"
 
 on:
   push:
@@ -14,8 +14,6 @@ jobs:
     - name: update
       run: sudo apt update
     - name: install
-      run: sudo apt install gcc-10 g++-10
-    - name: build
-      run: gcc-10 test/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2a -lstdc++
-    - name: run
-      run: ./a.out
+      run: sudo apt install cppcheck
+    - name: check
+      run: cppcheck --verbose --suppressions-list=.cppcheck --error-exitcode=1 --enable=all -I include .
