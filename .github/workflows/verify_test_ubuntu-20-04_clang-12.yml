@@ -1,0 +1,24 @@
+name: "Test: Ubuntu 20.04 Clang 12"
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: update
+      run: sudo apt update
+    - name: install
+      run: |
+        wget https://apt.llvm.org/llvm.sh
+        chmod +x llvm.sh
+        sudo ./llvm.sh 12
+    - name: build
+      run: clang-12 test/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2a -lstdc++
+    - name: run
+      run: ./a.out
