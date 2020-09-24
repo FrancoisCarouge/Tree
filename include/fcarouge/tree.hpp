@@ -930,7 +930,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       }
     }
 
-    node_count++;
+    ++node_count;
     return iterator{ node };
   }
 
@@ -1003,7 +1003,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       node_allocator.deallocate(node, 1);
       node = nullptr;
 
-      node_count--;
+      --node_count;
     }
   }
 
@@ -1077,7 +1077,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       }
     }
 
-    node_count++;
+    ++node_count;
+
     return iterator{ node };
   }
 
@@ -1127,7 +1128,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       }
     }
 
-    node_count++;
+    ++node_count;
+
     return iterator{ node };
   }
 
