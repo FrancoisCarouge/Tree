@@ -1,4 +1,4 @@
-name: Code Coverage Deployment
+name: "Deploy Code Coverage: Coveralls"
 
 on:
   push:

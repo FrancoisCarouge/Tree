@@ -1,4 +1,4 @@
-name: Test Memory
+name: "Test Memory: Valgrind"
 
 on:
   push:

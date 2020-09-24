@@ -1,9 +1,7 @@
-name: Documentation Verification
+name: "Deploy Documentation: Doxygen GitHub Pages"
 
 on:
   push:
-    branches: [ develop ]
-  pull_request:
     branches: [ develop ]
 
 jobs:
@@ -15,3 +13,8 @@ jobs:
       with:
         working-directory: '.'
         doxyfile-path: 'doc/Doxyfile'
+    - name: deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./doc/html
