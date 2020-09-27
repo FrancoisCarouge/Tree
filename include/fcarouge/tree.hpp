@@ -999,7 +999,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       erase(node->first_child);
       erase(node->right_sibling);
 
-      std::destroy_at<internal_node_type>(node);
+      std::destroy_at(node);
       node_allocator.deallocate(node, 1);
       node = nullptr;
 
