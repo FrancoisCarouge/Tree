@@ -2297,7 +2297,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;      <a class="code" href="classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588">erase</a>(node-&gt;first_child);</div>
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;      <a class="code" href="classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588">erase</a>(node-&gt;right_sibling);</div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160; </div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;      std::destroy_at&lt;internal_node_type&gt;(node);</div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;      std::destroy_at(node);</div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;      <a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>.deallocate(node, 1);</div>
 <div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;      node = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160; </div>
@@ -3694,7 +3694,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li><li class="navelem"><a class="el" href="classfcarouge_1_1tree.html">tree</a></li>
-    <li class="footer">Generated on Sun Sep 27 2020 20:55:21 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Sun Sep 27 2020 21:20:03 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>
