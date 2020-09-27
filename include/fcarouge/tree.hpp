@@ -55,11 +55,11 @@ namespace fcarouge
 //! @details The fcarouge::tree type is a hierarchical tree data structure.
 //! The container is a non-linear non-associative unordered recursively
 //! referenced collection of nodes, each containing a value. The design
-//! tradeoffs are influenced by the Standard Template Library principles and the
-//! C++ Core Guidelines. The container is a standard layout class type which may
-//! help with memory and cross language communication. The iteration order of
-//! the standard iterator is unspecified, except that each element is visited
-//! only once.
+//! tradeoffs are influenced by the Standard Template Library (STL) principles
+//! and the C++ Core Guidelines. The container is a standard layout class type
+//! which may help with memory and cross language communication. The iteration
+//! order of the standard iterator is unspecified, except that each element is
+//! visited only once.
 //!
 //! @tparam Type The type of the contained data elements. The requirements that
 //! are imposed on the elements depend on the actual operations performed on the
@@ -233,7 +233,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! hence disabling aggregate initialization.
     //!
     //! @note No conversion assignment operator is supported following the
-    //! majority of STL vendors implementation.
+    //! majority of Standard Template Library (STL) vendors implementation.
     constexpr internal_const_iterator_type(
         const internal_iterator_type &iterator)
             : node{ iterator.node }
@@ -1024,13 +1024,21 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! ending `end()` iterator.
   //! @param value The data of the element to insert.
   //!
-  //! @return The iterator pointing to the insersted element.
-  //!
-  //! @complexity
+  //! @return The iterator pointing to the inserted element.
   //!
   //! @exceptions This method has strong exception guarantees: no effect on
   //! exception. The `Allocator::allocate()` allocation or the element copy/move
   //! constructor/assignment may throw.
+  //! If `Type`'s move constructor is not `noexcept` and `Type` is not
+  //! CopyInsertable into `*this`, the container will use the throwing move
+  //! constructor. If it throws, the guarantee is waived and the effects are
+  //! unspecified.
+  //!
+  //! @note This `push` modifier method definition is not represented in
+  //! the Standard Template Library (STL) containers. The presence of the
+  //! modifier is justified from the non-linear nature of the container in
+  //! addition to the consistency claim with `insert` and `emplace` modifier
+  //! method definitions.
   constexpr iterator push(const_iterator position, const_reference value)
   {
     // The allocated node is in-place construced and recorded in every
@@ -1082,6 +1090,33 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return iterator{ node };
   }
 
+  //! @brief Inserts the given element value into the container directly after
+  //! the last child of the `position` iterator as the new last child.
+  //!
+  //! @details No iterators or references are invalidated. The new element is
+  //! initialized with a move of `value`. `Type` must meet the MoveInsertable
+  //! requirement to use this overload. Inserts after the beginning `begin()`
+  //! position as the last child of the root if present, or as the root if the
+  //! container is empty. Inserts after the ending `end()` position as the sole
+  //! child of the last node if present, or as the root if the container is
+  //! empty.
+  //!
+  //! @param position The parent node iterator for which the element will be
+  //! inserted as the last child. The iterator may be the beginning `begin()` or
+  //! ending `end()` iterator.
+  //! @param value The data of the element to insert.
+  //!
+  //! @return The iterator pointing to the inserted element.
+  //!
+  //! @exceptions This method has strong exception guarantees: no effect on
+  //! exception. The `Allocator::allocate()` allocation or the element copy/move
+  //! constructor/assignment may throw.
+  //!
+  //! @note This `push` modifier method definition is not represented in
+  //! the Standard Template Library (STL) containers. The presence of the
+  //! modifier is justified from the non-linear nature of the container in
+  //! addition to the consistency claim with `insert` and `emplace` modifier
+  //! method definitions.
   constexpr iterator push(const_iterator position, value_type &&value)
   {
     // The allocated node is in-place construced and recorded in every
