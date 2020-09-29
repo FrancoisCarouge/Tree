@@ -1179,9 +1179,85 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   constexpr void push_back(value_type &&value);
 
-  constexpr void push_front(const_reference value);
+  //! @brief Prepends the given element to the beginning of the container.
+  //!
+  //! @details Prepends the given element as the new root. If the container is
+  //! not empty the root becomes the sole child of the prepended element. No
+  //! iterators or references are invalidated. The new element is initialized as
+  //! a copy of `value`. `Type` must meet the CopyInsertable requirement to use
+  //! this overload.
+  //!
+  //! @param value The data of the element to prepend.
+  //!
+  //! @complexity Constant.
+  //!
+  //! @exceptions This method has strong exception guarantees: no effect on
+  //! exception. The `Allocator::allocate()` allocation or the element copy/move
+  //! constructor/assignment may throw.
+  //!
+  //! If `Type`'s move constructor is not `noexcept` and `Type` is not
+  //! CopyInsertable into `*this`, the container will use the throwing move
+  //! constructor. If it throws, the guarantee is waived and the effects are
+  //! unspecified.
+  constexpr void push_front(const_reference value)
+  {
+    // The allocated node is in-place construced and recorded in every
+    // following statements.
+    internal_node_type *node = node_allocator.allocate(1);
 
-  constexpr void push_front(value_type &&value);
+    // Insert the new node and prepare it to be the new root...
+    std::construct_at(node, value, root, root, nullptr, nullptr, nullptr);
+
+    // ... by displacing the previous root.
+    if (root) {
+      root->parent = node;
+    }
+    // ...or as the sole, root, and last node in the container.
+    else {
+      last = node;
+    }
+
+    root = node;
+    ++node_count;
+  }
+
+  //! @brief Prepends the given element to the beginning of the container.
+  //!
+  //! @details Prepends the given element as the new root. If the container is
+  //! not empty the root becomes the sole child of the prepended element. No
+  //! iterators or references are invalidated. The new element is initialized
+  //! with a move of `value`. `Type` must meet the MoveInsertable requirement to
+  //! use this overload.
+  //!
+  //! @param value The data of the element to prepend.
+  //!
+  //! @complexity Constant.
+  //!
+  //! @exceptions This method has strong exception guarantees: no effect on
+  //! exception. The `Allocator::allocate()` allocation or the element copy/move
+  //! constructor/assignment may throw.
+  constexpr void push_front(value_type &&value)
+  {
+    // The allocated node is in-place construced and recorded in every
+    // following statements.
+    internal_node_type *node = node_allocator.allocate(1);
+
+    // Insert the new node and prepare it to be the new root...
+    std::construct_at(node, std::move(value), root, root, nullptr, nullptr,
+                      nullptr);
+
+    // ... by displacing the previous root.
+    if (root) {
+      root->parent = node;
+    }
+    // ...or as the sole, root, and last node in the container.
+    else {
+      last = node;
+    }
+
+    root = node;
+    ++node_count;
+  }
 
   //! @brief Exchanges the contents of this container with those of the
   //! `other` container.
