@@ -18,9 +18,11 @@ var searchData=
   ['front_57',['front',['../classfcarouge_1_1tree.html#a1452f7fc3685dd1e35314f1488f04693',1,'fcarouge::tree::front()'],['../classfcarouge_1_1tree.html#a27dfcb2f1ab3f3f1f2d12c78fa416241',1,'fcarouge::tree::front() const']]],
   ['iterator_58',['iterator',['../namespacefcarouge_1_1test_1_1iterator.html',1,'fcarouge::test']]],
   ['iterator_5flegacy_59',['iterator_legacy',['../namespacefcarouge_1_1test_1_1iterator__legacy.html',1,'fcarouge::test']]],
-  ['push_5flvalue_60',['push_lvalue',['../namespacefcarouge_1_1test_1_1push__lvalue.html',1,'fcarouge::test']]],
-  ['push_5frvalue_61',['push_rvalue',['../namespacefcarouge_1_1test_1_1push__rvalue.html',1,'fcarouge::test']]],
-  ['size_62',['size',['../namespacefcarouge_1_1test_1_1size.html',1,'fcarouge::test']]],
-  ['standard_5flayout_63',['standard_layout',['../namespacefcarouge_1_1test_1_1standard__layout.html',1,'fcarouge::test']]],
-  ['test_64',['test',['../namespacefcarouge_1_1test.html',1,'fcarouge']]]
+  ['push_5ffront_5flvalue_60',['push_front_lvalue',['../namespacefcarouge_1_1test_1_1push__front__lvalue.html',1,'fcarouge::test']]],
+  ['push_5ffront_5frvalue_61',['push_front_rvalue',['../namespacefcarouge_1_1test_1_1push__front__rvalue.html',1,'fcarouge::test']]],
+  ['push_5flvalue_62',['push_lvalue',['../namespacefcarouge_1_1test_1_1push__lvalue.html',1,'fcarouge::test']]],
+  ['push_5frvalue_63',['push_rvalue',['../namespacefcarouge_1_1test_1_1push__rvalue.html',1,'fcarouge::test']]],
+  ['size_64',['size',['../namespacefcarouge_1_1test_1_1size.html',1,'fcarouge::test']]],
+  ['standard_5flayout_65',['standard_layout',['../namespacefcarouge_1_1test_1_1standard__layout.html',1,'fcarouge::test']]],
+  ['test_66',['test',['../namespacefcarouge_1_1test.html',1,'fcarouge']]]
 ];

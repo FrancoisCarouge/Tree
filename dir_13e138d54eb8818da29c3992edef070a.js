@@ -13,6 +13,8 @@ var dir_13e138d54eb8818da29c3992edef070a =
     [ "iterator.cpp", "iterator_8cpp.html", "iterator_8cpp" ],
     [ "iterator_legacy.cpp", "iterator__legacy_8cpp.html", "iterator__legacy_8cpp" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
+    [ "push_front_lvalue.cpp", "push__front__lvalue_8cpp.html", "push__front__lvalue_8cpp" ],
+    [ "push_front_rvalue.cpp", "push__front__rvalue_8cpp.html", "push__front__rvalue_8cpp" ],
     [ "push_lvalue.cpp", "push__lvalue_8cpp.html", "push__lvalue_8cpp" ],
     [ "push_rvalue.cpp", "push__rvalue_8cpp.html", "push__rvalue_8cpp" ],
     [ "size.cpp", "size_8cpp.html", "size_8cpp" ],
