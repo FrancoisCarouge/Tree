@@ -16,6 +16,6 @@ jobs:
     - name: install
       run: sudo apt install gcc-10 g++-10
     - name: build
-      run: gcc-10 test/*.cpp -Iinclude -std=c++20 -g -fsanitize=address -fsanitize-address-use-after-scope -fno-omit-frame-pointer -lstdc++
+      run: gcc-10 sample/*.cpp test/*.cpp src/*.cpp -Iinclude -std=c++20 -g -fsanitize=address -fsanitize-address-use-after-scope -fno-omit-frame-pointer -lstdc++
     - name: test
       run: ASAN_OPTIONS=verbosity=2:strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1 ./a.out

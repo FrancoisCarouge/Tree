@@ -26,6 +26,12 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
+//! @brief The tree data structure for C++ project is a header-only library.
+//!
+//! @details The container is defined in `include/fcarouge/tree.hpp`.
+//!
+//! @note A valid and empty point of entry is provided to support the project
+//! tests and samples.
 int main(int, char **)
 {
   return 0;

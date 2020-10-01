@@ -16,6 +16,36 @@ Tree data structure for C++: non-linear non-associative unordered recursively re
 | Best Practices | [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4221/badge)](https://bestpractices.coreinfrastructure.org/projects/4221) |
 | Support Open Free Software | [![Sponsor](https://img.shields.io/badge/Sponsor-%EF%BC%84%EF%BC%84%EF%BC%84%20%F0%9F%94%97-brightgreen)](http://paypal.me/francoiscarouge) |
 
+## Hello, World!
+
+```cpp
+  // Declare a "greeting" variable as a tree of strings type.
+  tree<std::string> greeting;
+
+  // Push at the front of the tree a root element with string value "Hello".
+  greeting.push_front("Hello");
+
+  // Push in an element with value ", " as a child of the beginning, root node.
+  greeting.push(greeting.begin(), ", ");
+
+  // Push in another element with value "!" and keep its iterator "i".
+  const tree<std::string>::iterator i = greeting.push(greeting.begin(), "!");
+
+  // Insert a left sibling of iterator "i", child of the root.
+  greeting.emplace(i, "World");
+```
+
+## Sometimes all you need is this tree...
+
+- to represent, store, walk, manipulate, and search some hierarchical information with the purpose of deciding, routing, sorting, or composing results.
+
+## ...but often you really don't!
+
+- when one of the standard associative containers do better: `std::unordered_map`, `std::unordered_set`, `std::unordered_multimap`, `std::unordered_multiset`, or
+- when one of the standard sorted associative containers do better: `std::map`, `std::set`, `std::multi_map`, `std::multi_set`, or
+- when one of the [100+](https://en.wikipedia.org/wiki/Category:Trees_(data_structures)) other trees do better: binary, ternary, m-ary, k-ary, red-black, k-d, B, B+ trees, or
+- when one of the many algorithms do better: parsers, ...
+
 ## License
 
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">

@@ -16,6 +16,6 @@ jobs:
     - name: install
       run: sudo apt install gcc-10 g++-10 valgrind
     - name: build
-      run: gcc-10 test/*.cpp -Iinclude -g -O0 -std=c++2a -lstdc++
+      run: gcc-10 sample/*.cpp test/*.cpp src/*.cpp -Iinclude -g -O0 -std=c++2a -lstdc++
     - name: test
       run: valgrind --verbose ./a.out
