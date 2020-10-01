@@ -16,6 +16,6 @@ jobs:
     - name: install
       run: sudo apt install gcc-10 g++-10
     - name: build
-      run: gcc-10 test/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2a -lstdc++
+      run: gcc-10 sample/*.cpp test/*.cpp src/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2a -lstdc++
     - name: run
       run: ./a.out
