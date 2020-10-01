@@ -1,13 +1,11 @@
 var searchData=
 [
-  ['security_20policy_122',['Security Policy',['../md__s_e_c_u_r_i_t_y.html',1,'']]],
-  ['security_2emd_123',['SECURITY.md',['../_s_e_c_u_r_i_t_y_8md.html',1,'']]],
-  ['size_124',['size',['../classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79',1,'fcarouge::tree']]],
-  ['size_2ecpp_125',['size.cpp',['../size_8cpp.html',1,'']]],
-  ['size_5ftype_126',['size_type',['../classfcarouge_1_1tree.html#ae6cd0c0c176c23f9843dbf5f4ea5eb30',1,'fcarouge::tree']]],
-  ['so_127',['so',['../_l_i_c_e_n_s_e_8txt.html#a7fdedef0d26c89a079b50872b45e0001',1,'LICENSE.txt']]],
-  ['software_128',['Software',['../_l_i_c_e_n_s_e_8txt.html#af7d8d4389e5d54a8159615bf4e16ccd2',1,'LICENSE.txt']]],
-  ['standard_5flayout_2ecpp_129',['standard_layout.cpp',['../standard__layout_8cpp.html',1,'']]],
-  ['sublicense_130',['sublicense',['../_l_i_c_e_n_s_e_8txt.html#a72ea338dedf863547de26a44e20f4319',1,'LICENSE.txt']]],
-  ['swap_131',['swap',['../classfcarouge_1_1tree.html#aa7a5927fb1823432fe1a2c9105ccfa6f',1,'fcarouge::tree']]]
+  ['rbegin_117',['rbegin',['../classfcarouge_1_1tree.html#af984e86b3ca2ff56652ab9a5d79507e6',1,'fcarouge::tree::rbegin() noexcept'],['../classfcarouge_1_1tree.html#a212b73991ae3eabf7e2b7320ed87bd7e',1,'fcarouge::tree::rbegin() const noexcept']]],
+  ['readme_2emd_118',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['reference_119',['reference',['../classfcarouge_1_1tree.html#a85d21cbaae60bbcaa55f0ea7432ee293',1,'fcarouge::tree::reference()'],['../structfcarouge_1_1tree_1_1internal__iterator__type.html#abad2df5e268b3b9c2d11b61dc4170b7d',1,'fcarouge::tree::internal_iterator_type::reference()'],['../structfcarouge_1_1tree_1_1internal__const__iterator__type.html#ae6a6744e46022ea18a4e05cb8fc3fb94',1,'fcarouge::tree::internal_const_iterator_type::reference()']]],
+  ['rend_120',['rend',['../classfcarouge_1_1tree.html#ac08d8cda94835fa604d0af608b8f6de3',1,'fcarouge::tree::rend() noexcept'],['../classfcarouge_1_1tree.html#afeb85c583fdf17882238f07dc34ded1c',1,'fcarouge::tree::rend() const noexcept']]],
+  ['restriction_121',['restriction',['../_l_i_c_e_n_s_e_8txt.html#a1e66106d70c3729dfe1b0322bf7a826e',1,'LICENSE.txt']]],
+  ['reverse_5fiterator_122',['reverse_iterator',['../classfcarouge_1_1tree.html#a10a9fc455b438aad9ac063dce431be5e',1,'fcarouge::tree']]],
+  ['right_5fsibling_123',['right_sibling',['../structfcarouge_1_1tree_1_1internal__node__type.html#a50654e62b5fb8488e4e13502e64dd428',1,'fcarouge::tree::internal_node_type']]],
+  ['root_124',['root',['../classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c',1,'fcarouge::tree']]]
 ];

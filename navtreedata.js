@@ -27,7 +27,10 @@ var NAVTREE =
   [ "Tree", "index.html", [
     [ "Tree for C++", "index.html", [
       [ "Information Tree", "index.html#autotoc_md7", null ],
-      [ "License", "index.html#autotoc_md8", null ]
+      [ "Hello, World!", "index.html#autotoc_md8", null ],
+      [ "Sometimes all you need is this tree...", "index.html#autotoc_md9", null ],
+      [ "...but often you really don't!", "index.html#autotoc_md10", null ],
+      [ "License", "index.html#autotoc_md11", null ]
     ] ],
     [ "Contributor Covenant Code of Conduct", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html", [
       [ "Our Pledge", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md1", null ],
@@ -38,8 +41,8 @@ var NAVTREE =
       [ "Attribution", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md6", null ]
     ] ],
     [ "Security Policy", "md__s_e_c_u_r_i_t_y.html", [
-      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md10", null ],
-      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md11", null ]
+      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md13", null ],
+      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md14", null ]
     ] ],
     [ "Test List", "test.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -73,7 +76,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"structfcarouge_1_1tree_1_1internal__node__type.html"
+"structfcarouge_1_1tree_1_1internal__const__iterator__type.html#afc47ea5b531fe7d64501835605b7854d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

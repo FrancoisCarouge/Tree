@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['next_5fancestor_5fsibling_92',['next_ancestor_sibling',['../structfcarouge_1_1tree_1_1internal__node__type.html#ad267c5ade8dd24d9baae39cb5eaae27f',1,'fcarouge::tree::internal_node_type']]],
-  ['node_93',['node',['../structfcarouge_1_1tree_1_1internal__iterator__type.html#aa86f7f7792fed00df0220fc18ed1975f',1,'fcarouge::tree::internal_iterator_type::node()'],['../structfcarouge_1_1tree_1_1internal__const__iterator__type.html#afc47ea5b531fe7d64501835605b7854d',1,'fcarouge::tree::internal_const_iterator_type::node()'],['../structfcarouge_1_1tree_1_1insert__return__type.html#a594bf684d6109ce570dbc35933ba0e48',1,'fcarouge::tree::insert_return_type::node()']]],
-  ['node_5fallocator_94',['node_allocator',['../classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3',1,'fcarouge::tree']]],
-  ['node_5fcount_95',['node_count',['../classfcarouge_1_1tree.html#a0ee5302eccd03bb68a5e088c0a8da489',1,'fcarouge::tree']]],
-  ['node_5ftype_96',['node_type',['../classfcarouge_1_1tree_1_1node__type.html',1,'fcarouge::tree&lt; Type, AllocatorType &gt;::node_type'],['../structfcarouge_1_1tree_1_1insert__return__type.html#a77f1d6d50d26ffb370db0c108ec4be83',1,'fcarouge::tree::insert_return_type::node_type()']]]
+  ['main_89',['main',['../main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0',1,'main.cpp']]],
+  ['main_2ecpp_90',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['max_5fsize_91',['max_size',['../classfcarouge_1_1tree.html#abb88c6218835c75ee3640b98dcc4abd0',1,'fcarouge::tree']]],
+  ['merchantability_92',['MERCHANTABILITY',['../_l_i_c_e_n_s_e_8txt.html#aac99f4f4e6989647c96356418c2b821c',1,'LICENSE.txt']]],
+  ['merge_93',['merge',['../_l_i_c_e_n_s_e_8txt.html#a91b1db8636f7960ed1d893dfd81bbb9a',1,'LICENSE.txt']]],
+  ['modify_94',['modify',['../_l_i_c_e_n_s_e_8txt.html#a6ec9e8284a9c0beae47bb71d56c4ae94',1,'LICENSE.txt']]]
 ];

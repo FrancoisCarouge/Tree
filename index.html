@@ -120,6 +120,35 @@ Information Tree</h1>
 <td class="markdownTableBodyNone">Support Open Free Software  </td><td class="markdownTableBodyNone"><a href="http://paypal.me/francoiscarouge"><img src="https://img.shields.io/badge/Sponsor-%EF%BC%84%EF%BC%84%EF%BC%84%20%F0%9F%94%97-brightgreen" alt="Sponsor" class="inline"/></a>   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md8"></a>
+Hello, World!</h1>
+<div class="fragment"><div class="line"><span class="comment">// Declare a &quot;greeting&quot; variable as a tree of strings type.</span></div>
+<div class="line">tree&lt;std::string&gt; greeting;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Push at the front of the tree a root element with string value &quot;Hello&quot;.</span></div>
+<div class="line">greeting.push_front(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Push in an element with value &quot;, &quot; as a child of the beginning, root node.</span></div>
+<div class="line">greeting.push(greeting.begin(), <span class="stringliteral">&quot;, &quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Push in another element with value &quot;!&quot; and keep its iterator &quot;i&quot;.</span></div>
+<div class="line"><span class="keyword">const</span> tree&lt;std::string&gt;::iterator i = greeting.push(greeting.begin(), <span class="stringliteral">&quot;!&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Insert a left sibling of iterator &quot;i&quot;, child of the root.</span></div>
+<div class="line">greeting.emplace(i, <span class="stringliteral">&quot;World&quot;</span>);</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
+Sometimes all you need is this tree...</h1>
+<ul>
+<li>to represent, store, walk, manipulate, and search some hierarchical information with the purpose of deciding, routing, sorting, or composing results.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
+...but often you really don't!</h1>
+<ul>
+<li>when one of the standard associative containers do better: <code>std::unordered_map</code>, <code>std::unordered_set</code>, <code>std::unordered_multimap</code>, <code>std::unordered_multiset</code>, or</li>
+<li>when one of the standard sorted associative containers do better: <code>std::map</code>, <code>std::set</code>, <code>std::multi_map</code>, <code>std::multi_set</code>, or</li>
+<li>when one of the <a href="https://en.wikipedia.org/wiki/Category:Trees_(data_structures)">100+</a> other trees do better: binary, ternary, m-ary, k-ary, red-black, k-d, B, B+ trees, or</li>
+<li>when one of the many algorithms do better: parsers, ...</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md11"></a>
 License</h1>
 <p><img src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png" alt="" align="right" class="inline"/></p>
 <p>Tree for C++ is licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a>:</p>
@@ -133,7 +162,7 @@ License</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 29 2020 05:34:44 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Thu Oct 1 2020 05:00:24 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>
