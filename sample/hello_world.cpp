@@ -48,16 +48,16 @@ auto simple = []() {
   // Declare a "greeting" variable as a tree of strings type.
   tree<std::string> greeting;
 
-  // Push at the front of the tree a root element with value "Hello, ".
+  // Push at the front of the tree a root element with string value "Hello, ".
   greeting.push_front("Hello, ");
 
-  // Push in value "Wo" as a child of the beginning, root node.
+  // Push in an element with value "Wo" as a child of the beginning, root node.
   greeting.push(greeting.begin(), "Wo");
 
-  // Push in another element with value "d!" and note iterator "i".
-  tree<std::string>::iterator i = greeting.push(greeting.begin(), "d!");
+  // Push in another element with value "d!" and keep its iterator "i".
+  const tree<std::string>::iterator i = greeting.push(greeting.begin(), "d!");
 
-  // Insert left sibling element from iterator "i" with value "rl".
+  // Insert a left sibling of iterator "i", child of the root, with value "rl".
   greeting.emplace(i, "rl");
 
   return 0;
