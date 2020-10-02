@@ -39,26 +39,26 @@ namespace fcarouge::sample::hello_world
 //! @details Simplified introduction container example.
 //!
 //! @dot
-//! digraph {
+//! digraph "hello" {
 //!   node [shape=circle fontsize="10"];
-//!   "Hello" -> {", ", "World", "!"}
+//!   "Hello, " -> {"Wo", "rl", "d!"}
 //! }
 //! @enddot
 auto simple = []() {
   // Declare a "greeting" variable as a tree of strings type.
   tree<std::string> greeting;
 
-  // Push at the front of the tree a root element with string value "Hello".
-  greeting.push_front("Hello");
+  // Push at the front of the tree a root element with string value "Hello, ".
+  greeting.push_front("Hello, ");
 
-  // Push in an element with value ", " as a child of the beginning, root node.
-  greeting.push(greeting.begin(), ", ");
+  // Push in an element with value "Wo" as a child of the beginning, root node.
+  greeting.push(greeting.begin(), "Wo");
 
-  // Push in another element with value "!" and keep its iterator "i".
-  const tree<std::string>::iterator i = greeting.push(greeting.begin(), "!");
+  // Push in another element with value "d!" and keep its iterator "i".
+  const tree<std::string>::iterator i = greeting.push(greeting.begin(), "d!");
 
-  // Insert a left sibling of iterator "i", child of the root.
-  greeting.emplace(i, "World");
+  // Insert a left sibling of iterator "i", child of the root, with value "rl".
+  greeting.emplace(i, "rl");
 
   return 0;
 }();

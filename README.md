@@ -18,21 +18,34 @@ Tree data structure for C++: non-linear non-associative unordered recursively re
 
 ## Hello, World!
 
+<img align="right" src="https://francoiscarouge.github.io/Tree/dot_inline_dotgraph_1.png">
+
 ```cpp
+// Support the tree container in this program by including its definition.
+#include "fcarouge/tree.hpp"
+
+// For convenience in this example, consider not using in production.
+using namespace fcarouge;
+
+int main(int, char **)
+{
   // Declare a "greeting" variable as a tree of strings type.
   tree<std::string> greeting;
 
-  // Push at the front of the tree a root element with string value "Hello".
-  greeting.push_front("Hello");
+  // Push at the front of the tree a root element with string value "Hello, ".
+  greeting.push_front("Hello, ");
 
-  // Push in an element with value ", " as a child of the beginning, root node.
-  greeting.push(greeting.begin(), ", ");
+  // Push in an element with value "Wo" as a child of the beginning, root node.
+  greeting.push(greeting.begin(), "Wo");
 
-  // Push in another element with value "!" and keep its iterator "i".
-  const tree<std::string>::iterator i = greeting.push(greeting.begin(), "!");
+  // Push in another element with value "d!" and keep its iterator "i".
+  const tree<std::string>::iterator i = greeting.push(greeting.begin(), "d!");
 
-  // Insert a left sibling of iterator "i", child of the root.
-  greeting.emplace(i, "World");
+  // Insert a left sibling of iterator "i", child of the root, with value "rl".
+  greeting.emplace(i, "rl");
+
+  return 0;
+}
 ```
 
 ## Sometimes all you need is this tree...
