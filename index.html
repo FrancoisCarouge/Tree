@@ -133,16 +133,16 @@ Hello, World!</h1>
 <div class="line">  <span class="comment">// Declare a &quot;greeting&quot; variable as a tree of strings type.</span></div>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">tree&lt;std::string&gt;</a> greeting;</div>
 <div class="line"> </div>
-<div class="line">  <span class="comment">// Push at the front of the tree a root element with string value &quot;Hello, &quot;.</span></div>
+<div class="line">  <span class="comment">// Push at the front of the tree a root element with value &quot;Hello, &quot;.</span></div>
 <div class="line">  greeting.<a class="code" href="classfcarouge_1_1tree.html#a7182fde5a67b4db4c3560cc59249b358">push_front</a>(<span class="stringliteral">&quot;Hello, &quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">  <span class="comment">// Push in an element with value &quot;Wo&quot; as a child of the beginning, root node.</span></div>
+<div class="line">  <span class="comment">// Push in value &quot;Wo&quot; as a child of the beginning, root node.</span></div>
 <div class="line">  greeting.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(greeting.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), <span class="stringliteral">&quot;Wo&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">  <span class="comment">// Push in another element with value &quot;d!&quot; and keep its iterator &quot;i&quot;.</span></div>
-<div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1internal__iterator__type.html">tree&lt;std::string&gt;::iterator</a> i = greeting.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(greeting.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), <span class="stringliteral">&quot;d!&quot;</span>);</div>
+<div class="line">  <span class="comment">// Push in another element with value &quot;d!&quot; and note iterator &quot;i&quot;.</span></div>
+<div class="line">  <a class="code" href="structfcarouge_1_1tree_1_1internal__iterator__type.html">tree&lt;std::string&gt;::iterator</a> i = greeting.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(greeting.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), <span class="stringliteral">&quot;d!&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">  <span class="comment">// Insert a left sibling of iterator &quot;i&quot;, child of the root, with value &quot;rl&quot;.</span></div>
+<div class="line">  <span class="comment">// Insert left sibling element from iterator &quot;i&quot; with value &quot;rl&quot;.</span></div>
 <div class="line">  greeting.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(i, <span class="stringliteral">&quot;rl&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
@@ -183,7 +183,7 @@ License</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 2 2020 01:29:42 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Fri Oct 2 2020 01:47:42 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>
