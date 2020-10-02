@@ -285,18 +285,30 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @{
 
   //! @brief Type to identify and traverse the elements of the container.
+  //!
+  //! @details The iteration order of the standard iterator is unspecified,
+  //! except that each element is visited only once.
   using iterator = internal_iterator_type;
 
   //! @brief Constant type to identify and traverse the elements of the
   //! container.
+  //!
+  //! @details The iteration order of the standard constant iterator is
+  //! unspecified, except that each element is visited only once.
   using const_iterator = internal_const_iterator_type;
 
   //! @brief Type to identify and reverse traverse the elements of the
   //! container.
+  //!
+  //! @details The iteration order of the standard reverse iterator is
+  //! unspecified, except that each element is visited only once.
   using reverse_iterator = std::reverse_iterator<iterator>;
 
   //! @brief Constant type to identify and reverse traverse the elements of
   //! the container.
+  //!
+  //! @details The iteration order of the standard constant reverse iterator is
+  //! unspecified, except that each element is visited only once.
   using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
   //! @brief The node handle type of the container.
@@ -1029,6 +1041,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @exceptions This method has strong exception guarantees: no effect on
   //! exception. The `Allocator::allocate()` allocation or the element copy/move
   //! constructor/assignment may throw.
+  //!
   //! If `Type`'s move constructor is not `noexcept` and `Type` is not
   //! CopyInsertable into `*this`, the container will use the throwing move
   //! constructor. If it throws, the guarantee is waived and the effects are
