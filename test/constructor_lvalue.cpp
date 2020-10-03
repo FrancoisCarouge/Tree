@@ -65,9 +65,15 @@ auto test_post_conditions = []() {
   assert(gouy_yew.cbegin() != gouy_yew.cend() &&
          "The container's beginning and ending constant iterators must "
          "not be equal on construction by value.");
+  assert(gouy_yew.rbegin() != gouy_yew.rend() &&
+         "The container's beginning and ending reverse iterators must not"
+         "be equal on construction by value.");
+  assert(gouy_yew.crbegin() != gouy_yew.crend() &&
+         "The container's beginning and ending constant reverse "
+         "iterators must not be equal on construction by value.");
   assert('v' == gouy_yew.front() &&
          "The container's front value and value used for construction "
-         "must be equal.");
+         "must be equal on construction by value.");
   assert(gouy_yew.back() == gouy_yew.front() &&
          "The container's front and back values must be equal on "
          "construction by value.");
