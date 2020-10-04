@@ -407,9 +407,10 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @brief Move constructor.
   //!
-  //! @details Constructs the container with the contents of the other using
-  //! move semantics. Allocator is obtained by move-construction from the
-  //! allocator belonging to other.
+  //! @details Constructs the container with the contents of the `other`
+  //! container using move semantics (i.e. the data in `other` container is
+  //! moved from the other into this container). The allocator is obtained by
+  //! move-construction from the allocator belonging to other.
   //!
   //! @param other Another container to be used as source to initialize the
   //! elements of the container with.
@@ -530,10 +531,11 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @brief Move assignment operator.
   //!
-  //! @details Replaces the contents with those of the other container using
-  //! move semantics (i.e. the data in other container is moved from the other
+  //! @details Replaces the contents with those of the `other` container using
+  //! move semantics (i.e. the data in `other` container is moved from the other
   //! into this container). The other container is in a valid but unspecified
-  //! state afterwards.
+  //! state afterwards. The allocator is obtained by move-construction from the
+  //! allocator belonging to other.
   //!
   //! @param other Another container to be used as source to initialize the
   //! elements of the container with.
@@ -542,7 +544,17 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! i.e. `*this`.
   //!
   //! @complexity Constant.
-  constexpr tree &operator=(tree &&other) noexcept;
+  constexpr tree &operator=(tree &&other) noexcept
+  {
+    node_allocator = std::move(other.node_allocator);
+    root = other.root;
+    last = other.last;
+    node_count = other.node_count;
+
+    other.root = nullptr;
+
+    return *this;
+  }
 
   //! @brief Value copy assignment operator.
   //!
