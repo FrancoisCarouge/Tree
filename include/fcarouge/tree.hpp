@@ -415,7 +415,14 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! elements of the container with.
   //!
   //! @complexity Constant.
-  constexpr tree(tree &&other) noexcept;
+  constexpr tree(tree &&other) noexcept
+          : node_allocator{ std::move(other.node_allocator) },
+            root{ other.root }, last{ other.last }, node_count{
+              other.node_count
+            }
+  {
+    other.root = nullptr;
+  }
 
   //! @brief Allocator-extended move constructor.
   //!
