@@ -8,6 +8,7 @@ var namespacefcarouge_1_1test =
     [ "constructor_lvalue", "namespacefcarouge_1_1test_1_1constructor__lvalue.html", null ],
     [ "constructor_move", "namespacefcarouge_1_1test_1_1constructor__move.html", null ],
     [ "constructor_rvalue", "namespacefcarouge_1_1test_1_1constructor__rvalue.html", null ],
+    [ "constructor_rvalue_allocator", "namespacefcarouge_1_1test_1_1constructor__rvalue__allocator.html", null ],
     [ "emplace", "namespacefcarouge_1_1test_1_1emplace.html", null ],
     [ "erase", "namespacefcarouge_1_1test_1_1erase.html", null ],
     [ "for_range", "namespacefcarouge_1_1test_1_1for__range.html", null ],
