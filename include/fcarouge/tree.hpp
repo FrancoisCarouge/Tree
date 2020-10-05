@@ -428,9 +428,10 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @brief Allocator-extended move constructor.
   //!
   //! @details Constructs the container with the contents of the other using
-  //! move semantics. Using the allocator for the new container, moving the
-  //! contents from other; if `alloc != other.get_allocator()`, this results
-  //! in an element-wise move.
+  //! move semantics (i.e. the data in `other` container is moved from the other
+  //! into this container). Using the provided allocator for the new container,
+  //! moving the contents from other; if `alloc != other.get_allocator()`, this
+  //! results in an element-wise move.
   //!
   //! @param other Another container to be used as source to initialize the
   //! elements of the container with.
@@ -499,7 +500,12 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! container.
   //!
   //! @complexity Constant.
-  constexpr tree(value_type &&value, const AllocatorType &allocator);
+  constexpr tree(value_type &&value, const AllocatorType &allocator)
+          : node_allocator{ allocator }, root{ node_allocator.allocate(1) },
+            last{ root }, node_count{ 1 }
+  {
+    std::construct_at(root, std::move(value));
+  }
 
   //! @brief Destructs the container.
   //!
