@@ -56,8 +56,8 @@ int main(int, char **)
 
 - when one of the standard associative containers do better: `std::unordered_map`, `std::unordered_set`, `std::unordered_multimap`, `std::unordered_multiset`, or
 - when one of the standard sorted associative containers do better: `std::map`, `std::set`, `std::multi_map`, `std::multi_set`, or
-- when one of the [100+](https://en.wikipedia.org/wiki/Category:Trees_(data_structures)) other trees do better: binary, ternary, m-ary, k-ary, red-black, k-d, B, B+ trees, or
-- when one of the many algorithms do better: parsers, ...
+- when one of the many algorithms, parsers do better, or
+- when one of the [100+](https://en.wikipedia.org/wiki/Category:Trees_(data_structures)) other trees do better: binary, ternary, m-ary, k-ary, red-black, k-d, B, B+ trees!
 
 ## License
 
