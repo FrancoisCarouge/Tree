@@ -39,8 +39,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 // std::input_iterator_tag std::reverse_iterator
 
 #include <memory>
-// std::allocator std::allocator_traits std::construct_at
-// std::destroy_at
+// std::addressof std::allocator std::allocator_traits
+// std::construct_at std::destroy_at
 
 #include <utility>
 // std::forward std::move
@@ -334,8 +334,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @complexity Constant.
   //!
-  //! @exceptions Same exception(s) and throwing specification as the allocator
-  //! `AllocatorType` default constructor, if any.
+  //! @exceptions Strong exception guarantees: no effect on exception. Same
+  //! exceptions specification as the allocator `AllocatorType` default
+  //! constructor, if any.
   constexpr tree() noexcept(noexcept(AllocatorType{})) = default;
 
   //! @brief Constructs an empty container with the given allocator.
@@ -430,8 +431,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @details Constructs the container with the contents of the other using
   //! move semantics (i.e. the data in `other` container is moved from the other
   //! into this container). Using the provided allocator for the new container,
-  //! moving the contents from other; if `alloc != other.get_allocator()`, this
-  //! results in an element-wise move.
+  //! moving the contents from other; if `allocator != other.get_allocator()`,
+  //! this results in an element-wise move.
   //!
   //! @param other Another container to be used as source to initialize the
   //! elements of the container with.
@@ -482,7 +483,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   constexpr tree(const_reference value, const AllocatorType &allocator);
 
-  //! @brief Constructs the container with by moving the value for its root.
+  //! @brief Constructs the container by moving the value for its root.
   //!
   //! @param value The value to initialize elements of the container with.
   //!
@@ -493,7 +494,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     std::construct_at(root, std::move(value));
   }
 
-  //! @brief Constructs the container with by moving the value for its root.
+  //! @brief Constructs the container by moving the value for its root.
   //!
   //! @param value The value to initialize elements of the container with.
   //! @param allocator Allocator to use for all memory allocations of this
@@ -541,7 +542,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! move semantics (i.e. the data in `other` container is moved from the other
   //! into this container). The other container is in a valid but unspecified
   //! state afterwards. The allocator is obtained by move-construction from the
-  //! allocator belonging to other.
+  //! allocator belonging to other. Self move assignement is valid, safe, and
+  //! meet specifications.
   //!
   //! @param other Another container to be used as source to initialize the
   //! elements of the container with.
@@ -550,15 +552,19 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! i.e. `*this`.
   //!
   //! @complexity Constant.
-  constexpr tree &operator=(tree &&other) noexcept
+  //!
+  //! @exceptions Same exceptions specification as the allocator `AllocatorType`
+  //! move assignment operator, if any.
+  constexpr tree &operator=(tree &&other) noexcept(
+      noexcept(this->node_allocator = std::move(other.node_allocator)))
   {
-    node_allocator = std::move(other.node_allocator);
-    root = other.root;
-    last = other.last;
-    node_count = other.node_count;
-
-    other.root = nullptr;
-
+    if (this != std::addressof(other)) {
+      node_allocator = std::move(other.node_allocator);
+      root = other.root;
+      last = other.last;
+      node_count = other.node_count;
+      other.root = nullptr;
+    }
     return *this;
   }
 
@@ -1063,7 +1069,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @return The iterator pointing to the inserted element.
   //!
-  //! @exceptions This method has strong exception guarantees: no effect on
+  //! @exceptions Strong exception guarantees: no effect on
   //! exception. The `Allocator::allocate()` allocation or the element copy/move
   //! constructor/assignment may throw.
   //!
@@ -1146,7 +1152,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @return The iterator pointing to the inserted element.
   //!
-  //! @exceptions This method has strong exception guarantees: no effect on
+  //! @exceptions Strong exception guarantees: no effect on
   //! exception. The `Allocator::allocate()` allocation or the element copy/move
   //! constructor/assignment may throw.
   //!
@@ -1229,7 +1235,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @complexity Constant.
   //!
-  //! @exceptions This method has strong exception guarantees: no effect on
+  //! @exceptions Strong exception guarantees: no effect on
   //! exception. The `Allocator::allocate()` allocation or the element copy/move
   //! constructor/assignment may throw.
   //!
@@ -1271,7 +1277,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @complexity Constant.
   //!
-  //! @exceptions This method has strong exception guarantees: no effect on
+  //! @exceptions Strong exception guarantees: no effect on
   //! exception. The `Allocator::allocate()` allocation or the element copy/move
   //! constructor/assignment may throw.
   constexpr void push_front(value_type &&value)

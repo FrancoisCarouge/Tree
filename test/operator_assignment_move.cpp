@@ -108,4 +108,60 @@ auto test_multiple = []() {
   return 0;
 }();
 
+//! @test Verify the post conditions on a self moved assigned non-trivial tree.
+//!
+//! @dot
+//! digraph {
+//!   node [shape=circle fontsize="10"];
+//!   999 -> {1, 2, 3}
+//!   1 -> {11, 12, 13}
+//!   2 -> {21, 22, 23}
+//!   3 -> {31, 32, 33}
+//! }
+//! @enddot
+auto test_self = []() {
+  tree<int> auffay_linden;
+  const tree<int>::iterator node0 =
+      auffay_linden.push(auffay_linden.begin(), 999);
+  const tree<int>::iterator node1 = auffay_linden.push(node0, 1);
+  auffay_linden.push(node1, 11);
+  auffay_linden.push(node1, 12);
+  auffay_linden.push(node1, 13);
+  const tree<int>::iterator node2 = auffay_linden.push(node0, 2);
+  auffay_linden.push(node2, 21);
+  auffay_linden.push(node2, 22);
+  auffay_linden.push(node2, 23);
+  const tree<int>::iterator node3 = auffay_linden.push(node0, 3);
+  auffay_linden.push(node3, 31);
+  auffay_linden.push(node3, 32);
+  auffay_linden.push(node3, 33);
+  auffay_linden = std::move(auffay_linden);
+
+  assert(13 == auffay_linden.size() &&
+         "The container must have thirteen nodes upon move-constructing a "
+         "13-element tree.");
+  assert(!auffay_linden.empty() &&
+         "The container must not be empty on move-constructing a tree.");
+  assert(999 == auffay_linden.front() &&
+         "The container's front value must be equal to the expected root value "
+         "on move-constructing a tree.");
+  assert(999 == *auffay_linden.begin() &&
+         "The container's beginning iterator value must be equal to the "
+         "expected root value on move-constructing a tree.");
+  assert(auffay_linden.begin() != auffay_linden.end() &&
+         "The container's beginning and ending iterators must not be equal on "
+         "move-constructing a tree.");
+  assert(auffay_linden.cbegin() != auffay_linden.cend() &&
+         "The container's beginning and ending constant iterators must not be "
+         "equal on move-constructing a tree.");
+  assert(auffay_linden.rbegin() != auffay_linden.rend() &&
+         "The container's beginning and ending reverse iterators must notbe "
+         "equal on move-constructing a tree.");
+  assert(auffay_linden.crbegin() != auffay_linden.crend() &&
+         "The container's beginning and ending constant reverse iterators must "
+         "not be equal on move-constructing a tree.");
+
+  return 0;
+}();
+
 } // namespace fcarouge::test::operator_assignment_move
