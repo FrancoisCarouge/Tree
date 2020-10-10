@@ -51,9 +51,6 @@ auto test_one = []() {
   assert(42 == auffay_linden.front() &&
          "The solely pushed element iterator value must be equal to the "
          "container's front value.");
-  assert(42 == auffay_linden.back() &&
-         "The solely pushed element iterator value must be equal to the "
-         "container's back value.");
   assert(auffay_linden.begin() != auffay_linden.end() &&
          "The container's beginning and ending iterators must not be "
          "equal upon pushing in an element.");

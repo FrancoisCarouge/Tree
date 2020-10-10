@@ -32,9 +32,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cstddef>
 // std::ptrdiff_t std::size_t
 
-#include <initializer_list>
-// std::initializer_list
-
 #include <iterator>
 // std::input_iterator_tag
 
@@ -47,7 +44,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
 //! @namespace fcarouge Francois Carouge's projects namespace. Lowers the name
 //! conflict probability in large projects. Use using-declarations or
-//! namespace-alias-definition per your project preferences.
+//! namespace-alias-definition per your project guidelines.
 namespace fcarouge
 {
 //! @brief A tree data structure for C++.
@@ -106,7 +103,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @}
 
-  protected:
+  private:
   //! @brief Branch node data structure type.
   //!
   //! @details Internal implementation details of the node data structure type
@@ -335,29 +332,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   {
   }
 
-  //! @brief Constructs the container with the contents of the range [first,
-  //! last).
-  //!
-  //! @param first The first element of the range to copy the elements from.
-  //! @param last The last element of the range to copy the elements from.
-  //!
-  //! @complexity Linear in distance between the first and last iterators.
-  template <class InputIterator>
-  constexpr tree(InputIterator first, InputIterator last);
-
-  //! @brief Constructs the container with the contents of the range [first,
-  //! last).
-  //!
-  //! @param first The first element of the range to copy the elements from.
-  //! @param last The last element of the range to copy the elements from.
-  //! @param allocator Allocator to use for all memory allocations of this
-  //! container.
-  //!
-  //! @complexity Linear in distance between the first and last iterators.
-  template <class InputIterator>
-  constexpr tree(InputIterator first, InputIterator last,
-                 const AllocatorType &allocator);
-
   //! @brief Copy constructor.
   //!
   //! @details Constructs the container with the copy of the contents of the
@@ -426,27 +400,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @complexity Constant.
   constexpr tree(tree &&other, const AllocatorType &allocator) noexcept;
-
-  //! @brief Constructs the container with the contents of the initializer
-  //! list.
-  //!
-  //! @param initializer_list Initializer list to initialize the elements of
-  //! the container with.
-  //!
-  //! @complexity Linear in the size of the initializer list.
-  constexpr tree(std::initializer_list<value_type> initializer_list);
-
-  //! @brief Constructs the container with the contents of the initializer
-  //! list.
-  //!
-  //! @param initializer_list Initializer list to initialize the elements of
-  //! the container with.
-  //! @param allocator Allocator to use for all memory allocations of this
-  //! container.
-  //!
-  //! @complexity Linear in the size of the initializer list.
-  constexpr tree(std::initializer_list<value_type> initializer_list,
-                 const AllocatorType &allocator);
 
   //! @brief Constructs the container with by copying the value for its root.
   //!
@@ -582,20 +535,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   constexpr tree &operator=(value_type &&value) noexcept;
 
-  //! @brief Replaces the contents with those identified by the initializer
-  //! list.
-  //!
-  //! @param initializer_list Initializer list to initialize the elements of
-  //! the container with.
-  //!
-  //! @return The reference value of this implicit object container parameter,
-  //! i.e. `*this`.
-  //!
-  //! @complexity Linear in the size of this and the initializer list.
-  constexpr tree &operator=(std::initializer_list<value_type> initializer_list);
-
-  // constexpr void assign(size_type count, const_reference value);
-
   constexpr tree &assign(const tree &other) noexcept;
 
   constexpr tree &assign(tree &&other) noexcept;
@@ -603,11 +542,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   constexpr tree &assign(const_reference value) noexcept;
 
   constexpr tree &assign(value_type &&value) noexcept;
-
-  constexpr tree &assign(std::initializer_list<value_type> initializer_list);
-
-  template <class InputIterator>
-  constexpr tree &assign(InputIterator first, InputIterator last);
 
   //! @brief Returns the allocator associated with the container.
   //!
@@ -651,37 +585,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   [[nodiscard]] constexpr const_reference front() const
   {
     return root->data;
-  }
-
-  //! @brief Returns a reference to the last element in the container.
-  //!
-  //! @details Calling back on an empty container causes undefined behavior.
-  //!
-  //! @return Reference to the last element.
-  //!
-  //! @complexity Constant.
-  //!
-  //! @note For a non-empty container `c`, the expression `c.back()` is
-  //! equivalent to `*std:: prev(c.end())`.
-  [[nodiscard]] constexpr reference back()
-  {
-    return last->data;
-  }
-
-  //! @brief Returns a constant reference to the last element in the
-  //! container.
-  //!
-  //! @details Calling back on an empty container causes undefined behavior.
-  //!
-  //! @return Constant reference to the last element.
-  //!
-  //! @complexity Constant.
-  //!
-  //! @note For a non-empty container `c`, the expression `c.back()` is
-  //! equivalent to `*std:: prev(c.end())`.
-  [[nodiscard]] constexpr const_reference back() const
-  {
-    return last->data;
   }
 
   //! @}
@@ -841,16 +744,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   constexpr iterator insert(const_iterator position, value_type &&value);
 
-  constexpr iterator insert(const_iterator position,
-                            std::initializer_list<value_type> initializer_list);
-
-  template <class InputIterator>
-  constexpr iterator insert(const_iterator position, InputIterator first,
-                            InputIterator last);
-
-  template <class... ArgumentsType>
-  constexpr reference emplace_back(ArgumentsType &&... arguments);
-
   template <class... ArgumentsType>
   constexpr reference emplace_front(ArgumentsType &&... arguments);
 
@@ -944,7 +837,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! `position`. The same is applicable for the `begin()` iterator on an empty
   //! container.
   //!
-  //! @param position Iterator to the element to remove.
+  //! @param position Iterator to the element to remove with its subtree.
   //!
   //! @return Iterator following the last removed element. If `position` refers
   //! to the last element, then the `end()` iterator is returned.
@@ -987,10 +880,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   }
 
   constexpr iterator erase(const_iterator position);
-
-  constexpr iterator erase(const_iterator first, const_iterator last);
-
-  constexpr size_type erase(const_reference data);
 
   private:
   constexpr void erase(internal_node_type *&node)
@@ -1167,17 +1056,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     return iterator{ node };
   }
-
-  constexpr iterator push(const_iterator position,
-                          std::initializer_list<value_type> initializer_list);
-
-  template <class InputIterator>
-  constexpr iterator push(const_iterator position, InputIterator first,
-                          InputIterator last);
-
-  constexpr void push_back(const_reference value);
-
-  constexpr void push_back(value_type &&value);
 
   //! @brief Prepends the given element to the beginning of the container.
   //!

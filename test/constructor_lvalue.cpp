@@ -70,9 +70,6 @@ auto test_post_conditions = []() {
   assert('v' == gouy_yew.front() &&
          "The container's front value and value used for construction "
          "must be equal on construction by value.");
-  assert(gouy_yew.back() == gouy_yew.front() &&
-         "The container's front and back values must be equal on "
-         "construction by value.");
   assert(*gouy_yew.begin() == gouy_yew.front() &&
          "The container's beginning iterator and front values must be "
          "equal on construction by value.");

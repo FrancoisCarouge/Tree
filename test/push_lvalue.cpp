@@ -55,9 +55,6 @@ auto test_one_beginning = []() {
   assert(*element == auffay_linden.front() &&
          "The solely pushed element iterator value must be equal to the "
          "container's front value.");
-  assert(*element == auffay_linden.back() &&
-         "The solely pushed element iterator value must be equal to the "
-         "container's back value.");
 
   return 0;
 }();
@@ -83,9 +80,6 @@ auto test_one_ending = []() {
   assert(*element == auffay_linden.front() &&
          "The solely pushed element iterator value must be equal to the "
          "container's front value.");
-  assert(*element == auffay_linden.back() &&
-         "The solely pushed element iterator value must be equal to the "
-         "container's back value.");
 
   return 0;
 }();
@@ -104,10 +98,6 @@ auto test_two_beginning = []() {
          "The container must have two nodes upon pushing a second value.");
   assert(*element == 42 && "The pushed element iterator value must be "
                            "equal to pushed value.");
-  assert(
-      *element == auffay_linden.back() &&
-      "The second and last pushed element iterator value must be equal to the "
-      "container's back value.");
 
   return 0;
 }();
@@ -126,10 +116,6 @@ auto test_two_ending = []() {
          "The container must have two nodes upon pushing a second value.");
   assert(*element == 42 && "The pushed element iterator value must be "
                            "equal to pushed value.");
-  assert(
-      *element == auffay_linden.back() &&
-      "The second and last pushed element iterator value must be equal to the "
-      "container's back value.");
 
   return 0;
 }();
