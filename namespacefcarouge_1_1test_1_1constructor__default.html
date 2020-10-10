@@ -134,18 +134,12 @@ Variables</h2></td></tr>
 <div class="line">      allouville_oak.cbegin() == allouville_oak.cend(),</div>
 <div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning and ending constant iterators must be &quot;</span></div>
 <div class="line">      <span class="stringliteral">&quot;equal on default construction.&quot;</span>);</div>
-<div class="line">  assert(allouville_oak.rbegin() == allouville_oak.rend() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending reverse iterators must &quot;</span></div>
-<div class="line">         <span class="stringliteral">&quot;be equal on default construction.&quot;</span>);</div>
-<div class="line">  assert(allouville_oak.crbegin() == allouville_oak.crend() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending constant reverse &quot;</span></div>
-<div class="line">         <span class="stringliteral">&quot;iterators must be equal on default construction.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
 </div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000009">Test:</a></b></dt><dd>Verify the default construction post-conditions in constexpr context. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="constructor__default_8cpp_source.html#l00058">58</a> of file <a class="el" href="constructor__default_8cpp_source.html">constructor_default.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="constructor__default_8cpp_source.html#l00060">60</a> of file <a class="el" href="constructor__default_8cpp_source.html">constructor_default.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,11 +163,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  </div>
+<div class="line">  </div>
+<div class="line">  </div>
+<div class="line">  </div>
 <div class="line">  static_assert(</div>
 <div class="line">      std::is_default_constructible_v&lt;tree&lt;char&gt;&gt;,</div>
 <div class="line">      <span class="stringliteral">&quot;The container must satisfy the DefaultConstructible requirement.&quot;</span>);</div>
-<div class="line">  </div>
-<div class="line">  </div>
 <div class="line">  static_assert(</div>
 <div class="line">      std::is_nothrow_default_constructible_v&lt;tree&lt;char&gt;&gt;,</div>
 <div class="line">      <span class="stringliteral">&quot;The container must satisfy the non-throwing &quot;</span></div>
@@ -211,18 +207,12 @@ Variables</h2></td></tr>
 <div class="line">  assert(allouville_oak.cbegin() == allouville_oak.cend() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending constant iterators must be &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;equal on default construction.&quot;</span>);</div>
-<div class="line">  assert(allouville_oak.rbegin() == allouville_oak.rend() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending reverse iterators must &quot;</span></div>
-<div class="line">         <span class="stringliteral">&quot;be equal on default construction.&quot;</span>);</div>
-<div class="line">  assert(allouville_oak.crbegin() == allouville_oak.crend() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending constant reverse &quot;</span></div>
-<div class="line">         <span class="stringliteral">&quot;iterators must be equal on default construction.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
 </div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000010">Test:</a></b></dt><dd>Verify the default construction post-conditions in runtime context. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="constructor__default_8cpp_source.html#l00084">84</a> of file <a class="el" href="constructor__default_8cpp_source.html">constructor_default.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="constructor__default_8cpp_source.html#l00080">80</a> of file <a class="el" href="constructor__default_8cpp_source.html">constructor_default.cpp</a>.</p>
 
 </div>
 </div>
@@ -232,7 +222,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test.html">test</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test_1_1constructor__default.html">constructor_default</a></li>
-    <li class="footer">Generated on Thu Oct 8 2020 05:54:37 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Sat Oct 10 2020 06:28:22 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>

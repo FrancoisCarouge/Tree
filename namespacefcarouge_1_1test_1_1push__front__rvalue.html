@@ -109,9 +109,34 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000034">Test:</a></b></dt><dd>Verify the post conditions on pushing front two moved elements in a non-empty container. </dd></dl>
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  tree&lt;int&gt; auffay_linden(1111);</div>
+<div class="line">  auffay_linden.push_front(111);</div>
+<div class="line">  auffay_linden.push_front(11);</div>
+<div class="line">  auffay_linden.push_front(1);</div>
+<div class="line"> </div>
+<div class="line">  assert(!auffay_linden.empty() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must not be empty upon pushing in four elements.&quot;</span>);</div>
+<div class="line">  assert(4 == auffay_linden.size() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must have four nodes upon pushing four values.&quot;</span>);</div>
+<div class="line">  assert(1 == *auffay_linden.begin() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The last pushed front element value must be equal to the container&#39;s &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;beginning iterator value.&quot;</span>);</div>
+<div class="line">  assert(1 == auffay_linden.front() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The last pushed front element value must be equal to the &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;container&#39;s front value.&quot;</span>);</div>
+<div class="line">  assert(auffay_linden.begin() != auffay_linden.end() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must not be &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;equal upon pushing in four elements.&quot;</span>);</div>
+<div class="line">  assert(auffay_linden.cbegin() != auffay_linden.cend() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending constant iterators must &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;not be equal upon pushing in four elements.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000034">Test:</a></b></dt><dd>Verify the post conditions on pushing front two moved elements in a non-empty container. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="push__front__rvalue_8cpp_source.html#l00074">74</a> of file <a class="el" href="push__front__rvalue_8cpp_source.html">push_front_rvalue.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="push__front__rvalue_8cpp_source.html#l00068">68</a> of file <a class="el" href="push__front__rvalue_8cpp_source.html">push_front_rvalue.cpp</a>.</p>
 
 </div>
 </div>
@@ -126,7 +151,33 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000033">Test:</a></b></dt><dd>Verify the post conditions on pushing front a moved element in an empty container. </dd></dl>
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  tree&lt;int&gt; auffay_linden;</div>
+<div class="line">  auffay_linden.push_front(42);</div>
+<div class="line"> </div>
+<div class="line">  assert(!auffay_linden.empty() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must not be empty upon pushing in an element.&quot;</span>);</div>
+<div class="line">  assert(1 == auffay_linden.size() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must have one node upon pushing one value.&quot;</span>);</div>
+<div class="line">  assert(42 == *auffay_linden.begin() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The solely pushed element iterator value must be equal to the &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;container&#39;s beginning iterator value.&quot;</span>);</div>
+<div class="line">  assert(42 == auffay_linden.front() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The solely pushed element iterator value must be equal to the &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;container&#39;s front value.&quot;</span>);</div>
+<div class="line">  assert(42 == auffay_linden.back() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The solely pushed element iterator value must be equal to the &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;container&#39;s back value.&quot;</span>);</div>
+<div class="line">  assert(auffay_linden.begin() != auffay_linden.end() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must not be &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;equal upon pushing in an element.&quot;</span>);</div>
+<div class="line">  assert(auffay_linden.cbegin() != auffay_linden.cend() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending constant iterators must &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;not be equal upon pushing in an element.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000033">Test:</a></b></dt><dd>Verify the post conditions on pushing front a moved element in an empty container. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="push__front__rvalue_8cpp_source.html#l00039">39</a> of file <a class="el" href="push__front__rvalue_8cpp_source.html">push_front_rvalue.cpp</a>.</p>
 
@@ -138,7 +189,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test.html">test</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test_1_1push__front__rvalue.html">push_front_rvalue</a></li>
-    <li class="footer">Generated on Thu Oct 8 2020 05:54:38 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Sat Oct 10 2020 06:28:22 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>
