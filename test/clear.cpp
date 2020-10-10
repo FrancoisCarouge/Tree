@@ -50,12 +50,6 @@ auto test_default = []() {
       maucomble_boxwood.cbegin() == maucomble_boxwood.cend() &&
       "The cleared container's beginning and ending constant iterators must be "
       "equal.");
-  assert(maucomble_boxwood.rbegin() == maucomble_boxwood.rend() &&
-         "The cleared container's beginning and ending reverse iterators must "
-         "be equal.");
-  assert(maucomble_boxwood.crbegin() == maucomble_boxwood.crend() &&
-         "The cleared container's beginning and ending constant reverse "
-         "iterators must be equal.");
 
   return 0;
 }();
@@ -77,12 +71,6 @@ auto test_lvalue = []() {
       maucomble_boxwood.cbegin() == maucomble_boxwood.cend() &&
       "The cleared container's beginning and ending constant iterators must be "
       "equal.");
-  assert(maucomble_boxwood.rbegin() == maucomble_boxwood.rend() &&
-         "The cleared container's beginning and ending reverse iterators must "
-         "be equal.");
-  assert(maucomble_boxwood.crbegin() == maucomble_boxwood.crend() &&
-         "The cleared container's beginning and ending constant reverse "
-         "iterators must be equal.");
 
   return 0;
 }();
@@ -127,12 +115,6 @@ auto test_multiple = []() {
       maucomble_boxwood.cbegin() == maucomble_boxwood.cend() &&
       "The cleared container's beginning and ending constant iterators must be "
       "equal.");
-  assert(maucomble_boxwood.rbegin() == maucomble_boxwood.rend() &&
-         "The cleared container's beginning and ending reverse iterators must "
-         "be equal.");
-  assert(maucomble_boxwood.crbegin() == maucomble_boxwood.crend() &&
-         "The cleared container's beginning and ending constant reverse "
-         "iterators must be equal.");
 
   return 0;
 }();

@@ -51,12 +51,6 @@ auto test_sole = []() {
   assert(allouville_oak.cbegin() == allouville_oak.cend() &&
          "The container's beginning and ending constant iterators must be "
          "equal on erasing the sole element of a container.");
-  assert(allouville_oak.rbegin() == allouville_oak.rend() &&
-         "The container's beginning and ending reverse iterators must "
-         "be equal on erasing the sole element of a container.");
-  assert(allouville_oak.crbegin() == allouville_oak.crend() &&
-         "The container's beginning and ending constant reverse "
-         "iterators must be equal on erasing the sole element of a container.");
   assert(iterator == allouville_oak.cend() &&
          "The iterator following the erased element must be the constant "
          "ending iterator.");
@@ -108,12 +102,6 @@ auto test_root = []() {
   assert(allouville_oak.cbegin() == allouville_oak.cend() &&
          "The container's beginning and ending constant iterators must be "
          "equal on erasing its root.");
-  assert(allouville_oak.rbegin() == allouville_oak.rend() &&
-         "The container's beginning and ending reverse iterators must "
-         "be equal on erasing its root.");
-  assert(allouville_oak.crbegin() == allouville_oak.crend() &&
-         "The container's beginning and ending constant reverse "
-         "iterators must be equal on erasing its root.");
   assert(iterator == allouville_oak.cend() &&
          "The iterator following the erased last element must be the constant "
          "ending iterator.");

@@ -40,10 +40,12 @@ namespace fcarouge::test::constructor_lvalue
 //! @test Verify the construction by value exists and its exception
 //! specification.
 constexpr auto ctest_traits = []() {
+  // The container cannot satisty trivial construction because it is not a
+  // scalar type, trivially copyable class, or array of such type/class. It has
+  // non-static members with default initializers. The destructor is user
+  // provided.
   static_assert(std::is_constructible_v<tree<char>, char &>,
                 "The container must be constructible from a single value.");
-  // The container cannot satisty trivial construction because it has non-static
-  // members with default initializers.
   // The container exception specification for construction by value with the
   // default standard allocator is to be confirmed.
 
@@ -65,12 +67,6 @@ auto test_post_conditions = []() {
   assert(gouy_yew.cbegin() != gouy_yew.cend() &&
          "The container's beginning and ending constant iterators must "
          "not be equal on construction by value.");
-  assert(gouy_yew.rbegin() != gouy_yew.rend() &&
-         "The container's beginning and ending reverse iterators must not"
-         "be equal on construction by value.");
-  assert(gouy_yew.crbegin() != gouy_yew.crend() &&
-         "The container's beginning and ending constant reverse "
-         "iterators must not be equal on construction by value.");
   assert('v' == gouy_yew.front() &&
          "The container's front value and value used for construction "
          "must be equal on construction by value.");

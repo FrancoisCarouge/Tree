@@ -36,7 +36,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 // std::initializer_list
 
 #include <iterator>
-// std::input_iterator_tag std::reverse_iterator
+// std::input_iterator_tag
 
 #include <memory>
 // std::addressof std::allocator std::allocator_traits
@@ -127,8 +127,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     internal_node_type *right_sibling = nullptr;
     internal_node_type *parent = nullptr;
 
-    //! @brief Find the nearest right sibling of itself or
-    //! ancestor.
+    //! @brief Find the nearest right sibling of itself or ancestor.
     //!
     //! @details Recursively walks the tree.
     //!
@@ -296,20 +295,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @details The iteration order of the standard constant iterator is
   //! unspecified, except that each element is visited only once.
   using const_iterator = internal_const_iterator_type;
-
-  //! @brief Type to identify and reverse traverse the elements of the
-  //! container.
-  //!
-  //! @details The iteration order of the standard reverse iterator is
-  //! unspecified, except that each element is visited only once.
-  using reverse_iterator = std::reverse_iterator<iterator>;
-
-  //! @brief Constant type to identify and reverse traverse the elements of
-  //! the container.
-  //!
-  //! @details The iteration order of the standard constant reverse iterator is
-  //! unspecified, except that each element is visited only once.
-  using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
   //! @brief The node handle type of the container.
   //!
@@ -517,6 +502,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! destroyed.
   //!
   //! @complexity Linear in the size of the container.
+  //!
+  //! @exceptions The exception specification needs to be confirmed.
   constexpr ~tree() noexcept
   {
     erase(root);
@@ -786,36 +773,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return const_iterator{ nullptr };
   }
 
-  [[nodiscard]] constexpr reverse_iterator rbegin() noexcept
-  {
-    return reverse_iterator{ iterator{ nullptr } };
-  }
-
-  [[nodiscard]] constexpr const_reverse_iterator rbegin() const noexcept
-  {
-    return const_reverse_iterator{ const_iterator{ nullptr } };
-  }
-
-  [[nodiscard]] constexpr const_reverse_iterator crbegin() const noexcept
-  {
-    return const_reverse_iterator{ const_iterator{ nullptr } };
-  }
-
-  [[nodiscard]] constexpr reverse_iterator rend() noexcept
-  {
-    return reverse_iterator{ iterator{ root } };
-  }
-
-  [[nodiscard]] constexpr const_reverse_iterator rend() const noexcept
-  {
-    return const_reverse_iterator{ const_iterator{ root } };
-  }
-
-  [[nodiscard]] constexpr const_reverse_iterator crend() const noexcept
-  {
-    return const_reverse_iterator{ const_iterator{ root } };
-  }
-
   //! @}
 
   //! @name Capacity
@@ -1072,7 +1029,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @exceptions Strong exception guarantees: no effect on
   //! exception. The `Allocator::allocate()` allocation or the element copy/move
   //! constructor/assignment may throw.
-  //!
   //! If `Type`'s move constructor is not `noexcept` and `Type` is not
   //! CopyInsertable into `*this`, the container will use the throwing move
   //! constructor. If it throws, the guarantee is waived and the effects are
@@ -1238,7 +1194,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @exceptions Strong exception guarantees: no effect on
   //! exception. The `Allocator::allocate()` allocation or the element copy/move
   //! constructor/assignment may throw.
-  //!
   //! If `Type`'s move constructor is not `noexcept` and `Type` is not
   //! CopyInsertable into `*this`, the container will use the throwing move
   //! constructor. If it throws, the guarantee is waived and the effects are
