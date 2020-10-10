@@ -51,7 +51,7 @@ constexpr auto ctest_traits = []() {
   return 0;
 }();
 
-//! @test Verify the post conditions on a moved non-trivial tree.
+//! @test Verify the post conditions on a move-constructed non-trivial tree.
 //!
 //! @dot
 //! digraph {
@@ -97,12 +97,6 @@ auto test_multiple = []() {
   assert(allouville_oak.cbegin() != allouville_oak.cend() &&
          "The container's beginning and ending constant iterators must not be "
          "equal on move-constructing a tree.");
-  assert(allouville_oak.rbegin() != allouville_oak.rend() &&
-         "The container's beginning and ending reverse iterators must notbe "
-         "equal on move-constructing a tree.");
-  assert(allouville_oak.crbegin() != allouville_oak.crend() &&
-         "The container's beginning and ending constant reverse iterators must "
-         "not be equal on move-constructing a tree.");
 
   return 0;
 }();

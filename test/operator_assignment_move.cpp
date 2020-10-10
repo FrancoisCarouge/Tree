@@ -98,12 +98,6 @@ auto test_multiple = []() {
   assert(allouville_oak.cbegin() != allouville_oak.cend() &&
          "The container's beginning and ending constant iterators must not be "
          "equal on move-constructing a tree.");
-  assert(allouville_oak.rbegin() != allouville_oak.rend() &&
-         "The container's beginning and ending reverse iterators must notbe "
-         "equal on move-constructing a tree.");
-  assert(allouville_oak.crbegin() != allouville_oak.crend() &&
-         "The container's beginning and ending constant reverse iterators must "
-         "not be equal on move-constructing a tree.");
 
   return 0;
 }();
@@ -154,12 +148,6 @@ auto test_self = []() {
   assert(auffay_linden.cbegin() != auffay_linden.cend() &&
          "The container's beginning and ending constant iterators must not be "
          "equal on move-constructing a tree.");
-  assert(auffay_linden.rbegin() != auffay_linden.rend() &&
-         "The container's beginning and ending reverse iterators must notbe "
-         "equal on move-constructing a tree.");
-  assert(auffay_linden.crbegin() != auffay_linden.crend() &&
-         "The container's beginning and ending constant reverse iterators must "
-         "not be equal on move-constructing a tree.");
 
   return 0;
 }();

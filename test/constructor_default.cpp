@@ -40,11 +40,13 @@ namespace fcarouge::test::constructor_default
 //! @test Verify the default construction exists and its exception
 //! specification.
 constexpr auto ctest_traits = []() {
+  // The container cannot satisty trivial default construction because it is not
+  // a scalar type, trivially copyable class, or array of such type/class. It
+  // has non-static members with default initializers. The destructor is user
+  // provided.
   static_assert(
       std::is_default_constructible_v<tree<char>>,
       "The container must satisfy the DefaultConstructible requirement.");
-  // The container cannot satisty trivial default construction because it has
-  // non-static members with default initializers.
   static_assert(
       std::is_nothrow_default_constructible_v<tree<char>>,
       "The container must satisfy the non-throwing "
@@ -70,12 +72,6 @@ constexpr auto ctest_post_conditions = []() {
       allouville_oak.cbegin() == allouville_oak.cend(),
       "The container's beginning and ending constant iterators must be "
       "equal on default construction.");
-  assert(allouville_oak.rbegin() == allouville_oak.rend() &&
-         "The container's beginning and ending reverse iterators must "
-         "be equal on default construction.");
-  assert(allouville_oak.crbegin() == allouville_oak.crend() &&
-         "The container's beginning and ending constant reverse "
-         "iterators must be equal on default construction.");
 
   return 0;
 }();
@@ -94,12 +90,6 @@ auto test_post_conditions = []() {
   assert(allouville_oak.cbegin() == allouville_oak.cend() &&
          "The container's beginning and ending constant iterators must be "
          "equal on default construction.");
-  assert(allouville_oak.rbegin() == allouville_oak.rend() &&
-         "The container's beginning and ending reverse iterators must "
-         "be equal on default construction.");
-  assert(allouville_oak.crbegin() == allouville_oak.crend() &&
-         "The container's beginning and ending constant reverse "
-         "iterators must be equal on default construction.");
 
   return 0;
 }();

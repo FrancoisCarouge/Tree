@@ -59,12 +59,6 @@ auto test_one = []() {
   assert(auffay_linden.cbegin() != auffay_linden.cend() &&
          "The container's beginning and ending constant iterators must "
          "not be equal upon pushing in an element.");
-  assert(auffay_linden.rbegin() != auffay_linden.rend() &&
-         "The container's beginning and ending reverse iterators must not"
-         "be equal upon pushing in an element.");
-  assert(auffay_linden.crbegin() != auffay_linden.crend() &&
-         "The container's beginning and ending constant reverse "
-         "iterators must not be equal upon pushing in an element.");
 
   return 0;
 }();
@@ -93,12 +87,6 @@ auto test_multiple = []() {
   assert(auffay_linden.cbegin() != auffay_linden.cend() &&
          "The container's beginning and ending constant iterators must "
          "not be equal upon pushing in four elements.");
-  assert(auffay_linden.rbegin() != auffay_linden.rend() &&
-         "The container's beginning and ending reverse iterators must not"
-         "be equal upon pushing in four elements.");
-  assert(auffay_linden.crbegin() != auffay_linden.crend() &&
-         "The container's beginning and ending constant reverse "
-         "iterators must not be equal upon pushing in four elements.");
 
   return 0;
 }();
