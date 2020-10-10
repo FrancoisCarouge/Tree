@@ -1,0 +1,23 @@
+name: "Test: Ubuntu 20.04 Clang 11"
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  clang:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: update
+      run: sudo apt update
+    - name: install
+      run: sudo apt install clang-11
+    - name: build
+      run: clang-11 sample/*.cpp test/*.cpp src/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2a -lstdc++
+    - name: run
+      run: ./a.out
