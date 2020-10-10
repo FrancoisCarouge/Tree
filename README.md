@@ -3,6 +3,8 @@ Tree for C++
 
 Tree data structure for C++: non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.
 
+The design tradeoffs are influenced by the Standard Template Library (STL) principles and the C++ Core Guidelines. The project uses C++20 features.
+
 ## Information Tree
 
 | Leaf | Value |
