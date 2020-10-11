@@ -72,7 +72,7 @@ namespace fcarouge
 template <class Type, class AllocatorType = std::allocator<Type>> class tree
 {
   public:
-  //! @name Member types
+  //! @name Public Member Types
   //! @{
 
   //! @brief The type of the contained data elements.
@@ -109,7 +109,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @details Internal implementation details of the node data structure type
   //! containing the element data.
   struct internal_node_type {
-    //! @name Member types
+    //! @name Public Member Types
     //! @{
 
     //! @brief The type of the contained data elements.
@@ -117,12 +117,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     //! @}
 
-    value_type data;
-    internal_node_type *first_child = nullptr;
-    internal_node_type *last_child = nullptr;
-    internal_node_type *left_sibling = nullptr;
-    internal_node_type *right_sibling = nullptr;
-    internal_node_type *parent = nullptr;
+    //! @name Public Search Member Functions
+    //! @{
 
     //! @brief Find the nearest right sibling of itself or ancestor.
     //!
@@ -142,11 +138,25 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
       return nullptr;
     }
+
+    //! @}
+
+    //! @name Public Member Variables
+    //! @{
+
+    value_type data;
+    internal_node_type *first_child = nullptr;
+    internal_node_type *last_child = nullptr;
+    internal_node_type *left_sibling = nullptr;
+    internal_node_type *right_sibling = nullptr;
+    internal_node_type *parent = nullptr;
+
+    //! @}
   };
 
   //! @brief Type to identify and traverse the elements of the container.
   struct internal_iterator_type {
-    //! @name Member types
+    //! @name Public Member Types
     //! @{
 
     //! @brief The type of the contained data elements.
@@ -165,6 +175,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     using iterator_category = std::input_iterator_tag;
 
     //! @}
+
+    //! @name Public Iterator Member Functions
+    //! @{
 
     //! @brief Dereferences the iterator to obtain the stored value. The
     //! behavior is undefined if the iterator is invalid.
@@ -189,17 +202,24 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       return *this;
     }
 
+    //! @}
+
     [[nodiscard]] constexpr bool
     operator==(const internal_iterator_type &other) const noexcept = default;
 
+    //! @name Public Member Variables
+    //! @{
+
     //! @brief The pointer to the node.
     internal_node_type *node = nullptr;
+
+    //! @}
   };
 
   //! @brief Type to identify and traverse the constant elements of the
   //! container.
   struct internal_const_iterator_type {
-    //! @name Member types
+    //! @name Public Member Types
     //! @{
 
     //! @brief The type of the contained data elements.
@@ -219,6 +239,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     //! @}
 
+    //! @name Public Iterator Member Functions
+    //! @{
+
     //! @brief Implicit iterator to constant iterator conversion.
     //!
     //! @details The regular, i.e. non-constant, iterator type is implicitely
@@ -233,16 +256,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     constexpr internal_const_iterator_type(
         const internal_iterator_type &iterator)
             : node{ iterator.node }
-    {
-    }
-
-    //! @brief Implicit node pointer to constant iterator conversion.
-    //!
-    //! @details Aggregate initialization is not available per implicit iterator
-    //! conversion construction. The node pointer type is implicitely
-    //! convertible to the constant iterator type to allow list initialization.
-    constexpr internal_const_iterator_type(internal_node_type *node)
-            : node{ node }
     {
     }
 
@@ -269,15 +282,37 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       return *this;
     }
 
+    //! @}
+
+    //! @name Public Member Functions
+    //! @{
+
+    //! @brief Implicit node pointer to constant iterator conversion.
+    //!
+    //! @details Aggregate initialization is not available per implicit iterator
+    //! conversion construction. The node pointer type is implicitely
+    //! convertible to the constant iterator type to allow list initialization.
+    constexpr internal_const_iterator_type(internal_node_type *node)
+            : node{ node }
+    {
+    }
+
+    //! @}
+
     [[nodiscard]] constexpr bool operator==(
         const internal_const_iterator_type &other) const noexcept = default;
 
+    //! @name Public Member Variables
+    //! @{
+
     //! @brief The pointer to the node.
     internal_node_type *node = nullptr;
+
+    //! @}
   };
 
   public:
-  //! @name Member types
+  //! @name Public Member Types
   //! @{
 
   //! @brief Type to identify and traverse the elements of the container.
@@ -311,6 +346,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   };
 
   //! @}
+
+  //! @name Public Member Functions
+  //! @{
 
   //! @brief Constructs an empty container with a default-constructed allocator.
   //!
@@ -553,7 +591,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return node_allocator;
   }
 
-  //! @name Element access
+  //! @}
+
+  //! @name Public Element Access Member Functions
   //! @{
 
   //! @brief Returns a reference to the first element in the container.
@@ -589,7 +629,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @}
 
-  //! @name Iterators
+  //! @name Public Iterator Member Functions
   //! @{
 
   //! @brief Returns an iterator to the first element of the container.
@@ -678,7 +718,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @}
 
-  //! @name Capacity
+  //! @name Public Capacity Member Functions
   //! @{
 
   //! @brief Checks if the container has no elements.
@@ -724,7 +764,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @}
 
-  //! @name Modifiers
+  //! @name Public Modifier Member Functions
   //! @{
 
   //! @brief Erases all elements from the container.
@@ -881,22 +921,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   constexpr iterator erase(const_iterator position);
 
-  private:
-  constexpr void erase(internal_node_type *&node)
-  {
-    if (node) {
-      erase(node->first_child);
-      erase(node->right_sibling);
-
-      std::destroy_at(node);
-      node_allocator.deallocate(node, 1);
-      node = nullptr;
-
-      --node_count;
-    }
-  }
-
-  public:
   //! @brief Inserts the given element value into the container directly after
   //! the last child of the `position` iterator as the new last child.
   //!
@@ -1161,9 +1185,36 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @}
 
   private:
+  //! @name Private Member Types
+  //! @{
+
   //! Rebind the allocator for the container nodes.
   using internal_node_allocator_type = typename std::allocator_traits<
       AllocatorType>::template rebind_alloc<internal_node_type>;
+
+  //! @}
+
+  //! @name Private Modifier Member Functions
+  //! @{
+
+  constexpr void erase(internal_node_type *&node)
+  {
+    if (node) {
+      erase(node->first_child);
+      erase(node->right_sibling);
+
+      std::destroy_at(node);
+      node_allocator.deallocate(node, 1);
+      node = nullptr;
+
+      --node_count;
+    }
+  }
+
+  //! @}
+
+  //! @name Private Member Variables
+  //! @{
 
   internal_node_allocator_type node_allocator{};
 
@@ -1175,6 +1226,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @brief The number of elements in the container.
   size_type node_count = 0;
+
+  //! @}
 };
 
 } // namespace fcarouge
