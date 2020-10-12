@@ -115,39 +115,12 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
-<div class="line">  tree&lt;int&gt; auffay_linden;</div>
-<div class="line">  tree&lt;int&gt;::iterator node0 = auffay_linden.push(auffay_linden.begin(), 0);</div>
-<div class="line">  tree&lt;int&gt;::iterator node1 = auffay_linden.push(node0, 1);</div>
-<div class="line">  auffay_linden.push(node1, 11);</div>
-<div class="line">  auffay_linden.push(node1, 12);</div>
-<div class="line">  auffay_linden.push(node1, 13);</div>
-<div class="line">  tree&lt;int&gt;::iterator node2 = auffay_linden.push(node0, 2);</div>
-<div class="line">  auffay_linden.push(node2, 21);</div>
-<div class="line">  auffay_linden.push(node2, 22);</div>
-<div class="line">  auffay_linden.push(node2, 23);</div>
-<div class="line">  tree&lt;int&gt;::iterator node3 = auffay_linden.push(node0, 3);</div>
-<div class="line">  auffay_linden.push(node3, 31);</div>
-<div class="line">  auffay_linden.push(node3, 32);</div>
-<div class="line">  auffay_linden.push(node3, 33);</div>
-<div class="line"> </div>
-<div class="line">  assert(13 == auffay_linden.size() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The container must have 13 nodes upon pushing 13 element values.&quot;</span>);</div>
-<div class="line">  assert(node0 == auffay_linden.begin() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning iterator must be equal to the expected &quot;</span></div>
-<div class="line">         <span class="stringliteral">&quot;root node.&quot;</span>);</div>
-<div class="line">  assert(</div>
-<div class="line">      *node0 == auffay_linden.front() &amp;&amp;</div>
-<div class="line">      <span class="stringliteral">&quot;The container&#39;s front value must be equal to the expected root value.&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">return</span> 0;</div>
-<div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000051">Test:</a></b></dt><dd>Verify the post conditions on a non-trivial tree built by pushing elements.</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000043">Test:</a></b></dt><dd>Verify the post conditions on a non-trivial tree built by pushing elements.</dd></dl>
 <div class="dotgraph">
 <img src="dot_inline_dotgraph_9.png" alt="dot_inline_dotgraph_9.png" border="0" usemap="#dot_inline_dotgraph_9.map"/>
 </div>
  
-<p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00129">129</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00132">132</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
 
 </div>
 </div>
@@ -183,9 +156,9 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000047">Test:</a></b></dt><dd>Verify the post conditions on pushing a moved element upon the beginning iterator of an empty container. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000037">Test:</a></b></dt><dd>Verify the post conditions on pushing a moved element upon the beginning iterator of an empty container. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00039">39</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00042">42</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
 
 </div>
 </div>
@@ -221,9 +194,9 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000048">Test:</a></b></dt><dd>Verify the post conditions on pushing a moved element upon the ending iterator of an empty container. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000039">Test:</a></b></dt><dd>Verify the post conditions on pushing a moved element upon the ending iterator of an empty container. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00063">63</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00066">66</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
 
 </div>
 </div>
@@ -251,9 +224,9 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000049">Test:</a></b></dt><dd>Verify the post conditions on pushing another moved element upon the beginning iterator of a container containing a single value. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000040">Test:</a></b></dt><dd>Verify the post conditions on pushing another moved element upon the beginning iterator of a container containing a single value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00087">87</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00090">90</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
 
 </div>
 </div>
@@ -281,9 +254,9 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000050">Test:</a></b></dt><dd>Verify the post conditions on pushing another moved element upon the ending iterator of a container containing a single value. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000042">Test:</a></b></dt><dd>Verify the post conditions on pushing another moved element upon the ending iterator of a container containing a single value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00103">103</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00106">106</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
 
 </div>
 </div>
@@ -293,7 +266,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test.html">test</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test_1_1push__rvalue.html">push_rvalue</a></li>
-    <li class="footer">Generated on Mon Oct 12 2020 04:17:11 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Mon Oct 12 2020 04:44:01 for Tree by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>
