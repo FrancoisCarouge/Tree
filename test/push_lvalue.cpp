@@ -32,6 +32,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
+#include <set>
+// std::multiset
+
 namespace fcarouge::test::push_lvalue
 {
 //! @test Verify the post conditions on pushing an element by value upon the
@@ -160,6 +163,13 @@ auto test_multiple = []() {
   auffay_linden.push(node3, value);
   value = 33;
   auffay_linden.push(node3, value);
+  const std::multiset<int> expected_content{ 0,  1,  2,  3,  11, 12, 13,
+                                             21, 22, 23, 31, 32, 33 };
+  std::multiset<int> iterated_content;
+  tree<int>::const_iterator iterator = auffay_linden.begin();
+  for (; iterator != auffay_linden.end(); ++iterator) {
+    iterated_content.insert(*iterator);
+  }
 
   assert(13 == auffay_linden.size() &&
          "The container must have 13 nodes upon pushing 13 element values.");
@@ -169,6 +179,8 @@ auto test_multiple = []() {
   assert(
       *node0 == auffay_linden.front() &&
       "The container's front value must be equal to the expected root value.");
+  assert(expected_content == iterated_content &&
+         "The container's content must meet expected content.");
 
   return 0;
 }();
