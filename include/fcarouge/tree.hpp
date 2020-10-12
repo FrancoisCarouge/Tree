@@ -126,7 +126,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //!
     //! @return The pointer to the nearest right sibling of itself or ancestor;
     //! or `nullptr` if such a node doesn't exist.
-    constexpr internal_node_type *next_ancestor_sibling() noexcept
+    [[nodiscard]] constexpr internal_node_type *next_ancestor_sibling() noexcept
     {
       if (right_sibling) {
         return right_sibling;
