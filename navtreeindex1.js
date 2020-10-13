@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"structfcarouge_1_1tree_1_1internal__iterator__type.html#aa86f7f7792fed00df0220fc18ed1975f":[5,0,0,2,2,8],
 "structfcarouge_1_1tree_1_1internal__iterator__type.html#abad2df5e268b3b9c2d11b61dc4170b7d":[5,0,0,2,2,3],
 "structfcarouge_1_1tree_1_1internal__node__type.html":[5,0,0,2,3],
 "structfcarouge_1_1tree_1_1internal__node__type.html#a05cfec448abcbb5259149ad10877c358":[5,0,0,2,3,0],
