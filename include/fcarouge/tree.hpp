@@ -497,7 +497,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @exceptions The exception specification needs to be confirmed.
   constexpr ~tree() noexcept
   {
-    erase(root);
+    axe(root);
   }
 
   //! @brief Copy assignment operator.
@@ -777,7 +777,10 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! elements.
   constexpr void clear() noexcept
   {
-    erase(root);
+    axe(root);
+    root = nullptr;
+    last = nullptr;
+    node_count = 0;
   }
 
   constexpr iterator insert(const_iterator position, const_reference value);
@@ -867,7 +870,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return iterator{ node };
   }
 
-  //! @brief Prune specified element sub-tree from the container.
+  //! @brief Prune the specified element including its sub-tree.
   //!
   //! @details Remove the element at `position` and prune its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
@@ -875,7 +878,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! must be valid and dereferenceable. Thus the `end()` iterator which is
   //! valid, but is not dereferenceable cannot be used as a value for
   //! `position`. The same is applicable for the `begin()` iterator on an empty
-  //! container.
+  //! container. The container's size is reduded by the number of elements
+  //! removed, that is the node and all nodes in its sub-tree. If the erased
+  //! node is the root, the tree is empty.
   //!
   //! @param position Iterator to the element to remove with its subtree.
   //!
@@ -914,7 +919,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       last = nullptr;
     }
 
-    erase(position.node);
+    prune(position.node);
 
     return next;
   }
@@ -1197,17 +1202,54 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Private Modifier Member Functions
   //! @{
 
-  constexpr void erase(internal_node_type *&node)
+  //! @brief Prune the specified element including its sub-tree.
+  //!
+  //! @details Remove the element at `position` and prune its associated
+  //! sub-tree. References and iterators to the erased elements are invalidated.
+  //! Other references and iterators are not affected. The iterator `position`
+  //! must be valid and dereferenceable. Thus the `end()` iterator which is
+  //! valid, but is not dereferenceable cannot be used as a value for
+  //! `position`. The same is applicable for the `begin()` iterator on an empty
+  //! container. The container's size is reduded by the number of elements
+  //! removed, that is the node and all nodes in its sub-tree. If the erased
+  //! node is the root, the tree is empty.
+  //!
+  //! @param[in,out] node The element to erase pointer's reference, cleared to
+  //! `nullptr` after destruction and deallocation of the node.
+  constexpr void prune(internal_node_type *&node)
   {
     if (node) {
-      erase(node->first_child);
-      erase(node->right_sibling);
+      prune(node->first_child);
+      prune(node->right_sibling);
 
       std::destroy_at(node);
       node_allocator.deallocate(node, 1);
-      node = nullptr;
 
       --node_count;
+    }
+  }
+
+  //! @brief Axe the specified element including its sub-tree.
+  //!
+  //! @details Remove the element at `position` and prune its associated
+  //! sub-tree. References and iterators to the erased elements are invalidated.
+  //! Other references and iterators are not affected. The iterator `position`
+  //! must be valid and dereferenceable. Thus the `end()` iterator which is
+  //! valid, but is not dereferenceable cannot be used as a value for
+  //! `position`. The same is applicable for the `begin()` iterator on an empty
+  //! container. The container's size is not maintained and no longer
+  //! corresponds to the container content.
+  //!
+  //! @param[in,out] node The element to erase pointer's reference, cleared to
+  //! `nullptr` after destruction and deallocation of the node.
+  constexpr void axe(internal_node_type *&node)
+  {
+    if (node) {
+      axe(node->first_child);
+      axe(node->right_sibling);
+
+      std::destroy_at(node);
+      node_allocator.deallocate(node, 1);
     }
   }
 
