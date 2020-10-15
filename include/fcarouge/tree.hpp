@@ -959,53 +959,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! method definitions.
   constexpr iterator push(const_iterator position, const_reference value)
   {
-    // The allocated node is in-place construced and recorded in every
-    // following statements.
-    internal_node_type *node = node_allocator.allocate(1);
-
-    // Insert the new node...
-    // ...as the last child of the position node...
-    if (internal_node_type *position_node = position.node) {
-      std::construct_at(node, value, nullptr, nullptr,
-                        position_node->last_child, nullptr, position_node);
-      position_node->last_child = node;
-      // ...which was the last node...
-      if (position_node == last) {
-        last = node;
-      }
-      // ...with a left sibling node.
-      if (node->left_sibling) {
-        node->left_sibling->right_sibling = node;
-        // ...which was the last node.
-        if (node->left_sibling == last) {
-          last = node;
-        }
-      }
-      // ...without a left sibling node.
-      else {
-        position_node->first_child = node;
-      }
-    }
-    // ...as the new last node...
-    else {
-      // ...as child of the previous last node.
-      if (last) {
-        std::construct_at(node, value, nullptr, nullptr, nullptr, nullptr,
-                          last);
-        last->first_child = node;
-        last = node;
-      }
-      // ...as the sole, last, and root node.
-      else {
-        std::construct_at(node, value);
-        root = node;
-        last = node;
-      }
-    }
-
-    ++node_count;
-
-    return iterator{ node };
+    return emplace_last_child(position, value);
   }
 
   //! @brief Inserts the given element value into the container directly after
@@ -1037,53 +991,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! method definitions.
   constexpr iterator push(const_iterator position, value_type &&value)
   {
-    // The allocated node is in-place construced and recorded in every
-    // following statements.
-    internal_node_type *node = node_allocator.allocate(1);
-
-    // Insert the new node...
-    // ...as the last child of the position node...
-    if (internal_node_type *position_node = position.node) {
-      std::construct_at(node, std::move(value), nullptr, nullptr,
-                        position_node->last_child, nullptr, position_node);
-      position_node->last_child = node;
-      // ...which was the last node...
-      if (position_node == last) {
-        last = node;
-      }
-      // ...with a left sibling node.
-      if (node->left_sibling) {
-        node->left_sibling->right_sibling = node;
-        // ...which was the last node.
-        if (node->left_sibling == last) {
-          last = node;
-        }
-      }
-      // ...without a left sibling node.
-      else {
-        position_node->first_child = node;
-      }
-    }
-    // ...as the new last node...
-    else {
-      // ...as child of the previous last node.
-      if (last) {
-        std::construct_at(node, std::move(value), nullptr, nullptr, nullptr,
-                          nullptr, last);
-        last->first_child = node;
-        last = node;
-      }
-      // ...as the sole, last, and root node.
-      else {
-        std::construct_at(node, std::move(value));
-        root = node;
-        last = node;
-      }
-    }
-
-    ++node_count;
-
-    return iterator{ node };
+    return emplace_last_child(position, value);
   }
 
   //! @brief Prepends the given element to the beginning of the container.
@@ -1251,6 +1159,87 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       std::destroy_at(node);
       node_allocator.deallocate(node, 1);
     }
+  }
+
+  //! @brief Inserts the given element value into the container directly after
+  //! the last child of the `position` iterator as the new last child.
+  //!
+  //! @details No iterators or references are invalidated. The new element is
+  //! in-place constructed and moved, or copied. Inserts after the beginning
+  //! `begin()` position as the last child of the root if present, or as the
+  //! root if the container is empty. Inserts after the ending `end()` position
+  //! as the sole child of the last node if present, or as the root if the
+  //! container is empty.
+  //!
+  //! @tparam ArgumentsType The argument types to forward to the constructor of
+  //! the element.
+  //!
+  //! @param position The parent node iterator for which the element will be
+  //! inserted as the last child. The iterator may be the beginning `begin()` or
+  //! ending `end()` iterator.
+  //! @param arguments The construction data of the element to insert.
+  //!
+  //! @return The iterator pointing to the inserted element.
+  //!
+  //! @exceptions Strong exception guarantees: no effect on
+  //! exception. The `Allocator::allocate()` allocation or the element copy/move
+  //! constructor/assignment may throw.
+  //! If `Type`'s move constructor is not `noexcept` and `Type` is not
+  //! CopyInsertable into `*this`, the container will use the throwing move
+  //! constructor. If it throws, the guarantee is waived and the effects are
+  //! unspecified.
+  template <class... ArgumentsType>
+  constexpr iterator emplace_last_child(const_iterator position,
+                                        ArgumentsType &&... arguments)
+  {
+    // The allocated node is in-place construced and recorded in every
+    // following statements.
+    internal_node_type *node = node_allocator.allocate(1);
+
+    // Insert the new node...
+    // ...as the last child of the position node...
+    if (internal_node_type *position_node = position.node) {
+      std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
+                        nullptr, nullptr, position_node->last_child, nullptr,
+                        position_node);
+      position_node->last_child = node;
+      // ...which was the last node...
+      if (position_node == last) {
+        last = node;
+      }
+      // ...with a left sibling node.
+      if (node->left_sibling) {
+        node->left_sibling->right_sibling = node;
+        // ...which was the last node.
+        if (node->left_sibling == last) {
+          last = node;
+        }
+      }
+      // ...without a left sibling node.
+      else {
+        position_node->first_child = node;
+      }
+    }
+    // ...as the new last node...
+    else {
+      // ...as child of the previous last node.
+      if (last) {
+        std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
+                          nullptr, nullptr, nullptr, nullptr, last);
+        last->first_child = node;
+        last = node;
+      }
+      // ...as the sole, last, and root node.
+      else {
+        std::construct_at(node, std::forward<ArgumentsType>(arguments)...);
+        root = node;
+        last = node;
+      }
+    }
+
+    ++node_count;
+
+    return iterator{ node };
   }
 
   //! @}
