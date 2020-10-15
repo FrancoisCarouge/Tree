@@ -39,6 +39,7 @@ var classfcarouge_1_1tree =
     [ "clear", "classfcarouge_1_1tree.html#aa83d14fd7cd74b86556786b1bd0f4393", null ],
     [ "emplace", "classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5", null ],
     [ "emplace_front", "classfcarouge_1_1tree.html#ae42c67b59361f977685a6c8f00255cf2", null ],
+    [ "emplace_last_child", "classfcarouge_1_1tree.html#a4f5b343ac35db44f5de9de556f2b59b6", null ],
     [ "empty", "classfcarouge_1_1tree.html#a305d983d5a1a6994dee714a9f88bc1ee", null ],
     [ "end", "classfcarouge_1_1tree.html#a7f69f9f81a0d50355c6e47c35df54b82", null ],
     [ "end", "classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac", null ],
