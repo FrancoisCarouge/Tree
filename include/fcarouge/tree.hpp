@@ -991,7 +991,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! method definitions.
   constexpr iterator push(const_iterator position, value_type &&value)
   {
-    return emplace_last_child(position, value);
+    return emplace_last_child(position, std::move(value));
   }
 
   //! @brief Prepends the given element to the beginning of the container.
@@ -1015,24 +1015,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! unspecified.
   constexpr void push_front(const_reference value)
   {
-    // The allocated node is in-place construced and recorded in every
-    // following statements.
-    internal_node_type *node = node_allocator.allocate(1);
-
-    // Insert the new node and prepare it to be the new root...
-    std::construct_at(node, value, root, root, nullptr, nullptr, nullptr);
-
-    // ... by displacing the previous root.
-    if (root) {
-      root->parent = node;
-    }
-    // ...or as the sole, root, and last node in the container.
-    else {
-      last = node;
-    }
-
-    root = node;
-    ++node_count;
+    emplace_root(value);
   }
 
   //! @brief Prepends the given element to the beginning of the container.
@@ -1052,25 +1035,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! constructor/assignment may throw.
   constexpr void push_front(value_type &&value)
   {
-    // The allocated node is in-place construced and recorded in every
-    // following statements.
-    internal_node_type *node = node_allocator.allocate(1);
-
-    // Insert the new node and prepare it to be the new root...
-    std::construct_at(node, std::move(value), root, root, nullptr, nullptr,
-                      nullptr);
-
-    // ... by displacing the previous root.
-    if (root) {
-      root->parent = node;
-    }
-    // ...or as the sole, root, and last node in the container.
-    else {
-      last = node;
-    }
-
-    root = node;
-    ++node_count;
+    emplace_root(std::move(value));
   }
 
   //! @brief Exchanges the contents of this container with those of the
@@ -1240,6 +1205,47 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     ++node_count;
 
     return iterator{ node };
+  }
+
+  //! @brief Prepends the given element to the beginning of the container.
+  //!
+  //! @details Prepends the given element as the new root. If the container is
+  //! not empty the root becomes the sole child of the prepended element. No
+  //! iterators or references are invalidated. The new element is in-place
+  //! constructed and moved, or copied.
+  //!
+  //! @tparam ArgumentsType The argument types to forward to the constructor of
+  //! the element.
+  //!
+  //! @param arguments The construction data of the element to insert.
+  //!
+  //! @complexity Constant.
+  //!
+  //! @exceptions Strong exception guarantees: no effect on
+  //! exception. The `Allocator::allocate()` allocation or the element copy/move
+  //! constructor/assignment may throw.
+  template <class... ArgumentsType>
+  constexpr void emplace_root(ArgumentsType &&... arguments)
+  {
+    // The allocated node is in-place construced and recorded in every
+    // following statements.
+    internal_node_type *node = node_allocator.allocate(1);
+
+    // Insert the new node and prepare it to be the new root...
+    std::construct_at(node, std::forward<ArgumentsType>(arguments)..., root,
+                      root);
+
+    // ... by displacing the previous root.
+    if (root) {
+      root->parent = node;
+    }
+    // ...or as the sole, root, and last node in the container.
+    else {
+      last = node;
+    }
+
+    root = node;
+    ++node_count;
   }
 
   //! @}
