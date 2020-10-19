@@ -32,7 +32,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
-namespace fcarouge::test::erase
+namespace fcarouge::test::erase_iterator
 {
 //! @test Verify the post-conditions on erasing the sole element of a container.
 auto test_sole = []() {
@@ -146,4 +146,4 @@ auto test_multiple = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::erase
+} // namespace fcarouge::test::erase_iterator

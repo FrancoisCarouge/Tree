@@ -120,7 +120,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Search Member Functions
     //! @{
 
-    //! @brief Find the nearest right sibling of itself or ancestor.
+    //! @brief Finds the nearest right sibling of itself or ancestor.
     //!
     //! @details Recursively walks the tree.
     //!
@@ -386,7 +386,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   constexpr tree(const tree &other) noexcept
           : node_allocator{ std::allocator_traits<AllocatorType>::
                                 select_on_container_copy_construction(
-                                    other.get_allocator()) }
+                                    other.node_allocator) },
+            node_count{ other.node_count }
   {
   }
 
@@ -642,7 +643,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   [[nodiscard]] constexpr iterator begin() noexcept
   {
-    return iterator{ root };
+    return { root };
   }
 
   //! @brief Returns a constant iterator to the first element of the container.
@@ -655,7 +656,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   [[nodiscard]] constexpr const_iterator begin() const noexcept
   {
-    return const_iterator{ root };
+    return { root };
   }
 
   //! @brief Returns a constant iterator to the first element of the container.
@@ -668,7 +669,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   [[nodiscard]] constexpr const_iterator cbegin() const noexcept
   {
-    return const_iterator{ root };
+    return { root };
   }
 
   //! @brief Returns an iterator to the element following the last element of
@@ -683,7 +684,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   [[nodiscard]] constexpr iterator end() noexcept
   {
-    return iterator{ nullptr };
+    return { nullptr };
   }
 
   //! @brief Returns a constant iterator to the element following the last
@@ -698,7 +699,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   [[nodiscard]] constexpr const_iterator end() const noexcept
   {
-    return const_iterator{ nullptr };
+    return { nullptr };
   }
 
   //! @brief Returns a constant iterator to the element following the last
@@ -713,7 +714,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   [[nodiscard]] constexpr const_iterator cend() const noexcept
   {
-    return const_iterator{ nullptr };
+    return { nullptr };
   }
 
   //! @}
@@ -805,7 +806,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @tparam ArgumentsType The argument types to forward to the constructor of
   //! the element.
   //!
-  //! @param position The iterator before which the new element will be
+  //! @param position The constant iterator before which the new element will be
   //! constructed. The iterator may be the beginning `begin()` or ending `end()`
   //! iterator.
   //! @param arguments The arguments to forward to the constructor of the
@@ -867,12 +868,12 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     }
 
     ++node_count;
-    return iterator{ node };
+    return { node };
   }
 
-  //! @brief Prune the specified element including its sub-tree.
+  //! @brief Prunes the specified element including its sub-tree.
   //!
-  //! @details Remove the element at `position` and prune its associated
+  //! @details Removes the element at `position` and prune its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
   //! Other references and iterators are not affected. The iterator `position`
   //! must be valid and dereferenceable. Thus the `end()` iterator which is
@@ -882,49 +883,48 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! removed, that is the node and all nodes in its sub-tree. If the erased
   //! node is the root, the tree is empty.
   //!
-  //! @param position Iterator to the element to remove with its subtree.
+  //! @param position The iterator to the element to remove with its subtree.
   //!
   //! @return Iterator following the last removed element. If `position` refers
   //! to the last element, then the `end()` iterator is returned.
   constexpr iterator erase(iterator position)
   {
-    // Identify the node following this subtree which will become the next node.
-    iterator next{ position.node->next_ancestor_sibling() };
-
-    // Orphan the node.
-    if (position.node->parent) {
-      if (position.node->parent->first_child == position.node) {
-        position.node->parent->first_child = position.node->right_sibling;
-      }
-      if (position.node->parent->last_child == position.node) {
-        position.node->parent->last_child = position.node->left_sibling;
-      }
-    }
-
-    // Isolate the node from its siblings.
-    if (position.node->left_sibling) {
-      position.node->left_sibling->right_sibling = position.node->right_sibling;
-      position.node->left_sibling = nullptr;
-    }
-    if (position.node->right_sibling) {
-      position.node->right_sibling->left_sibling = position.node->left_sibling;
-      position.node->right_sibling = nullptr;
-    }
-
-    if (position.node == root) {
-      root = nullptr;
-    }
-
-    if (position.node == last) {
-      last = nullptr;
-    }
-
+    // Identify the node following this subtree which will become the next node,
+    // separate the subtree out of the tree, and recursively erase the subtree.
+    internal_node_type *next{ position.node->next_ancestor_sibling() };
+    cleave(position.node);
     prune(position.node);
 
-    return next;
+    return { next };
   }
 
-  constexpr iterator erase(const_iterator position);
+  //! @brief Prunes the specified element including its sub-tree.
+  //!
+  //! @details Removes the element at `position` and prune its associated
+  //! sub-tree. References and iterators to the erased elements are invalidated.
+  //! Other references and iterators are not affected. The iterator `position`
+  //! must be valid and dereferenceable. Thus the `end()` iterator which is
+  //! valid, but is not dereferenceable cannot be used as a value for
+  //! `position`. The same is applicable for the `begin()` iterator on an empty
+  //! container. The container's size is reduded by the number of elements
+  //! removed, that is the node and all nodes in its sub-tree. If the erased
+  //! node is the root, the tree is empty.
+  //!
+  //! @param position The constant iterator to the element to remove with its
+  //! subtree.
+  //!
+  //! @return Iterator following the last removed element. If `position` refers
+  //! to the last element, then the `end()` iterator is returned.
+  constexpr iterator erase(const_iterator position)
+  {
+    // Identify the node following this subtree which will become the next node,
+    // separate the subtree out of the tree, and recursively erase the subtree.
+    internal_node_type *next{ position.node->next_ancestor_sibling() };
+    cleave(position.node);
+    prune(position.node);
+
+    return { next };
+  }
 
   //! @brief Inserts the given element value into the container directly after
   //! the last child of the `position` iterator as the new last child.
@@ -937,9 +937,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! child of the last node if present, or as the root if the container is
   //! empty.
   //!
-  //! @param position The parent node iterator for which the element will be
-  //! inserted as the last child. The iterator may be the beginning `begin()` or
-  //! ending `end()` iterator.
+  //! @param position The parent node constant iterator for which the element
+  //! will be inserted as the last child. The iterator may be the beginning
+  //! `begin()` or ending `end()` iterator.
   //! @param value The data of the element to insert.
   //!
   //! @return The iterator pointing to the inserted element.
@@ -959,7 +959,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! method definitions.
   constexpr iterator push(const_iterator position, const_reference value)
   {
-    return emplace_last_child(position, value);
+    return { emplace_last_child(position.node, value) };
   }
 
   //! @brief Inserts the given element value into the container directly after
@@ -973,9 +973,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! child of the last node if present, or as the root if the container is
   //! empty.
   //!
-  //! @param position The parent node iterator for which the element will be
-  //! inserted as the last child. The iterator may be the beginning `begin()` or
-  //! ending `end()` iterator.
+  //! @param position The parent node constant iterator for which the element
+  //! will be inserted as the last child. The iterator may be the beginning
+  //! `begin()` or ending `end()` iterator.
   //! @param value The data of the element to insert.
   //!
   //! @return The iterator pointing to the inserted element.
@@ -991,7 +991,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! method definitions.
   constexpr iterator push(const_iterator position, value_type &&value)
   {
-    return emplace_last_child(position, std::move(value));
+    return { emplace_last_child(position.node, std::move(value)) };
   }
 
   //! @brief Prepends the given element to the beginning of the container.
@@ -1075,20 +1075,55 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Private Modifier Member Functions
   //! @{
 
-  //! @brief Prune the specified element including its sub-tree.
+  //! @brief Isolates the specified element including its sub-tree.
   //!
-  //! @details Remove the element at `position` and prune its associated
+  //! @details Orphans the node from its parent and disolve its sibling
+  //! relationships. The container's size is not maintained and no longer
+  //! corresponds to the container content. Cleaving the root or last node has
+  //! the expected effects on the tree.
+  //!
+  //! @param node The pointer to the element to cleave.
+  constexpr void cleave(internal_node_type *node)
+  {
+    if (node == root) {
+      root = nullptr;
+      last = nullptr;
+    }
+    if (node == last) {
+      if (last->left_sibling) {
+        last = last->left_sibling;
+      }
+      if (last->parent) {
+        last = last->parent;
+      }
+    }
+    if (node->parent) {
+      if (node->parent->first_child == node) {
+        node->parent->first_child = node->right_sibling;
+      }
+      if (node->parent->last_child == node) {
+        node->parent->last_child = node->left_sibling;
+      }
+    }
+    if (node->left_sibling) {
+      node->left_sibling->right_sibling = node->right_sibling;
+      node->left_sibling = nullptr;
+    }
+    if (node->right_sibling) {
+      node->right_sibling->left_sibling = node->left_sibling;
+      node->right_sibling = nullptr;
+    }
+  }
+
+  //! @brief Recursively erases the specified element including its sub-tree.
+  //!
+  //! @details Removes the `node` element and prune its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
-  //! Other references and iterators are not affected. The iterator `position`
-  //! must be valid and dereferenceable. Thus the `end()` iterator which is
-  //! valid, but is not dereferenceable cannot be used as a value for
-  //! `position`. The same is applicable for the `begin()` iterator on an empty
-  //! container. The container's size is reduded by the number of elements
-  //! removed, that is the node and all nodes in its sub-tree. If the erased
-  //! node is the root, the tree is empty.
+  //! Other references and iterators are not affected. The container's size is
+  //! reduded by the number of elements removed, that is the node and all nodes
+  //! in its sub-tree. If the erased node is the root, the tree is empty.
   //!
-  //! @param[in,out] node The element to erase pointer's reference, cleared to
-  //! `nullptr` after destruction and deallocation of the node.
+  //! @param node The pointer to the element to erase.
   constexpr void prune(internal_node_type *node)
   {
     if (node) {
@@ -1102,19 +1137,14 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     }
   }
 
-  //! @brief Axe the specified element including its sub-tree.
+  //! @brief Axes the specified element including its sub-tree.
   //!
-  //! @details Remove the element at `position` and prune its associated
+  //! @details Removes the `node` element and prune its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
-  //! Other references and iterators are not affected. The iterator `position`
-  //! must be valid and dereferenceable. Thus the `end()` iterator which is
-  //! valid, but is not dereferenceable cannot be used as a value for
-  //! `position`. The same is applicable for the `begin()` iterator on an empty
-  //! container. The container's size is not maintained and no longer
-  //! corresponds to the container content.
+  //! Other references and iterators are not affected. The container's size is
+  //! not maintained and no longer corresponds to the container content.
   //!
-  //! @param[in,out] node The element to erase pointer's reference, cleared to
-  //! `nullptr` after destruction and deallocation of the node.
+  //! @param node The pointer to the element to erase.
   constexpr void axe(internal_node_type *node)
   {
     if (node) {
@@ -1139,9 +1169,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @tparam ArgumentsType The argument types to forward to the constructor of
   //! the element.
   //!
-  //! @param position The parent node iterator for which the element will be
-  //! inserted as the last child. The iterator may be the beginning `begin()` or
-  //! ending `end()` iterator.
+  //! @param parent The parent node for which the element will be
+  //! inserted as the last child. Emplacing a node without a parent places the
+  //! node at the end.
   //! @param arguments The construction data of the element to insert.
   //!
   //! @return The iterator pointing to the inserted element.
@@ -1154,57 +1184,56 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! constructor. If it throws, the guarantee is waived and the effects are
   //! unspecified.
   template <class... ArgumentsType>
-  constexpr iterator emplace_last_child(const_iterator position,
-                                        ArgumentsType &&... arguments)
+  constexpr internal_node_type *
+  emplace_last_child(internal_node_type *parent, ArgumentsType &&... arguments)
   {
-    // The allocated node is in-place construced and recorded in every
+    // The allocated child node is in-place construced and recorded in every
     // following statements.
-    internal_node_type *node = node_allocator.allocate(1);
+    internal_node_type *child = node_allocator.allocate(1);
 
     // Insert the new node...
     // ...as the last child of the position node...
-    if (internal_node_type *position_node = position.node) {
-      std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
-                        nullptr, nullptr, position_node->last_child, nullptr,
-                        position_node);
-      position_node->last_child = node;
+    if (parent) {
+      std::construct_at(child, std::forward<ArgumentsType>(arguments)...,
+                        nullptr, nullptr, parent->last_child, nullptr, parent);
+      parent->last_child = child;
       // ...which was the last node...
-      if (position_node == last) {
-        last = node;
+      if (parent == last) {
+        last = child;
       }
       // ...with a left sibling node.
-      if (node->left_sibling) {
-        node->left_sibling->right_sibling = node;
+      if (child->left_sibling) {
+        child->left_sibling->right_sibling = child;
         // ...which was the last node.
-        if (node->left_sibling == last) {
-          last = node;
+        if (child->left_sibling == last) {
+          last = child;
         }
       }
       // ...without a left sibling node.
       else {
-        position_node->first_child = node;
+        parent->first_child = child;
       }
     }
     // ...as the new last node...
     else {
       // ...as child of the previous last node.
       if (last) {
-        std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
+        std::construct_at(child, std::forward<ArgumentsType>(arguments)...,
                           nullptr, nullptr, nullptr, nullptr, last);
-        last->first_child = node;
-        last = node;
+        last->first_child = child;
+        last = child;
       }
       // ...as the sole, last, and root node.
       else {
-        std::construct_at(node, std::forward<ArgumentsType>(arguments)...);
-        root = node;
-        last = node;
+        std::construct_at(child, std::forward<ArgumentsType>(arguments)...);
+        root = child;
+        last = child;
       }
     }
 
     ++node_count;
 
-    return iterator{ node };
+    return child;
   }
 
   //! @brief Prepends the given element to the beginning of the container.
