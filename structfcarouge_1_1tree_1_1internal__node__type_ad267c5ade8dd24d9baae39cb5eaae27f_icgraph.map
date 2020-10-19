@@ -1,6 +1,6 @@
 <map id="fcarouge::tree::internal_node_type::next_ancestor_sibling" name="fcarouge::tree::internal_node_type::next_ancestor_sibling">
-<area shape="rect" id="node1" title="Find the nearest right sibling of itself or ancestor." alt="" coords="261,49,436,105"/>
-<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588" title="Prune the specified element including its sub&#45;tree." alt="" coords="40,5,179,32"/>
+<area shape="rect" id="node1" title="Finds the nearest right sibling of itself or ancestor." alt="" coords="261,49,436,105"/>
+<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588" title="Prunes the specified element including its sub&#45;tree." alt="" coords="40,5,179,32"/>
 <area shape="rect" id="node3" href="$structfcarouge_1_1tree_1_1internal__iterator__type.html#a764f016619698d0f861c9d591083e145" title="Increments the iterator." alt="" coords="25,57,194,98"/>
 <area shape="rect" id="node4" href="$structfcarouge_1_1tree_1_1internal__const__iterator__type.html#aeea82fdd87a299ff23cf746777baf150" title="Increments the iterator." alt="" coords="5,122,213,163"/>
 </map>
