@@ -1089,7 +1089,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @param[in,out] node The element to erase pointer's reference, cleared to
   //! `nullptr` after destruction and deallocation of the node.
-  constexpr void prune(internal_node_type *&node)
+  constexpr void prune(internal_node_type *node)
   {
     if (node) {
       prune(node->first_child);
@@ -1115,7 +1115,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @param[in,out] node The element to erase pointer's reference, cleared to
   //! `nullptr` after destruction and deallocation of the node.
-  constexpr void axe(internal_node_type *&node)
+  constexpr void axe(internal_node_type *node)
   {
     if (node) {
       axe(node->first_child);
