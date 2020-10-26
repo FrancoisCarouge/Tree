@@ -4,6 +4,7 @@ var dir_13e138d54eb8818da29c3992edef070a =
     [ "const_iterator.cpp", "const__iterator_8cpp.html", "const__iterator_8cpp" ],
     [ "const_iterator_legacy.cpp", "const__iterator__legacy_8cpp.html", "const__iterator__legacy_8cpp" ],
     [ "constructor_allocator.cpp", "constructor__allocator_8cpp.html", "constructor__allocator_8cpp" ],
+    [ "constructor_copy.cpp", "constructor__copy_8cpp.html", "constructor__copy_8cpp" ],
     [ "constructor_default.cpp", "constructor__default_8cpp.html", "constructor__default_8cpp" ],
     [ "constructor_lvalue.cpp", "constructor__lvalue_8cpp.html", "constructor__lvalue_8cpp" ],
     [ "constructor_move.cpp", "constructor__move_8cpp.html", "constructor__move_8cpp" ],

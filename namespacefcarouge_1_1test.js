@@ -4,6 +4,7 @@ var namespacefcarouge_1_1test =
     [ "const_iterator", "namespacefcarouge_1_1test_1_1const__iterator.html", null ],
     [ "const_iterator_legacy", "namespacefcarouge_1_1test_1_1const__iterator__legacy.html", null ],
     [ "constructor_allocator", "namespacefcarouge_1_1test_1_1constructor__allocator.html", null ],
+    [ "constructor_copy", "namespacefcarouge_1_1test_1_1constructor__copy.html", null ],
     [ "constructor_default", "namespacefcarouge_1_1test_1_1constructor__default.html", null ],
     [ "constructor_lvalue", "namespacefcarouge_1_1test_1_1constructor__lvalue.html", null ],
     [ "constructor_move", "namespacefcarouge_1_1test_1_1constructor__move.html", null ],
