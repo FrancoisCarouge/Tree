@@ -34,13 +34,111 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
 namespace fcarouge::test::emplace
 {
+//! @test Verify the post conditions on emplacing an element at the beginning
+//! iterator of an emptry tree.
+auto test_empty_begin = []() {
+  tree<int> allouville_oak;
+  const tree<int>::iterator node =
+      allouville_oak.emplace(allouville_oak.begin(), 42);
+
+  assert(1 == allouville_oak.size() &&
+         "The container must contain one element as built.");
+  assert(node == allouville_oak.begin() &&
+         "The container's beginning iterator must be equal to the expected "
+         "root node.");
+  assert(
+      *node == *allouville_oak.begin() &&
+      "The container's beginning iterator value must be equal to the expected "
+      "root node value.");
+  assert(*node == *allouville_oak.cbegin() &&
+         "The container's constant beginning iterator value must be equal to "
+         "the expected root node value.");
+  assert(*node == allouville_oak.front() &&
+         "The container's front node value must be equal to the expected root "
+         "node value.");
+
+  return 0;
+}();
+
+//! @test Verify the post conditions on emplacing an element at the ending
+//! iterator of an emptry tree.
+auto test_empty_end = []() {
+  tree<int> allouville_oak;
+  const tree<int>::iterator node =
+      allouville_oak.emplace(allouville_oak.end(), 42);
+
+  assert(1 == allouville_oak.size() &&
+         "The container must contain one element as built.");
+  assert(node == allouville_oak.begin() &&
+         "The container's beginning iterator must be equal to the expected "
+         "root node.");
+  assert(
+      *node == *allouville_oak.begin() &&
+      "The container's beginning iterator value must be equal to the expected "
+      "root node value.");
+  assert(*node == *allouville_oak.cbegin() &&
+         "The container's constant beginning iterator value must be equal to "
+         "the expected root node value.");
+  assert(*node == allouville_oak.front() &&
+         "The container's front node value must be equal to the expected root "
+         "node value.");
+
+  return 0;
+}();
+
+//! @test Verify the post conditions on emplacing an element at the root
+//! iterator.
+auto test_root_begin = []() {
+  tree<int> allouville_oak(42);
+  const tree<int>::iterator node =
+      allouville_oak.emplace(allouville_oak.begin(), 41);
+
+  assert(2 == allouville_oak.size() &&
+         "The container must contain one element as built.");
+  assert(node == allouville_oak.begin() &&
+         "The container's beginning iterator must be equal to the expected "
+         "root node.");
+  assert(
+      41 == *allouville_oak.begin() &&
+      "The container's beginning iterator value must be equal to the expected "
+      "root node value.");
+  assert(
+      *node == *allouville_oak.begin() &&
+      "The container's beginning iterator value must be equal to the expected "
+      "root node value.");
+  assert(*node == *allouville_oak.cbegin() &&
+         "The container's constant beginning iterator value must be equal to "
+         "the expected root node value.");
+  assert(*node == allouville_oak.front() &&
+         "The container's front node value must be equal to the expected root "
+         "node value.");
+
+  return 0;
+}();
+
+//! @test Verify the post conditions on emplacing an element at the ending
+//! iterator of a tree with a single node.
+auto test_root_end = []() {
+  tree<int> allouville_oak(42);
+  allouville_oak.emplace(allouville_oak.end(), 43);
+
+  assert(2 == allouville_oak.size() &&
+         "The container must contain one element as built.");
+  assert(
+      42 == *allouville_oak.begin() &&
+      "The container's beginning iterator value must be equal to the expected "
+      "root node value.");
+
+  return 0;
+}();
+
 //! @test Verify the post conditions on a non-trivial tree built by emplacing
 //! elements.
 //!
 //! @dot
 //! digraph {
 //!   node [shape=circle fontsize="10"];
-//!   0 -> {1, 2, 3}
+//!   -1 -> {1, 2, 3}
 //!   3 -> {31, 32, 33}
 //!   33 -> {331, 332, 333}
 //! }
@@ -48,13 +146,13 @@ namespace fcarouge::test::emplace
 //!
 auto test_multiple = []() {
   tree<int> allouville_oak;
-  tree<int>::iterator node33 =
+  const tree<int>::iterator node33 =
       allouville_oak.emplace(allouville_oak.begin(), 33);
-  tree<int>::iterator node3 = allouville_oak.emplace(node33, 3);
-  tree<int>::iterator node333 =
+  const tree<int>::iterator node3 = allouville_oak.emplace(node33, 3);
+  const tree<int>::iterator node333 =
       allouville_oak.emplace(allouville_oak.end(), 333);
-  tree<int>::const_iterator node0 =
-      allouville_oak.emplace(allouville_oak.begin(), 0);
+  const tree<int>::const_iterator node0 =
+      allouville_oak.emplace(allouville_oak.begin(), -1);
   allouville_oak.emplace(node3, 1);
   allouville_oak.emplace(node3, 2);
   allouville_oak.emplace(node33, 31);
@@ -67,6 +165,10 @@ auto test_multiple = []() {
   assert(node0 == allouville_oak.begin() &&
          "The container's beginning iterator must be equal to the expected "
          "root node.");
+  assert(
+      -1 == *allouville_oak.begin() &&
+      "The container's beginning iterator value must be equal to the expected "
+      "root node value.");
   assert(
       *node0 == *allouville_oak.begin() &&
       "The container's beginning iterator value must be equal to the expected "

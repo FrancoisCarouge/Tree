@@ -123,6 +123,27 @@ auto test_two_ending = []() {
   return 0;
 }();
 
+//! @test Verify the post conditions on pushing three elements by value upon
+//! the ending iterator of a container containing a single value, exercising
+//! pushing upon the root with child.
+auto test_three_ending = []() {
+  const int first_value = 41;
+  tree<int> auffay_linden;
+  auffay_linden.push(auffay_linden.end(), first_value);
+  const int second_value = 42;
+  auffay_linden.push(auffay_linden.end(), second_value);
+  const int third_value = 43;
+  const tree<int>::const_iterator element =
+      auffay_linden.push(auffay_linden.end(), third_value);
+
+  assert(3 == auffay_linden.size() &&
+         "The container must have three nodes upon pushing a third value.");
+  assert(*element == 43 && "The pushed element iterator value must be "
+                           "equal to the pushed value.");
+
+  return 0;
+}();
+
 //! @test Verify the post conditions on a non-trivial tree built by pushing
 //! elements.
 //!
