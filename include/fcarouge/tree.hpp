@@ -381,8 +381,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @note Allocator is obtained as if by calling:
   //! `std::allocator_traits<AllocatorType>::
   //! select_on_container_copy_construction(other.get_allocator())`
-  //! The last node pointer data member is initialized then the root copy
-  //! algorithm function member assigns it.
   //!
   //! @complexity Linear in size of the other container.
   constexpr tree(const tree &other) noexcept
@@ -421,9 +419,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   constexpr tree(tree &&other) noexcept
           : node_allocator{ std::move(other.node_allocator) },
-            last{ other.last }, root{ other.root }, node_count{
-              other.node_count
-            }
+            root{ other.root }, node_count{ other.node_count }
   {
     other.root = nullptr;
   }
@@ -450,7 +446,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @complexity Constant.
   constexpr explicit tree(const_reference value)
-          : last{ node_allocator.allocate(1) }, root{ last }, node_count{ 1 }
+          : root{ node_allocator.allocate(1) }, node_count{ 1 }
   {
     std::construct_at(root, value);
   }
@@ -470,7 +466,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @complexity Constant.
   constexpr explicit tree(value_type &&value)
-          : last{ node_allocator.allocate(1) }, root{ last }, node_count{ 1 }
+          : root{ node_allocator.allocate(1) }, node_count{ 1 }
   {
     std::construct_at(root, std::move(value));
   }
@@ -483,8 +479,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @complexity Constant.
   constexpr tree(value_type &&value, const AllocatorType &allocator)
-          : node_allocator{ allocator }, last{ node_allocator.allocate(1) },
-            root{ last }, node_count{ 1 }
+          : node_allocator{ allocator }, root{ node_allocator.allocate(1) },
+            node_count{ 1 }
   {
     std::construct_at(root, std::move(value));
   }
@@ -544,7 +540,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     if (this != std::addressof(other)) {
       node_allocator = std::move(other.node_allocator);
       root = other.root;
-      last = other.last;
       node_count = other.node_count;
       other.root = nullptr;
     }
@@ -784,7 +779,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   {
     axe(root);
     root = nullptr;
-    last = nullptr;
     node_count = 0;
   }
 
@@ -855,19 +849,22 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     }
     // ...as the new last node...
     else {
-      // ... as the sole, first, and last child of the previous last node.
-      if (last) {
+      // ... as the last child of the root node.
+      if (root) {
         std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
-                          nullptr, nullptr, nullptr, nullptr, last);
-        last->first_child = node;
-        last->last_child = node;
-        last = node;
+                          nullptr, nullptr, root->last_child, nullptr, root);
+        if (!root->first_child) {
+          root->first_child = node;
+        }
+        if (root->last_child) {
+          root->last_child->right_sibling = node;
+        }
+        root->last_child = node;
       }
-      // ...as the sole, last, and root node.
+      // ...as the sole, and root node.
       else {
         std::construct_at(node, std::forward<ArgumentsType>(arguments)...);
         root = node;
-        last = node;
       }
     }
 
@@ -1091,15 +1088,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   {
     if (node == root) {
       root = nullptr;
-      last = nullptr;
-    }
-    if (node == last) {
-      if (last->left_sibling) {
-        last = last->left_sibling;
-      }
-      if (last->parent) {
-        last = last->parent;
-      }
     }
     if (node->parent) {
       if (node->parent->first_child == node) {
@@ -1205,39 +1193,31 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       // ...with a left sibling node.
       if (child->left_sibling) {
         child->left_sibling->right_sibling = child;
-        // ...which was the last node.
-        if (child->left_sibling == last) {
-          last = child;
-        }
       }
       // ...without a left sibling node.
       else {
         parent->first_child = child;
         // ...whose parent was the last node...
-        if (parent == last) {
-          last = child;
-        }
-      }
-      // ... or whose parent was the root.
-      if (parent == root) {
-        last = child;
       }
     }
     // ...as the new last node...
     else {
-      // ...as child of the previous last node.
-      if (last) {
+      // ... as the last child of the root node.
+      if (root) {
         std::construct_at(child, std::forward<ArgumentsType>(arguments)...,
-                          nullptr, nullptr, nullptr, nullptr, last);
-        last->first_child = child;
-        last->last_child = child;
-        last = child;
+                          nullptr, nullptr, root->last_child, nullptr, root);
+        if (!root->first_child) {
+          root->first_child = child;
+        }
+        if (root->last_child) {
+          root->last_child->right_sibling = child;
+        }
+        root->last_child = child;
       }
-      // ...as the sole, last, and root node.
+      // ...as the sole, and root node.
       else {
         std::construct_at(child, std::forward<ArgumentsType>(arguments)...);
         root = child;
-        last = child;
       }
     }
 
@@ -1278,12 +1258,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     if (root) {
       root->parent = node;
     }
-    // ...or as the sole, root, and last node in the container.
-    else {
-      last = node;
-    }
-
     root = node;
+
     ++node_count;
   }
 
@@ -1303,23 +1279,21 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
                            internal_node_type *left_sibling,
                            internal_node_type *parent)
   {
+    // If there is another node to copy...
     if (other_node) {
-      // The allocated node is in-place construced and recorded in every
-      // following statements.
+      // ...allocate and in-place construct a node with this container's
+      // allocator, the other node data value, and any left sibling or parent
+      // pointers...
       internal_node_type *node = node_allocator.allocate(1);
       std::construct_at(node, other_node->data, nullptr, nullptr, left_sibling,
                         nullptr, parent);
+      // ...recursively copy the right sibling and first child passing in left
+      // sibling and parent pointers...
       node->right_sibling = copy(other_node->right_sibling, node, node->parent);
       node->first_child = copy(other_node->first_child, nullptr, node);
+      // ...reference the parent's last child with the last right sibling.
       if (node->parent && !node->parent->last_child) {
-        if (node->right_sibling) {
-          node->parent->last_child = node->right_sibling;
-        } else {
-          node->parent->last_child = node;
-        }
-      }
-      if (!last) {
-        last = node;
+        node->parent->last_child = node;
       }
       return node;
     }
@@ -1333,16 +1307,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @{
 
   internal_node_allocator_type node_allocator{};
-
-  //! @brief The last element in the container.
-  //!
-  //! @details While the last element existence or selection depends on a
-  //! traversal strategy this
-  //!
-  //! @note The last node pointer data member is declared prior to the root node
-  //! pointer data member as the construction algorithms (e.g. copy) use and set
-  //! last, therefore it must be initialized.
-  internal_node_type *last = nullptr;
 
   //! @brief The root node of the container.
   internal_node_type *root = nullptr;
