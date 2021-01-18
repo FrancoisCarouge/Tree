@@ -404,7 +404,12 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! container.
   //!
   //! @complexity Linear in size of the other container.
-  constexpr tree(const tree &other, const AllocatorType &allocator);
+  constexpr tree(const tree &other, const AllocatorType &allocator)
+          : node_allocator{ allocator }, root{ copy(other.root, nullptr,
+                                                    nullptr) },
+            node_count{ other.node_count }
+  {
+  }
 
   //! @brief Move constructor.
   //!
