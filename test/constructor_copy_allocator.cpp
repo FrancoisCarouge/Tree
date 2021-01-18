@@ -32,14 +32,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
+#include <memory>
+// std::allocator
+
 #include <set>
 // std::multiset
 
 #include <type_traits>
 // std::is_copy_constructible_v
-
-#include <memory>
-// std::allocator
 
 namespace fcarouge::test::constructor_copy_allocator
 {

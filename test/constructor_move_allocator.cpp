@@ -32,11 +32,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
-#include <type_traits>
-// std::is_move_constructible_v std::is_nothrow_move_constructible_v
-
 #include <memory>
 // std::allocator
+
+#include <type_traits>
+// std::is_move_constructible_v std::is_nothrow_move_constructible_v
 
 namespace fcarouge::test::constructor_move_allocator
 {
@@ -47,7 +47,10 @@ constexpr auto ctest_traits = []() {
   // scalar type, trivially copyable class, or array of such type/class. It has
   // non-static members with default initializers. The destructor is user
   // provided.
-
+  static_assert(std::is_constructible_v<tree<char>, tree<char> &&,
+                                        std::allocator<char> &>,
+                "The container must be constructible from moving a tree and "
+                "allocator.");
   // The container exception specification for move construction with a custom
   // allocator is to be confirmed.
 

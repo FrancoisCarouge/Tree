@@ -472,7 +472,12 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! container.
   //!
   //! @complexity Constant.
-  constexpr tree(const_reference value, const AllocatorType &allocator);
+  constexpr tree(const_reference value, const AllocatorType &allocator)
+          : node_allocator{ allocator }, root{ node_allocator.allocate(1) },
+            node_count{ 1 }
+  {
+    std::construct_at(root, value);
+  }
 
   //! @brief Constructs the container by moving the value for its root.
   //!
