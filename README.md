@@ -34,7 +34,7 @@ The selected design tradeoffs are:
 - the C++ Core Guidelines, and
 - the C++20 support.
 
-## Class `fcarouge::tree`
+## Class fcarouge::tree
 
 Defined in header [fcarouge/tree.hpp](include/fcarouge/tree.hpp)
 
@@ -145,7 +145,7 @@ int main(int, char **)
 }
 ```
 
-## File `include/fcarouge/tree.hpp`
+## File include/fcarouge/tree.hpp
 
 ### Includes
 
