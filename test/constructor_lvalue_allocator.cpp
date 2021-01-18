@@ -38,30 +38,30 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <type_traits>
 // std::is_constructible_v
 
-namespace fcarouge::test::constructor_rvalue_allocator
+namespace fcarouge::test::constructor_lvalue_allocator
 {
-//! @test Verify the construction by moving a value exists and its exception
-//! specification.
+//! @test Verify the construction by value with allocator exists and its
+//! exception specification.
 constexpr auto ctest_traits = []() {
   // The container cannot satisty trivial construction because it is not a
   // scalar type, trivially copyable class, or array of such type/class. It has
   // non-static members with default initializers. The destructor is user
   // provided.
   static_assert(
-      std::is_constructible_v<tree<char>, char &&, std::allocator<char> &>,
-      "The container must be constructible from moving a single value and "
+      std::is_constructible_v<tree<char>, char &, std::allocator<char> &>,
+      "The container must be constructible from copying a single value and "
       "allocator.");
-  // The container exception specification for construction by moving a value
-  // with a custom allocator is to be confirmed.
+  // The container exception specification for construction by value with a
+  // custom allocator is to be confirmed.
 
   return 0;
 }();
 
-//! @test Verify the construction by moving a value post-conditions in runtime
-//! context.
+//! @test Verify the construction by value post-conditions in runtime context.
 auto test_post_conditions = []() {
+  const char value = 'v';
   std::allocator<char> allocator;
-  const tree<char, decltype(allocator)> gouy_yew('v', allocator);
+  const tree<char, decltype(allocator)> gouy_yew(value, allocator);
 
   assert(!gouy_yew.empty() &&
          "The container must not be empty on construction by value.");
@@ -75,7 +75,7 @@ auto test_post_conditions = []() {
          "not be equal on construction by value.");
   assert('v' == gouy_yew.front() &&
          "The container's front value and value used for construction "
-         "must be equal.");
+         "must be equal on construction by value.");
   assert(*gouy_yew.begin() == gouy_yew.front() &&
          "The container's beginning iterator and front values must be "
          "equal on construction by value.");
@@ -86,4 +86,4 @@ auto test_post_conditions = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::constructor_rvalue_allocator
+} // namespace fcarouge::test::constructor_lvalue_allocator
