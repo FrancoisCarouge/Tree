@@ -19,6 +19,10 @@ var namespacefcarouge_1_1test =
       [ "ctest_traits", "namespacefcarouge_1_1test_1_1constructor__copy.html#a169739a89ede070251ec1cf76453d9f4", null ],
       [ "test_multiple", "namespacefcarouge_1_1test_1_1constructor__copy.html#aeb96b2ab32a6a64965a285d2a1e5c2ba", null ]
     ] ],
+    [ "constructor_copy_allocator", "namespacefcarouge_1_1test_1_1constructor__copy__allocator.html", [
+      [ "ctest_traits", "namespacefcarouge_1_1test_1_1constructor__copy__allocator.html#aed1c3b661c8a4966f6ea730b87af2d20", null ],
+      [ "test_multiple", "namespacefcarouge_1_1test_1_1constructor__copy__allocator.html#a3855f5db75355eeab26c4d13f61cf327", null ]
+    ] ],
     [ "constructor_default", "namespacefcarouge_1_1test_1_1constructor__default.html", [
       [ "ctest_post_conditions", "namespacefcarouge_1_1test_1_1constructor__default.html#a91160aa23431fa161e8b15fb8c43cafe", null ],
       [ "ctest_traits", "namespacefcarouge_1_1test_1_1constructor__default.html#a0cdfb43a6d9ce4273684ce6af96b47f0", null ],
