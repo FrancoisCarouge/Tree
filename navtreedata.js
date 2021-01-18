@@ -31,7 +31,7 @@ var NAVTREE =
         [ "...but often you really don't!", "index.html#autotoc_md9", null ],
         [ "Design Tradeoffs", "index.html#autotoc_md10", null ]
       ] ],
-      [ "Class <tt>fcarouge::tree</tt>", "index.html#autotoc_md11", [
+      [ "Class fcarouge::tree", "index.html#autotoc_md11", [
         [ "Template Parameters", "index.html#autotoc_md12", null ],
         [ "Member Types", "index.html#autotoc_md13", null ],
         [ "Member Functions", "index.html#autotoc_md14", [
@@ -42,7 +42,7 @@ var NAVTREE =
         ] ],
         [ "Example", "index.html#autotoc_md19", null ]
       ] ],
-      [ "File <tt>include/fcarouge/tree.hpp</tt>", "index.html#autotoc_md20", [
+      [ "File include/fcarouge/tree.hpp", "index.html#autotoc_md20", [
         [ "Includes", "index.html#autotoc_md21", null ],
         [ "Namespaces", "index.html#autotoc_md22", null ],
         [ "Classes", "index.html#autotoc_md23", null ]
