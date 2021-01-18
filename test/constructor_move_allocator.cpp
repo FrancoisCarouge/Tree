@@ -32,38 +32,35 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
-#include <set>
-// std::multiset
-
 #include <type_traits>
-// std::is_copy_constructible_v
+// std::is_move_constructible_v std::is_nothrow_move_constructible_v
 
 #include <memory>
 // std::allocator
 
-namespace fcarouge::test::constructor_copy_allocator
+namespace fcarouge::test::constructor_move_allocator
 {
-//! @test Verify the copy construction with allocator exists and its exception
+//! @test Verify the move construction with allocator exists and its exception
 //! specification.
 constexpr auto ctest_traits = []() {
-  // The container cannot satisty trivial copy construction because it is not a
+  // The container cannot satisty trivial move construction because it is not a
   // scalar type, trivially copyable class, or array of such type/class. It has
   // non-static members with default initializers. The destructor is user
   // provided.
 
-  // The container exception specification for copy construction with a custom
+  // The container exception specification for move construction with a custom
   // allocator is to be confirmed.
 
   return 0;
 }();
 
-//! @test Verify the post conditions on a copied non-trivial tree with a custom
-//! allocator.
+//! @test Verify the post conditions on a move-constructed non-trivial tree with
+//! a custom allocator.
 //!
 //! @dot
 //! digraph {
 //!   node [shape=circle fontsize="10"];
-//!   0 -> {1, 2, 3}
+//!   999 -> {1, 2, 3}
 //!   1 -> {11, 12, 13}
 //!   2 -> {21, 22, 23}
 //!   3 -> {31, 32, 33}
@@ -72,7 +69,7 @@ constexpr auto ctest_traits = []() {
 auto test_multiple = []() {
   tree<int> auffay_linden;
   const tree<int>::iterator node0 =
-      auffay_linden.push(auffay_linden.begin(), 0);
+      auffay_linden.push(auffay_linden.begin(), 999);
   const tree<int>::iterator node1 = auffay_linden.push(node0, 1);
   auffay_linden.push(node1, 11);
   auffay_linden.push(node1, 12);
@@ -86,27 +83,28 @@ auto test_multiple = []() {
   auffay_linden.push(node3, 32);
   auffay_linden.push(node3, 33);
   std::allocator<int> allocator;
-  const tree<int, decltype(allocator)> allouville_oak(auffay_linden, allocator);
+  const tree<int, decltype(allocator)> allouville_oak(std::move(auffay_linden),
+                                                      allocator);
 
-  assert(
-      13 == allouville_oak.size() &&
-      "The container must have thirteen nodes upon pushing 13 element values.");
-  assert(
-      *node0 == allouville_oak.front() &&
-      "The container's front value must be equal to the expected root value.");
-
-  const std::multiset<int> expected_content{ 0,  1,  2,  3,  11, 12, 13,
-                                             21, 22, 23, 31, 32, 33 };
-  std::multiset<int> iterated_content;
-  tree<int>::const_iterator iterator = allouville_oak.begin();
-  for (; iterator != allouville_oak.end(); ++iterator) {
-    iterated_content.insert(*iterator);
-  }
-
-  assert(expected_content == iterated_content &&
-         "Each element must be visited exactly once.");
+  assert(13 == allouville_oak.size() &&
+         "The container must have thirteen nodes upon move-constructing a "
+         "13-element tree.");
+  assert(!allouville_oak.empty() &&
+         "The container must not be empty on move-constructing a tree.");
+  assert(999 == allouville_oak.front() &&
+         "The container's front value must be equal to the expected root value "
+         "on move-constructing a tree.");
+  assert(999 == *allouville_oak.begin() &&
+         "The container's beginning iterator value must be equal to the "
+         "expected root value on move-constructing a tree.");
+  assert(allouville_oak.begin() != allouville_oak.end() &&
+         "The container's beginning and ending iterators must not be equal on "
+         "move-constructing a tree.");
+  assert(allouville_oak.cbegin() != allouville_oak.cend() &&
+         "The container's beginning and ending constant iterators must not be "
+         "equal on move-constructing a tree.");
 
   return 0;
 }();
 
-} // namespace fcarouge::test::constructor_copy_allocator
+} // namespace fcarouge::test::constructor_move_allocator

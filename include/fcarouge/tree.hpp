@@ -443,7 +443,16 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! container.
   //!
   //! @complexity Constant.
-  constexpr tree(tree &&other, const AllocatorType &allocator) noexcept;
+  constexpr tree(tree &&other, const AllocatorType &allocator) noexcept
+          : node_allocator{ allocator }, node_count{ other.node_count }
+  {
+    if (allocator != other.node_allocator) {
+      root = copy(other.root, nullptr, nullptr);
+    } else {
+      root = other.root;
+      other.root = nullptr;
+    }
+  }
 
   //! @brief Constructs the container with by copying the value for its root.
   //!
