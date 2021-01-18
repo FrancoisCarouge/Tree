@@ -50,7 +50,10 @@ constexpr auto ctest_traits = []() {
   // scalar type, trivially copyable class, or array of such type/class. It has
   // non-static members with default initializers. The destructor is user
   // provided.
-
+  static_assert(
+      std::is_constructible_v<tree<char>, tree<char> &, std::allocator<char> &>,
+      "The container must be constructible from copying a tree and "
+      "allocator.");
   // The container exception specification for copy construction with a custom
   // allocator is to be confirmed.
 
