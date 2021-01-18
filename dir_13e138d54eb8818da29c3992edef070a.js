@@ -9,6 +9,7 @@ var dir_13e138d54eb8818da29c3992edef070a =
     [ "constructor_default.cpp", "constructor__default_8cpp.html", "constructor__default_8cpp" ],
     [ "constructor_lvalue.cpp", "constructor__lvalue_8cpp.html", "constructor__lvalue_8cpp" ],
     [ "constructor_move.cpp", "constructor__move_8cpp.html", "constructor__move_8cpp" ],
+    [ "constructor_move_allocator.cpp", "constructor__move__allocator_8cpp.html", "constructor__move__allocator_8cpp" ],
     [ "constructor_rvalue.cpp", "constructor__rvalue_8cpp.html", "constructor__rvalue_8cpp" ],
     [ "constructor_rvalue_allocator.cpp", "constructor__rvalue__allocator_8cpp.html", "constructor__rvalue__allocator_8cpp" ],
     [ "emplace.cpp", "emplace_8cpp.html", "emplace_8cpp" ],
