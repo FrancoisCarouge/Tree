@@ -1,5 +1,4 @@
-Tree for C++
-============
+# Tree for C++
 
 Tree data structure for C++: non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.
 
