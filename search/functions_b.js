@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['size_286',['size',['../classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79',1,'fcarouge::tree']]],
-  ['swap_287',['swap',['../classfcarouge_1_1tree.html#aa7a5927fb1823432fe1a2c9105ccfa6f',1,'fcarouge::tree']]]
+  ['size_290',['size',['../classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79',1,'fcarouge::tree']]],
+  ['swap_291',['swap',['../classfcarouge_1_1tree.html#aa7a5927fb1823432fe1a2c9105ccfa6f',1,'fcarouge::tree']]]
 ];

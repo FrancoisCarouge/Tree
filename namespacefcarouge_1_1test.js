@@ -52,6 +52,11 @@ var namespacefcarouge_1_1test =
       [ "ctest_traits", "namespacefcarouge_1_1test_1_1constructor__rvalue__allocator.html#a35efacc641bd49a65ac0d457a920f66a", null ],
       [ "test_post_conditions", "namespacefcarouge_1_1test_1_1constructor__rvalue__allocator.html#ac017563d7b175ca30688a81c85a383bc", null ]
     ] ],
+    [ "destructor", "namespacefcarouge_1_1test_1_1destructor.html", [
+      [ "ctest_post_conditions", "namespacefcarouge_1_1test_1_1destructor.html#a14a2335318e3a48a215cf046ac3fc14c", null ],
+      [ "ctest_traits", "namespacefcarouge_1_1test_1_1destructor.html#a2c6ce183aca25b3c85f9dd40e00ce7e0", null ],
+      [ "test_post_conditions", "namespacefcarouge_1_1test_1_1destructor.html#a0b7271b99ddd1791da47701f30488dcb", null ]
+    ] ],
     [ "emplace", "namespacefcarouge_1_1test_1_1emplace.html", [
       [ "test_empty_begin", "namespacefcarouge_1_1test_1_1emplace.html#a5a25a4e3e8a3c3095abf7439daa70d0b", null ],
       [ "test_empty_end", "namespacefcarouge_1_1test_1_1emplace.html#a69ea3c7a1a210c52e9578db81d777447", null ],
