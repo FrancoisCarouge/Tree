@@ -99,15 +99,4 @@ auto test_multiple = []() {
   return 0;
 }();
 
-//! @test Verify the size of a cleared default constructed container.
-auto test_cleared_constructor_default = []() {
-  tree<int> allouville_oak;
-  allouville_oak.clear();
-
-  assert(0 == allouville_oak.size() &&
-         "The container must have zero node on cleared default construction.");
-
-  return 0;
-}();
-
 } // namespace fcarouge::test::size
