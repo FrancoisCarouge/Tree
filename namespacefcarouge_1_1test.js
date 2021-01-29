@@ -117,7 +117,6 @@ var namespacefcarouge_1_1test =
     ] ],
     [ "size", "namespacefcarouge_1_1test_1_1size.html", [
       [ "ctest_constructor_default", "namespacefcarouge_1_1test_1_1size.html#a5bfed7edfefd104fb761d8eb60bb6a39", null ],
-      [ "test_cleared_constructor_default", "namespacefcarouge_1_1test_1_1size.html#a5d0b16a32c5e32c3b71d3b010be746ab", null ],
       [ "test_constructor_default", "namespacefcarouge_1_1test_1_1size.html#a0e5c701adc2c48a16b3e6871053bd546", null ],
       [ "test_constructor_lvalue", "namespacefcarouge_1_1test_1_1size.html#afab1d4cfe8e678cc83efd0bd5308f375", null ],
       [ "test_constructor_rvalue", "namespacefcarouge_1_1test_1_1size.html#a4c968de1e99f65b06676d49faf36f356", null ],
