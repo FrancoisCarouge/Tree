@@ -29,11 +29,17 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #ifndef FCAROUGE_TREE_HPP
 #define FCAROUGE_TREE_HPP
 
+#include <algorithm>
+// std::min
+
 #include <cstddef>
 // std::ptrdiff_t std::size_t
 
 #include <iterator>
 // std::input_iterator_tag
+
+#include <limits>
+// std::numeric_limits
 
 #include <memory>
 // std::addressof std::allocator std::allocator_traits
@@ -49,14 +55,15 @@ namespace fcarouge
 {
 //! @brief A tree data structure for C++.
 //!
-//! @details The fcarouge::tree type is a hierarchical tree data structure.
+//! @details The `fcarouge::tree` type is a hierarchical tree data structure.
 //! The container is a non-linear non-associative unordered recursively
 //! referenced collection of nodes, each containing a value. The design
 //! tradeoffs are influenced by the Standard Template Library (STL) principles
 //! and the C++ Core Guidelines. The container is a standard layout class type
 //! which may help with memory and cross language communication. The iteration
 //! order of the standard iterator is unspecified, except that each element is
-//! visited only once.
+//! visited only once. The container supports compile time evaluation of its
+//! operations.
 //!
 //! @tparam Type The type of the contained data elements. The requirements that
 //! are imposed on the elements depend on the actual operations performed on the
@@ -97,13 +104,16 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @brief The pointer type of the contained data elements.
   using pointer = typename std::allocator_traits<AllocatorType>::pointer;
 
-  //! @brief The const pointer type of the contained data elements.
+  //! @brief The constant pointer type of the contained data elements.
   using const_pointer =
       typename std::allocator_traits<AllocatorType>::const_pointer;
 
   //! @}
 
   private:
+  //! @name Private Member Types
+  //! @{
+
   //! @brief Branch node data structure type.
   //!
   //! @details Internal implementation details of the node data structure type
@@ -153,6 +163,15 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     //! @}
   };
+
+  //! @brief Rebind the element type allocator to the internal container nodes
+  //! allocator.
+  using internal_node_allocator_type = typename std::allocator_traits<
+      AllocatorType>::template rebind_alloc<internal_node_type>;
+
+  //! @brief The node allocator traits access.
+  using internal_node_allocator_traits =
+      std::allocator_traits<internal_node_allocator_type>;
 
   //! @brief Type to identify and traverse the elements of the container.
   struct internal_iterator_type {
@@ -310,6 +329,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     //! @}
   };
+
+  //! @}
 
   public:
   //! @name Public Member Types
@@ -769,17 +790,23 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @details The maximum number of elements depends on the system or library
   //! implementation limitations. The absolute distance between the beginning
-  //! and end iterators for the largest container.
+  //! and end iterators for the largest container or the maximum number of
+  //! element nodes theoretically allocated, whichever is smaller.
   //!
   //! @return Maximum number of elements.
   //!
   //! @complexity Constant.
   //!
   //! @note This value typically reflects the theoretical limit on the size of
-  //! the container, at most `std:: numeric_limits<difference_type>:: max()`. At
-  //! runtime, the size of the container may be limited to a value smaller
-  //! than max_size() by the amount of RAM available.
-  [[nodiscard]] constexpr size_type max_size() const noexcept;
+  //! the container, at most `std:: numeric_limits<difference_type>:: max()`, or
+  //! at runtime, the size of the container may be limited to a value smaller
+  //! than `max_size()` by the amount of memory (usualy RAM) available.
+  [[nodiscard]] constexpr size_type max_size() const noexcept
+  {
+    return std::min<size_type>(
+        std::numeric_limits<difference_type>::max(),
+        internal_node_allocator_traits::max_size(node_allocator));
+  }
 
   //! @}
 
@@ -1083,15 +1110,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @}
 
   private:
-  //! @name Private Member Types
-  //! @{
-
-  //! Rebind the allocator for the container nodes.
-  using internal_node_allocator_type = typename std::allocator_traits<
-      AllocatorType>::template rebind_alloc<internal_node_type>;
-
-  //! @}
-
   //! @name Private Modifier Member Functions
   //! @{
 
