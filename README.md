@@ -61,13 +61,13 @@ The `fcarouge::tree` type is a hierarchical tree data structure. The container i
 | `value_type` | The type of the contained data elements. |
 | `allocator_type` | The type of the allocator for all memory allocations of this container. |
 | `size_type` | The unsigned integer type to represent element counts. |
-| `difference_type` | Signed integer type to represent element distances. |
+| `difference_type` | The signed integer type to represent element distances. |
 | `reference` | The reference type of the contained data elements. |
 | `const_reference` | The constant reference type of the contained data elements. |
 | `pointer` | The pointer type of the contained data elements. |
-| `const_pointer` | The const pointer type of the contained data elements. |
-| `iterator` | Type to identify and traverse the elements of the container. |
-| `const_iterator` | Constant type to identify and traverse the elements of the container. |
+| `const_pointer` | The constant pointer type of the contained data elements. |
+| `iterator` | The type to identify and traverse the elements of the container. |
+| `const_iterator` | The constant type to identify and traverse the elements of the container. |
 
 ### Member Functions
 

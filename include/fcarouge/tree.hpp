@@ -1388,8 +1388,8 @@ operator==(const fcarouge::tree<Type, AllocatorType> &lhs,
 //! `const E` lvalues `lhs` and `rhs` as left hand operand and right hand
 //! operand respectively (where `E` is `Type`), synthesized three-way comparison
 //! is defined as: if `std::three_way_comparable_with<E, E>` is satisfied,
-//! equivalent to `lhs <=> rhs;` otherwise, if comparing two const `E` lvalues
-//! by `operator<` is well-formed and the result type satisfies
+//! equivalent to `lhs <=> rhs;` otherwise, if comparing two constant `E`
+//! lvalues by `operator<` is well-formed and the result type satisfies
 //! boolean-testable, equivalent to `lhs < rhs ? std::weak_ordering::less : rhs
 //! < lhs ? std::weak_ordering::greater : std::weak_ordering::equivalent`
 //! otherwise, synthesized three-way comparison is not defined, and
