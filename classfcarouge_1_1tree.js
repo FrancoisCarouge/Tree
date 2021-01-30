@@ -53,6 +53,8 @@ var classfcarouge_1_1tree =
     [ "front", "classfcarouge_1_1tree.html#a27dfcb2f1ab3f3f1f2d12c78fa416241", null ],
     [ "get_allocator", "classfcarouge_1_1tree.html#a9c65db35e938093e6b0a210630f1d84d", null ],
     [ "insert", "classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa", null ],
+    [ "insert", "classfcarouge_1_1tree.html#a40d0f9eb1070eaff88b4b92afbeaf0a0", null ],
+    [ "insert", "classfcarouge_1_1tree.html#adcb278e9b4d311a6f1b72796681d0146", null ],
     [ "insert", "classfcarouge_1_1tree.html#a143928de819799873e2b52c5e9b58468", null ],
     [ "max_size", "classfcarouge_1_1tree.html#abb88c6218835c75ee3640b98dcc4abd0", null ],
     [ "operator=", "classfcarouge_1_1tree.html#a6b2887816b7f092fc401938e669d70b4", null ],
