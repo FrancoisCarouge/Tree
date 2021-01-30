@@ -1,1 +1,2 @@
 noExplicitConstructor:include/fcarouge/tree.hpp
+noExplicitConstructor:test/null_allocator.hpp
