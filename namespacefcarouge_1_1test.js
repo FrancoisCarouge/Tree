@@ -86,6 +86,12 @@ var namespacefcarouge_1_1test =
       [ "ctest_traits", "namespacefcarouge_1_1test_1_1iterator__legacy.html#a78161ad536be34ed75ecc53e09ae0160", null ],
       [ "test_increment", "namespacefcarouge_1_1test_1_1iterator__legacy.html#a2911cbabb1ee3b766b89f5d841fb4b0a", null ]
     ] ],
+    [ "max_size", "namespacefcarouge_1_1test_1_1max__size.html", [
+      [ "ctest_default", "namespacefcarouge_1_1test_1_1max__size.html#a9b4b85289e408ea1ee93c7deda6ad15b", null ],
+      [ "ctest_null", "namespacefcarouge_1_1test_1_1max__size.html#a65e591e6ad304c344e0453794c80eeb8", null ],
+      [ "test_constructor_null", "namespacefcarouge_1_1test_1_1max__size.html#a6648911c88f1bc454422a71266a65f00", null ],
+      [ "test_default", "namespacefcarouge_1_1test_1_1max__size.html#ada63d5517a32bf63368c9adbe537001c", null ]
+    ] ],
     [ "operator_assignment_move", "namespacefcarouge_1_1test_1_1operator__assignment__move.html", [
       [ "ctest_traits", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a7c8f7f1160d5dc066ed4ed6051ff50d8", null ],
       [ "test_multiple", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a0d4d769265e2903eecfe193be046864c", null ],

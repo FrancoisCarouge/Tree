@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['insert_5freturn_5ftype_182',['insert_return_type',['../structfcarouge_1_1tree_1_1insert__return__type.html',1,'fcarouge::tree']]],
-  ['internal_5fconst_5fiterator_5ftype_183',['internal_const_iterator_type',['../structfcarouge_1_1tree_1_1internal__const__iterator__type.html',1,'fcarouge::tree']]],
-  ['internal_5fiterator_5ftype_184',['internal_iterator_type',['../structfcarouge_1_1tree_1_1internal__iterator__type.html',1,'fcarouge::tree']]],
-  ['internal_5fnode_5ftype_185',['internal_node_type',['../structfcarouge_1_1tree_1_1internal__node__type.html',1,'fcarouge::tree']]]
+  ['allocator_5ftraits_3c_20fcarouge_3a_3anull_5fallocator_3c_20type_20_3e_20_3e_195',['allocator_traits&lt; fcarouge::null_allocator&lt; Type &gt; &gt;',['../structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html',1,'std']]]
 ];

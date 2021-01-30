@@ -10,6 +10,7 @@ var classfcarouge_1_1tree =
     [ "const_pointer", "classfcarouge_1_1tree.html#a03614438bc62228f67b08f2eeadfa803", null ],
     [ "const_reference", "classfcarouge_1_1tree.html#abc9bb13758156a46bc7230dd86f58716", null ],
     [ "difference_type", "classfcarouge_1_1tree.html#a8ca46de39685c48952bd45a578e3bd8d", null ],
+    [ "internal_node_allocator_traits", "classfcarouge_1_1tree.html#ac90c508b80e75fb0090ef0b3f916700b", null ],
     [ "internal_node_allocator_type", "classfcarouge_1_1tree.html#a0f58d6bc0460ce068c715672fb40a52d", null ],
     [ "iterator", "classfcarouge_1_1tree.html#aa347e61a1909cfadea9952d73cf23b2f", null ],
     [ "pointer", "classfcarouge_1_1tree.html#aa318e3abfbfa6655010512a9727b7ac2", null ],
