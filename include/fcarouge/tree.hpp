@@ -56,7 +56,7 @@ namespace fcarouge
 //! @brief A tree data structure for C++.
 //!
 //! @details The `fcarouge::tree` type is a hierarchical tree data structure.
-//! The container is a non-linear non-associative unordered recursively
+//! The container is a generic non-linear non-associative unordered recursively
 //! referenced collection of nodes, each containing a value. The design
 //! tradeoffs are influenced by the Standard Template Library (STL) principles
 //! and the C++ Core Guidelines. The container is a standard layout class type
@@ -832,6 +832,13 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   constexpr iterator insert(const_iterator position, value_type &&value);
 
+  template <class InputIteratorType>
+  constexpr iterator insert(const_iterator position, InputIteratorType first,
+                            InputIteratorType last);
+
+  constexpr iterator insert(const_iterator position,
+                            std::initializer_list<Type> initializers);
+
   template <class... ArgumentsType>
   constexpr reference emplace_front(ArgumentsType &&... arguments);
 
@@ -918,9 +925,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return { node };
   }
 
-  //! @brief Prunes the specified element including its sub-tree.
+  //! @brief Removes the specified element including its sub-tree.
   //!
-  //! @details Removes the element at `position` and prune its associated
+  //! @details Removes the element at `position` and its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
   //! Other references and iterators are not affected. The iterator `position`
   //! must be valid and dereferenceable. Thus the `end()` iterator which is
@@ -945,9 +952,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return { next };
   }
 
-  //! @brief Prunes the specified element including its sub-tree.
+  //! @brief Removes the specified element including its sub-tree.
   //!
-  //! @details Removes the element at `position` and prune its associated
+  //! @details Removes the element at `position` and its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
   //! Other references and iterators are not affected. The iterator `position`
   //! must be valid and dereferenceable. Thus the `end()` iterator which is
@@ -1115,7 +1122,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @brief Isolates the specified element including its sub-tree.
   //!
-  //! @details Orphans the node from its parent and disolve its sibling
+  //! @details Orphans the node from its parent and disolves its sibling
   //! relationships. The container's size is not maintained and no longer
   //! corresponds to the container content. Cleaving the root or last node has
   //! the expected effects on the tree.
@@ -1146,7 +1153,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @brief Recursively erases the specified element including its sub-tree.
   //!
-  //! @details Removes the `node` element and prune its associated
+  //! @details Removes the `node` element and prunes its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
   //! Other references and iterators are not affected. The container's size is
   //! reduded by the number of elements removed, that is the node and all nodes
@@ -1168,7 +1175,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @brief Axes the specified element including its sub-tree.
   //!
-  //! @details Removes the `node` element and prune its associated
+  //! @details Removes the `node` element and removes its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
   //! Other references and iterators are not affected. The container's size is
   //! not maintained and no longer corresponds to the container content.

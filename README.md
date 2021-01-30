@@ -1,6 +1,6 @@
 # Tree for C++
 
-Tree data structure for C++: non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.
+Tree data structure for C++: generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.
 
 ## Information Tree
 
@@ -45,7 +45,7 @@ template <
 > class tree
 ```
 
-The `fcarouge::tree` type is a hierarchical tree data structure. The container is a non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. The design tradeoffs are influenced by the Standard Template Library (STL) principles and the C++ Core Guidelines. The container is a standard layout class type which may help with memory and cross language communication. The iteration order of the standard iterator is unspecified, except that each element is visited only once.
+The `fcarouge::tree` type is a hierarchical tree data structure. The container is a generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. The design tradeoffs are influenced by the Standard Template Library (STL) principles and the C++ Core Guidelines. The container is a standard layout class type which may help with memory and cross language communication. The iteration order of the standard iterator is unspecified, except that each element is visited only once.
 
 ### Template Parameters
 
@@ -166,7 +166,7 @@ int main(int, char **)
 
 | Class | Definition |
 | --- | --- |
-| `tree` | Non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. |
+| `tree` | Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. |
 
 ## License
 
