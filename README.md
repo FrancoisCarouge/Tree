@@ -29,9 +29,10 @@ Tree data structure for C++: non-linear non-associative unordered recursively re
 ### Design Tradeoffs
 
 The selected design tradeoffs are:
-- the Standard Template Library (STL) principles, and by extension, their tradeoffs,
+- the Standard Template Library (STL) principles, and by extension, their tradeoffs, and
 - the C++ Core Guidelines, and
-- the C++20 support.
+- the C++20 support, and
+- precise, detailed, and intelligible documentation for the wider audience.
 
 ## Class fcarouge::tree
 
