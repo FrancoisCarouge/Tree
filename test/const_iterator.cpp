@@ -41,7 +41,7 @@ constexpr auto ctest_traits = []() {
   // iterator must be implicitely convertible to this constant iterator.
   static_assert(
       std::is_copy_constructible_v<tree<char>::const_iterator>,
-      "The container's const iterator type must be copy constructible.");
+      "The container's constant iterator type must be copy constructible.");
   static_assert(
       std::is_trivially_copy_constructible_v<tree<char>::const_iterator>,
       "The container's constant iterator type must be trivially copy "

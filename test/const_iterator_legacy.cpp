@@ -191,8 +191,8 @@ auto test_post_conditions = []() {
       iterator == allouville_oak.end() &&
       "The incremented element iterator must be equal to the ending iterator.");
   assert(iterator == allouville_oak.cend() &&
-         "The incremented element iterator must be equal to the ending const "
-         "iterator.");
+         "The incremented element iterator must be equal to the ending "
+         "constant iterator.");
 
   return 0;
 }();
