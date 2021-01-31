@@ -17,7 +17,7 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
 
 ## Sometimes all you need is this tree...
 
-- to represent, store, walk, manipulate, and search some hierarchical information with the purpose of deciding, routing, sorting, or composing results.
+- to represent, store, walk, manipulate, and search some **hierarchical** information with the purpose of deciding, routing, sorting, or composing results.
 
 ### ...but often you really don't!
 

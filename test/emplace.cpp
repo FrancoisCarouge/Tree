@@ -47,6 +47,10 @@ auto test_empty_begin = []() {
          "The container's beginning iterator must be equal to the expected "
          "root node.");
   assert(
+      42 == *allouville_oak.begin() &&
+      "The container's beginning iterator value must be equal to the expected "
+      "root node value.");
+  assert(
       *node == *allouville_oak.begin() &&
       "The container's beginning iterator value must be equal to the expected "
       "root node value.");
@@ -72,6 +76,10 @@ auto test_empty_end = []() {
   assert(node == allouville_oak.begin() &&
          "The container's beginning iterator must be equal to the expected "
          "root node.");
+  assert(
+      42 == *allouville_oak.begin() &&
+      "The container's beginning iterator value must be equal to the expected "
+      "root node value.");
   assert(
       *node == *allouville_oak.begin() &&
       "The container's beginning iterator value must be equal to the expected "

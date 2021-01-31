@@ -839,15 +839,51 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   constexpr iterator insert(const_iterator position,
                             std::initializer_list<Type> initializers);
 
+  //! @brief Inserts a new element into the container constructed in-place to
+  //! the beginning of the container.
+  //!
+  //! @details The element is constructed through `std::construct_at`
+  //! equivalenent to placement-new to construct the element in-place, usable in
+  //! evaluation of constant expressions, at a location provided by the
+  //! container. The `arguments` are forwarded to the constructor as
+  //! `std::forward<ArgumentsType>(arguments)...`. No iterators or references
+  //! are invalidated. Inserts at the root position as the new root.
+  //!
+  //! @tparam ArgumentsType The argument types to forward to the constructor of
+  //! the element.
+  //!
+  //! @param arguments The arguments to forward to the constructor of the
+  //! element.
+  //!
+  //! @return Reference to the inserted element.
+  //!
+  //! @complexity Constant.
   template <class... ArgumentsType>
-  constexpr reference emplace_front(ArgumentsType &&... arguments);
+  constexpr reference emplace_front(ArgumentsType &&... arguments)
+  {
+    // The allocated node is in-place construced and recorded in every
+    // following statements.
+    internal_node_type *node = node_allocator.allocate(1);
+
+    // Insert the new node...
+    std::construct_at(node, std::forward<ArgumentsType>(arguments)..., root,
+                      root, nullptr, nullptr, nullptr);
+    // ...as the new root node.
+    if (root) {
+      root->parent = node;
+    }
+
+    root = node;
+    ++node_count;
+    return node->data;
+  }
 
   //! @brief Inserts a new element into the container constructed in-place
   //! directly before the `position` iterator as the new left sibling.
   //!
-  //! @details The element is constructed through
-  //! `std::allocator_traits::construct`, which typically uses placement-new
-  //! to construct the element in-place at a location provided by the
+  //! @details The element is constructed through `std::construct_at`
+  //! equivalenent to placement-new to construct the element in-place, usable in
+  //! evaluation of constant expressions, at a location provided by the
   //! container. The `arguments` are forwarded to the constructor as
   //! `std::forward<ArgumentsType>(arguments)...`. No iterators or references
   //! are invalidated. Inserts at the root position as the new root. Inserts
