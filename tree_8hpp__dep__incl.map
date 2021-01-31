@@ -1,5 +1,5 @@
 <map id="include/fcarouge/tree.hpp" name="include/fcarouge/tree.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="2549,5,2715,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="2623,5,2790,32"/>
 <area shape="rect" id="node2" href="$hello__world_8cpp.html" title=" " alt="" coords="5,87,163,114"/>
 <area shape="rect" id="node3" href="$clear_8cpp.html" title=" " alt="" coords="187,87,287,114"/>
 <area shape="rect" id="node4" href="$const__iterator_8cpp.html" title=" " alt="" coords="311,87,462,114"/>
@@ -16,17 +16,18 @@
 <area shape="rect" id="node15" href="$constructor__rvalue__allocator_8cpp.html" title=" " alt="" coords="2388,80,2543,121"/>
 <area shape="rect" id="node16" href="$destructor_8cpp.html" title=" " alt="" coords="2567,87,2697,114"/>
 <area shape="rect" id="node17" href="$emplace_8cpp.html" title=" " alt="" coords="2722,87,2843,114"/>
-<area shape="rect" id="node18" href="$erase__const__iterator_8cpp.html" title=" " alt="" coords="2867,87,3058,114"/>
-<area shape="rect" id="node19" href="$for__range_8cpp.html" title=" " alt="" coords="3082,87,3209,114"/>
-<area shape="rect" id="node20" href="$erase__iterator_8cpp.html" title=" " alt="" coords="3233,87,3383,114"/>
-<area shape="rect" id="node21" href="$iterator_8cpp.html" title=" " alt="" coords="3408,87,3520,114"/>
-<area shape="rect" id="node22" href="$iterator__legacy_8cpp.html" title=" " alt="" coords="3545,87,3701,114"/>
-<area shape="rect" id="node23" href="$max__size_8cpp.html" title=" " alt="" coords="3725,87,3851,114"/>
-<area shape="rect" id="node24" href="$operator__assignment__move_8cpp.html" title=" " alt="" coords="3875,80,4045,121"/>
-<area shape="rect" id="node25" href="$push__front__lvalue_8cpp.html" title=" " alt="" coords="4069,87,4243,114"/>
-<area shape="rect" id="node26" href="$push__front__rvalue_8cpp.html" title=" " alt="" coords="4267,87,4442,114"/>
-<area shape="rect" id="node27" href="$push__lvalue_8cpp.html" title=" " alt="" coords="4467,87,4608,114"/>
-<area shape="rect" id="node28" href="$push__rvalue_8cpp.html" title=" " alt="" coords="4631,87,4774,114"/>
-<area shape="rect" id="node29" href="$size_8cpp.html" title=" " alt="" coords="4798,87,4893,114"/>
-<area shape="rect" id="node30" href="$standard__layout_8cpp.html" title=" " alt="" coords="4917,87,5080,114"/>
+<area shape="rect" id="node18" href="$emplace__front_8cpp.html" title=" " alt="" coords="2868,87,3023,114"/>
+<area shape="rect" id="node19" href="$erase__const__iterator_8cpp.html" title=" " alt="" coords="3047,87,3238,114"/>
+<area shape="rect" id="node20" href="$erase__iterator_8cpp.html" title=" " alt="" coords="3262,87,3413,114"/>
+<area shape="rect" id="node21" href="$for__range_8cpp.html" title=" " alt="" coords="3437,87,3563,114"/>
+<area shape="rect" id="node22" href="$iterator_8cpp.html" title=" " alt="" coords="3588,87,3700,114"/>
+<area shape="rect" id="node23" href="$iterator__legacy_8cpp.html" title=" " alt="" coords="3725,87,3881,114"/>
+<area shape="rect" id="node24" href="$max__size_8cpp.html" title=" " alt="" coords="3905,87,4031,114"/>
+<area shape="rect" id="node25" href="$operator__assignment__move_8cpp.html" title=" " alt="" coords="4055,80,4225,121"/>
+<area shape="rect" id="node26" href="$push__front__lvalue_8cpp.html" title=" " alt="" coords="4249,87,4423,114"/>
+<area shape="rect" id="node27" href="$push__front__rvalue_8cpp.html" title=" " alt="" coords="4447,87,4622,114"/>
+<area shape="rect" id="node28" href="$push__lvalue_8cpp.html" title=" " alt="" coords="4647,87,4788,114"/>
+<area shape="rect" id="node29" href="$push__rvalue_8cpp.html" title=" " alt="" coords="4811,87,4954,114"/>
+<area shape="rect" id="node30" href="$size_8cpp.html" title=" " alt="" coords="4978,87,5073,114"/>
+<area shape="rect" id="node31" href="$standard__layout_8cpp.html" title=" " alt="" coords="5097,87,5260,114"/>
 </map>

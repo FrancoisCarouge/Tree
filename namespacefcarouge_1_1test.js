@@ -64,6 +64,10 @@ var namespacefcarouge_1_1test =
       [ "test_root_begin", "namespacefcarouge_1_1test_1_1emplace.html#aa4f238e4e31ffd8932fe11730577382d", null ],
       [ "test_root_end", "namespacefcarouge_1_1test_1_1emplace.html#ab7f223b5c08c0e941207f7bb8f015966", null ]
     ] ],
+    [ "emplace_front", "namespacefcarouge_1_1test_1_1emplace__front.html", [
+      [ "test_empty_front", "namespacefcarouge_1_1test_1_1emplace__front.html#a3d5e6ca3523c97c0f705f98815fb07b5", null ],
+      [ "test_root_front", "namespacefcarouge_1_1test_1_1emplace__front.html#a3c6e7856b30c6c55a9cc747ded22cfa7", null ]
+    ] ],
     [ "erase_const_iterator", "namespacefcarouge_1_1test_1_1erase__const__iterator.html", [
       [ "test_last", "namespacefcarouge_1_1test_1_1erase__const__iterator.html#aace8d4d880b502963962aae5122e315f", null ],
       [ "test_multiple", "namespacefcarouge_1_1test_1_1erase__const__iterator.html#ab1ac0745f19ba7bb81c22169d3bb5d3b", null ],

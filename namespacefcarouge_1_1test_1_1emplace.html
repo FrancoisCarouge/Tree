@@ -126,6 +126,10 @@ Variables</h2></td></tr>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning iterator must be equal to the expected &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;root node.&quot;</span>);</div>
 <div class="line">  assert(</div>
+<div class="line">      42 == *allouville_oak.begin() &amp;&amp;</div>
+<div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning iterator value must be equal to the expected &quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;root node value.&quot;</span>);</div>
+<div class="line">  assert(</div>
 <div class="line">      *node == *allouville_oak.begin() &amp;&amp;</div>
 <div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning iterator value must be equal to the expected &quot;</span></div>
 <div class="line">      <span class="stringliteral">&quot;root node value.&quot;</span>);</div>
@@ -166,6 +170,10 @@ Variables</h2></td></tr>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning iterator must be equal to the expected &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;root node.&quot;</span>);</div>
 <div class="line">  assert(</div>
+<div class="line">      42 == *allouville_oak.begin() &amp;&amp;</div>
+<div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning iterator value must be equal to the expected &quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;root node value.&quot;</span>);</div>
+<div class="line">  assert(</div>
 <div class="line">      *node == *allouville_oak.begin() &amp;&amp;</div>
 <div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning iterator value must be equal to the expected &quot;</span></div>
 <div class="line">      <span class="stringliteral">&quot;root node value.&quot;</span>);</div>
@@ -178,9 +186,9 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000032">Test:</a></b></dt><dd>Verify the post conditions on emplacing an element at the ending iterator of an emptry tree. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000031">Test:</a></b></dt><dd>Verify the post conditions on emplacing an element at the ending iterator of an emptry tree. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="emplace_8cpp_source.html#l00065">65</a> of file <a class="el" href="emplace_8cpp_source.html">emplace.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emplace_8cpp_source.html#l00069">69</a> of file <a class="el" href="emplace_8cpp_source.html">emplace.cpp</a>.</p>
 
 </div>
 </div>
@@ -195,12 +203,12 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000038">Test:</a></b></dt><dd>Verify the post conditions on a non-trivial tree built by emplacing elements.</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000036">Test:</a></b></dt><dd>Verify the post conditions on a non-trivial tree built by emplacing elements.</dd></dl>
 <div class="dotgraph">
 <img src="dot_inline_dotgraph_7.png" alt="dot_inline_dotgraph_7.png" border="0" usemap="#dot_inline_dotgraph_7.map"/>
 </div>
  
-<p class="definition">Definition at line <a class="el" href="emplace_8cpp_source.html#l00147">147</a> of file <a class="el" href="emplace_8cpp_source.html">emplace.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emplace_8cpp_source.html#l00155">155</a> of file <a class="el" href="emplace_8cpp_source.html">emplace.cpp</a>.</p>
 
 </div>
 </div>
@@ -242,9 +250,9 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000035">Test:</a></b></dt><dd>Verify the post conditions on emplacing an element at the root iterator. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000033">Test:</a></b></dt><dd>Verify the post conditions on emplacing an element at the root iterator. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="emplace_8cpp_source.html#l00091">91</a> of file <a class="el" href="emplace_8cpp_source.html">emplace.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emplace_8cpp_source.html#l00099">99</a> of file <a class="el" href="emplace_8cpp_source.html">emplace.cpp</a>.</p>
 
 </div>
 </div>
@@ -272,9 +280,9 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000037">Test:</a></b></dt><dd>Verify the post conditions on emplacing an element at the ending iterator of a tree with a single node. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000035">Test:</a></b></dt><dd>Verify the post conditions on emplacing an element at the ending iterator of a tree with a single node. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="emplace_8cpp_source.html#l00121">121</a> of file <a class="el" href="emplace_8cpp_source.html">emplace.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="emplace_8cpp_source.html#l00129">129</a> of file <a class="el" href="emplace_8cpp_source.html">emplace.cpp</a>.</p>
 
 </div>
 </div>
@@ -284,7 +292,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test.html">test</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test_1_1emplace.html">emplace</a></li>
-    <li class="footer">Generated on Sat Jan 30 2021 20:32:40 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jan 31 2021 23:54:55 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

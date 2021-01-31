@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('tree_8hpp.html',''); initResizable(); 
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="tree_8hpp__dep__incl.png" border="0" usemap="#ainclude_2fcarouge_2tree_8hppdep" alt=""/></div>
 <map name="ainclude_2fcarouge_2tree_8hppdep" id="ainclude_2fcarouge_2tree_8hppdep">
-<area shape="rect" title=" " alt="" coords="2549,5,2715,32"/>
+<area shape="rect" title=" " alt="" coords="2623,5,2790,32"/>
 <area shape="rect" href="hello__world_8cpp.html" title=" " alt="" coords="5,87,163,114"/>
 <area shape="rect" href="clear_8cpp.html" title=" " alt="" coords="187,87,287,114"/>
 <area shape="rect" href="const__iterator_8cpp.html" title=" " alt="" coords="311,87,462,114"/>
@@ -137,19 +137,20 @@ $(document).ready(function(){initNavTree('tree_8hpp.html',''); initResizable(); 
 <area shape="rect" href="constructor__rvalue__allocator_8cpp.html" title=" " alt="" coords="2388,80,2543,121"/>
 <area shape="rect" href="destructor_8cpp.html" title=" " alt="" coords="2567,87,2697,114"/>
 <area shape="rect" href="emplace_8cpp.html" title=" " alt="" coords="2722,87,2843,114"/>
-<area shape="rect" href="erase__const__iterator_8cpp.html" title=" " alt="" coords="2867,87,3058,114"/>
-<area shape="rect" href="for__range_8cpp.html" title=" " alt="" coords="3082,87,3209,114"/>
-<area shape="rect" href="erase__iterator_8cpp.html" title=" " alt="" coords="3233,87,3383,114"/>
-<area shape="rect" href="iterator_8cpp.html" title=" " alt="" coords="3408,87,3520,114"/>
-<area shape="rect" href="iterator__legacy_8cpp.html" title=" " alt="" coords="3545,87,3701,114"/>
-<area shape="rect" href="max__size_8cpp.html" title=" " alt="" coords="3725,87,3851,114"/>
-<area shape="rect" href="operator__assignment__move_8cpp.html" title=" " alt="" coords="3875,80,4045,121"/>
-<area shape="rect" href="push__front__lvalue_8cpp.html" title=" " alt="" coords="4069,87,4243,114"/>
-<area shape="rect" href="push__front__rvalue_8cpp.html" title=" " alt="" coords="4267,87,4442,114"/>
-<area shape="rect" href="push__lvalue_8cpp.html" title=" " alt="" coords="4467,87,4608,114"/>
-<area shape="rect" href="push__rvalue_8cpp.html" title=" " alt="" coords="4631,87,4774,114"/>
-<area shape="rect" href="size_8cpp.html" title=" " alt="" coords="4798,87,4893,114"/>
-<area shape="rect" href="standard__layout_8cpp.html" title=" " alt="" coords="4917,87,5080,114"/>
+<area shape="rect" href="emplace__front_8cpp.html" title=" " alt="" coords="2868,87,3023,114"/>
+<area shape="rect" href="erase__const__iterator_8cpp.html" title=" " alt="" coords="3047,87,3238,114"/>
+<area shape="rect" href="erase__iterator_8cpp.html" title=" " alt="" coords="3262,87,3413,114"/>
+<area shape="rect" href="for__range_8cpp.html" title=" " alt="" coords="3437,87,3563,114"/>
+<area shape="rect" href="iterator_8cpp.html" title=" " alt="" coords="3588,87,3700,114"/>
+<area shape="rect" href="iterator__legacy_8cpp.html" title=" " alt="" coords="3725,87,3881,114"/>
+<area shape="rect" href="max__size_8cpp.html" title=" " alt="" coords="3905,87,4031,114"/>
+<area shape="rect" href="operator__assignment__move_8cpp.html" title=" " alt="" coords="4055,80,4225,121"/>
+<area shape="rect" href="push__front__lvalue_8cpp.html" title=" " alt="" coords="4249,87,4423,114"/>
+<area shape="rect" href="push__front__rvalue_8cpp.html" title=" " alt="" coords="4447,87,4622,114"/>
+<area shape="rect" href="push__lvalue_8cpp.html" title=" " alt="" coords="4647,87,4788,114"/>
+<area shape="rect" href="push__rvalue_8cpp.html" title=" " alt="" coords="4811,87,4954,114"/>
+<area shape="rect" href="size_8cpp.html" title=" " alt="" coords="4978,87,5073,114"/>
+<area shape="rect" href="standard__layout_8cpp.html" title=" " alt="" coords="5097,87,5260,114"/>
 </map>
 </div>
 </div>
@@ -291,10 +292,10 @@ template&lt;class Type , class AllocatorType &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the contents of the vectors are equal, <code>false</code> otherwise.</dd></dl>
 <dl class="section user"><dt>Complexity</dt><dd>Linear in the size of the container. Constant if the size of the compared containers are different, linear otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01382">1382</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;{</div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() == rhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>();</div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01418">1418</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;{</div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() == rhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>();</div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;}</div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a93d87b031d97d57d50ad5965585a6e79"><div class="ttname"><a href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00783">tree.hpp:783</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="tree_8hpp_source.html#l00783">fcarouge::tree&lt; Type, AllocatorType &gt;::size()</a>.</p>
@@ -318,7 +319,7 @@ template&lt;class Type , class AllocatorType &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_533ca38e4d6dcb24d3c950d504c67ecf.html">fcarouge</a></li><li class="navelem"><a class="el" href="tree_8hpp.html">tree.hpp</a></li>
-    <li class="footer">Generated on Sat Jan 30 2021 20:32:40 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Jan 31 2021 23:54:54 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
