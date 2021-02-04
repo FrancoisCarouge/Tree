@@ -34,8 +34,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
 namespace fcarouge::test::size
 {
-//! @test Verify the size of a default constructed container in constexpr
-//! context.
+//! @test Verify the size of a default constructed container in constant
+//! expressions.
 constexpr auto ctest_constructor_default = []() {
   constexpr tree<int> allouville_oak;
 

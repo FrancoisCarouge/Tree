@@ -44,7 +44,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 namespace fcarouge::test::max_size
 {
 //! @test Verify the maximum number of elements the container is able to hold
-//! with the standard allocator in constexpr context.
+//! with the standard allocator in constant expressions.
 constexpr auto ctest_default = []() {
   constexpr tree<int> allouville_oak;
 
@@ -96,7 +96,7 @@ auto test_default = []() {
 }();
 
 //! @test Verify the maximum number of elements the container is able to hold
-//! with a null allocator in constexpr context.
+//! with a null allocator in constant expressions.
 constexpr auto ctest_null = []() {
   constexpr tree<int, null_allocator<int>> allouville_oak;
 
