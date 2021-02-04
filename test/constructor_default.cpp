@@ -55,8 +55,8 @@ constexpr auto ctest_traits = []() {
   return 0;
 }();
 
-//! @test Verify the default construction post-conditions in constexpr
-//! context.
+//! @test Verify the default construction post-conditions in constant
+//! expressions.
 constexpr auto ctest_post_conditions = []() {
   constexpr tree<char> allouville_oak;
 
