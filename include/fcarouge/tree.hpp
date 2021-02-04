@@ -127,6 +127,29 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     //! @}
 
+    //! @name Public Observer Member Functions
+    //! @{
+
+    //! @brief Length of the path from the root to the node.
+    //!
+    //! @details Returns the number of nodes from the root to the node, i.e. the
+    //! current depth of the tree hierarchy. The root has depth of `0`, its
+    //! children have depth `1`, etc...
+    //!
+    //! @return Current depth of the node.
+    //!
+    //! @complexity Linear in depth.
+    [[nodiscard]] constexpr size_type depth() const noexcept
+    {
+      if (parent) {
+        return parent->depth() + 1;
+      }
+
+      return 0;
+    }
+
+    //! @}
+
     //! @name Public Search Member Functions
     //! @{
 
@@ -195,7 +218,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     //! @}
 
-    //! @name Public Iterator Member Functions
+    //! @name Public Observer Member Functions
     //! @{
 
     //! @brief Dereferences the iterator to obtain the stored value. The
@@ -206,6 +229,26 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     {
       return node->data;
     }
+
+    //! @brief Length of the path from the root to the iterated node.
+    //!
+    //! @details Returns the number of nodes from the root to the currently
+    //! iterated node, i.e. the current depth of the tree hierarchy. The root
+    //! has depth of `0`, its children have depth `1`, etc... The behavior is
+    //! undefined if `*this` is the end iterator.
+    //!
+    //! @return Current depth of the iterator.
+    //!
+    //! @complexity Linear in depth.
+    [[nodiscard]] constexpr size_type depth() const noexcept
+    {
+      return node->depth();
+    }
+
+    //! @}
+
+    //! @name Public Modifier Member Functions
+    //! @{
 
     //! @brief Increments the iterator.
     //!
@@ -258,7 +301,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     //! @}
 
-    //! @name Public Iterator Member Functions
+    //! @name Public Member Functions
     //! @{
 
     //! @brief Implicit iterator to constant iterator conversion.
@@ -278,6 +321,21 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     {
     }
 
+    //! @brief Implicit node pointer to constant iterator conversion.
+    //!
+    //! @details Aggregate initialization is not available per implicit iterator
+    //! conversion construction. The node pointer type is implicitely
+    //! convertible to the constant iterator type to allow list initialization.
+    constexpr internal_const_iterator_type(internal_node_type *node)
+            : node{ node }
+    {
+    }
+
+    //! @}
+
+    //! @name Public Observer Member Functions
+    //! @{
+
     //! @brief Dereferences the iterator to obtain the stored value. The
     //! behavior is undefined if the iterator is invalid.
     //!
@@ -286,6 +344,26 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     {
       return node->data;
     }
+
+    //! @brief Length of the path from the root to the iterated node.
+    //!
+    //! @details Returns the number of nodes from the root to the currently
+    //! iterated node, i.e. the current depth of the tree hierarchy. The root
+    //! has depth of `0`, its children have depth `1`, etc... The behavior is
+    //! undefined if `*this` is the end iterator.
+    //!
+    //! @return Current depth of the iterator.
+    //!
+    //! @complexity Linear in depth.
+    [[nodiscard]] constexpr size_type depth() const noexcept
+    {
+      return node->depth();
+    }
+
+    //! @}
+
+    //! @name Public Modifier Member Functions
+    //! @{
 
     //! @brief Increments the iterator.
     //!
@@ -299,21 +377,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       }
 
       return *this;
-    }
-
-    //! @}
-
-    //! @name Public Member Functions
-    //! @{
-
-    //! @brief Implicit node pointer to constant iterator conversion.
-    //!
-    //! @details Aggregate initialization is not available per implicit iterator
-    //! conversion construction. The node pointer type is implicitely
-    //! convertible to the constant iterator type to allow list initialization.
-    constexpr internal_const_iterator_type(internal_node_type *node)
-            : node{ node }
-    {
     }
 
     //! @}
