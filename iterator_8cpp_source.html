@@ -125,20 +125,20 @@ $(document).ready(function(){initNavTree('iterator_8cpp_source.html',''); initRe
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1test_1_1iterator.html">   36</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefcarouge_1_1test_1_1iterator.html">fcarouge::test::iterator</a></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1test_1_1iterator.html#a3c1fd2e4cdaab0e116aa973081a27008">   39</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="namespacefcarouge_1_1test_1_1iterator.html#a3c1fd2e4cdaab0e116aa973081a27008">ctest_traits</a> = []() {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  static_assert(std::is_aggregate_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1internal__iterator__type.html">tree&lt;char&gt;::iterator</a>&gt;,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  static_assert(std::is_aggregate_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1iterator.html">tree&lt;char&gt;::iterator</a>&gt;,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="stringliteral">&quot;The container&#39;s iterator type is an aggregate type by &quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="stringliteral">&quot;design choice.&quot;</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  static_assert(std::is_copy_constructible_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1internal__iterator__type.html">tree&lt;char&gt;::iterator</a>&gt;,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  static_assert(std::is_copy_constructible_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1iterator.html">tree&lt;char&gt;::iterator</a>&gt;,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="stringliteral">&quot;The container&#39;s iterator type must be copy constructible.&quot;</span>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  static_assert(</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      std::is_trivially_copy_constructible_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1internal__iterator__type.html">tree&lt;char&gt;::iterator</a>&gt;,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      std::is_trivially_copy_constructible_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1iterator.html">tree&lt;char&gt;::iterator</a>&gt;,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="stringliteral">&quot;The container&#39;s iterator type must be trivially copy constructible.&quot;</span>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  static_assert(</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      std::is_convertible_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1internal__iterator__type.html">tree&lt;char&gt;::iterator</a>, <a class="code" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html">tree&lt;char&gt;::const_iterator</a>&gt;,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      std::is_convertible_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1iterator.html">tree&lt;char&gt;::iterator</a>, <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">tree&lt;char&gt;::const_iterator</a>&gt;,</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="stringliteral">&quot;The container&#39;s iterator type must be implicitely convertible to its &quot;</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="stringliteral">&quot;constant equivalent type.&quot;</span>);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  static_assert(</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      !std::is_convertible_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html">tree&lt;char&gt;::const_iterator</a>, <a class="code" href="structfcarouge_1_1tree_1_1internal__iterator__type.html">tree&lt;char&gt;::iterator</a>&gt;,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      !std::is_convertible_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">tree&lt;char&gt;::const_iterator</a>, <a class="code" href="structfcarouge_1_1tree_1_1iterator.html">tree&lt;char&gt;::iterator</a>&gt;,</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="stringliteral">&quot;The container&#39;s constant iterator type cannot be implicitely &quot;</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="stringliteral">&quot;convertible to its non-constant equivalent type.&quot;</span>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
@@ -148,8 +148,8 @@ $(document).ready(function(){initNavTree('iterator_8cpp_source.html',''); initRe
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace fcarouge::test::iterator</span></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1iterator_html"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1iterator.html">fcarouge::test::iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="iterator_8cpp_source.html#l00036">iterator.cpp:37</a></div></div>
 <div class="ttc" id="anamespacefcarouge_1_1test_1_1iterator_html_a3c1fd2e4cdaab0e116aa973081a27008"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1iterator.html#a3c1fd2e4cdaab0e116aa973081a27008">fcarouge::test::iterator::ctest_traits</a></div><div class="ttdeci">constexpr auto ctest_traits</div><div class="ttdef"><b>Definition:</b> <a href="iterator_8cpp_source.html#l00039">iterator.cpp:39</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1tree_1_1internal__const__iterator__type_html"><div class="ttname"><a href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html">fcarouge::tree::internal_const_iterator_type</a></div><div class="ttdoc">Type to identify and traverse the constant elements of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00283">tree.hpp:283</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1tree_1_1internal__iterator__type_html"><div class="ttname"><a href="structfcarouge_1_1tree_1_1internal__iterator__type.html">fcarouge::tree::internal_iterator_type</a></div><div class="ttdoc">Type to identify and traverse the elements of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00200">tree.hpp:200</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1tree_1_1const__iterator_html"><div class="ttname"><a href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree::const_iterator</a></div><div class="ttdoc">Type to identify and traverse the constant elements of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00295">tree.hpp:295</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1tree_1_1iterator_html"><div class="ttname"><a href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree::iterator</a></div><div class="ttdoc">Type to identify and traverse the elements of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00209">tree.hpp:209</a></div></div>
 <div class="ttc" id="atree_8hpp_html"><div class="ttname"><a href="tree_8hpp.html">tree.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('iterator_8cpp_source.html',''); initRe
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="iterator_8cpp.html">iterator.cpp</a></li>
-    <li class="footer">Generated on Thu Feb 4 2021 03:49:04 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Feb 4 2021 04:54:54 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

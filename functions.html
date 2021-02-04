@@ -122,8 +122,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>cleave()
 : <a class="el" href="classfcarouge_1_1tree.html#a7118a210978495014b44c68e0df7135d">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
 </li>
-<li>const_iterator
-: <a class="el" href="classfcarouge_1_1tree.html#a244d6ea314f6207eb38966382beb3d4d">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
+<li>const_iterator()
+: <a class="el" href="structfcarouge_1_1tree_1_1const__iterator.html#a64fc19165ce167d8839bd27715aa66c5">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator</a>
 </li>
 <li>const_pointer
 : <a class="el" href="classfcarouge_1_1tree.html#a03614438bc62228f67b08f2eeadfa803">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
@@ -146,15 +146,15 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="classfcarouge_1_1null__allocator.html#ad184c451da269197d2474876684b77a7">fcarouge::null_allocator&lt; Type &gt;</a>
 </li>
 <li>depth()
-: <a class="el" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html#a378bd4292ffaea78ef90f1d0115f8f0b">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_const_iterator_type</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__iterator__type.html#a03a8d1914b691cde8922407023af60cc">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_iterator_type</a>
+: <a class="el" href="structfcarouge_1_1tree_1_1const__iterator.html#aec5f747a4461ffa220b62e2c8910a0e8">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator</a>
 , <a class="el" href="structfcarouge_1_1tree_1_1internal__node__type.html#acd8e228760b6f14fda73006f44006998">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#a3362d0cd07e201657a7d6f4fed5b7678">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator</a>
 </li>
 <li>difference_type
 : <a class="el" href="classfcarouge_1_1null__allocator.html#a596e906e3a4f6ec147a3bdecd018101b">fcarouge::null_allocator&lt; Type &gt;</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1const__iterator.html#abfe0d919f46b45575864aa8b7631004c">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator</a>
 , <a class="el" href="classfcarouge_1_1tree.html#a8ca46de39685c48952bd45a578e3bd8d">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html#ac4e07183a09961ebd1b369191c8f2b79">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_const_iterator_type</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__iterator__type.html#a7ba32d96cf3b5d7561669d11d89c17aa">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_iterator_type</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#abb73f2975b634469c7052864bbd91e52">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator</a>
 </li>
 </ul>
 
@@ -208,21 +208,15 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>inserted
 : <a class="el" href="structfcarouge_1_1tree_1_1insert__return__type.html#a3321189934000899dd270ed5d4407fd2">fcarouge::tree&lt; Type, AllocatorType &gt;::insert_return_type&lt; IteratorType &gt;</a>
 </li>
-<li>internal_const_iterator_type()
-: <a class="el" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html#a2e6a124b8ac8f513e21a1c9cd4194587">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_const_iterator_type</a>
-</li>
 <li>internal_node_allocator_traits
 : <a class="el" href="classfcarouge_1_1tree.html#ac90c508b80e75fb0090ef0b3f916700b">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
 </li>
 <li>internal_node_allocator_type
 : <a class="el" href="classfcarouge_1_1tree.html#a0f58d6bc0460ce068c715672fb40a52d">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
 </li>
-<li>iterator
-: <a class="el" href="classfcarouge_1_1tree.html#aa347e61a1909cfadea9952d73cf23b2f">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
-</li>
 <li>iterator_category
-: <a class="el" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html#a0c27aa1c63ae69898fed2051cad4426e">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_const_iterator_type</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__iterator__type.html#a2e42443b5da21aa95d256694bdde6eba">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_iterator_type</a>
+: <a class="el" href="structfcarouge_1_1tree_1_1const__iterator.html#ad93b61925559da429e38525c6ac220b2">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#a7e24ef84c7a8446641488c4e44f8b170">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator</a>
 </li>
 </ul>
 
@@ -250,9 +244,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="structfcarouge_1_1tree_1_1internal__node__type.html#ad267c5ade8dd24d9baae39cb5eaae27f">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type</a>
 </li>
 <li>node
-: <a class="el" href="structfcarouge_1_1tree_1_1insert__return__type.html#a594bf684d6109ce570dbc35933ba0e48">fcarouge::tree&lt; Type, AllocatorType &gt;::insert_return_type&lt; IteratorType &gt;</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html#afc47ea5b531fe7d64501835605b7854d">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_const_iterator_type</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__iterator__type.html#aa86f7f7792fed00df0220fc18ed1975f">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_iterator_type</a>
+: <a class="el" href="structfcarouge_1_1tree_1_1const__iterator.html#a65d23263beacab29a34c44f5934c89f7">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1insert__return__type.html#a594bf684d6109ce570dbc35933ba0e48">fcarouge::tree&lt; Type, AllocatorType &gt;::insert_return_type&lt; IteratorType &gt;</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator</a>
 </li>
 <li>node_allocator
 : <a class="el" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
@@ -271,19 +265,19 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
 <li>operator*()
-: <a class="el" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html#a87c89c7fad513b926b9e8002a6bdc637">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_const_iterator_type</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__iterator__type.html#a7ad1e0275cbdcdf7cd2dc3f1b2f068d4">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_iterator_type</a>
+: <a class="el" href="structfcarouge_1_1tree_1_1const__iterator.html#a565daa1f7ec3290ddfa097c6ab638d9c">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#a978595696d6ef861dc0e37b2f10e3f90">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator</a>
 </li>
 <li>operator++()
-: <a class="el" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html#aeea82fdd87a299ff23cf746777baf150">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_const_iterator_type</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__iterator__type.html#a764f016619698d0f861c9d591083e145">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_iterator_type</a>
+: <a class="el" href="structfcarouge_1_1tree_1_1const__iterator.html#acbe2135e9bc1993a672d304069cbf680">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#a812e48769ecc4ebefdb93a94989e361c">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator</a>
 </li>
 <li>operator=()
 : <a class="el" href="classfcarouge_1_1tree.html#a6b2887816b7f092fc401938e669d70b4">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
 </li>
 <li>operator==()
-: <a class="el" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html#ad16fd55108027e93ed5dff4bc52e1db2">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_const_iterator_type</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__iterator__type.html#a3e601b2fcb407cfdc8be995d9194ff3a">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_iterator_type</a>
+: <a class="el" href="structfcarouge_1_1tree_1_1const__iterator.html#ab72d6eec57025962217778741857eca3">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#aed2d505e19a459232936f581836d3bc6">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator</a>
 </li>
 </ul>
 
@@ -293,8 +287,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="structfcarouge_1_1tree_1_1internal__node__type.html#abb38b1b9d4f98d6e22d6e88797e6c4d2">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type</a>
 </li>
 <li>pointer
-: <a class="el" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html#ad4e88162f419db225b877b7f731f936c">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_const_iterator_type</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__iterator__type.html#a87df2c96096d64e9c9cab3bfcfe94f4e">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_iterator_type</a>
+: <a class="el" href="structfcarouge_1_1tree_1_1const__iterator.html#a6059df06ce424117de3187cbcb278467">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#a9916800b66de71656aca174c14e7e2b3">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator</a>
 , <a class="el" href="classfcarouge_1_1tree.html#aa318e3abfbfa6655010512a9727b7ac2">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
 , <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#adf2d0b6550cf963a90fa22e59e7489d7">std::allocator_traits&lt; fcarouge::null_allocator&lt; Type &gt; &gt;</a>
 </li>
@@ -321,8 +315,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a2660f73e3afa98ba191b667203190cc3">std::allocator_traits&lt; fcarouge::null_allocator&lt; Type &gt; &gt;</a>
 </li>
 <li>reference
-: <a class="el" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html#ae6a6744e46022ea18a4e05cb8fc3fb94">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_const_iterator_type</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__iterator__type.html#abad2df5e268b3b9c2d11b61dc4170b7d">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_iterator_type</a>
+: <a class="el" href="structfcarouge_1_1tree_1_1const__iterator.html#af45132f7f6fdea9d1bc3078cb05b873b">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#a28873c996d495a21c4605f81ff266188">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator</a>
 , <a class="el" href="classfcarouge_1_1tree.html#a85d21cbaae60bbcaa55f0ea7432ee293">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
 </li>
 <li>right_sibling
@@ -359,9 +353,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_v"></a>- v -</h3><ul>
 <li>value_type
 : <a class="el" href="classfcarouge_1_1null__allocator.html#a58d19ef64b839740e9ef37b05459284e">fcarouge::null_allocator&lt; Type &gt;</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__const__iterator__type.html#a11da9cb98fa5a23975c41877936c6e48">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_const_iterator_type</a>
-, <a class="el" href="structfcarouge_1_1tree_1_1internal__iterator__type.html#a27c0d6146a82b5ab74c371669b1e0ddd">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_iterator_type</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1const__iterator.html#ab0eb80290c3d8a11e4627bcfac51d727">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator</a>
 , <a class="el" href="structfcarouge_1_1tree_1_1internal__node__type.html#a05cfec448abcbb5259149ad10877c358">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type</a>
+, <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#aa3cf3540f129a974435bd41fcb892b29">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator</a>
 , <a class="el" href="classfcarouge_1_1tree.html#ad1368e9366d469e64eaf5248d7302995">fcarouge::tree&lt; Type, AllocatorType &gt;</a>
 , <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a61661d8e5e700e0aeff54515fd2f14f3">std::allocator_traits&lt; fcarouge::null_allocator&lt; Type &gt; &gt;</a>
 </li>
@@ -378,7 +372,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Feb 4 2021 03:49:05 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Feb 4 2021 04:54:55 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

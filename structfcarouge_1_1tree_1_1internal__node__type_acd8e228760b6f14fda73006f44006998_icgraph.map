@@ -1,5 +1,5 @@
 <map id="fcarouge::tree::internal_node_type::depth" name="fcarouge::tree::internal_node_type::depth">
-<area shape="rect" id="node1" title="Length of the path from the root to the node." alt="" coords="231,39,379,80"/>
-<area shape="rect" id="node2" href="$structfcarouge_1_1tree_1_1internal__iterator__type.html#a03a8d1914b691cde8922407023af60cc" title="Length of the path from the root to the iterated node." alt="" coords="20,5,168,47"/>
-<area shape="rect" id="node3" href="$structfcarouge_1_1tree_1_1internal__const__iterator__type.html#a378bd4292ffaea78ef90f1d0115f8f0b" title="Length of the path from the root to the iterated node." alt="" coords="5,71,183,112"/>
+<area shape="rect" id="node1" title="Length of the path from the root to the node." alt="" coords="200,39,348,80"/>
+<area shape="rect" id="node2" href="$structfcarouge_1_1tree_1_1iterator.html#a3362d0cd07e201657a7d6f4fed5b7678" title="Length of the path from the root to the iterated node." alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node3" href="$structfcarouge_1_1tree_1_1const__iterator.html#aec5f747a4461ffa220b62e2c8910a0e8" title="Length of the path from the root to the iterated node." alt="" coords="9,71,148,112"/>
 </map>
