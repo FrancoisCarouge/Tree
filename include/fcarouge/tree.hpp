@@ -196,8 +196,17 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   using internal_node_allocator_traits =
       std::allocator_traits<internal_node_allocator_type>;
 
+  //! @}
+
+  public:
+  //! @name Public Member Types
+  //! @{
+
   //! @brief Type to identify and traverse the elements of the container.
-  struct internal_iterator_type {
+  //!
+  //! @details The iteration order of the standard iterator is unspecified,
+  //! except that each element is visited only once.
+  struct iterator {
     //! @name Public Member Types
     //! @{
 
@@ -253,7 +262,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @brief Increments the iterator.
     //!
     //! @return Reference to the next iterator.
-    constexpr internal_iterator_type &operator++() noexcept
+    constexpr iterator &operator++() noexcept
     {
       if (node->first_child) {
         node = node->first_child;
@@ -267,7 +276,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @}
 
     [[nodiscard]] constexpr bool
-    operator==(const internal_iterator_type &other) const noexcept = default;
+    operator==(const iterator &other) const noexcept = default;
 
     //! @name Public Member Variables
     //! @{
@@ -280,7 +289,10 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @brief Type to identify and traverse the constant elements of the
   //! container.
-  struct internal_const_iterator_type {
+  //!
+  //! @details The iteration order of the standard constant iterator is
+  //! unspecified, except that each element is visited only once.
+  struct const_iterator {
     //! @name Public Member Types
     //! @{
 
@@ -315,9 +327,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //!
     //! @note No conversion assignment operator is supported following the
     //! majority of Standard Template Library (STL) vendors implementation.
-    constexpr internal_const_iterator_type(
-        const internal_iterator_type &iterator)
-            : node{ iterator.node }
+    constexpr const_iterator(const iterator &iterator) : node{ iterator.node }
     {
     }
 
@@ -326,8 +336,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @details Aggregate initialization is not available per implicit iterator
     //! conversion construction. The node pointer type is implicitely
     //! convertible to the constant iterator type to allow list initialization.
-    constexpr internal_const_iterator_type(internal_node_type *node)
-            : node{ node }
+    constexpr const_iterator(internal_node_type *node) : node{ node }
     {
     }
 
@@ -368,7 +377,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @brief Increments the iterator.
     //!
     //! @return Reference to the next iterator.
-    constexpr internal_const_iterator_type &operator++() noexcept
+    constexpr const_iterator &operator++() noexcept
     {
       if (node->first_child) {
         node = node->first_child;
@@ -381,8 +390,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     //! @}
 
-    [[nodiscard]] constexpr bool operator==(
-        const internal_const_iterator_type &other) const noexcept = default;
+    [[nodiscard]] constexpr bool
+    operator==(const const_iterator &other) const noexcept = default;
 
     //! @name Public Member Variables
     //! @{
@@ -392,25 +401,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     //! @}
   };
-
-  //! @}
-
-  public:
-  //! @name Public Member Types
-  //! @{
-
-  //! @brief Type to identify and traverse the elements of the container.
-  //!
-  //! @details The iteration order of the standard iterator is unspecified,
-  //! except that each element is visited only once.
-  using iterator = internal_iterator_type;
-
-  //! @brief Constant type to identify and traverse the elements of the
-  //! container.
-  //!
-  //! @details The iteration order of the standard constant iterator is
-  //! unspecified, except that each element is visited only once.
-  using const_iterator = internal_const_iterator_type;
 
   //! @brief The node handle type of the container.
   //!
