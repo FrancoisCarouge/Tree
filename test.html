@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('test.html',''); initResizable(); });
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1constructor__copy__allocator.html#a3855f5db75355eeab26c4d13f61cf327">fcarouge::test::constructor_copy_allocator::test_multiple</a>  </dt>
 <dd><a class="anchor" id="_test000011"></a>Verify the post conditions on a copied non-trivial tree with a custom allocator. </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1constructor__default.html#a91160aa23431fa161e8b15fb8c43cafe">fcarouge::test::constructor_default::ctest_post_conditions</a>  </dt>
-<dd><a class="anchor" id="_test000013"></a>Verify the default construction post-conditions in constexpr context.  </dd>
+<dd><a class="anchor" id="_test000013"></a>Verify the default construction post-conditions in constant expressions.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1constructor__default.html#a0cdfb43a6d9ce4273684ce6af96b47f0">fcarouge::test::constructor_default::ctest_traits</a>  </dt>
 <dd><a class="anchor" id="_test000012"></a>Verify the default construction exists and its exception specification.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1constructor__default.html#aee31e613d4704aacc198220d8464a30e">fcarouge::test::constructor_default::test_post_conditions</a>  </dt>
@@ -141,57 +141,57 @@ $(document).ready(function(){initNavTree('test.html',''); initResizable(); });
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1constructor__rvalue__allocator.html#ac017563d7b175ca30688a81c85a383bc">fcarouge::test::constructor_rvalue_allocator::test_post_conditions</a>  </dt>
 <dd><a class="anchor" id="_test000026"></a>Verify the construction by moving a value post-conditions in runtime context.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1destructor.html#a14a2335318e3a48a215cf046ac3fc14c">fcarouge::test::destructor::ctest_post_conditions</a>  </dt>
-<dd><a class="anchor" id="_test000028"></a>Verify the basic destruction post-conditions in constexpr context.  </dd>
+<dd><a class="anchor" id="_test000028"></a>Verify the basic destruction post-conditions in constant expressions.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1destructor.html#a2c6ce183aca25b3c85f9dd40e00ce7e0">fcarouge::test::destructor::ctest_traits</a>  </dt>
 <dd><a class="anchor" id="_test000027"></a>Verify the destruction exists and its exception specification.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1destructor.html#a0b7271b99ddd1791da47701f30488dcb">fcarouge::test::destructor::test_post_conditions</a>  </dt>
 <dd><a class="anchor" id="_test000029"></a>Verify the basic destruction post-conditions in runtime context.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1emplace.html#a5a25a4e3e8a3c3095abf7439daa70d0b">fcarouge::test::emplace::test_empty_begin</a>  </dt>
-<dd><a class="anchor" id="_test000030"></a>Verify the post conditions on emplacing an element at the beginning iterator of an emptry tree.  </dd>
+<dd><a class="anchor" id="_test000032"></a>Verify the post conditions on emplacing an element at the beginning iterator of an emptry tree.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1emplace.html#a69ea3c7a1a210c52e9578db81d777447">fcarouge::test::emplace::test_empty_end</a>  </dt>
-<dd><a class="anchor" id="_test000031"></a>Verify the post conditions on emplacing an element at the ending iterator of an emptry tree.  </dd>
+<dd><a class="anchor" id="_test000033"></a>Verify the post conditions on emplacing an element at the ending iterator of an emptry tree.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1emplace.html#adfc6c87503343491eb39fb361ff59127">fcarouge::test::emplace::test_multiple</a>  </dt>
 <dd><a class="anchor" id="_test000036"></a>Verify the post conditions on a non-trivial tree built by emplacing elements. </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1emplace.html#aa4f238e4e31ffd8932fe11730577382d">fcarouge::test::emplace::test_root_begin</a>  </dt>
-<dd><a class="anchor" id="_test000033"></a>Verify the post conditions on emplacing an element at the root iterator.  </dd>
+<dd><a class="anchor" id="_test000034"></a>Verify the post conditions on emplacing an element at the root iterator.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1emplace.html#ab7f223b5c08c0e941207f7bb8f015966">fcarouge::test::emplace::test_root_end</a>  </dt>
 <dd><a class="anchor" id="_test000035"></a>Verify the post conditions on emplacing an element at the ending iterator of a tree with a single node.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1emplace__front.html#a3d5e6ca3523c97c0f705f98815fb07b5">fcarouge::test::emplace_front::test_empty_front</a>  </dt>
-<dd><a class="anchor" id="_test000032"></a>Verify the post conditions on emplacing front an element in an emptry tree.  </dd>
+<dd><a class="anchor" id="_test000030"></a>Verify the post conditions on emplacing front an element in an emptry tree.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1emplace__front.html#a3c6e7856b30c6c55a9cc747ded22cfa7">fcarouge::test::emplace_front::test_root_front</a>  </dt>
-<dd><a class="anchor" id="_test000034"></a>Verify the post conditions on emplacing front an element in an non-empty tree.  </dd>
+<dd><a class="anchor" id="_test000031"></a>Verify the post conditions on emplacing front an element in an non-empty tree.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1erase__const__iterator.html#aace8d4d880b502963962aae5122e315f">fcarouge::test::erase_const_iterator::test_last</a>  </dt>
 <dd><a class="anchor" id="_test000038"></a>Verify the post-conditions on erasing the last element of a tree.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1erase__const__iterator.html#ab1ac0745f19ba7bb81c22169d3bb5d3b">fcarouge::test::erase_const_iterator::test_multiple</a>  </dt>
-<dd><a class="anchor" id="_test000042"></a>Verify the post-conditions on erasing various elements of a tree.  </dd>
+<dd><a class="anchor" id="_test000040"></a>Verify the post-conditions on erasing various elements of a tree.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1erase__const__iterator.html#aa047cdf4d9a05a08a6ea9928fc98000b">fcarouge::test::erase_const_iterator::test_root</a>  </dt>
-<dd><a class="anchor" id="_test000040"></a>Verify the post-conditions on erasing the root element of a tree.  </dd>
+<dd><a class="anchor" id="_test000039"></a>Verify the post-conditions on erasing the root element of a tree.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1erase__const__iterator.html#a2f393c0b8911907e3e51dffdcc3a1df4">fcarouge::test::erase_const_iterator::test_sole</a>  </dt>
 <dd><a class="anchor" id="_test000037"></a>Verify the post-conditions on erasing the sole element of a container.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1erase__iterator.html#ac08735cb85c5d5d7eede1c3eba4f5394">fcarouge::test::erase_iterator::test_last</a>  </dt>
-<dd><a class="anchor" id="_test000041"></a>Verify the post-conditions on erasing the last element of a tree.  </dd>
+<dd><a class="anchor" id="_test000042"></a>Verify the post-conditions on erasing the last element of a tree.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1erase__iterator.html#a23fcff30942ed8af193ca4324d36bfb7">fcarouge::test::erase_iterator::test_multiple</a>  </dt>
 <dd><a class="anchor" id="_test000044"></a>Verify the post-conditions on erasing various elements of a tree.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1erase__iterator.html#a5ab9bb3cb71a9090de9681ce440f323e">fcarouge::test::erase_iterator::test_root</a>  </dt>
 <dd><a class="anchor" id="_test000043"></a>Verify the post-conditions on erasing the root element of a tree.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1erase__iterator.html#a9fe08c28ae4c1fba38ab265da3fd3096">fcarouge::test::erase_iterator::test_sole</a>  </dt>
-<dd><a class="anchor" id="_test000039"></a>Verify the post-conditions on erasing the sole element of a container.  </dd>
+<dd><a class="anchor" id="_test000041"></a>Verify the post-conditions on erasing the sole element of a container.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1for__range.html#a79756d1171ad6ba84e78bc0d09e3f93e">fcarouge::test::for_range::test_auto</a>  </dt>
 <dd><a class="anchor" id="_test000045"></a>Verify the range-based for loop support for the container. The iteration order of the standard iterator is unspecified, except that each element is visited only once. The ordered properties of the <code>std::multi_set</code> container are leveraged to verify the content of the container. </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1iterator.html#a3c1fd2e4cdaab0e116aa973081a27008">fcarouge::test::iterator::ctest_traits</a>  </dt>
 <dd><a class="anchor" id="_test000046"></a>Verify basic traits for the container default <code>iterator</code> type.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1iterator__legacy.html#a78161ad536be34ed75ecc53e09ae0160">fcarouge::test::iterator_legacy::ctest_traits</a>  </dt>
-<dd><a class="anchor" id="_test000048"></a>Verify the iterator meets the LegacyIterator requirements.  </dd>
+<dd><a class="anchor" id="_test000047"></a>Verify the iterator meets the LegacyIterator requirements.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1iterator__legacy.html#a2911cbabb1ee3b766b89f5d841fb4b0a">fcarouge::test::iterator_legacy::test_increment</a>  </dt>
-<dd><a class="anchor" id="_test000052"></a>Verify the post conditions of incrementing a valid beggining iterator followed by a valid node.  </dd>
+<dd><a class="anchor" id="_test000049"></a>Verify the post conditions of incrementing a valid beggining iterator followed by a valid node.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1max__size.html#a9b4b85289e408ea1ee93c7deda6ad15b">fcarouge::test::max_size::ctest_default</a>  </dt>
-<dd><a class="anchor" id="_test000047"></a>Verify the maximum number of elements the container is able to hold with the standard allocator in constexpr context.  </dd>
+<dd><a class="anchor" id="_test000048"></a>Verify the maximum number of elements the container is able to hold with the standard allocator in constant expressions.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1max__size.html#a65e591e6ad304c344e0453794c80eeb8">fcarouge::test::max_size::ctest_null</a>  </dt>
-<dd><a class="anchor" id="_test000050"></a>Verify the maximum number of elements the container is able to hold with a null allocator in constexpr context.  </dd>
+<dd><a class="anchor" id="_test000051"></a>Verify the maximum number of elements the container is able to hold with a null allocator in constant expressions.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1max__size.html#a6648911c88f1bc454422a71266a65f00">fcarouge::test::max_size::test_constructor_null</a>  </dt>
-<dd><a class="anchor" id="_test000051"></a>Verify the maximum number of elements the container is able to hold with a null allocator.  </dd>
+<dd><a class="anchor" id="_test000052"></a>Verify the maximum number of elements the container is able to hold with a null allocator.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1max__size.html#ada63d5517a32bf63368c9adbe537001c">fcarouge::test::max_size::test_default</a>  </dt>
-<dd><a class="anchor" id="_test000049"></a>Verify the maximum number of elements the container is able to hold with the standard allocator.  </dd>
+<dd><a class="anchor" id="_test000050"></a>Verify the maximum number of elements the container is able to hold with the standard allocator.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1operator__assignment__move.html#a7c8f7f1160d5dc066ed4ed6051ff50d8">fcarouge::test::operator_assignment_move::ctest_traits</a>  </dt>
 <dd><a class="anchor" id="_test000053"></a>Verify the move assignment exists and its exception specification.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1operator__assignment__move.html#a0d4d769265e2903eecfe193be046864c">fcarouge::test::operator_assignment_move::test_multiple</a>  </dt>
@@ -219,27 +219,27 @@ $(document).ready(function(){initNavTree('test.html',''); initResizable(); });
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1push__lvalue.html#ae6e0e6fc97de3661e4d459fd3456e18c">fcarouge::test::push_lvalue::test_two_ending</a>  </dt>
 <dd><a class="anchor" id="_test000063"></a>Verify the post conditions on pushing another element by value upon the ending iterator of a container containing a single value.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1push__rvalue.html#ac53558d29aaf7d7fcc67c9713ed7e2a6">fcarouge::test::push_rvalue::test_multiple</a>  </dt>
-<dd><a class="anchor" id="_test000076"></a>Verify the post conditions on a non-trivial tree built by pushing elements. </dd>
+<dd><a class="anchor" id="_test000071"></a>Verify the post conditions on a non-trivial tree built by pushing elements. </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1push__rvalue.html#a3f12187d77535b88022b188c8f4f45a1">fcarouge::test::push_rvalue::test_one_beginning</a>  </dt>
 <dd><a class="anchor" id="_test000066"></a>Verify the post conditions on pushing a moved element upon the beginning iterator of an empty container.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1push__rvalue.html#a9b15872c852f717238deacedc06fd457">fcarouge::test::push_rvalue::test_one_ending</a>  </dt>
-<dd><a class="anchor" id="_test000069"></a>Verify the post conditions on pushing a moved element upon the ending iterator of an empty container.  </dd>
+<dd><a class="anchor" id="_test000067"></a>Verify the post conditions on pushing a moved element upon the ending iterator of an empty container.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1push__rvalue.html#af9ea2df5ad33b3b9cd391d671ff73020">fcarouge::test::push_rvalue::test_three_ending</a>  </dt>
-<dd><a class="anchor" id="_test000075"></a>Verify the post conditions on pushing three elements by value upon the ending iterator of a container containing a single value, exercising pushing upon the root with child.  </dd>
+<dd><a class="anchor" id="_test000070"></a>Verify the post conditions on pushing three elements by value upon the ending iterator of a container containing a single value, exercising pushing upon the root with child.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1push__rvalue.html#a264352c16acd9538f1b1795d72b64c53">fcarouge::test::push_rvalue::test_two_beginning</a>  </dt>
-<dd><a class="anchor" id="_test000072"></a>Verify the post conditions on pushing another moved element upon the beginning iterator of a container containing a single value.  </dd>
+<dd><a class="anchor" id="_test000068"></a>Verify the post conditions on pushing another moved element upon the beginning iterator of a container containing a single value.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1push__rvalue.html#a1f7f389cc27fe1d421336985333053bc">fcarouge::test::push_rvalue::test_two_ending</a>  </dt>
-<dd><a class="anchor" id="_test000074"></a>Verify the post conditions on pushing another moved element upon the ending iterator of a container containing a single value.  </dd>
+<dd><a class="anchor" id="_test000069"></a>Verify the post conditions on pushing another moved element upon the ending iterator of a container containing a single value.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1size.html#a5bfed7edfefd104fb761d8eb60bb6a39">fcarouge::test::size::ctest_constructor_default</a>  </dt>
-<dd><a class="anchor" id="_test000067"></a>Verify the size of a default constructed container in constexpr context.  </dd>
+<dd><a class="anchor" id="_test000072"></a>Verify the size of a default constructed container in constant expressions.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1size.html#a0e5c701adc2c48a16b3e6871053bd546">fcarouge::test::size::test_constructor_default</a>  </dt>
-<dd><a class="anchor" id="_test000068"></a>Verify the size of a default constructed container.  </dd>
+<dd><a class="anchor" id="_test000073"></a>Verify the size of a default constructed container.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1size.html#afab1d4cfe8e678cc83efd0bd5308f375">fcarouge::test::size::test_constructor_lvalue</a>  </dt>
-<dd><a class="anchor" id="_test000070"></a>Verify the size of a container constructed by value.  </dd>
+<dd><a class="anchor" id="_test000074"></a>Verify the size of a container constructed by value.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1size.html#a4c968de1e99f65b06676d49faf36f356">fcarouge::test::size::test_constructor_rvalue</a>  </dt>
-<dd><a class="anchor" id="_test000071"></a>Verify the size of a container constructed by moving the value.  </dd>
+<dd><a class="anchor" id="_test000075"></a>Verify the size of a container constructed by moving the value.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1size.html#a43901fc80c6d7149c439ada097af5007">fcarouge::test::size::test_multiple</a>  </dt>
-<dd><a class="anchor" id="_test000073"></a>Verify the size of a container built with multiple elements.  </dd>
+<dd><a class="anchor" id="_test000076"></a>Verify the size of a container built with multiple elements.  </dd>
 <dt>Member <a class="el" href="namespacefcarouge_1_1test_1_1standard__layout.html#a46335497a88621d4795b944dc1dd1b3c">fcarouge::test::standard_layout::ctest_traits</a>  </dt>
 <dd><a class="anchor" id="_test000077"></a>Verify the standard layout design decision. </dd>
 </dl>
@@ -249,7 +249,7 @@ $(document).ready(function(){initNavTree('test.html',''); initResizable(); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Jan 31 2021 23:54:54 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Feb 4 2021 02:08:30 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
