@@ -7,6 +7,7 @@ var structfcarouge_1_1tree_1_1internal__const__iterator__type =
     [ "value_type", "structfcarouge_1_1tree_1_1internal__const__iterator__type.html#a11da9cb98fa5a23975c41877936c6e48", null ],
     [ "internal_const_iterator_type", "structfcarouge_1_1tree_1_1internal__const__iterator__type.html#a2e6a124b8ac8f513e21a1c9cd4194587", null ],
     [ "internal_const_iterator_type", "structfcarouge_1_1tree_1_1internal__const__iterator__type.html#ac280b3214922f0e60c7256f73800d788", null ],
+    [ "depth", "structfcarouge_1_1tree_1_1internal__const__iterator__type.html#a378bd4292ffaea78ef90f1d0115f8f0b", null ],
     [ "operator*", "structfcarouge_1_1tree_1_1internal__const__iterator__type.html#a87c89c7fad513b926b9e8002a6bdc637", null ],
     [ "operator++", "structfcarouge_1_1tree_1_1internal__const__iterator__type.html#aeea82fdd87a299ff23cf746777baf150", null ],
     [ "operator==", "structfcarouge_1_1tree_1_1internal__const__iterator__type.html#ad16fd55108027e93ed5dff4bc52e1db2", null ],

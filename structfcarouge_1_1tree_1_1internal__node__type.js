@@ -1,6 +1,7 @@
 var structfcarouge_1_1tree_1_1internal__node__type =
 [
     [ "value_type", "structfcarouge_1_1tree_1_1internal__node__type.html#a05cfec448abcbb5259149ad10877c358", null ],
+    [ "depth", "structfcarouge_1_1tree_1_1internal__node__type.html#acd8e228760b6f14fda73006f44006998", null ],
     [ "next_ancestor_sibling", "structfcarouge_1_1tree_1_1internal__node__type.html#ad267c5ade8dd24d9baae39cb5eaae27f", null ],
     [ "data", "structfcarouge_1_1tree_1_1internal__node__type.html#a0678b7a0857922263963001b0b7e70bc", null ],
     [ "first_child", "structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091", null ],

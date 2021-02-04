@@ -98,8 +98,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"namespacefcarouge_1_1test_1_1constructor__copy__allocator.html#a3855f5db75355eeab26c4d13f61cf327"
+"annotated.html",
+"namespacefcarouge_1_1test_1_1constructor__copy.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
