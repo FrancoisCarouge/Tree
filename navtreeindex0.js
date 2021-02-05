@@ -1,5 +1,6 @@
 var NAVTREEINDEX0 =
 {
+"":[5,0,1],
 "annotated.html":[6,0],
 "classes.html":[6,1],
 "classfcarouge_1_1null__allocator.html":[6,0,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "namespacefcarouge_1_1test_1_1const__iterator__legacy.html#ae7bcb650280fc68de1338661869f5926":[5,0,0,1,2,1],
 "namespacefcarouge_1_1test_1_1constructor__allocator.html":[5,0,0,1,3],
 "namespacefcarouge_1_1test_1_1constructor__allocator.html#aa1a9b2a25cde8b605f213644b18f62a6":[5,0,0,1,3,0],
-"namespacefcarouge_1_1test_1_1constructor__copy.html":[5,0,0,1,4],
-"namespacefcarouge_1_1test_1_1constructor__copy.html#a169739a89ede070251ec1cf76453d9f4":[5,0,0,1,4,0]
+"namespacefcarouge_1_1test_1_1constructor__copy.html":[5,0,0,1,4]
 };
