@@ -1,4 +1,4 @@
-name: "Test Address: AddressSanitizer"
+name: "Test Address: Sanitizer"
 
 on:
   push:
