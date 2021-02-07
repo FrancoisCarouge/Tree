@@ -2,6 +2,26 @@
 
 Tree data structure for C++: generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.
 
+- [Tree for C++](#tree-for-c)
+  - [Information Tree](#information-tree)
+  - [Use Cases](#use-cases)
+  - [Design Tradeoffs](#design-tradeoffs)
+  - [File include/fcarouge/tree.hpp](#file-includefcarougetreehpp)
+    - [Includes](#includes)
+    - [Namespaces](#namespaces)
+    - [Classes](#classes)
+  - [Class fcarouge::tree](#class-fcarougetree)
+    - [Template Parameters](#template-parameters)
+    - [Member Types](#member-types)
+    - [Member Functions](#member-functions)
+      - [Element Access](#element-access)
+      - [Iterators](#iterators)
+      - [Capacity](#capacity)
+      - [Modifiers](#modifiers)
+  - [Example](#example)
+  - [Hard Lessons Learned](#hard-lessons-learned)
+  - [License](#license)
+
 ## Information Tree
 
 | Information Leaf | Value |
@@ -15,24 +35,49 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
 | Best Practices | [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4221/badge)](https://bestpractices.coreinfrastructure.org/projects/4221) |
 | Support Open Free Software | [![Sponsor](https://img.shields.io/badge/Sponsor-%EF%BC%84%EF%BC%84%EF%BC%84%20%F0%9F%94%97-brightgreen)](http://paypal.me/francoiscarouge) |
 
-## Sometimes all you need is this tree...
+## Use Cases
 
-- to represent, store, walk, manipulate, and search some **hierarchical** information with the purpose of deciding, routing, sorting, or composing results.
+**Sometimes all you need is this tree...**
 
-### ...but often you really don't!
+- to represent, store, walk, manipulate, and search some **hierarchical** information with the purpose of deciding, routing, sorting, or composing results,
+
+**...but often you really don't!**
 
 - when one of the standard associative containers do better: `std::unordered_map`, `std::unordered_set`, `std::unordered_multimap`, `std::unordered_multiset`, or
 - when one of the standard sorted associative containers do better: `std::map`, `std::set`, `std::multi_map`, `std::multi_set`, or
 - when one of the many algorithms, parsers do better, or
 - when one of the [100+](https://en.wikipedia.org/wiki/Category:Trees_(data_structures)) other trees do better: binary, ternary, m-ary, k-ary, red-black, k-d, B, B+ trees!
 
-### Design Tradeoffs
+## Design Tradeoffs
 
 The selected design tradeoffs are:
 - the Standard Template Library (STL) principles, and by extension, their tradeoffs, and
 - the C++ Core Guidelines, and
 - the C++20 support, and
 - precise, detailed, and intelligible documentation for the wider audience.
+
+## File include/fcarouge/tree.hpp
+
+### Includes
+
+| Include | Definition |
+| --- | --- |
+| `<cstddef>` | Standard size and pointer difference types support. |
+| `<iterator>` | Standard input iterator tag support. |
+| `<memory>` | Standard construction, allocation, and addressing support. |
+| `<utility>` | Standard moving and forwarding resources support. |
+
+### Namespaces
+
+| Namespace | Definition |
+| --- | --- |
+| `fcarouge` | François Carouge's projects namespace. |
+
+### Classes
+
+| Class | Definition |
+| --- | --- |
+| `tree` | Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. |
 
 ## Class fcarouge::tree
 
@@ -113,7 +158,7 @@ The `fcarouge::tree` type is a hierarchical tree data structure. The container i
 | `push_front` | Prepends the given element to the beginning of the container. |
 | `swap` | Exchanges the contents of this container with those of the other container. |
 
-### Example
+## Example
 
 ![Hello, World! Tree](https://francoiscarouge.github.io/Tree/dot_inline_dotgraph_1.png)
 
@@ -145,28 +190,9 @@ int main(int, char **)
 }
 ```
 
-## File include/fcarouge/tree.hpp
+## Hard Lessons Learned
 
-### Includes
-
-| Include | Definition |
-| --- | --- |
-| `<cstddef>` | Standard size and pointer difference types support. |
-| `<iterator>` | Standard input iterator tag support. |
-| `<memory>` | Standard construction, allocation, and addressing support. |
-| `<utility>` | Standard moving and forwarding resources support. |
-
-### Namespaces
-
-| Namespace | Definition |
-| --- | --- |
-| `fcarouge` | François Carouge's projects namespace. |
-
-### Classes
-
-| Class | Definition |
-| --- | --- |
-| `tree` | Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. |
+- Recursive code **will** run out of stack space. No matter the architecture, for a generic data structure that cannot guarantee depth by design. Refactor to iterative code.
 
 ## License
 
