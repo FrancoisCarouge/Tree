@@ -34,6 +34,18 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
 namespace fcarouge::test::operator_assignment_copy
 {
+//! @test Verify the copy assignment exists and its exception specification.
+constexpr auto ctest_traits = []() {
+  // The container cannot satisty trivial copy assignment because it is not a
+  // scalar type, trivially copyable class, or array of such type/class. It has
+  // non-static members with default initializers. The destructor is user
+  // provided.
+  static_assert(std::is_copy_assignable_v<tree<char>>,
+                "The container is required to be copy assignable.");
+
+  return 0;
+}();
+
 //! @test Verify copy assigning an empty tree to an empty tree.
 auto test_empty = []() {
   tree<int> auffay_linden;
@@ -111,6 +123,24 @@ auto test_all_replace_none = []() {
   assert(
       bunodiere_beech.cbegin() == bunodiere_beech.cend() &&
       "The container's beginning and ending constant iterators must be equal.");
+
+  return 0;
+}();
+
+//! @test Verify self copy assigning.
+auto test_self = []() {
+  tree<int> bunodiere_beech(42);
+  bunodiere_beech.push(bunodiere_beech.begin(), 420);
+  bunodiere_beech.push(bunodiere_beech.begin(), 421);
+  bunodiere_beech.push(bunodiere_beech.begin(), 422);
+  bunodiere_beech = bunodiere_beech;
+
+  assert(!bunodiere_beech.empty() && "The container must not be empty.");
+  assert(4 == bunodiere_beech.size() &&
+         "The container must contain four nodes.");
+  assert(42 == bunodiere_beech.front() &&
+         "The container's front value and value used for construction "
+         "must be equal on copy assignment.");
 
   return 0;
 }();
