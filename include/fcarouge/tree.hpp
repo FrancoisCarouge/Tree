@@ -597,7 +597,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @brief Copy assignment operator.
   //!
   //! @details Destroys or copy-assigns the contents with a copy of the contents
-  //! of the other container.
+  //! of the other container. Self copy assignement is valid, safe, and
+  //! meets specifications.
   //!
   //! @param other Another container to be used as source to initialize the
   //! elements of the container with.
@@ -606,7 +607,17 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! i.e. `*this`.
   //!
   //! @complexity Linear in the size of this and the other container.
-  constexpr tree &operator=(const tree &other) noexcept;
+  constexpr tree &operator=(const tree &other) noexcept
+  {
+    if (this != std::addressof(other)) {
+      axe(root);
+      node_allocator = std::allocator_traits<AllocatorType>::
+          select_on_container_copy_construction(other.node_allocator);
+      root = copy(other.root, nullptr, nullptr);
+      node_count = other.node_count;
+    }
+    return *this;
+  }
 
   //! @brief Move assignment operator.
   //!
@@ -615,7 +626,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! into this container). The other container is in a valid but unspecified
   //! state afterwards. The allocator is obtained by move-construction from the
   //! allocator belonging to other. Self move assignement is valid, safe, and
-  //! meet specifications.
+  //! meets specifications.
   //!
   //! @param other Another container to be used as source to initialize the
   //! elements of the container with.
