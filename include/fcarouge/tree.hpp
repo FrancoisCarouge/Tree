@@ -607,7 +607,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! i.e. `*this`.
   //!
   //! @complexity Linear in the size of this and the other container.
-  constexpr tree &operator=(const tree &other) noexcept
+  constexpr tree &operator=(const tree &other)
   {
     if (this != std::addressof(other)) {
       axe(root);
@@ -642,6 +642,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       noexcept(this->node_allocator = std::move(other.node_allocator)))
   {
     if (this != std::addressof(other)) {
+      axe(root);
       node_allocator = std::move(other.node_allocator);
       root = other.root;
       node_count = other.node_count;

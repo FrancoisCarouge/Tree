@@ -47,128 +47,108 @@ constexpr auto ctest_traits = []() {
   // non-static members with default initializers. The destructor is user
   // provided.
   static_assert(std::is_move_assignable_v<tree<char>>,
-                "The container is required to be move constructible.");
+                "The container is required to be move assignable.");
   static_assert(std::is_nothrow_move_assignable_v<tree<char>>,
-                "The container is required to be nothrow move constructible.");
+                "The container is required to be nothrow move assignable.");
 
   return 0;
 }();
 
-//! @test Verify the post conditions on a moved assigned non-trivial tree.
-//!
-//! @dot
-//! digraph {
-//!   node [shape=circle fontsize="10"];
-//!   0 -> {1, 2, 3}
-//!   1 -> {11, 12, 13}
-//!   2 -> {21, 22, 23}
-//!   3 -> {31, 32, 33}
-//! }
-//! @enddot
-auto test_multiple = []() {
+//! @test Verify move assigning an empty tree to an empty tree.
+auto test_empty = []() {
   tree<int> auffay_linden;
-  const tree<int>::iterator node0 =
-      auffay_linden.push(auffay_linden.begin(), 0);
-  const tree<int>::iterator node1 = auffay_linden.push(node0, 1);
-  auffay_linden.push(node1, 11);
-  auffay_linden.push(node1, 12);
-  auffay_linden.push(node1, 13);
-  const tree<int>::iterator node2 = auffay_linden.push(node0, 2);
-  auffay_linden.push(node2, 21);
-  auffay_linden.push(node2, 22);
-  auffay_linden.push(node2, 23);
-  const tree<int>::iterator node3 = auffay_linden.push(node0, 3);
-  auffay_linden.push(node3, 31);
-  auffay_linden.push(node3, 32);
-  auffay_linden.push(node3, 33);
-  tree<int> allouville_oak;
-  allouville_oak = std::move(auffay_linden);
-  const std::multiset<int> expected_content{ 0,  1,  2,  3,  11, 12, 13,
-                                             21, 22, 23, 31, 32, 33 };
-  std::multiset<int> iterated_content;
-  tree<int>::const_iterator iterator = allouville_oak.begin();
-  for (; iterator != allouville_oak.end(); ++iterator) {
-    iterated_content.insert(*iterator);
-  }
+  tree<int> bunodiere_beech;
+  bunodiere_beech = std::move(auffay_linden);
 
-  assert(13 == allouville_oak.size() &&
-         "The container must have thirteen nodes upon move-constructing a "
-         "13-element tree.");
-  assert(!allouville_oak.empty() &&
-         "The container must not be empty on move-constructing a tree.");
-  assert(0 == allouville_oak.front() &&
-         "The container's front value must be equal to the expected root value "
-         "on move-constructing a tree.");
-  assert(0 == *allouville_oak.begin() &&
-         "The container's beginning iterator value must be equal to the "
-         "expected root value on move-constructing a tree.");
-  assert(allouville_oak.begin() != allouville_oak.end() &&
-         "The container's beginning and ending iterators must not be equal on "
-         "move-constructing a tree.");
-  assert(allouville_oak.cbegin() != allouville_oak.cend() &&
-         "The container's beginning and ending constant iterators must not be "
-         "equal on move-constructing a tree.");
-  assert(expected_content == iterated_content &&
-         "The container's content must meet expected content.");
+  assert(0 == bunodiere_beech.size() &&
+         "The container must contain zero node.");
+  assert(bunodiere_beech.empty() && "The container must be empty.");
+  assert(bunodiere_beech.begin() == bunodiere_beech.end() &&
+         "The container's beginning and ending iterators must be equal.");
+  assert(
+      bunodiere_beech.cbegin() == bunodiere_beech.cend() &&
+      "The container's beginning and ending constant iterators must be equal.");
 
   return 0;
 }();
 
-//! @test Verify the post conditions on a self moved assigned non-trivial tree.
-//!
-//! @dot
-//! digraph {
-//!   node [shape=circle fontsize="10"];
-//!   0 -> {1, 2, 3}
-//!   1 -> {11, 12, 13}
-//!   2 -> {21, 22, 23}
-//!   3 -> {31, 32, 33}
-//! }
-//! @enddot
+//! @test Verify move assigning a complex tree to a complex tree with identical
+//! topology.
+auto test_all_replace_all = []() {
+  tree<int> auffay_linden(42);
+  auffay_linden.push(auffay_linden.begin(), 420);
+  auffay_linden.push(auffay_linden.begin(), 421);
+  auffay_linden.push(auffay_linden.begin(), 422);
+  tree<int> bunodiere_beech(24);
+  bunodiere_beech.push(bunodiere_beech.begin(), 240);
+  bunodiere_beech.push(bunodiere_beech.begin(), 241);
+  bunodiere_beech.push(bunodiere_beech.begin(), 242);
+  bunodiere_beech = std::move(auffay_linden);
+
+  assert(!bunodiere_beech.empty() && "The container must not be empty.");
+  assert(4 == bunodiere_beech.size() &&
+         "The container must contain four nodes.");
+  assert(42 == bunodiere_beech.front() &&
+         "The container's front value and value used for construction "
+         "must be equal on move assignment.");
+
+  return 0;
+}();
+
+//! @test Verify move assigning a complex tree to an empty tree.
+auto test_none_replace_all = []() {
+  tree<int> auffay_linden(42);
+  auffay_linden.push(auffay_linden.begin(), 420);
+  auffay_linden.push(auffay_linden.begin(), 421);
+  auffay_linden.push(auffay_linden.begin(), 422);
+  tree<int> bunodiere_beech;
+  bunodiere_beech = std::move(auffay_linden);
+
+  assert(!bunodiere_beech.empty() && "The container must not be empty.");
+  assert(4 == bunodiere_beech.size() &&
+         "The container must contain four nodes.");
+  assert(42 == bunodiere_beech.front() &&
+         "The container's front value and value used for construction "
+         "must be equal on move assignment.");
+
+  return 0;
+}();
+
+//! @test Verify move assigning an empty tree to a complex tree.
+auto test_all_replace_none = []() {
+  tree<int> auffay_linden;
+  tree<int> bunodiere_beech(24);
+  bunodiere_beech.push(bunodiere_beech.begin(), 240);
+  bunodiere_beech.push(bunodiere_beech.begin(), 241);
+  bunodiere_beech.push(bunodiere_beech.begin(), 242);
+  bunodiere_beech = std::move(auffay_linden);
+
+  assert(0 == bunodiere_beech.size() &&
+         "The container must contain zero node.");
+  assert(bunodiere_beech.empty() && "The container must be empty.");
+  assert(bunodiere_beech.begin() == bunodiere_beech.end() &&
+         "The container's beginning and ending iterators must be equal.");
+  assert(
+      bunodiere_beech.cbegin() == bunodiere_beech.cend() &&
+      "The container's beginning and ending constant iterators must be equal.");
+
+  return 0;
+}();
+
+//! @test Verify self move assigning.
 auto test_self = []() {
-  tree<int> auffay_linden;
-  const tree<int>::iterator node0 =
-      auffay_linden.push(auffay_linden.begin(), 0);
-  const tree<int>::iterator node1 = auffay_linden.push(node0, 1);
-  auffay_linden.push(node1, 11);
-  auffay_linden.push(node1, 12);
-  auffay_linden.push(node1, 13);
-  const tree<int>::iterator node2 = auffay_linden.push(node0, 2);
-  auffay_linden.push(node2, 21);
-  auffay_linden.push(node2, 22);
-  auffay_linden.push(node2, 23);
-  const tree<int>::iterator node3 = auffay_linden.push(node0, 3);
-  auffay_linden.push(node3, 31);
-  auffay_linden.push(node3, 32);
-  auffay_linden.push(node3, 33);
-  auffay_linden = std::move(auffay_linden);
-  const std::multiset<int> expected_content{ 0,  1,  2,  3,  11, 12, 13,
-                                             21, 22, 23, 31, 32, 33 };
-  std::multiset<int> iterated_content;
-  tree<int>::const_iterator iterator = auffay_linden.begin();
-  for (; iterator != auffay_linden.end(); ++iterator) {
-    iterated_content.insert(*iterator);
-  }
+  tree<int> bunodiere_beech(42);
+  bunodiere_beech.push(bunodiere_beech.begin(), 420);
+  bunodiere_beech.push(bunodiere_beech.begin(), 421);
+  bunodiere_beech.push(bunodiere_beech.begin(), 422);
+  bunodiere_beech = std::move(bunodiere_beech);
 
-  assert(13 == auffay_linden.size() &&
-         "The container must have thirteen nodes upon move-constructing a "
-         "13-element tree.");
-  assert(!auffay_linden.empty() &&
-         "The container must not be empty on move-constructing a tree.");
-  assert(0 == auffay_linden.front() &&
-         "The container's front value must be equal to the expected root value "
-         "on move-constructing a tree.");
-  assert(0 == *auffay_linden.begin() &&
-         "The container's beginning iterator value must be equal to the "
-         "expected root value on move-constructing a tree.");
-  assert(auffay_linden.begin() != auffay_linden.end() &&
-         "The container's beginning and ending iterators must not be equal on "
-         "move-constructing a tree.");
-  assert(auffay_linden.cbegin() != auffay_linden.cend() &&
-         "The container's beginning and ending constant iterators must not be "
-         "equal on move-constructing a tree.");
-  assert(expected_content == iterated_content &&
-         "The container's content must meet expected content.");
+  assert(!bunodiere_beech.empty() && "The container must not be empty.");
+  assert(4 == bunodiere_beech.size() &&
+         "The container must contain four nodes.");
+  assert(42 == bunodiere_beech.front() &&
+         "The container's front value and value used for construction "
+         "must be equal on move assignment.");
 
   return 0;
 }();
