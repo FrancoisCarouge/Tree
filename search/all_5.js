@@ -30,13 +30,14 @@ var searchData=
   ['iterator_86',['iterator',['../namespacefcarouge_1_1test_1_1iterator.html',1,'fcarouge::test']]],
   ['iterator_5flegacy_87',['iterator_legacy',['../namespacefcarouge_1_1test_1_1iterator__legacy.html',1,'fcarouge::test']]],
   ['max_5fsize_88',['max_size',['../namespacefcarouge_1_1test_1_1max__size.html',1,'fcarouge::test']]],
-  ['operator_5fassignment_5fmove_89',['operator_assignment_move',['../namespacefcarouge_1_1test_1_1operator__assignment__move.html',1,'fcarouge::test']]],
-  ['push_5ffront_5flvalue_90',['push_front_lvalue',['../namespacefcarouge_1_1test_1_1push__front__lvalue.html',1,'fcarouge::test']]],
-  ['push_5ffront_5frvalue_91',['push_front_rvalue',['../namespacefcarouge_1_1test_1_1push__front__rvalue.html',1,'fcarouge::test']]],
-  ['push_5flvalue_92',['push_lvalue',['../namespacefcarouge_1_1test_1_1push__lvalue.html',1,'fcarouge::test']]],
-  ['push_5frvalue_93',['push_rvalue',['../namespacefcarouge_1_1test_1_1push__rvalue.html',1,'fcarouge::test']]],
-  ['sample_94',['sample',['../namespacefcarouge_1_1sample.html',1,'fcarouge']]],
-  ['size_95',['size',['../namespacefcarouge_1_1test_1_1size.html',1,'fcarouge::test']]],
-  ['standard_5flayout_96',['standard_layout',['../namespacefcarouge_1_1test_1_1standard__layout.html',1,'fcarouge::test']]],
-  ['test_97',['test',['../namespacefcarouge_1_1test.html',1,'fcarouge']]]
+  ['operator_5fassignment_5fcopy_89',['operator_assignment_copy',['../namespacefcarouge_1_1test_1_1operator__assignment__copy.html',1,'fcarouge::test']]],
+  ['operator_5fassignment_5fmove_90',['operator_assignment_move',['../namespacefcarouge_1_1test_1_1operator__assignment__move.html',1,'fcarouge::test']]],
+  ['push_5ffront_5flvalue_91',['push_front_lvalue',['../namespacefcarouge_1_1test_1_1push__front__lvalue.html',1,'fcarouge::test']]],
+  ['push_5ffront_5frvalue_92',['push_front_rvalue',['../namespacefcarouge_1_1test_1_1push__front__rvalue.html',1,'fcarouge::test']]],
+  ['push_5flvalue_93',['push_lvalue',['../namespacefcarouge_1_1test_1_1push__lvalue.html',1,'fcarouge::test']]],
+  ['push_5frvalue_94',['push_rvalue',['../namespacefcarouge_1_1test_1_1push__rvalue.html',1,'fcarouge::test']]],
+  ['sample_95',['sample',['../namespacefcarouge_1_1sample.html',1,'fcarouge']]],
+  ['size_96',['size',['../namespacefcarouge_1_1test_1_1size.html',1,'fcarouge::test']]],
+  ['standard_5flayout_97',['standard_layout',['../namespacefcarouge_1_1test_1_1standard__layout.html',1,'fcarouge::test']]],
+  ['test_98',['test',['../namespacefcarouge_1_1test.html',1,'fcarouge']]]
 ];

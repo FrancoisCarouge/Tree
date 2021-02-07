@@ -27,6 +27,7 @@ var dir_13e138d54eb8818da29c3992edef070a =
       [ "null_allocator", "classfcarouge_1_1null__allocator.html", "classfcarouge_1_1null__allocator" ],
       [ "allocator_traits< fcarouge::null_allocator< Type > >", "structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html", "structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4" ]
     ] ],
+    [ "operator_assignment_copy.cpp", "operator__assignment__copy_8cpp.html", "operator__assignment__copy_8cpp" ],
     [ "operator_assignment_move.cpp", "operator__assignment__move_8cpp.html", "operator__assignment__move_8cpp" ],
     [ "push_front_lvalue.cpp", "push__front__lvalue_8cpp.html", "push__front__lvalue_8cpp" ],
     [ "push_front_rvalue.cpp", "push__front__rvalue_8cpp.html", "push__front__rvalue_8cpp" ],

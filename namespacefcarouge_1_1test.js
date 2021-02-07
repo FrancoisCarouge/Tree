@@ -101,6 +101,12 @@ var namespacefcarouge_1_1test =
       [ "test_constructor_null", "namespacefcarouge_1_1test_1_1max__size.html#a6648911c88f1bc454422a71266a65f00", null ],
       [ "test_default", "namespacefcarouge_1_1test_1_1max__size.html#ada63d5517a32bf63368c9adbe537001c", null ]
     ] ],
+    [ "operator_assignment_copy", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html", [
+      [ "test_all_replace_all", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#ac2bd0ebae20074e2b37e24efa281583a", null ],
+      [ "test_all_replace_none", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#a16fad3ce5e697e51255b16180d3fee2e", null ],
+      [ "test_empty", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#a0aebe761f7deed1008a6221fac75c54a", null ],
+      [ "test_none_replace_all", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#a3ea71009e8d0eb8374276ffa6a4f86f9", null ]
+    ] ],
     [ "operator_assignment_move", "namespacefcarouge_1_1test_1_1operator__assignment__move.html", [
       [ "ctest_traits", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a7c8f7f1160d5dc066ed4ed6051ff50d8", null ],
       [ "test_multiple", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a0d4d769265e2903eecfe193be046864c", null ],
