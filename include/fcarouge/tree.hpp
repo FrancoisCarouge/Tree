@@ -660,8 +660,15 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @return The reference value of this implicit object container parameter,
   //! i.e. `*this`.
   //!
-  //! @complexity Linear in the size of this and the other container.
-  constexpr tree &operator=(const_reference value) noexcept;
+  //! @complexity Linear in the size of this container.
+  constexpr tree &operator=(const_reference value)
+  {
+    axe(root);
+    root = node_allocator.allocate(1);
+    std::construct_at(root, value);
+    node_count = 1;
+    return *this;
+  }
 
   //! @brief Value move assignment operator.
   //!
@@ -674,8 +681,15 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @return The reference value of this implicit object container parameter,
   //! i.e. `*this`.
   //!
-  //! @complexity Constant.
-  constexpr tree &operator=(value_type &&value) noexcept;
+  //! @complexity Linear in the size of this container.
+  constexpr tree &operator=(value_type &&value)
+  {
+    axe(root);
+    root = node_allocator.allocate(1);
+    std::construct_at(root, std::move(value));
+    node_count = 1;
+    return *this;
+  }
 
   constexpr tree &assign(const tree &other) noexcept;
 
