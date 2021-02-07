@@ -27,26 +27,25 @@ var NAVTREE =
   [ "Tree", "index.html", [
     [ "Tree for C++", "index.html", [
       [ "Information Tree", "index.html#autotoc_md13", null ],
-      [ "Sometimes all you need is this tree...", "index.html#autotoc_md14", [
-        [ "...but often you really don't!", "index.html#autotoc_md15", null ],
-        [ "Design Tradeoffs", "index.html#autotoc_md16", null ]
+      [ "Use Cases", "index.html#autotoc_md14", null ],
+      [ "Design Tradeoffs", "index.html#autotoc_md15", null ],
+      [ "File include/fcarouge/tree.hpp", "index.html#autotoc_md16", [
+        [ "Includes", "index.html#autotoc_md17", null ],
+        [ "Namespaces", "index.html#autotoc_md18", null ],
+        [ "Classes", "index.html#autotoc_md19", null ]
       ] ],
-      [ "Class fcarouge::tree", "index.html#autotoc_md17", [
-        [ "Template Parameters", "index.html#autotoc_md18", null ],
-        [ "Member Types", "index.html#autotoc_md19", null ],
-        [ "Member Functions", "index.html#autotoc_md20", [
-          [ "Element Access", "index.html#autotoc_md21", null ],
-          [ "Iterators", "index.html#autotoc_md22", null ],
-          [ "Capacity", "index.html#autotoc_md23", null ],
-          [ "Modifiers", "index.html#autotoc_md24", null ]
-        ] ],
-        [ "Example", "index.html#autotoc_md25", null ]
+      [ "Class fcarouge::tree", "index.html#autotoc_md20", [
+        [ "Template Parameters", "index.html#autotoc_md21", null ],
+        [ "Member Types", "index.html#autotoc_md22", null ],
+        [ "Member Functions", "index.html#autotoc_md23", [
+          [ "Element Access", "index.html#autotoc_md24", null ],
+          [ "Iterators", "index.html#autotoc_md25", null ],
+          [ "Capacity", "index.html#autotoc_md26", null ],
+          [ "Modifiers", "index.html#autotoc_md27", null ]
+        ] ]
       ] ],
-      [ "File include/fcarouge/tree.hpp", "index.html#autotoc_md26", [
-        [ "Includes", "index.html#autotoc_md27", null ],
-        [ "Namespaces", "index.html#autotoc_md28", null ],
-        [ "Classes", "index.html#autotoc_md29", null ]
-      ] ],
+      [ "Example", "index.html#autotoc_md28", null ],
+      [ "Hard Lessons Learned", "index.html#autotoc_md29", null ],
       [ "License", "index.html#autotoc_md30", null ]
     ] ],
     [ "Contributor Covenant Code of Conduct", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html", [
@@ -98,8 +97,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"namespacefcarouge_1_1test_1_1constructor__copy.html#a169739a89ede070251ec1cf76453d9f4"
+"annotated.html",
+"namespacefcarouge_1_1test_1_1constructor__copy.html#aeb96b2ab32a6a64965a285d2a1e5c2ba"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

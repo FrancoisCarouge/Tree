@@ -88,6 +88,35 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> Tree data structure for C++: generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.</p>
+<ul>
+<li><a href="#tree-for-c">Tree for C++</a><ul>
+<li><a href="#information-tree">Information Tree</a></li>
+<li><a href="#use-cases">Use Cases</a></li>
+<li><a href="#design-tradeoffs">Design Tradeoffs</a></li>
+<li><a href="#file-includefcarougetreehpp">File include/fcarouge/tree.hpp</a><ul>
+<li><a href="#includes">Includes</a></li>
+<li><a href="#namespaces">Namespaces</a></li>
+<li><a href="#classes">Classes</a></li>
+</ul>
+</li>
+<li><a href="#class-fcarougetree">Class fcarouge::tree</a><ul>
+<li><a href="#template-parameters">Template Parameters</a></li>
+<li><a href="#member-types">Member Types</a></li>
+<li><a href="#member-functions">Member Functions</a><ul>
+<li><a href="#element-access">Element Access</a></li>
+<li><a href="#iterators">Iterators</a></li>
+<li><a href="#capacity">Capacity</a></li>
+<li><a href="#modifiers">Modifiers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#example">Example</a></li>
+<li><a href="#hard-lessons-learned">Hard Lessons Learned</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</li>
+</ul>
 <h1><a class="anchor" id="autotoc_md13"></a>
 Information Tree</h1>
 <table class="markdownTable">
@@ -120,27 +149,59 @@ Information Tree</h1>
 <td class="markdownTableBodyNone">Support Open Free Software   </td><td class="markdownTableBodyNone"><a href="http://paypal.me/francoiscarouge"><img src="https://img.shields.io/badge/Sponsor-%EF%BC%84%EF%BC%84%EF%BC%84%20%F0%9F%94%97-brightgreen" alt="Sponsor" class="inline"/></a>   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md14"></a>
-Sometimes all you need is this tree...</h1>
+Use Cases</h1>
+<p><b>Sometimes all you need is this tree...</b></p>
 <ul>
-<li>to represent, store, walk, manipulate, and search some <b>hierarchical</b> information with the purpose of deciding, routing, sorting, or composing results.</li>
+<li>to represent, store, walk, manipulate, and search some <b>hierarchical</b> information with the purpose of deciding, routing, sorting, or composing results,</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md15"></a>
-...but often you really don't!</h2>
+<p>**...but often you really don't!**</p>
 <ul>
 <li>when one of the standard associative containers do better: <code>std::unordered_map</code>, <code>std::unordered_set</code>, <code>std::unordered_multimap</code>, <code>std::unordered_multiset</code>, or</li>
 <li>when one of the standard sorted associative containers do better: <code>std::map</code>, <code>std::set</code>, <code>std::multi_map</code>, <code>std::multi_set</code>, or</li>
 <li>when one of the many algorithms, parsers do better, or</li>
 <li>when one of the <a href="https://en.wikipedia.org/wiki/Category:Trees_(data_structures)">100+</a> other trees do better: binary, ternary, m-ary, k-ary, red-black, k-d, B, B+ trees!</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md16"></a>
-Design Tradeoffs</h2>
+<h1><a class="anchor" id="autotoc_md15"></a>
+Design Tradeoffs</h1>
 <p>The selected design tradeoffs are:</p><ul>
 <li>the Standard Template Library (STL) principles, and by extension, their tradeoffs, and</li>
 <li>the C++ Core Guidelines, and</li>
 <li>the C++20 support, and</li>
 <li>precise, detailed, and intelligible documentation for the wider audience.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
+File include/fcarouge/tree.hpp</h1>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Includes</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Include   </th><th class="markdownTableHeadNone">Definition    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>&lt;cstddef&gt;</code>   </td><td class="markdownTableBodyNone">Standard size and pointer difference types support.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>&lt;iterator&gt;</code>   </td><td class="markdownTableBodyNone">Standard input iterator tag support.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>&lt;memory&gt;</code>   </td><td class="markdownTableBodyNone">Standard construction, allocation, and addressing support.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>&lt;utility&gt;</code>   </td><td class="markdownTableBodyNone">Standard moving and forwarding resources support.   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md18"></a>
+Namespaces</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Namespace   </th><th class="markdownTableHeadNone">Definition    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>fcarouge</code>   </td><td class="markdownTableBodyNone">François Carouge's projects namespace.   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md19"></a>
+Classes</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Class   </th><th class="markdownTableHeadNone">Definition    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree</code>   </td><td class="markdownTableBodyNone">Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md20"></a>
 Class fcarouge::tree</h1>
 <p>Defined in header <a href="include/fcarouge/tree.hpp">fcarouge/tree.hpp</a></p>
 <div class="fragment"><div class="line">template &lt;</div>
@@ -148,7 +209,7 @@ Class fcarouge::tree</h1>
 <div class="line">    class AllocatorType = std::allocator&lt;Type&gt;</div>
 <div class="line">&gt; class tree</div>
 </div><!-- fragment --><p>The <code><a class="el" href="classfcarouge_1_1tree.html" title="A tree data structure for C++.">fcarouge::tree</a></code> type is a hierarchical tree data structure. The container is a generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. The design tradeoffs are influenced by the Standard Template Library (STL) principles and the C++ Core Guidelines. The container is a standard layout class type which may help with memory and cross language communication. The iteration order of the standard iterator is unspecified, except that each element is visited only once.</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Template Parameters</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -158,7 +219,7 @@ Template Parameters</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>AllocatorType</code>   </td><td class="markdownTableBodyNone">An allocator that is used to acquire/release memory and to construct/destroy the elements in that memory.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Member Types</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -184,7 +245,7 @@ Member Types</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>const_iterator</code>   </td><td class="markdownTableBodyNone">The constant type to identify and traverse the elements of the container.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Member Functions</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -200,7 +261,7 @@ Member Functions</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>get_allocator</code>   </td><td class="markdownTableBodyNone">Returns the allocator associated with the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md21"></a>
+<h3><a class="anchor" id="autotoc_md24"></a>
 Element Access</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -208,7 +269,7 @@ Element Access</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>front</code>   </td><td class="markdownTableBodyNone">Returns a reference to the first element in the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md22"></a>
+<h3><a class="anchor" id="autotoc_md25"></a>
 Iterators</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -220,7 +281,7 @@ Iterators</h3>
 <td class="markdownTableBodyNone"><code>end</code> <br  />
 <code>cend</code>   </td><td class="markdownTableBodyNone">Returns an iterator to the element following the last element of the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md23"></a>
+<h3><a class="anchor" id="autotoc_md26"></a>
 Capacity</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -232,7 +293,7 @@ Capacity</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>max_size</code>   </td><td class="markdownTableBodyNone">Returns the maximum number of elements the container is able to hold.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md24"></a>
+<h3><a class="anchor" id="autotoc_md27"></a>
 Modifiers</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -254,8 +315,8 @@ Modifiers</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>swap</code>   </td><td class="markdownTableBodyNone">Exchanges the contents of this container with those of the other container.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md25"></a>
-Example</h2>
+<h1><a class="anchor" id="autotoc_md28"></a>
+Example</h1>
 <p><img src="https://francoiscarouge.github.io/Tree/dot_inline_dotgraph_1.png" alt="Hello, World! Tree" class="inline"/></p>
 <div class="fragment"><div class="line"><span class="comment">// Support the tree container in this program by including its definition.</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="tree_8hpp.html">fcarouge/tree.hpp</a>&quot;</span></div>
@@ -285,38 +346,11 @@ Example</h2>
 <div class="ttc" id="amain_8cpp_html_a2c3f6775325c30275d11c6abee2db6a0"><div class="ttname"><a href="main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0">main</a></div><div class="ttdeci">int main(int, char **)</div><div class="ttdoc">The tree data structure for C++ project is a header-only library.</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00035">main.cpp:35</a></div></div>
 <div class="ttc" id="anamespacefcarouge_html"><div class="ttname"><a href="namespacefcarouge.html">fcarouge</a></div></div>
 <div class="ttc" id="atree_8hpp_html"><div class="ttname"><a href="tree_8hpp.html">tree.hpp</a></div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md26"></a>
-File include/fcarouge/tree.hpp</h1>
-<h2><a class="anchor" id="autotoc_md27"></a>
-Includes</h2>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Include   </th><th class="markdownTableHeadNone">Definition    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>&lt;cstddef&gt;</code>   </td><td class="markdownTableBodyNone">Standard size and pointer difference types support.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>&lt;iterator&gt;</code>   </td><td class="markdownTableBodyNone">Standard input iterator tag support.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>&lt;memory&gt;</code>   </td><td class="markdownTableBodyNone">Standard construction, allocation, and addressing support.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>&lt;utility&gt;</code>   </td><td class="markdownTableBodyNone">Standard moving and forwarding resources support.   </td></tr>
-</table>
-<h2><a class="anchor" id="autotoc_md28"></a>
-Namespaces</h2>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Namespace   </th><th class="markdownTableHeadNone">Definition    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>fcarouge</code>   </td><td class="markdownTableBodyNone">François Carouge's projects namespace.   </td></tr>
-</table>
-<h2><a class="anchor" id="autotoc_md29"></a>
-Classes</h2>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Class   </th><th class="markdownTableHeadNone">Definition    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>tree</code>   </td><td class="markdownTableBodyNone">Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.   </td></tr>
-</table>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md29"></a>
+Hard Lessons Learned</h1>
+<ul>
+<li>Recursive code <b>will</b> run out of stack space. No matter the architecture, for a generic data structure that cannot guarantee depth by design. Refactor to iterative code.</li>
+</ul>
 <h1><a class="anchor" id="autotoc_md30"></a>
 License</h1>
 <p><img src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png" alt="" align="right" class="inline"/></p>
@@ -331,7 +365,7 @@ License</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Feb 5 2021 05:41:41 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Feb 7 2021 00:51:04 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
