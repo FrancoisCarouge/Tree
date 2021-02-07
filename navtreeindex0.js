@@ -1,5 +1,6 @@
 var NAVTREEINDEX0 =
 {
+"":[5,0,1],
 "annotated.html":[6,0],
 "classes.html":[6,1],
 "classfcarouge_1_1null__allocator.html":[6,0,0,1],
@@ -13,7 +14,6 @@ var NAVTREEINDEX0 =
 "classfcarouge_1_1null__allocator.html#ad184c451da269197d2474876684b77a7":[6,0,0,1,7],
 "classfcarouge_1_1tree.html":[6,0,0,0],
 "classfcarouge_1_1tree.html#a03614438bc62228f67b08f2eeadfa803":[6,0,0,0,6],
-"classfcarouge_1_1tree.html#a0cdcdfb8c62a8753e1c3ad3c21f604eb":[6,0,0,0,56],
 "classfcarouge_1_1tree.html#a0ee5302eccd03bb68a5e088c0a8da489":[6,0,0,0,67],
 "classfcarouge_1_1tree.html#a0f58d6bc0460ce068c715672fb40a52d":[6,0,0,0,10],
 "classfcarouge_1_1tree.html#a13e359d4ae6b94ab472607f15dbe3196":[6,0,0,0,34],
@@ -32,7 +32,9 @@ var NAVTREEINDEX0 =
 "classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3":[6,0,0,0,66],
 "classfcarouge_1_1tree.html#a40d0f9eb1070eaff88b4b92afbeaf0a0":[6,0,0,0,51],
 "classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5":[6,0,0,0,38],
+"classfcarouge_1_1tree.html#a486d7361433ec5f0b538c600b55420ea":[6,0,0,0,56],
 "classfcarouge_1_1tree.html#a4986566354e05a0d3f8b263799e42e45":[6,0,0,0,31],
+"classfcarouge_1_1tree.html#a4b10a6f19c9e24ba6517245df66f6242":[6,0,0,0,58],
 "classfcarouge_1_1tree.html#a4b14c726ea8b5aff6371f3f3f9016cb3":[6,0,0,0,24],
 "classfcarouge_1_1tree.html#a4d914f8d4ce69f0ecd580e7ddb5d16d1":[6,0,0,0,33],
 "classfcarouge_1_1tree.html#a5f2f4cb1caf5a71e1a298ab6e5460955":[6,0,0,0,27],
@@ -48,7 +50,6 @@ var NAVTREEINDEX0 =
 "classfcarouge_1_1tree.html#a8ca46de39685c48952bd45a578e3bd8d":[6,0,0,0,8],
 "classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa":[6,0,0,0,50],
 "classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79":[6,0,0,0,64],
-"classfcarouge_1_1tree.html#a98bd9c0bba29aff00363a210996ba14c":[6,0,0,0,58],
 "classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588":[6,0,0,0,46],
 "classfcarouge_1_1tree.html#a9c65db35e938093e6b0a210630f1d84d":[6,0,0,0,49],
 "classfcarouge_1_1tree.html#a9eb654df3c8f35f64ce11d7bbbc8367d":[6,0,0,0,41],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "namespacefcarouge_1_1test_1_1const__iterator__legacy.html#ae7bcb650280fc68de1338661869f5926":[5,0,0,1,2,1],
 "namespacefcarouge_1_1test_1_1constructor__allocator.html":[5,0,0,1,3],
 "namespacefcarouge_1_1test_1_1constructor__allocator.html#aa1a9b2a25cde8b605f213644b18f62a6":[5,0,0,1,3,0],
-"namespacefcarouge_1_1test_1_1constructor__copy.html":[5,0,0,1,4],
-"namespacefcarouge_1_1test_1_1constructor__copy.html#a169739a89ede070251ec1cf76453d9f4":[5,0,0,1,4,0]
+"namespacefcarouge_1_1test_1_1constructor__copy.html":[5,0,0,1,4]
 };

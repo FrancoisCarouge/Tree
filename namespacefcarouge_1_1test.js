@@ -107,10 +107,16 @@ var namespacefcarouge_1_1test =
       [ "test_empty", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#a0aebe761f7deed1008a6221fac75c54a", null ],
       [ "test_none_replace_all", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#a3ea71009e8d0eb8374276ffa6a4f86f9", null ]
     ] ],
+    [ "operator_assignment_lvalue", "namespacefcarouge_1_1test_1_1operator__assignment__lvalue.html", [
+      [ "test_all_replace_all", "namespacefcarouge_1_1test_1_1operator__assignment__lvalue.html#af3f9e2a303117acfa2851dfc841dd31b", null ]
+    ] ],
     [ "operator_assignment_move", "namespacefcarouge_1_1test_1_1operator__assignment__move.html", [
       [ "ctest_traits", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a7c8f7f1160d5dc066ed4ed6051ff50d8", null ],
       [ "test_multiple", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a0d4d769265e2903eecfe193be046864c", null ],
       [ "test_self", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a8051a4f35fdf1c2bbd744001e14bc741", null ]
+    ] ],
+    [ "operator_assignment_rvalue", "namespacefcarouge_1_1test_1_1operator__assignment__rvalue.html", [
+      [ "test_all_replace_all", "namespacefcarouge_1_1test_1_1operator__assignment__rvalue.html#ae2af68cd0b345cfeaef436944b806f74", null ]
     ] ],
     [ "push_front_lvalue", "namespacefcarouge_1_1test_1_1push__front__lvalue.html", [
       [ "test_multiple", "namespacefcarouge_1_1test_1_1push__front__lvalue.html#aa91c874b697f724dbab7a9e433035321", null ],
