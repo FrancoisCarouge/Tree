@@ -94,8 +94,14 @@ $(document).ready(function(){initNavTree('namespacefcarouge_1_1test_1_1operator_
 Variables</h2></td></tr>
 <tr class="memitem:a7c8f7f1160d5dc066ed4ed6051ff50d8"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1operator__assignment__move.html#a7c8f7f1160d5dc066ed4ed6051ff50d8">ctest_traits</a></td></tr>
 <tr class="separator:a7c8f7f1160d5dc066ed4ed6051ff50d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d4d769265e2903eecfe193be046864c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1operator__assignment__move.html#a0d4d769265e2903eecfe193be046864c">test_multiple</a></td></tr>
-<tr class="separator:a0d4d769265e2903eecfe193be046864c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7b5259264caa437088dbaa8251620d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1operator__assignment__move.html#aba7b5259264caa437088dbaa8251620d">test_empty</a></td></tr>
+<tr class="separator:aba7b5259264caa437088dbaa8251620d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11502d47f20ed2486267c4d6c4294ee6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1operator__assignment__move.html#a11502d47f20ed2486267c4d6c4294ee6">test_all_replace_all</a></td></tr>
+<tr class="separator:a11502d47f20ed2486267c4d6c4294ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc426be04949efdc23786fca04abd90e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1operator__assignment__move.html#acc426be04949efdc23786fca04abd90e">test_none_replace_all</a></td></tr>
+<tr class="separator:acc426be04949efdc23786fca04abd90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55dd4c47479ceb2ece8a29a3bb240002"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1operator__assignment__move.html#a55dd4c47479ceb2ece8a29a3bb240002">test_all_replace_none</a></td></tr>
+<tr class="separator:a55dd4c47479ceb2ece8a29a3bb240002"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8051a4f35fdf1c2bbd744001e14bc741"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1operator__assignment__move.html#a8051a4f35fdf1c2bbd744001e14bc741">test_self</a></td></tr>
 <tr class="separator:a8051a4f35fdf1c2bbd744001e14bc741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -125,35 +131,155 @@ Variables</h2></td></tr>
 <div class="line">  </div>
 <div class="line">  </div>
 <div class="line">  static_assert(std::is_move_assignable_v&lt;tree&lt;char&gt;&gt;,</div>
-<div class="line">                <span class="stringliteral">&quot;The container is required to be move constructible.&quot;</span>);</div>
+<div class="line">                <span class="stringliteral">&quot;The container is required to be move assignable.&quot;</span>);</div>
 <div class="line">  static_assert(std::is_nothrow_move_assignable_v&lt;tree&lt;char&gt;&gt;,</div>
-<div class="line">                <span class="stringliteral">&quot;The container is required to be nothrow move constructible.&quot;</span>);</div>
+<div class="line">                <span class="stringliteral">&quot;The container is required to be nothrow move assignable.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000062">Test:</a></b></dt><dd>Verify the move assignment exists and its exception specification. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000064">Test:</a></b></dt><dd>Verify the move assignment exists and its exception specification. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="operator__assignment__move_8cpp_source.html#l00044">44</a> of file <a class="el" href="operator__assignment__move_8cpp_source.html">operator_assignment_move.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a0d4d769265e2903eecfe193be046864c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d4d769265e2903eecfe193be046864c">&#9670;&nbsp;</a></span>test_multiple</h2>
+<a id="a11502d47f20ed2486267c4d6c4294ee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11502d47f20ed2486267c4d6c4294ee6">&#9670;&nbsp;</a></span>test_all_replace_all</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto fcarouge::test::operator_assignment_move::test_multiple</td>
+          <td class="memname">auto fcarouge::test::operator_assignment_move::test_all_replace_all</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000063">Test:</a></b></dt><dd>Verify the post conditions on a moved assigned non-trivial tree.</dd></dl>
-<div class="dotgraph">
-<img src="dot_inline_dotgraph_10.png" alt="dot_inline_dotgraph_10.png" border="0" usemap="#dot_inline_dotgraph_10.map"/>
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  tree&lt;int&gt; auffay_linden(42);</div>
+<div class="line">  auffay_linden.push(auffay_linden.begin(), 420);</div>
+<div class="line">  auffay_linden.push(auffay_linden.begin(), 421);</div>
+<div class="line">  auffay_linden.push(auffay_linden.begin(), 422);</div>
+<div class="line">  tree&lt;int&gt; bunodiere_beech(24);</div>
+<div class="line">  bunodiere_beech.push(bunodiere_beech.begin(), 240);</div>
+<div class="line">  bunodiere_beech.push(bunodiere_beech.begin(), 241);</div>
+<div class="line">  bunodiere_beech.push(bunodiere_beech.begin(), 242);</div>
+<div class="line">  bunodiere_beech = std::move(auffay_linden);</div>
+<div class="line"> </div>
+<div class="line">  assert(!bunodiere_beech.empty() &amp;&amp; <span class="stringliteral">&quot;The container must not be empty.&quot;</span>);</div>
+<div class="line">  assert(4 == bunodiere_beech.size() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must contain four nodes.&quot;</span>);</div>
+<div class="line">  assert(42 == bunodiere_beech.front() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s front value and value used for construction &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;must be equal on move assignment.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000066">Test:</a></b></dt><dd>Verify move assigning a complex tree to a complex tree with identical topology. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="operator__assignment__move_8cpp_source.html#l00077">77</a> of file <a class="el" href="operator__assignment__move_8cpp_source.html">operator_assignment_move.cpp</a>.</p>
+
 </div>
- 
-<p class="definition">Definition at line <a class="el" href="operator__assignment__move_8cpp_source.html#l00068">68</a> of file <a class="el" href="operator__assignment__move_8cpp_source.html">operator_assignment_move.cpp</a>.</p>
+</div>
+<a id="a55dd4c47479ceb2ece8a29a3bb240002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55dd4c47479ceb2ece8a29a3bb240002">&#9670;&nbsp;</a></span>test_all_replace_none</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::test::operator_assignment_move::test_all_replace_none</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  tree&lt;int&gt; auffay_linden;</div>
+<div class="line">  tree&lt;int&gt; bunodiere_beech(24);</div>
+<div class="line">  bunodiere_beech.push(bunodiere_beech.begin(), 240);</div>
+<div class="line">  bunodiere_beech.push(bunodiere_beech.begin(), 241);</div>
+<div class="line">  bunodiere_beech.push(bunodiere_beech.begin(), 242);</div>
+<div class="line">  bunodiere_beech = std::move(auffay_linden);</div>
+<div class="line"> </div>
+<div class="line">  assert(0 == bunodiere_beech.size() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must contain zero node.&quot;</span>);</div>
+<div class="line">  assert(bunodiere_beech.empty() &amp;&amp; <span class="stringliteral">&quot;The container must be empty.&quot;</span>);</div>
+<div class="line">  assert(bunodiere_beech.begin() == bunodiere_beech.end() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must be equal.&quot;</span>);</div>
+<div class="line">  assert(</div>
+<div class="line">      bunodiere_beech.cbegin() == bunodiere_beech.cend() &amp;&amp;</div>
+<div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning and ending constant iterators must be equal.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000068">Test:</a></b></dt><dd>Verify move assigning an empty tree to a complex tree. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="operator__assignment__move_8cpp_source.html#l00118">118</a> of file <a class="el" href="operator__assignment__move_8cpp_source.html">operator_assignment_move.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aba7b5259264caa437088dbaa8251620d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba7b5259264caa437088dbaa8251620d">&#9670;&nbsp;</a></span>test_empty</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::test::operator_assignment_move::test_empty</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  tree&lt;int&gt; auffay_linden;</div>
+<div class="line">  tree&lt;int&gt; bunodiere_beech;</div>
+<div class="line">  bunodiere_beech = std::move(auffay_linden);</div>
+<div class="line"> </div>
+<div class="line">  assert(0 == bunodiere_beech.size() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must contain zero node.&quot;</span>);</div>
+<div class="line">  assert(bunodiere_beech.empty() &amp;&amp; <span class="stringliteral">&quot;The container must be empty.&quot;</span>);</div>
+<div class="line">  assert(bunodiere_beech.begin() == bunodiere_beech.end() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must be equal.&quot;</span>);</div>
+<div class="line">  assert(</div>
+<div class="line">      bunodiere_beech.cbegin() == bunodiere_beech.cend() &amp;&amp;</div>
+<div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning and ending constant iterators must be equal.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000065">Test:</a></b></dt><dd>Verify move assigning an empty tree to an empty tree. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="operator__assignment__move_8cpp_source.html#l00058">58</a> of file <a class="el" href="operator__assignment__move_8cpp_source.html">operator_assignment_move.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acc426be04949efdc23786fca04abd90e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc426be04949efdc23786fca04abd90e">&#9670;&nbsp;</a></span>test_none_replace_all</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::test::operator_assignment_move::test_none_replace_all</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  tree&lt;int&gt; auffay_linden(42);</div>
+<div class="line">  auffay_linden.push(auffay_linden.begin(), 420);</div>
+<div class="line">  auffay_linden.push(auffay_linden.begin(), 421);</div>
+<div class="line">  auffay_linden.push(auffay_linden.begin(), 422);</div>
+<div class="line">  tree&lt;int&gt; bunodiere_beech;</div>
+<div class="line">  bunodiere_beech = std::move(auffay_linden);</div>
+<div class="line"> </div>
+<div class="line">  assert(!bunodiere_beech.empty() &amp;&amp; <span class="stringliteral">&quot;The container must not be empty.&quot;</span>);</div>
+<div class="line">  assert(4 == bunodiere_beech.size() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must contain four nodes.&quot;</span>);</div>
+<div class="line">  assert(42 == bunodiere_beech.front() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s front value and value used for construction &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;must be equal on move assignment.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000067">Test:</a></b></dt><dd>Verify move assigning a complex tree to an empty tree. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="operator__assignment__move_8cpp_source.html#l00099">99</a> of file <a class="el" href="operator__assignment__move_8cpp_source.html">operator_assignment_move.cpp</a>.</p>
 
 </div>
 </div>
@@ -168,12 +294,25 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000064">Test:</a></b></dt><dd>Verify the post conditions on a self moved assigned non-trivial tree.</dd></dl>
-<div class="dotgraph">
-<img src="dot_inline_dotgraph_11.png" alt="dot_inline_dotgraph_11.png" border="0" usemap="#dot_inline_dotgraph_11.map"/>
-</div>
- 
-<p class="definition">Definition at line <a class="el" href="operator__assignment__move_8cpp_source.html#l00128">128</a> of file <a class="el" href="operator__assignment__move_8cpp_source.html">operator_assignment_move.cpp</a>.</p>
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  tree&lt;int&gt; bunodiere_beech(42);</div>
+<div class="line">  bunodiere_beech.push(bunodiere_beech.begin(), 420);</div>
+<div class="line">  bunodiere_beech.push(bunodiere_beech.begin(), 421);</div>
+<div class="line">  bunodiere_beech.push(bunodiere_beech.begin(), 422);</div>
+<div class="line">  bunodiere_beech = std::move(bunodiere_beech);</div>
+<div class="line"> </div>
+<div class="line">  assert(!bunodiere_beech.empty() &amp;&amp; <span class="stringliteral">&quot;The container must not be empty.&quot;</span>);</div>
+<div class="line">  assert(4 == bunodiere_beech.size() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must contain four nodes.&quot;</span>);</div>
+<div class="line">  assert(42 == bunodiere_beech.front() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s front value and value used for construction &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;must be equal on move assignment.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000069">Test:</a></b></dt><dd>Verify self move assigning. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="operator__assignment__move_8cpp_source.html#l00139">139</a> of file <a class="el" href="operator__assignment__move_8cpp_source.html">operator_assignment_move.cpp</a>.</p>
 
 </div>
 </div>
@@ -183,7 +322,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test.html">test</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test_1_1operator__assignment__move.html">operator_assignment_move</a></li>
-    <li class="footer">Generated on Sun Feb 7 2021 04:39:11 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Feb 7 2021 22:01:36 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

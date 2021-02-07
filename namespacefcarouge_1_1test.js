@@ -102,17 +102,22 @@ var namespacefcarouge_1_1test =
       [ "test_default", "namespacefcarouge_1_1test_1_1max__size.html#ada63d5517a32bf63368c9adbe537001c", null ]
     ] ],
     [ "operator_assignment_copy", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html", [
+      [ "ctest_traits", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#a9ad0782d27d8b3f63d5c8b8ab84026f0", null ],
       [ "test_all_replace_all", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#ac2bd0ebae20074e2b37e24efa281583a", null ],
       [ "test_all_replace_none", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#a16fad3ce5e697e51255b16180d3fee2e", null ],
       [ "test_empty", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#a0aebe761f7deed1008a6221fac75c54a", null ],
-      [ "test_none_replace_all", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#a3ea71009e8d0eb8374276ffa6a4f86f9", null ]
+      [ "test_none_replace_all", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#a3ea71009e8d0eb8374276ffa6a4f86f9", null ],
+      [ "test_self", "namespacefcarouge_1_1test_1_1operator__assignment__copy.html#a29c9020f7a3534423020f82516bc21ed", null ]
     ] ],
     [ "operator_assignment_lvalue", "namespacefcarouge_1_1test_1_1operator__assignment__lvalue.html", [
       [ "test_all_replace_all", "namespacefcarouge_1_1test_1_1operator__assignment__lvalue.html#af3f9e2a303117acfa2851dfc841dd31b", null ]
     ] ],
     [ "operator_assignment_move", "namespacefcarouge_1_1test_1_1operator__assignment__move.html", [
       [ "ctest_traits", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a7c8f7f1160d5dc066ed4ed6051ff50d8", null ],
-      [ "test_multiple", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a0d4d769265e2903eecfe193be046864c", null ],
+      [ "test_all_replace_all", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a11502d47f20ed2486267c4d6c4294ee6", null ],
+      [ "test_all_replace_none", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a55dd4c47479ceb2ece8a29a3bb240002", null ],
+      [ "test_empty", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#aba7b5259264caa437088dbaa8251620d", null ],
+      [ "test_none_replace_all", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#acc426be04949efdc23786fca04abd90e", null ],
       [ "test_self", "namespacefcarouge_1_1test_1_1operator__assignment__move.html#a8051a4f35fdf1c2bbd744001e14bc741", null ]
     ] ],
     [ "operator_assignment_rvalue", "namespacefcarouge_1_1test_1_1operator__assignment__rvalue.html", [
