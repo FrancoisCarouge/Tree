@@ -444,7 +444,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   {
   }
 
-  //! @brief Copy constructor.
+  //! @brief Copy constructs a container with a default-constructed allocator.
   //!
   //! @details Constructs the container with the copy of the contents of the
   //! `other` container.
@@ -467,10 +467,10 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   {
   }
 
-  //! @brief Allocator-extended copy constructor.
+  //! @brief Copy constructs a container with an allocator.
   //!
-  //! @details Constructs the container with the copy of the contents of the
-  //! `other` container.
+  //! @details Allocator-extended copy constructor. Constructs the container
+  //! with the copy of the contents of the `other` container.
   //!
   //! @param other Another container to be used as source to initialize the
   //! elements of the container with.
@@ -485,12 +485,12 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   {
   }
 
-  //! @brief Move constructor.
+  //! @brief Move constructs a container.
   //!
-  //! @details Constructs the container with the contents of the `other`
-  //! container using move semantics (i.e. the data in `other` container is
-  //! moved from the other into this container). The allocator is obtained by
-  //! move-construction from the allocator belonging to other.
+  //! @details Move constructor. Constructs the container with the contents of
+  //! the `other` container using move semantics (i.e. the data in `other`
+  //! container is moved from the other into this container). The allocator is
+  //! obtained by move-construction from the allocator belonging to other.
   //!
   //! @param other Another container to be used as source to initialize the
   //! elements of the container with.
@@ -1298,12 +1298,19 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @param node The pointer to the element to erase.
   constexpr void axe(internal_node_type *node)
   {
-    if (node) {
-      axe(node->first_child);
-      axe(node->right_sibling);
-
-      std::destroy_at(node);
-      node_allocator.deallocate(node, 1);
+    while (internal_node_type *current = node) {
+      if (current->last_child) {
+        if (current->right_sibling) {
+          current->last_child->right_sibling = current->right_sibling;
+        }
+        node = current->first_child;
+      } else if (current->right_sibling) {
+        node = current->right_sibling;
+      } else {
+        node = nullptr;
+      }
+      std::destroy_at(current);
+      node_allocator.deallocate(current, 1);
     }
   }
 
