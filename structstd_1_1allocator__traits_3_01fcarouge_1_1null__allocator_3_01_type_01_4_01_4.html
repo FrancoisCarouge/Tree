@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('structstd_1_1allocator__traits_3_01fca
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4__coll__graph.png" border="0" usemap="#astd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="astd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4_coll__map" id="astd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4_coll__map">
-<area shape="rect" title="Null allocator specialization of the access to allocators properties." alt="" coords="5,5,171,215"/>
+<area shape="rect" title="Null allocator specialization of the access to allocators properties." alt="" coords="5,5,171,273"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -134,6 +134,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a19e68a0ad01a56bf8bd077352456e44f"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a6a75fbec38028054becbfdc1c07eefbe">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a19e68a0ad01a56bf8bd077352456e44f">max_size</a> (const <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a> &amp;allocator) noexcept</td></tr>
 <tr class="memdesc:a19e68a0ad01a56bf8bd077352456e44f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains the maximum theoretically possible allocation size.  <a href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a19e68a0ad01a56bf8bd077352456e44f">More...</a><br /></td></tr>
 <tr class="separator:a19e68a0ad01a56bf8bd077352456e44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae837d645fed9925f5a88026d0a50fedf"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#ae837d645fed9925f5a88026d0a50fedf">select_on_container_copy_construction</a> (const <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a> &amp;allocator)</td></tr>
+<tr class="memdesc:ae837d645fed9925f5a88026d0a50fedf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains the copy-constructed version of the allocator.  <a href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#ae837d645fed9925f5a88026d0a50fedf">More...</a><br /></td></tr>
+<tr class="separator:ae837d645fed9925f5a88026d0a50fedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class Type&gt;<br />
@@ -142,7 +145,7 @@ struct std::allocator_traits&lt; fcarouge::null_allocator&lt; Type &gt; &gt;</h3
 <p>Null allocator specialization of the access to allocators properties. </p>
 <p>User-provided specialization of <code>std::allocator_traits</code> for the <code><a class="el" href="classfcarouge_1_1null__allocator.html" title="Stateless perfectly fallible null allocator.">fcarouge::null_allocator</a></code> allocator. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00135">135</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00173">173</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5d9e9fb794f336bac5aad7cc3b7af0da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d9e9fb794f336bac5aad7cc3b7af0da">&#9670;&nbsp;</a></span>allocator_type</h2>
@@ -160,7 +163,7 @@ template&lt;class Type &gt; </div>
 
 <p>The type of the allocator for memory allocations. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00141">141</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00179">179</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -180,7 +183,7 @@ template&lt;class Type &gt; </div>
 
 <p>The constant pointer type of the allocated data elements. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00150">150</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00188">188</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -200,7 +203,7 @@ template&lt;class Type &gt; </div>
 
 <p>The pointer type of the allocated data elements. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00147">147</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00185">185</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -222,7 +225,7 @@ template&lt;class OtherType &gt; </div>
 
 <p>The rebinded allocator type for other element types. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00158">158</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00196">196</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -242,7 +245,7 @@ template&lt;class Type &gt; </div>
 
 <p>The unsigned integer type to represent element counts. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00154">154</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00192">192</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -262,7 +265,7 @@ template&lt;class Type &gt; </div>
 
 <p>The type of the allocated data elements. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00144">144</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00182">182</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -300,14 +303,57 @@ template&lt;class Type &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Complexity</dt><dd>Constant.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Theoretical maximum allocation size, that is, exactly zero. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Theoretical maximum allocation size, that is, exactly zero.</dd></dl>
+<dl class="section user"><dt>Complexity</dt><dd>Constant. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00173">173</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    (void)allocator;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00211">211</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    (void)allocator;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae837d645fed9925f5a88026d0a50fedf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae837d645fed9925f5a88026d0a50fedf">&#9670;&nbsp;</a></span>select_on_container_copy_construction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a> std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::select_on_container_copy_construction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>allocator</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtains the copy-constructed version of the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">allocator</td><td>The allocator used by a standard container passed as an argument to a container copy constructor.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The allocator to use by the copy-constructed standard containers.</dd></dl>
+<dl class="section user"><dt>Complexity</dt><dd>Constant. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00226">226</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span> allocator;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -320,7 +366,7 @@ template&lt;class Type &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>std</b></li><li class="navelem"><a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html">allocator_traits&lt; fcarouge::null_allocator&lt; Type &gt; &gt;</a></li>
-    <li class="footer">Generated on Sun Feb 7 2021 22:01:36 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Feb 8 2021 04:37:33 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

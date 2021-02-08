@@ -7,8 +7,9 @@ var searchData=
   ['internal_5fnode_5fallocator_5ftraits_107',['internal_node_allocator_traits',['../classfcarouge_1_1tree.html#ac90c508b80e75fb0090ef0b3f916700b',1,'fcarouge::tree']]],
   ['internal_5fnode_5fallocator_5ftype_108',['internal_node_allocator_type',['../classfcarouge_1_1tree.html#a0f58d6bc0460ce068c715672fb40a52d',1,'fcarouge::tree']]],
   ['internal_5fnode_5ftype_109',['internal_node_type',['../structfcarouge_1_1tree_1_1internal__node__type.html',1,'fcarouge::tree']]],
-  ['iterator_110',['iterator',['../structfcarouge_1_1tree_1_1iterator.html',1,'fcarouge::tree']]],
-  ['iterator_2ecpp_111',['iterator.cpp',['../iterator_8cpp.html',1,'']]],
-  ['iterator_5fcategory_112',['iterator_category',['../structfcarouge_1_1tree_1_1iterator.html#a7e24ef84c7a8446641488c4e44f8b170',1,'fcarouge::tree::iterator::iterator_category()'],['../structfcarouge_1_1tree_1_1const__iterator.html#ad93b61925559da429e38525c6ac220b2',1,'fcarouge::tree::const_iterator::iterator_category()']]],
-  ['iterator_5flegacy_2ecpp_113',['iterator_legacy.cpp',['../iterator__legacy_8cpp.html',1,'']]]
+  ['is_5falways_5fequal_110',['is_always_equal',['../classfcarouge_1_1null__allocator.html#ae55cdf900e3e764b1330354d79158878',1,'fcarouge::null_allocator']]],
+  ['iterator_111',['iterator',['../structfcarouge_1_1tree_1_1iterator.html',1,'fcarouge::tree']]],
+  ['iterator_2ecpp_112',['iterator.cpp',['../iterator_8cpp.html',1,'']]],
+  ['iterator_5fcategory_113',['iterator_category',['../structfcarouge_1_1tree_1_1iterator.html#a7e24ef84c7a8446641488c4e44f8b170',1,'fcarouge::tree::iterator::iterator_category()'],['../structfcarouge_1_1tree_1_1const__iterator.html#ad93b61925559da429e38525c6ac220b2',1,'fcarouge::tree::const_iterator::iterator_category()']]],
+  ['iterator_5flegacy_2ecpp_114',['iterator_legacy.cpp',['../iterator__legacy_8cpp.html',1,'']]]
 ];
