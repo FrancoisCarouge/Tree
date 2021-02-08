@@ -72,8 +72,6 @@ template <class Type> class null_allocator
   //! @brief Move-assignment will replace the allocator.
   using propagate_on_container_move_assignment = std::true_type;
 
-  using is_always_equal = std::true_type;
-
   //! @}
 
   //! @name Public Member Functions
@@ -129,11 +127,6 @@ template <class Type> class null_allocator
   //! @complexity Constant.
   constexpr ~null_allocator() = default;
 
-  //! @}
-
-  //! @name Public Allocator Functions
-  //! @{
-
   //! @brief Allocates nothing, never.
   //!
   //! @param count The unused number of objects to allocate storage for.
@@ -188,17 +181,48 @@ template <class Type> struct allocator_traits<fcarouge::null_allocator<Type>> {
   using const_pointer =
       typename std::pointer_traits<pointer>::rebind<const value_type>;
 
+  using void_pointer = typename std::pointer_traits<pointer>::rebind<void>;
+  using const_void_pointer =
+      typename std::pointer_traits<pointer>::rebind<const void>;
+  using difference_type = allocator_type::difference_type;
+
   //! @brief The unsigned integer type to represent element counts.
   using size_type = allocator_type::size_type;
+
+  using propagate_on_container_copy_assignment = std::false_type;
+  using propagate_on_container_move_assignment = std::false_type;
+  using propagate_on_container_swap = std::false_type;
+  using is_always_equal = std::is_empty<allocator_type>::type;
+
+  //! @}
+
+  //! @name Public Member Alias Templates
+  //! @{
 
   //! @brief The rebinded allocator type  for other element types.
   template <class OtherType>
   using rebind_alloc = fcarouge::null_allocator<OtherType>;
 
+  template <class OtherType>
+  using rebind_traits = std::allocator_traits<rebind_alloc<OtherType>>;
+
   //! @}
 
   //! @name Public Member Functions
   //! @{
+
+  [[nodiscard]] static constexpr pointer allocate(allocator_type &allocator,
+                                                  size_type count);
+  [[nodiscard]] static constexpr pointer
+  allocate(allocator_type &allocator, size_type count, const_void_pointer hint);
+  static constexpr void deallocate(allocator_type &a, pointer p, size_type n);
+  template <class OtherType, class... Args>
+  static constexpr void construct(allocator_type &allocator,
+                                  OtherType *other_pointer,
+                                  Args &&... arguments);
+  template <class OtherType>
+  static constexpr void destroy(allocator_type &allocator,
+                                OtherType *other_pointer);
 
   //! @brief Obtains the maximum theoretically possible allocation size.
   //!
