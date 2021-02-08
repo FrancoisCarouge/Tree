@@ -29,9 +29,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #ifndef FCAROUGE_TREE_HPP
 #define FCAROUGE_TREE_HPP
 
-#include <algorithm>
-// std::min
-
 #include <cstddef>
 // std::ptrdiff_t std::size_t
 
@@ -880,11 +877,16 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! the container, at most `std:: numeric_limits<difference_type>:: max()`, or
   //! at runtime, the size of the container may be limited to a value smaller
   //! than `max_size()` by the amount of memory (usualy RAM) available.
+  //! The minima is selected without using and importing the minimum `std::min`
+  //! operation from the `<algorithm>` library to reduce coupling.
   [[nodiscard]] constexpr size_type max_size() const noexcept
   {
-    return std::min<size_type>(
-        std::numeric_limits<difference_type>::max(),
-        internal_node_allocator_traits::max_size(node_allocator));
+    return internal_node_allocator_traits::max_size(node_allocator) <
+                   static_cast<size_type>(
+                       std::numeric_limits<difference_type>::max())
+               ? internal_node_allocator_traits::max_size(node_allocator)
+               : static_cast<size_type>(
+                     std::numeric_limits<difference_type>::max());
   }
 
   //! @}
