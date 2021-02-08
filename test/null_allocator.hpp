@@ -72,29 +72,67 @@ template <class Type> class null_allocator
   //! @brief Move-assignment will replace the allocator.
   using propagate_on_container_move_assignment = std::true_type;
 
+  using is_always_equal = std::true_type;
+
   //! @}
 
   //! @name Public Member Functions
   //! @{
 
-  //! @brief Constructs the allocator.
+  //! @brief Constructs a null-allocator.
+  //!
+  //! @details Since the null-allocator is stateless, the constructors have
+  //! no visible effect.
   //!
   //! @complexity Constant.
-  //!
-  //! @details Since the default allocator is stateless, the constructors have
-  //! no visible effect.
   constexpr null_allocator() noexcept = default;
+
+  //! @brief Copy constructs the null-allocator.
+  //!
+  //! @details Copy constructor. Since the null-allocator is stateless, the
+  //! constructors have no visible effect.
+  //!
+  //! @complexity Constant.
+  constexpr null_allocator(const null_allocator &other) noexcept
+  {
+    (void)other;
+  }
 
   //! @brief Constructs the allocator from another allocator and element type.
   //!
-  //! @complexity Constant.
+  //! @details Conversion constructor. Since the null-allocator is stateless,
+  //! the constructors have no visible effect.
   //!
-  //! @details Since the default allocator is stateless, the constructors have
-  //! no visible effect.
+  //! @complexity Constant.
   template <class OtherType>
-  constexpr null_allocator(const null_allocator<OtherType> &other) noexcept
+  constexpr explicit null_allocator(
+      const null_allocator<OtherType> &other) noexcept
   {
+    (void)other;
   }
+
+  //! @brief Copy assignment operator.
+  //!
+  //! @details Self copy assignement is valid, safe, and meets specifications.
+  //!
+  //! @return The reference value of this implicit object container parameter,
+  //! i.e. `*this`.
+  //!
+  //! @complexity Constant.
+  constexpr null_allocator &operator=(const null_allocator &other) = default;
+
+  //! @brief Destructs the allocator.
+  //!
+  //! @details Since the null-allocator is stateless, the destructor has
+  //! no visible effect.
+  //!
+  //! @complexity Constant.
+  constexpr ~null_allocator() = default;
+
+  //! @}
+
+  //! @name Public Allocator Functions
+  //! @{
 
   //! @brief Allocates nothing, never.
   //!
@@ -102,9 +140,9 @@ template <class Type> class null_allocator
   //!
   //! @details Always throws `std::bad_alloc`.
   //!
-  //! @complexity Constant.
-  //!
   //! @return Never returns the null pointer, not allocated.
+  //!
+  //! @complexity Constant.
   [[nodiscard]] constexpr Type *allocate(std::size_t count)
   {
     (void)count;
@@ -167,13 +205,27 @@ template <class Type> struct allocator_traits<fcarouge::null_allocator<Type>> {
   //! @param allocator The unused allocator to detect the maximum size of.
   //! Irrelevent since this allocator is stateless.
   //!
-  //! @complexity Constant.
-  //!
   //! @return Theoretical maximum allocation size, that is, exactly zero.
+  //!
+  //! @complexity Constant.
   static constexpr size_type max_size(const allocator_type &allocator) noexcept
   {
     (void)allocator;
     return 0;
+  }
+
+  //! @brief Obtains the copy-constructed version of the allocator.
+  //!
+  //! @param allocator The allocator used by a standard container passed as an
+  //! argument to a container copy constructor.
+  //!
+  //! @return The allocator to use by the copy-constructed standard containers.
+  //!
+  //! @complexity Constant.
+  static constexpr allocator_type
+  select_on_container_copy_construction(const allocator_type &allocator)
+  {
+    return allocator;
   }
 
   //! @}
