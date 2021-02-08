@@ -1,12 +1,11 @@
 <map id="test/const_iterator_legacy.cpp" name="test/const_iterator_legacy.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="322,5,449,47"/>
-<area shape="rect" id="node2" href="$tree_8hpp.html" title=" " alt="" coords="205,95,328,121"/>
-<area shape="rect" id="node9" title=" " alt="" coords="353,95,418,121"/>
-<area shape="rect" id="node10" title=" " alt="" coords="443,95,525,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,169,80,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="105,169,170,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="194,169,257,196"/>
-<area shape="rect" id="node6" title=" " alt="" coords="281,169,335,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="359,169,427,196"/>
-<area shape="rect" id="node8" title=" " alt="" coords="451,169,503,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="264,5,391,47"/>
+<area shape="rect" id="node2" href="$tree_8hpp.html" title=" " alt="" coords="147,95,270,121"/>
+<area shape="rect" id="node8" title=" " alt="" coords="295,95,360,121"/>
+<area shape="rect" id="node9" title=" " alt="" coords="385,95,467,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,169,71,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="95,169,157,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="182,169,235,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="260,169,328,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="352,169,404,196"/>
 </map>
