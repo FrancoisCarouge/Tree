@@ -42,7 +42,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 // std::bad_alloc
 
 #include <type_traits>
-// std::true_type
+// std::is_empty_v std::true_type
 
 //! @namespace fcarouge Francois Carouge's projects namespace. Lowers the name
 //! conflict probability in large projects. Use using-declarations or
@@ -154,6 +154,12 @@ template <class Type> class null_allocator
 
   //! @}
 };
+
+static_assert(std::is_empty_v<null_allocator<int>>,
+              "The null-allocator must be an empty type, to be stateless that "
+              "is, a non-union class type with no non-static data members "
+              "other than bit-fields of size zero, no virtual functions, no "
+              "virtual base classes, and no non-empty base classes.");
 
 } // namespace fcarouge
 
