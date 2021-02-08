@@ -166,13 +166,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a73f3550ee53f8886354b6ffba790a25b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty container with the given allocator.  <a href="classfcarouge_1_1tree.html#a73f3550ee53f8886354b6ffba790a25b">More...</a><br /></td></tr>
 <tr class="separator:a73f3550ee53f8886354b6ffba790a25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a292f8628856bc6ac097969c8e5921cab"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfcarouge_1_1tree.html#a292f8628856bc6ac097969c8e5921cab">tree</a> (const <a class="el" href="classfcarouge_1_1tree.html">tree</a> &amp;other) noexcept</td></tr>
-<tr class="memdesc:a292f8628856bc6ac097969c8e5921cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="classfcarouge_1_1tree.html#a292f8628856bc6ac097969c8e5921cab">More...</a><br /></td></tr>
+<tr class="memdesc:a292f8628856bc6ac097969c8e5921cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructs a container with a default-constructed allocator.  <a href="classfcarouge_1_1tree.html#a292f8628856bc6ac097969c8e5921cab">More...</a><br /></td></tr>
 <tr class="separator:a292f8628856bc6ac097969c8e5921cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67dc01f098aac069e73a90b84e53e3ea"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfcarouge_1_1tree.html#a67dc01f098aac069e73a90b84e53e3ea">tree</a> (const <a class="el" href="classfcarouge_1_1tree.html">tree</a> &amp;other, const AllocatorType &amp;allocator)</td></tr>
-<tr class="memdesc:a67dc01f098aac069e73a90b84e53e3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocator-extended copy constructor.  <a href="classfcarouge_1_1tree.html#a67dc01f098aac069e73a90b84e53e3ea">More...</a><br /></td></tr>
+<tr class="memdesc:a67dc01f098aac069e73a90b84e53e3ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructs a container with an allocator.  <a href="classfcarouge_1_1tree.html#a67dc01f098aac069e73a90b84e53e3ea">More...</a><br /></td></tr>
 <tr class="separator:a67dc01f098aac069e73a90b84e53e3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5d87b206f6c94e206ded34cf15770b0"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfcarouge_1_1tree.html#af5d87b206f6c94e206ded34cf15770b0">tree</a> (<a class="el" href="classfcarouge_1_1tree.html">tree</a> &amp;&amp;other) noexcept</td></tr>
-<tr class="memdesc:af5d87b206f6c94e206ded34cf15770b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <a href="classfcarouge_1_1tree.html#af5d87b206f6c94e206ded34cf15770b0">More...</a><br /></td></tr>
+<tr class="memdesc:af5d87b206f6c94e206ded34cf15770b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructs a container.  <a href="classfcarouge_1_1tree.html#af5d87b206f6c94e206ded34cf15770b0">More...</a><br /></td></tr>
 <tr class="separator:af5d87b206f6c94e206ded34cf15770b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbf8bbfc541eb153be0051b3bab67d12"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfcarouge_1_1tree.html#afbf8bbfc541eb153be0051b3bab67d12">tree</a> (<a class="el" href="classfcarouge_1_1tree.html">tree</a> &amp;&amp;other, const AllocatorType &amp;allocator) noexcept</td></tr>
 <tr class="memdesc:afbf8bbfc541eb153be0051b3bab67d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocator-extended move constructor.  <a href="classfcarouge_1_1tree.html#afbf8bbfc541eb153be0051b3bab67d12">More...</a><br /></td></tr>
@@ -643,7 +643,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="fragment"><div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;          : <a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>{ allocator }</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;  {</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  }</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a40522ac59bc82c1cfa7cae9e584116b3"><div class="ttname"><a href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">fcarouge::tree::node_allocator</a></div><div class="ttdeci">internal_node_allocator_type node_allocator</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01468">tree.hpp:1468</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a40522ac59bc82c1cfa7cae9e584116b3"><div class="ttname"><a href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">fcarouge::tree::node_allocator</a></div><div class="ttdeci">internal_node_allocator_type node_allocator</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01475">tree.hpp:1475</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -673,7 +673,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 </table>
 </div><div class="memdoc">
 
-<p>Copy constructor. </p>
+<p>Copy constructs a container with a default-constructed allocator. </p>
 <p>Constructs the container with the copy of the contents of the <code>other</code> container.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -693,9 +693,9 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            }</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;  {</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;  }</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a0ee5302eccd03bb68a5e088c0a8da489"><div class="ttname"><a href="classfcarouge_1_1tree.html#a0ee5302eccd03bb68a5e088c0a8da489">fcarouge::tree::node_count</a></div><div class="ttdeci">size_type node_count</div><div class="ttdoc">The number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01474">tree.hpp:1474</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a31c6ea7623721e3563def6f479d3c31c"><div class="ttname"><a href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">fcarouge::tree::root</a></div><div class="ttdeci">internal_node_type * root</div><div class="ttdoc">The root node of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01471">tree.hpp:1471</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_aac95d8c0e7f379eccf5f7e9361d9c121"><div class="ttname"><a href="classfcarouge_1_1tree.html#aac95d8c0e7f379eccf5f7e9361d9c121">fcarouge::tree::copy</a></div><div class="ttdeci">internal_node_type * copy(internal_node_type *other_node, internal_node_type *left_sibling, internal_node_type *parent)</div><div class="ttdoc">Copies the node, its subtrees, and right siblings recursively.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01437">tree.hpp:1437</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a0ee5302eccd03bb68a5e088c0a8da489"><div class="ttname"><a href="classfcarouge_1_1tree.html#a0ee5302eccd03bb68a5e088c0a8da489">fcarouge::tree::node_count</a></div><div class="ttdeci">size_type node_count</div><div class="ttdoc">The number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01481">tree.hpp:1481</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a31c6ea7623721e3563def6f479d3c31c"><div class="ttname"><a href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">fcarouge::tree::root</a></div><div class="ttdeci">internal_node_type * root</div><div class="ttdoc">The root node of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01478">tree.hpp:1478</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_aac95d8c0e7f379eccf5f7e9361d9c121"><div class="ttname"><a href="classfcarouge_1_1tree.html#aac95d8c0e7f379eccf5f7e9361d9c121">fcarouge::tree::copy</a></div><div class="ttdeci">internal_node_type * copy(internal_node_type *other_node, internal_node_type *left_sibling, internal_node_type *parent)</div><div class="ttdoc">Copies the node, its subtrees, and right siblings recursively.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01444">tree.hpp:1444</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -735,8 +735,8 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 </table>
 </div><div class="memdoc">
 
-<p>Allocator-extended copy constructor. </p>
-<p>Constructs the container with the copy of the contents of the <code>other</code> container.</p>
+<p>Copy constructs a container with an allocator. </p>
+<p>Allocator-extended copy constructor. Constructs the container with the copy of the contents of the <code>other</code> container.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>Another container to be used as source to initialize the elements of the container with. </td></tr>
@@ -781,8 +781,8 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 </table>
 </div><div class="memdoc">
 
-<p>Move constructor. </p>
-<p>Constructs the container with the contents of the <code>other</code> container using move semantics (i.e. the data in <code>other</code> container is moved from the other into this container). The allocator is obtained by move-construction from the allocator belonging to other.</p>
+<p>Move constructs a container. </p>
+<p>Move constructor. Constructs the container with the contents of the <code>other</code> container using move semantics (i.e. the data in <code>other</code> container is moved from the other into this container). The allocator is obtained by move-construction from the allocator belonging to other.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">other</td><td>Another container to be used as source to initialize the elements of the container with.</td></tr>
@@ -901,7 +901,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    std::construct_at(<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>, value);</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 </div>
 </div>
@@ -958,7 +958,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    std::construct_at(<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>, value);</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 </div>
 </div>
@@ -1003,7 +1003,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    std::construct_at(<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>, std::move(value));</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 </div>
 </div>
@@ -1060,7 +1060,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    std::construct_at(<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>, std::move(value));</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 </div>
 </div>
@@ -1101,7 +1101,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;  }</div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a8b8d9ed8c1122dd228a7392d9bd2671f"><div class="ttname"><a href="classfcarouge_1_1tree.html#a8b8d9ed8c1122dd228a7392d9bd2671f">fcarouge::tree::axe</a></div><div class="ttdeci">constexpr void axe(internal_node_type *node)</div><div class="ttdoc">Axes the specified element including its sub-tree.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01299">tree.hpp:1299</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -1266,16 +1266,23 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 
 <p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01299">1299</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;  {</div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    <span class="keywordflow">if</span> (node) {</div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;      <a class="code" href="classfcarouge_1_1tree.html#a8b8d9ed8c1122dd228a7392d9bd2671f">axe</a>(node-&gt;first_child);</div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;      <a class="code" href="classfcarouge_1_1tree.html#a8b8d9ed8c1122dd228a7392d9bd2671f">axe</a>(node-&gt;right_sibling);</div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160; </div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;      std::destroy_at(node);</div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;      <a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>.deallocate(node, 1);</div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;    }</div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;  }</div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    <span class="keywordflow">while</span> (internal_node_type *current = node) {</div>
+<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;      <span class="keywordflow">if</span> (current-&gt;last_child) {</div>
+<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;        <span class="keywordflow">if</span> (current-&gt;right_sibling) {</div>
+<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;          current-&gt;last_child-&gt;right_sibling = current-&gt;right_sibling;</div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;        }</div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;        node = current-&gt;first_child;</div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (current-&gt;right_sibling) {</div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;        node = current-&gt;right_sibling;</div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;        node = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;      }</div>
+<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;      std::destroy_at(current);</div>
+<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;      <a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>.deallocate(current, 1);</div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;    }</div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, and <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, and <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l00903">fcarouge::tree&lt; Type, AllocatorType &gt;::clear()</a>, <a class="el" href="tree_8hpp_source.html#l00610">fcarouge::tree&lt; Type, AllocatorType &gt;::operator=()</a>, and <a class="el" href="tree_8hpp_source.html#l00592">fcarouge::tree&lt; Type, AllocatorType &gt;::~tree()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1329,7 +1336,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    <span class="keywordflow">return</span> { <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a> };</div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 </div>
 </div>
@@ -1368,7 +1375,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <span class="keywordflow">return</span> { <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a> };</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 </div>
 </div>
@@ -1407,7 +1414,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="keywordflow">return</span> { <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a> };</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 </div>
 </div>
@@ -1484,7 +1491,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;    <a class="code" href="classfcarouge_1_1tree.html#a0ee5302eccd03bb68a5e088c0a8da489">node_count</a> = 0;</div>
 <div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -1562,7 +1569,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="ttc" id="astructfcarouge_1_1tree_1_1internal__node__type_html_a9a54ad63c8a20e3a1a845a7ae1355762"><div class="ttname"><a href="structfcarouge_1_1tree_1_1internal__node__type.html#a9a54ad63c8a20e3a1a845a7ae1355762">fcarouge::tree::internal_node_type::last_child</a></div><div class="ttdeci">internal_node_type * last_child</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00182">tree.hpp:182</a></div></div>
 <div class="ttc" id="astructfcarouge_1_1tree_1_1internal__node__type_html_abb38b1b9d4f98d6e22d6e88797e6c4d2"><div class="ttname"><a href="structfcarouge_1_1tree_1_1internal__node__type.html#abb38b1b9d4f98d6e22d6e88797e6c4d2">fcarouge::tree::internal_node_type::parent</a></div><div class="ttdeci">internal_node_type * parent</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00185">tree.hpp:185</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00182">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::last_child</a>, <a class="el" href="tree_8hpp_source.html#l00183">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::left_sibling</a>, <a class="el" href="tree_8hpp_source.html#l00185">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::parent</a>, <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00182">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::last_child</a>, <a class="el" href="tree_8hpp_source.html#l00183">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::left_sibling</a>, <a class="el" href="tree_8hpp_source.html#l00185">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::parent</a>, <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l01059">fcarouge::tree&lt; Type, AllocatorType &gt;::erase()</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1633,31 +1640,31 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 </dl>
 <dl class="section user"><dt>Complexity</dt><dd>Linear in the size of the number of nodes copied. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01437">1437</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;  {</div>
-<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;    <span class="comment">// If there is another node to copy...</span></div>
-<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;    <span class="keywordflow">if</span> (other_node) {</div>
-<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;      <span class="comment">// ...allocate and in-place construct a node with this container&#39;s</span></div>
-<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;      <span class="comment">// allocator, the other node data value, and any left sibling or parent</span></div>
-<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;      <span class="comment">// pointers...</span></div>
-<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;      internal_node_type *node = <a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>.allocate(1);</div>
-<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;      std::construct_at(node, other_node-&gt;data, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, left_sibling,</div>
-<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;                        <span class="keyword">nullptr</span>, parent);</div>
-<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;      <span class="comment">// ...recursively copy the right sibling and first child passing in left</span></div>
-<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;      <span class="comment">// sibling and parent pointers...</span></div>
-<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;      node-&gt;right_sibling = <a class="code" href="classfcarouge_1_1tree.html#aac95d8c0e7f379eccf5f7e9361d9c121">copy</a>(other_node-&gt;right_sibling, node, node-&gt;parent);</div>
-<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;      node-&gt;first_child = <a class="code" href="classfcarouge_1_1tree.html#aac95d8c0e7f379eccf5f7e9361d9c121">copy</a>(other_node-&gt;first_child, <span class="keyword">nullptr</span>, node);</div>
-<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;      <span class="comment">// ...reference the parent&#39;s last child with the last right sibling.</span></div>
-<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;      <span class="keywordflow">if</span> (node-&gt;parent &amp;&amp; !node-&gt;parent-&gt;last_child) {</div>
-<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;        node-&gt;parent-&gt;last_child = node;</div>
-<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;      }</div>
-<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;      <span class="keywordflow">return</span> node;</div>
-<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;    }</div>
-<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160; </div>
-<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01444">1444</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;  {</div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;    <span class="comment">// If there is another node to copy...</span></div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;    <span class="keywordflow">if</span> (other_node) {</div>
+<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160;      <span class="comment">// ...allocate and in-place construct a node with this container&#39;s</span></div>
+<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;      <span class="comment">// allocator, the other node data value, and any left sibling or parent</span></div>
+<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;      <span class="comment">// pointers...</span></div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;      internal_node_type *node = <a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>.allocate(1);</div>
+<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;      std::construct_at(node, other_node-&gt;data, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, left_sibling,</div>
+<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;                        <span class="keyword">nullptr</span>, parent);</div>
+<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;      <span class="comment">// ...recursively copy the right sibling and first child passing in left</span></div>
+<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;      <span class="comment">// sibling and parent pointers...</span></div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;      node-&gt;right_sibling = <a class="code" href="classfcarouge_1_1tree.html#aac95d8c0e7f379eccf5f7e9361d9c121">copy</a>(other_node-&gt;right_sibling, node, node-&gt;parent);</div>
+<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;      node-&gt;first_child = <a class="code" href="classfcarouge_1_1tree.html#aac95d8c0e7f379eccf5f7e9361d9c121">copy</a>(other_node-&gt;first_child, <span class="keyword">nullptr</span>, node);</div>
+<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;      <span class="comment">// ...reference the parent&#39;s last child with the last right sibling.</span></div>
+<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;      <span class="keywordflow">if</span> (node-&gt;parent &amp;&amp; !node-&gt;parent-&gt;last_child) {</div>
+<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;        node-&gt;parent-&gt;last_child = node;</div>
+<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;      }</div>
+<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160;      <span class="keywordflow">return</span> node;</div>
+<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;    }</div>
+<div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160; </div>
+<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00180">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00182">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::last_child</a>, <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l00185">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::parent</a>, and <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00180">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00182">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::last_child</a>, <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l00185">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::parent</a>, and <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l00610">fcarouge::tree&lt; Type, AllocatorType &gt;::operator=()</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1787,7 +1794,7 @@ template&lt;class... ArgumentsType&gt; </div>
 <div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;    <span class="keywordflow">return</span> { node };</div>
 <div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00182">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::last_child</a>, <a class="el" href="tree_8hpp_source.html#l00183">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::left_sibling</a>, <a class="el" href="tree_8hpp_source.html#l00400">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator::node</a>, <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, <a class="el" href="tree_8hpp_source.html#l00185">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::parent</a>, <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00182">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::last_child</a>, <a class="el" href="tree_8hpp_source.html#l00183">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::left_sibling</a>, <a class="el" href="tree_8hpp_source.html#l00400">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator::node</a>, <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, <a class="el" href="tree_8hpp_source.html#l00185">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::parent</a>, <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 </div>
 </div>
@@ -1855,7 +1862,7 @@ template&lt;class... ArgumentsType&gt; </div>
 <div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;    <span class="keywordflow">return</span> node-&gt;data;</div>
 <div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00180">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, <a class="el" href="tree_8hpp_source.html#l00185">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::parent</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00180">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, <a class="el" href="tree_8hpp_source.html#l00185">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::parent</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 </div>
 </div>
@@ -1915,56 +1922,56 @@ template&lt;class... ArgumentsType&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The iterator pointing to the inserted element.</dd></dl>
 <dl class="section user"><dt>Exceptions</dt><dd>Strong exception guarantees: no effect on exception. The <code>Allocator::allocate()</code> allocation or the element copy/move constructor/assignment may throw. If <code>Type</code>'s move constructor is not <code>noexcept</code> and <code>Type</code> is not CopyInsertable into <code>*this</code>, the container will use the throwing move constructor. If it throws, the guarantee is waived and the effects are unspecified. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01339">1339</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;  {</div>
-<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;    <span class="comment">// The allocated child node is in-place construced and recorded in every</span></div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;    <span class="comment">// following statements.</span></div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;    internal_node_type *child = <a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>.allocate(1);</div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160; </div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;    <span class="comment">// Insert the new node...</span></div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;    <span class="comment">// ...as the last child of the position node...</span></div>
-<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;    <span class="keywordflow">if</span> (parent) {</div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;      std::construct_at(child, std::forward&lt;ArgumentsType&gt;(arguments)...,</div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;                        <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, parent-&gt;last_child, <span class="keyword">nullptr</span>, parent);</div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;      parent-&gt;last_child = child;</div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01346">1346</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;  {</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;    <span class="comment">// The allocated child node is in-place construced and recorded in every</span></div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;    <span class="comment">// following statements.</span></div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;    internal_node_type *child = <a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>.allocate(1);</div>
 <div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160; </div>
-<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;      <span class="comment">// ...with a left sibling node.</span></div>
-<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;      <span class="keywordflow">if</span> (child-&gt;left_sibling) {</div>
-<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;        child-&gt;left_sibling-&gt;right_sibling = child;</div>
-<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;      }</div>
-<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;      <span class="comment">// ...without a left sibling node.</span></div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;      <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;        parent-&gt;first_child = child;</div>
-<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;        <span class="comment">// ...whose parent was the last node...</span></div>
-<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;      }</div>
-<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;    }</div>
-<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;    <span class="comment">// ...as the new last node...</span></div>
-<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;      <span class="comment">// ... as the last child of the root node.</span></div>
-<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>) {</div>
-<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;        std::construct_at(child, std::forward&lt;ArgumentsType&gt;(arguments)...,</div>
-<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;                          <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a9a54ad63c8a20e3a1a845a7ae1355762">last_child</a>, <span class="keyword">nullptr</span>, <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>);</div>
-<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a>) {</div>
-<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;          <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a> = child;</div>
-<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;        }</div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a9a54ad63c8a20e3a1a845a7ae1355762">last_child</a>) {</div>
-<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;          <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a9a54ad63c8a20e3a1a845a7ae1355762">last_child</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a50654e62b5fb8488e4e13502e64dd428">right_sibling</a> = child;</div>
-<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;        }</div>
-<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;        <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a9a54ad63c8a20e3a1a845a7ae1355762">last_child</a> = child;</div>
-<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;      }</div>
-<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;      <span class="comment">// ...as the sole, and root node.</span></div>
-<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;      <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;        std::construct_at(child, std::forward&lt;ArgumentsType&gt;(arguments)...);</div>
-<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;        <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a> = child;</div>
-<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;      }</div>
-<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    }</div>
-<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160; </div>
-<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;    ++<a class="code" href="classfcarouge_1_1tree.html#a0ee5302eccd03bb68a5e088c0a8da489">node_count</a>;</div>
-<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160; </div>
-<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;    <span class="keywordflow">return</span> child;</div>
-<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;  }</div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;    <span class="comment">// Insert the new node...</span></div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;    <span class="comment">// ...as the last child of the position node...</span></div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;    <span class="keywordflow">if</span> (parent) {</div>
+<div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;      std::construct_at(child, std::forward&lt;ArgumentsType&gt;(arguments)...,</div>
+<div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;                        <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, parent-&gt;last_child, <span class="keyword">nullptr</span>, parent);</div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;      parent-&gt;last_child = child;</div>
+<div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160; </div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;      <span class="comment">// ...with a left sibling node.</span></div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;      <span class="keywordflow">if</span> (child-&gt;left_sibling) {</div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;        child-&gt;left_sibling-&gt;right_sibling = child;</div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;      }</div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;      <span class="comment">// ...without a left sibling node.</span></div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;      <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;        parent-&gt;first_child = child;</div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;        <span class="comment">// ...whose parent was the last node...</span></div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;      }</div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;    }</div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;    <span class="comment">// ...as the new last node...</span></div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;      <span class="comment">// ... as the last child of the root node.</span></div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>) {</div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;        std::construct_at(child, std::forward&lt;ArgumentsType&gt;(arguments)...,</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;                          <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a9a54ad63c8a20e3a1a845a7ae1355762">last_child</a>, <span class="keyword">nullptr</span>, <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>);</div>
+<div class="line"><a name="l01375"></a><span class="lineno"> 1375</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a>) {</div>
+<div class="line"><a name="l01376"></a><span class="lineno"> 1376</span>&#160;          <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a> = child;</div>
+<div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;        }</div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a9a54ad63c8a20e3a1a845a7ae1355762">last_child</a>) {</div>
+<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;          <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a9a54ad63c8a20e3a1a845a7ae1355762">last_child</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a50654e62b5fb8488e4e13502e64dd428">right_sibling</a> = child;</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;        }</div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;        <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a9a54ad63c8a20e3a1a845a7ae1355762">last_child</a> = child;</div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;      }</div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;      <span class="comment">// ...as the sole, and root node.</span></div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;      <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;        std::construct_at(child, std::forward&lt;ArgumentsType&gt;(arguments)...);</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;        <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a> = child;</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;      }</div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    }</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160; </div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;    ++<a class="code" href="classfcarouge_1_1tree.html#a0ee5302eccd03bb68a5e088c0a8da489">node_count</a>;</div>
+<div class="line"><a name="l01391"></a><span class="lineno"> 1391</span>&#160; </div>
+<div class="line"><a name="l01392"></a><span class="lineno"> 1392</span>&#160;    <span class="keywordflow">return</span> child;</div>
+<div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00182">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::last_child</a>, <a class="el" href="tree_8hpp_source.html#l00183">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::left_sibling</a>, <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00182">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::last_child</a>, <a class="el" href="tree_8hpp_source.html#l00183">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::left_sibling</a>, <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l01129">fcarouge::tree&lt; Type, AllocatorType &gt;::push()</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2026,26 +2033,26 @@ template&lt;class... ArgumentsType&gt; </div>
 <dl class="section user"><dt>Complexity</dt><dd>Constant.</dd></dl>
 <dl class="section user"><dt>Exceptions</dt><dd>Strong exception guarantees: no effect on exception. The <code>Allocator::allocate()</code> allocation or the element copy/move constructor/assignment may throw. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01406">1406</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;  {</div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;    <span class="comment">// The allocated node is in-place construced and recorded in every</span></div>
-<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;    <span class="comment">// following statements.</span></div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;    internal_node_type *node = <a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>.allocate(1);</div>
-<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160; </div>
-<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;    <span class="comment">// Insert the new node and prepare it to be the new root...</span></div>
-<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;    std::construct_at(node, std::forward&lt;ArgumentsType&gt;(arguments)..., <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>,</div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;                      <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>);</div>
-<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160; </div>
-<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;    <span class="comment">// ... by displacing the previous root.</span></div>
-<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>) {</div>
-<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;      <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#abb38b1b9d4f98d6e22d6e88797e6c4d2">parent</a> = node;</div>
-<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;    }</div>
-<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;    <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a> = node;</div>
-<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160; </div>
-<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;    ++<a class="code" href="classfcarouge_1_1tree.html#a0ee5302eccd03bb68a5e088c0a8da489">node_count</a>;</div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01413">1413</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;  {</div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;    <span class="comment">// The allocated node is in-place construced and recorded in every</span></div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;    <span class="comment">// following statements.</span></div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;    internal_node_type *node = <a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>.allocate(1);</div>
+<div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160; </div>
+<div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;    <span class="comment">// Insert the new node and prepare it to be the new root...</span></div>
+<div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160;    std::construct_at(node, std::forward&lt;ArgumentsType&gt;(arguments)..., <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>,</div>
+<div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;                      <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>);</div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160; </div>
+<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;    <span class="comment">// ... by displacing the previous root.</span></div>
+<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>) {</div>
+<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;      <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#abb38b1b9d4f98d6e22d6e88797e6c4d2">parent</a> = node;</div>
+<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;    }</div>
+<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;    <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a> = node;</div>
+<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160; </div>
+<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;    ++<a class="code" href="classfcarouge_1_1tree.html#a0ee5302eccd03bb68a5e088c0a8da489">node_count</a>;</div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, <a class="el" href="tree_8hpp_source.html#l00185">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::parent</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, <a class="el" href="tree_8hpp_source.html#l00185">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::parent</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l01185">fcarouge::tree&lt; Type, AllocatorType &gt;::push_front()</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2097,7 +2104,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classfcarouge_1_1tree.html#a0ee5302eccd03bb68a5e088c0a8da489">node_count</a> == 0;</div>
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>.</p>
 
 </div>
 </div>
@@ -2342,7 +2349,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;  }</div>
 <div class="ttc" id="astructfcarouge_1_1tree_1_1internal__node__type_html_a0678b7a0857922263963001b0b7e70bc"><div class="ttname"><a href="structfcarouge_1_1tree_1_1internal__node__type.html#a0678b7a0857922263963001b0b7e70bc">fcarouge::tree::internal_node_type::data</a></div><div class="ttdeci">value_type data</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00180">tree.hpp:180</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00180">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00180">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 </div>
 </div>
@@ -2382,7 +2389,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classfcarouge_1_1tree.html#a31c6ea7623721e3563def6f479d3c31c">root</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a0678b7a0857922263963001b0b7e70bc">data</a>;</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00180">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00180">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 
 </div>
 </div>
@@ -2420,7 +2427,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>;</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>.</p>
 
 </div>
 </div>
@@ -2622,7 +2629,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;        internal_node_allocator_traits::max_size(<a class="code" href="classfcarouge_1_1tree.html#a40522ac59bc82c1cfa7cae9e584116b3">node_allocator</a>));</div>
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>.</p>
 
 </div>
 </div>
@@ -2675,7 +2682,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01437">fcarouge::tree&lt; Type, AllocatorType &gt;::copy()</a>, <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01444">fcarouge::tree&lt; Type, AllocatorType &gt;::copy()</a>, <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -2737,7 +2744,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 <div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
@@ -2802,7 +2809,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 <div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
@@ -2863,7 +2870,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l01471">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l01478">fcarouge::tree&lt; Type, AllocatorType &gt;::root</a>.</p>
 <div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
@@ -2926,7 +2933,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;    }</div>
 <div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l01468">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00181">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l01475">fcarouge::tree&lt; Type, AllocatorType &gt;::node_allocator</a>, <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>, and <a class="el" href="tree_8hpp_source.html#l00184">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::right_sibling</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l01059">fcarouge::tree&lt; Type, AllocatorType &gt;::erase()</a>.</p>
 <div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2996,9 +3003,9 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="fragment"><div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;  {</div>
 <div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;    <span class="keywordflow">return</span> { <a class="code" href="classfcarouge_1_1tree.html#adf586baf2ec2ce3a14ae97d6e00b4471">emplace_last_child</a>(position.node, value) };</div>
 <div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;  }</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_adf586baf2ec2ce3a14ae97d6e00b4471"><div class="ttname"><a href="classfcarouge_1_1tree.html#adf586baf2ec2ce3a14ae97d6e00b4471">fcarouge::tree::emplace_last_child</a></div><div class="ttdeci">constexpr internal_node_type * emplace_last_child(internal_node_type *parent, ArgumentsType &amp;&amp;... arguments)</div><div class="ttdoc">Inserts the given element value into the container directly after the last child of the position iter...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01339">tree.hpp:1339</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_adf586baf2ec2ce3a14ae97d6e00b4471"><div class="ttname"><a href="classfcarouge_1_1tree.html#adf586baf2ec2ce3a14ae97d6e00b4471">fcarouge::tree::emplace_last_child</a></div><div class="ttdeci">constexpr internal_node_type * emplace_last_child(internal_node_type *parent, ArgumentsType &amp;&amp;... arguments)</div><div class="ttdoc">Inserts the given element value into the container directly after the last child of the position iter...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01346">tree.hpp:1346</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01339">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_last_child()</a>, and <a class="el" href="tree_8hpp_source.html#l00400">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator::node</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01346">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_last_child()</a>, and <a class="el" href="tree_8hpp_source.html#l00400">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator::node</a>.</p>
 <div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
@@ -3067,7 +3074,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    <span class="keywordflow">return</span> { <a class="code" href="classfcarouge_1_1tree.html#adf586baf2ec2ce3a14ae97d6e00b4471">emplace_last_child</a>(position.node, std::move(value)) };</div>
 <div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01339">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_last_child()</a>, and <a class="el" href="tree_8hpp_source.html#l00400">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator::node</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01346">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_last_child()</a>, and <a class="el" href="tree_8hpp_source.html#l00400">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator::node</a>.</p>
 <div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
@@ -3123,9 +3130,9 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="fragment"><div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;  {</div>
 <div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;    <a class="code" href="classfcarouge_1_1tree.html#a9eb654df3c8f35f64ce11d7bbbc8367d">emplace_root</a>(value);</div>
 <div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;  }</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a9eb654df3c8f35f64ce11d7bbbc8367d"><div class="ttname"><a href="classfcarouge_1_1tree.html#a9eb654df3c8f35f64ce11d7bbbc8367d">fcarouge::tree::emplace_root</a></div><div class="ttdeci">constexpr void emplace_root(ArgumentsType &amp;&amp;... arguments)</div><div class="ttdoc">Prepends the given element to the beginning of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01406">tree.hpp:1406</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a9eb654df3c8f35f64ce11d7bbbc8367d"><div class="ttname"><a href="classfcarouge_1_1tree.html#a9eb654df3c8f35f64ce11d7bbbc8367d">fcarouge::tree::emplace_root</a></div><div class="ttdeci">constexpr void emplace_root(ArgumentsType &amp;&amp;... arguments)</div><div class="ttdoc">Prepends the given element to the beginning of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01413">tree.hpp:1413</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01406">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_root()</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01413">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_root()</a>.</p>
 <div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
@@ -3182,7 +3189,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;    <a class="code" href="classfcarouge_1_1tree.html#a9eb654df3c8f35f64ce11d7bbbc8367d">emplace_root</a>(std::move(value));</div>
 <div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01406">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_root()</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01413">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_root()</a>.</p>
 <div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary" style="display:block;">
@@ -3232,9 +3239,9 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classfcarouge_1_1tree.html#a0ee5302eccd03bb68a5e088c0a8da489">node_count</a>;</div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01474">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01481">fcarouge::tree&lt; Type, AllocatorType &gt;::node_count</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l01497">operator==()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l01504">operator==()</a>.</p>
 <div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary" style="display:block;">
@@ -3303,9 +3310,9 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01468">1468</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01475">1475</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01437">fcarouge::tree&lt; Type, AllocatorType &gt;::copy()</a>, <a class="el" href="tree_8hpp_source.html#l00985">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace()</a>, <a class="el" href="tree_8hpp_source.html#l00941">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_front()</a>, <a class="el" href="tree_8hpp_source.html#l01339">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_last_child()</a>, <a class="el" href="tree_8hpp_source.html#l01406">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_root()</a>, <a class="el" href="tree_8hpp_source.html#l00708">fcarouge::tree&lt; Type, AllocatorType &gt;::get_allocator()</a>, <a class="el" href="tree_8hpp_source.html#l00883">fcarouge::tree&lt; Type, AllocatorType &gt;::max_size()</a>, <a class="el" href="tree_8hpp_source.html#l00610">fcarouge::tree&lt; Type, AllocatorType &gt;::operator=()</a>, and <a class="el" href="tree_8hpp_source.html#l01278">fcarouge::tree&lt; Type, AllocatorType &gt;::prune()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l01299">fcarouge::tree&lt; Type, AllocatorType &gt;::axe()</a>, <a class="el" href="tree_8hpp_source.html#l01444">fcarouge::tree&lt; Type, AllocatorType &gt;::copy()</a>, <a class="el" href="tree_8hpp_source.html#l00985">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace()</a>, <a class="el" href="tree_8hpp_source.html#l00941">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_front()</a>, <a class="el" href="tree_8hpp_source.html#l01346">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_last_child()</a>, <a class="el" href="tree_8hpp_source.html#l01413">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_root()</a>, <a class="el" href="tree_8hpp_source.html#l00708">fcarouge::tree&lt; Type, AllocatorType &gt;::get_allocator()</a>, <a class="el" href="tree_8hpp_source.html#l00883">fcarouge::tree&lt; Type, AllocatorType &gt;::max_size()</a>, <a class="el" href="tree_8hpp_source.html#l00610">fcarouge::tree&lt; Type, AllocatorType &gt;::operator=()</a>, and <a class="el" href="tree_8hpp_source.html#l01278">fcarouge::tree&lt; Type, AllocatorType &gt;::prune()</a>.</p>
 
 </div>
 </div>
@@ -3333,9 +3340,9 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 
 <p>The number of elements in the container. </p>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01474">1474</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01481">1481</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l00903">fcarouge::tree&lt; Type, AllocatorType &gt;::clear()</a>, <a class="el" href="tree_8hpp_source.html#l00985">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace()</a>, <a class="el" href="tree_8hpp_source.html#l00941">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_front()</a>, <a class="el" href="tree_8hpp_source.html#l01339">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_last_child()</a>, <a class="el" href="tree_8hpp_source.html#l01406">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_root()</a>, <a class="el" href="tree_8hpp_source.html#l00850">fcarouge::tree&lt; Type, AllocatorType &gt;::empty()</a>, <a class="el" href="tree_8hpp_source.html#l00610">fcarouge::tree&lt; Type, AllocatorType &gt;::operator=()</a>, <a class="el" href="tree_8hpp_source.html#l01278">fcarouge::tree&lt; Type, AllocatorType &gt;::prune()</a>, and <a class="el" href="tree_8hpp_source.html#l00862">fcarouge::tree&lt; Type, AllocatorType &gt;::size()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l00903">fcarouge::tree&lt; Type, AllocatorType &gt;::clear()</a>, <a class="el" href="tree_8hpp_source.html#l00985">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace()</a>, <a class="el" href="tree_8hpp_source.html#l00941">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_front()</a>, <a class="el" href="tree_8hpp_source.html#l01346">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_last_child()</a>, <a class="el" href="tree_8hpp_source.html#l01413">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_root()</a>, <a class="el" href="tree_8hpp_source.html#l00850">fcarouge::tree&lt; Type, AllocatorType &gt;::empty()</a>, <a class="el" href="tree_8hpp_source.html#l00610">fcarouge::tree&lt; Type, AllocatorType &gt;::operator=()</a>, <a class="el" href="tree_8hpp_source.html#l01278">fcarouge::tree&lt; Type, AllocatorType &gt;::prune()</a>, and <a class="el" href="tree_8hpp_source.html#l00862">fcarouge::tree&lt; Type, AllocatorType &gt;::size()</a>.</p>
 
 </div>
 </div>
@@ -3363,9 +3370,9 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 
 <p>The root node of the container. </p>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01471">1471</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01478">1478</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l00762">fcarouge::tree&lt; Type, AllocatorType &gt;::begin()</a>, <a class="el" href="tree_8hpp_source.html#l00788">fcarouge::tree&lt; Type, AllocatorType &gt;::cbegin()</a>, <a class="el" href="tree_8hpp_source.html#l00903">fcarouge::tree&lt; Type, AllocatorType &gt;::clear()</a>, <a class="el" href="tree_8hpp_source.html#l01246">fcarouge::tree&lt; Type, AllocatorType &gt;::cleave()</a>, <a class="el" href="tree_8hpp_source.html#l00985">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace()</a>, <a class="el" href="tree_8hpp_source.html#l00941">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_front()</a>, <a class="el" href="tree_8hpp_source.html#l01339">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_last_child()</a>, <a class="el" href="tree_8hpp_source.html#l01406">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_root()</a>, <a class="el" href="tree_8hpp_source.html#l00728">fcarouge::tree&lt; Type, AllocatorType &gt;::front()</a>, <a class="el" href="tree_8hpp_source.html#l00610">fcarouge::tree&lt; Type, AllocatorType &gt;::operator=()</a>, <a class="el" href="tree_8hpp_source.html#l00536">fcarouge::tree&lt; Type, AllocatorType &gt;::tree()</a>, and <a class="el" href="tree_8hpp_source.html#l00592">fcarouge::tree&lt; Type, AllocatorType &gt;::~tree()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l00762">fcarouge::tree&lt; Type, AllocatorType &gt;::begin()</a>, <a class="el" href="tree_8hpp_source.html#l00788">fcarouge::tree&lt; Type, AllocatorType &gt;::cbegin()</a>, <a class="el" href="tree_8hpp_source.html#l00903">fcarouge::tree&lt; Type, AllocatorType &gt;::clear()</a>, <a class="el" href="tree_8hpp_source.html#l01246">fcarouge::tree&lt; Type, AllocatorType &gt;::cleave()</a>, <a class="el" href="tree_8hpp_source.html#l00985">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace()</a>, <a class="el" href="tree_8hpp_source.html#l00941">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_front()</a>, <a class="el" href="tree_8hpp_source.html#l01346">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_last_child()</a>, <a class="el" href="tree_8hpp_source.html#l01413">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_root()</a>, <a class="el" href="tree_8hpp_source.html#l00728">fcarouge::tree&lt; Type, AllocatorType &gt;::front()</a>, <a class="el" href="tree_8hpp_source.html#l00610">fcarouge::tree&lt; Type, AllocatorType &gt;::operator=()</a>, <a class="el" href="tree_8hpp_source.html#l00536">fcarouge::tree&lt; Type, AllocatorType &gt;::tree()</a>, and <a class="el" href="tree_8hpp_source.html#l00592">fcarouge::tree&lt; Type, AllocatorType &gt;::~tree()</a>.</p>
 
 </div>
 </div>
@@ -3378,7 +3385,7 @@ template&lt;class Type , class AllocatorType  = std::allocator&lt;Type&gt;&gt; <
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li><li class="navelem"><a class="el" href="classfcarouge_1_1tree.html">tree</a></li>
-    <li class="footer">Generated on Mon Feb 8 2021 05:07:44 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon Feb 8 2021 05:56:48 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

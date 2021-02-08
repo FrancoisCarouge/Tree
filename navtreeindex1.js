@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"namespacefcarouge_1_1test_1_1constructor__allocator.html":[5,0,0,1,3],
 "namespacefcarouge_1_1test_1_1constructor__allocator.html#aa1a9b2a25cde8b605f213644b18f62a6":[5,0,0,1,3,0],
 "namespacefcarouge_1_1test_1_1constructor__copy.html":[5,0,0,1,4],
 "namespacefcarouge_1_1test_1_1constructor__copy.html#a169739a89ede070251ec1cf76453d9f4":[5,0,0,1,4,0],
@@ -241,6 +242,5 @@ var NAVTREEINDEX1 =
 "tree_8hpp.html":[7,0,0,0,0],
 "tree_8hpp.html#ae617bea810be26e335a2cc2e2c91d3e8":[7,0,0,0,0,7],
 "tree_8hpp.html#ae748dc8afc895c0b70f1111e33b2fe04":[7,0,0,0,0,6],
-"tree_8hpp_source.html":[7,0,0,0,0],
-"":[5,0,1]
+"tree_8hpp_source.html":[7,0,0,0,0]
 };
