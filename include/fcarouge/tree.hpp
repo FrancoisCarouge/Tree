@@ -1279,12 +1279,20 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @param node The pointer to the element to erase.
   constexpr void prune(internal_node_type *node)
   {
-    if (node) {
-      prune(node->first_child);
-      prune(node->right_sibling);
+    while (internal_node_type *current = node) {
+      if (current->last_child) {
+        if (current->right_sibling) {
+          current->last_child->right_sibling = current->right_sibling;
+        }
+        node = current->first_child;
+      } else if (current->right_sibling) {
+        node = current->right_sibling;
+      } else {
+        node = nullptr;
+      }
 
-      std::destroy_at(node);
-      node_allocator.deallocate(node, 1);
+      std::destroy_at(current);
+      node_allocator.deallocate(current, 1);
 
       --node_count;
     }
@@ -1311,6 +1319,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       } else {
         node = nullptr;
       }
+
       std::destroy_at(current);
       node_allocator.deallocate(current, 1);
     }
