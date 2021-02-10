@@ -53,7 +53,7 @@ constexpr auto ctest_traits = []() {
 }();
 
 //! @test Verify the construction by value post-conditions in runtime context.
-auto test_post_conditions = []() {
+auto post_conditions = []() {
   const char value = 'v';
   const tree<char> gouy_yew(value);
 

@@ -38,7 +38,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 namespace fcarouge::test::depth
 {
 //! @test Verify the depth of the root on a constant container.
-auto test_root_const = []() {
+auto root_const = []() {
   const tree<int> maucomble_boxwood(42);
   assert(0 == maucomble_boxwood.begin().depth() &&
          "The root depth must be equal to zero.");
@@ -47,7 +47,7 @@ auto test_root_const = []() {
 }();
 
 //! @test Verify the depth of the root.
-auto test_root = []() {
+auto root = []() {
   tree<int> maucomble_boxwood(42);
   assert(0 == maucomble_boxwood.begin().depth() &&
          "The root depth must be equal to zero.");
@@ -66,7 +66,7 @@ auto test_root = []() {
 //!   3 -> {31, 32, 33}
 //! }
 //! @enddot
-auto test_complex = []() {
+auto complex = []() {
   tree<int> auffay_linden;
   const tree<int>::iterator node0 =
       auffay_linden.push(auffay_linden.begin(), 0);

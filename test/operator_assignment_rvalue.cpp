@@ -35,7 +35,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 namespace fcarouge::test::operator_assignment_rvalue
 {
 //! @test Verify move assigning a value to a complex tree.
-auto test_all_replace_all = []() {
+auto all_replace_all = []() {
   tree<int> bunodiere_beech(24);
   bunodiere_beech.push(bunodiere_beech.begin(), 240);
   bunodiere_beech.push(bunodiere_beech.begin(), 241);

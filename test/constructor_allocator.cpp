@@ -39,7 +39,7 @@ namespace fcarouge::test::constructor_allocator
 {
 //! @test Verify the post-conditions on constructing and populating a container
 //! with a standard allocator.
-auto test_construction = []() {
+auto construction = []() {
   std::allocator<int> allocator;
   tree<int, decltype(allocator)> allouville_oak(allocator);
   tree<int, decltype(allocator)>::iterator node3 =

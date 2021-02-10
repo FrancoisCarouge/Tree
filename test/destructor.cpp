@@ -57,7 +57,7 @@ constexpr auto ctest_post_conditions = []() {
 }();
 
 //! @test Verify the basic destruction post-conditions in runtime context.
-auto test_post_conditions = []() {
+auto post_conditions = []() {
   const tree<char> gouy_yew;
 
   return 0;

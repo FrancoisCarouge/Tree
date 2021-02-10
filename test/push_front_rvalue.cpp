@@ -36,7 +36,7 @@ namespace fcarouge::test::push_front_rvalue
 {
 //! @test Verify the post conditions on pushing front a moved element in an
 //! empty container.
-auto test_one = []() {
+auto one = []() {
   tree<int> auffay_linden;
   auffay_linden.push_front(42);
 
@@ -62,7 +62,7 @@ auto test_one = []() {
 
 //! @test Verify the post conditions on pushing front two moved elements in a
 //! non-empty container.
-auto test_multiple = []() {
+auto multiple = []() {
   tree<int> auffay_linden(1111);
   auffay_linden.push_front(111);
   auffay_linden.push_front(11);

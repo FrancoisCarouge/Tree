@@ -51,7 +51,7 @@ namespace fcarouge::test::for_range
 //!   3 -> {31, 32, 33}
 //! }
 //! @enddot
-auto test_auto = []() {
+auto complex = []() {
   tree<int> auffay_linden;
   const tree<int>::iterator node0 =
       auffay_linden.push(auffay_linden.begin(), 0);

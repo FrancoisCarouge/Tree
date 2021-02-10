@@ -35,7 +35,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 namespace fcarouge::test::erase_const_iterator
 {
 //! @test Verify the post-conditions on erasing the sole element of a container.
-auto test_sole = []() {
+auto sole = []() {
   tree<int> allouville_oak(42);
   const tree<int>::const_iterator iterator =
       allouville_oak.erase(allouville_oak.begin());
@@ -59,7 +59,7 @@ auto test_sole = []() {
 }();
 
 //! @test Verify the post-conditions on erasing the last element of a tree.
-auto test_last = []() {
+auto last = []() {
   tree<int> allouville_oak;
   const tree<int>::const_iterator node3 =
       allouville_oak.emplace(allouville_oak.begin(), 3);
@@ -82,7 +82,7 @@ auto test_last = []() {
 }();
 
 //! @test Verify the post-conditions on erasing the root element of a tree.
-auto test_root = []() {
+auto root = []() {
   tree<int> allouville_oak;
   const tree<int>::const_iterator node3 =
       allouville_oak.emplace(allouville_oak.begin(), 3);
@@ -110,7 +110,7 @@ auto test_root = []() {
 }();
 
 //! @test Verify the post-conditions on erasing various elements of a tree.
-auto test_multiple = []() {
+auto multiple = []() {
   tree<int> allouville_oak;
   const tree<int>::const_iterator node33 =
       allouville_oak.emplace(allouville_oak.begin(), 33);
