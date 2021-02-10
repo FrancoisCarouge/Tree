@@ -36,7 +36,7 @@ namespace fcarouge::test::clear
 {
 //! @test Verify the post-conditions on clearing a default constructed
 //! container.
-auto test_default = []() {
+auto empty = []() {
   tree<int> maucomble_boxwood;
   maucomble_boxwood.clear();
 
@@ -56,7 +56,7 @@ auto test_default = []() {
 
 //! @test Verify the post-conditions on clearing a container constructed from a
 //! single value.
-auto test_lvalue = []() {
+auto lvalue = []() {
   const int value = 42;
   tree<int> maucomble_boxwood(value);
   maucomble_boxwood.clear();
@@ -87,7 +87,7 @@ auto test_lvalue = []() {
 //!   3 -> {31, 32, 33}
 //! }
 //! @enddot
-auto test_multiple = []() {
+auto multiple = []() {
   tree<int> maucomble_boxwood;
   tree<int>::iterator node0 =
       maucomble_boxwood.push(maucomble_boxwood.begin(), 0);

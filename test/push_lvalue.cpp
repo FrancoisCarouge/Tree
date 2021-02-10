@@ -39,7 +39,7 @@ namespace fcarouge::test::push_lvalue
 {
 //! @test Verify the post conditions on pushing an element by value upon the
 //! beginning iterator of an empty container.
-auto test_one_beginning = []() {
+auto one_beginning = []() {
   tree<int> auffay_linden;
   const int value = 42;
   const tree<int>::const_iterator element =
@@ -64,7 +64,7 @@ auto test_one_beginning = []() {
 
 //! @test Verify the post conditions on pushing an element by value upon the
 //! ending iterator of an empty container.
-auto test_one_ending = []() {
+auto one_ending = []() {
   tree<int> auffay_linden;
   const int value = 42;
   const tree<int>::const_iterator element =
@@ -89,7 +89,7 @@ auto test_one_ending = []() {
 
 //! @test Verify the post conditions on pushing another element by value upon
 //! the beginning iterator of a container containing a single value.
-auto test_two_beginning = []() {
+auto two_beginning = []() {
   const int first_value = 41;
   tree<int> auffay_linden;
   auffay_linden.push(auffay_linden.begin(), first_value);
@@ -107,7 +107,7 @@ auto test_two_beginning = []() {
 
 //! @test Verify the post conditions on pushing another element by value upon
 //! the ending iterator of a container containing a single value.
-auto test_two_ending = []() {
+auto two_ending = []() {
   const int first_value = 41;
   tree<int> auffay_linden;
   auffay_linden.push(auffay_linden.end(), first_value);
@@ -126,7 +126,7 @@ auto test_two_ending = []() {
 //! @test Verify the post conditions on pushing three elements by value upon
 //! the ending iterator of a container containing a single value, exercising
 //! pushing upon the root with child.
-auto test_three_ending = []() {
+auto three_ending = []() {
   const int first_value = 41;
   tree<int> auffay_linden;
   auffay_linden.push(auffay_linden.end(), first_value);
@@ -156,7 +156,7 @@ auto test_three_ending = []() {
 //!   3 -> {31, 32, 33}
 //! }
 //! @enddot
-auto test_multiple = []() {
+auto multiple = []() {
   tree<int> auffay_linden;
   int value = 0;
   tree<int>::iterator node0 = auffay_linden.push(auffay_linden.begin(), value);

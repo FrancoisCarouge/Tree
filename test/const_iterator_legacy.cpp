@@ -177,7 +177,7 @@ constexpr auto ctest_traits = []() {
 
 //! @test Verify the post conditions of incrementing a valid beggining constant
 //! iterator followed by a valid node.
-auto test_post_conditions = []() {
+auto post_conditions = []() {
   tree<int> allouville_oak(42);
   allouville_oak.push(allouville_oak.begin(), 43);
   tree<int>::const_iterator iterator = ++allouville_oak.begin();

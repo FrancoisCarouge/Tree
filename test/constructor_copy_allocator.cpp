@@ -72,7 +72,7 @@ constexpr auto ctest_traits = []() {
 //!   3 -> {31, 32, 33}
 //! }
 //! @enddot
-auto test_multiple = []() {
+auto multiple = []() {
   tree<int> auffay_linden;
   const tree<int>::iterator node0 =
       auffay_linden.push(auffay_linden.begin(), 0);

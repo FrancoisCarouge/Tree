@@ -77,7 +77,7 @@ constexpr auto ctest_post_conditions = []() {
 }();
 
 //! @test Verify the default construction post-conditions in runtime context.
-auto test_post_conditions = []() {
+auto post_conditions = []() {
   const tree<char> allouville_oak;
 
   assert(allouville_oak.empty() &&

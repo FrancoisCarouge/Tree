@@ -47,7 +47,7 @@ constexpr auto ctest_traits = []() {
 }();
 
 //! @test Verify copy assigning an empty tree to an empty tree.
-auto test_empty = []() {
+auto empty = []() {
   tree<int> auffay_linden;
   tree<int> bunodiere_beech;
   bunodiere_beech = auffay_linden;
@@ -66,7 +66,7 @@ auto test_empty = []() {
 
 //! @test Verify copy assigning a complex tree to a complex tree with identical
 //! topology.
-auto test_all_replace_all = []() {
+auto all_replace_all = []() {
   tree<int> auffay_linden(42);
   auffay_linden.push(auffay_linden.begin(), 420);
   auffay_linden.push(auffay_linden.begin(), 421);
@@ -88,7 +88,7 @@ auto test_all_replace_all = []() {
 }();
 
 //! @test Verify copy assigning a complex tree to an empty tree.
-auto test_none_replace_all = []() {
+auto none_replace_all = []() {
   tree<int> auffay_linden(42);
   auffay_linden.push(auffay_linden.begin(), 420);
   auffay_linden.push(auffay_linden.begin(), 421);
@@ -107,7 +107,7 @@ auto test_none_replace_all = []() {
 }();
 
 //! @test Verify copy assigning an empty tree to a complex tree.
-auto test_all_replace_none = []() {
+auto all_replace_none = []() {
   tree<int> auffay_linden;
   tree<int> bunodiere_beech(24);
   bunodiere_beech.push(bunodiere_beech.begin(), 240);
@@ -128,7 +128,7 @@ auto test_all_replace_none = []() {
 }();
 
 //! @test Verify self copy assigning.
-auto test_self = []() {
+auto self = []() {
   tree<int> bunodiere_beech(42);
   bunodiere_beech.push(bunodiere_beech.begin(), 420);
   bunodiere_beech.push(bunodiere_beech.begin(), 421);

@@ -59,7 +59,7 @@ constexpr auto ctest_traits = []() {
 
 //! @test Verify the construction by moving a value post-conditions in runtime
 //! context.
-auto test_post_conditions = []() {
+auto post_conditions = []() {
   std::allocator<char> allocator;
   const tree<char, decltype(allocator)> gouy_yew('v', allocator);
 

@@ -36,7 +36,7 @@ namespace fcarouge::test::emplace_front
 {
 //! @test Verify the post conditions on emplacing front an element in an emptry
 //! tree.
-auto test_empty_front = []() {
+auto empty_front = []() {
   tree<int> allouville_oak;
   const int value = allouville_oak.emplace_front(42);
 
@@ -62,7 +62,7 @@ auto test_empty_front = []() {
 
 //! @test Verify the post conditions on emplacing front an element in an
 //! non-empty tree.
-auto test_root_front = []() {
+auto root_front = []() {
   tree<int> allouville_oak(42);
   const int value = allouville_oak.emplace_front(41);
 

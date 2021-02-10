@@ -71,7 +71,7 @@ constexpr auto ctest_default = []() {
 
 //! @test Verify the maximum number of elements the container is able to hold
 //! with the standard allocator.
-auto test_default = []() {
+auto nominal = []() {
   const tree<int> allouville_oak;
 
   assert(
@@ -109,7 +109,7 @@ constexpr auto ctest_null = []() {
 
 //! @test Verify the maximum number of elements the container is able to hold
 //! with a null allocator.
-auto test_constructor_null = []() {
+auto constructor_null = []() {
   const tree<int, null_allocator<int>> allouville_oak;
 
   assert(0 == allouville_oak.max_size() &&

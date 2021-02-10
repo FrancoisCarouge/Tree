@@ -46,7 +46,7 @@ constexpr auto ctest_constructor_default = []() {
 }();
 
 //! @test Verify the size of a default constructed container.
-auto test_constructor_default = []() {
+auto constructor_default = []() {
   tree<int> allouville_oak;
 
   assert(0 == allouville_oak.size() &&
@@ -56,7 +56,7 @@ auto test_constructor_default = []() {
 }();
 
 //! @test Verify the size of a container constructed by value.
-auto test_constructor_lvalue = []() {
+auto constructor_lvalue = []() {
   const int value = 42;
   tree<int> allouville_oak(value);
 
@@ -67,7 +67,7 @@ auto test_constructor_lvalue = []() {
 }();
 
 //! @test Verify the size of a container constructed by moving the value.
-auto test_constructor_rvalue = []() {
+auto constructor_rvalue = []() {
   tree<int> allouville_oak(42);
 
   assert(
@@ -78,7 +78,7 @@ auto test_constructor_rvalue = []() {
 }();
 
 //! @test Verify the size of a container built with multiple elements.
-auto test_multiple = []() {
+auto multiple = []() {
   tree<int> allouville_oak;
   tree<int>::iterator node33 =
       allouville_oak.emplace(allouville_oak.begin(), 33);
