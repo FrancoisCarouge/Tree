@@ -1,14 +1,17 @@
 var searchData=
 [
-  ['emplace_51',['emplace',['../classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5',1,'fcarouge::tree']]],
-  ['emplace_2ecpp_52',['emplace.cpp',['../emplace_8cpp.html',1,'']]],
-  ['emplace_5ffront_53',['emplace_front',['../classfcarouge_1_1tree.html#ae42c67b59361f977685a6c8f00255cf2',1,'fcarouge::tree']]],
-  ['emplace_5ffront_2ecpp_54',['emplace_front.cpp',['../emplace__front_8cpp.html',1,'']]],
-  ['emplace_5flast_5fchild_55',['emplace_last_child',['../classfcarouge_1_1tree.html#adf586baf2ec2ce3a14ae97d6e00b4471',1,'fcarouge::tree']]],
-  ['emplace_5froot_56',['emplace_root',['../classfcarouge_1_1tree.html#a9eb654df3c8f35f64ce11d7bbbc8367d',1,'fcarouge::tree']]],
-  ['empty_57',['empty',['../classfcarouge_1_1tree.html#a305d983d5a1a6994dee714a9f88bc1ee',1,'fcarouge::tree']]],
-  ['end_58',['end',['../classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac',1,'fcarouge::tree::end() noexcept'],['../classfcarouge_1_1tree.html#a7f69f9f81a0d50355c6e47c35df54b82',1,'fcarouge::tree::end() const noexcept']]],
-  ['erase_59',['erase',['../classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588',1,'fcarouge::tree::erase(iterator position)'],['../classfcarouge_1_1tree.html#abae87f234bf8aef94b299b8e206b3a2e',1,'fcarouge::tree::erase(const_iterator position)']]],
-  ['erase_5fconst_5fiterator_2ecpp_60',['erase_const_iterator.cpp',['../erase__const__iterator_8cpp.html',1,'']]],
-  ['erase_5fiterator_2ecpp_61',['erase_iterator.cpp',['../erase__iterator_8cpp.html',1,'']]]
+  ['emplace_59',['emplace',['../classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5',1,'fcarouge::tree']]],
+  ['emplace_2ecpp_60',['emplace.cpp',['../emplace_8cpp.html',1,'']]],
+  ['emplace_5ffront_61',['emplace_front',['../classfcarouge_1_1tree.html#ae42c67b59361f977685a6c8f00255cf2',1,'fcarouge::tree']]],
+  ['emplace_5ffront_2ecpp_62',['emplace_front.cpp',['../emplace__front_8cpp.html',1,'']]],
+  ['emplace_5flast_5fchild_63',['emplace_last_child',['../classfcarouge_1_1tree.html#adf586baf2ec2ce3a14ae97d6e00b4471',1,'fcarouge::tree']]],
+  ['emplace_5froot_64',['emplace_root',['../classfcarouge_1_1tree.html#a9eb654df3c8f35f64ce11d7bbbc8367d',1,'fcarouge::tree']]],
+  ['empty_65',['empty',['../classfcarouge_1_1tree.html#a305d983d5a1a6994dee714a9f88bc1ee',1,'fcarouge::tree::empty()'],['../namespacefcarouge_1_1test_1_1operator__assignment__move.html#a9219f4ef08ba1b4cb8a85dee4695d531',1,'fcarouge::test::operator_assignment_move::empty()'],['../namespacefcarouge_1_1test_1_1operator__assignment__copy.html#ae918299299b0bad5084ef421b8987db7',1,'fcarouge::test::operator_assignment_copy::empty()'],['../namespacefcarouge_1_1test_1_1clear.html#add3900486c7dccae22118aca0fb191bc',1,'fcarouge::test::clear::empty()']]],
+  ['empty_5fbegin_66',['empty_begin',['../namespacefcarouge_1_1test_1_1emplace.html#a3f2f2ef51950089c74b8946396d177f4',1,'fcarouge::test::emplace']]],
+  ['empty_5fend_67',['empty_end',['../namespacefcarouge_1_1test_1_1emplace.html#a085c4608a015312d62cd4c6774d7c1df',1,'fcarouge::test::emplace']]],
+  ['empty_5ffront_68',['empty_front',['../namespacefcarouge_1_1test_1_1emplace__front.html#ab221a0b5be0f428611dd45b1f3c2859a',1,'fcarouge::test::emplace_front']]],
+  ['end_69',['end',['../classfcarouge_1_1tree.html#a7f69f9f81a0d50355c6e47c35df54b82',1,'fcarouge::tree::end() const noexcept'],['../classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac',1,'fcarouge::tree::end() noexcept']]],
+  ['erase_70',['erase',['../classfcarouge_1_1tree.html#abae87f234bf8aef94b299b8e206b3a2e',1,'fcarouge::tree::erase(const_iterator position)'],['../classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588',1,'fcarouge::tree::erase(iterator position)']]],
+  ['erase_5fconst_5fiterator_2ecpp_71',['erase_const_iterator.cpp',['../erase__const__iterator_8cpp.html',1,'']]],
+  ['erase_5fiterator_2ecpp_72',['erase_iterator.cpp',['../erase__iterator_8cpp.html',1,'']]]
 ];

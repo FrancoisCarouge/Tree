@@ -94,16 +94,93 @@ $(document).ready(function(){initNavTree('namespacefcarouge_1_1test_1_1size.html
 Variables</h2></td></tr>
 <tr class="memitem:a5bfed7edfefd104fb761d8eb60bb6a39"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1size.html#a5bfed7edfefd104fb761d8eb60bb6a39">ctest_constructor_default</a></td></tr>
 <tr class="separator:a5bfed7edfefd104fb761d8eb60bb6a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e5c701adc2c48a16b3e6871053bd546"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1size.html#a0e5c701adc2c48a16b3e6871053bd546">test_constructor_default</a></td></tr>
-<tr class="separator:a0e5c701adc2c48a16b3e6871053bd546"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afab1d4cfe8e678cc83efd0bd5308f375"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1size.html#afab1d4cfe8e678cc83efd0bd5308f375">test_constructor_lvalue</a></td></tr>
-<tr class="separator:afab1d4cfe8e678cc83efd0bd5308f375"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c968de1e99f65b06676d49faf36f356"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1size.html#a4c968de1e99f65b06676d49faf36f356">test_constructor_rvalue</a></td></tr>
-<tr class="separator:a4c968de1e99f65b06676d49faf36f356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43901fc80c6d7149c439ada097af5007"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1size.html#a43901fc80c6d7149c439ada097af5007">test_multiple</a></td></tr>
-<tr class="separator:a43901fc80c6d7149c439ada097af5007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b95c7e9c105636a9421debe3df2115"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1size.html#ac0b95c7e9c105636a9421debe3df2115">constructor_default</a></td></tr>
+<tr class="separator:ac0b95c7e9c105636a9421debe3df2115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ef80560ae9a193cc9db664e74f46fb"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1size.html#a32ef80560ae9a193cc9db664e74f46fb">constructor_lvalue</a></td></tr>
+<tr class="separator:a32ef80560ae9a193cc9db664e74f46fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78781e2570f279adb379af6482b9dc4f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1size.html#a78781e2570f279adb379af6482b9dc4f">constructor_rvalue</a></td></tr>
+<tr class="separator:a78781e2570f279adb379af6482b9dc4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acee5f086dcb00356c153dedeaf1ca63b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge_1_1test_1_1size.html#acee5f086dcb00356c153dedeaf1ca63b">multiple</a></td></tr>
+<tr class="separator:acee5f086dcb00356c153dedeaf1ca63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ac0b95c7e9c105636a9421debe3df2115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b95c7e9c105636a9421debe3df2115">&#9670;&nbsp;</a></span>constructor_default</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::test::size::constructor_default</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  tree&lt;int&gt; allouville_oak;</div>
+<div class="line"> </div>
+<div class="line">  assert(0 == allouville_oak.size() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must have zero node on default construction.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000086">Test:</a></b></dt><dd>Verify the size of a default constructed container. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="size_8cpp_source.html#l00049">49</a> of file <a class="el" href="size_8cpp_source.html">size.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a32ef80560ae9a193cc9db664e74f46fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32ef80560ae9a193cc9db664e74f46fb">&#9670;&nbsp;</a></span>constructor_lvalue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::test::size::constructor_lvalue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">int</span> value = 42;</div>
+<div class="line">  tree&lt;int&gt; allouville_oak(value);</div>
+<div class="line"> </div>
+<div class="line">  assert(1 == allouville_oak.size() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must have one node on construction by value.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000088">Test:</a></b></dt><dd>Verify the size of a container constructed by value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="size_8cpp_source.html#l00059">59</a> of file <a class="el" href="size_8cpp_source.html">size.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a78781e2570f279adb379af6482b9dc4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78781e2570f279adb379af6482b9dc4f">&#9670;&nbsp;</a></span>constructor_rvalue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto fcarouge::test::size::constructor_rvalue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  tree&lt;int&gt; allouville_oak(42);</div>
+<div class="line"> </div>
+<div class="line">  assert(</div>
+<div class="line">      1 == allouville_oak.size() &amp;&amp;</div>
+<div class="line">      <span class="stringliteral">&quot;The container must have one node on construction by moving the value.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000089">Test:</a></b></dt><dd>Verify the size of a container constructed by moving the value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="size_8cpp_source.html#l00070">70</a> of file <a class="el" href="size_8cpp_source.html">size.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a5bfed7edfefd104fb761d8eb60bb6a39"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5bfed7edfefd104fb761d8eb60bb6a39">&#9670;&nbsp;</a></span>ctest_constructor_default</h2>
 
@@ -131,97 +208,20 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000084">Test:</a></b></dt><dd>Verify the size of a default constructed container in constant expressions. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000085">Test:</a></b></dt><dd>Verify the size of a default constructed container in constant expressions. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="size_8cpp_source.html#l00039">39</a> of file <a class="el" href="size_8cpp_source.html">size.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a0e5c701adc2c48a16b3e6871053bd546"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e5c701adc2c48a16b3e6871053bd546">&#9670;&nbsp;</a></span>test_constructor_default</h2>
+<a id="acee5f086dcb00356c153dedeaf1ca63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acee5f086dcb00356c153dedeaf1ca63b">&#9670;&nbsp;</a></span>multiple</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto fcarouge::test::size::test_constructor_default</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
-<div class="line">  tree&lt;int&gt; allouville_oak;</div>
-<div class="line"> </div>
-<div class="line">  assert(0 == allouville_oak.size() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The container must have zero node on default construction.&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">return</span> 0;</div>
-<div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000085">Test:</a></b></dt><dd>Verify the size of a default constructed container. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="size_8cpp_source.html#l00049">49</a> of file <a class="el" href="size_8cpp_source.html">size.cpp</a>.</p>
-
-</div>
-</div>
-<a id="afab1d4cfe8e678cc83efd0bd5308f375"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afab1d4cfe8e678cc83efd0bd5308f375">&#9670;&nbsp;</a></span>test_constructor_lvalue</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::test::size::test_constructor_lvalue</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keywordtype">int</span> value = 42;</div>
-<div class="line">  tree&lt;int&gt; allouville_oak(value);</div>
-<div class="line"> </div>
-<div class="line">  assert(1 == allouville_oak.size() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The container must have one node on construction by value.&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">return</span> 0;</div>
-<div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000086">Test:</a></b></dt><dd>Verify the size of a container constructed by value. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="size_8cpp_source.html#l00059">59</a> of file <a class="el" href="size_8cpp_source.html">size.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a4c968de1e99f65b06676d49faf36f356"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c968de1e99f65b06676d49faf36f356">&#9670;&nbsp;</a></span>test_constructor_rvalue</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::test::size::test_constructor_rvalue</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
-<div class="line">  tree&lt;int&gt; allouville_oak(42);</div>
-<div class="line"> </div>
-<div class="line">  assert(</div>
-<div class="line">      1 == allouville_oak.size() &amp;&amp;</div>
-<div class="line">      <span class="stringliteral">&quot;The container must have one node on construction by moving the value.&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">return</span> 0;</div>
-<div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000087">Test:</a></b></dt><dd>Verify the size of a container constructed by moving the value. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="size_8cpp_source.html#l00070">70</a> of file <a class="el" href="size_8cpp_source.html">size.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a43901fc80c6d7149c439ada097af5007"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43901fc80c6d7149c439ada097af5007">&#9670;&nbsp;</a></span>test_multiple</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto fcarouge::test::size::test_multiple</td>
+          <td class="memname">auto fcarouge::test::size::multiple</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -245,7 +245,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000088">Test:</a></b></dt><dd>Verify the size of a container built with multiple elements. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000090">Test:</a></b></dt><dd>Verify the size of a container built with multiple elements. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="size_8cpp_source.html#l00081">81</a> of file <a class="el" href="size_8cpp_source.html">size.cpp</a>.</p>
 
@@ -257,7 +257,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test.html">test</a></li><li class="navelem"><a class="el" href="namespacefcarouge_1_1test_1_1size.html">size</a></li>
-    <li class="footer">Generated on Tue Feb 9 2021 02:07:16 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Feb 10 2021 05:07:30 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
