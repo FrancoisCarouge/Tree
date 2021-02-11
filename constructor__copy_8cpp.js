@@ -1,5 +1,5 @@
 var constructor__copy_8cpp =
 [
-    [ "ctest_traits", "constructor__copy_8cpp.html#a169739a89ede070251ec1cf76453d9f4", null ],
-    [ "multiple", "constructor__copy_8cpp.html#afe62cabbb891cfea78e78fad6dbd7aaf", null ]
+    [ "multiple", "constructor__copy_8cpp.html#a66941f0deb82ac8410c974d20cefdd63", null ],
+    [ "traits", "constructor__copy_8cpp.html#a67ed53c1466098fbd28ad1098d9f4af0", null ]
 ];

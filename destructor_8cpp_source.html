@@ -121,40 +121,39 @@ $(document).ready(function(){initNavTree('destructor_8cpp_source.html',''); init
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// std::is_destructible_v std::is_nothrow_destructible_v</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1test_1_1destructor.html">   35</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefcarouge_1_1test_1_1destructor.html">fcarouge::test::destructor</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02destructor_8cpp_03.html">   35</a></span>&#160;<span class="keyword">namespace</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1test_1_1destructor.html#a2c6ce183aca25b3c85f9dd40e00ce7e0">   38</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="namespacefcarouge_1_1test_1_1destructor.html#a2c6ce183aca25b3c85f9dd40e00ce7e0">ctest_traits</a> = []() {</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02destructor_8cpp_03.html#a180a105b6ba4b8a75dfdc839aee84fae">   38</a></span>&#160;[[maybe_unused]] constexpr <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02destructor_8cpp_03.html#a180a105b6ba4b8a75dfdc839aee84fae">traits</a> = []() {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">// The container cannot satisty trivial destruction because it is not a</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// scalar type, trivially copyable class, or array of such type/class. It has</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// non-static members with default initializers. The destructor is user</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// provided.</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  static_assert(std::is_destructible_v&lt;<a class="code" href="classfcarouge_1_1tree.html">tree&lt;char&gt;</a>&gt;,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  static_assert(std::is_destructible_v&lt;<a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a>&gt;,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="stringliteral">&quot;The container must satisfy the Destructible requirement.&quot;</span>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  static_assert(</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      std::is_nothrow_destructible_v&lt;<a class="code" href="classfcarouge_1_1tree.html">tree&lt;char&gt;</a>&gt;,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      std::is_nothrow_destructible_v&lt;<a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a>&gt;,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="stringliteral">&quot;The container must satisfy the non-throwing Destructible requirement.&quot;</span>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1test_1_1destructor.html#a14a2335318e3a48a215cf046ac3fc14c">   53</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="namespacefcarouge_1_1test_1_1destructor.html#a14a2335318e3a48a215cf046ac3fc14c">ctest_post_conditions</a> = []() {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  constexpr <a class="code" href="classfcarouge_1_1tree.html">tree&lt;char&gt;</a> allouville_oak;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02destructor_8cpp_03.html#a8eb8e4e317d9a2a39791ea67fca6f5e9">   53</a></span>&#160;[[maybe_unused]] constexpr <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02destructor_8cpp_03.html#a8eb8e4e317d9a2a39791ea67fca6f5e9">compile</a> = []() {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  constexpr <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a> allouville_oak;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1test_1_1destructor.html#a322587fc304a183b49f6fe93a03e5870">   60</a></span>&#160;<span class="keyword">auto</span> <a class="code" href="namespacefcarouge_1_1test_1_1destructor.html#a322587fc304a183b49f6fe93a03e5870">post_conditions</a> = []() {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">const</span> <a class="code" href="classfcarouge_1_1tree.html">tree&lt;char&gt;</a> gouy_yew;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02destructor_8cpp_03.html#a6ddd2f3f7f799d68dd95bdee668a7082">   60</a></span>&#160;[[maybe_unused]] <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02destructor_8cpp_03.html#a6ddd2f3f7f799d68dd95bdee668a7082">run</a> = []() {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">const</span> <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a> gouy_yew;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <span class="comment">// namespace fcarouge::test::destructor</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00076">tree.hpp:77</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1destructor_html"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1destructor.html">fcarouge::test::destructor</a></div><div class="ttdef"><b>Definition:</b> <a href="destructor_8cpp_source.html#l00035">destructor.cpp:36</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1destructor_html_a14a2335318e3a48a215cf046ac3fc14c"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1destructor.html#a14a2335318e3a48a215cf046ac3fc14c">fcarouge::test::destructor::ctest_post_conditions</a></div><div class="ttdeci">constexpr auto ctest_post_conditions</div><div class="ttdef"><b>Definition:</b> <a href="destructor_8cpp_source.html#l00053">destructor.cpp:53</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1destructor_html_a2c6ce183aca25b3c85f9dd40e00ce7e0"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1destructor.html#a2c6ce183aca25b3c85f9dd40e00ce7e0">fcarouge::test::destructor::ctest_traits</a></div><div class="ttdeci">constexpr auto ctest_traits</div><div class="ttdef"><b>Definition:</b> <a href="destructor_8cpp_source.html#l00038">destructor.cpp:38</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1destructor_html_a322587fc304a183b49f6fe93a03e5870"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1destructor.html#a322587fc304a183b49f6fe93a03e5870">fcarouge::test::destructor::post_conditions</a></div><div class="ttdeci">auto post_conditions</div><div class="ttdef"><b>Definition:</b> <a href="destructor_8cpp_source.html#l00060">destructor.cpp:60</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02destructor_8cpp_03_html_a180a105b6ba4b8a75dfdc839aee84fae"><div class="ttname"><a href="namespaceanonymous__namespace_02destructor_8cpp_03.html#a180a105b6ba4b8a75dfdc839aee84fae">anonymous_namespace{destructor.cpp}::traits</a></div><div class="ttdeci">constexpr auto traits</div><div class="ttdef"><b>Definition:</b> <a href="destructor_8cpp_source.html#l00038">destructor.cpp:38</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02destructor_8cpp_03_html_a6ddd2f3f7f799d68dd95bdee668a7082"><div class="ttname"><a href="namespaceanonymous__namespace_02destructor_8cpp_03.html#a6ddd2f3f7f799d68dd95bdee668a7082">anonymous_namespace{destructor.cpp}::run</a></div><div class="ttdeci">auto run</div><div class="ttdef"><b>Definition:</b> <a href="destructor_8cpp_source.html#l00060">destructor.cpp:60</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02destructor_8cpp_03_html_a8eb8e4e317d9a2a39791ea67fca6f5e9"><div class="ttname"><a href="namespaceanonymous__namespace_02destructor_8cpp_03.html#a8eb8e4e317d9a2a39791ea67fca6f5e9">anonymous_namespace{destructor.cpp}::compile</a></div><div class="ttdeci">constexpr auto compile</div><div class="ttdef"><b>Definition:</b> <a href="destructor_8cpp_source.html#l00053">destructor.cpp:53</a></div></div>
 <div class="ttc" id="atree_8hpp_html"><div class="ttname"><a href="tree_8hpp.html">tree.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -162,7 +161,7 @@ $(document).ready(function(){initNavTree('destructor_8cpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="destructor_8cpp.html">destructor.cpp</a></li>
-    <li class="footer">Generated on Wed Feb 10 2021 05:07:29 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Feb 11 2021 03:33:03 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

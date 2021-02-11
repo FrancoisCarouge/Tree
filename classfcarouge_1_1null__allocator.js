@@ -10,5 +10,5 @@ var classfcarouge_1_1null__allocator =
     [ "~null_allocator", "classfcarouge_1_1null__allocator.html#a243708aac83d9598d6b197719e5c631b", null ],
     [ "allocate", "classfcarouge_1_1null__allocator.html#a8234eaa80d18bd8b660b71fe13c1453e", null ],
     [ "deallocate", "classfcarouge_1_1null__allocator.html#ad184c451da269197d2474876684b77a7", null ],
-    [ "operator=", "classfcarouge_1_1null__allocator.html#a7c819eef7a1bec6d349faf18353f9221", null ]
+    [ "operator=", "classfcarouge_1_1null__allocator.html#a97fac151f79195a8b7bb7c9689836531", null ]
 ];

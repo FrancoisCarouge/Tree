@@ -1,5 +1,5 @@
 var constructor__rvalue__allocator_8cpp =
 [
-    [ "ctest_traits", "constructor__rvalue__allocator_8cpp.html#a35efacc641bd49a65ac0d457a920f66a", null ],
-    [ "post_conditions", "constructor__rvalue__allocator_8cpp.html#a6f1ecc46849aad3a1950cfda1cdd4e54", null ]
+    [ "post_conditions", "constructor__rvalue__allocator_8cpp.html#aa081b2e732fd274c84d09762a07b1ea2", null ],
+    [ "traits", "constructor__rvalue__allocator_8cpp.html#a4f052ba0ab28bdab8d0ef70a43a85492", null ]
 ];

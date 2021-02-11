@@ -1,5 +1,5 @@
 var emplace__front_8cpp =
 [
-    [ "empty_front", "emplace__front_8cpp.html#ab221a0b5be0f428611dd45b1f3c2859a", null ],
-    [ "root_front", "emplace__front_8cpp.html#aa150d43278b15998dd2e085dff135149", null ]
+    [ "empty_front", "emplace__front_8cpp.html#accda7f0b401015789e868a55739f29bf", null ],
+    [ "root_front", "emplace__front_8cpp.html#a60a15f832dc54a00bc1047b343a36c5b", null ]
 ];

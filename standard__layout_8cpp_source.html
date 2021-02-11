@@ -121,21 +121,20 @@ $(document).ready(function(){initNavTree('standard__layout_8cpp_source.html','')
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// std::is_standard_layout_v</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1test_1_1standard__layout.html">   35</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefcarouge_1_1test_1_1standard__layout.html">fcarouge::test::standard_layout</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02standard__layout_8cpp_03.html">   35</a></span>&#160;<span class="keyword">namespace</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespacefcarouge_1_1test_1_1standard__layout.html#a46335497a88621d4795b944dc1dd1b3c">   38</a></span>&#160;constexpr <span class="keyword">auto</span> <a class="code" href="namespacefcarouge_1_1test_1_1standard__layout.html#a46335497a88621d4795b944dc1dd1b3c">ctest_traits</a> = []() {</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02standard__layout_8cpp_03.html#a2dabf92b63ec1ca381eb40b8155ea11e">   38</a></span>&#160;[[maybe_unused]] constexpr <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02standard__layout_8cpp_03.html#a2dabf92b63ec1ca381eb40b8155ea11e">traits</a> = []() {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  static_assert(</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      std::is_standard_layout_v&lt;<a class="code" href="classfcarouge_1_1tree.html">tree&lt;char&gt;</a>&gt;,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      std::is_standard_layout_v&lt;<a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a>&gt;,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="stringliteral">&quot;The container is a standard layout class type by design choice &quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="stringliteral">&quot;which may help with memory and cross language communication.&quot;</span>);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;} <span class="comment">// namespace fcarouge::test::standard_layout</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00076">tree.hpp:77</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1standard__layout_html"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1standard__layout.html">fcarouge::test::standard_layout</a></div><div class="ttdef"><b>Definition:</b> <a href="standard__layout_8cpp_source.html#l00035">standard_layout.cpp:36</a></div></div>
-<div class="ttc" id="anamespacefcarouge_1_1test_1_1standard__layout_html_a46335497a88621d4795b944dc1dd1b3c"><div class="ttname"><a href="namespacefcarouge_1_1test_1_1standard__layout.html#a46335497a88621d4795b944dc1dd1b3c">fcarouge::test::standard_layout::ctest_traits</a></div><div class="ttdeci">constexpr auto ctest_traits</div><div class="ttdef"><b>Definition:</b> <a href="standard__layout_8cpp_source.html#l00038">standard_layout.cpp:38</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02standard__layout_8cpp_03_html_a2dabf92b63ec1ca381eb40b8155ea11e"><div class="ttname"><a href="namespaceanonymous__namespace_02standard__layout_8cpp_03.html#a2dabf92b63ec1ca381eb40b8155ea11e">anonymous_namespace{standard_layout.cpp}::traits</a></div><div class="ttdeci">constexpr auto traits</div><div class="ttdef"><b>Definition:</b> <a href="standard__layout_8cpp_source.html#l00038">standard_layout.cpp:38</a></div></div>
 <div class="ttc" id="atree_8hpp_html"><div class="ttname"><a href="tree_8hpp.html">tree.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -143,7 +142,7 @@ $(document).ready(function(){initNavTree('standard__layout_8cpp_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="standard__layout_8cpp.html">standard_layout.cpp</a></li>
-    <li class="footer">Generated on Wed Feb 10 2021 05:07:29 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Feb 11 2021 03:33:03 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
