@@ -41,17 +41,18 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <type_traits>
 // std::is_copy_constructible_v
 
-namespace fcarouge::test::constructor_copy_allocator
+namespace
 {
 //! @test Verify the copy construction with allocator exists and its exception
 //! specification.
-constexpr auto ctest_traits = []() {
+[[maybe_unused]] constexpr auto traits = []() {
   // The container cannot satisty trivial copy construction because it is not a
   // scalar type, trivially copyable class, or array of such type/class. It has
   // non-static members with default initializers. The destructor is user
   // provided.
   static_assert(
-      std::is_constructible_v<tree<char>, tree<char> &, std::allocator<char> &>,
+      std::is_constructible_v<fcarouge::tree<char>, fcarouge::tree<char> &,
+                              std::allocator<char> &>,
       "The container must be constructible from copying a tree and "
       "allocator.");
   // The container exception specification for copy construction with a custom
@@ -72,24 +73,25 @@ constexpr auto ctest_traits = []() {
 //!   3 -> {31, 32, 33}
 //! }
 //! @enddot
-auto multiple = []() {
-  tree<int> auffay_linden;
-  const tree<int>::iterator node0 =
+[[maybe_unused]] auto multiple = []() {
+  fcarouge::tree<int> auffay_linden;
+  const fcarouge::tree<int>::iterator node0 =
       auffay_linden.push(auffay_linden.begin(), 0);
-  const tree<int>::iterator node1 = auffay_linden.push(node0, 1);
+  const fcarouge::tree<int>::iterator node1 = auffay_linden.push(node0, 1);
   auffay_linden.push(node1, 11);
   auffay_linden.push(node1, 12);
   auffay_linden.push(node1, 13);
-  const tree<int>::iterator node2 = auffay_linden.push(node0, 2);
+  const fcarouge::tree<int>::iterator node2 = auffay_linden.push(node0, 2);
   auffay_linden.push(node2, 21);
   auffay_linden.push(node2, 22);
   auffay_linden.push(node2, 23);
-  const tree<int>::iterator node3 = auffay_linden.push(node0, 3);
+  const fcarouge::tree<int>::iterator node3 = auffay_linden.push(node0, 3);
   auffay_linden.push(node3, 31);
   auffay_linden.push(node3, 32);
   auffay_linden.push(node3, 33);
   std::allocator<int> allocator;
-  const tree<int, decltype(allocator)> allouville_oak(auffay_linden, allocator);
+  const fcarouge::tree<int, decltype(allocator)> allouville_oak(auffay_linden,
+                                                                allocator);
 
   assert(
       13 == allouville_oak.size() &&
@@ -101,7 +103,7 @@ auto multiple = []() {
   const std::multiset<int> expected_content{ 0,  1,  2,  3,  11, 12, 13,
                                              21, 22, 23, 31, 32, 33 };
   std::multiset<int> iterated_content;
-  tree<int>::const_iterator iterator = allouville_oak.begin();
+  fcarouge::tree<int>::const_iterator iterator = allouville_oak.begin();
   for (; iterator != allouville_oak.end(); ++iterator) {
     iterated_content.insert(*iterator);
   }
@@ -112,4 +114,4 @@ auto multiple = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::constructor_copy_allocator
+} // namespace

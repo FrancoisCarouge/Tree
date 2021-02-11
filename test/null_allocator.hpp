@@ -117,7 +117,7 @@ template <class Type> class null_allocator
   //! i.e. `*this`.
   //!
   //! @complexity Constant.
-  constexpr null_allocator &operator=(const null_allocator &other) = default;
+  null_allocator &operator=(const null_allocator &other) = default;
 
   //! @brief Destructs the allocator.
   //!

@@ -32,7 +32,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <string>
 // std::string
 
-namespace fcarouge::sample::hello_world
+namespace
 {
 //! @brief Traditional hello world demonstration.
 //!
@@ -44,9 +44,9 @@ namespace fcarouge::sample::hello_world
 //!   "Hello, " -> {"Wo", "rl", "d!"}
 //! }
 //! @enddot
-auto simple = []() {
+[[maybe_unused]] auto simple = []() {
   // Declare a "greeting" variable as a tree of strings type.
-  tree<std::string> greeting;
+  fcarouge::tree<std::string> greeting;
 
   // Push at the front of the tree a root element with string value "Hello, ".
   greeting.push_front("Hello, ");
@@ -55,7 +55,8 @@ auto simple = []() {
   greeting.push(greeting.begin(), "Wo");
 
   // Push in another element with value "d!" and keep its iterator "i".
-  const tree<std::string>::iterator i = greeting.push(greeting.begin(), "d!");
+  const fcarouge::tree<std::string>::iterator i =
+      greeting.push(greeting.begin(), "d!");
 
   // Insert a left sibling of iterator "i", child of the root, with value "rl".
   greeting.emplace(i, "rl");
@@ -63,4 +64,4 @@ auto simple = []() {
   return 0;
 }();
 
-} // namespace fcarouge::sample::hello_world
+} // namespace

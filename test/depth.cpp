@@ -35,11 +35,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <set>
 // std::multiset
 
-namespace fcarouge::test::depth
+namespace
 {
 //! @test Verify the depth of the root on a constant container.
-auto root_const = []() {
-  const tree<int> maucomble_boxwood(42);
+[[maybe_unused]] auto root_const = []() {
+  const fcarouge::tree<int> maucomble_boxwood(42);
   assert(0 == maucomble_boxwood.begin().depth() &&
          "The root depth must be equal to zero.");
 
@@ -47,8 +47,8 @@ auto root_const = []() {
 }();
 
 //! @test Verify the depth of the root.
-auto root = []() {
-  tree<int> maucomble_boxwood(42);
+[[maybe_unused]] auto root = []() {
+  fcarouge::tree<int> maucomble_boxwood(42);
   assert(0 == maucomble_boxwood.begin().depth() &&
          "The root depth must be equal to zero.");
 
@@ -66,19 +66,19 @@ auto root = []() {
 //!   3 -> {31, 32, 33}
 //! }
 //! @enddot
-auto complex = []() {
-  tree<int> auffay_linden;
-  const tree<int>::iterator node0 =
+[[maybe_unused]] auto complex = []() {
+  fcarouge::tree<int> auffay_linden;
+  const fcarouge::tree<int>::iterator node0 =
       auffay_linden.push(auffay_linden.begin(), 0);
-  const tree<int>::iterator node1 = auffay_linden.push(node0, 1);
+  const fcarouge::tree<int>::iterator node1 = auffay_linden.push(node0, 1);
   auffay_linden.push(node1, 11);
   auffay_linden.push(node1, 12);
   auffay_linden.push(node1, 13);
-  const tree<int>::iterator node2 = auffay_linden.push(node0, 2);
+  const fcarouge::tree<int>::iterator node2 = auffay_linden.push(node0, 2);
   auffay_linden.push(node2, 21);
   auffay_linden.push(node2, 22);
   auffay_linden.push(node2, 23);
-  const tree<int>::iterator node3 = auffay_linden.push(node0, 3);
+  const fcarouge::tree<int>::iterator node3 = auffay_linden.push(node0, 3);
   auffay_linden.push(node3, 31);
   auffay_linden.push(node3, 32);
   auffay_linden.push(node3, 33);
@@ -96,4 +96,4 @@ auto complex = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::depth
+} // namespace

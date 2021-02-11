@@ -32,11 +32,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
-namespace fcarouge::test::operator_assignment_lvalue
+namespace
 {
 //! @test Verify copy assigning a value to a complex tree.
-auto all_replace_all = []() {
-  tree<int> bunodiere_beech(24);
+[[maybe_unused]] auto all_replace_all = []() {
+  fcarouge::tree<int> bunodiere_beech(24);
   bunodiere_beech.push(bunodiere_beech.begin(), 240);
   bunodiere_beech.push(bunodiere_beech.begin(), 241);
   bunodiere_beech.push(bunodiere_beech.begin(), 242);
@@ -52,4 +52,4 @@ auto all_replace_all = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::operator_assignment_lvalue
+} // namespace

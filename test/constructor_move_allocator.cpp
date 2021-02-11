@@ -38,19 +38,20 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <type_traits>
 // std::is_move_constructible_v std::is_nothrow_move_constructible_v
 
-namespace fcarouge::test::constructor_move_allocator
+namespace
 {
 //! @test Verify the move construction with allocator exists and its exception
 //! specification.
-constexpr auto ctest_traits = []() {
+[[maybe_unused]] constexpr auto traits = []() {
   // The container cannot satisty trivial move construction because it is not a
   // scalar type, trivially copyable class, or array of such type/class. It has
   // non-static members with default initializers. The destructor is user
   // provided.
-  static_assert(std::is_constructible_v<tree<char>, tree<char> &&,
-                                        std::allocator<char> &>,
-                "The container must be constructible from moving a tree and "
-                "allocator.");
+  static_assert(
+      std::is_constructible_v<fcarouge::tree<char>, fcarouge::tree<char> &&,
+                              std::allocator<char> &>,
+      "The container must be constructible from moving a tree and "
+      "allocator.");
   // The container exception specification for move construction with a custom
   // allocator is to be confirmed.
 
@@ -69,25 +70,25 @@ constexpr auto ctest_traits = []() {
 //!   3 -> {31, 32, 33}
 //! }
 //! @enddot
-auto multiple = []() {
-  tree<int> auffay_linden;
-  const tree<int>::iterator node0 =
+[[maybe_unused]] auto multiple = []() {
+  fcarouge::tree<int> auffay_linden;
+  const fcarouge::tree<int>::iterator node0 =
       auffay_linden.push(auffay_linden.begin(), 999);
-  const tree<int>::iterator node1 = auffay_linden.push(node0, 1);
+  const fcarouge::tree<int>::iterator node1 = auffay_linden.push(node0, 1);
   auffay_linden.push(node1, 11);
   auffay_linden.push(node1, 12);
   auffay_linden.push(node1, 13);
-  const tree<int>::iterator node2 = auffay_linden.push(node0, 2);
+  const fcarouge::tree<int>::iterator node2 = auffay_linden.push(node0, 2);
   auffay_linden.push(node2, 21);
   auffay_linden.push(node2, 22);
   auffay_linden.push(node2, 23);
-  const tree<int>::iterator node3 = auffay_linden.push(node0, 3);
+  const fcarouge::tree<int>::iterator node3 = auffay_linden.push(node0, 3);
   auffay_linden.push(node3, 31);
   auffay_linden.push(node3, 32);
   auffay_linden.push(node3, 33);
   std::allocator<int> allocator;
-  const tree<int, decltype(allocator)> allouville_oak(std::move(auffay_linden),
-                                                      allocator);
+  const fcarouge::tree<int, decltype(allocator)> allouville_oak(
+      std::move(auffay_linden), allocator);
 
   assert(13 == allouville_oak.size() &&
          "The container must have thirteen nodes upon move-constructing a "
@@ -110,4 +111,4 @@ auto multiple = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::constructor_move_allocator
+} // namespace

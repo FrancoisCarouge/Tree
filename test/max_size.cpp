@@ -41,12 +41,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <memory>
 // std::allocator std::allocator_traits
 
-namespace fcarouge::test::max_size
+namespace
 {
 //! @test Verify the maximum number of elements the container is able to hold
 //! with the standard allocator in constant expressions.
-constexpr auto ctest_default = []() {
-  constexpr tree<int> allouville_oak;
+[[maybe_unused]] constexpr auto compile = []() {
+  constexpr fcarouge::tree<int> allouville_oak;
 
   static_assert(
       std::numeric_limits<decltype(allouville_oak)::difference_type>::max() >=
@@ -71,8 +71,8 @@ constexpr auto ctest_default = []() {
 
 //! @test Verify the maximum number of elements the container is able to hold
 //! with the standard allocator.
-auto nominal = []() {
-  const tree<int> allouville_oak;
+[[maybe_unused]] auto nominal = []() {
+  const fcarouge::tree<int> allouville_oak;
 
   assert(
       std::numeric_limits<decltype(allouville_oak)::difference_type>::max() >=
@@ -97,8 +97,8 @@ auto nominal = []() {
 
 //! @test Verify the maximum number of elements the container is able to hold
 //! with a null allocator in constant expressions.
-constexpr auto ctest_null = []() {
-  constexpr tree<int, null_allocator<int>> allouville_oak;
+[[maybe_unused]] constexpr auto null = []() {
+  constexpr fcarouge::tree<int, fcarouge::null_allocator<int>> allouville_oak;
 
   static_assert(0 == allouville_oak.max_size(),
                 "The cannot cannot support any element when used with an "
@@ -109,8 +109,8 @@ constexpr auto ctest_null = []() {
 
 //! @test Verify the maximum number of elements the container is able to hold
 //! with a null allocator.
-auto constructor_null = []() {
-  const tree<int, null_allocator<int>> allouville_oak;
+[[maybe_unused]] auto constructor_null = []() {
+  const fcarouge::tree<int, fcarouge::null_allocator<int>> allouville_oak;
 
   assert(0 == allouville_oak.max_size() &&
          "The cannot cannot support any element when used with an allocator "
@@ -119,4 +119,4 @@ auto constructor_null = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::max_size
+} // namespace

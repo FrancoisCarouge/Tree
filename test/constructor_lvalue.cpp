@@ -35,16 +35,16 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <type_traits>
 // std::is_constructible_v
 
-namespace fcarouge::test::constructor_lvalue
+namespace
 {
 //! @test Verify the construction by value exists and its exception
 //! specification.
-constexpr auto ctest_traits = []() {
+[[maybe_unused]] constexpr auto traits = []() {
   // The container cannot satisty trivial construction because it is not a
   // scalar type, trivially copyable class, or array of such type/class. It has
   // non-static members with default initializers. The destructor is user
   // provided.
-  static_assert(std::is_constructible_v<tree<char>, char &>,
+  static_assert(std::is_constructible_v<fcarouge::tree<char>, char &>,
                 "The container must be constructible from a single value.");
   // The container exception specification for construction by value with the
   // default standard allocator is to be confirmed.
@@ -53,9 +53,9 @@ constexpr auto ctest_traits = []() {
 }();
 
 //! @test Verify the construction by value post-conditions in runtime context.
-auto post_conditions = []() {
+[[maybe_unused]] auto post_conditions = []() {
   const char value = 'v';
-  const tree<char> gouy_yew(value);
+  const fcarouge::tree<char> gouy_yew(value);
 
   assert(!gouy_yew.empty() &&
          "The container must not be empty on construction by value.");
@@ -80,4 +80,4 @@ auto post_conditions = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::constructor_lvalue
+} // namespace

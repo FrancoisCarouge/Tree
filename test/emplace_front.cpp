@@ -32,12 +32,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
-namespace fcarouge::test::emplace_front
+namespace
 {
 //! @test Verify the post conditions on emplacing front an element in an emptry
 //! tree.
-auto empty_front = []() {
-  tree<int> allouville_oak;
+[[maybe_unused]] auto empty_front = []() {
+  fcarouge::tree<int> allouville_oak;
   const int value = allouville_oak.emplace_front(42);
 
   assert(1 == allouville_oak.size() &&
@@ -62,8 +62,8 @@ auto empty_front = []() {
 
 //! @test Verify the post conditions on emplacing front an element in an
 //! non-empty tree.
-auto root_front = []() {
-  tree<int> allouville_oak(42);
+[[maybe_unused]] auto root_front = []() {
+  fcarouge::tree<int> allouville_oak(42);
   const int value = allouville_oak.emplace_front(41);
 
   assert(2 == allouville_oak.size() &&
@@ -84,4 +84,4 @@ auto root_front = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::emplace_front
+} // namespace

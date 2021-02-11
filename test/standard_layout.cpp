@@ -32,16 +32,16 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <type_traits>
 // std::is_standard_layout_v
 
-namespace fcarouge::test::standard_layout
+namespace
 {
 //! @test Verify the standard layout design decision.
-constexpr auto ctest_traits = []() {
+[[maybe_unused]] constexpr auto traits = []() {
   static_assert(
-      std::is_standard_layout_v<tree<char>>,
+      std::is_standard_layout_v<fcarouge::tree<char>>,
       "The container is a standard layout class type by design choice "
       "which may help with memory and cross language communication.");
 
   return 0;
 }();
 
-} // namespace fcarouge::test::standard_layout
+} // namespace

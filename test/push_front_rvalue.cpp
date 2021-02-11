@@ -32,12 +32,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
-namespace fcarouge::test::push_front_rvalue
+namespace
 {
 //! @test Verify the post conditions on pushing front a moved element in an
 //! empty container.
-auto one = []() {
-  tree<int> auffay_linden;
+[[maybe_unused]] auto one = []() {
+  fcarouge::tree<int> auffay_linden;
   auffay_linden.push_front(42);
 
   assert(!auffay_linden.empty() &&
@@ -62,8 +62,8 @@ auto one = []() {
 
 //! @test Verify the post conditions on pushing front two moved elements in a
 //! non-empty container.
-auto multiple = []() {
-  tree<int> auffay_linden(1111);
+[[maybe_unused]] auto multiple = []() {
+  fcarouge::tree<int> auffay_linden(1111);
   auffay_linden.push_front(111);
   auffay_linden.push_front(11);
   auffay_linden.push_front(1);
@@ -88,4 +88,4 @@ auto multiple = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::push_front_rvalue
+} // namespace

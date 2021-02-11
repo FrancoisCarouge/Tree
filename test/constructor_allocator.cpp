@@ -35,14 +35,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <memory>
 // std::allocator
 
-namespace fcarouge::test::constructor_allocator
+namespace
 {
 //! @test Verify the post-conditions on constructing and populating a container
 //! with a standard allocator.
-auto construction = []() {
+[[maybe_unused]] auto construction = []() {
   std::allocator<int> allocator;
-  tree<int, decltype(allocator)> allouville_oak(allocator);
-  tree<int, decltype(allocator)>::iterator node3 =
+  fcarouge::tree<int, decltype(allocator)> allouville_oak(allocator);
+  fcarouge::tree<int, decltype(allocator)>::iterator node3 =
       allouville_oak.emplace(allouville_oak.begin(), 3);
   allouville_oak.emplace(allouville_oak.begin(), 0);
   allouville_oak.emplace(node3, 1);
@@ -59,4 +59,4 @@ auto construction = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::constructor_allocator
+} // namespace
