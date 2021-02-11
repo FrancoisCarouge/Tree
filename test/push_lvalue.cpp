@@ -35,14 +35,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <set>
 // std::multiset
 
-namespace fcarouge::test::push_lvalue
+namespace
 {
 //! @test Verify the post conditions on pushing an element by value upon the
 //! beginning iterator of an empty container.
-auto one_beginning = []() {
-  tree<int> auffay_linden;
+[[maybe_unused]] auto one_beginning = []() {
+  fcarouge::tree<int> auffay_linden;
   const int value = 42;
-  const tree<int>::const_iterator element =
+  const fcarouge::tree<int>::const_iterator element =
       auffay_linden.push(auffay_linden.begin(), value);
 
   assert(1 == auffay_linden.size() &&
@@ -64,10 +64,10 @@ auto one_beginning = []() {
 
 //! @test Verify the post conditions on pushing an element by value upon the
 //! ending iterator of an empty container.
-auto one_ending = []() {
-  tree<int> auffay_linden;
+[[maybe_unused]] auto one_ending = []() {
+  fcarouge::tree<int> auffay_linden;
   const int value = 42;
-  const tree<int>::const_iterator element =
+  const fcarouge::tree<int>::const_iterator element =
       auffay_linden.push(auffay_linden.end(), value);
 
   assert(1 == auffay_linden.size() &&
@@ -89,12 +89,12 @@ auto one_ending = []() {
 
 //! @test Verify the post conditions on pushing another element by value upon
 //! the beginning iterator of a container containing a single value.
-auto two_beginning = []() {
+[[maybe_unused]] auto two_beginning = []() {
   const int first_value = 41;
-  tree<int> auffay_linden;
+  fcarouge::tree<int> auffay_linden;
   auffay_linden.push(auffay_linden.begin(), first_value);
   const int second_value = 42;
-  const tree<int>::const_iterator element =
+  const fcarouge::tree<int>::const_iterator element =
       auffay_linden.push(auffay_linden.begin(), second_value);
 
   assert(2 == auffay_linden.size() &&
@@ -107,12 +107,12 @@ auto two_beginning = []() {
 
 //! @test Verify the post conditions on pushing another element by value upon
 //! the ending iterator of a container containing a single value.
-auto two_ending = []() {
+[[maybe_unused]] auto two_ending = []() {
   const int first_value = 41;
-  tree<int> auffay_linden;
+  fcarouge::tree<int> auffay_linden;
   auffay_linden.push(auffay_linden.end(), first_value);
   const int second_value = 42;
-  const tree<int>::const_iterator element =
+  const fcarouge::tree<int>::const_iterator element =
       auffay_linden.push(auffay_linden.end(), second_value);
 
   assert(2 == auffay_linden.size() &&
@@ -126,14 +126,14 @@ auto two_ending = []() {
 //! @test Verify the post conditions on pushing three elements by value upon
 //! the ending iterator of a container containing a single value, exercising
 //! pushing upon the root with child.
-auto three_ending = []() {
+[[maybe_unused]] auto three_ending = []() {
   const int first_value = 41;
-  tree<int> auffay_linden;
+  fcarouge::tree<int> auffay_linden;
   auffay_linden.push(auffay_linden.end(), first_value);
   const int second_value = 42;
   auffay_linden.push(auffay_linden.end(), second_value);
   const int third_value = 43;
-  const tree<int>::const_iterator element =
+  const fcarouge::tree<int>::const_iterator element =
       auffay_linden.push(auffay_linden.end(), third_value);
 
   assert(3 == auffay_linden.size() &&
@@ -156,12 +156,13 @@ auto three_ending = []() {
 //!   3 -> {31, 32, 33}
 //! }
 //! @enddot
-auto multiple = []() {
-  tree<int> auffay_linden;
+[[maybe_unused]] auto multiple = []() {
+  fcarouge::tree<int> auffay_linden;
   int value = 0;
-  tree<int>::iterator node0 = auffay_linden.push(auffay_linden.begin(), value);
+  fcarouge::tree<int>::iterator node0 =
+      auffay_linden.push(auffay_linden.begin(), value);
   value = 1;
-  tree<int>::iterator node1 = auffay_linden.push(node0, value);
+  fcarouge::tree<int>::iterator node1 = auffay_linden.push(node0, value);
   value = 11;
   auffay_linden.push(node1, value);
   value = 12;
@@ -169,7 +170,7 @@ auto multiple = []() {
   value = 13;
   auffay_linden.push(node1, value);
   value = 2;
-  tree<int>::iterator node2 = auffay_linden.push(node0, value);
+  fcarouge::tree<int>::iterator node2 = auffay_linden.push(node0, value);
   value = 21;
   auffay_linden.push(node2, value);
   value = 22;
@@ -177,7 +178,7 @@ auto multiple = []() {
   value = 23;
   auffay_linden.push(node2, value);
   value = 3;
-  tree<int>::iterator node3 = auffay_linden.push(node0, value);
+  fcarouge::tree<int>::iterator node3 = auffay_linden.push(node0, value);
   value = 31;
   auffay_linden.push(node3, value);
   value = 32;
@@ -187,7 +188,7 @@ auto multiple = []() {
   const std::multiset<int> expected_content{ 0,  1,  2,  3,  11, 12, 13,
                                              21, 22, 23, 31, 32, 33 };
   std::multiset<int> iterated_content;
-  tree<int>::const_iterator iterator = auffay_linden.begin();
+  fcarouge::tree<int>::const_iterator iterator = auffay_linden.begin();
   for (; iterator != auffay_linden.end(); ++iterator) {
     iterated_content.insert(*iterator);
   }
@@ -206,4 +207,4 @@ auto multiple = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::push_lvalue
+} // namespace

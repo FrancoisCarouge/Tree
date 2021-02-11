@@ -38,26 +38,26 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <type_traits>
 // std::is_move_assignable_v std::is_nothrow_move_assignable_v
 
-namespace fcarouge::test::operator_assignment_move
+namespace
 {
 //! @test Verify the move assignment exists and its exception specification.
-constexpr auto ctest_traits = []() {
+[[maybe_unused]] constexpr auto traits = []() {
   // The container cannot satisty trivial move assignment because it is not a
   // scalar type, trivially copyable class, or array of such type/class. It has
   // non-static members with default initializers. The destructor is user
   // provided.
-  static_assert(std::is_move_assignable_v<tree<char>>,
+  static_assert(std::is_move_assignable_v<fcarouge::tree<char>>,
                 "The container is required to be move assignable.");
-  static_assert(std::is_nothrow_move_assignable_v<tree<char>>,
+  static_assert(std::is_nothrow_move_assignable_v<fcarouge::tree<char>>,
                 "The container is required to be nothrow move assignable.");
 
   return 0;
 }();
 
 //! @test Verify move assigning an empty tree to an empty tree.
-auto empty = []() {
-  tree<int> auffay_linden;
-  tree<int> bunodiere_beech;
+[[maybe_unused]] auto empty = []() {
+  fcarouge::tree<int> auffay_linden;
+  fcarouge::tree<int> bunodiere_beech;
   bunodiere_beech = std::move(auffay_linden);
 
   assert(0 == bunodiere_beech.size() &&
@@ -74,12 +74,12 @@ auto empty = []() {
 
 //! @test Verify move assigning a complex tree to a complex tree with identical
 //! topology.
-auto all_replace_all = []() {
-  tree<int> auffay_linden(42);
+[[maybe_unused]] auto all_replace_all = []() {
+  fcarouge::tree<int> auffay_linden(42);
   auffay_linden.push(auffay_linden.begin(), 420);
   auffay_linden.push(auffay_linden.begin(), 421);
   auffay_linden.push(auffay_linden.begin(), 422);
-  tree<int> bunodiere_beech(24);
+  fcarouge::tree<int> bunodiere_beech(24);
   bunodiere_beech.push(bunodiere_beech.begin(), 240);
   bunodiere_beech.push(bunodiere_beech.begin(), 241);
   bunodiere_beech.push(bunodiere_beech.begin(), 242);
@@ -96,12 +96,12 @@ auto all_replace_all = []() {
 }();
 
 //! @test Verify move assigning a complex tree to an empty tree.
-auto none_replace_all = []() {
-  tree<int> auffay_linden(42);
+[[maybe_unused]] auto none_replace_all = []() {
+  fcarouge::tree<int> auffay_linden(42);
   auffay_linden.push(auffay_linden.begin(), 420);
   auffay_linden.push(auffay_linden.begin(), 421);
   auffay_linden.push(auffay_linden.begin(), 422);
-  tree<int> bunodiere_beech;
+  fcarouge::tree<int> bunodiere_beech;
   bunodiere_beech = std::move(auffay_linden);
 
   assert(!bunodiere_beech.empty() && "The container must not be empty.");
@@ -115,9 +115,9 @@ auto none_replace_all = []() {
 }();
 
 //! @test Verify move assigning an empty tree to a complex tree.
-auto all_replace_none = []() {
-  tree<int> auffay_linden;
-  tree<int> bunodiere_beech(24);
+[[maybe_unused]] auto all_replace_none = []() {
+  fcarouge::tree<int> auffay_linden;
+  fcarouge::tree<int> bunodiere_beech(24);
   bunodiere_beech.push(bunodiere_beech.begin(), 240);
   bunodiere_beech.push(bunodiere_beech.begin(), 241);
   bunodiere_beech.push(bunodiere_beech.begin(), 242);
@@ -136,8 +136,8 @@ auto all_replace_none = []() {
 }();
 
 //! @test Verify self move assigning.
-auto self = []() {
-  tree<int> bunodiere_beech(42);
+[[maybe_unused]] auto self = []() {
+  fcarouge::tree<int> bunodiere_beech(42);
   bunodiere_beech.push(bunodiere_beech.begin(), 420);
   bunodiere_beech.push(bunodiere_beech.begin(), 421);
   bunodiere_beech.push(bunodiere_beech.begin(), 422);
@@ -153,4 +153,4 @@ auto self = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::operator_assignment_move
+} // namespace

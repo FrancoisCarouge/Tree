@@ -35,20 +35,20 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <type_traits>
 // std::is_default_constructible_v std::is_nothrow_default_constructible_v
 
-namespace fcarouge::test::constructor_default
+namespace
 {
 //! @test Verify the default construction exists and its exception
 //! specification.
-constexpr auto ctest_traits = []() {
+[[maybe_unused]] constexpr auto traits = []() {
   // The container cannot satisty trivial default construction because it is not
   // a scalar type, trivially copyable class, or array of such type/class. It
   // has non-static members with default initializers. The destructor is user
   // provided.
   static_assert(
-      std::is_default_constructible_v<tree<char>>,
+      std::is_default_constructible_v<fcarouge::tree<char>>,
       "The container must satisfy the DefaultConstructible requirement.");
   static_assert(
-      std::is_nothrow_default_constructible_v<tree<char>>,
+      std::is_nothrow_default_constructible_v<fcarouge::tree<char>>,
       "The container must satisfy the non-throwing "
       "DefaultConstructible requirement with the default standard allocator.");
 
@@ -57,8 +57,8 @@ constexpr auto ctest_traits = []() {
 
 //! @test Verify the default construction post-conditions in constant
 //! expressions.
-constexpr auto ctest_post_conditions = []() {
-  constexpr tree<char> allouville_oak;
+[[maybe_unused]] constexpr auto compile = []() {
+  constexpr fcarouge::tree<char> allouville_oak;
 
   static_assert(allouville_oak.empty(),
                 "The container must be empty on default construction.");
@@ -77,8 +77,8 @@ constexpr auto ctest_post_conditions = []() {
 }();
 
 //! @test Verify the default construction post-conditions in runtime context.
-auto post_conditions = []() {
-  const tree<char> allouville_oak;
+[[maybe_unused]] auto run = []() {
+  const fcarouge::tree<char> allouville_oak;
 
   assert(allouville_oak.empty() &&
          "The container must be empty on default construction.");
@@ -94,4 +94,4 @@ auto post_conditions = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::constructor_default
+} // namespace

@@ -32,12 +32,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
-namespace fcarouge::test::clear
+namespace
 {
 //! @test Verify the post-conditions on clearing a default constructed
 //! container.
-auto empty = []() {
-  tree<int> maucomble_boxwood;
+[[maybe_unused]] auto empty = []() {
+  fcarouge::tree<int> maucomble_boxwood;
   maucomble_boxwood.clear();
 
   assert(0 == maucomble_boxwood.size() &&
@@ -56,9 +56,9 @@ auto empty = []() {
 
 //! @test Verify the post-conditions on clearing a container constructed from a
 //! single value.
-auto lvalue = []() {
+[[maybe_unused]] auto lvalue = []() {
   const int value = 42;
-  tree<int> maucomble_boxwood(value);
+  fcarouge::tree<int> maucomble_boxwood(value);
   maucomble_boxwood.clear();
 
   assert(0 == maucomble_boxwood.size() &&
@@ -87,19 +87,19 @@ auto lvalue = []() {
 //!   3 -> {31, 32, 33}
 //! }
 //! @enddot
-auto multiple = []() {
-  tree<int> maucomble_boxwood;
-  tree<int>::iterator node0 =
+[[maybe_unused]] auto multiple = []() {
+  fcarouge::tree<int> maucomble_boxwood;
+  fcarouge::tree<int>::iterator node0 =
       maucomble_boxwood.push(maucomble_boxwood.begin(), 0);
-  tree<int>::iterator node1 = maucomble_boxwood.push(node0, 1);
+  fcarouge::tree<int>::iterator node1 = maucomble_boxwood.push(node0, 1);
   maucomble_boxwood.push(node1, 11);
   maucomble_boxwood.push(node1, 12);
   maucomble_boxwood.push(node1, 13);
-  tree<int>::iterator node2 = maucomble_boxwood.push(node0, 2);
+  fcarouge::tree<int>::iterator node2 = maucomble_boxwood.push(node0, 2);
   maucomble_boxwood.push(node2, 21);
   maucomble_boxwood.push(node2, 22);
   maucomble_boxwood.push(node2, 23);
-  tree<int>::iterator node3 = maucomble_boxwood.push(node0, 3);
+  fcarouge::tree<int>::iterator node3 = maucomble_boxwood.push(node0, 3);
   maucomble_boxwood.push(node3, 31);
   maucomble_boxwood.push(node3, 32);
   maucomble_boxwood.push(node3, 33);
@@ -119,4 +119,4 @@ auto multiple = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::clear
+} // namespace

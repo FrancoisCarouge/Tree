@@ -32,13 +32,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
-namespace fcarouge::test::emplace
+namespace
 {
 //! @test Verify the post conditions on emplacing an element at the beginning
 //! iterator of an emptry tree.
-auto empty_begin = []() {
-  tree<int> allouville_oak;
-  const tree<int>::iterator node =
+[[maybe_unused]] auto empty_begin = []() {
+  fcarouge::tree<int> allouville_oak;
+  const fcarouge::tree<int>::iterator node =
       allouville_oak.emplace(allouville_oak.begin(), 42);
 
   assert(1 == allouville_oak.size() &&
@@ -66,9 +66,9 @@ auto empty_begin = []() {
 
 //! @test Verify the post conditions on emplacing an element at the ending
 //! iterator of an emptry tree.
-auto empty_end = []() {
-  tree<int> allouville_oak;
-  const tree<int>::iterator node =
+[[maybe_unused]] auto empty_end = []() {
+  fcarouge::tree<int> allouville_oak;
+  const fcarouge::tree<int>::iterator node =
       allouville_oak.emplace(allouville_oak.end(), 42);
 
   assert(1 == allouville_oak.size() &&
@@ -96,9 +96,9 @@ auto empty_end = []() {
 
 //! @test Verify the post conditions on emplacing an element at the root
 //! iterator.
-auto root_begin = []() {
-  tree<int> allouville_oak(42);
-  const tree<int>::iterator node =
+[[maybe_unused]] auto root_begin = []() {
+  fcarouge::tree<int> allouville_oak(42);
+  const fcarouge::tree<int>::iterator node =
       allouville_oak.emplace(allouville_oak.begin(), 41);
 
   assert(2 == allouville_oak.size() &&
@@ -126,8 +126,8 @@ auto root_begin = []() {
 
 //! @test Verify the post conditions on emplacing an element at the ending
 //! iterator of a tree with a single node.
-auto root_end = []() {
-  tree<int> allouville_oak(42);
+[[maybe_unused]] auto root_end = []() {
+  fcarouge::tree<int> allouville_oak(42);
   allouville_oak.emplace(allouville_oak.end(), 43);
 
   assert(2 == allouville_oak.size() &&
@@ -152,14 +152,14 @@ auto root_end = []() {
 //! }
 //! @enddot
 //!
-auto multiple = []() {
-  tree<int> allouville_oak;
-  const tree<int>::iterator node33 =
+[[maybe_unused]] auto multiple = []() {
+  fcarouge::tree<int> allouville_oak;
+  const fcarouge::tree<int>::iterator node33 =
       allouville_oak.emplace(allouville_oak.begin(), 33);
-  const tree<int>::iterator node3 = allouville_oak.emplace(node33, 3);
-  const tree<int>::iterator node333 =
+  const fcarouge::tree<int>::iterator node3 = allouville_oak.emplace(node33, 3);
+  const fcarouge::tree<int>::iterator node333 =
       allouville_oak.emplace(allouville_oak.end(), 333);
-  const tree<int>::const_iterator node0 =
+  const fcarouge::tree<int>::const_iterator node0 =
       allouville_oak.emplace(allouville_oak.begin(), -1);
   allouville_oak.emplace(node3, 1);
   allouville_oak.emplace(node3, 2);
@@ -191,4 +191,4 @@ auto multiple = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::emplace
+} // namespace

@@ -32,12 +32,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
-namespace fcarouge::test::erase_const_iterator
+namespace
 {
 //! @test Verify the post-conditions on erasing the sole element of a container.
-auto sole = []() {
-  tree<int> allouville_oak(42);
-  const tree<int>::const_iterator iterator =
+[[maybe_unused]] auto sole = []() {
+  fcarouge::tree<int> allouville_oak(42);
+  const fcarouge::tree<int>::const_iterator iterator =
       allouville_oak.erase(allouville_oak.begin());
 
   assert(allouville_oak.empty() && "The container must be empty on erasing the "
@@ -59,14 +59,15 @@ auto sole = []() {
 }();
 
 //! @test Verify the post-conditions on erasing the last element of a tree.
-auto last = []() {
-  tree<int> allouville_oak;
-  const tree<int>::const_iterator node3 =
+[[maybe_unused]] auto last = []() {
+  fcarouge::tree<int> allouville_oak;
+  const fcarouge::tree<int>::const_iterator node3 =
       allouville_oak.emplace(allouville_oak.begin(), 3);
   allouville_oak.emplace(allouville_oak.begin(), 0);
   allouville_oak.emplace(node3, 1);
   allouville_oak.emplace(node3, 2);
-  const tree<int>::const_iterator iterator = allouville_oak.erase(node3);
+  const fcarouge::tree<int>::const_iterator iterator =
+      allouville_oak.erase(node3);
 
   assert(
       !allouville_oak.empty() &&
@@ -82,15 +83,16 @@ auto last = []() {
 }();
 
 //! @test Verify the post-conditions on erasing the root element of a tree.
-auto root = []() {
-  tree<int> allouville_oak;
-  const tree<int>::const_iterator node3 =
+[[maybe_unused]] auto root = []() {
+  fcarouge::tree<int> allouville_oak;
+  const fcarouge::tree<int>::const_iterator node3 =
       allouville_oak.emplace(allouville_oak.begin(), 3);
-  const tree<int>::const_iterator root =
+  const fcarouge::tree<int>::const_iterator root =
       allouville_oak.emplace(allouville_oak.begin(), 0);
   allouville_oak.emplace(node3, 1);
   allouville_oak.emplace(node3, 2);
-  const tree<int>::const_iterator iterator = allouville_oak.erase(root);
+  const fcarouge::tree<int>::const_iterator iterator =
+      allouville_oak.erase(root);
 
   assert(allouville_oak.empty() &&
          "The container must be empty on erasing its root.");
@@ -110,17 +112,20 @@ auto root = []() {
 }();
 
 //! @test Verify the post-conditions on erasing various elements of a tree.
-auto multiple = []() {
-  tree<int> allouville_oak;
-  const tree<int>::const_iterator node33 =
+[[maybe_unused]] auto multiple = []() {
+  fcarouge::tree<int> allouville_oak;
+  const fcarouge::tree<int>::const_iterator node33 =
       allouville_oak.emplace(allouville_oak.begin(), 33);
-  const tree<int>::const_iterator node3 = allouville_oak.emplace(node33, 3);
+  const fcarouge::tree<int>::const_iterator node3 =
+      allouville_oak.emplace(node33, 3);
   allouville_oak.emplace(allouville_oak.begin(), 0);
   allouville_oak.emplace(node3, 1);
   allouville_oak.emplace(node3, 2);
-  const tree<int>::const_iterator node31 = allouville_oak.emplace(node33, 31);
-  const tree<int>::const_iterator node32 = allouville_oak.emplace(node33, 32);
-  tree<int>::const_iterator iterator = allouville_oak.erase(node32);
+  const fcarouge::tree<int>::const_iterator node31 =
+      allouville_oak.emplace(node33, 31);
+  const fcarouge::tree<int>::const_iterator node32 =
+      allouville_oak.emplace(node33, 32);
+  fcarouge::tree<int>::const_iterator iterator = allouville_oak.erase(node32);
 
   assert(6 == allouville_oak.size() && "The container must contain six nodes.");
   assert(!allouville_oak.empty() && "The container must not be empty.");
@@ -146,4 +151,4 @@ auto multiple = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::erase_const_iterator
+} // namespace

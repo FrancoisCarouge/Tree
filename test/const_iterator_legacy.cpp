@@ -44,130 +44,147 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 // std::is_trivially_destructible_v std::is_trivially_move_assignable_v
 // std::is_trivially_move_constructible_v
 
-namespace fcarouge::test::const_iterator_legacy
+namespace
 {
 //! @test Verify the iterator meets the LegacyIterator requirements.
-constexpr auto ctest_traits = []() {
+[[maybe_unused]] constexpr auto traits = []() {
   static_assert(
-      std::is_move_constructible_v<tree<char>::const_iterator>,
+      std::is_move_constructible_v<fcarouge::tree<char>::const_iterator>,
       "The container constant iterator type member must satisfy the "
       "LegacyIterator requirement. The LegacyIterator requirement must satisfy "
       "the CopyConstructible requirement. The CopyConstructible requirement "
       "must satisfy the MoveConstructible requirement.");
   static_assert(
-      std::is_trivially_move_constructible_v<tree<char>::const_iterator>,
+      std::is_trivially_move_constructible_v<
+          fcarouge::tree<char>::const_iterator>,
       "The container constant iterator type member must satisfy the "
       "LegacyIterator requirement. The LegacyIterator requirement must satisfy "
       "the CopyConstructible requirement. The CopyConstructible requirement "
       "must satisfy the MoveConstructible requirement.");
   static_assert(
-      std::is_nothrow_move_constructible_v<tree<char>::const_iterator>,
+      std::is_nothrow_move_constructible_v<
+          fcarouge::tree<char>::const_iterator>,
       "The container constant iterator type member must satisfy the "
       "LegacyIterator requirement. The LegacyIterator requirement must satisfy "
       "the CopyConstructible requirement. The CopyConstructible requirement "
       "must satisfy the MoveConstructible requirement.");
-  static_assert(std::is_copy_constructible_v<tree<char>::const_iterator>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "must satisfy the CopyConstructible requirement.");
   static_assert(
-      std::is_trivially_copy_constructible_v<tree<char>::const_iterator>,
+      std::is_copy_constructible_v<fcarouge::tree<char>::const_iterator>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "must satisfy the CopyConstructible requirement.");
+  static_assert(
+      std::is_trivially_copy_constructible_v<
+          fcarouge::tree<char>::const_iterator>,
       "The container constant iterator type member must satisfy the "
       "LegacyIterator requirement. The LegacyIterator requirement must satisfy "
       "the CopyConstructible requirement.");
   static_assert(
-      std::is_nothrow_copy_constructible_v<tree<char>::const_iterator>,
+      std::is_nothrow_copy_constructible_v<
+          fcarouge::tree<char>::const_iterator>,
       "The container constant iterator type member must satisfy the "
       "LegacyIterator requirement. The LegacyIterator requirement must satisfy "
       "the CopyConstructible requirement.");
   static_assert(
-      std::is_move_assignable_v<tree<char>::const_iterator>,
+      std::is_move_assignable_v<fcarouge::tree<char>::const_iterator>,
       "The container constant iterator type member must satisfy the "
       "LegacyIterator requirement. The LegacyIterator requirement must satisfy "
       "the CopyAssignable requirement. The CopyAssignable requirement must "
       "satisfy the MoveAssignable requirement.");
   static_assert(
-      std::is_trivially_move_assignable_v<tree<char>::const_iterator>,
+      std::is_trivially_move_assignable_v<fcarouge::tree<char>::const_iterator>,
       "The container constant iterator type member must satisfy the "
       "LegacyIterator requirement. The LegacyIterator requirement must satisfy "
       "the CopyAssignable requirement. The CopyAssignable requirement must "
       "satisfy the MoveAssignable requirement.");
   static_assert(
-      std::is_nothrow_move_assignable_v<tree<char>::const_iterator>,
+      std::is_nothrow_move_assignable_v<fcarouge::tree<char>::const_iterator>,
       "The container constant iterator type member must satisfy the "
       "LegacyIterator requirement. The LegacyIterator requirement must satisfy "
       "the CopyAssignable requirement. The CopyAssignable requirement must "
       "satisfy the MoveAssignable requirement.");
-  static_assert(std::is_copy_assignable_v<tree<char>::const_iterator>,
+  static_assert(std::is_copy_assignable_v<fcarouge::tree<char>::const_iterator>,
                 "The container constant iterator type member must satisfy the "
                 "LegacyIterator requirement. The LegacyIterator requirement "
                 "must satisfy the CopyAssignable requirement.");
-  static_assert(std::is_trivially_copy_assignable_v<tree<char>::const_iterator>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "must satisfy the CopyAssignable requirement.");
-  static_assert(std::is_nothrow_copy_assignable_v<tree<char>::const_iterator>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "must satisfy the CopyAssignable requirement.");
-  static_assert(std::is_destructible_v<tree<char>::const_iterator>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "must satisfy the Destructible requirement.");
-  static_assert(std::is_trivially_destructible_v<tree<char>::const_iterator>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "must satisfy the Destructible requirement.");
-  static_assert(std::is_nothrow_destructible_v<tree<char>::const_iterator>,
+  static_assert(
+      std::is_trivially_copy_assignable_v<fcarouge::tree<char>::const_iterator>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "must satisfy the CopyAssignable requirement.");
+  static_assert(
+      std::is_nothrow_copy_assignable_v<fcarouge::tree<char>::const_iterator>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "must satisfy the CopyAssignable requirement.");
+  static_assert(std::is_destructible_v<fcarouge::tree<char>::const_iterator>,
                 "The container constant iterator type member must satisfy the "
                 "LegacyIterator requirement. The LegacyIterator requirement "
                 "must satisfy the Destructible requirement.");
-  static_assert(std::is_swappable_v<tree<char>::const_iterator>,
+  static_assert(
+      std::is_trivially_destructible_v<fcarouge::tree<char>::const_iterator>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "must satisfy the Destructible requirement.");
+  static_assert(
+      std::is_nothrow_destructible_v<fcarouge::tree<char>::const_iterator>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "must satisfy the Destructible requirement.");
+  static_assert(std::is_swappable_v<fcarouge::tree<char>::const_iterator>,
                 "The container constant iterator type member must satisfy the "
                 "LegacyIterator requirement. The LegacyIterator requirement "
                 "must satisfy the Swappable requirement.");
-  static_assert(std::is_nothrow_swappable_v<tree<char>::const_iterator>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "must satisfy the Swappable requirement.");
-  static_assert(std::is_same_v<char, tree<char>::const_iterator::value_type>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "has member typedef `value_type`.");
-  static_assert(std::is_integral_v<tree<char>::const_iterator::difference_type>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "has member typedef `difference_type`. The difference type "
-                "member must be of integral type.");
-  static_assert(std::is_signed_v<tree<char>::const_iterator::difference_type>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "has member typedef `difference_type`. The difference type "
-                "member must be of signed type.");
-  static_assert(std::is_same_v<tree<char>::difference_type,
-                               tree<char>::const_iterator::difference_type>,
-                "The container constant iterator difference type member must "
-                "be the same as the container difference type.");
-  static_assert(std::is_same_v<char &, tree<char>::const_iterator::reference>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "has member typedef `reference`.");
-  static_assert(std::is_same_v<char *, tree<char>::const_iterator::pointer>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "has member typedef `pointer`.");
-  static_assert(std::is_same_v<std::input_iterator_tag,
-                               tree<char>::const_iterator::iterator_category>,
-                "The container constant iterator type member must satisfy the "
-                "LegacyIterator requirement. The LegacyIterator requirement "
-                "has member typedefs `iterator_category`.");
+  static_assert(
+      std::is_nothrow_swappable_v<fcarouge::tree<char>::const_iterator>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "must satisfy the Swappable requirement.");
+  static_assert(
+      std::is_same_v<char, fcarouge::tree<char>::const_iterator::value_type>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "has member typedef `value_type`.");
+  static_assert(
+      std::is_integral_v<fcarouge::tree<char>::const_iterator::difference_type>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "has member typedef `difference_type`. The difference type "
+      "member must be of integral type.");
+  static_assert(
+      std::is_signed_v<fcarouge::tree<char>::const_iterator::difference_type>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "has member typedef `difference_type`. The difference type "
+      "member must be of signed type.");
+  static_assert(
+      std::is_same_v<fcarouge::tree<char>::difference_type,
+                     fcarouge::tree<char>::const_iterator::difference_type>,
+      "The container constant iterator difference type member must "
+      "be the same as the container difference type.");
+  static_assert(
+      std::is_same_v<char &, fcarouge::tree<char>::const_iterator::reference>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "has member typedef `reference`.");
+  static_assert(
+      std::is_same_v<char *, fcarouge::tree<char>::const_iterator::pointer>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "has member typedef `pointer`.");
+  static_assert(
+      std::is_same_v<std::input_iterator_tag,
+                     fcarouge::tree<char>::const_iterator::iterator_category>,
+      "The container constant iterator type member must satisfy the "
+      "LegacyIterator requirement. The LegacyIterator requirement "
+      "has member typedefs `iterator_category`.");
   static_assert(std::is_member_function_pointer_v<decltype(
-                    &tree<char>::const_iterator::operator*)>,
+                    &fcarouge::tree<char>::const_iterator::operator*)>,
                 "The container constant iterator type member must satisfy the "
                 "LegacyIterator requirement. The LegacyIterator requirement "
                 "lvalue is dereferenceable.");
   static_assert(std::is_member_function_pointer_v<decltype(
-                    &tree<char>::const_iterator::operator++)>,
+                    &fcarouge::tree<char>::const_iterator::operator++)>,
                 "The container constant iterator type member must satisfy the "
                 "LegacyIterator requirement. The LegacyIterator requirement "
                 "lvalue is incrementable.");
@@ -177,10 +194,10 @@ constexpr auto ctest_traits = []() {
 
 //! @test Verify the post conditions of incrementing a valid beggining constant
 //! iterator followed by a valid node.
-auto post_conditions = []() {
-  tree<int> allouville_oak(42);
+[[maybe_unused]] auto post_conditions = []() {
+  fcarouge::tree<int> allouville_oak(42);
   allouville_oak.push(allouville_oak.begin(), 43);
-  tree<int>::const_iterator iterator = ++allouville_oak.begin();
+  fcarouge::tree<int>::const_iterator iterator = ++allouville_oak.begin();
 
   assert(43 == *iterator && "The incremented beginning constant iterator's "
                             "value must be equal to the pushed element value.");
@@ -197,4 +214,4 @@ auto post_conditions = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::const_iterator_legacy
+} // namespace

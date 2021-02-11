@@ -32,35 +32,35 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <type_traits>
 // std::is_destructible_v std::is_nothrow_destructible_v
 
-namespace fcarouge::test::destructor
+namespace
 {
 //! @test Verify the destruction exists and its exception specification.
-constexpr auto ctest_traits = []() {
+[[maybe_unused]] constexpr auto traits = []() {
   // The container cannot satisty trivial destruction because it is not a
   // scalar type, trivially copyable class, or array of such type/class. It has
   // non-static members with default initializers. The destructor is user
   // provided.
-  static_assert(std::is_destructible_v<tree<char>>,
+  static_assert(std::is_destructible_v<fcarouge::tree<char>>,
                 "The container must satisfy the Destructible requirement.");
   static_assert(
-      std::is_nothrow_destructible_v<tree<char>>,
+      std::is_nothrow_destructible_v<fcarouge::tree<char>>,
       "The container must satisfy the non-throwing Destructible requirement.");
 
   return 0;
 }();
 
 //! @test Verify the basic destruction post-conditions in constant expressions.
-constexpr auto ctest_post_conditions = []() {
-  constexpr tree<char> allouville_oak;
+[[maybe_unused]] constexpr auto compile = []() {
+  constexpr fcarouge::tree<char> allouville_oak;
 
   return 0;
 }();
 
 //! @test Verify the basic destruction post-conditions in runtime context.
-auto post_conditions = []() {
-  const tree<char> gouy_yew;
+[[maybe_unused]] auto run = []() {
+  const fcarouge::tree<char> gouy_yew;
 
   return 0;
 }();
 
-} // namespace fcarouge::test::destructor
+} // namespace

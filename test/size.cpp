@@ -32,12 +32,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
-namespace fcarouge::test::size
+namespace
 {
 //! @test Verify the size of a default constructed container in constant
 //! expressions.
-constexpr auto ctest_constructor_default = []() {
-  constexpr tree<int> allouville_oak;
+[[maybe_unused]] constexpr auto compile = []() {
+  constexpr fcarouge::tree<int> allouville_oak;
 
   static_assert(0 == allouville_oak.size(),
                 "The container must have zero node on default construction.");
@@ -46,8 +46,8 @@ constexpr auto ctest_constructor_default = []() {
 }();
 
 //! @test Verify the size of a default constructed container.
-auto constructor_default = []() {
-  tree<int> allouville_oak;
+[[maybe_unused]] auto constructor_default = []() {
+  fcarouge::tree<int> allouville_oak;
 
   assert(0 == allouville_oak.size() &&
          "The container must have zero node on default construction.");
@@ -56,9 +56,9 @@ auto constructor_default = []() {
 }();
 
 //! @test Verify the size of a container constructed by value.
-auto constructor_lvalue = []() {
+[[maybe_unused]] auto constructor_lvalue = []() {
   const int value = 42;
-  tree<int> allouville_oak(value);
+  fcarouge::tree<int> allouville_oak(value);
 
   assert(1 == allouville_oak.size() &&
          "The container must have one node on construction by value.");
@@ -67,8 +67,8 @@ auto constructor_lvalue = []() {
 }();
 
 //! @test Verify the size of a container constructed by moving the value.
-auto constructor_rvalue = []() {
-  tree<int> allouville_oak(42);
+[[maybe_unused]] auto constructor_rvalue = []() {
+  fcarouge::tree<int> allouville_oak(42);
 
   assert(
       1 == allouville_oak.size() &&
@@ -78,11 +78,11 @@ auto constructor_rvalue = []() {
 }();
 
 //! @test Verify the size of a container built with multiple elements.
-auto multiple = []() {
-  tree<int> allouville_oak;
-  tree<int>::iterator node33 =
+[[maybe_unused]] auto multiple = []() {
+  fcarouge::tree<int> allouville_oak;
+  fcarouge::tree<int>::iterator node33 =
       allouville_oak.emplace(allouville_oak.begin(), 33);
-  tree<int>::iterator node3 = allouville_oak.emplace(node33, 3);
+  fcarouge::tree<int>::iterator node3 = allouville_oak.emplace(node33, 3);
   allouville_oak.emplace(allouville_oak.end(), 333);
   allouville_oak.emplace(allouville_oak.begin(), 0);
   allouville_oak.emplace(node3, 1);
@@ -99,4 +99,4 @@ auto multiple = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::size
+} // namespace

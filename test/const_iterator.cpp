@@ -33,29 +33,30 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 // std::is_aggregate_v std::is_copy_constructible_v
 // std::is_trivially_copy_constructible_v std::is_convertible_v
 
-namespace fcarouge::test::const_iterator
+namespace
 {
 //! @test Verify basic traits for the container default `const_iterator` type.
-constexpr auto ctest_traits = []() {
+[[maybe_unused]] constexpr auto traits = []() {
   // The container's constant iterator cannot be an aggregate type because the
   // iterator must be implicitely convertible to this constant iterator.
   static_assert(
-      std::is_copy_constructible_v<tree<char>::const_iterator>,
+      std::is_copy_constructible_v<fcarouge::tree<char>::const_iterator>,
       "The container's constant iterator type must be copy constructible.");
+  static_assert(std::is_trivially_copy_constructible_v<
+                    fcarouge::tree<char>::const_iterator>,
+                "The container's constant iterator type must be trivially copy "
+                "constructible.");
   static_assert(
-      std::is_trivially_copy_constructible_v<tree<char>::const_iterator>,
-      "The container's constant iterator type must be trivially copy "
-      "constructible.");
-  static_assert(
-      std::is_convertible_v<tree<char>::iterator, tree<char>::const_iterator>,
+      std::is_convertible_v<fcarouge::tree<char>::iterator,
+                            fcarouge::tree<char>::const_iterator>,
       "The container's iterator type must be implicitely convertible to its "
       "constant equivalent type.");
-  static_assert(
-      !std::is_convertible_v<tree<char>::const_iterator, tree<char>::iterator>,
-      "The container's constant iterator type cannot be implicitely "
-      "convertible to its non-constant equivalent type.");
+  static_assert(!std::is_convertible_v<fcarouge::tree<char>::const_iterator,
+                                       fcarouge::tree<char>::iterator>,
+                "The container's constant iterator type cannot be implicitely "
+                "convertible to its non-constant equivalent type.");
 
   return 0;
 }();
 
-} // namespace fcarouge::test::const_iterator
+} // namespace

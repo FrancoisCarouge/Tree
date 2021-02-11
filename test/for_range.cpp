@@ -35,7 +35,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <set>
 // std::multiset
 
-namespace fcarouge::test::for_range
+namespace
 {
 //! @test Verify the range-based for loop support for the container. The
 //! iteration order of the standard iterator is unspecified, except that each
@@ -51,19 +51,19 @@ namespace fcarouge::test::for_range
 //!   3 -> {31, 32, 33}
 //! }
 //! @enddot
-auto complex = []() {
-  tree<int> auffay_linden;
-  const tree<int>::iterator node0 =
+[[maybe_unused]] auto complex = []() {
+  fcarouge::tree<int> auffay_linden;
+  const fcarouge::tree<int>::iterator node0 =
       auffay_linden.push(auffay_linden.begin(), 0);
-  const tree<int>::iterator node1 = auffay_linden.push(node0, 1);
+  const fcarouge::tree<int>::iterator node1 = auffay_linden.push(node0, 1);
   auffay_linden.push(node1, 11);
   auffay_linden.push(node1, 12);
   auffay_linden.push(node1, 13);
-  const tree<int>::iterator node2 = auffay_linden.push(node0, 2);
+  const fcarouge::tree<int>::iterator node2 = auffay_linden.push(node0, 2);
   auffay_linden.push(node2, 21);
   auffay_linden.push(node2, 22);
   auffay_linden.push(node2, 23);
-  const tree<int>::iterator node3 = auffay_linden.push(node0, 3);
+  const fcarouge::tree<int>::iterator node3 = auffay_linden.push(node0, 3);
   auffay_linden.push(node3, 31);
   auffay_linden.push(node3, 32);
   auffay_linden.push(node3, 33);
@@ -80,4 +80,4 @@ auto complex = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::for_range
+} // namespace

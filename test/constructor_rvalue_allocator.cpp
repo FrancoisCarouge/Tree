@@ -38,17 +38,18 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <type_traits>
 // std::is_constructible_v
 
-namespace fcarouge::test::constructor_rvalue_allocator
+namespace
 {
 //! @test Verify the construction by moving a value exists and its exception
 //! specification.
-constexpr auto ctest_traits = []() {
+[[maybe_unused]] constexpr auto traits = []() {
   // The container cannot satisty trivial construction because it is not a
   // scalar type, trivially copyable class, or array of such type/class. It has
   // non-static members with default initializers. The destructor is user
   // provided.
   static_assert(
-      std::is_constructible_v<tree<char>, char &&, std::allocator<char> &>,
+      std::is_constructible_v<fcarouge::tree<char>, char &&,
+                              std::allocator<char> &>,
       "The container must be constructible from moving a single value and "
       "allocator.");
   // The container exception specification for construction by moving a value
@@ -59,9 +60,9 @@ constexpr auto ctest_traits = []() {
 
 //! @test Verify the construction by moving a value post-conditions in runtime
 //! context.
-auto post_conditions = []() {
+[[maybe_unused]] auto post_conditions = []() {
   std::allocator<char> allocator;
-  const tree<char, decltype(allocator)> gouy_yew('v', allocator);
+  const fcarouge::tree<char, decltype(allocator)> gouy_yew('v', allocator);
 
   assert(!gouy_yew.empty() &&
          "The container must not be empty on construction by value.");
@@ -86,4 +87,4 @@ auto post_conditions = []() {
   return 0;
 }();
 
-} // namespace fcarouge::test::constructor_rvalue_allocator
+} // namespace
