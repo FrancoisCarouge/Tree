@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['get_5fallocator_109',['get_allocator',['../classfcarouge_1_1tree.html#a9c65db35e938093e6b0a210630f1d84d',1,'fcarouge::tree']]]
+  ['get_5fallocator_110',['get_allocator',['../classfcarouge_1_1tree.html#a9c65db35e938093e6b0a210630f1d84d',1,'fcarouge::tree']]],
+  ['get_5fallocator_2ecpp_111',['get_allocator.cpp',['../get__allocator_8cpp.html',1,'']]]
 ];

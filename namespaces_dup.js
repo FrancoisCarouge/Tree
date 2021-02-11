@@ -88,6 +88,10 @@ var namespaces_dup =
     [ "anonymous_namespace{for_range.cpp}", "namespaceanonymous__namespace_02for__range_8cpp_03.html", [
       [ "complex", "namespaceanonymous__namespace_02for__range_8cpp_03.html#a1d7eaa05060e5aa6d1e8a6207bf2bb64", null ]
     ] ],
+    [ "anonymous_namespace{get_allocator.cpp}", "namespaceanonymous__namespace_02get__allocator_8cpp_03.html", [
+      [ "compile", "namespaceanonymous__namespace_02get__allocator_8cpp_03.html#aa039c875c555649071f69fc205687b8d", null ],
+      [ "run", "namespaceanonymous__namespace_02get__allocator_8cpp_03.html#a8246a74f766a6777fe8ea698da6a2364", null ]
+    ] ],
     [ "anonymous_namespace{hello_world.cpp}", "namespaceanonymous__namespace_02hello__world_8cpp_03.html", [
       [ "simple", "namespaceanonymous__namespace_02hello__world_8cpp_03.html#a2310b46a3a3d1ef6e171b621eb495231", null ]
     ] ],
