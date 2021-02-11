@@ -1,12 +1,13 @@
 <map id="test/constructor_copy_allocator.cpp" name="test/constructor_copy_allocator.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="351,5,498,47"/>
-<area shape="rect" id="node2" href="$tree_8hpp.html" title=" " alt="" coords="178,95,301,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="336,169,404,196"/>
-<area shape="rect" id="node8" title=" " alt="" coords="392,95,457,121"/>
-<area shape="rect" id="node9" title=" " alt="" coords="481,95,521,121"/>
-<area shape="rect" id="node10" title=" " alt="" coords="545,95,627,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="422,5,569,47"/>
+<area shape="rect" id="node2" href="$tree_8hpp.html" title=" " alt="" coords="234,95,357,121"/>
+<area shape="rect" id="node7" title=" " alt="" coords="423,169,491,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="463,95,528,121"/>
+<area shape="rect" id="node10" title=" " alt="" coords="551,95,591,121"/>
+<area shape="rect" id="node11" title=" " alt="" coords="615,95,698,121"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,169,71,196"/>
 <area shape="rect" id="node4" title=" " alt="" coords="95,169,157,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="182,169,235,196"/>
-<area shape="rect" id="node7" title=" " alt="" coords="260,169,312,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="181,169,244,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="269,169,322,196"/>
+<area shape="rect" id="node8" title=" " alt="" coords="347,169,399,196"/>
 </map>

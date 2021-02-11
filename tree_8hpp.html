@@ -86,12 +86,14 @@ $(document).ready(function(){initNavTree('tree_8hpp.html',''); initResizable(); 
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">tree.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;iterator&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
@@ -103,12 +105,13 @@ $(document).ready(function(){initNavTree('tree_8hpp.html',''); initResizable(); 
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="tree_8hpp__incl.png" border="0" usemap="#ainclude_2fcarouge_2tree_8hpp" alt=""/></div>
 <map name="ainclude_2fcarouge_2tree_8hpp" id="ainclude_2fcarouge_2tree_8hpp">
-<area shape="rect" title=" " alt="" coords="125,5,292,32"/>
+<area shape="rect" title=" " alt="" coords="171,5,337,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,71,107"/>
 <area shape="rect" title=" " alt="" coords="95,80,157,107"/>
-<area shape="rect" title=" " alt="" coords="182,80,235,107"/>
-<area shape="rect" title=" " alt="" coords="260,80,328,107"/>
-<area shape="rect" title=" " alt="" coords="352,80,404,107"/>
+<area shape="rect" title=" " alt="" coords="181,80,244,107"/>
+<area shape="rect" title=" " alt="" coords="269,80,322,107"/>
+<area shape="rect" title=" " alt="" coords="347,80,415,107"/>
+<area shape="rect" title=" " alt="" coords="439,80,491,107"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -118,7 +121,7 @@ $(document).ready(function(){initNavTree('tree_8hpp.html',''); initResizable(); 
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="tree_8hpp__dep__incl.png" border="0" usemap="#ainclude_2fcarouge_2tree_8hppdep" alt=""/></div>
 <map name="ainclude_2fcarouge_2tree_8hppdep" id="ainclude_2fcarouge_2tree_8hppdep">
-<area shape="rect" title=" " alt="" coords="2925,5,3091,32"/>
+<area shape="rect" title=" " alt="" coords="2909,5,3075,32"/>
 <area shape="rect" href="hello__world_8cpp.html" title=" " alt="" coords="5,87,163,114"/>
 <area shape="rect" href="clear_8cpp.html" title=" " alt="" coords="187,87,287,114"/>
 <area shape="rect" href="const__iterator_8cpp.html" title=" " alt="" coords="311,87,462,114"/>
@@ -135,24 +138,24 @@ $(document).ready(function(){initNavTree('tree_8hpp.html',''); initResizable(); 
 <area shape="rect" href="constructor__rvalue__allocator_8cpp.html" title=" " alt="" coords="2388,80,2543,121"/>
 <area shape="rect" href="depth_8cpp.html" title=" " alt="" coords="2567,87,2671,114"/>
 <area shape="rect" href="destructor_8cpp.html" title=" " alt="" coords="2695,87,2825,114"/>
-<area shape="rect" href="emplace__front_8cpp.html" title=" " alt="" coords="2849,87,3004,114"/>
-<area shape="rect" href="emplace_8cpp.html" title=" " alt="" coords="3029,87,3150,114"/>
-<area shape="rect" href="erase__const__iterator_8cpp.html" title=" " alt="" coords="3174,87,3365,114"/>
-<area shape="rect" href="erase__iterator_8cpp.html" title=" " alt="" coords="3389,87,3539,114"/>
-<area shape="rect" href="for__range_8cpp.html" title=" " alt="" coords="3563,87,3690,114"/>
-<area shape="rect" href="iterator_8cpp.html" title=" " alt="" coords="3715,87,3827,114"/>
-<area shape="rect" href="iterator__legacy_8cpp.html" title=" " alt="" coords="3851,87,4007,114"/>
-<area shape="rect" href="max__size_8cpp.html" title=" " alt="" coords="4031,87,4158,114"/>
-<area shape="rect" href="operator__assignment__copy_8cpp.html" title=" " alt="" coords="4182,80,4351,121"/>
-<area shape="rect" href="operator__assignment__lvalue_8cpp.html" title=" " alt="" coords="4375,80,4545,121"/>
-<area shape="rect" href="operator__assignment__move_8cpp.html" title=" " alt="" coords="4569,80,4738,121"/>
-<area shape="rect" href="operator__assignment__rvalue_8cpp.html" title=" " alt="" coords="4762,80,4931,121"/>
-<area shape="rect" href="push__front__lvalue_8cpp.html" title=" " alt="" coords="4955,87,5130,114"/>
-<area shape="rect" href="push__front__rvalue_8cpp.html" title=" " alt="" coords="5154,87,5329,114"/>
-<area shape="rect" href="push__lvalue_8cpp.html" title=" " alt="" coords="5353,87,5495,114"/>
-<area shape="rect" href="push__rvalue_8cpp.html" title=" " alt="" coords="5518,87,5661,114"/>
-<area shape="rect" href="size_8cpp.html" title=" " alt="" coords="5685,87,5779,114"/>
-<area shape="rect" href="standard__layout_8cpp.html" title=" " alt="" coords="5804,87,5967,114"/>
+<area shape="rect" href="emplace_8cpp.html" title=" " alt="" coords="2850,87,2971,114"/>
+<area shape="rect" href="emplace__front_8cpp.html" title=" " alt="" coords="2996,87,3151,114"/>
+<area shape="rect" href="erase__const__iterator_8cpp.html" title=" " alt="" coords="3175,87,3366,114"/>
+<area shape="rect" href="erase__iterator_8cpp.html" title=" " alt="" coords="3390,87,3541,114"/>
+<area shape="rect" href="for__range_8cpp.html" title=" " alt="" coords="3565,87,3691,114"/>
+<area shape="rect" href="iterator_8cpp.html" title=" " alt="" coords="3716,87,3828,114"/>
+<area shape="rect" href="iterator__legacy_8cpp.html" title=" " alt="" coords="3853,87,4009,114"/>
+<area shape="rect" href="max__size_8cpp.html" title=" " alt="" coords="4033,87,4159,114"/>
+<area shape="rect" href="operator__assignment__copy_8cpp.html" title=" " alt="" coords="4183,80,4353,121"/>
+<area shape="rect" href="operator__assignment__lvalue_8cpp.html" title=" " alt="" coords="4377,80,4546,121"/>
+<area shape="rect" href="operator__assignment__move_8cpp.html" title=" " alt="" coords="4570,80,4739,121"/>
+<area shape="rect" href="operator__assignment__rvalue_8cpp.html" title=" " alt="" coords="4763,80,4933,121"/>
+<area shape="rect" href="push__front__lvalue_8cpp.html" title=" " alt="" coords="4957,87,5131,114"/>
+<area shape="rect" href="push__front__rvalue_8cpp.html" title=" " alt="" coords="5155,87,5330,114"/>
+<area shape="rect" href="push__lvalue_8cpp.html" title=" " alt="" coords="5355,87,5496,114"/>
+<area shape="rect" href="push__rvalue_8cpp.html" title=" " alt="" coords="5519,87,5662,114"/>
+<area shape="rect" href="size_8cpp.html" title=" " alt="" coords="5686,87,5781,114"/>
+<area shape="rect" href="standard__layout_8cpp.html" title=" " alt="" coords="5805,87,5968,114"/>
 </map>
 </div>
 </div>
@@ -183,6 +186,129 @@ Classes</h2></td></tr>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacefcarouge"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html">fcarouge</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a61ec5a24c55f83349880f613f2dc5c70"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a61ec5a24c55f83349880f613f2dc5c70"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a61ec5a24c55f83349880f613f2dc5c70">fcarouge::tree_bool</a> = tree&lt; bool, AllocatorType &gt;</td></tr>
+<tr class="separator:a61ec5a24c55f83349880f613f2dc5c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48bc32a99abfc35909258a00f268f2b1"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a48bc32a99abfc35909258a00f268f2b1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a48bc32a99abfc35909258a00f268f2b1">fcarouge::tree_char</a> = tree&lt; char, AllocatorType &gt;</td></tr>
+<tr class="separator:a48bc32a99abfc35909258a00f268f2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a537281611630bdf7534a91d1026b4465"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a537281611630bdf7534a91d1026b4465"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a537281611630bdf7534a91d1026b4465">fcarouge::tree_schar</a> = tree&lt; signed char, AllocatorType &gt;</td></tr>
+<tr class="separator:a537281611630bdf7534a91d1026b4465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f6b2ea301a1527819648ffb02ec5cb"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:ab2f6b2ea301a1527819648ffb02ec5cb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#ab2f6b2ea301a1527819648ffb02ec5cb">fcarouge::tree_uchar</a> = tree&lt; unsigned char, AllocatorType &gt;</td></tr>
+<tr class="separator:ab2f6b2ea301a1527819648ffb02ec5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5003bc654f784c60b9de095844be6098"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a5003bc654f784c60b9de095844be6098"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a5003bc654f784c60b9de095844be6098">fcarouge::tree_int</a> = tree&lt; int, AllocatorType &gt;</td></tr>
+<tr class="separator:a5003bc654f784c60b9de095844be6098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad834a4bfbb0a46c4b85f8cdc1e2b5f26"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:ad834a4bfbb0a46c4b85f8cdc1e2b5f26"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#ad834a4bfbb0a46c4b85f8cdc1e2b5f26">fcarouge::tree_uint</a> = tree&lt; unsigned int, AllocatorType &gt;</td></tr>
+<tr class="separator:ad834a4bfbb0a46c4b85f8cdc1e2b5f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81486386f475a9684a5c81f7bd74c1b7"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a81486386f475a9684a5c81f7bd74c1b7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a81486386f475a9684a5c81f7bd74c1b7">fcarouge::tree_char8_t</a> = tree&lt; char8_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a81486386f475a9684a5c81f7bd74c1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad824b14197f8653876d76c433687f26e"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:ad824b14197f8653876d76c433687f26e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#ad824b14197f8653876d76c433687f26e">fcarouge::tree_char16_t</a> = tree&lt; char16_t, AllocatorType &gt;</td></tr>
+<tr class="separator:ad824b14197f8653876d76c433687f26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a623a44e079477c4f6a0e7bcaed2a2b"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a2a623a44e079477c4f6a0e7bcaed2a2b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a2a623a44e079477c4f6a0e7bcaed2a2b">fcarouge::tree_char32_t</a> = tree&lt; char32_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a2a623a44e079477c4f6a0e7bcaed2a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7622672881f1430ea6cdbbfff665627e"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a7622672881f1430ea6cdbbfff665627e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a7622672881f1430ea6cdbbfff665627e">fcarouge::tree_wchar_t</a> = tree&lt; wchar_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a7622672881f1430ea6cdbbfff665627e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98758676a089665a128bf8abe3627a41"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a98758676a089665a128bf8abe3627a41"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a98758676a089665a128bf8abe3627a41">fcarouge::tree_int8_t</a> = tree&lt; std::int8_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a98758676a089665a128bf8abe3627a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3147a404f49bcec451da900d6f802837"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a3147a404f49bcec451da900d6f802837"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a3147a404f49bcec451da900d6f802837">fcarouge::tree_uint8_t</a> = tree&lt; std::uint8_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a3147a404f49bcec451da900d6f802837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c443bdebfc9fccc3ca30663b27edb8"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:ac4c443bdebfc9fccc3ca30663b27edb8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#ac4c443bdebfc9fccc3ca30663b27edb8">fcarouge::tree_int16_t</a> = tree&lt; std::int16_t, AllocatorType &gt;</td></tr>
+<tr class="separator:ac4c443bdebfc9fccc3ca30663b27edb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbd350c89ca7032d64f8d3d51b45f508"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:acbd350c89ca7032d64f8d3d51b45f508"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#acbd350c89ca7032d64f8d3d51b45f508">fcarouge::tree_uint16_t</a> = tree&lt; std::uint16_t, AllocatorType &gt;</td></tr>
+<tr class="separator:acbd350c89ca7032d64f8d3d51b45f508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f8bc4f78ac013d770276291b6cde0cc"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a3f8bc4f78ac013d770276291b6cde0cc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a3f8bc4f78ac013d770276291b6cde0cc">fcarouge::tree_int32_t</a> = tree&lt; std::int32_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a3f8bc4f78ac013d770276291b6cde0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9107d067a9f01e264e066e6e20190b46"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a9107d067a9f01e264e066e6e20190b46"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a9107d067a9f01e264e066e6e20190b46">fcarouge::tree_uint32_t</a> = tree&lt; std::uint32_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a9107d067a9f01e264e066e6e20190b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4a983890b9c385b09523aa718b1654d"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:ae4a983890b9c385b09523aa718b1654d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#ae4a983890b9c385b09523aa718b1654d">fcarouge::tree_int64_t</a> = tree&lt; std::int64_t, AllocatorType &gt;</td></tr>
+<tr class="separator:ae4a983890b9c385b09523aa718b1654d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d12190bde246f828d107008d8ae2e04"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a5d12190bde246f828d107008d8ae2e04"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a5d12190bde246f828d107008d8ae2e04">fcarouge::tree_uint64_t</a> = tree&lt; std::uint64_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a5d12190bde246f828d107008d8ae2e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59eb45e73797ff917fe8c1beeeeb79cd"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a59eb45e73797ff917fe8c1beeeeb79cd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a59eb45e73797ff917fe8c1beeeeb79cd">fcarouge::tree_int_least8_t</a> = tree&lt; std::int_least8_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a59eb45e73797ff917fe8c1beeeeb79cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb0f31fe3391065015466abd964c78fd"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:afb0f31fe3391065015466abd964c78fd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#afb0f31fe3391065015466abd964c78fd">fcarouge::tree_uint_least8_t</a> = tree&lt; std::uint_least8_t, AllocatorType &gt;</td></tr>
+<tr class="separator:afb0f31fe3391065015466abd964c78fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f4492c94ea84315ccd6a0a3b1488c5"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:af9f4492c94ea84315ccd6a0a3b1488c5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#af9f4492c94ea84315ccd6a0a3b1488c5">fcarouge::tree_int_least16_t</a> = tree&lt; std::int_least16_t, AllocatorType &gt;</td></tr>
+<tr class="separator:af9f4492c94ea84315ccd6a0a3b1488c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49fde7945b1792d7ee9b2420123eb764"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a49fde7945b1792d7ee9b2420123eb764"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a49fde7945b1792d7ee9b2420123eb764">fcarouge::tree_uint_least16_t</a> = tree&lt; std::uint_least16_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a49fde7945b1792d7ee9b2420123eb764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a565d9165c13fbc1515cfa5551a0e6d0e"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a565d9165c13fbc1515cfa5551a0e6d0e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a565d9165c13fbc1515cfa5551a0e6d0e">fcarouge::tree_int_least32_t</a> = tree&lt; std::int_least32_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a565d9165c13fbc1515cfa5551a0e6d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e678fc7d71a9888b640511ab5aa26f"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a66e678fc7d71a9888b640511ab5aa26f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a66e678fc7d71a9888b640511ab5aa26f">fcarouge::tree_uint_least32_t</a> = tree&lt; std::uint_least32_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a66e678fc7d71a9888b640511ab5aa26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd69d9fb89c99a3e08523d5feb171749"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:abd69d9fb89c99a3e08523d5feb171749"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#abd69d9fb89c99a3e08523d5feb171749">fcarouge::tree_int_least64_t</a> = tree&lt; std::int_least64_t, AllocatorType &gt;</td></tr>
+<tr class="separator:abd69d9fb89c99a3e08523d5feb171749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9b2449935a3377a8870db99529c235"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a2b9b2449935a3377a8870db99529c235"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a2b9b2449935a3377a8870db99529c235">fcarouge::tree_uint_least64_t</a> = tree&lt; std::uint_least64_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a2b9b2449935a3377a8870db99529c235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95e13ecb4238cb9c899b3d4ff2237454"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a95e13ecb4238cb9c899b3d4ff2237454"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a95e13ecb4238cb9c899b3d4ff2237454">fcarouge::tree_int_fast8_t</a> = tree&lt; std::int_fast8_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a95e13ecb4238cb9c899b3d4ff2237454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a450363caef5528b73b00bf1ed3308d3e"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a450363caef5528b73b00bf1ed3308d3e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a450363caef5528b73b00bf1ed3308d3e">fcarouge::tree_uint_fast8_t</a> = tree&lt; std::uint_fast8_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a450363caef5528b73b00bf1ed3308d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe73786645ebae419492b637edad5118"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:afe73786645ebae419492b637edad5118"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#afe73786645ebae419492b637edad5118">fcarouge::tree_int_fast16_t</a> = tree&lt; std::int_fast16_t, AllocatorType &gt;</td></tr>
+<tr class="separator:afe73786645ebae419492b637edad5118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadc8526188c0ff343c7ef2743e71c271"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:aadc8526188c0ff343c7ef2743e71c271"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#aadc8526188c0ff343c7ef2743e71c271">fcarouge::tree_uint_fast16_t</a> = tree&lt; std::uint_fast16_t, AllocatorType &gt;</td></tr>
+<tr class="separator:aadc8526188c0ff343c7ef2743e71c271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a20f2aeee852fd1b708c85ab3de139"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:af7a20f2aeee852fd1b708c85ab3de139"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#af7a20f2aeee852fd1b708c85ab3de139">fcarouge::tree_int_fast32_t</a> = tree&lt; std::int_fast32_t, AllocatorType &gt;</td></tr>
+<tr class="separator:af7a20f2aeee852fd1b708c85ab3de139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c610ab650dd026c8f986cb042bc380a"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a4c610ab650dd026c8f986cb042bc380a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a4c610ab650dd026c8f986cb042bc380a">fcarouge::tree_uint_fast32_t</a> = tree&lt; std::uint_fast32_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a4c610ab650dd026c8f986cb042bc380a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a514f7e63fe4dba830a9cef7b4805d990"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a514f7e63fe4dba830a9cef7b4805d990"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a514f7e63fe4dba830a9cef7b4805d990">fcarouge::tree_int_fast64_t</a> = tree&lt; std::int_fast64_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a514f7e63fe4dba830a9cef7b4805d990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afef0746139daea5c8a1535024dcb6e6a"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:afef0746139daea5c8a1535024dcb6e6a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#afef0746139daea5c8a1535024dcb6e6a">fcarouge::tree_uint_fast64_t</a> = tree&lt; std::uint_fast64_t, AllocatorType &gt;</td></tr>
+<tr class="separator:afef0746139daea5c8a1535024dcb6e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af204aca284e172103ecf52d575703a87"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:af204aca284e172103ecf52d575703a87"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#af204aca284e172103ecf52d575703a87">fcarouge::tree_intptr_t</a> = tree&lt; std::intptr_t, AllocatorType &gt;</td></tr>
+<tr class="separator:af204aca284e172103ecf52d575703a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb6860663f5457066d2c4ba1d1e870e"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:aedb6860663f5457066d2c4ba1d1e870e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#aedb6860663f5457066d2c4ba1d1e870e">fcarouge::tree_uintptr_t</a> = tree&lt; std::uintptr_t, AllocatorType &gt;</td></tr>
+<tr class="separator:aedb6860663f5457066d2c4ba1d1e870e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9c9535103bb7a0a5276ec3efc7b09fc"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:ac9c9535103bb7a0a5276ec3efc7b09fc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#ac9c9535103bb7a0a5276ec3efc7b09fc">fcarouge::tree_size_t</a> = tree&lt; std::size_t, AllocatorType &gt;</td></tr>
+<tr class="separator:ac9c9535103bb7a0a5276ec3efc7b09fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a9746887e3fb255d8d51b74be1ad3ff"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a9a9746887e3fb255d8d51b74be1ad3ff"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a9a9746887e3fb255d8d51b74be1ad3ff">fcarouge::tree_ptrdiff_t</a> = tree&lt; std::ptrdiff_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a9a9746887e3fb255d8d51b74be1ad3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88a4796eb87d14deab9d690958bc3404"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a88a4796eb87d14deab9d690958bc3404"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a88a4796eb87d14deab9d690958bc3404">fcarouge::tree_intmax_t</a> = tree&lt; std::intmax_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a88a4796eb87d14deab9d690958bc3404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bb728295bc58fb8c43d2e0b75087286"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType &gt; </td></tr>
+<tr class="memitem:a8bb728295bc58fb8c43d2e0b75087286"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a8bb728295bc58fb8c43d2e0b75087286">fcarouge::tree_uintmax_t</a> = tree&lt; std::uintmax_t, AllocatorType &gt;</td></tr>
+<tr class="separator:a8bb728295bc58fb8c43d2e0b75087286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -294,13 +420,13 @@ template&lt;class Type , class AllocatorType &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the contents of the vectors are equal, <code>false</code> otherwise.</dd></dl>
 <dl class="section user"><dt>Complexity</dt><dd>Linear in the size of the container. Constant if the size of the compared containers are different, linear otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01515">1515</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;{</div>
-<div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() == rhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>();</div>
-<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;}</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a93d87b031d97d57d50ad5965585a6e79"><div class="ttname"><a href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00859">tree.hpp:859</a></div></div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01602">1602</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01604"></a><span class="lineno"> 1604</span>&#160;{</div>
+<div class="line"><a name="l01605"></a><span class="lineno"> 1605</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() == rhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>();</div>
+<div class="line"><a name="l01606"></a><span class="lineno"> 1606</span>&#160;}</div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a93d87b031d97d57d50ad5965585a6e79"><div class="ttname"><a href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00868">tree.hpp:868</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00859">fcarouge::tree&lt; Type, AllocatorType &gt;::size()</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00868">fcarouge::tree&lt; Type, AllocatorType &gt;::size()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -321,7 +447,7 @@ template&lt;class Type , class AllocatorType &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_533ca38e4d6dcb24d3c950d504c67ecf.html">fcarouge</a></li><li class="navelem"><a class="el" href="tree_8hpp.html">tree.hpp</a></li>
-    <li class="footer">Generated on Thu Feb 11 2021 05:35:25 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Feb 11 2021 05:51:21 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
