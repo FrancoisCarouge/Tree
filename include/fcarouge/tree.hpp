@@ -613,7 +613,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! i.e. `*this`.
   //!
   //! @complexity Linear in the size of this and the other container.
-  constexpr tree &operator=(const tree &other)
+  tree &operator=(const tree &other)
   {
     if (this != std::addressof(other)) {
       axe(root);
@@ -644,8 +644,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @exceptions Same exceptions specification as the allocator `AllocatorType`
   //! move assignment operator, if any.
-  constexpr tree &operator=(tree &&other) noexcept(
-      noexcept(this->node_allocator = std::move(other.node_allocator)))
+  constexpr tree &operator=(tree &&other) noexcept
   {
     if (this != std::addressof(other)) {
       axe(root);
@@ -1503,82 +1502,85 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @}
 };
 
-template <class AllocatorType> using tree_bool = tree<bool, AllocatorType>;
-template <class AllocatorType> using tree_char = tree<char, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<bool>>
+using tree_bool = tree<bool, AllocatorType>;
+template <class AllocatorType = std::allocator<char>>
+using tree_char = tree<char, AllocatorType>;
+template <class AllocatorType = std::allocator<signed char>>
 using tree_schar = tree<signed char, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<unsigned char>>
 using tree_uchar = tree<unsigned char, AllocatorType>;
-template <class AllocatorType> using tree_int = tree<int, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<int>>
+using tree_int = tree<int, AllocatorType>;
+template <class AllocatorType = std::allocator<unsigned int>>
 using tree_uint = tree<unsigned int, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<char8_t>>
 using tree_char8_t = tree<char8_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<char16_t>>
 using tree_char16_t = tree<char16_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<char32_t>>
 using tree_char32_t = tree<char32_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<wchar_t>>
 using tree_wchar_t = tree<wchar_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int8_t>>
 using tree_int8_t = tree<std::int8_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint8_t>>
 using tree_uint8_t = tree<std::uint8_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int16_t>>
 using tree_int16_t = tree<std::int16_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint16_t>>
 using tree_uint16_t = tree<std::uint16_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int32_t>>
 using tree_int32_t = tree<std::int32_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint32_t>>
 using tree_uint32_t = tree<std::uint32_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int64_t>>
 using tree_int64_t = tree<std::int64_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint64_t>>
 using tree_uint64_t = tree<std::uint64_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int_least8_t>>
 using tree_int_least8_t = tree<std::int_least8_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint_least8_t>>
 using tree_uint_least8_t = tree<std::uint_least8_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int_least16_t>>
 using tree_int_least16_t = tree<std::int_least16_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint_least16_t>>
 using tree_uint_least16_t = tree<std::uint_least16_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int_least32_t>>
 using tree_int_least32_t = tree<std::int_least32_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint_least32_t>>
 using tree_uint_least32_t = tree<std::uint_least32_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int_least64_t>>
 using tree_int_least64_t = tree<std::int_least64_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint_least64_t>>
 using tree_uint_least64_t = tree<std::uint_least64_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int_fast8_t>>
 using tree_int_fast8_t = tree<std::int_fast8_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint_fast8_t>>
 using tree_uint_fast8_t = tree<std::uint_fast8_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int_fast16_t>>
 using tree_int_fast16_t = tree<std::int_fast16_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint_fast16_t>>
 using tree_uint_fast16_t = tree<std::uint_fast16_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int_fast32_t>>
 using tree_int_fast32_t = tree<std::int_fast32_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint_fast32_t>>
 using tree_uint_fast32_t = tree<std::uint_fast32_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::int_fast64_t>>
 using tree_int_fast64_t = tree<std::int_fast64_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uint_fast64_t>>
 using tree_uint_fast64_t = tree<std::uint_fast64_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::intptr_t>>
 using tree_intptr_t = tree<std::intptr_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uintptr_t>>
 using tree_uintptr_t = tree<std::uintptr_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::size_t>>
 using tree_size_t = tree<std::size_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::ptrdiff_t>>
 using tree_ptrdiff_t = tree<std::ptrdiff_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::intmax_t>>
 using tree_intmax_t = tree<std::intmax_t, AllocatorType>;
-template <class AllocatorType>
+template <class AllocatorType = std::allocator<std::uintmax_t>>
 using tree_uintmax_t = tree<std::uintmax_t, AllocatorType>;
 
 } // namespace fcarouge
