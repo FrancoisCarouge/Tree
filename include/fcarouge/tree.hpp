@@ -147,11 +147,13 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @complexity Linear in depth.
     [[nodiscard]] constexpr size_type depth() const noexcept
     {
-      if (parent) {
-        return parent->depth() + 1;
+      size_type depth = 0;
+      const internal_node_type *current = this;
+      while ((current = current->parent)) {
+        ++depth;
       }
 
-      return 0;
+      return depth;
     }
 
     //! @}
@@ -165,14 +167,15 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //!
     //! @return The pointer to the nearest right sibling of itself or ancestor;
     //! or `nullptr` if such a node doesn't exist.
-    [[nodiscard]] constexpr internal_node_type *next_ancestor_sibling() noexcept
+    [[nodiscard]] constexpr internal_node_type *
+    next_ancestor_sibling() const noexcept
     {
-      if (right_sibling) {
-        return right_sibling;
-      }
-
-      if (parent) {
-        return parent->next_ancestor_sibling();
+      const internal_node_type *current = this;
+      while (current) {
+        if (current->right_sibling) {
+          return current->right_sibling;
+        }
+        current = current->parent;
       }
 
       return nullptr;
