@@ -29,6 +29,10 @@ var tree_8hpp =
     [ "tree_ptrdiff_t", "tree_8hpp.html#a9a9746887e3fb255d8d51b74be1ad3ff", null ],
     [ "tree_schar", "tree_8hpp.html#a537281611630bdf7534a91d1026b4465", null ],
     [ "tree_size_t", "tree_8hpp.html#ac9c9535103bb7a0a5276ec3efc7b09fc", null ],
+    [ "tree_string", "tree_8hpp.html#a7552c8cde89477562744c45ca83880a3", null ],
+    [ "tree_u16string", "tree_8hpp.html#abef6b0e95430dfc905e566bdfecc3ea2", null ],
+    [ "tree_u32string", "tree_8hpp.html#a37c6a0219174fa3bb868b67ec2240306", null ],
+    [ "tree_u8string", "tree_8hpp.html#a0b9858b6c31166e9520d82f25c2ec559", null ],
     [ "tree_uchar", "tree_8hpp.html#ab2f6b2ea301a1527819648ffb02ec5cb", null ],
     [ "tree_uint", "tree_8hpp.html#ad834a4bfbb0a46c4b85f8cdc1e2b5f26", null ],
     [ "tree_uint16_t", "tree_8hpp.html#acbd350c89ca7032d64f8d3d51b45f508", null ],
@@ -46,6 +50,7 @@ var tree_8hpp =
     [ "tree_uintmax_t", "tree_8hpp.html#a8bb728295bc58fb8c43d2e0b75087286", null ],
     [ "tree_uintptr_t", "tree_8hpp.html#aedb6860663f5457066d2c4ba1d1e870e", null ],
     [ "tree_wchar_t", "tree_8hpp.html#a7622672881f1430ea6cdbbfff665627e", null ],
+    [ "tree_wstring", "tree_8hpp.html#acdd40cc3af64aedc141e983be20caa3c", null ],
     [ "operator<=>", "tree_8hpp.html#ae748dc8afc895c0b70f1111e33b2fe04", null ],
     [ "operator==", "tree_8hpp.html#ae617bea810be26e335a2cc2e2c91d3e8", null ]
 ];

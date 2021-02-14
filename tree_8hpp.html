@@ -97,6 +97,7 @@ $(document).ready(function(){initNavTree('tree_8hpp.html',''); initResizable(); 
 <code>#include &lt;iterator&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for tree.hpp:</div>
@@ -105,13 +106,14 @@ $(document).ready(function(){initNavTree('tree_8hpp.html',''); initResizable(); 
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="tree_8hpp__incl.png" border="0" usemap="#ainclude_2fcarouge_2tree_8hpp" alt=""/></div>
 <map name="ainclude_2fcarouge_2tree_8hpp" id="ainclude_2fcarouge_2tree_8hpp">
-<area shape="rect" title=" " alt="" coords="171,5,337,32"/>
+<area shape="rect" title=" " alt="" coords="212,5,379,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,71,107"/>
 <area shape="rect" title=" " alt="" coords="95,80,157,107"/>
 <area shape="rect" title=" " alt="" coords="181,80,244,107"/>
 <area shape="rect" title=" " alt="" coords="269,80,322,107"/>
 <area shape="rect" title=" " alt="" coords="347,80,415,107"/>
-<area shape="rect" title=" " alt="" coords="439,80,491,107"/>
+<area shape="rect" title=" " alt="" coords="439,80,493,107"/>
+<area shape="rect" title=" " alt="" coords="517,80,569,107"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -310,6 +312,21 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a8bb728295bc58fb8c43d2e0b75087286"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType  = std::allocator&lt;std::uintmax_t&gt;&gt; </td></tr>
 <tr class="memitem:a8bb728295bc58fb8c43d2e0b75087286"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a8bb728295bc58fb8c43d2e0b75087286">fcarouge::tree_uintmax_t</a> = tree&lt; std::uintmax_t, AllocatorType &gt;</td></tr>
 <tr class="separator:a8bb728295bc58fb8c43d2e0b75087286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7552c8cde89477562744c45ca83880a3"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType  = std::allocator&lt;std::string&gt;&gt; </td></tr>
+<tr class="memitem:a7552c8cde89477562744c45ca83880a3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a7552c8cde89477562744c45ca83880a3">fcarouge::tree_string</a> = tree&lt; std::string, AllocatorType &gt;</td></tr>
+<tr class="separator:a7552c8cde89477562744c45ca83880a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b9858b6c31166e9520d82f25c2ec559"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType  = std::allocator&lt;std::u8string&gt;&gt; </td></tr>
+<tr class="memitem:a0b9858b6c31166e9520d82f25c2ec559"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a0b9858b6c31166e9520d82f25c2ec559">fcarouge::tree_u8string</a> = tree&lt; std::u8string, AllocatorType &gt;</td></tr>
+<tr class="separator:a0b9858b6c31166e9520d82f25c2ec559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abef6b0e95430dfc905e566bdfecc3ea2"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType  = std::allocator&lt;std::u16string&gt;&gt; </td></tr>
+<tr class="memitem:abef6b0e95430dfc905e566bdfecc3ea2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#abef6b0e95430dfc905e566bdfecc3ea2">fcarouge::tree_u16string</a> = tree&lt; std::u16string, AllocatorType &gt;</td></tr>
+<tr class="separator:abef6b0e95430dfc905e566bdfecc3ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37c6a0219174fa3bb868b67ec2240306"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType  = std::allocator&lt;std::u32string&gt;&gt; </td></tr>
+<tr class="memitem:a37c6a0219174fa3bb868b67ec2240306"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a37c6a0219174fa3bb868b67ec2240306">fcarouge::tree_u32string</a> = tree&lt; std::u32string, AllocatorType &gt;</td></tr>
+<tr class="separator:a37c6a0219174fa3bb868b67ec2240306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdd40cc3af64aedc141e983be20caa3c"><td class="memTemplParams" colspan="2">template&lt;class AllocatorType  = std::allocator&lt;std::wstring&gt;&gt; </td></tr>
+<tr class="memitem:acdd40cc3af64aedc141e983be20caa3c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#acdd40cc3af64aedc141e983be20caa3c">fcarouge::tree_wstring</a> = tree&lt; std::wstring, AllocatorType &gt;</td></tr>
+<tr class="separator:acdd40cc3af64aedc141e983be20caa3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -421,13 +438,13 @@ template&lt;class Type , class AllocatorType &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the contents of the vectors are equal, <code>false</code> otherwise.</dd></dl>
 <dl class="section user"><dt>Complexity</dt><dd>Linear in the size of the container. Constant if the size of the compared containers are different, linear otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01607">1607</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01609"></a><span class="lineno"> 1609</span>&#160;{</div>
-<div class="line"><a name="l01610"></a><span class="lineno"> 1610</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() == rhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>();</div>
-<div class="line"><a name="l01611"></a><span class="lineno"> 1611</span>&#160;}</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a93d87b031d97d57d50ad5965585a6e79"><div class="ttname"><a href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00870">tree.hpp:870</a></div></div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01620">1620</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;{</div>
+<div class="line"><a name="l01623"></a><span class="lineno"> 1623</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() == rhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>();</div>
+<div class="line"><a name="l01624"></a><span class="lineno"> 1624</span>&#160;}</div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a93d87b031d97d57d50ad5965585a6e79"><div class="ttname"><a href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00873">tree.hpp:873</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00870">fcarouge::tree&lt; Type, AllocatorType &gt;::size()</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00873">fcarouge::tree&lt; Type, AllocatorType &gt;::size()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -448,7 +465,7 @@ template&lt;class Type , class AllocatorType &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_533ca38e4d6dcb24d3c950d504c67ecf.html">fcarouge</a></li><li class="navelem"><a class="el" href="tree_8hpp.html">tree.hpp</a></li>
-    <li class="footer">Generated on Sun Feb 14 2021 03:21:03 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Feb 14 2021 03:31:08 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
