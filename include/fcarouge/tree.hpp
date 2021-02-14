@@ -51,6 +51,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 // std::addressof std::allocator std::allocator_traits
 // std::construct_at std::destroy_at
 
+#include <string>
+// std::string std::u16string std::u32string std::u8string std::wstring
+
 #include <utility>
 // std::forward std::move
 
@@ -1585,6 +1588,16 @@ template <class AllocatorType = std::allocator<std::intmax_t>>
 using tree_intmax_t = tree<std::intmax_t, AllocatorType>;
 template <class AllocatorType = std::allocator<std::uintmax_t>>
 using tree_uintmax_t = tree<std::uintmax_t, AllocatorType>;
+template <class AllocatorType = std::allocator<std::string>>
+using tree_string = tree<std::string, AllocatorType>;
+template <class AllocatorType = std::allocator<std::u8string>>
+using tree_u8string = tree<std::u8string, AllocatorType>;
+template <class AllocatorType = std::allocator<std::u16string>>
+using tree_u16string = tree<std::u16string, AllocatorType>;
+template <class AllocatorType = std::allocator<std::u32string>>
+using tree_u32string = tree<std::u32string, AllocatorType>;
+template <class AllocatorType = std::allocator<std::wstring>>
+using tree_wstring = tree<std::wstring, AllocatorType>;
 
 } // namespace fcarouge
 
