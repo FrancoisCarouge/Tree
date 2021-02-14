@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"structfcarouge_1_1tree_1_1internal__node__type.html#acd8e228760b6f14fda73006f44006998":[6,0,0,0,2,1],
 "structfcarouge_1_1tree_1_1iterator.html":[6,0,0,0,3],
 "structfcarouge_1_1tree_1_1iterator.html#a28873c996d495a21c4605f81ff266188":[6,0,0,0,3,3],
 "structfcarouge_1_1tree_1_1iterator.html#a3362d0cd07e201657a7d6f4fed5b7678":[6,0,0,0,3,5],
@@ -77,6 +78,5 @@ var NAVTREEINDEX2 =
 "tree_8hpp.html#afb0f31fe3391065015466abd964c78fd":[7,0,0,0,0,42],
 "tree_8hpp.html#afe73786645ebae419492b637edad5118":[7,0,0,0,0,16],
 "tree_8hpp.html#afef0746139daea5c8a1535024dcb6e6a":[7,0,0,0,0,37],
-"tree_8hpp_source.html":[7,0,0,0,0],
-"":[5,0,36]
+"tree_8hpp_source.html":[7,0,0,0,0]
 };
