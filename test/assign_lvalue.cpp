@@ -34,19 +34,20 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
 namespace
 {
-//! @test Verify move assigning a value to a complex tree.
+//! @test Verify copy assigning a value to a complex tree.
 [[maybe_unused]] auto all_replace_all = []() {
   fcarouge::tree<int> bunodiere_beech(24);
   bunodiere_beech.push(bunodiere_beech.begin(), 240);
   bunodiere_beech.push(bunodiere_beech.begin(), 241);
   bunodiere_beech.push(bunodiere_beech.begin(), 242);
-  bunodiere_beech = 42;
+  const int value = 42;
+  bunodiere_beech.assign(value);
 
   assert(!bunodiere_beech.empty() && "The container must not be empty.");
   assert(1 == bunodiere_beech.size() && "The container must contain one node.");
   assert(42 == bunodiere_beech.front() &&
          "The container's front value and value used for construction "
-         "must be equal on move assignment.");
+         "must be equal on copy assignment.");
 
   return 0;
 }();

@@ -32,28 +32,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
-#include <type_traits>
-// std::is_copy_assignable_v
-
 namespace
 {
-//! @test Verify the copy assignment exists and its exception specification.
-[[maybe_unused]] constexpr auto traits = []() {
-  // The container cannot satisty trivial copy assignment because it is not a
-  // scalar type, trivially copyable class, or array of such type/class. It has
-  // non-static members with default initializers. The destructor is user
-  // provided.
-  static_assert(std::is_copy_assignable_v<fcarouge::tree<char>>,
-                "The container is required to be copy assignable.");
-
-  return 0;
-}();
-
 //! @test Verify copy assigning an empty tree to an empty tree.
 [[maybe_unused]] auto empty = []() {
   fcarouge::tree<int> auffay_linden;
   fcarouge::tree<int> bunodiere_beech;
-  bunodiere_beech = auffay_linden;
+  bunodiere_beech.assign(auffay_linden);
 
   assert(0 == bunodiere_beech.size() &&
          "The container must contain zero node.");
@@ -78,7 +63,7 @@ namespace
   bunodiere_beech.push(bunodiere_beech.begin(), 240);
   bunodiere_beech.push(bunodiere_beech.begin(), 241);
   bunodiere_beech.push(bunodiere_beech.begin(), 242);
-  bunodiere_beech = auffay_linden;
+  bunodiere_beech.assign(auffay_linden);
 
   assert(!bunodiere_beech.empty() && "The container must not be empty.");
   assert(4 == bunodiere_beech.size() &&
@@ -97,7 +82,7 @@ namespace
   auffay_linden.push(auffay_linden.begin(), 421);
   auffay_linden.push(auffay_linden.begin(), 422);
   fcarouge::tree<int> bunodiere_beech;
-  bunodiere_beech = auffay_linden;
+  bunodiere_beech.assign(auffay_linden);
 
   assert(!bunodiere_beech.empty() && "The container must not be empty.");
   assert(4 == bunodiere_beech.size() &&
@@ -116,7 +101,7 @@ namespace
   bunodiere_beech.push(bunodiere_beech.begin(), 240);
   bunodiere_beech.push(bunodiere_beech.begin(), 241);
   bunodiere_beech.push(bunodiere_beech.begin(), 242);
-  bunodiere_beech = auffay_linden;
+  bunodiere_beech.assign(auffay_linden);
 
   assert(0 == bunodiere_beech.size() &&
          "The container must contain zero node.");
@@ -136,7 +121,7 @@ namespace
   bunodiere_beech.push(bunodiere_beech.begin(), 420);
   bunodiere_beech.push(bunodiere_beech.begin(), 421);
   bunodiere_beech.push(bunodiere_beech.begin(), 422);
-  bunodiere_beech = bunodiere_beech;
+  bunodiere_beech.assign(bunodiere_beech);
 
   assert(!bunodiere_beech.empty() && "The container must not be empty.");
   assert(4 == bunodiere_beech.size() &&
