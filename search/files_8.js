@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_2ecpp_334',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['max_5fsize_2ecpp_335',['max_size.cpp',['../max__size_8cpp.html',1,'']]]
+  ['license_2etxt_349',['LICENSE.txt',['../_l_i_c_e_n_s_e_8txt.html',1,'']]]
 ];

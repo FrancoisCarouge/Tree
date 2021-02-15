@@ -1,6 +1,7 @@
 <map id="fcarouge::tree::axe" name="fcarouge::tree::axe">
-<area shape="rect" id="node1" title="Axes the specified element including its sub&#45;tree." alt="" coords="215,56,341,83"/>
-<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#aa83d14fd7cd74b86556786b1bd0f4393" title="Erases all elements from the container." alt="" coords="19,5,153,32"/>
-<area shape="rect" id="node3" href="$classfcarouge_1_1tree.html#a2e21be266f047d52aed92093aefb75de" title="Copy assignment operator." alt="" coords="5,56,167,83"/>
-<area shape="rect" id="node4" href="$classfcarouge_1_1tree.html#a3e97ce6cb6385676b59aae76e18fef31" title="Destructs the container." alt="" coords="19,107,153,133"/>
+<area shape="rect" id="node1" title="Axes the specified element including its sub&#45;tree." alt="" coords="215,81,341,108"/>
+<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#afa2adeaaf61d4ec87bf58d22689fa7aa" title="Copy assignment." alt="" coords="14,5,158,32"/>
+<area shape="rect" id="node3" href="$classfcarouge_1_1tree.html#aa83d14fd7cd74b86556786b1bd0f4393" title="Erases all elements from the container." alt="" coords="19,56,153,83"/>
+<area shape="rect" id="node4" href="$classfcarouge_1_1tree.html#a2e21be266f047d52aed92093aefb75de" title="Copy assignment operator." alt="" coords="5,107,167,133"/>
+<area shape="rect" id="node5" href="$classfcarouge_1_1tree.html#a3e97ce6cb6385676b59aae76e18fef31" title="Destructs the container." alt="" coords="19,157,153,184"/>
 </map>

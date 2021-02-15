@@ -1,5 +1,25 @@
 var namespaces_dup =
 [
+    [ "anonymous_namespace{assign_copy.cpp}", "namespaceanonymous__namespace_02assign__copy_8cpp_03.html", [
+      [ "all_replace_all", "namespaceanonymous__namespace_02assign__copy_8cpp_03.html#acd8c057430b3a6b25436a318d028b083", null ],
+      [ "all_replace_none", "namespaceanonymous__namespace_02assign__copy_8cpp_03.html#a95a05a253561e97cb64b3e6757139892", null ],
+      [ "empty", "namespaceanonymous__namespace_02assign__copy_8cpp_03.html#afc11bb4c4c12a617eed19801dd0b0433", null ],
+      [ "none_replace_all", "namespaceanonymous__namespace_02assign__copy_8cpp_03.html#ab380a5713a0819ea4ce95c350f5d1655", null ],
+      [ "self", "namespaceanonymous__namespace_02assign__copy_8cpp_03.html#a5443c34f6448bfa40b588dfe8d3a048e", null ]
+    ] ],
+    [ "anonymous_namespace{assign_lvalue.cpp}", "namespaceanonymous__namespace_02assign__lvalue_8cpp_03.html", [
+      [ "all_replace_all", "namespaceanonymous__namespace_02assign__lvalue_8cpp_03.html#acf5cc968a27a68cd9e24ba873dc03c0e", null ]
+    ] ],
+    [ "anonymous_namespace{assign_move.cpp}", "namespaceanonymous__namespace_02assign__move_8cpp_03.html", [
+      [ "all_replace_all", "namespaceanonymous__namespace_02assign__move_8cpp_03.html#a9d4d71435f66e3b7067dbf5210b00c5b", null ],
+      [ "all_replace_none", "namespaceanonymous__namespace_02assign__move_8cpp_03.html#a025b7ba8a86d1edd015b10243ca27db3", null ],
+      [ "empty", "namespaceanonymous__namespace_02assign__move_8cpp_03.html#ae03bc33edb267a1098ca9da7664c6da0", null ],
+      [ "none_replace_all", "namespaceanonymous__namespace_02assign__move_8cpp_03.html#ab2b0e8041f39702cfb56f6d7387ab321", null ],
+      [ "self", "namespaceanonymous__namespace_02assign__move_8cpp_03.html#ab4593c0d80608e211589a3436947b900", null ]
+    ] ],
+    [ "anonymous_namespace{assign_rvalue.cpp}", "namespaceanonymous__namespace_02assign__rvalue_8cpp_03.html", [
+      [ "all_replace_all", "namespaceanonymous__namespace_02assign__rvalue_8cpp_03.html#a4b724d56986f489a04d98dc60f81b845", null ]
+    ] ],
     [ "anonymous_namespace{clear.cpp}", "namespaceanonymous__namespace_02clear_8cpp_03.html", [
       [ "empty", "namespaceanonymous__namespace_02clear_8cpp_03.html#acfeb9a53b3531f07e16b1267cb4bbada", null ],
       [ "lvalue", "namespaceanonymous__namespace_02clear_8cpp_03.html#a065a5c222f8d3e9a836bbcae7e22e581", null ],
