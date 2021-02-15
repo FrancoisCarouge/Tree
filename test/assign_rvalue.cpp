@@ -40,7 +40,7 @@ namespace
   bunodiere_beech.push(bunodiere_beech.begin(), 240);
   bunodiere_beech.push(bunodiere_beech.begin(), 241);
   bunodiere_beech.push(bunodiere_beech.begin(), 242);
-  bunodiere_beech = 42;
+  bunodiere_beech.assign(42);
 
   assert(!bunodiere_beech.empty() && "The container must not be empty.");
   assert(1 == bunodiere_beech.size() && "The container must contain one node.");

@@ -633,12 +633,12 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @brief Move assignment operator.
   //!
-  //! @details Replaces the contents with those of the `other` container using
-  //! move semantics (i.e. the data in `other` container is moved from the other
-  //! into this container). The other container is in a valid but unspecified
-  //! state afterwards. The allocator is obtained by move-construction from the
-  //! allocator belonging to other. Self move assignement is valid, safe, and
-  //! meets specifications.
+  //! @details Replaces the contents of the container with those of the `other`
+  //! container using move semantics (i.e. the data in `other` container is
+  //! moved from the other into this container). The other container is in a
+  //! valid but unspecified state afterwards. The allocator is obtained by
+  //! move-construction from the allocator belonging to other. Self move
+  //! assignement is valid, safe, and meets specifications.
   //!
   //! @param other Another container to be used as source to initialize the
   //! elements of the container with.
@@ -664,8 +664,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @brief Value copy assignment operator.
   //!
-  //! @details Replaces the contents with a copy of the contents of the value
-  //! for its root.
+  //! @details Replaces the contents of the container with a copy of the
+  //! contents of the value for its root.
   //!
   //! @param value The value to initialize the container with.
   //!
@@ -684,8 +684,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
   //! @brief Value move assignment operator.
   //!
-  //! @details Replaces the contents with those of the value using
-  //! move semantics (i.e. the value data is moved into the root of this
+  //! @details Replaces the contents of the container with those of the value
+  //! using move semantics (i.e. the value data is moved into the root of this
   //! container). The value is in a valid but unspecified state afterwards.
   //!
   //! @param value The value to initialize the container with.
@@ -703,13 +703,102 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return *this;
   }
 
-  constexpr tree &assign(const tree &other) noexcept;
+  //! @brief Copy assignment.
+  //!
+  //! @details Destroys or copy-assigns the contents with a copy of the contents
+  //! of the other container. Self copy assignement is valid, safe, and
+  //! meets specifications.
+  //!
+  //! @param other Another container to be used as source to initialize the
+  //! elements of the container with.
+  //!
+  //! @return The reference value of this implicit object container parameter,
+  //! i.e. `*this`.
+  //!
+  //! @complexity Linear in the size of this and the other container.
+  constexpr tree &assign(const tree &other) noexcept
+  {
+    if (this != std::addressof(other)) {
+      axe(root);
+      node_allocator = std::allocator_traits<AllocatorType>::
+          select_on_container_copy_construction(other.node_allocator);
+      root = copy(other.root, nullptr, nullptr);
+      node_count = other.node_count;
+    }
+    return *this;
+  }
 
-  constexpr tree &assign(tree &&other) noexcept;
+  //! @brief Move assignment.
+  //!
+  //! @details Replaces the contents of the container with those of the `other`
+  //! container using move semantics (i.e. the data in `other` container is
+  //! moved from the other into this container). The other container is in a
+  //! valid but unspecified state afterwards. The allocator is obtained by
+  //! move-construction from the allocator belonging to other. Self move
+  //! assignement is valid, safe, and meets specifications.
+  //!
+  //! @param other Another container to be used as source to initialize the
+  //! elements of the container with.
+  //!
+  //! @return The reference value of this implicit object container parameter,
+  //! i.e. `*this`.
+  //!
+  //! @complexity Constant.
+  //!
+  //! @exceptions Same exceptions specification as the allocator `AllocatorType`
+  //! move assignment operator, if any.
+  constexpr tree &assign(tree &&other) noexcept
+  {
+    if (this != std::addressof(other)) {
+      axe(root);
+      node_allocator = std::move(other.node_allocator);
+      root = other.root;
+      node_count = other.node_count;
+      other.root = nullptr;
+    }
+    return *this;
+  }
 
-  constexpr tree &assign(const_reference value) noexcept;
+  //! @brief Value copy assignment.
+  //!
+  //! @details Replaces the contents of the container with a copy of the
+  //! contents of the value for its root.
+  //!
+  //! @param value The value to initialize the container with.
+  //!
+  //! @return The reference value of this implicit object container parameter,
+  //! i.e. `*this`.
+  //!
+  //! @complexity Linear in the size of this container.
+  constexpr tree &assign(const_reference value) noexcept
+  {
+    axe(root);
+    root = node_allocator.allocate(1);
+    std::construct_at(root, value);
+    node_count = 1;
+    return *this;
+  }
 
-  constexpr tree &assign(value_type &&value) noexcept;
+  //! @brief Value move assignment.
+  //!
+  //! @details Replaces the contents of the container with those of the value
+  //! using move semantics (i.e. the value data is moved into the root of this
+  //! container). The value is in a valid but unspecified state afterwards.
+  //!
+  //! @param value The value to initialize the container with.
+  //!
+  //! @return The reference value of this implicit object container parameter,
+  //! i.e. `*this`.
+  //!
+  //! @complexity Linear in the size of this container.
+  constexpr tree &assign(value_type &&value) noexcept
+  {
+    axe(root);
+    root = node_allocator.allocate(1);
+    std::construct_at(root, std::move(value));
+    node_count = 1;
+    return *this;
+  }
 
   //! @brief Returns the allocator associated with the container.
   //!
