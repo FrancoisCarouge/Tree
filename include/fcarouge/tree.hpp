@@ -459,7 +459,12 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! container.
   //!
   //! @complexity Constant.
-  constexpr explicit tree(const AllocatorType &allocator)
+  //!
+  //! @exceptions Strong exception guarantees: no effect on exception. Same
+  //! exceptions specification as the allocator `AllocatorType` copy
+  //! constructor, if any.
+  constexpr explicit tree(const AllocatorType &allocator) noexcept(
+      noexcept(internal_node_allocator_type{ allocator }))
           : node_allocator{ allocator }
   {
   }
