@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"operator__assignment__move_8cpp.html#a54f819ce4658835abf64e5bed38ee049":[7,0,3,33,1],
+"operator__assignment__move_8cpp.html#a87436c84ff44a49fd0711b2616809e32":[7,0,3,33,3],
+"operator__assignment__move_8cpp.html#a917f719ef7ba5bedfb49b1fe800a7640":[7,0,3,33,2],
+"operator__assignment__move_8cpp.html#aaa34254b99a87b5bf720af1361d91d69":[7,0,3,33,4],
 "operator__assignment__move_8cpp_source.html":[7,0,3,33],
 "operator__assignment__rvalue_8cpp.html":[7,0,3,34],
 "operator__assignment__rvalue_8cpp.html#a0237b7e4ca1d13e66aeacdfaeaf70188":[7,0,3,34,0],

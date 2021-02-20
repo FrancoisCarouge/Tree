@@ -33,7 +33,9 @@ var namespaces_dup =
       [ "traits", "namespaceanonymous__namespace_02const__iterator__legacy_8cpp_03.html#ad2cd4cdef12d0a72b8d323612d670696", null ]
     ] ],
     [ "anonymous_namespace{constructor_allocator.cpp}", "namespaceanonymous__namespace_02constructor__allocator_8cpp_03.html", [
-      [ "construction", "namespaceanonymous__namespace_02constructor__allocator_8cpp_03.html#ac974fe5f729ffe337b32f38a07f80bd6", null ]
+      [ "compile", "namespaceanonymous__namespace_02constructor__allocator_8cpp_03.html#ae48177f4aec5ab8d21771abb853b4a42", null ],
+      [ "construction", "namespaceanonymous__namespace_02constructor__allocator_8cpp_03.html#ac974fe5f729ffe337b32f38a07f80bd6", null ],
+      [ "traits", "namespaceanonymous__namespace_02constructor__allocator_8cpp_03.html#ac0f56036657168639d7d646de68c4463", null ]
     ] ],
     [ "anonymous_namespace{constructor_copy.cpp}", "namespaceanonymous__namespace_02constructor__copy_8cpp_03.html", [
       [ "multiple", "namespaceanonymous__namespace_02constructor__copy_8cpp_03.html#a66941f0deb82ac8410c974d20cefdd63", null ],

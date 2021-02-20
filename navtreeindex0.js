@@ -65,7 +65,6 @@ var NAVTREEINDEX0 =
 "classfcarouge_1_1tree.html#a710787518476c198a669d77a33c3ddf8":[6,0,0,0,23],
 "classfcarouge_1_1tree.html#a7118a210978495014b44c68e0df7135d":[6,0,0,0,36],
 "classfcarouge_1_1tree.html#a7182fde5a67b4db4c3560cc59249b358":[6,0,0,0,62],
-"classfcarouge_1_1tree.html#a73f3550ee53f8886354b6ffba790a25b":[6,0,0,0,16],
 "classfcarouge_1_1tree.html#a7f69f9f81a0d50355c6e47c35df54b82":[6,0,0,0,43],
 "classfcarouge_1_1tree.html#a85d21cbaae60bbcaa55f0ea7432ee293":[6,0,0,0,12],
 "classfcarouge_1_1tree.html#a8b8d9ed8c1122dd228a7392d9bd2671f":[6,0,0,0,30],
@@ -96,6 +95,7 @@ var NAVTREEINDEX0 =
 "classfcarouge_1_1tree.html#ae6cd0c0c176c23f9843dbf5f4ea5eb30":[6,0,0,0,13],
 "classfcarouge_1_1tree.html#af36c3388ad91a67e280d2ea91eb61513":[6,0,0,0,61],
 "classfcarouge_1_1tree.html#af5d87b206f6c94e206ded34cf15770b0":[6,0,0,0,19],
+"classfcarouge_1_1tree.html#af6c1f9d4c9c1f8565aa88820e6381b80":[6,0,0,0,16],
 "classfcarouge_1_1tree.html#afa2adeaaf61d4ec87bf58d22689fa7aa":[6,0,0,0,26],
 "classfcarouge_1_1tree.html#afbf8bbfc541eb153be0051b3bab67d12":[6,0,0,0,20],
 "classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac":[6,0,0,0,44],
@@ -113,7 +113,9 @@ var NAVTREEINDEX0 =
 "const__iterator__legacy_8cpp.html#ad2cd4cdef12d0a72b8d323612d670696":[7,0,3,6,1],
 "const__iterator__legacy_8cpp_source.html":[7,0,3,6],
 "constructor__allocator_8cpp.html":[7,0,3,7],
-"constructor__allocator_8cpp.html#ac974fe5f729ffe337b32f38a07f80bd6":[7,0,3,7,0],
+"constructor__allocator_8cpp.html#ac0f56036657168639d7d646de68c4463":[7,0,3,7,2],
+"constructor__allocator_8cpp.html#ac974fe5f729ffe337b32f38a07f80bd6":[7,0,3,7,1],
+"constructor__allocator_8cpp.html#ae48177f4aec5ab8d21771abb853b4a42":[7,0,3,7,0],
 "constructor__allocator_8cpp_source.html":[7,0,3,7],
 "constructor__copy_8cpp.html":[7,0,3,8],
 "constructor__copy_8cpp.html#a66941f0deb82ac8410c974d20cefdd63":[7,0,3,8,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "iterator_8cpp_source.html":[7,0,3,27],
 "iterator__legacy_8cpp.html":[7,0,3,28],
 "iterator__legacy_8cpp.html#a23b517dd5da2d372a0d43d735b4ea145":[7,0,3,28,0],
-"iterator__legacy_8cpp.html#afed1e7e118c0c227aa2a38149bd025b3":[7,0,3,28,1],
-"iterator__legacy_8cpp_source.html":[7,0,3,28],
-"main_8cpp.html":[7,0,2,0]
+"iterator__legacy_8cpp.html#afed1e7e118c0c227aa2a38149bd025b3":[7,0,3,28,1]
 };
