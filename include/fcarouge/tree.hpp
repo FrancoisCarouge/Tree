@@ -1020,9 +1020,149 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     node_count = 0;
   }
 
-  constexpr iterator insert(const_iterator position, const_reference value);
+  //! @brief Inserts a new element into the container copied
+  //! directly before the `position` iterator as the new left sibling.
+  //!
+  //! @details The value is copied at a location element provided by the
+  //! container. No iterators or references are invalidated. Inserts at the root
+  //! position as the new root. Inserts before the beginning `begin()` position
+  //! as the new root. Inserts before the ending `end()` position.
+  //!
+  //! @param position The constant iterator before which the new element will be
+  //! constructed. The iterator may be the beginning `begin()` or ending `end()`
+  //! iterator.
+  //! @param value The value to copy in the the element node.
+  //!
+  //! @return The iterator pointing to the inserted element.
+  //!
+  //! @complexity Constant.
+  constexpr iterator insert(const_iterator position, const_reference value)
+  {
+    // The allocated node is in-place construced and recorded in every
+    // following statements.
+    internal_node_type *node = node_allocator.allocate(1);
 
-  constexpr iterator insert(const_iterator position, value_type &&value);
+    // Insert the new node...
+    // ...before the position node...
+    if (internal_node_type *position_node = position.node) {
+      // ...as the new left child...
+      if (position_node->parent) {
+        std::construct_at(node, value, nullptr, nullptr,
+                          position_node->left_sibling, position_node,
+                          position_node->parent);
+        position_node->left_sibling = node;
+        // ...with a left sibling node.
+        if (internal_node_type *left_node = node->left_sibling) {
+          left_node->right_sibling = node;
+        }
+        // ...without a left sibling node.
+        else {
+          position_node->parent->first_child = node;
+        }
+      }
+      // ...as the new root.
+      else {
+        std::construct_at(node, value, position_node, position_node);
+        position_node->parent = node;
+        root = node;
+      }
+    }
+    // ...as the new last node...
+    else {
+      // ... as the last child of the root node.
+      if (root) {
+        std::construct_at(node, value, nullptr, nullptr, root->last_child,
+                          nullptr, root);
+        if (!root->first_child) {
+          root->first_child = node;
+        }
+        if (root->last_child) {
+          root->last_child->right_sibling = node;
+        }
+        root->last_child = node;
+      }
+      // ...as the sole, and root node.
+      else {
+        std::construct_at(node, value);
+        root = node;
+      }
+    }
+
+    ++node_count;
+    return { node };
+  }
+
+  //! @brief Inserts a new element into the container moved
+  //! directly before the `position` iterator as the new left sibling.
+  //!
+  //! @details The value is moved at a location element provided by the
+  //! container. No iterators or references are invalidated. Inserts at the root
+  //! position as the new root. Inserts before the beginning `begin()` position
+  //! as the new root. Inserts before the ending `end()` position.
+  //!
+  //! @param position The constant iterator before which the new element will be
+  //! constructed. The iterator may be the beginning `begin()` or ending `end()`
+  //! iterator.
+  //! @param value The value to move in the the element node.
+  //!
+  //! @return The iterator pointing to the inserted element.
+  //!
+  //! @complexity Constant.
+  constexpr iterator insert(const_iterator position, value_type &&value)
+  {
+    // The allocated node is in-place construced and recorded in every
+    // following statements.
+    internal_node_type *node = node_allocator.allocate(1);
+
+    // Insert the new node...
+    // ...before the position node...
+    if (internal_node_type *position_node = position.node) {
+      // ...as the new left child...
+      if (position_node->parent) {
+        std::construct_at(node, std::move(value), nullptr, nullptr,
+                          position_node->left_sibling, position_node,
+                          position_node->parent);
+        position_node->left_sibling = node;
+        // ...with a left sibling node.
+        if (internal_node_type *left_node = node->left_sibling) {
+          left_node->right_sibling = node;
+        }
+        // ...without a left sibling node.
+        else {
+          position_node->parent->first_child = node;
+        }
+      }
+      // ...as the new root.
+      else {
+        std::construct_at(node, std::move(value), position_node, position_node);
+        position_node->parent = node;
+        root = node;
+      }
+    }
+    // ...as the new last node...
+    else {
+      // ... as the last child of the root node.
+      if (root) {
+        std::construct_at(node, std::move(value), nullptr, nullptr,
+                          root->last_child, nullptr, root);
+        if (!root->first_child) {
+          root->first_child = node;
+        }
+        if (root->last_child) {
+          root->last_child->right_sibling = node;
+        }
+        root->last_child = node;
+      }
+      // ...as the sole, and root node.
+      else {
+        std::construct_at(node, std::move(value));
+        root = node;
+      }
+    }
+
+    ++node_count;
+    return { node };
+  }
 
   template <class InputIteratorType>
   constexpr iterator insert(const_iterator position, InputIteratorType first,
