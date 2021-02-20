@@ -54,6 +54,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <string>
 // std::string std::u16string std::u32string std::u8string std::wstring
 
+#include <type_traits>
+// std::is_same_v
+
 #include <utility>
 // std::forward std::move
 
@@ -88,6 +91,11 @@ namespace fcarouge
 template <class Type, class AllocatorType = std::allocator<Type>> class tree
 {
   public:
+  static_assert(std::is_same_v<Type, typename AllocatorType::value_type>,
+                "The container's element value type and its allocator's value "
+                "type must match per N4861 22.2.1 "
+                "[container.requirements.general]/16 allocator_type.");
+
   //! @name Public Member Types
   //! @{
 
