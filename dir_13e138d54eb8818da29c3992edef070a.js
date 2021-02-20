@@ -25,6 +25,8 @@ var dir_13e138d54eb8818da29c3992edef070a =
     [ "erase_iterator.cpp", "erase__iterator_8cpp.html", "erase__iterator_8cpp" ],
     [ "for_range.cpp", "for__range_8cpp.html", "for__range_8cpp" ],
     [ "get_allocator.cpp", "get__allocator_8cpp.html", "get__allocator_8cpp" ],
+    [ "insert_lvalue.cpp", "insert__lvalue_8cpp.html", "insert__lvalue_8cpp" ],
+    [ "insert_rvalue.cpp", "insert__rvalue_8cpp.html", "insert__rvalue_8cpp" ],
     [ "iterator.cpp", "iterator_8cpp.html", "iterator_8cpp" ],
     [ "iterator_legacy.cpp", "iterator__legacy_8cpp.html", "iterator__legacy_8cpp" ],
     [ "max_size.cpp", "max__size_8cpp.html", "max__size_8cpp" ],
