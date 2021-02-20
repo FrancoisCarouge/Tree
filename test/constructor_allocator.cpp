@@ -37,6 +37,39 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
 namespace
 {
+//! @test Verify the construction with allocator exists and its exception
+//! specification.
+[[maybe_unused]] constexpr auto traits = []() {
+  // The container cannot satisty trivial construction with allocator because it
+  // is not a scalar type, trivially copyable class, or array of such
+  // type/class. It has non-static members with default initializers.
+  static_assert(
+      std::is_constructible_v<fcarouge::tree<char>,
+                              const std::allocator<char> &>,
+      "The container must be constructible with a user provided allocator.");
+  static_assert(std::is_nothrow_constructible_v<fcarouge::tree<char>,
+                                                const std::allocator<char> &>,
+                "The container must not throw on construction with a non "
+                "throwing allocator.");
+
+  return 0;
+}();
+
+//! @test Verify the construction with allocator post-conditions in constant
+//! expressions.
+[[maybe_unused]] constexpr auto compile = []() {
+  constexpr std::allocator<int> allocator;
+  constexpr fcarouge::tree<int, std::allocator<int>> allouville_oak(allocator);
+
+  assert(allouville_oak.empty() &&
+         "The container must be empty on construction with only an allocator.");
+  assert(0 == allouville_oak.size() &&
+         "The container must have zero element on construction with only an "
+         "allocator.");
+
+  return 0;
+}();
+
 //! @test Verify the post-conditions on constructing and populating a container
 //! with a standard allocator.
 [[maybe_unused]] auto construction = []() {
