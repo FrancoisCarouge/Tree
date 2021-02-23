@@ -51,8 +51,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 // std::addressof std::allocator std::allocator_traits
 // std::construct_at std::destroy_at
 
+#include <ostream>
+// std::basic_ostream
+
 #include <string>
-// std::string std::u16string std::u32string std::u8string std::wstring
+// std::basic_string std::string std::u16string std::u32string std::u8string
+// std::wstring
 
 #include <type_traits>
 // std::is_same_v
@@ -1900,5 +1904,90 @@ template <class Type, class AllocatorType>
 [[nodiscard]] constexpr auto
 operator<=>(const fcarouge::tree<Type, AllocatorType> &lhs,
             const fcarouge::tree<Type, AllocatorType> &rhs);
+
+//! @brief Inserts a human-interpretable representation of a tree into a
+//! character stream.
+//!
+//! @details The insertion operator writes the tree to the character stream as
+//! if by repeatedly writing the node value using the string
+//! FormattedOutputFunction corresponding to the value type conversion for that
+//! stream character type, traits, and currently-imbued locale. The tree is
+//! written to the stream in the order of the nodes. The values are indented
+//! according to the depth of their nodes. The tree topology is symbolized via
+//! the `├──`, `└──`, and `│` characters.
+//!
+//! @tparam CharType The type of the character of the stream.
+//! @tparam Traits The character type operations specification class.
+//! @tparam Type The type of the contained data in the tree elements.
+//! @tparam AllocatorType The type of the allocator for the nodes of the tree
+//! elements.
+//!
+//! @param output_stream The character stream to write to.
+//! @param tree The tree to be written.
+//!
+//! @return The character stream `output_stream` that was operated on.
+template <class CharType, class Traits, class Type, class AllocatorType>
+std::basic_ostream<CharType, Traits> &
+operator<<(std::basic_ostream<CharType, Traits> &output_stream,
+           const fcarouge::tree<Type, AllocatorType> &tree)
+{
+  if (const auto *root = tree.begin().node) {
+    output_stream << root->data;
+    output_stream.put(output_stream.widen('\n'));
+
+    const auto *next = root->first_child;
+
+    using margin_allocator_type = typename std::allocator_traits<
+        AllocatorType>::template rebind_alloc<char>;
+    std::basic_string<CharType, Traits, margin_allocator_type> margin{ "    " };
+
+    auto pop4_utf8 = [&margin]() {
+      for (auto character_count = 4; character_count--;) {
+        if (!margin.empty()) {
+          constexpr unsigned char utf8_mask = 0xC0u;
+          constexpr unsigned char utf8_point = 0x80u;
+          while (!((static_cast<unsigned char>(margin.back()) & utf8_mask) !=
+                   utf8_point)) {
+            margin.pop_back();
+          }
+          margin.pop_back();
+        }
+      }
+    };
+
+    while (const auto *current = next) {
+      pop4_utf8();
+      if (current->right_sibling) {
+        margin.append("├── ");
+      } else {
+        margin.append("└── ");
+      }
+      output_stream << margin.c_str() << current->data;
+      output_stream.put(output_stream.widen('\n'));
+      if (current->first_child) {
+        pop4_utf8();
+        if (current->right_sibling) {
+          margin.append("│       ");
+        } else {
+          margin.append("        ");
+        }
+        next = current->first_child;
+      } else if (current->right_sibling) {
+        next = current->right_sibling;
+      } else {
+        while (next) {
+          if (next->right_sibling) {
+            next = next->right_sibling;
+            break;
+          }
+          pop4_utf8();
+          next = next->parent;
+        }
+      }
+    };
+  }
+
+  return output_stream;
+}
 
 #endif // FCAROUGE_TREE_HPP
