@@ -160,34 +160,43 @@ The `fcarouge::tree` type is a hierarchical tree data structure. The container i
 
 ## Example
 
-![Hello, World! Tree](https://francoiscarouge.github.io/Tree/dot_inline_dotgraph_1.png)
-
 ```cpp
-// Support the tree container in this program by including its definition.
 #include "fcarouge/tree.hpp"
+// fcarouge::tree
 
-// For convenience in this example, consider not using in production.
-using namespace fcarouge;
+#include <iostream>
+// std::cout std::endl
 
 int main(int, char **)
 {
-  // Declare a "greeting" variable as a tree of strings type.
-  tree<std::string> greeting;
+  // Declare a "greeting" variable as a tree of strings alias type.
+  fcarouge::tree_string greeting;
 
-  // Push at the front of the tree a root element with string value "Hello, ".
-  greeting.push_front("Hello, ");
+  // Push at the front of the tree a root element with string value "Hello".
+  greeting.push_front("Hello");
 
-  // Push in an element with value "Wo" as a child of the beginning, root node.
-  greeting.push(greeting.begin(), "Wo");
+  // Push in an element with value "," as a child of the beginning, root node.
+  greeting.push(greeting.begin(), ",");
 
-  // Push in another element with value "d!" and keep its iterator "i".
-  const tree<std::string>::iterator i = greeting.push(greeting.begin(), "d!");
+  // Push in another element with value "d!" and keep its iterator "it".
+  const auto it = greeting.push(greeting.begin(), "!");
 
-  // Insert a left sibling of iterator "i", child of the root, with value "rl".
-  greeting.emplace(i, "rl");
+  // Insert a left sibling of iterator "it", child of the root, with value "rl".
+  greeting.emplace(it, "World");
+
+  // Print out the contents of the container.
+  std::cout << greeting << std::endl;
 
   return 0;
 }
+```
+
+Output:
+```
+Hello
+├── ,
+├── World
+└── !
 ```
 
 ## Hard Lessons Learned
