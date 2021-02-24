@@ -29,8 +29,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include "fcarouge/tree.hpp"
 // fcarouge::tree
 
-#include <string>
-// std::string
+#include <iostream>
+// std::cout std::endl
 
 namespace
 {
@@ -41,25 +41,27 @@ namespace
 //! @dot
 //! digraph "hello" {
 //!   node [shape=circle fontsize="10"];
-//!   "Hello, " -> {"Wo", "rl", "d!"}
+//!   "Hello" -> {",", "World", "!"}
 //! }
 //! @enddot
 [[maybe_unused]] auto simple = []() {
-  // Declare a "greeting" variable as a tree of strings type.
-  fcarouge::tree<std::string> greeting;
+  // Declare a "greeting" variable as a tree of strings alias type.
+  fcarouge::tree_string greeting;
 
-  // Push at the front of the tree a root element with string value "Hello, ".
-  greeting.push_front("Hello, ");
+  // Push at the front of the tree a root element with string value "Hello".
+  greeting.push_front("Hello");
 
-  // Push in an element with value "Wo" as a child of the beginning, root node.
-  greeting.push(greeting.begin(), "Wo");
+  // Push in an element with value "," as a child of the beginning, root node.
+  greeting.push(greeting.begin(), ",");
 
-  // Push in another element with value "d!" and keep its iterator "i".
-  const fcarouge::tree<std::string>::iterator i =
-      greeting.push(greeting.begin(), "d!");
+  // Push in another element with value "d!" and keep its iterator "it".
+  const auto it = greeting.push(greeting.begin(), "!");
 
-  // Insert a left sibling of iterator "i", child of the root, with value "rl".
-  greeting.emplace(i, "rl");
+  // Insert a left sibling of iterator "it", child of the root, with value "rl".
+  greeting.emplace(it, "World");
+
+  // Print out the contents of the container.
+  std::cout << greeting << std::endl;
 
   return 0;
 }();
