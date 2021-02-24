@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"iterator__legacy_8cpp.html#afed1e7e118c0c227aa2a38149bd025b3":[7,0,3,28,1],
 "iterator__legacy_8cpp_source.html":[7,0,3,28],
 "main_8cpp.html":[7,0,2,0],
 "main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0":[7,0,2,0,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "operator__assignment__copy_8cpp.html#afd8b44f20dae76ade047775944a9c9d3":[7,0,3,31,0],
 "operator__assignment__copy_8cpp_source.html":[7,0,3,31],
 "operator__assignment__lvalue_8cpp.html":[7,0,3,32],
-"operator__assignment__lvalue_8cpp.html#a1f32b4fa13863f2fdba76c44ab73ef42":[7,0,3,32,0]
+"operator__assignment__lvalue_8cpp.html#a1f32b4fa13863f2fdba76c44ab73ef42":[7,0,3,32,0],
+"operator__assignment__lvalue_8cpp_source.html":[7,0,3,32]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"operator__assignment__lvalue_8cpp_source.html":[7,0,3,32],
 "operator__assignment__move_8cpp.html":[7,0,3,33],
 "operator__assignment__move_8cpp.html#a04767a1408794a0e6eecc69a13c83402":[7,0,3,33,5],
 "operator__assignment__move_8cpp.html#a3be73bdd6234a520b5553d243a06c0dc":[7,0,3,33,0],
@@ -162,5 +161,6 @@ var NAVTREEINDEX2 =
 "tree_8hpp.html#afb0f31fe3391065015466abd964c78fd":[7,0,0,0,0,46],
 "tree_8hpp.html#afe73786645ebae419492b637edad5118":[7,0,0,0,0,16],
 "tree_8hpp.html#afef0746139daea5c8a1535024dcb6e6a":[7,0,0,0,0,41],
-"tree_8hpp_source.html":[7,0,0,0,0]
+"tree_8hpp_source.html":[7,0,0,0,0],
+"":[5,0,43]
 };
