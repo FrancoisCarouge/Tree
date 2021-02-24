@@ -1,11 +1,12 @@
 <map id="include/fcarouge/tree.hpp" name="include/fcarouge/tree.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="255,5,421,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="297,5,464,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,71,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="95,80,157,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="181,80,244,107"/>
 <area shape="rect" id="node5" title=" " alt="" coords="269,80,322,107"/>
 <area shape="rect" id="node6" title=" " alt="" coords="347,80,415,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="439,80,493,107"/>
-<area shape="rect" id="node8" title=" " alt="" coords="518,80,601,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="625,80,677,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="439,80,509,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="533,80,588,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="613,80,695,107"/>
+<area shape="rect" id="node10" title=" " alt="" coords="720,80,772,107"/>
 </map>

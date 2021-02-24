@@ -51,6 +51,7 @@ var tree_8hpp =
     [ "tree_uintptr_t", "tree_8hpp.html#aedb6860663f5457066d2c4ba1d1e870e", null ],
     [ "tree_wchar_t", "tree_8hpp.html#a7622672881f1430ea6cdbbfff665627e", null ],
     [ "tree_wstring", "tree_8hpp.html#acdd40cc3af64aedc141e983be20caa3c", null ],
+    [ "operator<<", "tree_8hpp.html#a964d11956a482b4fa27d9a2bbcb5511a", null ],
     [ "operator<=>", "tree_8hpp.html#ae748dc8afc895c0b70f1111e33b2fe04", null ],
     [ "operator==", "tree_8hpp.html#ae617bea810be26e335a2cc2e2c91d3e8", null ]
 ];
