@@ -1199,6 +1199,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @return Reference to the inserted element.
   //!
   //! @complexity Constant.
+  //!
+  //! @image{inline} html "benchmark/emplace_front_cumulative.svg"
+  //! @image{inline} html "benchmark/emplace_front_incremental.svg"
   template <class... ArgumentsType>
   constexpr reference emplace_front(ArgumentsType &&... arguments)
   {
