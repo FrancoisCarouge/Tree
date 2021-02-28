@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <li><a href="#includes">Includes</a></li>
 <li><a href="#namespaces">Namespaces</a></li>
 <li><a href="#classes">Classes</a></li>
+<li><a href="#type-aliases">Type Aliases</a></li>
 </ul>
 </li>
 <li><a href="#class-fcarougetree">Class fcarouge::tree</a><ul>
@@ -170,12 +171,11 @@ Includes</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>&lt;cstddef&gt;</code>   </td><td class="markdownTableBodyNone">Standard size and pointer difference types support.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>&lt;iterator&gt;</code>   </td><td class="markdownTableBodyNone">Standard input iterator tag support.    </td></tr>
+<td class="markdownTableBodyNone"><code>&lt;cstdint&gt;</code>   </td><td class="markdownTableBodyNone">Standard fixed width integer types support.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>&lt;memory&gt;</code>   </td><td class="markdownTableBodyNone">Standard construction, allocation, and addressing support.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>&lt;utility&gt;</code>   </td><td class="markdownTableBodyNone">Standard moving and forwarding resources support.   </td></tr>
+<td class="markdownTableBodyNone"><code>&lt;iterator&gt;</code>   </td><td class="markdownTableBodyNone">Standard input iterator tag support.   </td></tr>
 </table>
+<p>| <code>&lt;limits&gt;</code> | | Standard fundamental numeric types properties support. | | <code>&lt;memory&gt;</code> | Standard construction, allocation, and addressing support. | | <code>&lt;ostream&gt;</code> | Standard output stream support. | | <code>&lt;string&gt;</code> | Standard string support. | | <code>&lt;type_traits&gt;</code> | Standard type traits support. | | <code>&lt;utility&gt;</code> | Standard moving and forwarding resources support. |</p>
 <h2><a class="anchor" id="autotoc_md17"></a>
 Namespaces</h2>
 <table class="markdownTable">
@@ -192,7 +192,104 @@ Classes</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>tree</code>   </td><td class="markdownTableBodyNone">Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
+Type Aliases</h2>
+<p>Type aliases are provided for a variety of fundamental and standard types, in the <code>fcarouge</code> namespace, without specialization of the allocator type, as follows:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Alias   </th><th class="markdownTableHeadNone">Definition    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_bool</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;bool&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_char</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;char&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_schar</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;signed char&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uchar</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;unsigned char&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;int&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;unsigned int&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_char8_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;char8_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_char16_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;char16_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_char32_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;char32_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_wchar_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;wchar_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int8_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int8_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint8_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint8_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int16_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int16_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint16_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint16_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int32_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int32_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint32_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint32_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int64_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int64_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint64_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint64_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int_least8_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int_least8_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint_least8_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint_least8_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int_least16_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int_least16_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint_least16_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint_least16_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int_least32_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int_least32_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint_least32_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint_least32_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int_least64_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int_least64_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint_least64_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint_least64_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int_fast8_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int_fast8_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint_fast8_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint_fast8_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int_fast16_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int_fast16_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint_fast16_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint_fast16_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int_fast32_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int_fast32_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint_fast32_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint_fast32_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_int_fast64_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::int_fast64_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uint_fast64_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uint_fast64_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_intptr_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::intptr_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uintptr_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uintptr_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_size_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::size_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_ptrdiff_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::ptrdiff_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_intmax_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::intmax_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_uintmax_t</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::uintmax_t&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_string</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::string&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_u8string</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::u8string&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_u16string</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::u16string&gt;</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tree_u32string</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::u32string&gt;</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>tree_wstring</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::wstring&gt;</code>   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md20"></a>
 Class fcarouge::tree</h1>
 <p>Defined in header <a href="include/fcarouge/tree.hpp">fcarouge/tree.hpp</a></p>
 <div class="fragment"><div class="line">template &lt;</div>
@@ -214,7 +311,7 @@ Class fcarouge::tree</h1>
 <li>influenced by the Standard Template Library (STL) principles and the C++ Core Guidelines in its design tradeoffs,</li>
 <li>intelligibly documented for the wider audience.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Template Parameters</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -224,7 +321,7 @@ Template Parameters</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>AllocatorType</code>   </td><td class="markdownTableBodyNone">An allocator that is used to acquire/release memory and to construct/destroy the elements in that memory.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Member Types</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -250,7 +347,7 @@ Member Types</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>const_iterator</code>   </td><td class="markdownTableBodyNone">The constant type to identify and traverse the elements of the container.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Member Functions</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -266,7 +363,7 @@ Member Functions</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>get_allocator</code>   </td><td class="markdownTableBodyNone">Returns the allocator associated with the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md23"></a>
+<h3><a class="anchor" id="autotoc_md24"></a>
 Element Access</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -274,7 +371,7 @@ Element Access</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>front</code>   </td><td class="markdownTableBodyNone">Returns a reference to the first element in the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md24"></a>
+<h3><a class="anchor" id="autotoc_md25"></a>
 Iterators</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -286,7 +383,7 @@ Iterators</h3>
 <td class="markdownTableBodyNone"><code>end</code> <br  />
 <code>cend</code>   </td><td class="markdownTableBodyNone">Returns an iterator to the element following the last element of the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md25"></a>
+<h3><a class="anchor" id="autotoc_md26"></a>
 Capacity</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -298,7 +395,7 @@ Capacity</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>max_size</code>   </td><td class="markdownTableBodyNone">Returns the maximum number of elements the container is able to hold.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md26"></a>
+<h3><a class="anchor" id="autotoc_md27"></a>
 Modifiers</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -320,7 +417,7 @@ Modifiers</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>swap</code>   </td><td class="markdownTableBodyNone">Exchanges the contents of this container with those of the other container.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md27"></a>
+<h1><a class="anchor" id="autotoc_md28"></a>
 Example</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="tree_8hpp.html">fcarouge/tree.hpp</a>&quot;</span></div>
 <div class="line"><span class="comment">// fcarouge::tree</span></div>
@@ -361,12 +458,12 @@ Example</h1>
 <div class="line">├── ,</div>
 <div class="line">├── World</div>
 <div class="line">└── !</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md28"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md29"></a>
 Hard Lessons Learned</h1>
 <ul>
 <li>Recursive code <b>will</b> run out of stack space. No matter the architecture, for a generic data structure that cannot guarantee depth by design. Refactor to iterative code.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md29"></a>
+<h1><a class="anchor" id="autotoc_md30"></a>
 License</h1>
 <p><img src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png" alt="" align="right" class="inline"/></p>
 <p>Tree for C++ is licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a>:</p>
@@ -380,7 +477,7 @@ License</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Feb 28 2021 01:14:07 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Feb 28 2021 02:22:10 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

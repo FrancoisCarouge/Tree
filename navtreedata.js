@@ -31,39 +31,40 @@ var NAVTREE =
       [ "File include/fcarouge/tree.hpp", "index.html#autotoc_md15", [
         [ "Includes", "index.html#autotoc_md16", null ],
         [ "Namespaces", "index.html#autotoc_md17", null ],
-        [ "Classes", "index.html#autotoc_md18", null ]
+        [ "Classes", "index.html#autotoc_md18", null ],
+        [ "Type Aliases", "index.html#autotoc_md19", null ]
       ] ],
-      [ "Class fcarouge::tree", "index.html#autotoc_md19", [
-        [ "Template Parameters", "index.html#autotoc_md20", null ],
-        [ "Member Types", "index.html#autotoc_md21", null ],
-        [ "Member Functions", "index.html#autotoc_md22", [
-          [ "Element Access", "index.html#autotoc_md23", null ],
-          [ "Iterators", "index.html#autotoc_md24", null ],
-          [ "Capacity", "index.html#autotoc_md25", null ],
-          [ "Modifiers", "index.html#autotoc_md26", null ]
+      [ "Class fcarouge::tree", "index.html#autotoc_md20", [
+        [ "Template Parameters", "index.html#autotoc_md21", null ],
+        [ "Member Types", "index.html#autotoc_md22", null ],
+        [ "Member Functions", "index.html#autotoc_md23", [
+          [ "Element Access", "index.html#autotoc_md24", null ],
+          [ "Iterators", "index.html#autotoc_md25", null ],
+          [ "Capacity", "index.html#autotoc_md26", null ],
+          [ "Modifiers", "index.html#autotoc_md27", null ]
         ] ]
       ] ],
-      [ "Example", "index.html#autotoc_md27", null ],
-      [ "Hard Lessons Learned", "index.html#autotoc_md28", null ],
-      [ "License", "index.html#autotoc_md29", null ]
+      [ "Example", "index.html#autotoc_md28", null ],
+      [ "Hard Lessons Learned", "index.html#autotoc_md29", null ],
+      [ "License", "index.html#autotoc_md30", null ]
     ] ],
     [ "Contributor Covenant Code of Conduct", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html", [
-      [ "Our Pledge", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md1", null ],
-      [ "Our Standards", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md2", null ],
-      [ "Our Responsibilities", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md3", null ],
-      [ "Scope", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md4", null ],
-      [ "Enforcement", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md5", null ],
-      [ "Attribution", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md6", null ]
+      [ "Our Pledge", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md6", null ],
+      [ "Our Standards", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md7", null ],
+      [ "Our Responsibilities", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md8", null ],
+      [ "Scope", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md9", null ],
+      [ "Enforcement", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md10", null ],
+      [ "Attribution", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md11", null ]
     ] ],
     [ "Contributing", "md__c_o_n_t_r_i_b_u_t_i_n_g.html", [
-      [ "Code of Conduct", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md8", null ],
-      [ "Reporting Bugs", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md9", null ],
-      [ "Requesting Features", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md10", null ],
-      [ "Security Policy", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md11", null ]
+      [ "Code of Conduct", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md1", null ],
+      [ "Reporting Bugs", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md2", null ],
+      [ "Requesting Features", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md3", null ],
+      [ "Security Policy", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md4", null ]
     ] ],
     [ "Security Policy", "md__s_e_c_u_r_i_t_y.html", [
-      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md31", null ],
-      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md32", null ]
+      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md32", null ],
+      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md33", null ]
     ] ],
     [ "Test List", "test.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -98,8 +99,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "",
-"iterator__legacy_8cpp_source.html",
-"operator__assignment__move_8cpp.html"
+"iterator__legacy_8cpp.html#afed1e7e118c0c227aa2a38149bd025b3",
+"operator__assignment__lvalue_8cpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
