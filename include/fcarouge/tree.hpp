@@ -503,9 +503,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
           : node_allocator{ std::allocator_traits<AllocatorType>::
                                 select_on_container_copy_construction(
                                     other.node_allocator) },
-            root{ copy(other.root, nullptr, nullptr) }, node_count{
-              other.node_count
-            }
+            root{ copy(other.root) }, node_count{ other.node_count }
   {
   }
 
@@ -521,9 +519,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @complexity Linear in size of the other container.
   constexpr tree(const tree &other, const AllocatorType &allocator)
-          : node_allocator{ allocator }, root{ copy(other.root, nullptr,
-                                                    nullptr) },
-            node_count{ other.node_count }
+          : node_allocator{ allocator }, root{ copy(other.root) }, node_count{
+              other.node_count
+            }
   {
   }
 
@@ -563,7 +561,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
           : node_allocator{ allocator }, node_count{ other.node_count }
   {
     if (allocator != other.node_allocator) {
-      root = copy(other.root, nullptr, nullptr);
+      root = copy(other.root);
     } else {
       root = other.root;
       other.root = nullptr;
@@ -655,7 +653,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       axe(root);
       node_allocator = std::allocator_traits<AllocatorType>::
           select_on_container_copy_construction(other.node_allocator);
-      root = copy(other.root, nullptr, nullptr);
+      root = copy(other.root);
       node_count = other.node_count;
     }
     return *this;
@@ -752,7 +750,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
       axe(root);
       node_allocator = std::allocator_traits<AllocatorType>::
           select_on_container_copy_construction(other.node_allocator);
-      root = copy(other.root, nullptr, nullptr);
+      root = copy(other.root);
       node_count = other.node_count;
     }
     return *this;
@@ -1267,8 +1265,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     // following statements.
     internal_node_type *node = node_allocator.allocate(1);
 
-    // Insert the new node...
-    // ...before the position node...
+    // Insert the new node before the position node...
     if (internal_node_type *position_node = position.node) {
       // ...as the new left child...
       if (position_node->parent) {
@@ -1723,37 +1720,66 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! created right sibling to its left sibling, if any.
   //!
   //! @param other_node The other tree node to copy.
-  //! @param left_sibling The optional left sibling node to attach this new node
-  //! to.
-  //! @param parent The optional parent node to attach this new node to.
   //!
   //! @complexity Linear in the size of the number of nodes copied.
-  internal_node_type *copy(internal_node_type *other_node,
-                           internal_node_type *left_sibling,
-                           internal_node_type *parent)
+  internal_node_type *copy(internal_node_type *other_node)
   {
     // If there is another node to copy...
     if (other_node) {
-      // ...allocate and in-place construct a node with this container's
-      // allocator, the other node data value, and any left sibling or parent
-      // pointers...
-      internal_node_type *node = node_allocator.allocate(1);
-      std::construct_at(node, other_node->data, nullptr, nullptr, left_sibling,
-                        nullptr, parent);
-      // ...recursively copy the right sibling and first child passing in left
-      // sibling and parent pointers...
-      node->right_sibling = copy(other_node->right_sibling, node, node->parent);
-      node->first_child = copy(other_node->first_child, nullptr, node);
-      // ...reference the parent's last child with the last right sibling.
-      if (node->parent && !node->parent->last_child) {
-        node->parent->last_child = node;
-      }
-      return node;
+      // ...allocate and in-place construct the first node with this container's
+      // allocator and the other node data value...
+      internal_node_type *first = node_allocator.allocate(1);
+      std::construct_at(first, other_node->data, nullptr, nullptr, nullptr,
+                        nullptr, nullptr);
+
+      // ...walk the other tree to copy and track the tree copied...
+      internal_node_type *next_other = other_node->first_child;
+      internal_node_type *next_parent = first;
+      internal_node_type *next_left_sibling = nullptr;
+
+      // ...for every node to copy...
+      while (next_other) {
+        // ...allocate and in-place construct a node with this container's
+        // allocator, the other node data value, and any left sibling or parent
+        // pointers...
+        internal_node_type *node = node_allocator.allocate(1);
+        std::construct_at(node, next_other->data, nullptr, nullptr,
+                          next_left_sibling, nullptr, next_parent);
+
+        // ...reference any parent and left sibling to the new node...
+        next_parent->last_child = node;
+        if (next_left_sibling) {
+          next_left_sibling->right_sibling = node;
+        } else {
+          next_parent->first_child = node;
+        }
+
+        // ...walk to the next other tree node to copy and walk and track the
+        // copied tree alongside...
+        next_parent = node;
+        next_left_sibling = nullptr;
+        if (next_other->first_child) {
+          next_other = next_other->first_child;
+        } else {
+          // ...going back to the next ancestor sibling and tracking as
+          // necessary.
+          while (next_other) {
+            if (next_other->right_sibling) {
+              next_other = next_other->right_sibling;
+              break;
+            }
+            next_other = next_other->parent;
+            next_parent = next_parent->parent;
+            next_left_sibling = next_parent->last_child;
+          }
+        }
+      };
+
+      return first;
     }
 
     return nullptr;
   }
-
   //! @}
 
   //! @name Private Member Variables
@@ -1947,12 +1973,14 @@ std::basic_ostream<CharType, Traits> &
 operator<<(std::basic_ostream<CharType, Traits> &output_stream,
            const fcarouge::tree<Type, AllocatorType> &tree)
 {
+  // If there is a root...
   if (const auto *root = tree.begin().node) {
+    // ...insert the root's representation in the stream...
     output_stream << root->data;
     output_stream.put(output_stream.widen('\n'));
 
-    const auto *next = root->first_child;
-
+    // ...by using a character queue to contain the indented topology, growing,
+    // shrinking, while walking the tree...
     using margin_allocator_type = typename std::allocator_traits<
         AllocatorType>::template rebind_alloc<char>;
     std::basic_string<CharType, Traits, margin_allocator_type> margin{ "    " };
@@ -1971,6 +1999,9 @@ operator<<(std::basic_ostream<CharType, Traits> &output_stream,
       }
     };
 
+    const auto *next = root->first_child;
+
+    // ...for every node to insert its representation...
     while (const auto *current = next) {
       pop4_utf8();
       if (current->right_sibling) {
@@ -1978,8 +2009,10 @@ operator<<(std::basic_ostream<CharType, Traits> &output_stream,
       } else {
         margin.append("└── ");
       }
+      // ...insert the node's representation in the stream...
       output_stream << margin.c_str() << current->data;
       output_stream.put(output_stream.widen('\n'));
+      // ...move onto the next node...
       if (current->first_child) {
         pop4_utf8();
         if (current->right_sibling) {
@@ -1991,6 +2024,8 @@ operator<<(std::basic_ostream<CharType, Traits> &output_stream,
       } else if (current->right_sibling) {
         next = current->right_sibling;
       } else {
+        // ...going back to the next ancestor sibling and poping characters from
+        // the topology margin as necessary.
         while (next) {
           if (next->right_sibling) {
             next = next->right_sibling;

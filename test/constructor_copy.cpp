@@ -54,6 +54,37 @@ namespace
   return 0;
 }();
 
+//! @test Verify copy construction of an empty tree.
+[[maybe_unused]] auto empty = []() {
+  fcarouge::tree<int> auffay_linden;
+  fcarouge::tree<int> bunodiere_beech(auffay_linden);
+
+  assert(0 == bunodiere_beech.size() &&
+         "The container must contain zero node.");
+  assert(bunodiere_beech.empty() && "The container must be empty.");
+  assert(bunodiere_beech.begin() == bunodiere_beech.end() &&
+         "The container's beginning and ending iterators must be equal.");
+  assert(
+      bunodiere_beech.cbegin() == bunodiere_beech.cend() &&
+      "The container's beginning and ending constant iterators must be equal.");
+
+  return 0;
+}();
+
+//! @test Verify copy construction of a one element tree.
+[[maybe_unused]] auto one = []() {
+  fcarouge::tree<int> auffay_linden(42);
+  fcarouge::tree<int> bunodiere_beech(auffay_linden);
+
+  assert(1 == bunodiere_beech.size() && "The container must contain one node.");
+  assert(!bunodiere_beech.empty() && "The container must not be empty.");
+  assert(42 == bunodiere_beech.front() &&
+         "The container's front value and value used for construction "
+         "must be equal on copy construction.");
+
+  return 0;
+}();
+
 //! @test Verify the post conditions on a copied non-trivial tree.
 //!
 //! @dot
