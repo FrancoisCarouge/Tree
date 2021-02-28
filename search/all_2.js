@@ -37,6 +37,6 @@ var searchData=
   ['contributing_88',['Contributing',['../md__c_o_n_t_r_i_b_u_t_i_n_g.html',1,'']]],
   ['contributing_2emd_89',['CONTRIBUTING.md',['../_c_o_n_t_r_i_b_u_t_i_n_g_8md.html',1,'']]],
   ['contributor_20covenant_20code_20of_20conduct_90',['Contributor Covenant Code of Conduct',['../md__c_o_d_e__o_f__c_o_n_d_u_c_t.html',1,'']]],
-  ['copy_91',['copy',['../classfcarouge_1_1tree.html#aac95d8c0e7f379eccf5f7e9361d9c121',1,'fcarouge::tree::copy()'],['../_l_i_c_e_n_s_e_8txt.html#ab4b4f82f609f8a7da88c1f556c53c2a5',1,'copy():&#160;LICENSE.txt']]],
+  ['copy_91',['copy',['../classfcarouge_1_1tree.html#a05a1f360c6e514a1546af25b83f52895',1,'fcarouge::tree::copy()'],['../_l_i_c_e_n_s_e_8txt.html#ab4b4f82f609f8a7da88c1f556c53c2a5',1,'copy():&#160;LICENSE.txt']]],
   ['copyright_92',['Copyright',['../_l_i_c_e_n_s_e_8txt.html#aa8fa0120e14706bc3dafe9d71c200782',1,'LICENSE.txt']]]
 ];

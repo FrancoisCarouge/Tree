@@ -94,10 +94,49 @@ $(document).ready(function(){initNavTree('namespaceanonymous__namespace_02constr
 Variables</h2></td></tr>
 <tr class="memitem:ae71c00b39048e6112583b79018a391f2"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02constructor__copy__allocator_8cpp_03.html#ae71c00b39048e6112583b79018a391f2">traits</a></td></tr>
 <tr class="separator:ae71c00b39048e6112583b79018a391f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0a98a9db5be68341c877aeb620679c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02constructor__copy__allocator_8cpp_03.html#ade0a98a9db5be68341c877aeb620679c">empty</a></td></tr>
+<tr class="separator:ade0a98a9db5be68341c877aeb620679c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90a98f6fceca8c49c8b20aa383ddf457"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02constructor__copy__allocator_8cpp_03.html#a90a98f6fceca8c49c8b20aa383ddf457">one</a></td></tr>
+<tr class="separator:a90a98f6fceca8c49c8b20aa383ddf457"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc3d800f144653629809592bea29bb27"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02constructor__copy__allocator_8cpp_03.html#acc3d800f144653629809592bea29bb27">multiple</a></td></tr>
 <tr class="separator:acc3d800f144653629809592bea29bb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ade0a98a9db5be68341c877aeb620679c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade0a98a9db5be68341c877aeb620679c">&#9670;&nbsp;</a></span>empty</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto anonymous_namespace{constructor_copy_allocator.cpp}::empty</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> auffay_linden;</div>
+<div class="line">  std::allocator&lt;int&gt; allocator;</div>
+<div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree</a>&lt;int, decltype(allocator)&gt; bunodiere_beech(auffay_linden,</div>
+<div class="line">                                                           allocator);</div>
+<div class="line"> </div>
+<div class="line">  assert(0 == bunodiere_beech.size() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container must contain zero node.&quot;</span>);</div>
+<div class="line">  assert(bunodiere_beech.empty() &amp;&amp; <span class="stringliteral">&quot;The container must be empty.&quot;</span>);</div>
+<div class="line">  assert(bunodiere_beech.begin() == bunodiere_beech.end() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must be equal.&quot;</span>);</div>
+<div class="line">  assert(</div>
+<div class="line">      bunodiere_beech.cbegin() == bunodiere_beech.cend() &amp;&amp;</div>
+<div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning and ending constant iterators must be equal.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00108">tree.hpp:109</a></div></div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000028">Test:</a></b></dt><dd>Verify copy construction of an empty tree. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="constructor__copy__allocator_8cpp_source.html#l00065">65</a> of file <a class="el" href="constructor__copy__allocator_8cpp_source.html">constructor_copy_allocator.cpp</a>.</p>
+
+</div>
+</div>
 <a id="acc3d800f144653629809592bea29bb27"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acc3d800f144653629809592bea29bb27">&#9670;&nbsp;</a></span>multiple</h2>
 
@@ -109,12 +148,43 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000025">Test:</a></b></dt><dd>Verify the post conditions on a copied non-trivial tree with a custom allocator.</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000030">Test:</a></b></dt><dd>Verify the post conditions on a copied non-trivial tree with a custom allocator.</dd></dl>
 <div class="dotgraph">
 <img src="dot_inline_dotgraph_3.png" alt="dot_inline_dotgraph_3.png" border="0" usemap="#dot_inline_dotgraph_3.map"/>
 </div>
  
-<p class="definition">Definition at line <a class="el" href="constructor__copy__allocator_8cpp_source.html#l00076">76</a> of file <a class="el" href="constructor__copy__allocator_8cpp_source.html">constructor_copy_allocator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="constructor__copy__allocator_8cpp_source.html#l00111">111</a> of file <a class="el" href="constructor__copy__allocator_8cpp_source.html">constructor_copy_allocator.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a90a98f6fceca8c49c8b20aa383ddf457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a98f6fceca8c49c8b20aa383ddf457">&#9670;&nbsp;</a></span>one</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto anonymous_namespace{constructor_copy_allocator.cpp}::one</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
+<div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> auffay_linden(42);</div>
+<div class="line">  std::allocator&lt;int&gt; allocator;</div>
+<div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree</a>&lt;int, decltype(allocator)&gt; bunodiere_beech(auffay_linden,</div>
+<div class="line">                                                           allocator);</div>
+<div class="line"> </div>
+<div class="line">  assert(1 == bunodiere_beech.size() &amp;&amp; <span class="stringliteral">&quot;The container must contain one node.&quot;</span>);</div>
+<div class="line">  assert(!bunodiere_beech.empty() &amp;&amp; <span class="stringliteral">&quot;The container must not be empty.&quot;</span>);</div>
+<div class="line">  assert(42 == bunodiere_beech.front() &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s front value and value used for construction &quot;</span></div>
+<div class="line">         <span class="stringliteral">&quot;must be equal on copy construction.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}()</div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000029">Test:</a></b></dt><dd>Verify copy construction of a one element tree. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="constructor__copy__allocator_8cpp_source.html#l00084">84</a> of file <a class="el" href="constructor__copy__allocator_8cpp_source.html">constructor_copy_allocator.cpp</a>.</p>
 
 </div>
 </div>
@@ -152,8 +222,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00108">tree.hpp:109</a></div></div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000024">Test:</a></b></dt><dd>Verify the copy construction with allocator exists and its exception specification. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000027">Test:</a></b></dt><dd>Verify the copy construction with allocator exists and its exception specification. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="constructor__copy__allocator_8cpp_source.html#l00048">48</a> of file <a class="el" href="constructor__copy__allocator_8cpp_source.html">constructor_copy_allocator.cpp</a>.</p>
 
@@ -165,7 +234,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02constructor__copy__allocator_8cpp_03.html">anonymous_namespace{constructor_copy_allocator.cpp}</a></li>
-    <li class="footer">Generated on Sun Feb 28 2021 02:22:09 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Feb 28 2021 05:54:43 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

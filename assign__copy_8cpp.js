@@ -4,5 +4,6 @@ var assign__copy_8cpp =
     [ "all_replace_none", "assign__copy_8cpp.html#a95a05a253561e97cb64b3e6757139892", null ],
     [ "empty", "assign__copy_8cpp.html#afc11bb4c4c12a617eed19801dd0b0433", null ],
     [ "none_replace_all", "assign__copy_8cpp.html#ab380a5713a0819ea4ce95c350f5d1655", null ],
+    [ "one", "assign__copy_8cpp.html#ac6396d4f67184b93aac7e236242c9caf", null ],
     [ "self", "assign__copy_8cpp.html#a5443c34f6448bfa40b588dfe8d3a048e", null ]
 ];

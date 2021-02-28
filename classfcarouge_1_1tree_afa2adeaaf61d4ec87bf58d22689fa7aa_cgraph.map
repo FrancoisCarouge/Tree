@@ -1,5 +1,5 @@
 <map id="fcarouge::tree::assign" name="fcarouge::tree::assign">
 <area shape="rect" id="node1" title="Copy assignment." alt="" coords="5,31,149,57"/>
 <area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#a8b8d9ed8c1122dd228a7392d9bd2671f" title="Axes the specified element including its sub&#45;tree." alt="" coords="201,5,327,32"/>
-<area shape="rect" id="node3" href="$classfcarouge_1_1tree.html#aac95d8c0e7f379eccf5f7e9361d9c121" title="Copies the node, its subtrees, and right siblings recursively." alt="" coords="197,56,331,83"/>
+<area shape="rect" id="node3" href="$classfcarouge_1_1tree.html#a05a1f360c6e514a1546af25b83f52895" title="Copies the node, its subtrees, and right siblings recursively." alt="" coords="197,56,331,83"/>
 </map>
