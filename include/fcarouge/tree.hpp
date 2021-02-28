@@ -72,14 +72,27 @@ namespace fcarouge
 //! @brief A tree data structure for C++.
 //!
 //! @details The `fcarouge::tree` type is a hierarchical tree data structure.
-//! The container is a generic non-linear non-associative unordered recursively
-//! referenced collection of nodes, each containing a value. The design
-//! tradeoffs are influenced by the Standard Template Library (STL) principles
-//! and the C++ Core Guidelines. The container is a standard layout class type
-//! which may help with memory and cross language communication. The iteration
-//! order of the standard iterator is unspecified, except that each element is
-//! visited only once. The container supports compile time evaluation of its
-//! operations.
+//! The container is:
+//! - generic with respect to the type of stored values and allocator as
+//! template parameters,
+//! - non-linear compared to arrays, linked lists, stacks, and queues as a node
+//! may lead to multiple nodes,
+//! - non-associative compared to maps and sets as values are not keyed,
+//! - unordered since internally, the elements are not sorted or maintained in
+//! any particular order but externally, the insertion order is upheld,
+//! - recursive in its facade exposing a recursively referenced collection of
+//! nodes, each containing a value,
+//! - standard layout class type which may help with memory and cross language
+//! communication,
+//! - unspecified iteration order except that each element is visited only once,
+//! - implemented operations without recursive calls to guarantee a constant
+//! stack usage limit,
+//! - compile time evaluation compatible,
+//! - employing generational C++ features advantageously up to C++20 standard,
+//! - separating algorithmic from container concerns,
+//! - influenced by the Standard Template Library (STL) principles and the C++
+//! Core Guidelines in its design tradeoffs,
+//! - intelligibly documented for the wider audience.
 //!
 //! @tparam Type The type of the contained data elements. The requirements that
 //! are imposed on the elements depend on the actual operations performed on the
