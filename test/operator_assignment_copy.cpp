@@ -67,6 +67,21 @@ namespace
   return 0;
 }();
 
+//! @test Verify copy assigning a one element to a one element tree.
+[[maybe_unused]] auto one = []() {
+  fcarouge::tree<int> auffay_linden(42);
+  fcarouge::tree<int> bunodiere_beech(24);
+  bunodiere_beech = auffay_linden;
+
+  assert(1 == bunodiere_beech.size() && "The container must contain one node.");
+  assert(!bunodiere_beech.empty() && "The container must not be empty.");
+  assert(42 == bunodiere_beech.front() &&
+         "The container's front value and value used for construction "
+         "must be equal on copy assignment.");
+
+  return 0;
+}();
+
 //! @test Verify copy assigning a complex tree to a complex tree with identical
 //! topology.
 [[maybe_unused]] auto all_replace_all = []() {
