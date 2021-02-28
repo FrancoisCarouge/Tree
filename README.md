@@ -5,7 +5,6 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
 - [Tree for C++](#tree-for-c)
   - [Information Tree](#information-tree)
   - [Use Cases](#use-cases)
-  - [Design Tradeoffs](#design-tradeoffs)
   - [File include/fcarouge/tree.hpp](#file-includefcarougetreehpp)
     - [Includes](#includes)
     - [Namespaces](#namespaces)
@@ -48,14 +47,6 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
 - when one of the many algorithms, parsers do better, or
 - when one of the [100+](https://en.wikipedia.org/wiki/Category:Trees_(data_structures)) other trees do better: binary, ternary, m-ary, k-ary, red-black, k-d, B, B+ trees!
 
-## Design Tradeoffs
-
-The selected design tradeoffs are:
-- the Standard Template Library (STL) principles, and by extension, their tradeoffs, and
-- the C++ Core Guidelines, and
-- the C++20 support, and
-- precise, detailed, and intelligible documentation for the wider audience.
-
 ## File include/fcarouge/tree.hpp
 
 ### Includes
@@ -90,7 +81,20 @@ template <
 > class tree
 ```
 
-The `fcarouge::tree` type is a hierarchical tree data structure. The container is a generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. The design tradeoffs are influenced by the Standard Template Library (STL) principles and the C++ Core Guidelines. The container is a standard layout class type which may help with memory and cross language communication. The iteration order of the standard iterator is unspecified, except that each element is visited only once.
+The `fcarouge::tree` type is a hierarchical tree data structure. The container is:
+- generic with respect to the type of stored values and allocator as template parameters,
+- non-linear compared to arrays, linked lists, stacks, and queues as a node may lead to multiple nodes,
+- non-associative compared to maps and sets as values are not keyed,
+- unordered since internally, the elements are not sorted or maintained in any particular order but externally, the insertion order is upheld,
+- recursive in its facade exposing a recursively referenced collection of nodes, each containing a value,
+- standard layout class type which may help with memory and cross language communication,
+- unspecified iteration order except that each element is visited only once,
+- implemented operations without recursive calls to guarantee a constant stack usage limit,
+- compile time evaluation compatible,
+- employing generational C++ features advantageously up to C++20 standard,
+- separating algorithmic from container concerns,
+- influenced by the Standard Template Library (STL) principles and the C++ Core Guidelines in its design tradeoffs,
+- intelligibly documented for the wider audience.
 
 ### Template Parameters
 
