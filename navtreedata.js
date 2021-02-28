@@ -28,25 +28,24 @@ var NAVTREE =
     [ "Tree for C++", "index.html", [
       [ "Information Tree", "index.html#autotoc_md13", null ],
       [ "Use Cases", "index.html#autotoc_md14", null ],
-      [ "Design Tradeoffs", "index.html#autotoc_md15", null ],
-      [ "File include/fcarouge/tree.hpp", "index.html#autotoc_md16", [
-        [ "Includes", "index.html#autotoc_md17", null ],
-        [ "Namespaces", "index.html#autotoc_md18", null ],
-        [ "Classes", "index.html#autotoc_md19", null ]
+      [ "File include/fcarouge/tree.hpp", "index.html#autotoc_md15", [
+        [ "Includes", "index.html#autotoc_md16", null ],
+        [ "Namespaces", "index.html#autotoc_md17", null ],
+        [ "Classes", "index.html#autotoc_md18", null ]
       ] ],
-      [ "Class fcarouge::tree", "index.html#autotoc_md20", [
-        [ "Template Parameters", "index.html#autotoc_md21", null ],
-        [ "Member Types", "index.html#autotoc_md22", null ],
-        [ "Member Functions", "index.html#autotoc_md23", [
-          [ "Element Access", "index.html#autotoc_md24", null ],
-          [ "Iterators", "index.html#autotoc_md25", null ],
-          [ "Capacity", "index.html#autotoc_md26", null ],
-          [ "Modifiers", "index.html#autotoc_md27", null ]
+      [ "Class fcarouge::tree", "index.html#autotoc_md19", [
+        [ "Template Parameters", "index.html#autotoc_md20", null ],
+        [ "Member Types", "index.html#autotoc_md21", null ],
+        [ "Member Functions", "index.html#autotoc_md22", [
+          [ "Element Access", "index.html#autotoc_md23", null ],
+          [ "Iterators", "index.html#autotoc_md24", null ],
+          [ "Capacity", "index.html#autotoc_md25", null ],
+          [ "Modifiers", "index.html#autotoc_md26", null ]
         ] ]
       ] ],
-      [ "Example", "index.html#autotoc_md28", null ],
-      [ "Hard Lessons Learned", "index.html#autotoc_md29", null ],
-      [ "License", "index.html#autotoc_md30", null ]
+      [ "Example", "index.html#autotoc_md27", null ],
+      [ "Hard Lessons Learned", "index.html#autotoc_md28", null ],
+      [ "License", "index.html#autotoc_md29", null ]
     ] ],
     [ "Contributor Covenant Code of Conduct", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html", [
       [ "Our Pledge", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md1", null ],
@@ -63,8 +62,8 @@ var NAVTREE =
       [ "Security Policy", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md11", null ]
     ] ],
     [ "Security Policy", "md__s_e_c_u_r_i_t_y.html", [
-      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md32", null ],
-      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md33", null ]
+      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md31", null ],
+      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md32", null ]
     ] ],
     [ "Test List", "test.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -98,7 +97,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
+"",
 "iterator__legacy_8cpp_source.html",
 "operator__assignment__move_8cpp.html"
 ];
