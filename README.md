@@ -9,6 +9,7 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
     - [Includes](#includes)
     - [Namespaces](#namespaces)
     - [Classes](#classes)
+    - [Type Aliases](#type-aliases)
   - [Class fcarouge::tree](#class-fcarougetree)
     - [Template Parameters](#template-parameters)
     - [Member Types](#member-types)
@@ -54,8 +55,13 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
 | Include | Definition |
 | --- | --- |
 | `<cstddef>` | Standard size and pointer difference types support. |
+| `<cstdint>` | Standard fixed width integer types support. |
 | `<iterator>` | Standard input iterator tag support. |
+| `<limits>` | | Standard fundamental numeric types properties support. |
 | `<memory>` | Standard construction, allocation, and addressing support. |
+| `<ostream>` | Standard output stream support. |
+| `<string>` | Standard string support. |
+| `<type_traits>` | Standard type traits support. |
 | `<utility>` | Standard moving and forwarding resources support. |
 
 ### Namespaces
@@ -69,6 +75,58 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
 | Class | Definition |
 | --- | --- |
 | `tree` | Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. |
+
+### Type Aliases
+
+Type aliases are provided for a variety of fundamental and standard types, in the `fcarouge` namespace, without specialization of the allocator type, as follows:
+
+| Alias | Definition |
+| --- | --- |
+| `tree_bool` | `tree<bool>` |
+| `tree_char` | `tree<char>` |
+| `tree_schar` | `tree<signed char>` |
+| `tree_uchar` | `tree<unsigned char>` |
+| `tree_int` | `tree<int>` |
+| `tree_uint` | `tree<unsigned int>` |
+| `tree_char8_t` | `tree<char8_t>` |
+| `tree_char16_t` | `tree<char16_t>` |
+| `tree_char32_t` | `tree<char32_t>` |
+| `tree_wchar_t` | `tree<wchar_t>` |
+| `tree_int8_t` | `tree<std::int8_t>` |
+| `tree_uint8_t` | `tree<std::uint8_t>` |
+| `tree_int16_t` | `tree<std::int16_t>` |
+| `tree_uint16_t` | `tree<std::uint16_t>` |
+| `tree_int32_t` | `tree<std::int32_t>` |
+| `tree_uint32_t` | `tree<std::uint32_t>` |
+| `tree_int64_t` | `tree<std::int64_t>` |
+| `tree_uint64_t` | `tree<std::uint64_t>` |
+| `tree_int_least8_t` | `tree<std::int_least8_t>` |
+| `tree_uint_least8_t` | `tree<std::uint_least8_t>` |
+| `tree_int_least16_t` | `tree<std::int_least16_t>` |
+| `tree_uint_least16_t` | `tree<std::uint_least16_t>` |
+| `tree_int_least32_t` | `tree<std::int_least32_t>` |
+| `tree_uint_least32_t` | `tree<std::uint_least32_t>` |
+| `tree_int_least64_t` | `tree<std::int_least64_t>` |
+| `tree_uint_least64_t` | `tree<std::uint_least64_t>` |
+| `tree_int_fast8_t` | `tree<std::int_fast8_t>` |
+| `tree_uint_fast8_t` | `tree<std::uint_fast8_t>` |
+| `tree_int_fast16_t` | `tree<std::int_fast16_t>` |
+| `tree_uint_fast16_t` | `tree<std::uint_fast16_t>` |
+| `tree_int_fast32_t` | `tree<std::int_fast32_t>` |
+| `tree_uint_fast32_t` | `tree<std::uint_fast32_t>` |
+| `tree_int_fast64_t` | `tree<std::int_fast64_t>` |
+| `tree_uint_fast64_t` | `tree<std::uint_fast64_t>` |
+| `tree_intptr_t` | `tree<std::intptr_t>` |
+| `tree_uintptr_t` | `tree<std::uintptr_t>` |
+| `tree_size_t` | `tree<std::size_t>` |
+| `tree_ptrdiff_t` | `tree<std::ptrdiff_t>` |
+| `tree_intmax_t` | `tree<std::intmax_t>` |
+| `tree_uintmax_t` | `tree<std::uintmax_t>` |
+| `tree_string` | `tree<std::string>` |
+| `tree_u8string` | `tree<std::u8string>` |
+| `tree_u16string` | `tree<std::u16string>` |
+| `tree_u32string` | `tree<std::u32string>` |
+| `tree_wstring` | `tree<std::wstring>` |
 
 ## Class fcarouge::tree
 
