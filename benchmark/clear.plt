@@ -30,16 +30,16 @@
 
 set terminal svg
 set datafile separator ","
-set title "{/:Bold Modifier Member Function: emplace\\\_front - Cumulative}\n{/*0.8 fcarouge::tree<uint64\\\_t, std::allocator>::emplace\\\_front() on nondescript x86\\\_64 Linux with GCC 11.0 and -O3 option}"
+set title "{/:Bold Modifier Member Function: clear - Cumulative}\n{/*0.8 fcarouge::tree<uint64\\\_t, std::allocator>::clear() on nondescript x86\\\_64 Linux with GCC 11.0 and -O3 option}"
 set key noautotitle
-set xlabel "N elements emplaced"
-set ylabel "Time to emplace N elements (ns)"
+set xlabel "N elements cleared"
+set ylabel "Time to clear N elements (ns)"
 set logscale xy
-set output "benchmark/emplace_front_cumulative.svg"
+set output "benchmark/clear.svg"
 set style line 1 \
   linewidth 4 \
   linetype rgb "forest-green" \
   pointtype 7 \
   pointsize 1.2
 
-plot "benchmark/emplace_front_cumulative.csv" using 1:2 with linespoints ls 1
+plot "benchmark/clear.csv" using 1:2 with linespoints ls 1

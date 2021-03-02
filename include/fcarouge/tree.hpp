@@ -1033,6 +1033,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @complexity Linear in size of this container, i.e., the number of
   //! elements.
+  //!
+  //! @benchmark
+  //! @image{inline} html "benchmark/clear.svg"
   constexpr void clear() noexcept
   {
     axe(root);
@@ -1211,6 +1214,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //!
   //! @complexity Constant.
   //!
+  //! @benchmark
   //! @image{inline} html "benchmark/emplace_front_cumulative.svg"
   //! @image{inline} html "benchmark/emplace_front_incremental.svg"
   template <class... ArgumentsType>
@@ -1780,6 +1784,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     return nullptr;
   }
+
   //! @}
 
   //! @name Private Member Variables
