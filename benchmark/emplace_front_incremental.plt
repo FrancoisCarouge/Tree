@@ -30,7 +30,7 @@
 
 set terminal svg
 set datafile separator ","
-set title "{/:Bold Modifier Member Function: emplace\\\_front() - Incremental}"
+set title "{/:Bold Modifier Member Function: emplace\\\_front - Incremental}\n{/*0.8 fcarouge::tree<uint64\\\_t, std::allocator>::emplace\\\_front() on nondescript x86\\\_64 Linux with GCC 11.0 and -O3 option}"
 set key noautotitle
 set xlabel "N elements emplaced"
 set logscale x
