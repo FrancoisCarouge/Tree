@@ -29,6 +29,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include "fcarouge/tree.hpp"
 // fcarouge::tree
 
+#include "fcarouge/tree_algorithm.hpp"
+// fcarouge::depth
+
 #include <cassert>
 // assert
 
@@ -40,7 +43,7 @@ namespace
 //! @test Verify the depth of the root on a constant container.
 [[maybe_unused]] auto root_const = []() {
   const fcarouge::tree<int> maucomble_boxwood(42);
-  assert(0 == maucomble_boxwood.begin().depth() &&
+  assert(0 == depth(maucomble_boxwood.begin()) &&
          "The root depth must be equal to zero.");
 
   return 0;
@@ -49,7 +52,7 @@ namespace
 //! @test Verify the depth of the root.
 [[maybe_unused]] auto root = []() {
   fcarouge::tree<int> maucomble_boxwood(42);
-  assert(0 == maucomble_boxwood.begin().depth() &&
+  assert(0 == depth(maucomble_boxwood.begin()) &&
          "The root depth must be equal to zero.");
 
   return 0;
@@ -87,7 +90,7 @@ namespace
   std::multiset<int> iterated_depth;
   for (auto iterator = auffay_linden.begin(); iterator != auffay_linden.end();
        ++iterator) {
-    iterated_depth.insert(iterator.depth());
+    iterated_depth.insert(depth(iterator));
   }
 
   assert(expected_content == iterated_depth &&
