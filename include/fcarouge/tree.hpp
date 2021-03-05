@@ -161,31 +161,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
 
     //! @}
 
-    //! @name Public Observer Member Functions
-    //! @{
-
-    //! @brief Length of the path from the root to the node.
-    //!
-    //! @details Returns the number of nodes from the root to the node, i.e. the
-    //! current depth of the tree hierarchy. The root has depth of `0`, its
-    //! children have depth `1`, etc...
-    //!
-    //! @return Current depth of the node.
-    //!
-    //! @complexity Linear in depth.
-    [[nodiscard]] constexpr size_type depth() const noexcept
-    {
-      size_type depth = 0;
-      const internal_node_type *current = this;
-      while ((current = current->parent)) {
-        ++depth;
-      }
-
-      return depth;
-    }
-
-    //! @}
-
     //! @name Public Search Member Functions
     //! @{
 
@@ -275,23 +250,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     {
       return node->data;
     }
-
-    //! @brief Length of the path from the root to the iterated node.
-    //!
-    //! @details Returns the number of nodes from the root to the currently
-    //! iterated node, i.e. the current depth of the tree hierarchy. The root
-    //! has depth of `0`, its children have depth `1`, etc... The behavior is
-    //! undefined if `*this` is the end iterator.
-    //!
-    //! @return Current depth of the iterator.
-    //!
-    //! @complexity Linear in depth.
-    [[nodiscard]] constexpr size_type depth() const noexcept
-    {
-      return node->depth();
-    }
-
-    //! @}
 
     //! @name Public Modifier Member Functions
     //! @{
@@ -389,21 +347,6 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     [[nodiscard]] constexpr reference operator*() const noexcept
     {
       return node->data;
-    }
-
-    //! @brief Length of the path from the root to the iterated node.
-    //!
-    //! @details Returns the number of nodes from the root to the currently
-    //! iterated node, i.e. the current depth of the tree hierarchy. The root
-    //! has depth of `0`, its children have depth `1`, etc... The behavior is
-    //! undefined if `*this` is the end iterator.
-    //!
-    //! @return Current depth of the iterator.
-    //!
-    //! @complexity Linear in depth.
-    [[nodiscard]] constexpr size_type depth() const noexcept
-    {
-      return node->depth();
     }
 
     //! @}
