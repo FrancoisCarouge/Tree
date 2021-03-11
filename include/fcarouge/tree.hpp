@@ -1744,6 +1744,9 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @}
 };
 
+//! @name Type Aliases
+//! @{
+
 template <class AllocatorType = std::allocator<bool>>
 using tree_bool = tree<bool, AllocatorType>;
 template <class AllocatorType = std::allocator<char>>
@@ -1834,6 +1837,8 @@ template <class AllocatorType = std::allocator<std::u32string>>
 using tree_u32string = tree<std::u32string, AllocatorType>;
 template <class AllocatorType = std::allocator<std::wstring>>
 using tree_wstring = tree<std::wstring, AllocatorType>;
+
+//! @}
 
 } // namespace fcarouge
 
