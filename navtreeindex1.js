@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"iterator_8cpp.html":[7,0,3,27],
 "iterator_8cpp.html#ad94b8410bdbd77f6204d94a1f2f0aaab":[7,0,3,27,0],
 "iterator_8cpp_source.html":[7,0,3,27],
 "iterator__legacy_8cpp.html":[7,0,3,28],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "namespacemembers.html":[5,1,0],
 "namespacemembers_func.html":[5,1,1],
 "namespacemembers_type.html":[5,1,3],
-"namespacemembers_vars.html":[5,1,2]
+"namespacemembers_vars.html":[5,1,2],
+"namespaces.html":[5,0]
 };
