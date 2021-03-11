@@ -137,7 +137,10 @@ Information Tree</h1>
 <a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Test+Static+Analysis%3A+CppCheck%22+branch%3Adevelop"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Test%20Static%20Analysis:%20CppCheck/badge.svg" alt="Test Static Analysis: CppCheck" style="pointer-events: none;" class="inline"/></a> <br  />
 <a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Test%3A+Ubuntu+20.04+GCC+10%22+branch%3Adevelop"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Test:%20Ubuntu%2020.04%20GCC%2010/badge.svg" alt="Test: Ubuntu 20.04 GCC 10" style="pointer-events: none;" class="inline"/></a> <br  />
 <a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Test+Memory%3A+Valgrind%22+branch%3Adevelop"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Test%20Memory:%20Valgrind/badge.svg" alt="Test Memory: Valgrind" style="pointer-events: none;" class="inline"/></a> <br  />
-<a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Test+Address%3A+AddressSanitizer%22+branch%3Adevelop"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Test%20Address:%20AddressSanitizer/badge.svg" alt="Test Address: AddressSanitizer" style="pointer-events: none;" class="inline"/></a> <br  />
+<a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Test+Address%3A+Sanitizer%22+branch%3Adevelop"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Test%20Address:%20Sanitizer/badge.svg" alt="Test Address: Sanitizer" style="pointer-events: none;" class="inline"/></a> <br  />
+<a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Test+Leak%3A+Sanitizer%22+branch%3Adevelop"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Test%20Leak:%20Sanitizer/badge.svg" alt="Test Leak: Sanitizer" style="pointer-events: none;" class="inline"/></a> <br  />
+<a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Test+Thread%3A+Sanitizer%22+branch%3Adevelop"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Test%20Thread:%20Sanitizer/badge.svg" alt="Test Thread: Sanitizer" style="pointer-events: none;" class="inline"/></a> <br  />
+<a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Test+Undefined+Behavior%3A+Sanitizer%22+branch%3Adevelop"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Test%20Undefined%20Behavior:%20Sanitizer/badge.svg" alt="Test Undefined Behavior: Sanitizer" style="pointer-events: none;" class="inline"/></a> <br  />
 <a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Deploy+Documentation%3A+Doxygen+GitHub+Pages%22"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Deploy%20Documentation:%20Doxygen%20GitHub%20Pages/badge.svg" alt="Deploy Documentation: Doxygen GitHub Pages" style="pointer-events: none;" class="inline"/></a> <br  />
 <a href="https://github.com/FrancoisCarouge/Tree/actions?query=workflow%3A%22Deploy+Code+Coverage%3A+Coveralls%22"><img src="https://github.com/FrancoisCarouge/Tree/workflows/Deploy%20Code%20Coverage:%20Coveralls/badge.svg" alt="Deploy Code Coverage: Coveralls" style="pointer-events: none;" class="inline"/></a> <br  />
 <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree?ref=badge_shield"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FFrancoisCarouge%2FTree.svg?type=shield" alt="FOSSA Status" style="pointer-events: none;" class="inline"/></a>    </td></tr>
@@ -173,9 +176,20 @@ Includes</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>&lt;cstdint&gt;</code>   </td><td class="markdownTableBodyNone">Standard fixed width integer types support.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>&lt;iterator&gt;</code>   </td><td class="markdownTableBodyNone">Standard input iterator tag support.   </td></tr>
+<td class="markdownTableBodyNone"><code>&lt;iterator&gt;</code>   </td><td class="markdownTableBodyNone">Standard input iterator tag support.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>&lt;limits&gt;</code>   </td><td class="markdownTableBodyNone">Standard fundamental numeric types properties support.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>&lt;memory&gt;</code>   </td><td class="markdownTableBodyNone">Standard construction, allocation, and addressing support.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>&lt;ostream&gt;</code>   </td><td class="markdownTableBodyNone">Standard output stream support.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>&lt;string&gt;</code>   </td><td class="markdownTableBodyNone">Standard string support.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>&lt;type_traits&gt;</code>   </td><td class="markdownTableBodyNone">Standard type traits support.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>&lt;utility&gt;</code>   </td><td class="markdownTableBodyNone">Standard moving and forwarding resources support.   </td></tr>
 </table>
-<p>| <code>&lt;limits&gt;</code> | | Standard fundamental numeric types properties support. | | <code>&lt;memory&gt;</code> | Standard construction, allocation, and addressing support. | | <code>&lt;ostream&gt;</code> | Standard output stream support. | | <code>&lt;string&gt;</code> | Standard string support. | | <code>&lt;type_traits&gt;</code> | Standard type traits support. | | <code>&lt;utility&gt;</code> | Standard moving and forwarding resources support. |</p>
 <h2><a class="anchor" id="autotoc_md17"></a>
 Namespaces</h2>
 <table class="markdownTable">
@@ -477,7 +491,7 @@ License</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 5 2021 01:35:25 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Mar 11 2021 02:37:30 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
