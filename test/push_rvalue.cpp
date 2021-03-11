@@ -163,13 +163,6 @@ namespace
   auffay_linden.push(node3, 31);
   auffay_linden.push(node3, 32);
   auffay_linden.push(node3, 33);
-  const std::multiset<int> expected_content{ 0,  1,  2,  3,  11, 12, 13,
-                                             21, 22, 23, 31, 32, 33 };
-  std::multiset<int> iterated_content;
-  fcarouge::tree<int>::const_iterator iterator = auffay_linden.begin();
-  for (; iterator != auffay_linden.end(); ++iterator) {
-    iterated_content.insert(*iterator);
-  }
 
   assert(13 == auffay_linden.size() &&
          "The container must have 13 nodes upon pushing 13 element values.");
@@ -179,6 +172,12 @@ namespace
   assert(
       *node0 == auffay_linden.front() &&
       "The container's front value must be equal to the expected root value.");
+
+  const std::multiset<int> expected_content{ 0,  1,  2,  3,  11, 12, 13,
+                                             21, 22, 23, 31, 32, 33 };
+  std::multiset<int> iterated_content(auffay_linden.cbegin(),
+                                      auffay_linden.cend());
+
   assert(expected_content == iterated_content &&
          "The container's content must meet expected content.");
 
