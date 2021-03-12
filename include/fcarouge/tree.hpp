@@ -311,6 +311,13 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Member Functions
     //! @{
 
+    //! @brief Default constructor needed for non-aggregate constant iterator.
+    //!
+    //! @details The default constructor is provided to allow simple default
+    //! construction since the conversion constructor makes the constant
+    //! iterator a non-aggregate type.
+    constexpr const_iterator() noexcept = default;
+
     //! @brief Implicit iterator to constant iterator conversion.
     //!
     //! @details The regular, i.e. non-constant, iterator type is implicitely
@@ -322,7 +329,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //!
     //! @note No conversion assignment operator is supported following the
     //! majority of Standard Template Library (STL) vendors implementation.
-    constexpr const_iterator(const iterator &iterator) : node{ iterator.node }
+    constexpr const_iterator(const iterator &iterator) noexcept
+            : node{ iterator.node }
     {
     }
 
@@ -331,7 +339,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @details Aggregate initialization is not available per implicit iterator
     //! conversion construction. The node pointer type is implicitely
     //! convertible to the constant iterator type to allow list initialization.
-    constexpr const_iterator(internal_node_type *node) : node{ node }
+    constexpr const_iterator(internal_node_type *node) noexcept : node{ node }
     {
     }
 
@@ -873,7 +881,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   [[nodiscard]] constexpr iterator end() noexcept
   {
-    return { nullptr };
+    return {};
   }
 
   //! @brief Returns a constant iterator to the element following the last
@@ -888,7 +896,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   [[nodiscard]] constexpr const_iterator end() const noexcept
   {
-    return { nullptr };
+    return {};
   }
 
   //! @brief Returns a constant iterator to the element following the last
@@ -903,7 +911,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @complexity Constant.
   [[nodiscard]] constexpr const_iterator cend() const noexcept
   {
-    return { nullptr };
+    return {};
   }
 
   //! @}
