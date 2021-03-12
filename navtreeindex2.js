@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"namespaces.html":[5,0],
 "null__allocator_8hpp.html":[7,0,3,30],
 "null__allocator_8hpp_source.html":[7,0,3,30],
 "operator__assignment__copy_8cpp.html":[7,0,3,31],
@@ -65,15 +66,16 @@ var NAVTREEINDEX2 =
 "standard__layout_8cpp.html#a2dabf92b63ec1ca381eb40b8155ea11e":[7,0,3,41,0],
 "standard__layout_8cpp_source.html":[7,0,3,41],
 "structfcarouge_1_1tree_1_1const__iterator.html":[6,0,0,0,0],
-"structfcarouge_1_1tree_1_1const__iterator.html#a0ab2161aae339d2122ac4435186a0de4":[6,0,0,0,0,6],
-"structfcarouge_1_1tree_1_1const__iterator.html#a565daa1f7ec3290ddfa097c6ab638d9c":[6,0,0,0,0,7],
+"structfcarouge_1_1tree_1_1const__iterator.html#a258716f9fe84c4d31f9d1ede7803e77f":[6,0,0,0,0,6],
+"structfcarouge_1_1tree_1_1const__iterator.html#a3dded24e64d7529a619a0ce5204018a2":[6,0,0,0,0,5],
+"structfcarouge_1_1tree_1_1const__iterator.html#a565daa1f7ec3290ddfa097c6ab638d9c":[6,0,0,0,0,8],
 "structfcarouge_1_1tree_1_1const__iterator.html#a6059df06ce424117de3187cbcb278467":[6,0,0,0,0,2],
-"structfcarouge_1_1tree_1_1const__iterator.html#a64fc19165ce167d8839bd27715aa66c5":[6,0,0,0,0,5],
-"structfcarouge_1_1tree_1_1const__iterator.html#a65d23263beacab29a34c44f5934c89f7":[6,0,0,0,0,10],
+"structfcarouge_1_1tree_1_1const__iterator.html#a65d23263beacab29a34c44f5934c89f7":[6,0,0,0,0,11],
+"structfcarouge_1_1tree_1_1const__iterator.html#a669f0e54df985d3b1deefd5007e5dacf":[6,0,0,0,0,7],
 "structfcarouge_1_1tree_1_1const__iterator.html#ab0eb80290c3d8a11e4627bcfac51d727":[6,0,0,0,0,4],
-"structfcarouge_1_1tree_1_1const__iterator.html#ab72d6eec57025962217778741857eca3":[6,0,0,0,0,9],
+"structfcarouge_1_1tree_1_1const__iterator.html#ab72d6eec57025962217778741857eca3":[6,0,0,0,0,10],
 "structfcarouge_1_1tree_1_1const__iterator.html#abfe0d919f46b45575864aa8b7631004c":[6,0,0,0,0,0],
-"structfcarouge_1_1tree_1_1const__iterator.html#acbe2135e9bc1993a672d304069cbf680":[6,0,0,0,0,8],
+"structfcarouge_1_1tree_1_1const__iterator.html#acbe2135e9bc1993a672d304069cbf680":[6,0,0,0,0,9],
 "structfcarouge_1_1tree_1_1const__iterator.html#ad93b61925559da429e38525c6ac220b2":[6,0,0,0,0,1],
 "structfcarouge_1_1tree_1_1const__iterator.html#af45132f7f6fdea9d1bc3078cb05b873b":[6,0,0,0,0,3],
 "structfcarouge_1_1tree_1_1insert__return__type.html":[6,0,0,0,1],
@@ -175,6 +177,5 @@ var NAVTREEINDEX2 =
 "tree_8hpp_source.html":[7,0,0,0,0],
 "tree__algorithm_8hpp.html":[7,0,0,0,1],
 "tree__algorithm_8hpp.html#a6c807e9e5573caff2b1d8396bcd4eced":[7,0,0,0,1,0],
-"tree__algorithm_8hpp_source.html":[7,0,0,0,1],
-"":[5,0,43]
+"tree__algorithm_8hpp_source.html":[7,0,0,0,1]
 };
