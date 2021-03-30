@@ -231,20 +231,20 @@ The `fcarouge::tree` type is a hierarchical tree data structure. The container i
 
 int main(int, char **)
 {
-  // Declare a "greeting" variable as a tree of strings alias type.
+  // Declare a "greeting" variable as a tree of aliased standard strings.
   fcarouge::tree_string greeting;
 
   // Push at the front of the tree a root element with string value "Hello".
-  greeting.push_front("Hello");
+  const auto root = greeting.emplace(greeting.begin(), "Hello");
 
-  // Push in an element with value "," as a child of the beginning, root node.
-  greeting.push(greeting.begin(), ",");
+  // Push in an element with value "," as a child of the sole node.
+  greeting.push(root, ",");
 
-  // Push in another element with value "d!" and keep its iterator "it".
-  const auto it = greeting.push(greeting.begin(), "!");
+  // Push in another element with value "!" and keep its iterator "bang".
+  const auto bang = greeting.push(root, "!");
 
-  // Insert a left sibling of iterator "it", child of the root, with value "rl".
-  greeting.emplace(it, "World");
+  // Insert a left sibling of iterator "bang" with value "World".
+  greeting.emplace(bang, "World");
 
   // Print out the contents of the container.
   std::cout << greeting << std::endl;
