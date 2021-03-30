@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"namespaces.html":[5,0],
 "null__allocator_8hpp.html":[7,0,3,30],
 "null__allocator_8hpp_source.html":[7,0,3,30],
 "operator__assignment__copy_8cpp.html":[7,0,3,31],
@@ -177,5 +176,6 @@ var NAVTREEINDEX2 =
 "tree_8hpp_source.html":[7,0,0,0,0],
 "tree__algorithm_8hpp.html":[7,0,0,0,1],
 "tree__algorithm_8hpp.html#a6c807e9e5573caff2b1d8396bcd4eced":[7,0,0,0,1,0],
-"tree__algorithm_8hpp_source.html":[7,0,0,0,1]
+"tree__algorithm_8hpp_source.html":[7,0,0,0,1],
+"":[5,0,43]
 };
