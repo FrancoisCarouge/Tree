@@ -5,11 +5,15 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
 - [Tree for C++](#tree-for-c)
   - [Information Tree](#information-tree)
   - [Use Cases](#use-cases)
+  - [Example](#example)
   - [File include/fcarouge/tree.hpp](#file-includefcarougetreehpp)
     - [Includes](#includes)
     - [Namespaces](#namespaces)
     - [Classes](#classes)
+  - [File include/fcarouge/tree_fwd.hpp](#file-includefcarougetree_fwdhpp)
     - [Type Aliases](#type-aliases)
+  - [File include/fcarouge/tree_algorithm.hpp](#file-includefcarougetree_algorithmhpp)
+    - [Observing Operations](#observing-operations)
   - [Class fcarouge::tree](#class-fcarougetree)
     - [Template Parameters](#template-parameters)
     - [Member Types](#member-types)
@@ -18,7 +22,6 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
       - [Iterators](#iterators)
       - [Capacity](#capacity)
       - [Modifiers](#modifiers)
-  - [Example](#example)
   - [Hard Lessons Learned](#hard-lessons-learned)
   - [License](#license)
 
@@ -48,6 +51,48 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
 - when one of the many algorithms, parsers do better, or
 - when one of the [100+](https://en.wikipedia.org/wiki/Category:Trees_(data_structures)) other trees do better: binary, ternary, m-ary, k-ary, red-black, k-d, B, B+ trees!
 
+## Example
+
+`main.cpp`
+```cpp
+#include "fcarouge/tree.hpp"
+// fcarouge::tree
+
+#include <iostream>
+// std::cout std::endl
+
+int main(int, char **)
+{
+  // Declare a "greeting" variable as a tree of aliased standard strings.
+  fcarouge::tree_string greeting;
+
+  // Push at the front of the tree a root element with string value "Hello".
+  const auto root = greeting.emplace(greeting.begin(), "Hello");
+
+  // Push in an element with value "," as a child of the sole node.
+  greeting.push(root, ",");
+
+  // Push in another element with value "!" and keep its iterator "bang".
+  const auto bang = greeting.push(root, "!");
+
+  // Insert a left sibling of iterator "bang" with value "World".
+  greeting.emplace(bang, "World");
+
+  // Print out the contents of the container.
+  std::cout << greeting << std::endl;
+
+  return 0;
+}
+```
+
+Output:
+```
+Hello
+├── ,
+├── World
+└── !
+```
+
 ## File include/fcarouge/tree.hpp
 
 ### Includes
@@ -75,6 +120,14 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
 | Class | Definition |
 | --- | --- |
 | `tree` | Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. |
+
+## File include/fcarouge/tree_fwd.hpp
+
+Minimal forward declaration header.
+
+- forward declares the `tree` class, and
+- defines its common type aliases, and
+- includes its minimum necessary standard library dependencies.
 
 ### Type Aliases
 
@@ -127,6 +180,14 @@ Type aliases are provided for a variety of fundamental and standard types, in th
 | `tree_u16string` | `tree<std::u16string>` |
 | `tree_u32string` | `tree<std::u32string>` |
 | `tree_wstring` | `tree<std::wstring>` |
+
+## File include/fcarouge/tree_algorithm.hpp
+
+### Observing Operations
+
+| Observing Operation | Definition |
+| --- | --- |
+| `depth` | Depth of the path from the root, top element to the iterated node. |
 
 ## Class fcarouge::tree
 
@@ -219,47 +280,6 @@ The `fcarouge::tree` type is a hierarchical tree data structure. The container i
 | `push` | Inserts the given element value into the container directly after the last child of the position iterator as the new last child. |
 | `push_front` | Prepends the given element to the beginning of the container. |
 | `swap` | Exchanges the contents of this container with those of the other container. |
-
-## Example
-
-```cpp
-#include "fcarouge/tree.hpp"
-// fcarouge::tree
-
-#include <iostream>
-// std::cout std::endl
-
-int main(int, char **)
-{
-  // Declare a "greeting" variable as a tree of aliased standard strings.
-  fcarouge::tree_string greeting;
-
-  // Push at the front of the tree a root element with string value "Hello".
-  const auto root = greeting.emplace(greeting.begin(), "Hello");
-
-  // Push in an element with value "," as a child of the sole node.
-  greeting.push(root, ",");
-
-  // Push in another element with value "!" and keep its iterator "bang".
-  const auto bang = greeting.push(root, "!");
-
-  // Insert a left sibling of iterator "bang" with value "World".
-  greeting.emplace(bang, "World");
-
-  // Print out the contents of the container.
-  std::cout << greeting << std::endl;
-
-  return 0;
-}
-```
-
-Output:
-```
-Hello
-├── ,
-├── World
-└── !
-```
 
 ## Hard Lessons Learned
 
