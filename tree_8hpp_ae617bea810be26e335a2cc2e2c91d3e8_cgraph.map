@@ -1,4 +1,4 @@
 <map id="operator==" name="operator==">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,91,32"/>
-<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79" title=" " alt="" coords="139,5,268,32"/>
+<area shape="rect" id="node1" title="Compares the contents of two containers." alt="" coords="5,5,91,32"/>
+<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79" title="Returns the number of elements in the container." alt="" coords="139,5,268,32"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="fcarouge::tree::size" name="fcarouge::tree::size">
-<area shape="rect" id="node1" title=" " alt="" coords="139,5,268,32"/>
-<area shape="rect" id="node2" href="$tree_8hpp.html#ae617bea810be26e335a2cc2e2c91d3e8" title=" " alt="" coords="5,5,91,32"/>
+<area shape="rect" id="node1" title="Returns the number of elements in the container." alt="" coords="139,5,268,32"/>
+<area shape="rect" id="node2" href="$tree_8hpp.html#ae617bea810be26e335a2cc2e2c91d3e8" title="Compares the contents of two containers." alt="" coords="5,5,91,32"/>
 </map>

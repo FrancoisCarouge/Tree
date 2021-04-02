@@ -1,4 +1,4 @@
 <map id="fcarouge::tree::emplace_last_child" name="fcarouge::tree::emplace_last_child">
-<area shape="rect" id="node1" title=" " alt="" coords="188,5,343,47"/>
-<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388" title=" " alt="" coords="5,13,140,39"/>
+<area shape="rect" id="node1" title="Inserts a constructed in&#45;place element into the container after the last child of the position iterat..." alt="" coords="188,5,343,47"/>
+<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388" title="Inserts a copied element into the container after the last child of the position iterator as the new ..." alt="" coords="5,13,140,39"/>
 </map>
