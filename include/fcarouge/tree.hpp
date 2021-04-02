@@ -26,20 +26,14 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
+//! @file
+//! @brief Tree container types and canonical operations definitions header.
+
 #ifndef FCAROUGE_TREE_HPP
 #define FCAROUGE_TREE_HPP
 
 #include <cstddef>
 // std::ptrdiff_t std::size_t
-
-#include <cstdint>
-// std::int_fast16_t std::int_fast32_t std::int_fast64_t std::int_fast8_t
-// std::int_least16_t std::int_least32_t std::int_least64_t std::int_least8_t
-// std::int16_t std::int32_t std::int64_t std::int8_t std::intmax_t
-// std::intptr_t std::uint_fast16_t std::uint_fast32_t std::uint_fast64_t
-// std::uint_fast8_t std::uint_least16_t std::uint_least32_t std::uint_least64_t
-// std::uint_least8_t std::uint16_t std::uint32_t std::uint64_t std::uint8_t
-// std::uintmax_t std::uintptr_t
 
 #include <iterator>
 // std::input_iterator_tag
@@ -55,8 +49,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 // std::basic_ostream
 
 #include <string>
-// std::basic_string std::string std::u16string std::u32string std::u8string
-// std::wstring
+// std::basic_string
 
 #include <type_traits>
 // std::is_same_v
@@ -64,12 +57,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <utility>
 // std::forward std::move
 
+#include "tree_fwd.hpp"
+
 //! @namespace fcarouge Francois Carouge's projects namespace. Lowers the name
 //! conflict probability in large projects. Use using-declarations or
 //! namespace-alias-definition per your project guidelines.
 namespace fcarouge
 {
-//! A tree data structure for C++.
+//! @brief A tree data structure for C++.
 //!
 //! @details The `fcarouge::tree` type is a hierarchical tree data structure.
 //! The container is:
@@ -105,7 +100,7 @@ namespace fcarouge
 //! and to construct/destroy the elements in that memory. The type must meet the
 //! requirements of Allocator. The behavior is undefined if
 //! `Allocator::value_type` is not the same as `Type`.
-template <class Type, class AllocatorType = std::allocator<Type>> class tree
+template <class Type, class AllocatorType> class tree
 {
   public:
   static_assert(std::is_same_v<Type, typename AllocatorType::value_type>,
@@ -116,28 +111,29 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Public Member Types
   //! @{
 
-  //! The type of the contained data elements.
+  //! @brief The type of the contained data elements.
   using value_type = Type;
 
-  //! The type of the allocator for all memory allocations of this container.
+  //! @brief The type of the allocator for all memory allocations of this
+  //! container.
   using allocator_type = AllocatorType;
 
-  //! The unsigned integer type to represent element counts.
+  //! @brief The unsigned integer type to represent element counts.
   using size_type = std::size_t;
 
-  //! Signed integer type to represent element distances.
+  //! @brief Signed integer type to represent element distances.
   using difference_type = std::ptrdiff_t;
 
-  //! The reference type of the contained data elements.
+  //! @brief The reference type of the contained data elements.
   using reference = value_type &;
 
-  //! The constant reference type of the contained data elements.
+  //! @brief The constant reference type of the contained data elements.
   using const_reference = const value_type &;
 
-  //! The pointer type of the contained data elements.
+  //! @brief The pointer type of the contained data elements.
   using pointer = typename std::allocator_traits<AllocatorType>::pointer;
 
-  //! The constant pointer type of the contained data elements.
+  //! @brief The constant pointer type of the contained data elements.
   using const_pointer =
       typename std::allocator_traits<AllocatorType>::const_pointer;
 
@@ -147,7 +143,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Private Member Types
   //! @{
 
-  //! Branch node data structure type.
+  //! @brief Branch node data structure type.
   //!
   //! @details Internal implementation details of the node data structure type
   //! containing the element data.
@@ -155,7 +151,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Member Types
     //! @{
 
-    //! The type of the contained data elements.
+    //! @brief The type of the contained data elements.
     using value_type = tree::value_type;
 
     //! @}
@@ -163,7 +159,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Search Member Functions
     //! @{
 
-    //! Finds the nearest right sibling of itself or ancestor.
+    //! @brief Finds the nearest right sibling of itself or ancestor.
     //!
     //! @details Recursively walks the tree.
     //!
@@ -198,11 +194,11 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @}
   };
 
-  //! Element allocator type rebind to internal node allocator type.
+  //! @brief Element allocator type rebind to internal node allocator type.
   using internal_node_allocator_type = typename std::allocator_traits<
       AllocatorType>::template rebind_alloc<internal_node_type>;
 
-  //! The internal node allocator traits access.
+  //! @brief The internal node allocator traits access.
   using internal_node_allocator_traits =
       std::allocator_traits<internal_node_allocator_type>;
 
@@ -212,7 +208,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Public Member Types
   //! @{
 
-  //! Type to identify and traverse the elements of the container.
+  //! @brief Type to identify and traverse the elements of the container.
   //!
   //! @details The iteration order of the standard iterator is unspecified,
   //! except that each element is visited only once.
@@ -220,19 +216,19 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Member Types
     //! @{
 
-    //! The type of the contained data elements.
+    //! @brief The type of the contained data elements.
     using value_type = tree::value_type;
 
-    //! Signed integer type to represent element distances.
+    //! @brief Signed integer type to represent element distances.
     using difference_type = tree::difference_type;
 
-    //! The reference type of the contained data elements.
+    //! @brief The reference type of the contained data elements.
     using reference = tree::reference;
 
-    //! The pointer type of the contained data elements.
+    //! @brief The pointer type of the contained data elements.
     using pointer = tree::pointer;
 
-    //! The category of the iterator.
+    //! @brief The category of the iterator.
     using iterator_category = std::input_iterator_tag;
 
     //! @}
@@ -240,7 +236,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Observer Member Functions
     //! @{
 
-    //! Dereferences the iterator to obtain the stored value.
+    //! @brief Dereferences the iterator to obtain the stored value.
     //!
     //! @details The behavior is undefined if the iterator is invalid.
     //!
@@ -253,7 +249,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Modifier Member Functions
     //! @{
 
-    //! Increments the iterator.
+    //! @brief Increments the iterator.
     //!
     //! @return Reference to the next iterator.
     constexpr iterator &operator++() noexcept
@@ -275,13 +271,13 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Member Variables
     //! @{
 
-    //! The pointer to the node represented by the iterator.
+    //! @brief The pointer to the node represented by the iterator.
     internal_node_type *node = nullptr;
 
     //! @}
   };
 
-  //! Type to identify and traverse the constant elements of the
+  //! @brief Type to identify and traverse the constant elements of the
   //! container.
   //!
   //! @details The iteration order of the standard constant iterator is
@@ -290,19 +286,19 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Member Types
     //! @{
 
-    //! The type of the contained data elements.
+    //! @brief The type of the contained data elements.
     using value_type = tree::value_type;
 
-    //! Signed integer type to represent element distances.
+    //! @brief Signed integer type to represent element distances.
     using difference_type = tree::difference_type;
 
-    //! The reference type of the contained data elements.
+    //! @brief The reference type of the contained data elements.
     using reference = tree::reference;
 
-    //! The pointer type of the contained data elements.
+    //! @brief The pointer type of the contained data elements.
     using pointer = tree::pointer;
 
-    //! The category of the iterator.
+    //! @brief The category of the iterator.
     using iterator_category = std::input_iterator_tag;
 
     //! @}
@@ -310,14 +306,14 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Member Functions
     //! @{
 
-    //! Default constructor needed for non-aggregate constant iterator.
+    //! @brief Default constructor needed for non-aggregate constant iterator.
     //!
     //! @details The default constructor is provided to allow simple default
     //! construction since the conversion constructor makes the constant
     //! iterator a non-aggregate type.
     constexpr const_iterator() noexcept = default;
 
-    //! Implicit iterator to constant iterator conversion.
+    //! @brief Implicit iterator to constant iterator conversion.
     //!
     //! @details The regular, i.e. non-constant, iterator type is implicitely
     //! convertible to the constant iterator type per requirements. The
@@ -333,7 +329,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     {
     }
 
-    //! Implicit node pointer to constant iterator conversion.
+    //! @brief Implicit node pointer to constant iterator conversion.
     //!
     //! @details Aggregate initialization is not available per implicit iterator
     //! conversion construction. The node pointer type is implicitely
@@ -347,7 +343,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Observer Member Functions
     //! @{
 
-    //! Dereferences the iterator to obtain the stored value.
+    //! @brief Dereferences the iterator to obtain the stored value.
     //!
     //! @details The behavior is undefined if the iterator is invalid.
     //!
@@ -362,7 +358,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Modifier Member Functions
     //! @{
 
-    //! Increments the iterator.
+    //! @brief Increments the iterator.
     //!
     //! @return Reference to the next iterator.
     constexpr const_iterator &operator++() noexcept
@@ -384,13 +380,13 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     //! @name Public Member Variables
     //! @{
 
-    //! The pointer to the node represented by the iterator.
+    //! @brief The pointer to the node represented by the iterator.
     internal_node_type *node = nullptr;
 
     //! @}
   };
 
-  //! The node handle type of the container.
+  //! @brief The node handle type of the container.
   //!
   //! @details Specialization of node handle.
   class node_type
@@ -398,11 +394,11 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     // Not implemented.
   };
 
-  //! The result type of inserting a `node_type` in the container.
+  //! @brief The result type of inserting a `node_type` in the container.
   template <class IteratorType> struct insert_return_type {
     // Not implemented.
 
-    //! The node handle type of the container.
+    //! @brief The node handle type of the container.
     using node_type = tree::node_type;
 
     IteratorType position;
@@ -415,7 +411,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Public Member Functions
   //! @{
 
-  //! Constructs an empty container with a default-constructed allocator.
+  //! @brief Constructs an empty container with a default-constructed allocator.
   //!
   //! @complexity Constant.
   //!
@@ -424,7 +420,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! constructor, if any.
   constexpr tree() noexcept(noexcept(AllocatorType{})) = default;
 
-  //! Constructs an empty container with the given allocator.
+  //! @brief Constructs an empty container with the given allocator.
   //!
   //! @param allocator Allocator to use for all memory allocations of this
   //! container.
@@ -440,7 +436,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   {
   }
 
-  //! Copy constructs a container with a default-constructed allocator.
+  //! @brief Copy constructs a container with a default-constructed allocator.
   //!
   //! @details Constructs the container with the copy of the contents of the
   //! `other` container.
@@ -461,7 +457,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   {
   }
 
-  //! Copy constructs a container with an allocator.
+  //! @brief Copy constructs a container with an allocator.
   //!
   //! @details Allocator-extended copy constructor. Constructs the container
   //! with the copy of the contents of the `other` container.
@@ -479,7 +475,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   {
   }
 
-  //! Move constructs a container.
+  //! @brief Move constructs a container.
   //!
   //! @details Move constructor. Constructs the container with the contents of
   //! the `other` container using move semantics (i.e. the data in `other`
@@ -497,7 +493,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     other.root = nullptr;
   }
 
-  //! Allocator-extended move constructor.
+  //! @brief Allocator-extended move constructor.
   //!
   //! @details Constructs the container with the contents of the other using
   //! move semantics (i.e. the data in `other` container is moved from the other
@@ -522,7 +518,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     }
   }
 
-  //! Constructs the container with by copying the value for its root.
+  //! @brief Constructs the container with by copying the value for its root.
   //!
   //! @param value The value to initialize elements of the container with.
   //!
@@ -533,7 +529,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     std::construct_at(root, value);
   }
 
-  //! Constructs the container with by copying the value for its root.
+  //! @brief Constructs the container with by copying the value for its root.
   //!
   //! @param value The value to initialize elements of the container with.
   //! @param allocator Allocator to use for all memory allocations of this
@@ -547,7 +543,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     std::construct_at(root, value);
   }
 
-  //! Constructs the container by moving the value for its root.
+  //! @brief Constructs the container by moving the value for its root.
   //!
   //! @param value The value to initialize elements of the container with.
   //!
@@ -558,7 +554,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     std::construct_at(root, std::move(value));
   }
 
-  //! Constructs the container by moving the value for its root.
+  //! @brief Constructs the container by moving the value for its root.
   //!
   //! @param value The value to initialize elements of the container with.
   //! @param allocator Allocator to use for all memory allocations of this
@@ -572,7 +568,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     std::construct_at(root, std::move(value));
   }
 
-  //! Destructs the container.
+  //! @brief Destructs the container.
   //!
   //! @details The destructors of the elements are called and the used
   //! storage is deallocated.
@@ -588,7 +584,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     axe(root);
   }
 
-  //! Copy assignment operator.
+  //! @brief Copy assignment operator.
   //!
   //! @details Destroys or copy-assigns the contents with a copy of the contents
   //! of the other container. Self copy assignement is valid, safe, and
@@ -613,7 +609,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return *this;
   }
 
-  //! Move assignment operator.
+  //! @brief Move assignment operator.
   //!
   //! @details Replaces the contents of the container with those of the `other`
   //! container using move semantics (i.e. the data in `other` container is
@@ -644,7 +640,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return *this;
   }
 
-  //! Value copy assignment operator.
+  //! @brief Value copy assignment operator.
   //!
   //! @details Replaces the contents of the container with a copy of the
   //! contents of the value for its root.
@@ -664,7 +660,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return *this;
   }
 
-  //! Value move assignment operator.
+  //! @brief Value move assignment operator.
   //!
   //! @details Replaces the contents of the container with those of the value
   //! using move semantics (i.e. the value data is moved into the root of this
@@ -685,7 +681,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return *this;
   }
 
-  //! Copy assignment.
+  //! @brief Copy assignment.
   //!
   //! @details Destroys or copy-assigns the contents with a copy of the contents
   //! of the other container. Self copy assignement is valid, safe, and
@@ -710,7 +706,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return *this;
   }
 
-  //! Move assignment.
+  //! @brief Move assignment.
   //!
   //! @details Replaces the contents of the container with those of the `other`
   //! container using move semantics (i.e. the data in `other` container is
@@ -741,7 +737,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return *this;
   }
 
-  //! Value copy assignment.
+  //! @brief Value copy assignment.
   //!
   //! @details Replaces the contents of the container with a copy of the
   //! contents of the value for its root.
@@ -761,7 +757,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return *this;
   }
 
-  //! Value move assignment.
+  //! @brief Value move assignment.
   //!
   //! @details Replaces the contents of the container with those of the value
   //! using move semantics (i.e. the value data is moved into the root of this
@@ -782,7 +778,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return *this;
   }
 
-  //! Returns the allocator associated with the container.
+  //! @brief Returns the allocator associated with the container.
   //!
   //! @return The associated allocator.
   //!
@@ -797,7 +793,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Public Element Access Member Functions
   //! @{
 
-  //! Returns a reference to the container's first element.
+  //! @brief Returns a reference to the container's first element.
   //!
   //! @details Calling front on an empty container causes undefined behavior.
   //!
@@ -812,7 +808,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return root->data;
   }
 
-  //! Returns a constant reference to the container's first element.
+  //! @brief Returns a constant reference to the container's first element.
   //!
   //! @details Calling front on an empty container causes undefined behavior.
   //!
@@ -832,7 +828,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Public Iterator Member Functions
   //! @{
 
-  //! Returns an iterator to the container's first element.
+  //! @brief Returns an iterator to the container's first element.
   //!
   //! @details If the container is empty, the returned iterator will be equal to
   //! `end()`.
@@ -845,7 +841,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return { root };
   }
 
-  //! Returns a constant iterator to the container's first element.
+  //! @brief Returns a constant iterator to the container's first element.
   //!
   //! @details If the container is empty, the returned constant iterator will be
   //! equal to `end()`.
@@ -858,7 +854,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return { root };
   }
 
-  //! Returns a constant iterator to the container's first element.
+  //! @brief Returns a constant iterator to the container's first element.
   //!
   //! @details If the container is empty, the returned constant iterator will be
   //! equal to `end()`.
@@ -871,7 +867,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return { root };
   }
 
-  //! Returns an iterator to the element past the container's last element.
+  //! @brief Returns an iterator to the element past the container's last
+  //! element.
   //!
   //! @details This element acts as a placeholder; attempting to access it
   //! results in undefined behavior. If the container is empty, the returned
@@ -885,7 +882,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return {};
   }
 
-  //! Returns a constant iterator to the element past the last element.
+  //! @brief Returns a constant iterator to the element past the last element.
   //!
   //! @details This element acts as a placeholder; attempting to access it
   //! results in undefined behavior. If the container is empty, the returned
@@ -899,7 +896,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return {};
   }
 
-  //! Returns a constant iterator to the element past the last element.
+  //! @brief Returns a constant iterator to the element past the last element.
   //!
   //! @details This element acts as a placeholder; attempting to access it
   //! results in undefined behavior. If the container is empty, the returned
@@ -918,7 +915,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Public Capacity Member Functions
   //! @{
 
-  //! Checks if the container has no elements.
+  //! @brief Checks if the container has no elements.
   //!
   //! @details Whether the beginning iterator equals the ending iterator.
   //!
@@ -930,7 +927,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return node_count == 0;
   }
 
-  //! Returns the number of elements in the container.
+  //! @brief Returns the number of elements in the container.
   //!
   //! @details The absolute distance between the beginning and end iterators.
   //!
@@ -942,7 +939,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return node_count;
   }
 
-  //! Returns the maximum number of elements the container is able to hold.
+  //! @brief Returns the maximum number of elements the container is able to
+  //! hold.
   //!
   //! @details The maximum number of elements depends on the system or library
   //! implementation limitations. The absolute distance between the beginning
@@ -974,7 +972,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Public Modifier Member Functions
   //! @{
 
-  //! Erases all elements from the container.
+  //! @brief Erases all elements from the container.
   //!
   //! @details After this call, the size member function calls returns zero.
   //! Invalidates any references, pointers, or iterators referring to
@@ -992,8 +990,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     node_count = 0;
   }
 
-  //! Inserts a copied element into the container before the `position` iterator
-  //! as the new left sibling.
+  //! @brief Inserts a copied element into the container before the `position`
+  //! iterator as the new left sibling.
   //!
   //! @details The value is copied at a location element provided by the
   //! container. The element is directly before the `position` iterator in the
@@ -1066,8 +1064,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return { node };
   }
 
-  //! Inserts a moved element into the container before the `position` iterator
-  //! as the new left sibling.
+  //! @brief Inserts a moved element into the container before the `position`
+  //! iterator as the new left sibling.
   //!
   //! @details The value is moved at a location element provided by the
   //! container. The element is directly before the `position` iterator in the
@@ -1147,8 +1145,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   constexpr iterator insert(const_iterator position,
                             std::initializer_list<Type> initializers);
 
-  //! Inserts a constructed in-place element into the container to the beginning
-  //! of the container.
+  //! @brief Inserts a constructed in-place element into the container to the
+  //! beginning of the container.
   //!
   //! @details The element is constructed through `std::construct_at`
   //! equivalenent to placement-new to construct the element in-place, usable in
@@ -1190,8 +1188,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return node->data;
   }
 
-  //! Inserts a constructed in-place element into the container before the
-  //! `position` iterator as the new left sibling.
+  //! @brief Inserts a constructed in-place element into the container before
+  //! the `position` iterator as the new left sibling.
   //!
   //! @details The element is constructed through `std::construct_at`
   //! equivalenent to placement-new to construct the element in-place, usable in
@@ -1273,7 +1271,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return { node };
   }
 
-  //! Removes the specified element including its sub-tree.
+  //! @brief Removes the specified element including its sub-tree.
   //!
   //! @details Removes the element at `position` and its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
@@ -1300,7 +1298,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return { next };
   }
 
-  //! Removes the specified element including its sub-tree.
+  //! @brief Removes the specified element including its sub-tree.
   //!
   //! @details Removes the element at `position` and its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
@@ -1328,8 +1326,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return { next };
   }
 
-  //! Inserts a copied element into the container after the last child of the
-  //! `position` iterator as the new last child.
+  //! @brief Inserts a copied element into the container after the last child of
+  //! the `position` iterator as the new last child.
   //!
   //! @details No iterators or references are invalidated. The new element is
   //! initialized as a copy of `value`. `Type` must meet the CopyInsertable
@@ -1365,7 +1363,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return { emplace_last_child(position.node, value) };
   }
 
-  //! Inserts a moved element into the container after the last child
+  //! @brief Inserts a moved element into the container after the last child
   //! of the `position` iterator as the new last child.
   //!
   //! @details No iterators or references are invalidated. The new element is
@@ -1398,7 +1396,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return { emplace_last_child(position.node, std::move(value)) };
   }
 
-  //! Prepends a copied element to the beginning of the container.
+  //! @brief Prepends a copied element to the beginning of the container.
   //!
   //! @details Prepends the given element as the new root. If the container is
   //! not empty the root becomes the sole child of the prepended element. No
@@ -1422,7 +1420,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     emplace_root(value);
   }
 
-  //! Prepends a moved element to the beginning of the container.
+  //! @brief Prepends a moved element to the beginning of the container.
   //!
   //! @details Prepends the given element as the new root. If the container is
   //! not empty the root becomes the sole child of the prepended element. No
@@ -1442,7 +1440,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     emplace_root(std::move(value));
   }
 
-  //! Exchanges this container's contents with those of the `other` container.
+  //! @brief Exchanges this container's contents with those of the `other`
+  //! container.
   //!
   //! @details Does not invoke any move, copy, or swap operations on
   //! individual elements. All iterators and references remain valid. The
@@ -1469,7 +1468,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Private Modifier Member Functions
   //! @{
 
-  //! Isolates the specified element including its sub-tree.
+  //! @brief Isolates the specified element including its sub-tree.
   //!
   //! @details Orphans the node from its parent and disolves its sibling
   //! relationships. The container's size is not maintained and no longer
@@ -1500,7 +1499,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     }
   }
 
-  //! Recursively erases the specified element including its sub-tree.
+  //! @brief Recursively erases the specified element including its sub-tree.
   //!
   //! @details Removes the `node` element and prunes its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
@@ -1530,7 +1529,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     }
   }
 
-  //! Axes the specified element including its sub-tree.
+  //! @brief Axes the specified element including its sub-tree.
   //!
   //! @details Removes the `node` element and removes its associated
   //! sub-tree. References and iterators to the erased elements are invalidated.
@@ -1557,8 +1556,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     }
   }
 
-  //! Inserts a constructed in-place element into the container after the last
-  //! child of the `position` iterator as the new last child.
+  //! @brief Inserts a constructed in-place element into the container after the
+  //! last child of the `position` iterator as the new last child.
   //!
   //! @details No iterators or references are invalidated. The new element is
   //! in-place constructed and moved, or copied. The element is directly before
@@ -1636,7 +1635,8 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     return child;
   }
 
-  //! Prepends a constructed in-place element to the beginning of the container.
+  //! @brief Prepends a constructed in-place element to the beginning of the
+  //! container.
   //!
   //! @details Prepends the given element as the new root. If the container is
   //! not empty the root becomes the sole child of the prepended element. No
@@ -1673,7 +1673,7 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
     ++node_count;
   }
 
-  //! Copies the node, its subtrees, and right siblings recursively.
+  //! @brief Copies the node, its subtrees, and right siblings recursively.
   //!
   //! @details Constructs a new node from the `other_node` element value.
   //! Attaches the newly created child to its parent, if any. Attaches the newly
@@ -1746,117 +1746,21 @@ template <class Type, class AllocatorType = std::allocator<Type>> class tree
   //! @name Private Member Variables
   //! @{
 
-  //! The rebound allocator for the container's memory nodes.
+  //! @brief The rebound allocator for the container's memory nodes.
   internal_node_allocator_type node_allocator{};
 
-  //! The container's root node.
+  //! @brief The container's root node.
   internal_node_type *root = nullptr;
 
-  //! The total number of elements as nodes in the container.
+  //! @brief The total number of elements as nodes in the container.
   size_type node_count = 0;
 
   //! @}
 };
 
-//! @name Type Aliases
-//! @{
-
-template <class AllocatorType = std::allocator<bool>>
-using tree_bool = tree<bool, AllocatorType>;
-template <class AllocatorType = std::allocator<char>>
-using tree_char = tree<char, AllocatorType>;
-template <class AllocatorType = std::allocator<signed char>>
-using tree_schar = tree<signed char, AllocatorType>;
-template <class AllocatorType = std::allocator<unsigned char>>
-using tree_uchar = tree<unsigned char, AllocatorType>;
-template <class AllocatorType = std::allocator<int>>
-using tree_int = tree<int, AllocatorType>;
-template <class AllocatorType = std::allocator<unsigned int>>
-using tree_uint = tree<unsigned int, AllocatorType>;
-template <class AllocatorType = std::allocator<char8_t>>
-using tree_char8_t = tree<char8_t, AllocatorType>;
-template <class AllocatorType = std::allocator<char16_t>>
-using tree_char16_t = tree<char16_t, AllocatorType>;
-template <class AllocatorType = std::allocator<char32_t>>
-using tree_char32_t = tree<char32_t, AllocatorType>;
-template <class AllocatorType = std::allocator<wchar_t>>
-using tree_wchar_t = tree<wchar_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int8_t>>
-using tree_int8_t = tree<std::int8_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint8_t>>
-using tree_uint8_t = tree<std::uint8_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int16_t>>
-using tree_int16_t = tree<std::int16_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint16_t>>
-using tree_uint16_t = tree<std::uint16_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int32_t>>
-using tree_int32_t = tree<std::int32_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint32_t>>
-using tree_uint32_t = tree<std::uint32_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int64_t>>
-using tree_int64_t = tree<std::int64_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint64_t>>
-using tree_uint64_t = tree<std::uint64_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int_least8_t>>
-using tree_int_least8_t = tree<std::int_least8_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint_least8_t>>
-using tree_uint_least8_t = tree<std::uint_least8_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int_least16_t>>
-using tree_int_least16_t = tree<std::int_least16_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint_least16_t>>
-using tree_uint_least16_t = tree<std::uint_least16_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int_least32_t>>
-using tree_int_least32_t = tree<std::int_least32_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint_least32_t>>
-using tree_uint_least32_t = tree<std::uint_least32_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int_least64_t>>
-using tree_int_least64_t = tree<std::int_least64_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint_least64_t>>
-using tree_uint_least64_t = tree<std::uint_least64_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int_fast8_t>>
-using tree_int_fast8_t = tree<std::int_fast8_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint_fast8_t>>
-using tree_uint_fast8_t = tree<std::uint_fast8_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int_fast16_t>>
-using tree_int_fast16_t = tree<std::int_fast16_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint_fast16_t>>
-using tree_uint_fast16_t = tree<std::uint_fast16_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int_fast32_t>>
-using tree_int_fast32_t = tree<std::int_fast32_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint_fast32_t>>
-using tree_uint_fast32_t = tree<std::uint_fast32_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::int_fast64_t>>
-using tree_int_fast64_t = tree<std::int_fast64_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uint_fast64_t>>
-using tree_uint_fast64_t = tree<std::uint_fast64_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::intptr_t>>
-using tree_intptr_t = tree<std::intptr_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uintptr_t>>
-using tree_uintptr_t = tree<std::uintptr_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::size_t>>
-using tree_size_t = tree<std::size_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::ptrdiff_t>>
-using tree_ptrdiff_t = tree<std::ptrdiff_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::intmax_t>>
-using tree_intmax_t = tree<std::intmax_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::uintmax_t>>
-using tree_uintmax_t = tree<std::uintmax_t, AllocatorType>;
-template <class AllocatorType = std::allocator<std::string>>
-using tree_string = tree<std::string, AllocatorType>;
-template <class AllocatorType = std::allocator<std::u8string>>
-using tree_u8string = tree<std::u8string, AllocatorType>;
-template <class AllocatorType = std::allocator<std::u16string>>
-using tree_u16string = tree<std::u16string, AllocatorType>;
-template <class AllocatorType = std::allocator<std::u32string>>
-using tree_u32string = tree<std::u32string, AllocatorType>;
-template <class AllocatorType = std::allocator<std::wstring>>
-using tree_wstring = tree<std::wstring, AllocatorType>;
-
-//! @}
-
 } // namespace fcarouge
 
-//! Compares the contents of two containers.
+//! @brief Compares the contents of two containers.
 //!
 //! @details Checks if the contents of `lhs` and `rhs` are equal, that is, they
 //! have the same number of elements and each element in `lhs` compares equal
@@ -1878,7 +1782,7 @@ operator==(const fcarouge::tree<Type, AllocatorType> &lhs,
   return lhs.size() == rhs.size();
 }
 
-//! Compares the contents of two containers.
+//! @brief Compares the contents of two containers.
 //!
 //! @details Compares the contents of `lhs` and `rhs` lexicographically. The
 //! comparison is performed as if by calling
@@ -1914,8 +1818,8 @@ template <class Type, class AllocatorType>
 operator<=>(const fcarouge::tree<Type, AllocatorType> &lhs,
             const fcarouge::tree<Type, AllocatorType> &rhs);
 
-//! Inserts a human-interpretable representation of a container into a character
-//! stream.
+//! @brief Inserts a human-interpretable representation of a container into a
+//! character stream.
 //!
 //! @details The insertion operator writes the tree to the character stream as
 //! if by repeatedly writing the node value using the string

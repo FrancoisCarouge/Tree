@@ -26,11 +26,14 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
+//! @file
+//! @brief Tree algorithms header.
+//!
+//! @details The header contains the non-member algorithms defined and
+//! applicable to the tree container.
+
 #ifndef FCAROUGE_TREE_ALGORITHM_HPP
 #define FCAROUGE_TREE_ALGORITHM_HPP
-
-#include "fcarouge/tree.hpp"
-// fcarouge::tree
 
 #include <iterator>
 // std::iterator_traits
