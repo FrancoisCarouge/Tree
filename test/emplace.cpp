@@ -32,6 +32,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
+#include <set>
+// std::multiset
+
 namespace
 {
 //! @test Verify the post conditions on emplacing an element at the beginning
@@ -100,26 +103,21 @@ namespace
   fcarouge::tree<int> allouville_oak(42);
   const fcarouge::tree<int>::iterator node =
       allouville_oak.emplace(allouville_oak.begin(), 41);
+  allouville_oak.emplace(allouville_oak.begin(), 40);
 
-  assert(2 == allouville_oak.size() &&
-         "The container must contain one element as built.");
-  assert(node == allouville_oak.begin() &&
-         "The container's beginning iterator must be equal to the expected "
-         "root node.");
-  assert(
-      41 == *allouville_oak.begin() &&
-      "The container's beginning iterator value must be equal to the expected "
-      "root node value.");
-  assert(
-      *node == *allouville_oak.begin() &&
-      "The container's beginning iterator value must be equal to the expected "
-      "root node value.");
-  assert(*node == *allouville_oak.cbegin() &&
-         "The container's constant beginning iterator value must be equal to "
-         "the expected root node value.");
-  assert(*node == allouville_oak.front() &&
-         "The container's front node value must be equal to the expected root "
-         "node value.");
+  assert(3 == allouville_oak.size() &&
+         "The container must contain three elements as built.");
+  assert(41 == *node &&
+         "The returned emplaced value must be equal to the expected value.");
+
+  const std::multiset<int> expected_content{ 40, 41, 42 };
+  std::multiset<int> iterated_content;
+  for (auto iterated_value : allouville_oak) {
+    iterated_content.insert(iterated_value);
+  }
+
+  assert(expected_content == iterated_content &&
+         "The container's content must meet expected content.");
 
   return 0;
 }();
@@ -128,14 +126,23 @@ namespace
 //! iterator of a tree with a single node.
 [[maybe_unused]] auto root_end = []() {
   fcarouge::tree<int> allouville_oak(42);
-  allouville_oak.emplace(allouville_oak.end(), 43);
+  const fcarouge::tree<int>::iterator node =
+      allouville_oak.emplace(allouville_oak.end(), 43);
+  allouville_oak.emplace(allouville_oak.end(), 44);
 
-  assert(2 == allouville_oak.size() &&
-         "The container must contain one element as built.");
-  assert(
-      42 == *allouville_oak.begin() &&
-      "The container's beginning iterator value must be equal to the expected "
-      "root node value.");
+  assert(3 == allouville_oak.size() &&
+         "The container must contain three elements as built.");
+  assert(43 == *node &&
+         "The returned emplaced value must be equal to the expected value.");
+
+  const std::multiset<int> expected_content{ 42, 43, 44 };
+  std::multiset<int> iterated_content;
+  for (auto iterated_value : allouville_oak) {
+    iterated_content.insert(iterated_value);
+  }
+
+  assert(expected_content == iterated_content &&
+         "The container's content must meet expected content.");
 
   return 0;
 }();
@@ -159,8 +166,7 @@ namespace
   const fcarouge::tree<int>::iterator node3 = allouville_oak.emplace(node33, 3);
   const fcarouge::tree<int>::iterator node333 =
       allouville_oak.emplace(allouville_oak.end(), 333);
-  const fcarouge::tree<int>::const_iterator node0 =
-      allouville_oak.emplace(allouville_oak.begin(), -1);
+  allouville_oak.emplace(allouville_oak.begin(), -1);
   allouville_oak.emplace(node3, 1);
   allouville_oak.emplace(node3, 2);
   allouville_oak.emplace(node33, 31);
@@ -170,23 +176,16 @@ namespace
 
   assert(10 == allouville_oak.size() &&
          "The container must contain 10 elements as built.");
-  assert(node0 == allouville_oak.begin() &&
-         "The container's beginning iterator must be equal to the expected "
-         "root node.");
-  assert(
-      -1 == *allouville_oak.begin() &&
-      "The container's beginning iterator value must be equal to the expected "
-      "root node value.");
-  assert(
-      *node0 == *allouville_oak.begin() &&
-      "The container's beginning iterator value must be equal to the expected "
-      "root node value.");
-  assert(*node0 == *allouville_oak.cbegin() &&
-         "The container's constant beginning iterator value must be equal to "
-         "the expected root node value.");
-  assert(*node0 == allouville_oak.front() &&
-         "The container's front node value must be equal to the expected root "
-         "node value.");
+
+  const std::multiset<int> expected_content{ -1, 1,  2,   3,   31,
+                                             32, 33, 331, 332, 333 };
+  std::multiset<int> iterated_content;
+  for (auto iterated_value : allouville_oak) {
+    iterated_content.insert(iterated_value);
+  }
+
+  assert(expected_content == iterated_content &&
+         "The container's content must meet expected content.");
 
   return 0;
 }();
