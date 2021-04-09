@@ -106,23 +106,8 @@ namespace
 
   assert(2 == allouville_oak.size() &&
          "The container must contain one element as built.");
-  assert(node == allouville_oak.begin() &&
-         "The container's beginning iterator must be equal to the expected "
-         "root node.");
-  assert(
-      41 == *allouville_oak.begin() &&
-      "The container's beginning iterator value must be equal to the expected "
-      "root node value.");
-  assert(
-      *node == *allouville_oak.begin() &&
-      "The container's beginning iterator value must be equal to the expected "
-      "root node value.");
-  assert(*node == *allouville_oak.cbegin() &&
-         "The container's constant beginning iterator value must be equal to "
-         "the expected root node value.");
-  assert(*node == allouville_oak.front() &&
-         "The container's front node value must be equal to the expected root "
-         "node value.");
+  assert(41 == *node && "The container's node iterator value must be equal to "
+                        "the expected value.");
 
   return 0;
 }();
@@ -185,22 +170,8 @@ namespace
 
   assert(10 == allouville_oak.size() &&
          "The container must contain 10 elements as built.");
-  assert(node0 == allouville_oak.begin() &&
-         "The container's beginning iterator must be equal to the expected "
-         "root node.");
-  assert(
-      -1 == *allouville_oak.begin() &&
-      "The container's beginning iterator value must be equal to the expected "
-      "root node value.");
-  assert(
-      *node0 == *allouville_oak.begin() &&
-      "The container's beginning iterator value must be equal to the expected "
-      "root node value.");
-  assert(*node0 == *allouville_oak.cbegin() &&
-         "The container's constant beginning iterator value must be equal to "
-         "the expected root node value.");
-  assert(*node0 == allouville_oak.front() &&
-         "The container's front node value must be equal to the expected root "
+  assert(-1 == *node0 &&
+         "The container's node iterator value must be equal to the expected "
          "node value.");
 
   return 0;
