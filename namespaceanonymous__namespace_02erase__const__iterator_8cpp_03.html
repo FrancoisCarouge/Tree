@@ -117,11 +117,10 @@ Variables</h2></td></tr>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> allouville_oak;</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> node3 =</div>
 <div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 3);</div>
-<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 0);</div>
+<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(node3, 0);</div>
 <div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(node3, 1);</div>
 <div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(node3, 2);</div>
-<div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> iterator =</div>
-<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588">erase</a>(node3);</div>
+<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588">erase</a>(node3);</div>
 <div class="line"> </div>
 <div class="line">  assert(</div>
 <div class="line">      !allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a305d983d5a1a6994dee714a9f88bc1ee">empty</a>() &amp;&amp;</div>
@@ -129,14 +128,10 @@ Variables</h2></td></tr>
 <div class="line">  assert(3 == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container must contain three nodes after erasing the last &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;node of four.&quot;</span>);</div>
-<div class="line">  assert(iterator == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a13e359d4ae6b94ab472607f15dbe3196">cend</a>() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The iterator following the erased last element must be the constant &quot;</span></div>
-<div class="line">         <span class="stringliteral">&quot;ending iterator.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00103">tree.hpp:104</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a13e359d4ae6b94ab472607f15dbe3196"><div class="ttname"><a href="classfcarouge_1_1tree.html#a13e359d4ae6b94ab472607f15dbe3196">fcarouge::tree::cend</a></div><div class="ttdeci">constexpr const_iterator cend() const noexcept</div><div class="ttdoc">Returns a constant iterator to the element past the last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00908">tree.hpp:908</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a217fb2d8d248bedec9126214e8c891a2"><div class="ttname"><a href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00839">tree.hpp:839</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a305d983d5a1a6994dee714a9f88bc1ee"><div class="ttname"><a href="classfcarouge_1_1tree.html#a305d983d5a1a6994dee714a9f88bc1ee">fcarouge::tree::empty</a></div><div class="ttdeci">constexpr bool empty() const noexcept</div><div class="ttdoc">Checks if the container has no elements.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00925">tree.hpp:925</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a47c5f13aa881897e4acae42c4ae544e5"><div class="ttname"><a href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">fcarouge::tree::emplace</a></div><div class="ttdeci">constexpr iterator emplace(const_iterator position, ArgumentsType &amp;&amp;... arguments)</div><div class="ttdoc">Inserts a constructed in-place element into the container before the position iterator as the new lef...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01217">tree.hpp:1217</a></div></div>
@@ -160,9 +155,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000064">Test:</a></b></dt><dd>Verify the post-conditions on erasing various elements of a tree. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000062">Test:</a></b></dt><dd>Verify the post-conditions on erasing various elements of a tree. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="erase__const__iterator_8cpp_source.html#l00115">115</a> of file <a class="el" href="erase__const__iterator_8cpp_source.html">erase_const_iterator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="erase__const__iterator_8cpp_source.html#l00111">111</a> of file <a class="el" href="erase__const__iterator_8cpp_source.html">erase_const_iterator.cpp</a>.</p>
 
 </div>
 </div>
@@ -182,7 +177,7 @@ Variables</h2></td></tr>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> node3 =</div>
 <div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 3);</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> <a class="code" href="namespaceanonymous__namespace_02erase__const__iterator_8cpp_03.html#a54045e2a320dc164b64db526cd479c7c">root</a> =</div>
-<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 0);</div>
+<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(node3, 0);</div>
 <div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(node3, 1);</div>
 <div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(node3, 2);</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> iterator =</div>
@@ -204,12 +199,13 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a13e359d4ae6b94ab472607f15dbe3196"><div class="ttname"><a href="classfcarouge_1_1tree.html#a13e359d4ae6b94ab472607f15dbe3196">fcarouge::tree::cend</a></div><div class="ttdeci">constexpr const_iterator cend() const noexcept</div><div class="ttdoc">Returns a constant iterator to the element past the last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00908">tree.hpp:908</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a4d914f8d4ce69f0ecd580e7ddb5d16d1"><div class="ttname"><a href="classfcarouge_1_1tree.html#a4d914f8d4ce69f0ecd580e7ddb5d16d1">fcarouge::tree::cbegin</a></div><div class="ttdeci">constexpr const_iterator cbegin() const noexcept</div><div class="ttdoc">Returns a constant iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00865">tree.hpp:865</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_afca5d640f5205c58695f271bea0fd8ac"><div class="ttname"><a href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00880">tree.hpp:880</a></div></div>
-<div class="ttc" id="anamespaceanonymous__namespace_02erase__const__iterator_8cpp_03_html_a54045e2a320dc164b64db526cd479c7c"><div class="ttname"><a href="namespaceanonymous__namespace_02erase__const__iterator_8cpp_03.html#a54045e2a320dc164b64db526cd479c7c">anonymous_namespace{erase_const_iterator.cpp}::root</a></div><div class="ttdeci">auto root</div><div class="ttdef"><b>Definition:</b> <a href="erase__const__iterator_8cpp_source.html#l00086">erase_const_iterator.cpp:86</a></div></div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000062">Test:</a></b></dt><dd>Verify the post-conditions on erasing the root element of a tree. </dd></dl>
+<div class="ttc" id="anamespaceanonymous__namespace_02erase__const__iterator_8cpp_03_html_a54045e2a320dc164b64db526cd479c7c"><div class="ttname"><a href="namespaceanonymous__namespace_02erase__const__iterator_8cpp_03.html#a54045e2a320dc164b64db526cd479c7c">anonymous_namespace{erase_const_iterator.cpp}::root</a></div><div class="ttdeci">auto root</div><div class="ttdef"><b>Definition:</b> <a href="erase__const__iterator_8cpp_source.html#l00082">erase_const_iterator.cpp:82</a></div></div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000061">Test:</a></b></dt><dd>Verify the post-conditions on erasing the root element of a tree. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="erase__const__iterator_8cpp_source.html#l00086">86</a> of file <a class="el" href="erase__const__iterator_8cpp_source.html">erase_const_iterator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="erase__const__iterator_8cpp_source.html#l00082">82</a> of file <a class="el" href="erase__const__iterator_8cpp_source.html">erase_const_iterator.cpp</a>.</p>
 
 </div>
 </div>
@@ -227,7 +223,7 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> allouville_oak(42);</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> iterator =</div>
-<div class="line">      allouville_oak.erase(allouville_oak.begin());</div>
+<div class="line">      allouville_oak.erase(allouville_oak.cbegin());</div>
 <div class="line"> </div>
 <div class="line">  assert(allouville_oak.empty() &amp;&amp; <span class="stringliteral">&quot;The container must be empty on erasing the &quot;</span></div>
 <div class="line">                                   <span class="stringliteral">&quot;sole element of a container.&quot;</span>);</div>
@@ -258,7 +254,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02erase__const__iterator_8cpp_03.html">anonymous_namespace{erase_const_iterator.cpp}</a></li>
-    <li class="footer">Generated on Fri Apr 9 2021 02:34:09 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Apr 9 2021 02:49:40 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
