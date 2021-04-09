@@ -32,6 +32,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
+#include <set>
+// std::multiset
+
 namespace
 {
 //! @test Verify the post conditions on emplacing front an element in an emptry
@@ -43,7 +46,7 @@ namespace
   assert(1 == allouville_oak.size() &&
          "The container must contain one element as built.");
   assert(
-      42 == *allouville_oak.begin() &&
+      42 == value &&
       "The container's beginning iterator value must be equal to the expected "
       "root node value.");
   assert(
@@ -65,21 +68,21 @@ namespace
 [[maybe_unused]] auto root_front = []() {
   fcarouge::tree<int> allouville_oak(42);
   const int value = allouville_oak.emplace_front(41);
+  allouville_oak.emplace_front(40);
 
-  assert(2 == allouville_oak.size() &&
-         "The container must contain one element as built.");
-  assert(41 == *allouville_oak.begin() &&
-         "The container's beginning iterator value must be equal to the "
-         "expected root node value.");
-  assert(value == *allouville_oak.begin() &&
-         "The container's beginning iterator value must be equal to the "
-         "expected root node value.");
-  assert(value == *allouville_oak.cbegin() &&
-         "The container's constant beginning iterator value must be equal to "
-         "the expected root node value.");
-  assert(value == allouville_oak.front() &&
-         "The container's front node value must be equal to the expected root "
-         "node value.");
+  assert(3 == allouville_oak.size() &&
+         "The container must contain three elements as built.");
+  assert(41 == value &&
+         "The returned emplaced value must be equal to the expected value.");
+
+  const std::multiset<int> expected_content{ 40, 41, 42 };
+  std::multiset<int> iterated_content;
+  for (auto iterated_value : allouville_oak) {
+    iterated_content.insert(iterated_value);
+  }
+
+  assert(expected_content == iterated_content &&
+         "The container's content must meet expected content.");
 
   return 0;
 }();
