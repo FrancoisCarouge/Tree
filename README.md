@@ -55,11 +55,11 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
 
 `main.cpp`
 ```cpp
-#include "fcarouge/tree.hpp"
-// fcarouge::tree
-
 #include <iostream>
 // std::cout std::endl
+
+#include "fcarouge/tree.hpp"
+// fcarouge::tree
 
 int main(int, char **)
 {
