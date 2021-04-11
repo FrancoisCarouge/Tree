@@ -70,6 +70,8 @@ namespace
   const std::multiset<int> expected_content{ 0,  1,  2,  3,  11, 12, 13,
                                              21, 22, 23, 31, 32, 33 };
   std::multiset<int> iterated_content;
+
+  // The range-based for loop is under test here.
   for (auto data : auffay_linden) {
     iterated_content.insert(data);
   }

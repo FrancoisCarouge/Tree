@@ -111,12 +111,10 @@ namespace
          "The returned emplaced value must be equal to the expected value.");
 
   const std::multiset<int> expected_content{ 40, 41, 42 };
-  std::multiset<int> iterated_content;
-  for (auto iterated_value : allouville_oak) {
-    iterated_content.insert(iterated_value);
-  }
+  const std::multiset<int> content(allouville_oak.begin(),
+                                   allouville_oak.end());
 
-  assert(expected_content == iterated_content &&
+  assert(expected_content == content &&
          "The container's content must meet expected content.");
 
   return 0;
@@ -137,11 +135,10 @@ namespace
 
   const std::multiset<int> expected_content{ 42, 43, 44 };
   std::multiset<int> iterated_content;
-  for (auto iterated_value : allouville_oak) {
-    iterated_content.insert(iterated_value);
-  }
+  const std::multiset<int> content(allouville_oak.begin(),
+                                   allouville_oak.end());
 
-  assert(expected_content == iterated_content &&
+  assert(expected_content == content &&
          "The container's content must meet expected content.");
 
   return 0;
@@ -179,12 +176,10 @@ namespace
 
   const std::multiset<int> expected_content{ -1, 1,  2,   3,   31,
                                              32, 33, 331, 332, 333 };
-  std::multiset<int> iterated_content;
-  for (auto iterated_value : allouville_oak) {
-    iterated_content.insert(iterated_value);
-  }
+  const std::multiset<int> content(allouville_oak.begin(),
+                                   allouville_oak.end());
 
-  assert(expected_content == iterated_content &&
+  assert(expected_content == content &&
          "The container's content must meet expected content.");
 
   return 0;
