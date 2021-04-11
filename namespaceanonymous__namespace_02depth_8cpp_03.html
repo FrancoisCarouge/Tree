@@ -127,15 +127,15 @@ Variables</h2></td></tr>
 <div class="line">  auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(node3, 31);</div>
 <div class="line">  auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(node3, 32);</div>
 <div class="line">  auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(node3, 33);</div>
-<div class="line">  <span class="keyword">const</span> std::multiset&lt;int&gt; expected_content{ 0, 1, 1, 1, 2, 2, 2,</div>
-<div class="line">                                             2, 2, 2, 2, 2, 2 };</div>
-<div class="line">  std::multiset&lt;int&gt; iterated_depth;</div>
+<div class="line">  <span class="keyword">const</span> std::multiset&lt;int&gt; expected_depths{ 0, 1, 1, 1, 2, 2, 2,</div>
+<div class="line">                                            2, 2, 2, 2, 2, 2 };</div>
+<div class="line">  std::multiset&lt;int&gt; depths;</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> iterator = auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(); iterator != auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">end</a>();</div>
 <div class="line">       ++iterator) {</div>
-<div class="line">    iterated_depth.insert(<a class="code" href="namespacefcarouge.html#a6c807e9e5573caff2b1d8396bcd4eced">depth</a>(iterator));</div>
+<div class="line">    depths.insert(<a class="code" href="namespacefcarouge.html#a6c807e9e5573caff2b1d8396bcd4eced">depth</a>(iterator));</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  assert(expected_content == iterated_depth &amp;&amp;</div>
+<div class="line">  assert(expected_depths == depths &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The depths of the container elements must meet requirements.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
@@ -146,7 +146,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_afca5d640f5205c58695f271bea0fd8ac"><div class="ttname"><a href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00880">tree.hpp:880</a></div></div>
 <div class="ttc" id="anamespacefcarouge_html_a6c807e9e5573caff2b1d8396bcd4eced"><div class="ttname"><a href="namespacefcarouge.html#a6c807e9e5573caff2b1d8396bcd4eced">fcarouge::depth</a></div><div class="ttdeci">constexpr std::iterator_traits&lt; IteratorType &gt;::difference_type depth(IteratorType position)</div><div class="ttdoc">Depth of the path from the root, top element to the iterated node.</div><div class="ttdef"><b>Definition:</b> <a href="tree__algorithm_8hpp_source.html#l00062">tree_algorithm.hpp:62</a></div></div>
 <div class="ttc" id="astructfcarouge_1_1tree_1_1iterator_html"><div class="ttname"><a href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree::iterator</a></div><div class="ttdoc">Type to identify and traverse the elements of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00215">tree.hpp:215</a></div></div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000051">Test:</a></b></dt><dd>Verify the depth of all the nodes of a complex container.</dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000048">Test:</a></b></dt><dd>Verify the depth of all the nodes of a complex container.</dd></dl>
 <div class="dotgraph">
 <img src="dot_inline_dotgraph_6.png" alt="dot_inline_dotgraph_6.png" border="0" usemap="#dot_inline_dotgraph_6.map"/>
 </div>
@@ -173,7 +173,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000049">Test:</a></b></dt><dd>Verify the depth of the root. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000047">Test:</a></b></dt><dd>Verify the depth of the root. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="depth_8cpp_source.html#l00053">53</a> of file <a class="el" href="depth_8cpp_source.html">depth.cpp</a>.</p>
 
@@ -197,7 +197,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000047">Test:</a></b></dt><dd>Verify the depth of the root on a constant container. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000046">Test:</a></b></dt><dd>Verify the depth of the root on a constant container. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="depth_8cpp_source.html#l00044">44</a> of file <a class="el" href="depth_8cpp_source.html">depth.cpp</a>.</p>
 
@@ -209,7 +209,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02depth_8cpp_03.html">anonymous_namespace{depth.cpp}</a></li>
-    <li class="footer">Generated on Fri Apr 9 2021 03:22:29 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Apr 11 2021 00:59:38 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
