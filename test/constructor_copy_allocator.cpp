@@ -137,13 +137,10 @@ namespace
 
   const std::multiset<int> expected_content{ 0,  1,  2,  3,  11, 12, 13,
                                              21, 22, 23, 31, 32, 33 };
-  std::multiset<int> iterated_content;
-  fcarouge::tree<int>::const_iterator iterator = allouville_oak.begin();
-  for (; iterator != allouville_oak.end(); ++iterator) {
-    iterated_content.insert(*iterator);
-  }
+  const std::multiset<int> content(allouville_oak.begin(),
+                                   allouville_oak.end());
 
-  assert(expected_content == iterated_content &&
+  assert(expected_content == content &&
          "Each element must be visited exactly once.");
 
   return 0;

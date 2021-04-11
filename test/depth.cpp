@@ -85,15 +85,15 @@ namespace
   auffay_linden.push(node3, 31);
   auffay_linden.push(node3, 32);
   auffay_linden.push(node3, 33);
-  const std::multiset<int> expected_content{ 0, 1, 1, 1, 2, 2, 2,
-                                             2, 2, 2, 2, 2, 2 };
-  std::multiset<int> iterated_depth;
+  const std::multiset<int> expected_depths{ 0, 1, 1, 1, 2, 2, 2,
+                                            2, 2, 2, 2, 2, 2 };
+  std::multiset<int> depths;
   for (auto iterator = auffay_linden.begin(); iterator != auffay_linden.end();
        ++iterator) {
-    iterated_depth.insert(depth(iterator));
+    depths.insert(depth(iterator));
   }
 
-  assert(expected_content == iterated_depth &&
+  assert(expected_depths == depths &&
          "The depths of the container elements must meet requirements.");
 
   return 0;
