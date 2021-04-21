@@ -32,6 +32,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <cassert>
 // assert
 
+#include <set>
+// std::multiset
+
 namespace
 {
 //! @test Verify the post conditions on pushing front a moved element in an
@@ -77,12 +80,12 @@ namespace
          "The container must not be empty upon pushing in four elements.");
   assert(4 == auffay_linden.size() &&
          "The container must have four nodes upon pushing four values.");
-  assert(1 == *auffay_linden.begin() &&
-         "The last pushed front element value must be equal to the container's "
-         "beginning iterator value.");
-  assert(1 == auffay_linden.front() &&
-         "The last pushed front element value must be equal to the "
-         "container's front value.");
+
+  const std::multiset<int> expected_content{ 1, 11, 111, 1111 };
+  const std::multiset<int> content(auffay_linden.begin(), auffay_linden.end());
+
+  assert(expected_content == content &&
+         "The container's content must meet expected content.");
   assert(auffay_linden.begin() != auffay_linden.end() &&
          "The container's beginning and ending iterators must not be "
          "equal upon pushing in four elements.");
