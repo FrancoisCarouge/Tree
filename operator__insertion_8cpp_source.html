@@ -127,61 +127,69 @@ $(document).ready(function(){initNavTree('operator__insertion_8cpp_source.html',
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02operator__insertion_8cpp_03.html">   38</a></span>&#160;<span class="keyword">namespace</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02operator__insertion_8cpp_03.html#ac78eedc56d14669debd7232980e6a7d6">   42</a></span>&#160;[[maybe_unused]] <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02operator__insertion_8cpp_03.html#ac78eedc56d14669debd7232980e6a7d6">empty</a> = []() {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree_int</a> example;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree_int</a> gouy_yew;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  std::ostringstream oss;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  oss &lt;&lt; example;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  oss &lt;&lt; gouy_yew;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  assert(<span class="stringliteral">&quot;&quot;</span> == oss.str() &amp;&amp;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;         <span class="stringliteral">&quot;The human-interpretable representation of the tree must match the &quot;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;         <span class="stringliteral">&quot;required format.&quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02operator__insertion_8cpp_03.html#a75d8a09bf50e40d9a59c2e164488b988">   56</a></span>&#160;[[maybe_unused]] <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02operator__insertion_8cpp_03.html#a75d8a09bf50e40d9a59c2e164488b988">complex</a> = []() {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree_int</a> example(0);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(example.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 1), 11), 111);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(example.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 2);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(example.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 3);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(example.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 4);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">auto</span> it = example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(example.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 5);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  example.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(it, 51), 512), 511);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  example.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(it, 52), 522), 521);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  example.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(example.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(it, 53), 532), 531);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  std::ostringstream oss;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  oss &lt;&lt; example;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  assert(</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      R<span class="stringliteral">&quot;(0</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="stringliteral">├── 1</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="stringliteral">│   └── 11</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="stringliteral">│       └── 111</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="stringliteral">├── 2</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="stringliteral">├── 3</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="stringliteral">├── 4</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="stringliteral">└── 5</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="stringliteral">    ├── 51</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="stringliteral">    │   ├── 511</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="stringliteral">    │   └── 512</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="stringliteral">    ├── 52</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="stringliteral">    │   ├── 521</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="stringliteral">    │   └── 522</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="stringliteral">    └── 53</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="stringliteral">        ├── 531</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="stringliteral">        └── 532</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="stringliteral">)&quot; == oss.str() &amp;&amp;</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="stringliteral">      </span><span class="stringliteral">&quot;The human-interpretable representation of the tree must match the &quot;</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="stringliteral">&quot;required format.&quot;</span>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  assert(<span class="stringliteral">&quot;&quot;</span> == oss.str() &amp;&amp; <span class="stringliteral">&quot;The human-interpretable representation of the &quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                            <span class="stringliteral">&quot;empty tree must match the required format.&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02operator__insertion_8cpp_03.html#a75d8a09bf50e40d9a59c2e164488b988">   55</a></span>&#160;[[maybe_unused]] <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02operator__insertion_8cpp_03.html#a75d8a09bf50e40d9a59c2e164488b988">complex</a> = []() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree_int</a> gouy_yew(0);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 1), 11), 111);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 2);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 3);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 4);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> it = gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 5);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(it, 51), 512), 511);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(it, 52), 522), 521);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(it, 53), 532), 531);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  std::ostringstream oss;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  oss &lt;&lt; gouy_yew;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  assert(</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      R<span class="stringliteral">&quot;(0</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="stringliteral">├── 1</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="stringliteral">│   └── 11</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="stringliteral">│       └── 111</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="stringliteral">├── 2</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="stringliteral">├── 3</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="stringliteral">├── 4</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="stringliteral">└── 5</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="stringliteral">    ├── 51</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="stringliteral">    │   ├── 511</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="stringliteral">    │   └── 512</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="stringliteral">    ├── 52</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="stringliteral">    │   ├── 521</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="stringliteral">    │   └── 522</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="stringliteral">    └── 53</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="stringliteral">        ├── 531</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="stringliteral">        └── 532</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="stringliteral">)&quot; == oss.str() &amp;&amp;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="stringliteral">      </span><span class="stringliteral">&quot;The human-interpretable representation of the tree must match the &quot;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="stringliteral">&quot;required format.&quot;</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  gouy_yew.<a class="code" href="classfcarouge_1_1tree.html#aa83d14fd7cd74b86556786b1bd0f4393">clear</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  oss.str(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  oss.clear();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  oss &lt;&lt; gouy_yew;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  assert(<span class="stringliteral">&quot;&quot;</span> == oss.str() &amp;&amp; <span class="stringliteral">&quot;The human-interpretable representation of the &quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                            <span class="stringliteral">&quot;cleared tree must match the required format.&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00103">tree.hpp:104</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a217fb2d8d248bedec9126214e8c891a2"><div class="ttname"><a href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00849">tree.hpp:849</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a47c5f13aa881897e4acae42c4ae544e5"><div class="ttname"><a href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">fcarouge::tree::emplace</a></div><div class="ttdeci">constexpr iterator emplace(const_iterator position, ArgumentsType &amp;&amp;... arguments)</div><div class="ttdoc">Inserts a constructed in-place element into the container before the position iterator as the new lef...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01230">tree.hpp:1230</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_aa83d14fd7cd74b86556786b1bd0f4393"><div class="ttname"><a href="classfcarouge_1_1tree.html#aa83d14fd7cd74b86556786b1bd0f4393">fcarouge::tree::clear</a></div><div class="ttdeci">constexpr void clear() noexcept</div><div class="ttdoc">Erases all elements from the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00996">tree.hpp:996</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_ace557ab09e595974d1250f1c8f8d0388"><div class="ttname"><a href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">fcarouge::tree::push</a></div><div class="ttdeci">constexpr iterator push(const_iterator position, const_reference value)</div><div class="ttdoc">Inserts a copied element into the container after the last child of the position iterator as the new ...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01375">tree.hpp:1375</a></div></div>
-<div class="ttc" id="anamespaceanonymous__namespace_02operator__insertion_8cpp_03_html_a75d8a09bf50e40d9a59c2e164488b988"><div class="ttname"><a href="namespaceanonymous__namespace_02operator__insertion_8cpp_03.html#a75d8a09bf50e40d9a59c2e164488b988">anonymous_namespace{operator_insertion.cpp}::complex</a></div><div class="ttdeci">auto complex</div><div class="ttdoc">Verify the human-interpretable representation of a non-trivial tree provided by the insertion operato...</div><div class="ttdef"><b>Definition:</b> <a href="operator__insertion_8cpp_source.html#l00056">operator_insertion.cpp:56</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02operator__insertion_8cpp_03_html_a75d8a09bf50e40d9a59c2e164488b988"><div class="ttname"><a href="namespaceanonymous__namespace_02operator__insertion_8cpp_03.html#a75d8a09bf50e40d9a59c2e164488b988">anonymous_namespace{operator_insertion.cpp}::complex</a></div><div class="ttdeci">auto complex</div><div class="ttdoc">Verify the human-interpretable representation of a non-trivial tree provided by the insertion operato...</div><div class="ttdef"><b>Definition:</b> <a href="operator__insertion_8cpp_source.html#l00055">operator_insertion.cpp:55</a></div></div>
 <div class="ttc" id="anamespaceanonymous__namespace_02operator__insertion_8cpp_03_html_ac78eedc56d14669debd7232980e6a7d6"><div class="ttname"><a href="namespaceanonymous__namespace_02operator__insertion_8cpp_03.html#ac78eedc56d14669debd7232980e6a7d6">anonymous_namespace{operator_insertion.cpp}::empty</a></div><div class="ttdeci">auto empty</div><div class="ttdoc">Verify the human-interpretable representation of an empty tree provided by the insertion operator.</div><div class="ttdef"><b>Definition:</b> <a href="operator__insertion_8cpp_source.html#l00042">operator_insertion.cpp:42</a></div></div>
 <div class="ttc" id="atree_8hpp_html"><div class="ttname"><a href="tree_8hpp.html">tree.hpp</a></div><div class="ttdoc">Tree container types and canonical operations definitions header.</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -190,7 +198,7 @@ $(document).ready(function(){initNavTree('operator__insertion_8cpp_source.html',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="operator__insertion_8cpp.html">operator_insertion.cpp</a></li>
-    <li class="footer">Generated on Wed Apr 21 2021 01:20:27 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Apr 21 2021 01:36:43 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
