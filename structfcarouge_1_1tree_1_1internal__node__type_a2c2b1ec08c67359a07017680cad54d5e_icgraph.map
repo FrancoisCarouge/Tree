@@ -1,6 +1,6 @@
 <map id="fcarouge::tree::internal_node_type::next_ancestor_sibling" name="fcarouge::tree::internal_node_type::next_ancestor_sibling">
 <area shape="rect" id="node1" title="Finds the nearest right sibling of itself or ancestor." alt="" coords="200,49,375,105"/>
 <area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#a9c5de4a3562f0860b6250e27070fe588" title="Removes the specified element including its sub&#45;tree." alt="" coords="9,5,148,32"/>
-<area shape="rect" id="node3" href="$structfcarouge_1_1tree_1_1iterator.html#a812e48769ecc4ebefdb93a94989e361c" title="Increments the iterator." alt="" coords="5,57,152,98"/>
-<area shape="rect" id="node4" href="$structfcarouge_1_1tree_1_1const__iterator.html#acbe2135e9bc1993a672d304069cbf680" title="Increments the iterator." alt="" coords="9,122,148,163"/>
+<area shape="rect" id="node3" href="$structfcarouge_1_1tree_1_1iterator.html#a812e48769ecc4ebefdb93a94989e361c" title="Prefix increments the iterator." alt="" coords="5,57,152,98"/>
+<area shape="rect" id="node4" href="$structfcarouge_1_1tree_1_1const__iterator.html#acbe2135e9bc1993a672d304069cbf680" title="Prefix increments the iterator." alt="" coords="9,122,148,163"/>
 </map>
