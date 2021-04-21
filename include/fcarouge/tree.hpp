@@ -100,7 +100,7 @@ namespace fcarouge
 //! and to construct/destroy the elements in that memory. The type must meet the
 //! requirements of Allocator. The behavior is undefined if
 //! `Allocator::value_type` is not the same as `Type`.
-template <class Type, class AllocatorType> class tree
+template <typename Type, typename AllocatorType> class tree
 {
   public:
   static_assert(std::is_same_v<Type, typename AllocatorType::value_type>,
@@ -395,7 +395,7 @@ template <class Type, class AllocatorType> class tree
   };
 
   //! @brief The result type of inserting a `node_type` in the container.
-  template <class IteratorType> struct insert_return_type {
+  template <typename IteratorType> struct insert_return_type {
     // Not implemented.
 
     //! @brief The node handle type of the container.
@@ -1138,7 +1138,7 @@ template <class Type, class AllocatorType> class tree
     return { node };
   }
 
-  template <class InputIteratorType>
+  template <typename InputIteratorType>
   constexpr iterator insert(const_iterator position, InputIteratorType first,
                             InputIteratorType last);
 
@@ -1168,7 +1168,7 @@ template <class Type, class AllocatorType> class tree
   //! @benchmark
   //! @image{inline} html "benchmark/emplace_front_cumulative.svg"
   //! @image{inline} html "benchmark/emplace_front_incremental.svg"
-  template <class... ArgumentsType>
+  template <typename... ArgumentsType>
   constexpr reference emplace_front(ArgumentsType &&... arguments)
   {
     // The allocated node is in-place construced and recorded in every
@@ -1213,7 +1213,7 @@ template <class Type, class AllocatorType> class tree
   //! @return The iterator pointing to the inserted element.
   //!
   //! @complexity Constant.
-  template <class... ArgumentsType>
+  template <typename... ArgumentsType>
   constexpr iterator emplace(const_iterator position,
                              ArgumentsType &&... arguments)
   {
@@ -1584,7 +1584,7 @@ template <class Type, class AllocatorType> class tree
   //! CopyInsertable into `*this`, the container will use the throwing move
   //! constructor. If it throws, the guarantee is waived and the effects are
   //! unspecified.
-  template <class... ArgumentsType>
+  template <typename... ArgumentsType>
   constexpr internal_node_type *
   emplace_last_child(internal_node_type *parent, ArgumentsType &&... arguments)
   {
@@ -1653,7 +1653,7 @@ template <class Type, class AllocatorType> class tree
   //! @exceptions Strong exception guarantees: no effect on
   //! exception. The `Allocator::allocate()` allocation or the element copy/move
   //! constructor/assignment may throw.
-  template <class... ArgumentsType>
+  template <typename... ArgumentsType>
   constexpr void emplace_root(ArgumentsType &&... arguments)
   {
     // The allocated node is in-place construced and recorded in every
@@ -1774,7 +1774,7 @@ template <class Type, class AllocatorType> class tree
 //!
 //! @complexity Linear in the size of the container. Constant if the size of the
 //! compared containers are different, linear otherwise.
-template <class Type, class AllocatorType>
+template <typename Type, typename AllocatorType>
 [[nodiscard]] constexpr bool
 operator==(const fcarouge::tree<Type, AllocatorType> &lhs,
            const fcarouge::tree<Type, AllocatorType> &rhs)
@@ -1813,7 +1813,7 @@ operator==(const fcarouge::tree<Type, AllocatorType> &lhs,
 //! elements in `lhs` and `rhs` are unordered; `std::strong::equal` otherwise.
 //!
 //! @complexity Linear in the size of the container.
-template <class Type, class AllocatorType>
+template <typename Type, typename AllocatorType>
 [[nodiscard]] constexpr auto
 operator<=>(const fcarouge::tree<Type, AllocatorType> &lhs,
             const fcarouge::tree<Type, AllocatorType> &rhs);
@@ -1839,7 +1839,8 @@ operator<=>(const fcarouge::tree<Type, AllocatorType> &lhs,
 //! @param tree The tree to be written.
 //!
 //! @return The character stream `output_stream` that was operated on.
-template <class CharType, class Traits, class Type, class AllocatorType>
+template <typename CharType, typename Traits, typename Type,
+          typename AllocatorType>
 std::basic_ostream<CharType, Traits> &
 operator<<(std::basic_ostream<CharType, Traits> &output_stream,
            const fcarouge::tree<Type, AllocatorType> &tree)
