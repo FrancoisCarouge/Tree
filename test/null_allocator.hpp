@@ -54,7 +54,7 @@ namespace fcarouge
 //! @details The `fcarouge::null_allocator` does not yet satisfies allocator
 //! completeness requirements. The allocator supports compile time evaluation of
 //! its operations.
-template <class Type> class null_allocator
+template <typename Type> class null_allocator
 {
   public:
   //! @name Public Member Types
@@ -102,7 +102,7 @@ template <class Type> class null_allocator
   //! the constructors have no visible effect.
   //!
   //! @complexity Constant.
-  template <class OtherType>
+  template <typename OtherType>
   constexpr explicit null_allocator(
       const null_allocator<OtherType> &other) noexcept
   {
@@ -169,7 +169,8 @@ namespace std
 //!
 //! @details User-provided specialization of `std::allocator_traits` for the
 //! `fcarouge::null_allocator` allocator.
-template <class Type> struct allocator_traits<fcarouge::null_allocator<Type>> {
+template <typename Type>
+struct allocator_traits<fcarouge::null_allocator<Type>> {
   public:
   //! @name Public Member Types
   //! @{
@@ -206,10 +207,10 @@ template <class Type> struct allocator_traits<fcarouge::null_allocator<Type>> {
   //! @{
 
   //! @brief The rebinded allocator type  for other element types.
-  template <class OtherType>
+  template <typename OtherType>
   using rebind_alloc = fcarouge::null_allocator<OtherType>;
 
-  template <class OtherType>
+  template <typename OtherType>
   using rebind_traits = std::allocator_traits<rebind_alloc<OtherType>>;
 
   //! @}
@@ -222,11 +223,11 @@ template <class Type> struct allocator_traits<fcarouge::null_allocator<Type>> {
   [[nodiscard]] static constexpr pointer
   allocate(allocator_type &allocator, size_type count, const_void_pointer hint);
   static constexpr void deallocate(allocator_type &a, pointer p, size_type n);
-  template <class OtherType, class... Args>
+  template <typename OtherType, typename... Args>
   static constexpr void construct(allocator_type &allocator,
                                   OtherType *other_pointer,
                                   Args &&... arguments);
-  template <class OtherType>
+  template <typename OtherType>
   static constexpr void destroy(allocator_type &allocator,
                                 OtherType *other_pointer);
 

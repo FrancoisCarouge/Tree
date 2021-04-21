@@ -56,7 +56,7 @@ namespace fcarouge
 //! @return Current depth of the iterator.
 //!
 //! @complexity Linear in depth.
-template <class IteratorType>
+template <typename IteratorType>
 [[nodiscard]] constexpr
     typename std::iterator_traits<IteratorType>::difference_type
     depth(IteratorType position)
