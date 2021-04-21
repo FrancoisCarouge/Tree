@@ -123,12 +123,12 @@ Variables</h2></td></tr>
 <div class="line">         <span class="stringliteral">&quot;The container must not be empty upon pushing in four elements.&quot;</span>);</div>
 <div class="line">  assert(4 == auffay_linden.size() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container must have four nodes upon pushing four values.&quot;</span>);</div>
-<div class="line">  assert(1 == *auffay_linden.begin() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The last pushed front element value must be equal to the container&#39;s &quot;</span></div>
-<div class="line">         <span class="stringliteral">&quot;beginning iterator value.&quot;</span>);</div>
-<div class="line">  assert(1 == auffay_linden.front() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The last pushed front element value must be equal to the &quot;</span></div>
-<div class="line">         <span class="stringliteral">&quot;container&#39;s front value.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">const</span> std::multiset&lt;int&gt; expected_content{ 1, 11, 111, 1111 };</div>
+<div class="line">  <span class="keyword">const</span> std::multiset&lt;int&gt; content(auffay_linden.begin(), auffay_linden.end());</div>
+<div class="line"> </div>
+<div class="line">  assert(expected_content == content &amp;&amp;</div>
+<div class="line">         <span class="stringliteral">&quot;The container&#39;s content must meet expected content.&quot;</span>);</div>
 <div class="line">  assert(auffay_linden.begin() != auffay_linden.end() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must not be &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;equal upon pushing in four elements.&quot;</span>);</div>
@@ -141,7 +141,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00103">tree.hpp:104</a></div></div>
 </div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000103">Test:</a></b></dt><dd>Verify the post conditions on pushing front two moved elements in a non-empty container. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="push__front__lvalue_8cpp_source.html#l00066">66</a> of file <a class="el" href="push__front__lvalue_8cpp_source.html">push_front_lvalue.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="push__front__lvalue_8cpp_source.html#l00069">69</a> of file <a class="el" href="push__front__lvalue_8cpp_source.html">push_front_lvalue.cpp</a>.</p>
 
 </div>
 </div>
@@ -190,7 +190,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_afca5d640f5205c58695f271bea0fd8ac"><div class="ttname"><a href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00890">tree.hpp:890</a></div></div>
 </div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000102">Test:</a></b></dt><dd>Verify the post conditions on pushing front a moved element in an empty container. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="push__front__lvalue_8cpp_source.html#l00039">39</a> of file <a class="el" href="push__front__lvalue_8cpp_source.html">push_front_lvalue.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="push__front__lvalue_8cpp_source.html#l00042">42</a> of file <a class="el" href="push__front__lvalue_8cpp_source.html">push_front_lvalue.cpp</a>.</p>
 
 </div>
 </div>
@@ -200,7 +200,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02push__front__lvalue_8cpp_03.html">anonymous_namespace{push_front_lvalue.cpp}</a></li>
-    <li class="footer">Generated on Wed Apr 21 2021 01:36:44 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Apr 21 2021 01:48:31 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

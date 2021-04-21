@@ -54,18 +54,18 @@ var NAVTREE =
       [ "License", "index.html#autotoc_md33", null ]
     ] ],
     [ "Contributor Covenant Code of Conduct", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html", [
-      [ "Our Pledge", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md1", null ],
-      [ "Our Standards", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md2", null ],
-      [ "Our Responsibilities", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md3", null ],
-      [ "Scope", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md4", null ],
-      [ "Enforcement", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md5", null ],
-      [ "Attribution", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md6", null ]
+      [ "Our Pledge", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md6", null ],
+      [ "Our Standards", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md7", null ],
+      [ "Our Responsibilities", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md8", null ],
+      [ "Scope", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md9", null ],
+      [ "Enforcement", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md10", null ],
+      [ "Attribution", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md11", null ]
     ] ],
     [ "Contributing", "md__c_o_n_t_r_i_b_u_t_i_n_g.html", [
-      [ "Code of Conduct", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md8", null ],
-      [ "Reporting Bugs", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md9", null ],
-      [ "Requesting Features", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md10", null ],
-      [ "Security Policy", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md11", null ]
+      [ "Code of Conduct", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md1", null ],
+      [ "Reporting Bugs", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md2", null ],
+      [ "Requesting Features", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md3", null ],
+      [ "Security Policy", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md4", null ]
     ] ],
     [ "Security Policy", "md__s_e_c_u_r_i_t_y.html", [
       [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md35", null ],
@@ -104,9 +104,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"insert__rvalue_8cpp.html#a7e7ee66ca20aae86ddda60b9a3d4eb73",
-"namespacemembers_func.html"
+"annotated.html",
+"insert__rvalue_8cpp.html#ada6259b572c16db5e1703ebd1286d223",
+"namespacemembers_type.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
