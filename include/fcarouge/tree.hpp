@@ -246,10 +246,12 @@ template <typename Type, typename AllocatorType> class tree
       return node->data;
     }
 
+    //! @}
+
     //! @name Public Modifier Member Functions
     //! @{
 
-    //! @brief Increments the iterator.
+    //! @brief Prefix increments the iterator.
     //!
     //! @return Reference to the next iterator.
     constexpr iterator &operator++() noexcept
@@ -358,7 +360,7 @@ template <typename Type, typename AllocatorType> class tree
     //! @name Public Modifier Member Functions
     //! @{
 
-    //! @brief Increments the iterator.
+    //! @brief Prefix increments the iterator.
     //!
     //! @return Reference to the next iterator.
     constexpr const_iterator &operator++() noexcept
@@ -606,6 +608,7 @@ template <typename Type, typename AllocatorType> class tree
       root = copy(other.root);
       node_count = other.node_count;
     }
+
     return *this;
   }
 
@@ -637,6 +640,7 @@ template <typename Type, typename AllocatorType> class tree
       node_count = other.node_count;
       other.root = nullptr;
     }
+
     return *this;
   }
 
@@ -657,6 +661,7 @@ template <typename Type, typename AllocatorType> class tree
     root = node_allocator.allocate(1);
     std::construct_at(root, value);
     node_count = 1;
+
     return *this;
   }
 
@@ -678,6 +683,7 @@ template <typename Type, typename AllocatorType> class tree
     root = node_allocator.allocate(1);
     std::construct_at(root, std::move(value));
     node_count = 1;
+
     return *this;
   }
 
@@ -703,6 +709,7 @@ template <typename Type, typename AllocatorType> class tree
       root = copy(other.root);
       node_count = other.node_count;
     }
+
     return *this;
   }
 
@@ -734,6 +741,7 @@ template <typename Type, typename AllocatorType> class tree
       node_count = other.node_count;
       other.root = nullptr;
     }
+
     return *this;
   }
 
@@ -754,6 +762,7 @@ template <typename Type, typename AllocatorType> class tree
     root = node_allocator.allocate(1);
     std::construct_at(root, value);
     node_count = 1;
+
     return *this;
   }
 
@@ -775,6 +784,7 @@ template <typename Type, typename AllocatorType> class tree
     root = node_allocator.allocate(1);
     std::construct_at(root, std::move(value));
     node_count = 1;
+
     return *this;
   }
 
@@ -1061,6 +1071,7 @@ template <typename Type, typename AllocatorType> class tree
     }
 
     ++node_count;
+
     return { node };
   }
 
@@ -1135,6 +1146,7 @@ template <typename Type, typename AllocatorType> class tree
     }
 
     ++node_count;
+
     return { node };
   }
 
@@ -1185,6 +1197,7 @@ template <typename Type, typename AllocatorType> class tree
 
     root = node;
     ++node_count;
+
     return node->data;
   }
 
@@ -1268,6 +1281,7 @@ template <typename Type, typename AllocatorType> class tree
     }
 
     ++node_count;
+
     return { node };
   }
 
