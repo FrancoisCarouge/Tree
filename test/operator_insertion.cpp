@@ -40,13 +40,12 @@ namespace
 //! @brief Verify the human-interpretable representation of an empty tree
 //! provided by the insertion operator.
 [[maybe_unused]] auto empty = []() {
-  fcarouge::tree_int example;
+  fcarouge::tree_int gouy_yew;
   std::ostringstream oss;
-  oss << example;
+  oss << gouy_yew;
 
-  assert("" == oss.str() &&
-         "The human-interpretable representation of the tree must match the "
-         "required format.");
+  assert("" == oss.str() && "The human-interpretable representation of the "
+                            "empty tree must match the required format.");
 
   return 0;
 }();
@@ -54,17 +53,17 @@ namespace
 //! @brief Verify the human-interpretable representation of a non-trivial tree
 //! provided by the insertion operator.
 [[maybe_unused]] auto complex = []() {
-  fcarouge::tree_int example(0);
-  example.push(example.push(example.push(example.begin(), 1), 11), 111);
-  example.push(example.begin(), 2);
-  example.push(example.begin(), 3);
-  example.push(example.begin(), 4);
-  auto it = example.push(example.begin(), 5);
-  example.emplace(example.push(example.push(it, 51), 512), 511);
-  example.emplace(example.push(example.push(it, 52), 522), 521);
-  example.emplace(example.push(example.push(it, 53), 532), 531);
+  fcarouge::tree_int gouy_yew(0);
+  gouy_yew.push(gouy_yew.push(gouy_yew.push(gouy_yew.begin(), 1), 11), 111);
+  gouy_yew.push(gouy_yew.begin(), 2);
+  gouy_yew.push(gouy_yew.begin(), 3);
+  gouy_yew.push(gouy_yew.begin(), 4);
+  const auto it = gouy_yew.push(gouy_yew.begin(), 5);
+  gouy_yew.emplace(gouy_yew.push(gouy_yew.push(it, 51), 512), 511);
+  gouy_yew.emplace(gouy_yew.push(gouy_yew.push(it, 52), 522), 521);
+  gouy_yew.emplace(gouy_yew.push(gouy_yew.push(it, 53), 532), 531);
   std::ostringstream oss;
-  oss << example;
+  oss << gouy_yew;
 
   assert(
       R"(0
@@ -87,6 +86,14 @@ namespace
 )" == oss.str() &&
       "The human-interpretable representation of the tree must match the "
       "required format.");
+
+  gouy_yew.clear();
+  oss.str("");
+  oss.clear();
+  oss << gouy_yew;
+
+  assert("" == oss.str() && "The human-interpretable representation of the "
+                            "cleared tree must match the required format.");
 
   return 0;
 }();
