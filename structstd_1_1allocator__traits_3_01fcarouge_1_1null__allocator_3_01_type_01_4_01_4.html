@@ -138,11 +138,11 @@ Public Types</h2></td></tr>
 <tr class="memitem:a7c11d8f06e7f47d1f7a22739f6c09101"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a7c11d8f06e7f47d1f7a22739f6c09101">is_always_equal</a> = std::is_empty&lt; <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a> &gt;::type</td></tr>
 <tr class="separator:a7c11d8f06e7f47d1f7a22739f6c09101"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Public Member Alias Templates</div></td></tr>
-<tr class="memitem:a2660f73e3afa98ba191b667203190cc3"><td class="memTemplParams" colspan="2">template&lt;class OtherType &gt; </td></tr>
+<tr class="memitem:a2660f73e3afa98ba191b667203190cc3"><td class="memTemplParams" colspan="2">template&lt;typename OtherType &gt; </td></tr>
 <tr class="memitem:a2660f73e3afa98ba191b667203190cc3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a2660f73e3afa98ba191b667203190cc3">rebind_alloc</a> = <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; OtherType &gt;</td></tr>
 <tr class="memdesc:a2660f73e3afa98ba191b667203190cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rebinded allocator type for other element types.  <a href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a2660f73e3afa98ba191b667203190cc3">More...</a><br /></td></tr>
 <tr class="separator:a2660f73e3afa98ba191b667203190cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a696e95e5a1a106f333761fb6fe95d117"><td class="memTemplParams" colspan="2">template&lt;class OtherType &gt; </td></tr>
+<tr class="memitem:a696e95e5a1a106f333761fb6fe95d117"><td class="memTemplParams" colspan="2">template&lt;typename OtherType &gt; </td></tr>
 <tr class="memitem:a696e95e5a1a106f333761fb6fe95d117"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a696e95e5a1a106f333761fb6fe95d117">rebind_traits</a> = std::allocator_traits&lt; <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a2660f73e3afa98ba191b667203190cc3">rebind_alloc</a>&lt; OtherType &gt; &gt;</td></tr>
 <tr class="separator:a696e95e5a1a106f333761fb6fe95d117"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -155,10 +155,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:afb80e73abef2d05ddb00a91cf53f582b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21129eb1def74e117e937d52ae9773c7"><td class="memItemLeft" align="right" valign="top">static constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a21129eb1def74e117e937d52ae9773c7">deallocate</a> (<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a> &amp;a, <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#adf2d0b6550cf963a90fa22e59e7489d7">pointer</a> p, <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a6a75fbec38028054becbfdc1c07eefbe">size_type</a> n)</td></tr>
 <tr class="separator:a21129eb1def74e117e937d52ae9773c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae17fd256acbfd2e537ad7a31f448fdfb"><td class="memTemplParams" colspan="2">template&lt;class OtherType , class... Args&gt; </td></tr>
+<tr class="memitem:ae17fd256acbfd2e537ad7a31f448fdfb"><td class="memTemplParams" colspan="2">template&lt;typename OtherType , typename... Args&gt; </td></tr>
 <tr class="memitem:ae17fd256acbfd2e537ad7a31f448fdfb"><td class="memTemplItemLeft" align="right" valign="top">static constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#ae17fd256acbfd2e537ad7a31f448fdfb">construct</a> (<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a> &amp;allocator, OtherType *other_pointer, Args &amp;&amp;... arguments)</td></tr>
 <tr class="separator:ae17fd256acbfd2e537ad7a31f448fdfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d200a8e6c47c4d90928af47e3dd7342"><td class="memTemplParams" colspan="2">template&lt;class OtherType &gt; </td></tr>
+<tr class="memitem:a1d200a8e6c47c4d90928af47e3dd7342"><td class="memTemplParams" colspan="2">template&lt;typename OtherType &gt; </td></tr>
 <tr class="memitem:a1d200a8e6c47c4d90928af47e3dd7342"><td class="memTemplItemLeft" align="right" valign="top">static constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a1d200a8e6c47c4d90928af47e3dd7342">destroy</a> (<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a> &amp;allocator, OtherType *other_pointer)</td></tr>
 <tr class="separator:a1d200a8e6c47c4d90928af47e3dd7342"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19e68a0ad01a56bf8bd077352456e44f"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a6a75fbec38028054becbfdc1c07eefbe">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a19e68a0ad01a56bf8bd077352456e44f">max_size</a> (const <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a> &amp;allocator) noexcept</td></tr>
@@ -169,13 +169,13 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ae837d645fed9925f5a88026d0a50fedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class Type&gt;<br />
+<div class="textblock"><h3>template&lt;typename Type&gt;<br />
 struct std::allocator_traits&lt; fcarouge::null_allocator&lt; Type &gt; &gt;</h3>
 
 <p>Null allocator specialization of the access to allocators properties. </p>
 <p>User-provided specialization of <code>std::allocator_traits</code> for the <code><a class="el" href="classfcarouge_1_1null__allocator.html" title="Stateless perfectly fallible null allocator.">fcarouge::null_allocator</a></code> allocator. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00172">172</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00173">173</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5d9e9fb794f336bac5aad7cc3b7af0da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d9e9fb794f336bac5aad7cc3b7af0da">&#9670;&nbsp;</a></span>allocator_type</h2>
@@ -183,7 +183,7 @@ struct std::allocator_traits&lt; fcarouge::null_allocator&lt; Type &gt; &gt;</h3
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a> =  <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt;Type&gt;</td>
@@ -193,7 +193,7 @@ template&lt;class Type &gt; </div>
 
 <p>The type of the allocator for memory allocations. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00178">178</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00179">179</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -203,7 +203,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#af53c5da6e8db470bc23cffc995aa35d2">const_pointer</a> =  typename std::pointer_traits&lt;<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#adf2d0b6550cf963a90fa22e59e7489d7">pointer</a>&gt;::rebind&lt;const <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a61661d8e5e700e0aeff54515fd2f14f3">value_type</a>&gt;</td>
@@ -213,7 +213,7 @@ template&lt;class Type &gt; </div>
 
 <p>The constant pointer type of the allocated data elements. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00187">187</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00188">188</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -223,7 +223,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a45a0a84e2569a94ceb936a1ce2f4a0c8">const_void_pointer</a> =  typename std::pointer_traits&lt;<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#adf2d0b6550cf963a90fa22e59e7489d7">pointer</a>&gt;::rebind&lt;const void&gt;</td>
@@ -231,7 +231,7 @@ template&lt;class Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00191">191</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00192">192</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -241,7 +241,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a302c24d47cdd84988043ed55f550a5da">difference_type</a> =  <a class="el" href="classfcarouge_1_1null__allocator.html#a596e906e3a4f6ec147a3bdecd018101b">allocator_type::difference_type</a></td>
@@ -249,7 +249,7 @@ template&lt;class Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00193">193</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00194">194</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -259,7 +259,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a7c11d8f06e7f47d1f7a22739f6c09101">is_always_equal</a> =  std::is_empty&lt;<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5d9e9fb794f336bac5aad7cc3b7af0da">allocator_type</a>&gt;::type</td>
@@ -267,7 +267,7 @@ template&lt;class Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00201">201</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00202">202</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -277,7 +277,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#adf2d0b6550cf963a90fa22e59e7489d7">pointer</a> =  <a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a61661d8e5e700e0aeff54515fd2f14f3">value_type</a> *</td>
@@ -287,7 +287,7 @@ template&lt;class Type &gt; </div>
 
 <p>The pointer type of the allocated data elements. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00184">184</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00185">185</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -297,7 +297,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a701363dd69aea1c8480501a2eccb879c">propagate_on_container_copy_assignment</a> =  std::false_type</td>
@@ -305,7 +305,7 @@ template&lt;class Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00198">198</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00199">199</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -315,7 +315,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a13cb774188222f54cf76a6303ad9add7">propagate_on_container_move_assignment</a> =  std::false_type</td>
@@ -323,7 +323,7 @@ template&lt;class Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00199">199</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00200">200</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -333,7 +333,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#abf37d3febd320806a517cf908d5793d6">propagate_on_container_swap</a> =  std::false_type</td>
@@ -341,7 +341,7 @@ template&lt;class Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00200">200</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00201">201</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -351,9 +351,9 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <div class="memtemplate">
-template&lt;class OtherType &gt; </div>
+template&lt;typename OtherType &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a2660f73e3afa98ba191b667203190cc3">rebind_alloc</a> =  <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt;OtherType&gt;</td>
@@ -363,7 +363,7 @@ template&lt;class OtherType &gt; </div>
 
 <p>The rebinded allocator type for other element types. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00210">210</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00211">211</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -373,9 +373,9 @@ template&lt;class OtherType &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <div class="memtemplate">
-template&lt;class OtherType &gt; </div>
+template&lt;typename OtherType &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a696e95e5a1a106f333761fb6fe95d117">rebind_traits</a> =  std::allocator_traits&lt;<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a2660f73e3afa98ba191b667203190cc3">rebind_alloc</a>&lt;OtherType&gt; &gt;</td>
@@ -383,7 +383,7 @@ template&lt;class OtherType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00213">213</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00214">214</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -393,7 +393,7 @@ template&lt;class OtherType &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a6a75fbec38028054becbfdc1c07eefbe">size_type</a> =  <a class="el" href="classfcarouge_1_1null__allocator.html#a70b0b5c147428a2f2da593eac0941510">allocator_type::size_type</a></td>
@@ -403,7 +403,7 @@ template&lt;class Type &gt; </div>
 
 <p>The unsigned integer type to represent element counts. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00196">196</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00197">197</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -413,7 +413,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a61661d8e5e700e0aeff54515fd2f14f3">value_type</a> =  <a class="el" href="classfcarouge_1_1null__allocator.html#a58d19ef64b839740e9ef37b05459284e">allocator_type::value_type</a></td>
@@ -423,7 +423,7 @@ template&lt;class Type &gt; </div>
 
 <p>The type of the allocated data elements. </p>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00181">181</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00182">182</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -433,7 +433,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using std::allocator_traits&lt; <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt; &gt;::<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#a5970a6abae8f9180c5a97985ca9fd5f7">void_pointer</a> =  typename std::pointer_traits&lt;<a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html#adf2d0b6550cf963a90fa22e59e7489d7">pointer</a>&gt;::rebind&lt;void&gt;</td>
@@ -441,7 +441,7 @@ template&lt;class Type &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00190">190</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00191">191</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
 
 </div>
 </div>
@@ -452,7 +452,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -490,7 +490,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -534,9 +534,9 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <div class="memtemplate">
-template&lt;class OtherType , class... Args&gt; </div>
+template&lt;typename OtherType , typename... Args&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -580,7 +580,7 @@ template&lt;class OtherType , class... Args&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -624,9 +624,9 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <div class="memtemplate">
-template&lt;class OtherType &gt; </div>
+template&lt;typename OtherType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -664,7 +664,7 @@ template&lt;class OtherType &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -694,11 +694,11 @@ template&lt;class Type &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Theoretical maximum allocation size, that is, exactly zero.</dd></dl>
 <dl class="section user"><dt>Complexity</dt><dd>Constant. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00241">241</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    (void)allocator;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00242">242</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    (void)allocator;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -708,7 +708,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -738,10 +738,10 @@ template&lt;class Type &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The allocator to use by the copy-constructed standard containers.</dd></dl>
 <dl class="section user"><dt>Complexity</dt><dd>Constant. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00256">256</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">return</span> allocator;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  }</div>
+<p class="definition">Definition at line <a class="el" href="null__allocator_8hpp_source.html#l00257">257</a> of file <a class="el" href="null__allocator_8hpp_source.html">null_allocator.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> allocator;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -754,7 +754,7 @@ template&lt;class Type &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>std</b></li><li class="navelem"><a class="el" href="structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html">allocator_traits&lt; fcarouge::null_allocator&lt; Type &gt; &gt;</a></li>
-    <li class="footer">Generated on Sun Apr 11 2021 00:59:38 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Apr 21 2021 01:16:37 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

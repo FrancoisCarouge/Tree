@@ -130,7 +130,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a186d321f34571bd0aa611f8e33c31110"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfcarouge_1_1null__allocator.html#a186d321f34571bd0aa611f8e33c31110">null_allocator</a> (const <a class="el" href="classfcarouge_1_1null__allocator.html">null_allocator</a> &amp;other) noexcept</td></tr>
 <tr class="memdesc:a186d321f34571bd0aa611f8e33c31110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructs the null-allocator.  <a href="classfcarouge_1_1null__allocator.html#a186d321f34571bd0aa611f8e33c31110">More...</a><br /></td></tr>
 <tr class="separator:a186d321f34571bd0aa611f8e33c31110"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a790021db39d24938a31471896632b2b4"><td class="memTemplParams" colspan="2">template&lt;class OtherType &gt; </td></tr>
+<tr class="memitem:a790021db39d24938a31471896632b2b4"><td class="memTemplParams" colspan="2">template&lt;typename OtherType &gt; </td></tr>
 <tr class="memitem:a790021db39d24938a31471896632b2b4"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfcarouge_1_1null__allocator.html#a790021db39d24938a31471896632b2b4">null_allocator</a> (const <a class="el" href="classfcarouge_1_1null__allocator.html">null_allocator</a>&lt; OtherType &gt; &amp;other) noexcept</td></tr>
 <tr class="memdesc:a790021db39d24938a31471896632b2b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the allocator from another allocator and element type.  <a href="classfcarouge_1_1null__allocator.html#a790021db39d24938a31471896632b2b4">More...</a><br /></td></tr>
 <tr class="separator:a790021db39d24938a31471896632b2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,7 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad184c451da269197d2474876684b77a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class Type&gt;<br />
+<div class="textblock"><h3>template&lt;typename Type&gt;<br />
 class fcarouge::null_allocator&lt; Type &gt;</h3>
 
 <p>Stateless perfectly fallible null allocator. </p>
@@ -162,7 +162,7 @@ class fcarouge::null_allocator&lt; Type &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt;::<a class="el" href="classfcarouge_1_1null__allocator.html#a596e906e3a4f6ec147a3bdecd018101b">difference_type</a> =  std::ptrdiff_t</td>
@@ -182,7 +182,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt;::<a class="el" href="classfcarouge_1_1null__allocator.html#a69a0c25716ec1ff48b78349d11ae9a37">propagate_on_container_move_assignment</a> =  std::true_type</td>
@@ -202,7 +202,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt;::<a class="el" href="classfcarouge_1_1null__allocator.html#a70b0b5c147428a2f2da593eac0941510">size_type</a> =  std::size_t</td>
@@ -222,7 +222,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classfcarouge_1_1null__allocator.html">fcarouge::null_allocator</a>&lt; Type &gt;::<a class="el" href="classfcarouge_1_1null__allocator.html#a58d19ef64b839740e9ef37b05459284e">value_type</a> =  Type</td>
@@ -243,7 +243,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -274,7 +274,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -311,9 +311,9 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <div class="memtemplate">
-template&lt;class OtherType &gt; </div>
+template&lt;typename OtherType &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -350,7 +350,7 @@ template&lt;class OtherType &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -382,7 +382,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -429,7 +429,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -475,7 +475,7 @@ template&lt;class Type &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Type &gt; </div>
+template&lt;typename Type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -511,7 +511,7 @@ template&lt;class Type &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li><li class="navelem"><a class="el" href="classfcarouge_1_1null__allocator.html">null_allocator</a></li>
-    <li class="footer">Generated on Sun Apr 11 2021 00:59:38 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Apr 21 2021 01:16:37 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
