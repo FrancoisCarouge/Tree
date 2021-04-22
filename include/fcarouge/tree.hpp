@@ -228,8 +228,8 @@ template <typename Type, typename AllocatorType> class tree
     //! @brief The pointer type of the contained data elements.
     using pointer = tree::pointer;
 
-    //! @brief The category of the iterator.
-    using iterator_category = std::input_iterator_tag;
+    //! @brief The LegacyForwardIterator requirements category of the iterator.
+    using iterator_category = std::forward_iterator_tag;
 
     //! @}
 
@@ -263,6 +263,21 @@ template <typename Type, typename AllocatorType> class tree
       }
 
       return *this;
+    }
+
+    //! @brief Postfix increments the iterator.
+    //!
+    //! @return Reference to the next iterator.
+    constexpr iterator operator++(int) noexcept
+    {
+      iterator temporary_iterator = *this;
+      if (node->first_child) {
+        node = node->first_child;
+      } else {
+        node = node->next_ancestor_sibling();
+      }
+
+      return temporary_iterator;
     }
 
     //! @}
@@ -300,8 +315,8 @@ template <typename Type, typename AllocatorType> class tree
     //! @brief The pointer type of the contained data elements.
     using pointer = tree::pointer;
 
-    //! @brief The category of the iterator.
-    using iterator_category = std::input_iterator_tag;
+    //! @brief The LegacyForwardIterator requirements category of the iterator.
+    using iterator_category = std::forward_iterator_tag;
 
     //! @}
 
@@ -372,6 +387,21 @@ template <typename Type, typename AllocatorType> class tree
       }
 
       return *this;
+    }
+
+    //! @brief Postfix increments the iterator.
+    //!
+    //! @return Reference to the next iterator.
+    constexpr const_iterator operator++(int) noexcept
+    {
+      const_iterator temporary_iterator = *this;
+      if (node->first_child) {
+        node = node->first_child;
+      } else {
+        node = node->next_ancestor_sibling();
+      }
+
+      return temporary_iterator;
     }
 
     //! @}
