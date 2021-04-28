@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"insert__rvalue_8cpp.html":[7,0,4,27],
 "insert__rvalue_8cpp.html#a373ada93a4f9428a286813a35e033cd2":[7,0,4,27,1],
 "insert__rvalue_8cpp.html#a59e04e6a8cbe4f3325afea97275f8e7e":[7,0,4,27,4],
 "insert__rvalue_8cpp.html#a6e18ec5273221e69a17f2d809d804fd5":[7,0,4,27,2],
@@ -34,8 +35,8 @@ var NAVTREEINDEX1 =
 "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md8":[2,0],
 "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md9":[2,1],
 "md__s_e_c_u_r_i_t_y.html":[3],
-"md__s_e_c_u_r_i_t_y.html#autotoc_md35":[3,0],
-"md__s_e_c_u_r_i_t_y.html#autotoc_md36":[3,1],
+"md__s_e_c_u_r_i_t_y.html#autotoc_md37":[3,0],
+"md__s_e_c_u_r_i_t_y.html#autotoc_md38":[3,1],
 "namespaceanonymous__namespace_02assign__copy_8cpp_03.html":[5,0,0],
 "namespaceanonymous__namespace_02assign__copy_8cpp_03.html#a5443c34f6448bfa40b588dfe8d3a048e":[5,0,0,5],
 "namespaceanonymous__namespace_02assign__copy_8cpp_03.html#a95a05a253561e97cb64b3e6757139892":[5,0,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "namespacefcarouge.html#ad834a4bfbb0a46c4b85f8cdc1e2b5f26":[5,0,43,30],
 "namespacefcarouge.html#ae4a983890b9c385b09523aa718b1654d":[5,0,43,10],
 "namespacefcarouge.html#aedb6860663f5457066d2c4ba1d1e870e":[5,0,43,44],
-"namespacefcarouge.html#af204aca284e172103ecf52d575703a87":[5,0,43,21],
-"namespacefcarouge.html#af7a20f2aeee852fd1b708c85ab3de139":[5,0,43,13]
+"namespacefcarouge.html#af204aca284e172103ecf52d575703a87":[5,0,43,21]
 };
