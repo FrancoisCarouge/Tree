@@ -13,6 +13,7 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
   - [File include/fcarouge/tree_fwd.hpp](#file-includefcarougetree_fwdhpp)
     - [Type Aliases](#type-aliases)
     - [Includes](#includes-1)
+  - [File include/fcarouge/tree_iterator.hpp](#file-includefcarougetree_iteratorhpp)
   - [File include/fcarouge/tree_iterator_fwd.hpp](#file-includefcarougetree_iterator_fwdhpp)
   - [File include/fcarouge/tree_algorithm.hpp](#file-includefcarougetree_algorithmhpp)
     - [Observing Operations](#observing-operations)
@@ -96,6 +97,8 @@ Hello
 ```
 
 ## File include/fcarouge/tree.hpp
+
+Container definition.
 
 ### Includes
 
@@ -190,11 +193,17 @@ Type aliases are provided for a variety of fundamental and standard types, in th
 | `<memory>` | Standard construction, allocation, and addressing support. |
 | `<string>` | Standard string support. |
 
+## File include/fcarouge/tree_iterator.hpp
+
+Container's non-member iterators definitions.
+
 ## File include/fcarouge/tree_iterator_fwd.hpp
 
-Minimal forward declaration header for the container's iterators.
+Minimal forward declaration header for the container's non-member iterators.
 
 ## File include/fcarouge/tree_algorithm.hpp
+
+Container's algorithms definitions.
 
 ### Observing Operations
 
