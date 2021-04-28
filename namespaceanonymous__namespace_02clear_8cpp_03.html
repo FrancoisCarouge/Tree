@@ -84,12 +84,20 @@ $(document).ready(function(){initNavTree('namespaceanonymous__namespace_02clear_
 
 <div class="header">
   <div class="summary">
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">anonymous_namespace{clear.cpp} Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:afd87febb302340e6e17462472fb0b81e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02clear_8cpp_03.html#afd87febb302340e6e17462472fb0b81e">clear</a> (benchmark::State &amp;state)</td></tr>
+<tr class="separator:afd87febb302340e6e17462472fb0b81e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabe6448ecce0c9b1f90ba4fdaaab4272"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02clear_8cpp_03.html#aabe6448ecce0c9b1f90ba4fdaaab4272">Name</a> (&quot;clear&quot;) -&gt; Unit(benchmark::kNanosecond) -&gt;ComputeStatistics(&quot;min&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::min_element(std::begin(v), std::end(v)));}) -&gt;ComputeStatistics(&quot;max&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::max_element(std::begin(v), std::end(v)));}) -&gt;Arg(0) -&gt;UseManualTime() -&gt;Complexity(benchmark::oAuto) -&gt;DisplayAggregatesOnly(true) -&gt;RangeMultiplier(2) -&gt;Repetitions(10) -&gt;Range(1, 1&lt;&lt; 28)</td></tr>
+<tr class="separator:aabe6448ecce0c9b1f90ba4fdaaab4272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:acfeb9a53b3531f07e16b1267cb4bbada"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02clear_8cpp_03.html#acfeb9a53b3531f07e16b1267cb4bbada">empty</a></td></tr>
@@ -99,6 +107,88 @@ Variables</h2></td></tr>
 <tr class="memitem:a43399c340be9160db2b98a079f4a9a89"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02clear_8cpp_03.html#a43399c340be9160db2b98a079f4a9a89">multiple</a></td></tr>
 <tr class="separator:a43399c340be9160db2b98a079f4a9a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="afd87febb302340e6e17462472fb0b81e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd87febb302340e6e17462472fb0b81e">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void anonymous_namespace{clear.cpp}::clear </td>
+          <td>(</td>
+          <td class="paramtype">benchmark::State &amp;&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section user"><dt>Benchmark</dt><dd>Measure the performance of the container's clearing algorithm. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="benchmark_2clear_8cpp_source.html#l00045">45</a> of file <a class="el" href="benchmark_2clear_8cpp_source.html">clear.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> _ : state) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree_uint64_t</a> bunodiere_beech;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; state.range(0); ++i) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      bunodiere_beech.<a class="code" href="classfcarouge_1_1tree.html#ae42c67b59361f977685a6c8f00255cf2">emplace_front</a>(i);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    assert(state.range(0) == bunodiere_beech.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() &amp;&amp;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;           <span class="stringliteral">&quot;The size of the container does not meet expectations.&quot;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    benchmark::ClobberMemory();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    bunodiere_beech.<a class="code" href="classfcarouge_1_1tree.html#aa83d14fd7cd74b86556786b1bd0f4393">clear</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    benchmark::ClobberMemory();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    assert(0 == bunodiere_beech.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() &amp;&amp;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;           <span class="stringliteral">&quot;The size of the container does not meet expectations.&quot;</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    state.SetIterationTime(</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        std::chrono::duration_cast&lt;std::chrono::duration&lt;double&gt;&gt;(end - start)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            .count());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00103">tree.hpp:104</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a93d87b031d97d57d50ad5965585a6e79"><div class="ttname"><a href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00977">tree.hpp:977</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_aa83d14fd7cd74b86556786b1bd0f4393"><div class="ttname"><a href="classfcarouge_1_1tree.html#aa83d14fd7cd74b86556786b1bd0f4393">fcarouge::tree::clear</a></div><div class="ttdeci">constexpr void clear() noexcept</div><div class="ttdoc">Erases all elements from the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01026">tree.hpp:1026</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_ae42c67b59361f977685a6c8f00255cf2"><div class="ttname"><a href="classfcarouge_1_1tree.html#ae42c67b59361f977685a6c8f00255cf2">fcarouge::tree::emplace_front</a></div><div class="ttdeci">constexpr reference emplace_front(ArgumentsType &amp;&amp;... arguments)</div><div class="ttdoc">Inserts a constructed in-place element into the container to the beginning of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01214">tree.hpp:1214</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01026">fcarouge::tree&lt; Type, AllocatorType &gt;::clear()</a>, <a class="el" href="tree_8hpp_source.html#l01214">fcarouge::tree&lt; Type, AllocatorType &gt;::emplace_front()</a>, and <a class="el" href="tree_8hpp_source.html#l00977">fcarouge::tree&lt; Type, AllocatorType &gt;::size()</a>.</p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="namespaceanonymous__namespace_02clear_8cpp_03_afd87febb302340e6e17462472fb0b81e_cgraph.png" border="0" usemap="#anamespaceanonymous__namespace_02clear_8cpp_03_afd87febb302340e6e17462472fb0b81e_cgraph" alt=""/></div>
+<map name="anamespaceanonymous__namespace_02clear_8cpp_03_afd87febb302340e6e17462472fb0b81e_cgraph" id="anamespaceanonymous__namespace_02clear_8cpp_03_afd87febb302340e6e17462472fb0b81e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,57,168,98"/>
+<area shape="rect" href="classfcarouge_1_1tree.html#aa83d14fd7cd74b86556786b1bd0f4393" title="Erases all elements from the container." alt="" coords="226,5,361,32"/>
+<area shape="rect" href="classfcarouge_1_1tree.html#ae42c67b59361f977685a6c8f00255cf2" title="Inserts a constructed in&#45;place element into the container to the beginning of the container." alt="" coords="216,57,371,98"/>
+<area shape="rect" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79" title="Returns the number of elements in the container." alt="" coords="229,123,358,149"/>
+<area shape="rect" href="classfcarouge_1_1tree.html#a8b8d9ed8c1122dd228a7392d9bd2671f" title="Axes the specified element including its sub&#45;tree." alt="" coords="419,5,545,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aabe6448ecce0c9b1f90ba4fdaaab4272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabe6448ecce0c9b1f90ba4fdaaab4272">&#9670;&nbsp;</a></span>Name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous_namespace{clear.cpp}::Name </td>
+          <td>(</td>
+          <td class="paramtype">&quot;clear&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  Unit(benchmark::kNanosecond) -&gt;ComputeStatistics(&quot;min&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::min_element(std::begin(v), std::end(v)));}) -&gt;ComputeStatistics(&quot;max&quot;, [](const std::vector&lt; double &gt; &amp;v) -&gt; double { return *(std::max_element(std::begin(v), std::end(v)));}) -&gt;Arg(0) -&gt;UseManualTime() -&gt;Complexity(benchmark::oAuto) -&gt;DisplayAggregatesOnly(true) -&gt;RangeMultiplier(2) -&gt;Repetitions(10) -&gt;Range(1, 1&lt;&lt; 28)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="acfeb9a53b3531f07e16b1267cb4bbada"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acfeb9a53b3531f07e16b1267cb4bbada">&#9670;&nbsp;</a></span>empty</h2>
@@ -128,17 +218,14 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00103">tree.hpp:104</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a13e359d4ae6b94ab472607f15dbe3196"><div class="ttname"><a href="classfcarouge_1_1tree.html#a13e359d4ae6b94ab472607f15dbe3196">fcarouge::tree::cend</a></div><div class="ttdeci">constexpr const_iterator cend() const noexcept</div><div class="ttdoc">Returns a constant iterator to the element past the last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00948">tree.hpp:948</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a217fb2d8d248bedec9126214e8c891a2"><div class="ttname"><a href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00879">tree.hpp:879</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a305d983d5a1a6994dee714a9f88bc1ee"><div class="ttname"><a href="classfcarouge_1_1tree.html#a305d983d5a1a6994dee714a9f88bc1ee">fcarouge::tree::empty</a></div><div class="ttdeci">constexpr bool empty() const noexcept</div><div class="ttdoc">Checks if the container has no elements.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00965">tree.hpp:965</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a4d914f8d4ce69f0ecd580e7ddb5d16d1"><div class="ttname"><a href="classfcarouge_1_1tree.html#a4d914f8d4ce69f0ecd580e7ddb5d16d1">fcarouge::tree::cbegin</a></div><div class="ttdeci">constexpr const_iterator cbegin() const noexcept</div><div class="ttdoc">Returns a constant iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00905">tree.hpp:905</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a93d87b031d97d57d50ad5965585a6e79"><div class="ttname"><a href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00977">tree.hpp:977</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_aa83d14fd7cd74b86556786b1bd0f4393"><div class="ttname"><a href="classfcarouge_1_1tree.html#aa83d14fd7cd74b86556786b1bd0f4393">fcarouge::tree::clear</a></div><div class="ttdeci">constexpr void clear() noexcept</div><div class="ttdoc">Erases all elements from the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01026">tree.hpp:1026</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_afca5d640f5205c58695f271bea0fd8ac"><div class="ttname"><a href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00920">tree.hpp:920</a></div></div>
 </div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000014">Test:</a></b></dt><dd>Verify the post-conditions on clearing a default constructed container. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="clear_8cpp_source.html#l00039">39</a> of file <a class="el" href="clear_8cpp_source.html">clear.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_2clear_8cpp_source.html#l00039">39</a> of file <a class="el" href="test_2clear_8cpp_source.html">clear.cpp</a>.</p>
 
 </div>
 </div>
@@ -173,7 +260,7 @@ Variables</h2></td></tr>
 <div class="line">}()</div>
 </div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000015">Test:</a></b></dt><dd>Verify the post-conditions on clearing a container constructed from a single value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="clear_8cpp_source.html#l00059">59</a> of file <a class="el" href="clear_8cpp_source.html">clear.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_2clear_8cpp_source.html#l00059">59</a> of file <a class="el" href="test_2clear_8cpp_source.html">clear.cpp</a>.</p>
 
 </div>
 </div>
@@ -193,7 +280,7 @@ Variables</h2></td></tr>
 <img src="dot_inline_dotgraph_1.png" alt="dot_inline_dotgraph_1.png" border="0" usemap="#dot_inline_dotgraph_1.map"/>
 </div>
  
-<p class="definition">Definition at line <a class="el" href="clear_8cpp_source.html#l00090">90</a> of file <a class="el" href="clear_8cpp_source.html">clear.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_2clear_8cpp_source.html#l00090">90</a> of file <a class="el" href="test_2clear_8cpp_source.html">clear.cpp</a>.</p>
 
 </div>
 </div>
@@ -203,7 +290,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02clear_8cpp_03.html">anonymous_namespace{clear.cpp}</a></li>
-    <li class="footer">Generated on Thu Apr 22 2021 01:16:31 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Apr 28 2021 02:01:53 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

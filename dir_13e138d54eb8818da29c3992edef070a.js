@@ -4,7 +4,7 @@ var dir_13e138d54eb8818da29c3992edef070a =
     [ "assign_lvalue.cpp", "assign__lvalue_8cpp.html", "assign__lvalue_8cpp" ],
     [ "assign_move.cpp", "assign__move_8cpp.html", "assign__move_8cpp" ],
     [ "assign_rvalue.cpp", "assign__rvalue_8cpp.html", "assign__rvalue_8cpp" ],
-    [ "clear.cpp", "clear_8cpp.html", "clear_8cpp" ],
+    [ "clear.cpp", "test_2clear_8cpp.html", "test_2clear_8cpp" ],
     [ "const_iterator.cpp", "const__iterator_8cpp.html", "const__iterator_8cpp" ],
     [ "const_iterator_forward.cpp", "const__iterator__forward_8cpp.html", "const__iterator__forward_8cpp" ],
     [ "constructor_allocator.cpp", "constructor__allocator_8cpp.html", "constructor__allocator_8cpp" ],

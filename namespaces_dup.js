@@ -22,6 +22,8 @@ var namespaces_dup =
       [ "all_replace_all", "namespaceanonymous__namespace_02assign__rvalue_8cpp_03.html#a4b724d56986f489a04d98dc60f81b845", null ]
     ] ],
     [ "anonymous_namespace{clear.cpp}", "namespaceanonymous__namespace_02clear_8cpp_03.html", [
+      [ "clear", "namespaceanonymous__namespace_02clear_8cpp_03.html#afd87febb302340e6e17462472fb0b81e", null ],
+      [ "Name", "namespaceanonymous__namespace_02clear_8cpp_03.html#aabe6448ecce0c9b1f90ba4fdaaab4272", null ],
       [ "empty", "namespaceanonymous__namespace_02clear_8cpp_03.html#acfeb9a53b3531f07e16b1267cb4bbada", null ],
       [ "lvalue", "namespaceanonymous__namespace_02clear_8cpp_03.html#a065a5c222f8d3e9a836bbcae7e22e581", null ],
       [ "multiple", "namespaceanonymous__namespace_02clear_8cpp_03.html#a43399c340be9160db2b98a079f4a9a89", null ]
