@@ -53,17 +53,21 @@ namespace fcarouge
 //! node has depth of `0`, its children have depth `1`, etc... The behavior is
 //! undefined if `*this` is the end iterator.
 //!
+//! @param position The iterator to the element for which to obtain the depth.
+//! The iterator may be the beginning `begin()` or ending `end()` iterator.
+//!
 //! @return Current depth of the iterator.
 //!
-//! @complexity Linear in depth.
+//! @complexity Linear in depth that is, at worst linear in size of the other
+//! container.
 template <typename IteratorType>
 [[nodiscard]] constexpr
     typename std::iterator_traits<IteratorType>::difference_type
     depth(IteratorType position)
 {
   auto depth = 0;
-  const auto *current = position.node;
-  while ((current = current->parent)) {
+  const auto *ancestor = position.node;
+  while ((ancestor = ancestor->parent)) {
     ++depth;
   }
 
