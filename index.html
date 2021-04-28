@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <li><a href="#includes-1">Includes</a></li>
 </ul>
 </li>
+<li><a href="#file-includefcarougetree_iteratorhpp">File include/fcarouge/tree_iterator.hpp</a></li>
 <li><a href="#file-includefcarougetree_iterator_fwdhpp">File include/fcarouge/tree_iterator_fwd.hpp</a></li>
 <li><a href="#file-includefcarougetree_algorithmhpp">File include/fcarouge/tree_algorithm.hpp</a><ul>
 <li><a href="#observing-operations">Observing Operations</a></li>
@@ -216,6 +217,7 @@ Example</h1>
 <div class="line">└── !</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md16"></a>
 File include/fcarouge/tree.hpp</h1>
+<p>Container definition.</p>
 <h2><a class="anchor" id="autotoc_md17"></a>
 Includes</h2>
 <table class="markdownTable">
@@ -372,11 +374,15 @@ Includes</h2>
 <td class="markdownTableBodyNone"><code>&lt;string&gt;</code>   </td><td class="markdownTableBodyNone">Standard string support.   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md23"></a>
-File include/fcarouge/tree_iterator_fwd.hpp</h1>
-<p>Minimal forward declaration header for the container's iterators.</p>
+File include/fcarouge/tree_iterator.hpp</h1>
+<p>Container's non-member iterators definitions.</p>
 <h1><a class="anchor" id="autotoc_md24"></a>
+File include/fcarouge/tree_iterator_fwd.hpp</h1>
+<p>Minimal forward declaration header for the container's non-member iterators.</p>
+<h1><a class="anchor" id="autotoc_md25"></a>
 File include/fcarouge/tree_algorithm.hpp</h1>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<p>Container's algorithms definitions.</p>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Observing Operations</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -384,7 +390,7 @@ Observing Operations</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>depth</code>   </td><td class="markdownTableBodyNone">Depth of the path from the root, top element to the iterated node.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md26"></a>
+<h1><a class="anchor" id="autotoc_md27"></a>
 Class fcarouge::tree</h1>
 <p>Defined in header <a href="include/fcarouge/tree.hpp">fcarouge/tree.hpp</a></p>
 <div class="fragment"><div class="line">template &lt;</div>
@@ -406,7 +412,7 @@ Class fcarouge::tree</h1>
 <li>influenced by the Standard Template Library (STL) principles and the C++ Core Guidelines in its design tradeoffs,</li>
 <li>intelligibly documented for the wider audience.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 Template Parameters</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -416,7 +422,7 @@ Template Parameters</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>AllocatorType</code>   </td><td class="markdownTableBodyNone">An allocator that is used to acquire/release memory and to construct/destroy the elements in that memory.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 Member Types</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -442,7 +448,7 @@ Member Types</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>const_iterator</code>   </td><td class="markdownTableBodyNone">The constant type to identify and traverse the elements of the container.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Member Functions</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -458,7 +464,7 @@ Member Functions</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>get_allocator</code>   </td><td class="markdownTableBodyNone">Returns the allocator associated with the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md30"></a>
+<h3><a class="anchor" id="autotoc_md31"></a>
 Element Access</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -466,7 +472,7 @@ Element Access</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>front</code>   </td><td class="markdownTableBodyNone">Returns a reference to the first element in the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md31"></a>
+<h3><a class="anchor" id="autotoc_md32"></a>
 Iterators</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -478,7 +484,7 @@ Iterators</h3>
 <td class="markdownTableBodyNone"><code>end</code> <br  />
 <code>cend</code>   </td><td class="markdownTableBodyNone">Returns an iterator to the element following the last element of the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md32"></a>
+<h3><a class="anchor" id="autotoc_md33"></a>
 Capacity</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -490,7 +496,7 @@ Capacity</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>max_size</code>   </td><td class="markdownTableBodyNone">Returns the maximum number of elements the container is able to hold.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md33"></a>
+<h3><a class="anchor" id="autotoc_md34"></a>
 Modifiers</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -512,12 +518,12 @@ Modifiers</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>swap</code>   </td><td class="markdownTableBodyNone">Exchanges the contents of this container with those of the other container.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md35"></a>
 Hard Lessons Learned</h1>
 <ul>
 <li>Recursive code <b>will</b> run out of stack space. No matter the architecture, for a generic data structure that cannot guarantee depth by design. Refactor to iterative code.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md35"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 License</h1>
 <p><img src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png" alt="" align="right" class="inline"/></p>
 <p>Tree for C++ is licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a>:</p>
@@ -531,7 +537,7 @@ License</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Apr 28 2021 02:16:51 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Apr 28 2021 02:57:53 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

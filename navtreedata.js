@@ -38,22 +38,23 @@ var NAVTREE =
         [ "Type Aliases", "index.html#autotoc_md21", null ],
         [ "Includes", "index.html#autotoc_md22", null ]
       ] ],
-      [ "File include/fcarouge/tree_iterator_fwd.hpp", "index.html#autotoc_md23", null ],
-      [ "File include/fcarouge/tree_algorithm.hpp", "index.html#autotoc_md24", [
-        [ "Observing Operations", "index.html#autotoc_md25", null ]
+      [ "File include/fcarouge/tree_iterator.hpp", "index.html#autotoc_md23", null ],
+      [ "File include/fcarouge/tree_iterator_fwd.hpp", "index.html#autotoc_md24", null ],
+      [ "File include/fcarouge/tree_algorithm.hpp", "index.html#autotoc_md25", [
+        [ "Observing Operations", "index.html#autotoc_md26", null ]
       ] ],
-      [ "Class fcarouge::tree", "index.html#autotoc_md26", [
-        [ "Template Parameters", "index.html#autotoc_md27", null ],
-        [ "Member Types", "index.html#autotoc_md28", null ],
-        [ "Member Functions", "index.html#autotoc_md29", [
-          [ "Element Access", "index.html#autotoc_md30", null ],
-          [ "Iterators", "index.html#autotoc_md31", null ],
-          [ "Capacity", "index.html#autotoc_md32", null ],
-          [ "Modifiers", "index.html#autotoc_md33", null ]
+      [ "Class fcarouge::tree", "index.html#autotoc_md27", [
+        [ "Template Parameters", "index.html#autotoc_md28", null ],
+        [ "Member Types", "index.html#autotoc_md29", null ],
+        [ "Member Functions", "index.html#autotoc_md30", [
+          [ "Element Access", "index.html#autotoc_md31", null ],
+          [ "Iterators", "index.html#autotoc_md32", null ],
+          [ "Capacity", "index.html#autotoc_md33", null ],
+          [ "Modifiers", "index.html#autotoc_md34", null ]
         ] ]
       ] ],
-      [ "Hard Lessons Learned", "index.html#autotoc_md34", null ],
-      [ "License", "index.html#autotoc_md35", null ]
+      [ "Hard Lessons Learned", "index.html#autotoc_md35", null ],
+      [ "License", "index.html#autotoc_md36", null ]
     ] ],
     [ "Contributor Covenant Code of Conduct", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html", [
       [ "Our Pledge", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md1", null ],
@@ -70,8 +71,8 @@ var NAVTREE =
       [ "Security Policy", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md11", null ]
     ] ],
     [ "Security Policy", "md__s_e_c_u_r_i_t_y.html", [
-      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md37", null ],
-      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md38", null ]
+      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md38", null ],
+      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md39", null ]
     ] ],
     [ "Test List", "test.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -107,8 +108,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"insert__rvalue_8cpp.html",
-"namespacefcarouge.html#af7a20f2aeee852fd1b708c85ab3de139"
+"insert__lvalue_8cpp_source.html",
+"namespacefcarouge.html#af204aca284e172103ecf52d575703a87"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
