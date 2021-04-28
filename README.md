@@ -12,6 +12,8 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
     - [Classes](#classes)
   - [File include/fcarouge/tree_fwd.hpp](#file-includefcarougetree_fwdhpp)
     - [Type Aliases](#type-aliases)
+    - [Includes](#includes-1)
+  - [File include/fcarouge/tree_iterator_fwd.hpp](#file-includefcarougetree_iterator_fwdhpp)
   - [File include/fcarouge/tree_algorithm.hpp](#file-includefcarougetree_algorithmhpp)
     - [Observing Operations](#observing-operations)
   - [Class fcarouge::tree](#class-fcarougetree)
@@ -100,7 +102,6 @@ Hello
 | Include | Definition |
 | --- | --- |
 | `<cstddef>` | Standard size and pointer difference types support. |
-| `<cstdint>` | Standard fixed width integer types support. |
 | `<iterator>` | Standard input iterator tag support. |
 | `<limits>` | Standard fundamental numeric types properties support. |
 | `<memory>` | Standard construction, allocation, and addressing support. |
@@ -123,7 +124,7 @@ Hello
 
 ## File include/fcarouge/tree_fwd.hpp
 
-Minimal forward declaration header.
+Minimal forward declaration header for the container.
 
 - forward declares the `tree` class, and
 - defines its common type aliases, and
@@ -180,6 +181,18 @@ Type aliases are provided for a variety of fundamental and standard types, in th
 | `tree_u16string` | `tree<std::u16string>` |
 | `tree_u32string` | `tree<std::u32string>` |
 | `tree_wstring` | `tree<std::wstring>` |
+
+### Includes
+
+| Include | Definition |
+| --- | --- |
+| `<cstdint>` | Standard fixed width integer types support. |
+| `<memory>` | Standard construction, allocation, and addressing support. |
+| `<string>` | Standard string support. |
+
+## File include/fcarouge/tree_iterator_fwd.hpp
+
+Minimal forward declaration header for the container's iterators.
 
 ## File include/fcarouge/tree_algorithm.hpp
 
