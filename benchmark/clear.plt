@@ -30,16 +30,26 @@
 
 set terminal svg
 set datafile separator ","
-set title "{/:Bold Modifier Member Function: clear - Cumulative}\n{/*0.8 fcarouge::tree<uint64\\\_t, std::allocator>::clear() on nondescript x86\\\_64 Linux with GCC 11.0 and -O3 option}"
-set key noautotitle
-set xlabel "N elements cleared"
-set ylabel "Time to clear N elements (ns)"
-set logscale xy
+set title "{/:Bold Modifier Member Function: clear - Cumulative}\n{/*0.8 uint64\\\_t data with std::allocator on nondescript Linux with GCC 10.2 -O3}"
 set output "benchmark/clear.svg"
-set style line 1 \
-  linewidth 4 \
-  linetype rgb "forest-green" \
-  pointtype 7 \
-  pointsize 1.2
+set key noautotitle
+set key left Left reverse
 
-plot "benchmark/clear.csv" using 1:2 with linespoints ls 1
+set grid
+
+set xlabel "N elements cleared"
+set xtics add ("0" 0.4)
+unset mxtics
+set logscale x
+
+set ylabel "Time to clear N elements (ns)"
+unset mytics
+set logscale y
+
+ plot "benchmark/clear.csv" \
+   using 6:4:5 with filledcurves \
+     title "Min/Max Range" fillstyle linecolor rgb "seagreen", \
+     '' using 6:4 linetype -1 , \
+     '' using 6:5 linetype -1, \
+   '' using ($6 == 0 ? 0.4 : $6):1 with linespoints \
+     title "Mean" linewidth 2 linetype rgb "forest-green" pointtype 7 pointsize 0.5
