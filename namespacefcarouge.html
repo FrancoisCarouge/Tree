@@ -1088,20 +1088,26 @@ template&lt;typename IteratorType &gt; </div>
 
 <p>Depth of the path from the root, top element to the iterated node. </p>
 <p>Returns the number of nodes from the root, or top node, to the currently iterated node, i.e. the current depth of the hierarchy. The root node has depth of <code>0</code>, its children have depth <code>1</code>, etc... The behavior is undefined if <code>*this</code> is the end iterator.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The iterator to the element for which to obtain the depth. The iterator may be the beginning <code>begin()</code> or ending <code>end()</code> iterator.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>Current depth of the iterator.</dd></dl>
-<dl class="section user"><dt>Complexity</dt><dd>Linear in depth. </dd></dl>
+<dl class="section user"><dt>Complexity</dt><dd>Linear in depth that is, at worst linear in size of the other container. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree__algorithm_8hpp_source.html#l00062">62</a> of file <a class="el" href="tree__algorithm_8hpp_source.html">tree_algorithm.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespacefcarouge.html#a6c807e9e5573caff2b1d8396bcd4eced">depth</a> = 0;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> *current = position.node;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">while</span> ((current = current-&gt;parent)) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ++<a class="code" href="namespacefcarouge.html#a6c807e9e5573caff2b1d8396bcd4eced">depth</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacefcarouge.html#a6c807e9e5573caff2b1d8396bcd4eced">depth</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="ttc" id="anamespacefcarouge_html_a6c807e9e5573caff2b1d8396bcd4eced"><div class="ttname"><a href="namespacefcarouge.html#a6c807e9e5573caff2b1d8396bcd4eced">fcarouge::depth</a></div><div class="ttdeci">constexpr std::iterator_traits&lt; IteratorType &gt;::difference_type depth(IteratorType position)</div><div class="ttdoc">Depth of the path from the root, top element to the iterated node.</div><div class="ttdef"><b>Definition:</b> <a href="tree__algorithm_8hpp_source.html#l00062">tree_algorithm.hpp:62</a></div></div>
+<p class="definition">Definition at line <a class="el" href="tree__algorithm_8hpp_source.html#l00066">66</a> of file <a class="el" href="tree__algorithm_8hpp_source.html">tree_algorithm.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespacefcarouge.html#a6c807e9e5573caff2b1d8396bcd4eced">depth</a> = 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> *ancestor = position.node;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">while</span> ((ancestor = ancestor-&gt;parent)) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ++<a class="code" href="namespacefcarouge.html#a6c807e9e5573caff2b1d8396bcd4eced">depth</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacefcarouge.html#a6c807e9e5573caff2b1d8396bcd4eced">depth</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="ttc" id="anamespacefcarouge_html_a6c807e9e5573caff2b1d8396bcd4eced"><div class="ttname"><a href="namespacefcarouge.html#a6c807e9e5573caff2b1d8396bcd4eced">fcarouge::depth</a></div><div class="ttdeci">constexpr std::iterator_traits&lt; IteratorType &gt;::difference_type depth(IteratorType position)</div><div class="ttdoc">Depth of the path from the root, top element to the iterated node.</div><div class="ttdef"><b>Definition:</b> <a href="tree__algorithm_8hpp_source.html#l00066">tree_algorithm.hpp:66</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1111,7 +1117,7 @@ template&lt;typename IteratorType &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li>
-    <li class="footer">Generated on Wed Apr 28 2021 02:01:54 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Wed Apr 28 2021 02:11:06 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
