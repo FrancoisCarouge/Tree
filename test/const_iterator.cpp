@@ -29,6 +29,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include "fcarouge/tree.hpp"
 // fcarouge::tree::iterator fcarouge::tree::const_iterator
 
+#include <cassert>
+// assert
+
+#include <set>
+// std::multiset
+
 #include <type_traits>
 // std::is_aggregate_v std::is_copy_constructible_v
 // std::is_trivially_copy_constructible_v std::is_convertible_v
@@ -55,6 +61,39 @@ namespace
                                        fcarouge::tree<char>::iterator>,
                 "The container's constant iterator type cannot be implicitely "
                 "convertible to its non-constant equivalent type.");
+
+  return 0;
+}();
+
+//! @test Verify the pointer access to the element.
+[[maybe_unused]] auto arrow_ptr = []() {
+  fcarouge::tree_int gouy_yew(0);
+  gouy_yew.push(gouy_yew.push(gouy_yew.push(gouy_yew.begin(), 1), 11), 111);
+  gouy_yew.push(gouy_yew.begin(), 2);
+  gouy_yew.push(gouy_yew.begin(), 3);
+  gouy_yew.push(gouy_yew.begin(), 4);
+  const auto it = gouy_yew.push(gouy_yew.begin(), 5);
+  gouy_yew.emplace(gouy_yew.push(gouy_yew.push(it, 51), 512), 511);
+  gouy_yew.emplace(gouy_yew.push(gouy_yew.push(it, 52), 522), 521);
+  gouy_yew.emplace(gouy_yew.push(gouy_yew.push(it, 53), 532), 531);
+  const std::multiset<int> expected_content{ 0,   1,   11,  111, 2,  3,
+                                             4,   5,   51,  52,  53, 511,
+                                             512, 521, 522, 531, 532 };
+  std::multiset<int> prefix_content;
+  fcarouge::tree<int>::const_iterator iterator = gouy_yew.begin();
+  for (; iterator != gouy_yew.end(); ++iterator) {
+    prefix_content.insert(*(iterator.operator->()));
+  }
+  std::multiset<int> postfix_content;
+  iterator = gouy_yew.begin();
+  for (; iterator != gouy_yew.end(); iterator++) {
+    postfix_content.insert(*(iterator.operator->()));
+  }
+
+  assert(expected_content == prefix_content &&
+         "Each element must be visited exactly once.");
+  assert(expected_content == postfix_content &&
+         "Each element must be visited exactly once.");
 
   return 0;
 }();

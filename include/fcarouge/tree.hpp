@@ -43,7 +43,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
 #include <memory>
 // std::addressof std::allocator std::allocator_traits
-// std::construct_at std::destroy_at
+// std::construct_at std::destroy_at std::pointer_traits
 
 #include <ostream>
 // std::basic_ostream
@@ -246,6 +246,18 @@ template <typename Type, typename AllocatorType> class tree
       return node->data;
     }
 
+    //! @brief Member access operator.
+    //!
+    //! @details Dereferenceable pointer or pointer-like object of the
+    //! container's stored value from this iterator. The behavior is undefined
+    //! if the iterator is invalid.
+    //!
+    //! @return Pointer to the container's stored value iterator.
+    [[nodiscard]] constexpr pointer operator->() const noexcept
+    {
+      return std::pointer_traits<pointer>::pointer_to(node->data);
+    }
+
     //! @}
 
     //! @name Public Modifier Member Functions
@@ -368,6 +380,18 @@ template <typename Type, typename AllocatorType> class tree
     [[nodiscard]] constexpr reference operator*() const noexcept
     {
       return node->data;
+    }
+
+    //! @brief Member access operator.
+    //!
+    //! @details Dereferenceable pointer or pointer-like object of the
+    //! container's stored value from this iterator. The behavior is undefined
+    //! if the iterator is invalid.
+    //!
+    //! @return Pointer to the container's stored value iterator.
+    [[nodiscard]] constexpr pointer operator->() const noexcept
+    {
+      return std::pointer_traits<pointer>::pointer_to(node->data);
     }
 
     //! @}
