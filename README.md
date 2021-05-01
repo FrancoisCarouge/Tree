@@ -2,32 +2,6 @@
 
 Tree data structure for C++: generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.
 
-- [Tree for C++](#tree-for-c)
-  - [Information Tree](#information-tree)
-  - [Use Cases](#use-cases)
-  - [Example](#example)
-  - [File include/fcarouge/tree.hpp](#file-includefcarougetreehpp)
-    - [Includes](#includes)
-    - [Namespaces](#namespaces)
-    - [Classes](#classes)
-  - [File include/fcarouge/tree_fwd.hpp](#file-includefcarougetree_fwdhpp)
-    - [Type Aliases](#type-aliases)
-    - [Includes](#includes-1)
-  - [File include/fcarouge/tree_iterator.hpp](#file-includefcarougetree_iteratorhpp)
-  - [File include/fcarouge/tree_iterator_fwd.hpp](#file-includefcarougetree_iterator_fwdhpp)
-  - [File include/fcarouge/tree_algorithm.hpp](#file-includefcarougetree_algorithmhpp)
-    - [Observing Operations](#observing-operations)
-  - [Class fcarouge::tree](#class-fcarougetree)
-    - [Template Parameters](#template-parameters)
-    - [Member Types](#member-types)
-    - [Member Functions](#member-functions)
-      - [Element Access](#element-access)
-      - [Iterators](#iterators)
-      - [Capacity](#capacity)
-      - [Modifiers](#modifiers)
-  - [Hard Lessons Learned](#hard-lessons-learned)
-  - [License](#license)
-
 ## Information Tree
 
 | Information Leaf | Value |
@@ -95,6 +69,35 @@ Hello
 ├── World
 └── !
 ```
+
+## Library
+
+- [Tree for C++](#tree-for-c)
+  - [Information Tree](#information-tree)
+  - [Use Cases](#use-cases)
+  - [Example](#example)
+  - [Library](#library)
+  - [File include/fcarouge/tree.hpp](#file-includefcarougetreehpp)
+    - [Includes](#includes)
+    - [Namespaces](#namespaces)
+    - [Classes](#classes)
+  - [File include/fcarouge/tree_fwd.hpp](#file-includefcarougetree_fwdhpp)
+    - [Type Aliases](#type-aliases)
+    - [Includes](#includes-1)
+  - [File include/fcarouge/tree_iterator.hpp](#file-includefcarougetree_iteratorhpp)
+  - [File include/fcarouge/tree_iterator_fwd.hpp](#file-includefcarougetree_iterator_fwdhpp)
+  - [File include/fcarouge/tree_algorithm.hpp](#file-includefcarougetree_algorithmhpp)
+    - [Observing Operations](#observing-operations)
+  - [Class fcarouge::tree](#class-fcarougetree)
+    - [Template Parameters](#template-parameters)
+    - [Member Types](#member-types)
+    - [Member Functions](#member-functions)
+      - [Element Access](#element-access)
+      - [Iterators](#iterators)
+      - [Capacity](#capacity)
+      - [Modifiers](#modifiers)
+  - [Hard Lessons Learned](#hard-lessons-learned)
+  - [License](#license)
 
 ## File include/fcarouge/tree.hpp
 

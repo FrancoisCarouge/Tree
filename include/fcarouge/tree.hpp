@@ -96,10 +96,10 @@ namespace fcarouge
 //! This container (but not its members) can be instantiated with an incomplete
 //! element type if the allocator satisfies the allocator completeness
 //! requirements.
-//! @tparam AllocatorType An allocator that is used to acquire/release memory
-//! and to construct/destroy the elements in that memory. The type must meet the
-//! requirements of Allocator. The behavior is undefined if
-//! `Allocator::value_type` is not the same as `Type`.
+//! @tparam AllocatorType The allocator type that is used to acquire/release
+//! memory and to construct/destroy the elements in that memory. The allocator
+//! type must meet the Allocator requirements. The type of value of the
+//! allocator must match the type of the value of the container.
 template <typename Type, typename AllocatorType> class tree
 {
   public:
@@ -236,9 +236,10 @@ template <typename Type, typename AllocatorType> class tree
     //! @name Public Observer Member Functions
     //! @{
 
-    //! @brief Dereferences the iterator to obtain the stored value.
+    //! @brief Indirection operator.
     //!
-    //! @details The behavior is undefined if the iterator is invalid.
+    //! @details Dereferences the iterator to obtain the container's stored
+    //! value. The behavior is undefined if the iterator is invalid.
     //!
     //! @return Reference to the element if the iterator is dereferencable.
     [[nodiscard]] constexpr reference operator*() const noexcept
@@ -372,9 +373,10 @@ template <typename Type, typename AllocatorType> class tree
     //! @name Public Observer Member Functions
     //! @{
 
-    //! @brief Dereferences the iterator to obtain the stored value.
+    //! @brief Indirection operator.
     //!
-    //! @details The behavior is undefined if the iterator is invalid.
+    //! @details Dereferences the iterator to obtain the container's stored
+    //! value. The behavior is undefined if the iterator is invalid.
     //!
     //! @return Reference to the element if the iterator is dereferencable.
     [[nodiscard]] constexpr reference operator*() const noexcept
