@@ -8,6 +8,7 @@ var structfcarouge_1_1tree_1_1iterator =
     [ "operator*", "structfcarouge_1_1tree_1_1iterator.html#a978595696d6ef861dc0e37b2f10e3f90", null ],
     [ "operator++", "structfcarouge_1_1tree_1_1iterator.html#a812e48769ecc4ebefdb93a94989e361c", null ],
     [ "operator++", "structfcarouge_1_1tree_1_1iterator.html#ac0b27a5d49ac3becaeb23d4b71c925c2", null ],
+    [ "operator->", "structfcarouge_1_1tree_1_1iterator.html#a739fa600ad626ccfbe7b5a8f070e7bc6", null ],
     [ "operator==", "structfcarouge_1_1tree_1_1iterator.html#aed2d505e19a459232936f581836d3bc6", null ],
     [ "node", "structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e", null ]
 ];

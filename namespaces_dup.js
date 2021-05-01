@@ -29,6 +29,7 @@ var namespaces_dup =
       [ "multiple", "namespaceanonymous__namespace_02clear_8cpp_03.html#a43399c340be9160db2b98a079f4a9a89", null ]
     ] ],
     [ "anonymous_namespace{const_iterator.cpp}", "namespaceanonymous__namespace_02const__iterator_8cpp_03.html", [
+      [ "arrow_ptr", "namespaceanonymous__namespace_02const__iterator_8cpp_03.html#ad56ca36aa939abe96c2a5b293643e5ff", null ],
       [ "traits", "namespaceanonymous__namespace_02const__iterator_8cpp_03.html#a9c4ca8c26829ccde464e9a48feb2fc12", null ]
     ] ],
     [ "anonymous_namespace{const_iterator_forward.cpp}", "namespaceanonymous__namespace_02const__iterator__forward_8cpp_03.html", [
@@ -142,6 +143,7 @@ var namespaces_dup =
       [ "root_end", "namespaceanonymous__namespace_02insert__rvalue_8cpp_03.html#a59e04e6a8cbe4f3325afea97275f8e7e", null ]
     ] ],
     [ "anonymous_namespace{iterator.cpp}", "namespaceanonymous__namespace_02iterator_8cpp_03.html", [
+      [ "arrow_ptr", "namespaceanonymous__namespace_02iterator_8cpp_03.html#a76eb3184b04fa930c89d3b189c1e080c", null ],
       [ "traits", "namespaceanonymous__namespace_02iterator_8cpp_03.html#ad94b8410bdbd77f6204d94a1f2f0aaab", null ]
     ] ],
     [ "anonymous_namespace{iterator_forward.cpp}", "namespaceanonymous__namespace_02iterator__forward_8cpp_03.html", [

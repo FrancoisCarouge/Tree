@@ -11,6 +11,7 @@ var structfcarouge_1_1tree_1_1const__iterator =
     [ "operator*", "structfcarouge_1_1tree_1_1const__iterator.html#a565daa1f7ec3290ddfa097c6ab638d9c", null ],
     [ "operator++", "structfcarouge_1_1tree_1_1const__iterator.html#acbe2135e9bc1993a672d304069cbf680", null ],
     [ "operator++", "structfcarouge_1_1tree_1_1const__iterator.html#aae6b2d5ad3510bffc8662693f6ae7827", null ],
+    [ "operator->", "structfcarouge_1_1tree_1_1const__iterator.html#a0903773a465fddcf05f157bba3e94388", null ],
     [ "operator==", "structfcarouge_1_1tree_1_1const__iterator.html#ab72d6eec57025962217778741857eca3", null ],
     [ "node", "structfcarouge_1_1tree_1_1const__iterator.html#a65d23263beacab29a34c44f5934c89f7", null ]
 ];
