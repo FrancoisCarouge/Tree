@@ -161,8 +161,8 @@ $(document).ready(function(){initNavTree('tree_8hpp.html',''); initResizable(); 
 <area shape="rect" href="get__allocator_8cpp.html" title=" " alt="" coords="4686,87,4833,114"/>
 <area shape="rect" href="insert__lvalue_8cpp.html" title=" " alt="" coords="4857,87,5003,114"/>
 <area shape="rect" href="insert__rvalue_8cpp.html" title=" " alt="" coords="5027,87,5174,114"/>
-<area shape="rect" href="iterator__forward_8cpp.html" title=" " alt="" coords="5198,87,5361,114"/>
-<area shape="rect" href="iterator_8cpp.html" title=" " alt="" coords="5385,87,5497,114"/>
+<area shape="rect" href="iterator_8cpp.html" title=" " alt="" coords="5198,87,5310,114"/>
+<area shape="rect" href="iterator__forward_8cpp.html" title=" " alt="" coords="5334,87,5497,114"/>
 <area shape="rect" href="max__size_8cpp.html" title=" " alt="" coords="5521,87,5648,114"/>
 <area shape="rect" href="operator__assignment__copy_8cpp.html" title=" " alt="" coords="5672,80,5841,121"/>
 <area shape="rect" href="operator__assignment__lvalue_8cpp.html" title=" " alt="" coords="5865,80,6035,121"/>
@@ -173,8 +173,8 @@ $(document).ready(function(){initNavTree('tree_8hpp.html',''); initResizable(); 
 <area shape="rect" href="push__front__rvalue_8cpp.html" title=" " alt="" coords="6843,87,7017,114"/>
 <area shape="rect" href="push__lvalue_8cpp.html" title=" " alt="" coords="7042,87,7183,114"/>
 <area shape="rect" href="push__rvalue_8cpp.html" title=" " alt="" coords="7207,87,7349,114"/>
-<area shape="rect" href="standard__layout_8cpp.html" title=" " alt="" coords="7374,87,7537,114"/>
-<area shape="rect" href="size_8cpp.html" title=" " alt="" coords="7561,87,7656,114"/>
+<area shape="rect" href="size_8cpp.html" title=" " alt="" coords="7373,87,7468,114"/>
+<area shape="rect" href="standard__layout_8cpp.html" title=" " alt="" coords="7493,87,7655,114"/>
 </map>
 </div>
 </div>
@@ -274,78 +274,78 @@ template&lt;typename CharType , typename Traits , typename Type , typename Alloc
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The character stream <code>output_stream</code> that was operated on. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01885">1885</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01915"></a><span class="lineno"> 1915</span>&#160;{</div>
-<div class="line"><a name="l01916"></a><span class="lineno"> 1916</span>&#160;  <span class="comment">// If there is a root...</span></div>
-<div class="line"><a name="l01917"></a><span class="lineno"> 1917</span>&#160;  <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> *<a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a> = tree.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>().<a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>) {</div>
-<div class="line"><a name="l01918"></a><span class="lineno"> 1918</span>&#160;    <span class="comment">// ...insert the root&#39;s representation in the stream...</span></div>
-<div class="line"><a name="l01919"></a><span class="lineno"> 1919</span>&#160;    output_stream &lt;&lt; <a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a>-&gt;data;</div>
-<div class="line"><a name="l01920"></a><span class="lineno"> 1920</span>&#160;    output_stream.put(output_stream.widen(<span class="charliteral">&#39;\n&#39;</span>));</div>
-<div class="line"><a name="l01921"></a><span class="lineno"> 1921</span>&#160; </div>
-<div class="line"><a name="l01922"></a><span class="lineno"> 1922</span>&#160;    <span class="comment">// ...by using a character queue to contain the indented topology, growing,</span></div>
-<div class="line"><a name="l01923"></a><span class="lineno"> 1923</span>&#160;    <span class="comment">// shrinking, while walking the tree...</span></div>
-<div class="line"><a name="l01924"></a><span class="lineno"> 1924</span>&#160;    <span class="keyword">using</span> margin_allocator_type = <span class="keyword">typename</span> std::allocator_traits&lt;</div>
-<div class="line"><a name="l01925"></a><span class="lineno"> 1925</span>&#160;        AllocatorType&gt;::template rebind_alloc&lt;char&gt;;</div>
-<div class="line"><a name="l01926"></a><span class="lineno"> 1926</span>&#160;    std::basic_string&lt;CharType, Traits, margin_allocator_type&gt; margin{ <span class="stringliteral">&quot;    &quot;</span> };</div>
-<div class="line"><a name="l01927"></a><span class="lineno"> 1927</span>&#160; </div>
-<div class="line"><a name="l01928"></a><span class="lineno"> 1928</span>&#160;    <span class="keyword">auto</span> pop4_utf8 = [&amp;margin]() {</div>
-<div class="line"><a name="l01929"></a><span class="lineno"> 1929</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> character_count = 4; character_count--;) {</div>
-<div class="line"><a name="l01930"></a><span class="lineno"> 1930</span>&#160;        <span class="keywordflow">if</span> (!margin.empty()) {</div>
-<div class="line"><a name="l01931"></a><span class="lineno"> 1931</span>&#160;          constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> utf8_mask = 0xC0u;</div>
-<div class="line"><a name="l01932"></a><span class="lineno"> 1932</span>&#160;          constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> utf8_point = 0x80u;</div>
-<div class="line"><a name="l01933"></a><span class="lineno"> 1933</span>&#160;          <span class="keywordflow">while</span> (!((<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(margin.back()) &amp; utf8_mask) !=</div>
-<div class="line"><a name="l01934"></a><span class="lineno"> 1934</span>&#160;                   utf8_point)) {</div>
-<div class="line"><a name="l01935"></a><span class="lineno"> 1935</span>&#160;            margin.pop_back();</div>
-<div class="line"><a name="l01936"></a><span class="lineno"> 1936</span>&#160;          }</div>
-<div class="line"><a name="l01937"></a><span class="lineno"> 1937</span>&#160;          margin.pop_back();</div>
-<div class="line"><a name="l01938"></a><span class="lineno"> 1938</span>&#160;        }</div>
-<div class="line"><a name="l01939"></a><span class="lineno"> 1939</span>&#160;      }</div>
-<div class="line"><a name="l01940"></a><span class="lineno"> 1940</span>&#160;    };</div>
-<div class="line"><a name="l01941"></a><span class="lineno"> 1941</span>&#160; </div>
-<div class="line"><a name="l01942"></a><span class="lineno"> 1942</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> *next = <a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a>-&gt;first_child;</div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01887">1887</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01917"></a><span class="lineno"> 1917</span>&#160;{</div>
+<div class="line"><a name="l01918"></a><span class="lineno"> 1918</span>&#160;  <span class="comment">// If there is a root...</span></div>
+<div class="line"><a name="l01919"></a><span class="lineno"> 1919</span>&#160;  <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> *<a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a> = tree.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>().<a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>) {</div>
+<div class="line"><a name="l01920"></a><span class="lineno"> 1920</span>&#160;    <span class="comment">// ...insert the root&#39;s representation in the stream...</span></div>
+<div class="line"><a name="l01921"></a><span class="lineno"> 1921</span>&#160;    output_stream &lt;&lt; <a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a>-&gt;data;</div>
+<div class="line"><a name="l01922"></a><span class="lineno"> 1922</span>&#160;    output_stream.put(output_stream.widen(<span class="charliteral">&#39;\n&#39;</span>));</div>
+<div class="line"><a name="l01923"></a><span class="lineno"> 1923</span>&#160; </div>
+<div class="line"><a name="l01924"></a><span class="lineno"> 1924</span>&#160;    <span class="comment">// ...by using a character queue to contain the indented topology, growing,</span></div>
+<div class="line"><a name="l01925"></a><span class="lineno"> 1925</span>&#160;    <span class="comment">// shrinking, while walking the tree...</span></div>
+<div class="line"><a name="l01926"></a><span class="lineno"> 1926</span>&#160;    <span class="keyword">using</span> margin_allocator_type = <span class="keyword">typename</span> std::allocator_traits&lt;</div>
+<div class="line"><a name="l01927"></a><span class="lineno"> 1927</span>&#160;        AllocatorType&gt;::template rebind_alloc&lt;char&gt;;</div>
+<div class="line"><a name="l01928"></a><span class="lineno"> 1928</span>&#160;    std::basic_string&lt;CharType, Traits, margin_allocator_type&gt; margin{ <span class="stringliteral">&quot;    &quot;</span> };</div>
+<div class="line"><a name="l01929"></a><span class="lineno"> 1929</span>&#160; </div>
+<div class="line"><a name="l01930"></a><span class="lineno"> 1930</span>&#160;    <span class="keyword">auto</span> pop4_utf8 = [&amp;margin]() {</div>
+<div class="line"><a name="l01931"></a><span class="lineno"> 1931</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> character_count = 4; character_count--;) {</div>
+<div class="line"><a name="l01932"></a><span class="lineno"> 1932</span>&#160;        <span class="keywordflow">if</span> (!margin.empty()) {</div>
+<div class="line"><a name="l01933"></a><span class="lineno"> 1933</span>&#160;          constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> utf8_mask = 0xC0u;</div>
+<div class="line"><a name="l01934"></a><span class="lineno"> 1934</span>&#160;          constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> utf8_point = 0x80u;</div>
+<div class="line"><a name="l01935"></a><span class="lineno"> 1935</span>&#160;          <span class="keywordflow">while</span> (!((<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(margin.back()) &amp; utf8_mask) !=</div>
+<div class="line"><a name="l01936"></a><span class="lineno"> 1936</span>&#160;                   utf8_point)) {</div>
+<div class="line"><a name="l01937"></a><span class="lineno"> 1937</span>&#160;            margin.pop_back();</div>
+<div class="line"><a name="l01938"></a><span class="lineno"> 1938</span>&#160;          }</div>
+<div class="line"><a name="l01939"></a><span class="lineno"> 1939</span>&#160;          margin.pop_back();</div>
+<div class="line"><a name="l01940"></a><span class="lineno"> 1940</span>&#160;        }</div>
+<div class="line"><a name="l01941"></a><span class="lineno"> 1941</span>&#160;      }</div>
+<div class="line"><a name="l01942"></a><span class="lineno"> 1942</span>&#160;    };</div>
 <div class="line"><a name="l01943"></a><span class="lineno"> 1943</span>&#160; </div>
-<div class="line"><a name="l01944"></a><span class="lineno"> 1944</span>&#160;    <span class="comment">// ...for every node to insert its representation...</span></div>
-<div class="line"><a name="l01945"></a><span class="lineno"> 1945</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">const</span> <span class="keyword">auto</span> *current = next) {</div>
-<div class="line"><a name="l01946"></a><span class="lineno"> 1946</span>&#160;      pop4_utf8();</div>
-<div class="line"><a name="l01947"></a><span class="lineno"> 1947</span>&#160;      <span class="keywordflow">if</span> (current-&gt;right_sibling) {</div>
-<div class="line"><a name="l01948"></a><span class="lineno"> 1948</span>&#160;        margin.append(<span class="stringliteral">&quot;├── &quot;</span>);</div>
-<div class="line"><a name="l01949"></a><span class="lineno"> 1949</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01950"></a><span class="lineno"> 1950</span>&#160;        margin.append(<span class="stringliteral">&quot;└── &quot;</span>);</div>
-<div class="line"><a name="l01951"></a><span class="lineno"> 1951</span>&#160;      }</div>
-<div class="line"><a name="l01952"></a><span class="lineno"> 1952</span>&#160;      <span class="comment">// ...insert the node&#39;s representation in the stream...</span></div>
-<div class="line"><a name="l01953"></a><span class="lineno"> 1953</span>&#160;      output_stream &lt;&lt; margin.c_str() &lt;&lt; current-&gt;data;</div>
-<div class="line"><a name="l01954"></a><span class="lineno"> 1954</span>&#160;      output_stream.put(output_stream.widen(<span class="charliteral">&#39;\n&#39;</span>));</div>
-<div class="line"><a name="l01955"></a><span class="lineno"> 1955</span>&#160;      <span class="comment">// ...move onto the next node...</span></div>
-<div class="line"><a name="l01956"></a><span class="lineno"> 1956</span>&#160;      <span class="keywordflow">if</span> (current-&gt;first_child) {</div>
-<div class="line"><a name="l01957"></a><span class="lineno"> 1957</span>&#160;        pop4_utf8();</div>
-<div class="line"><a name="l01958"></a><span class="lineno"> 1958</span>&#160;        <span class="keywordflow">if</span> (current-&gt;right_sibling) {</div>
-<div class="line"><a name="l01959"></a><span class="lineno"> 1959</span>&#160;          margin.append(<span class="stringliteral">&quot;│       &quot;</span>);</div>
-<div class="line"><a name="l01960"></a><span class="lineno"> 1960</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01961"></a><span class="lineno"> 1961</span>&#160;          margin.append(<span class="stringliteral">&quot;        &quot;</span>);</div>
-<div class="line"><a name="l01962"></a><span class="lineno"> 1962</span>&#160;        }</div>
-<div class="line"><a name="l01963"></a><span class="lineno"> 1963</span>&#160;        next = current-&gt;first_child;</div>
-<div class="line"><a name="l01964"></a><span class="lineno"> 1964</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (current-&gt;right_sibling) {</div>
-<div class="line"><a name="l01965"></a><span class="lineno"> 1965</span>&#160;        next = current-&gt;right_sibling;</div>
-<div class="line"><a name="l01966"></a><span class="lineno"> 1966</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01967"></a><span class="lineno"> 1967</span>&#160;        <span class="comment">// ...going back to the next ancestor sibling and poping characters from</span></div>
-<div class="line"><a name="l01968"></a><span class="lineno"> 1968</span>&#160;        <span class="comment">// the topology margin as necessary.</span></div>
-<div class="line"><a name="l01969"></a><span class="lineno"> 1969</span>&#160;        <span class="keywordflow">while</span> (next) {</div>
-<div class="line"><a name="l01970"></a><span class="lineno"> 1970</span>&#160;          <span class="keywordflow">if</span> (next-&gt;right_sibling) {</div>
-<div class="line"><a name="l01971"></a><span class="lineno"> 1971</span>&#160;            next = next-&gt;right_sibling;</div>
-<div class="line"><a name="l01972"></a><span class="lineno"> 1972</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l01973"></a><span class="lineno"> 1973</span>&#160;          }</div>
-<div class="line"><a name="l01974"></a><span class="lineno"> 1974</span>&#160;          pop4_utf8();</div>
-<div class="line"><a name="l01975"></a><span class="lineno"> 1975</span>&#160;          next = next-&gt;parent;</div>
-<div class="line"><a name="l01976"></a><span class="lineno"> 1976</span>&#160;        }</div>
-<div class="line"><a name="l01977"></a><span class="lineno"> 1977</span>&#160;      }</div>
-<div class="line"><a name="l01978"></a><span class="lineno"> 1978</span>&#160;    };</div>
-<div class="line"><a name="l01979"></a><span class="lineno"> 1979</span>&#160;  }</div>
-<div class="line"><a name="l01980"></a><span class="lineno"> 1980</span>&#160; </div>
-<div class="line"><a name="l01981"></a><span class="lineno"> 1981</span>&#160;  <span class="keywordflow">return</span> output_stream;</div>
-<div class="line"><a name="l01982"></a><span class="lineno"> 1982</span>&#160;}</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a217fb2d8d248bedec9126214e8c891a2"><div class="ttname"><a href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00903">tree.hpp:903</a></div></div>
+<div class="line"><a name="l01944"></a><span class="lineno"> 1944</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> *next = <a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a>-&gt;first_child;</div>
+<div class="line"><a name="l01945"></a><span class="lineno"> 1945</span>&#160; </div>
+<div class="line"><a name="l01946"></a><span class="lineno"> 1946</span>&#160;    <span class="comment">// ...for every node to insert its representation...</span></div>
+<div class="line"><a name="l01947"></a><span class="lineno"> 1947</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">const</span> <span class="keyword">auto</span> *current = next) {</div>
+<div class="line"><a name="l01948"></a><span class="lineno"> 1948</span>&#160;      pop4_utf8();</div>
+<div class="line"><a name="l01949"></a><span class="lineno"> 1949</span>&#160;      <span class="keywordflow">if</span> (current-&gt;right_sibling) {</div>
+<div class="line"><a name="l01950"></a><span class="lineno"> 1950</span>&#160;        margin.append(<span class="stringliteral">&quot;├── &quot;</span>);</div>
+<div class="line"><a name="l01951"></a><span class="lineno"> 1951</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01952"></a><span class="lineno"> 1952</span>&#160;        margin.append(<span class="stringliteral">&quot;└── &quot;</span>);</div>
+<div class="line"><a name="l01953"></a><span class="lineno"> 1953</span>&#160;      }</div>
+<div class="line"><a name="l01954"></a><span class="lineno"> 1954</span>&#160;      <span class="comment">// ...insert the node&#39;s representation in the stream...</span></div>
+<div class="line"><a name="l01955"></a><span class="lineno"> 1955</span>&#160;      output_stream &lt;&lt; margin.c_str() &lt;&lt; current-&gt;data;</div>
+<div class="line"><a name="l01956"></a><span class="lineno"> 1956</span>&#160;      output_stream.put(output_stream.widen(<span class="charliteral">&#39;\n&#39;</span>));</div>
+<div class="line"><a name="l01957"></a><span class="lineno"> 1957</span>&#160;      <span class="comment">// ...move onto the next node...</span></div>
+<div class="line"><a name="l01958"></a><span class="lineno"> 1958</span>&#160;      <span class="keywordflow">if</span> (current-&gt;first_child) {</div>
+<div class="line"><a name="l01959"></a><span class="lineno"> 1959</span>&#160;        pop4_utf8();</div>
+<div class="line"><a name="l01960"></a><span class="lineno"> 1960</span>&#160;        <span class="keywordflow">if</span> (current-&gt;right_sibling) {</div>
+<div class="line"><a name="l01961"></a><span class="lineno"> 1961</span>&#160;          margin.append(<span class="stringliteral">&quot;│       &quot;</span>);</div>
+<div class="line"><a name="l01962"></a><span class="lineno"> 1962</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01963"></a><span class="lineno"> 1963</span>&#160;          margin.append(<span class="stringliteral">&quot;        &quot;</span>);</div>
+<div class="line"><a name="l01964"></a><span class="lineno"> 1964</span>&#160;        }</div>
+<div class="line"><a name="l01965"></a><span class="lineno"> 1965</span>&#160;        next = current-&gt;first_child;</div>
+<div class="line"><a name="l01966"></a><span class="lineno"> 1966</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (current-&gt;right_sibling) {</div>
+<div class="line"><a name="l01967"></a><span class="lineno"> 1967</span>&#160;        next = current-&gt;right_sibling;</div>
+<div class="line"><a name="l01968"></a><span class="lineno"> 1968</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01969"></a><span class="lineno"> 1969</span>&#160;        <span class="comment">// ...going back to the next ancestor sibling and poping characters from</span></div>
+<div class="line"><a name="l01970"></a><span class="lineno"> 1970</span>&#160;        <span class="comment">// the topology margin as necessary.</span></div>
+<div class="line"><a name="l01971"></a><span class="lineno"> 1971</span>&#160;        <span class="keywordflow">while</span> (next) {</div>
+<div class="line"><a name="l01972"></a><span class="lineno"> 1972</span>&#160;          <span class="keywordflow">if</span> (next-&gt;right_sibling) {</div>
+<div class="line"><a name="l01973"></a><span class="lineno"> 1973</span>&#160;            next = next-&gt;right_sibling;</div>
+<div class="line"><a name="l01974"></a><span class="lineno"> 1974</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l01975"></a><span class="lineno"> 1975</span>&#160;          }</div>
+<div class="line"><a name="l01976"></a><span class="lineno"> 1976</span>&#160;          pop4_utf8();</div>
+<div class="line"><a name="l01977"></a><span class="lineno"> 1977</span>&#160;          next = next-&gt;parent;</div>
+<div class="line"><a name="l01978"></a><span class="lineno"> 1978</span>&#160;        }</div>
+<div class="line"><a name="l01979"></a><span class="lineno"> 1979</span>&#160;      }</div>
+<div class="line"><a name="l01980"></a><span class="lineno"> 1980</span>&#160;    };</div>
+<div class="line"><a name="l01981"></a><span class="lineno"> 1981</span>&#160;  }</div>
+<div class="line"><a name="l01982"></a><span class="lineno"> 1982</span>&#160; </div>
+<div class="line"><a name="l01983"></a><span class="lineno"> 1983</span>&#160;  <span class="keywordflow">return</span> output_stream;</div>
+<div class="line"><a name="l01984"></a><span class="lineno"> 1984</span>&#160;}</div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a217fb2d8d248bedec9126214e8c891a2"><div class="ttname"><a href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00905">tree.hpp:905</a></div></div>
 <div class="ttc" id="anamespaceanonymous__namespace_02depth_8cpp_03_html_aae2adf4c204200232a3d3aba48c65001"><div class="ttname"><a href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">anonymous_namespace{depth.cpp}::root</a></div><div class="ttdeci">auto root</div><div class="ttdef"><b>Definition:</b> <a href="depth_8cpp_source.html#l00053">depth.cpp:53</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1tree_1_1iterator_html_ab7860fa67c16ff417e2cab1202700d6e"><div class="ttname"><a href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">fcarouge::tree::iterator::node</a></div><div class="ttdeci">internal_node_type * node</div><div class="ttdoc">The pointer to the node represented by the iterator.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00304">tree.hpp:304</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1tree_1_1iterator_html_ab7860fa67c16ff417e2cab1202700d6e"><div class="ttname"><a href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">fcarouge::tree::iterator::node</a></div><div class="ttdeci">internal_node_type * node</div><div class="ttdoc">The pointer to the node represented by the iterator.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00305">tree.hpp:305</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -447,13 +447,13 @@ template&lt;typename Type , typename AllocatorType &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the contents of the vectors are equal, <code>false</code> otherwise.</dd></dl>
 <dl class="section user"><dt>Complexity</dt><dd>Linear in the size of the container. Constant if the size of the compared containers are different, linear otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01847">1847</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01849"></a><span class="lineno"> 1849</span>&#160;{</div>
-<div class="line"><a name="l01850"></a><span class="lineno"> 1850</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() == rhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>();</div>
-<div class="line"><a name="l01851"></a><span class="lineno"> 1851</span>&#160;}</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a93d87b031d97d57d50ad5965585a6e79"><div class="ttname"><a href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01001">tree.hpp:1001</a></div></div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l01849">1849</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01851"></a><span class="lineno"> 1851</span>&#160;{</div>
+<div class="line"><a name="l01852"></a><span class="lineno"> 1852</span>&#160;  <span class="keywordflow">return</span> lhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() == rhs.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>();</div>
+<div class="line"><a name="l01853"></a><span class="lineno"> 1853</span>&#160;}</div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a93d87b031d97d57d50ad5965585a6e79"><div class="ttname"><a href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01003">tree.hpp:1003</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01001">fcarouge::tree&lt; Type, AllocatorType &gt;::size()</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l01003">fcarouge::tree&lt; Type, AllocatorType &gt;::size()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -474,7 +474,7 @@ template&lt;typename Type , typename AllocatorType &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_533ca38e4d6dcb24d3c950d504c67ecf.html">fcarouge</a></li><li class="navelem"><a class="el" href="tree_8hpp.html">tree.hpp</a></li>
-    <li class="footer">Generated on Sat May 1 2021 20:36:28 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 1 2021 22:54:54 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

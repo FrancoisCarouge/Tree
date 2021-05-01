@@ -133,7 +133,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aed2d505e19a459232936f581836d3bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Public Observer Member Functions</div></td></tr>
 <tr class="memitem:a978595696d6ef861dc0e37b2f10e3f90"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#a28873c996d495a21c4605f81ff266188">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1tree_1_1iterator.html#a978595696d6ef861dc0e37b2f10e3f90">operator*</a> () const noexcept</td></tr>
-<tr class="memdesc:a978595696d6ef861dc0e37b2f10e3f90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dereferences the iterator to obtain the stored value.  <a href="structfcarouge_1_1tree_1_1iterator.html#a978595696d6ef861dc0e37b2f10e3f90">More...</a><br /></td></tr>
+<tr class="memdesc:a978595696d6ef861dc0e37b2f10e3f90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indirection operator.  <a href="structfcarouge_1_1tree_1_1iterator.html#a978595696d6ef861dc0e37b2f10e3f90">More...</a><br /></td></tr>
 <tr class="separator:a978595696d6ef861dc0e37b2f10e3f90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a739fa600ad626ccfbe7b5a8f070e7bc6"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structfcarouge_1_1tree_1_1iterator.html#a9916800b66de71656aca174c14e7e2b3">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1tree_1_1iterator.html#a739fa600ad626ccfbe7b5a8f070e7bc6">operator-&gt;</a> () const noexcept</td></tr>
 <tr class="memdesc:a739fa600ad626ccfbe7b5a8f070e7bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Member access operator.  <a href="structfcarouge_1_1tree_1_1iterator.html#a739fa600ad626ccfbe7b5a8f070e7bc6">More...</a><br /></td></tr>
@@ -288,18 +288,18 @@ template&lt;typename Type , typename AllocatorType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Dereferences the iterator to obtain the stored value. </p>
-<p>The behavior is undefined if the iterator is invalid.</p>
+<p>Indirection operator. </p>
+<p>Dereferences the iterator to obtain the container's stored value. The behavior is undefined if the iterator is invalid.</p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the element if the iterator is dereferencable. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l00244">244</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a0678b7a0857922263963001b0b7e70bc">data</a>;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l00245">245</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a0678b7a0857922263963001b0b7e70bc">data</a>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
 <div class="ttc" id="astructfcarouge_1_1tree_1_1internal__node__type_html_a0678b7a0857922263963001b0b7e70bc"><div class="ttname"><a href="structfcarouge_1_1tree_1_1internal__node__type.html#a0678b7a0857922263963001b0b7e70bc">fcarouge::tree::internal_node_type::data</a></div><div class="ttdeci">value_type data</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00187">tree.hpp:187</a></div></div>
-<div class="ttc" id="astructfcarouge_1_1tree_1_1iterator_html_ab7860fa67c16ff417e2cab1202700d6e"><div class="ttname"><a href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">fcarouge::tree::iterator::node</a></div><div class="ttdeci">internal_node_type * node</div><div class="ttdoc">The pointer to the node represented by the iterator.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00304">tree.hpp:304</a></div></div>
+<div class="ttc" id="astructfcarouge_1_1tree_1_1iterator_html_ab7860fa67c16ff417e2cab1202700d6e"><div class="ttname"><a href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">fcarouge::tree::iterator::node</a></div><div class="ttdeci">internal_node_type * node</div><div class="ttdoc">The pointer to the node represented by the iterator.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00305">tree.hpp:305</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00187">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, and <a class="el" href="tree_8hpp_source.html#l00304">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::node</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00187">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, and <a class="el" href="tree_8hpp_source.html#l00305">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::node</a>.</p>
 
 </div>
 </div>
@@ -331,20 +331,20 @@ template&lt;typename Type , typename AllocatorType &gt; </div>
 <p>Prefix increments the iterator. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the next iterator. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l00269">269</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a>) {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a> = <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a>;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a> = <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a2c2b1ec08c67359a07017680cad54d5e">next_ancestor_sibling</a>();</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l00270">270</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a>) {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a> = <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a> = <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a2c2b1ec08c67359a07017680cad54d5e">next_ancestor_sibling</a>();</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
 <div class="ttc" id="astructfcarouge_1_1tree_1_1internal__node__type_html_a2c2b1ec08c67359a07017680cad54d5e"><div class="ttname"><a href="structfcarouge_1_1tree_1_1internal__node__type.html#a2c2b1ec08c67359a07017680cad54d5e">fcarouge::tree::internal_node_type::next_ancestor_sibling</a></div><div class="ttdeci">constexpr internal_node_type * next_ancestor_sibling() const noexcept</div><div class="ttdoc">Finds the nearest right sibling of itself or ancestor.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00169">tree.hpp:169</a></div></div>
 <div class="ttc" id="astructfcarouge_1_1tree_1_1internal__node__type_html_a44c6ec9ad486992afdc8a06595c30091"><div class="ttname"><a href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">fcarouge::tree::internal_node_type::first_child</a></div><div class="ttdeci">internal_node_type * first_child</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00188">tree.hpp:188</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00188">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00169">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::next_ancestor_sibling()</a>, and <a class="el" href="tree_8hpp_source.html#l00304">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::node</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00188">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00169">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::next_ancestor_sibling()</a>, and <a class="el" href="tree_8hpp_source.html#l00305">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::node</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -388,20 +388,20 @@ template&lt;typename Type , typename AllocatorType &gt; </div>
 <p>Postfix increments the iterator. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the next iterator. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l00283">283</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      <a class="code" href="namespaceanonymous__namespace_02for_8cpp_03.html#a12b38b0e2a57c166e10e74e97cef3162">iterator</a> temporary_iterator = *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a>) {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a> = <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a>;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a> = <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a2c2b1ec08c67359a07017680cad54d5e">next_ancestor_sibling</a>();</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      }</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      <span class="keywordflow">return</span> temporary_iterator;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l00284">284</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    {</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;      <a class="code" href="namespaceanonymous__namespace_02for_8cpp_03.html#a12b38b0e2a57c166e10e74e97cef3162">iterator</a> temporary_iterator = *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a>) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a> = <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a44c6ec9ad486992afdc8a06595c30091">first_child</a>;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a> = <a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a2c2b1ec08c67359a07017680cad54d5e">next_ancestor_sibling</a>();</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      <span class="keywordflow">return</span> temporary_iterator;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
 <div class="ttc" id="anamespaceanonymous__namespace_02for_8cpp_03_html_a12b38b0e2a57c166e10e74e97cef3162"><div class="ttname"><a href="namespaceanonymous__namespace_02for_8cpp_03.html#a12b38b0e2a57c166e10e74e97cef3162">anonymous_namespace{for.cpp}::iterator</a></div><div class="ttdeci">auto iterator</div><div class="ttdef"><b>Definition:</b> <a href="for_8cpp_source.html#l00078">for.cpp:78</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00188">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00169">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::next_ancestor_sibling()</a>, and <a class="el" href="tree_8hpp_source.html#l00304">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::node</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00188">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::first_child</a>, <a class="el" href="tree_8hpp_source.html#l00169">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::next_ancestor_sibling()</a>, and <a class="el" href="tree_8hpp_source.html#l00305">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::node</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -445,12 +445,12 @@ template&lt;typename Type , typename AllocatorType &gt; </div>
 <p>Dereferenceable pointer or pointer-like object of the container's stored value from this iterator. The behavior is undefined if the iterator is invalid.</p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the container's stored value iterator. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l00256">256</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      <span class="keywordflow">return</span> std::pointer_traits&lt;pointer&gt;::pointer_to(<a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a0678b7a0857922263963001b0b7e70bc">data</a>);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l00257">257</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;      <span class="keywordflow">return</span> std::pointer_traits&lt;pointer&gt;::pointer_to(<a class="code" href="structfcarouge_1_1tree_1_1iterator.html#ab7860fa67c16ff417e2cab1202700d6e">node</a>-&gt;<a class="code" href="structfcarouge_1_1tree_1_1internal__node__type.html#a0678b7a0857922263963001b0b7e70bc">data</a>);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00187">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, and <a class="el" href="tree_8hpp_source.html#l00304">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::node</a>.</p>
+<p class="reference">References <a class="el" href="tree_8hpp_source.html#l00187">fcarouge::tree&lt; Type, AllocatorType &gt;::internal_node_type::data</a>, and <a class="el" href="tree_8hpp_source.html#l00305">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::node</a>.</p>
 
 </div>
 </div>
@@ -499,9 +499,9 @@ template&lt;typename Type , typename AllocatorType &gt; </div>
 
 <p>The pointer to the node represented by the iterator. </p>
 
-<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l00304">304</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tree_8hpp_source.html#l00305">305</a> of file <a class="el" href="tree_8hpp_source.html">tree.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l00356">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator::const_iterator()</a>, <a class="el" href="tree_8hpp_source.html#l01358">fcarouge::tree&lt; Type, AllocatorType &gt;::erase()</a>, <a class="el" href="tree_8hpp_source.html#l00244">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::operator*()</a>, <a class="el" href="tree_8hpp_source.html#l00269">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::operator++()</a>, and <a class="el" href="tree_8hpp_source.html#l00256">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::operator-&gt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tree_8hpp_source.html#l00357">fcarouge::tree&lt; Type, AllocatorType &gt;::const_iterator::const_iterator()</a>, <a class="el" href="tree_8hpp_source.html#l01360">fcarouge::tree&lt; Type, AllocatorType &gt;::erase()</a>, <a class="el" href="tree_8hpp_source.html#l00245">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::operator*()</a>, <a class="el" href="tree_8hpp_source.html#l00270">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::operator++()</a>, and <a class="el" href="tree_8hpp_source.html#l00257">fcarouge::tree&lt; Type, AllocatorType &gt;::iterator::operator-&gt;()</a>.</p>
 
 </div>
 </div>
@@ -514,7 +514,7 @@ template&lt;typename Type , typename AllocatorType &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li><li class="navelem"><a class="el" href="classfcarouge_1_1tree.html">tree</a></li><li class="navelem"><a class="el" href="structfcarouge_1_1tree_1_1iterator.html">iterator</a></li>
-    <li class="footer">Generated on Sat May 1 2021 20:36:29 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 1 2021 22:54:56 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

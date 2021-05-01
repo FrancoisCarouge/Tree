@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"namespacefcarouge.html#acdd40cc3af64aedc141e983be20caa3c":[5,0,43,46],
 "namespacefcarouge.html#ad824b14197f8653876d76c433687f26e":[5,0,43,4],
 "namespacefcarouge.html#ad834a4bfbb0a46c4b85f8cdc1e2b5f26":[5,0,43,30],
 "namespacefcarouge.html#ae4a983890b9c385b09523aa718b1654d":[5,0,43,10],

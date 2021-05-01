@@ -88,45 +88,6 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> Tree data structure for C++: generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.</p>
-<ul>
-<li><a href="#tree-for-c">Tree for C++</a><ul>
-<li><a href="#information-tree">Information Tree</a></li>
-<li><a href="#use-cases">Use Cases</a></li>
-<li><a href="#example">Example</a></li>
-<li><a href="#file-includefcarougetreehpp">File include/fcarouge/tree.hpp</a><ul>
-<li><a href="#includes">Includes</a></li>
-<li><a href="#namespaces">Namespaces</a></li>
-<li><a href="#classes">Classes</a></li>
-</ul>
-</li>
-<li><a href="#file-includefcarougetree_fwdhpp">File include/fcarouge/tree_fwd.hpp</a><ul>
-<li><a href="#type-aliases">Type Aliases</a></li>
-<li><a href="#includes-1">Includes</a></li>
-</ul>
-</li>
-<li><a href="#file-includefcarougetree_iteratorhpp">File include/fcarouge/tree_iterator.hpp</a></li>
-<li><a href="#file-includefcarougetree_iterator_fwdhpp">File include/fcarouge/tree_iterator_fwd.hpp</a></li>
-<li><a href="#file-includefcarougetree_algorithmhpp">File include/fcarouge/tree_algorithm.hpp</a><ul>
-<li><a href="#observing-operations">Observing Operations</a></li>
-</ul>
-</li>
-<li><a href="#class-fcarougetree">Class fcarouge::tree</a><ul>
-<li><a href="#template-parameters">Template Parameters</a></li>
-<li><a href="#member-types">Member Types</a></li>
-<li><a href="#member-functions">Member Functions</a><ul>
-<li><a href="#element-access">Element Access</a></li>
-<li><a href="#iterators">Iterators</a></li>
-<li><a href="#capacity">Capacity</a></li>
-<li><a href="#modifiers">Modifiers</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#hard-lessons-learned">Hard Lessons Learned</a></li>
-<li><a href="#license">License</a></li>
-</ul>
-</li>
-</ul>
 <h1><a class="anchor" id="autotoc_md13"></a>
 Information Tree</h1>
 <table class="markdownTable">
@@ -205,9 +166,9 @@ Example</h1>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00103">tree.hpp:104</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a217fb2d8d248bedec9126214e8c891a2"><div class="ttname"><a href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00903">tree.hpp:903</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a47c5f13aa881897e4acae42c4ae544e5"><div class="ttname"><a href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">fcarouge::tree::emplace</a></div><div class="ttdeci">constexpr iterator emplace(const_iterator position, ArgumentsType &amp;&amp;... arguments)</div><div class="ttdoc">Inserts a constructed in-place element into the container before the position iterator as the new lef...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01284">tree.hpp:1284</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_ace557ab09e595974d1250f1c8f8d0388"><div class="ttname"><a href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">fcarouge::tree::push</a></div><div class="ttdeci">constexpr iterator push(const_iterator position, const_reference value)</div><div class="ttdoc">Inserts a copied element into the container after the last child of the position iterator as the new ...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01429">tree.hpp:1429</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a217fb2d8d248bedec9126214e8c891a2"><div class="ttname"><a href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00905">tree.hpp:905</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a47c5f13aa881897e4acae42c4ae544e5"><div class="ttname"><a href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">fcarouge::tree::emplace</a></div><div class="ttdeci">constexpr iterator emplace(const_iterator position, ArgumentsType &amp;&amp;... arguments)</div><div class="ttdoc">Inserts a constructed in-place element into the container before the position iterator as the new lef...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01286">tree.hpp:1286</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_ace557ab09e595974d1250f1c8f8d0388"><div class="ttname"><a href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">fcarouge::tree::push</a></div><div class="ttdeci">constexpr iterator push(const_iterator position, const_reference value)</div><div class="ttdoc">Inserts a copied element into the container after the last child of the position iterator as the new ...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01431">tree.hpp:1431</a></div></div>
 <div class="ttc" id="amain_8cpp_html_a2c3f6775325c30275d11c6abee2db6a0"><div class="ttname"><a href="main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0">main</a></div><div class="ttdeci">int main(int, char **)</div><div class="ttdoc">The tree data structure for C++ project is a header-only library.</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00035">main.cpp:35</a></div></div>
 <div class="ttc" id="anamespaceanonymous__namespace_02depth_8cpp_03_html_aae2adf4c204200232a3d3aba48c65001"><div class="ttname"><a href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">anonymous_namespace{depth.cpp}::root</a></div><div class="ttdeci">auto root</div><div class="ttdef"><b>Definition:</b> <a href="depth_8cpp_source.html#l00053">depth.cpp:53</a></div></div>
 <div class="ttc" id="atree_8hpp_html"><div class="ttname"><a href="tree_8hpp.html">tree.hpp</a></div><div class="ttdoc">Tree container types and canonical operations definitions header.</div></div>
@@ -216,9 +177,51 @@ Example</h1>
 <div class="line">├── World</div>
 <div class="line">└── !</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md16"></a>
+Library</h1>
+<ul>
+<li><a href="#tree-for-c">Tree for C++</a><ul>
+<li><a href="#information-tree">Information Tree</a></li>
+<li><a href="#use-cases">Use Cases</a></li>
+<li><a href="#example">Example</a></li>
+<li><a href="#library">Library</a></li>
+<li><a href="#file-includefcarougetreehpp">File include/fcarouge/tree.hpp</a><ul>
+<li><a href="#includes">Includes</a></li>
+<li><a href="#namespaces">Namespaces</a></li>
+<li><a href="#classes">Classes</a></li>
+</ul>
+</li>
+<li><a href="#file-includefcarougetree_fwdhpp">File include/fcarouge/tree_fwd.hpp</a><ul>
+<li><a href="#type-aliases">Type Aliases</a></li>
+<li><a href="#includes-1">Includes</a></li>
+</ul>
+</li>
+<li><a href="#file-includefcarougetree_iteratorhpp">File include/fcarouge/tree_iterator.hpp</a></li>
+<li><a href="#file-includefcarougetree_iterator_fwdhpp">File include/fcarouge/tree_iterator_fwd.hpp</a></li>
+<li><a href="#file-includefcarougetree_algorithmhpp">File include/fcarouge/tree_algorithm.hpp</a><ul>
+<li><a href="#observing-operations">Observing Operations</a></li>
+</ul>
+</li>
+<li><a href="#class-fcarougetree">Class fcarouge::tree</a><ul>
+<li><a href="#template-parameters">Template Parameters</a></li>
+<li><a href="#member-types">Member Types</a></li>
+<li><a href="#member-functions">Member Functions</a><ul>
+<li><a href="#element-access">Element Access</a></li>
+<li><a href="#iterators">Iterators</a></li>
+<li><a href="#capacity">Capacity</a></li>
+<li><a href="#modifiers">Modifiers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#hard-lessons-learned">Hard Lessons Learned</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md17"></a>
 File include/fcarouge/tree.hpp</h1>
 <p>Container definition.</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Includes</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -240,7 +243,7 @@ Includes</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>&lt;utility&gt;</code>   </td><td class="markdownTableBodyNone">Standard moving and forwarding resources support.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Namespaces</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -248,7 +251,7 @@ Namespaces</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>fcarouge</code>   </td><td class="markdownTableBodyNone">François Carouge's projects namespace.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Classes</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -256,7 +259,7 @@ Classes</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>tree</code>   </td><td class="markdownTableBodyNone">Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 File include/fcarouge/tree_fwd.hpp</h1>
 <p>Minimal forward declaration header for the container.</p>
 <ul>
@@ -264,7 +267,7 @@ File include/fcarouge/tree_fwd.hpp</h1>
 <li>defines its common type aliases, and</li>
 <li>includes its minimum necessary standard library dependencies.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Type Aliases</h2>
 <p>Type aliases are provided for a variety of fundamental and standard types, in the <code>fcarouge</code> namespace, without specialization of the allocator type, as follows:</p>
 <table class="markdownTable">
@@ -361,7 +364,7 @@ Type Aliases</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>tree_wstring</code>   </td><td class="markdownTableBodyNone"><code>tree&lt;std::wstring&gt;</code>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Includes</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -373,16 +376,16 @@ Includes</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>&lt;string&gt;</code>   </td><td class="markdownTableBodyNone">Standard string support.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md23"></a>
+<h1><a class="anchor" id="autotoc_md24"></a>
 File include/fcarouge/tree_iterator.hpp</h1>
 <p>Container's non-member iterators definitions.</p>
-<h1><a class="anchor" id="autotoc_md24"></a>
+<h1><a class="anchor" id="autotoc_md25"></a>
 File include/fcarouge/tree_iterator_fwd.hpp</h1>
 <p>Minimal forward declaration header for the container's non-member iterators.</p>
-<h1><a class="anchor" id="autotoc_md25"></a>
+<h1><a class="anchor" id="autotoc_md26"></a>
 File include/fcarouge/tree_algorithm.hpp</h1>
 <p>Container's algorithms definitions.</p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Observing Operations</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -390,7 +393,7 @@ Observing Operations</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>depth</code>   </td><td class="markdownTableBodyNone">Depth of the path from the root, top element to the iterated node.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md27"></a>
+<h1><a class="anchor" id="autotoc_md28"></a>
 Class fcarouge::tree</h1>
 <p>Defined in header <a href="include/fcarouge/tree.hpp">fcarouge/tree.hpp</a></p>
 <div class="fragment"><div class="line">template &lt;</div>
@@ -412,7 +415,7 @@ Class fcarouge::tree</h1>
 <li>influenced by the Standard Template Library (STL) principles and the C++ Core Guidelines in its design tradeoffs,</li>
 <li>intelligibly documented for the wider audience.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 Template Parameters</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -422,7 +425,7 @@ Template Parameters</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>AllocatorType</code>   </td><td class="markdownTableBodyNone">An allocator that is used to acquire/release memory and to construct/destroy the elements in that memory.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Member Types</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -448,7 +451,7 @@ Member Types</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>const_iterator</code>   </td><td class="markdownTableBodyNone">The constant type to identify and traverse the elements of the container.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 Member Functions</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -464,7 +467,7 @@ Member Functions</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>get_allocator</code>   </td><td class="markdownTableBodyNone">Returns the allocator associated with the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md31"></a>
+<h3><a class="anchor" id="autotoc_md32"></a>
 Element Access</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -472,7 +475,7 @@ Element Access</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>front</code>   </td><td class="markdownTableBodyNone">Returns a reference to the first element in the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md32"></a>
+<h3><a class="anchor" id="autotoc_md33"></a>
 Iterators</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -484,7 +487,7 @@ Iterators</h3>
 <td class="markdownTableBodyNone"><code>end</code> <br  />
 <code>cend</code>   </td><td class="markdownTableBodyNone">Returns an iterator to the element following the last element of the container.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md33"></a>
+<h3><a class="anchor" id="autotoc_md34"></a>
 Capacity</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -496,7 +499,7 @@ Capacity</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>max_size</code>   </td><td class="markdownTableBodyNone">Returns the maximum number of elements the container is able to hold.   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md34"></a>
+<h3><a class="anchor" id="autotoc_md35"></a>
 Modifiers</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -518,12 +521,12 @@ Modifiers</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>swap</code>   </td><td class="markdownTableBodyNone">Exchanges the contents of this container with those of the other container.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md35"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 Hard Lessons Learned</h1>
 <ul>
 <li>Recursive code <b>will</b> run out of stack space. No matter the architecture, for a generic data structure that cannot guarantee depth by design. Refactor to iterative code.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md37"></a>
 License</h1>
 <p><img src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png" alt="" align="right" class="inline"/></p>
 <p>Tree for C++ is licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a>:</p>
@@ -537,7 +540,7 @@ License</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat May 1 2021 20:36:29 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 1 2021 22:54:56 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
