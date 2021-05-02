@@ -1,5 +1,6 @@
 var NAVTREEINDEX0 =
 {
+"":[5,0,44],
 "annotated.html":[6,0],
 "assign__copy_8cpp.html":[7,0,4,0],
 "assign__copy_8cpp.html#a5443c34f6448bfa40b588dfe8d3a048e":[7,0,4,0,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "index.html#autotoc_md37":[0,11],
 "insert__lvalue_8cpp.html":[7,0,4,26],
 "insert__lvalue_8cpp.html#a15258abfeec9990bfd6a25b46f8d1e6b":[7,0,4,26,4],
-"insert__lvalue_8cpp.html#a4c4127942ea827f2541438579c54c172":[7,0,4,26,1],
-"insert__lvalue_8cpp.html#a4e707fecb8265f0375c7d908d896c8dd":[7,0,4,26,2]
+"insert__lvalue_8cpp.html#a4c4127942ea827f2541438579c54c172":[7,0,4,26,1]
 };
