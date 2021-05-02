@@ -101,6 +101,8 @@ template <typename Type> class null_allocator
   //! @details Conversion constructor. Since the null-allocator is stateless,
   //! the constructors have no visible effect.
   //!
+  //! @tparam OtherType The type of the contained data elements.
+  //!
   //! @complexity Constant.
   template <typename OtherType>
   constexpr explicit null_allocator(
@@ -206,10 +208,15 @@ struct allocator_traits<fcarouge::null_allocator<Type>> {
   //! @name Public Member Alias Templates
   //! @{
 
-  //! @brief The rebinded allocator type  for other element types.
+  //! @brief The rebinded allocator type for other element types.
+  //!
+  //! @tparam OtherType The type of the contained data elements.
   template <typename OtherType>
   using rebind_alloc = fcarouge::null_allocator<OtherType>;
 
+  //! @brief The rebinded allocator traits for other element types.
+  //!
+  //! @tparam OtherType The type of the contained data elements.
   template <typename OtherType>
   using rebind_traits = std::allocator_traits<rebind_alloc<OtherType>>;
 

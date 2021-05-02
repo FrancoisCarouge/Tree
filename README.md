@@ -221,7 +221,7 @@ Defined in header [fcarouge/tree.hpp](include/fcarouge/tree.hpp)
 ```
 template <
     class Type,
-    class AllocatorType = std::allocator<Type>
+    class Allocator = std::allocator<Type>
 > class tree
 ```
 
@@ -245,7 +245,7 @@ The `fcarouge::tree` type is a hierarchical tree data structure. The container i
 | Template Parameter | Definition |
 | --- | --- |
 | `Type` | The type of the contained data elements. |
-| `AllocatorType` | An allocator that is used to acquire/release memory and to construct/destroy the elements in that memory. |
+| `Allocator` | An allocator that is used to acquire/release memory and to construct/destroy the elements in that memory. |
 
 ### Member Types
 

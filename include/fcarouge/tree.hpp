@@ -96,14 +96,14 @@ namespace fcarouge
 //! This container (but not its members) can be instantiated with an incomplete
 //! element type if the allocator satisfies the allocator completeness
 //! requirements.
-//! @tparam AllocatorType The allocator type that is used to acquire/release
+//! @tparam Allocator The allocator type that is used to acquire/release
 //! memory and to construct/destroy the elements in that memory. The allocator
 //! type must meet the Allocator requirements. The type of value of the
 //! allocator must match the type of the value of the container.
-template <typename Type, typename AllocatorType> class tree
+template <typename Type, typename Allocator> class tree
 {
   public:
-  static_assert(std::is_same_v<Type, typename AllocatorType::value_type>,
+  static_assert(std::is_same_v<Type, typename Allocator::value_type>,
                 "The container's element value type and its allocator's value "
                 "type must match per N4861 22.2.1 "
                 "[container.requirements.general]/16 allocator_type.");
@@ -116,7 +116,7 @@ template <typename Type, typename AllocatorType> class tree
 
   //! @brief The type of the allocator for all memory allocations of this
   //! container.
-  using allocator_type = AllocatorType;
+  using allocator_type = Allocator;
 
   //! @brief The unsigned integer type to represent element counts.
   using size_type = std::size_t;
@@ -131,11 +131,11 @@ template <typename Type, typename AllocatorType> class tree
   using const_reference = const value_type &;
 
   //! @brief The pointer type of the contained data elements.
-  using pointer = typename std::allocator_traits<AllocatorType>::pointer;
+  using pointer = typename std::allocator_traits<Allocator>::pointer;
 
   //! @brief The constant pointer type of the contained data elements.
   using const_pointer =
-      typename std::allocator_traits<AllocatorType>::const_pointer;
+      typename std::allocator_traits<Allocator>::const_pointer;
 
   //! @}
 
@@ -196,7 +196,7 @@ template <typename Type, typename AllocatorType> class tree
 
   //! @brief Element allocator type rebind to internal node allocator type.
   using internal_node_allocator_type = typename std::allocator_traits<
-      AllocatorType>::template rebind_alloc<internal_node_type>;
+      Allocator>::template rebind_alloc<internal_node_type>;
 
   //! @brief The internal node allocator traits access.
   using internal_node_allocator_traits =
@@ -453,13 +453,13 @@ template <typename Type, typename AllocatorType> class tree
   };
 
   //! @brief The result type of inserting a `node_type` in the container.
-  template <typename IteratorType> struct insert_return_type {
+  template <typename Iterator> struct insert_return_type {
     // Not implemented.
 
     //! @brief The node handle type of the container.
     using node_type = tree::node_type;
 
-    IteratorType position;
+    Iterator position;
     bool inserted;
     node_type node;
   };
@@ -474,9 +474,9 @@ template <typename Type, typename AllocatorType> class tree
   //! @complexity Constant.
   //!
   //! @exceptions Strong exception guarantees: no effect on exception. Same
-  //! exceptions specification as the allocator `AllocatorType` default
+  //! exceptions specification as the allocator `Allocator` default
   //! constructor, if any.
-  constexpr tree() noexcept(noexcept(AllocatorType{})) = default;
+  constexpr tree() noexcept(noexcept(Allocator{})) = default;
 
   //! @brief Constructs an empty container with the given allocator.
   //!
@@ -486,9 +486,9 @@ template <typename Type, typename AllocatorType> class tree
   //! @complexity Constant.
   //!
   //! @exceptions Strong exception guarantees: no effect on exception. Same
-  //! exceptions specification as the allocator `AllocatorType` copy
+  //! exceptions specification as the allocator `Allocator` copy
   //! constructor, if any.
-  constexpr explicit tree(const AllocatorType &allocator) noexcept(
+  constexpr explicit tree(const Allocator &allocator) noexcept(
       noexcept(internal_node_allocator_type{ allocator }))
           : node_allocator{ allocator }
   {
@@ -503,12 +503,12 @@ template <typename Type, typename AllocatorType> class tree
   //! elements of the container with.
   //!
   //! @note Allocator is obtained as if by calling:
-  //! `std::allocator_traits<AllocatorType>::
+  //! `std::allocator_traits<Allocator>::
   //! select_on_container_copy_construction(other.get_allocator())`
   //!
   //! @complexity Linear in size of the other container.
   constexpr tree(const tree &other) noexcept
-          : node_allocator{ std::allocator_traits<AllocatorType>::
+          : node_allocator{ std::allocator_traits<Allocator>::
                                 select_on_container_copy_construction(
                                     other.node_allocator) },
             root{ copy(other.root) }, node_count{ other.node_count }
@@ -526,7 +526,7 @@ template <typename Type, typename AllocatorType> class tree
   //! container.
   //!
   //! @complexity Linear in size of the other container.
-  constexpr tree(const tree &other, const AllocatorType &allocator)
+  constexpr tree(const tree &other, const Allocator &allocator)
           : node_allocator{ allocator }, root{ copy(other.root) }, node_count{
               other.node_count
             }
@@ -565,7 +565,7 @@ template <typename Type, typename AllocatorType> class tree
   //! container.
   //!
   //! @complexity Constant.
-  constexpr tree(tree &&other, const AllocatorType &allocator) noexcept
+  constexpr tree(tree &&other, const Allocator &allocator) noexcept
           : node_allocator{ allocator }, node_count{ other.node_count }
   {
     if (allocator != other.node_allocator) {
@@ -594,7 +594,7 @@ template <typename Type, typename AllocatorType> class tree
   //! container.
   //!
   //! @complexity Constant.
-  constexpr tree(const_reference value, const AllocatorType &allocator)
+  constexpr tree(const_reference value, const Allocator &allocator)
           : node_allocator{ allocator }, root{ node_allocator.allocate(1) },
             node_count{ 1 }
   {
@@ -619,7 +619,7 @@ template <typename Type, typename AllocatorType> class tree
   //! container.
   //!
   //! @complexity Constant.
-  constexpr tree(value_type &&value, const AllocatorType &allocator)
+  constexpr tree(value_type &&value, const Allocator &allocator)
           : node_allocator{ allocator }, root{ node_allocator.allocate(1) },
             node_count{ 1 }
   {
@@ -659,7 +659,7 @@ template <typename Type, typename AllocatorType> class tree
   {
     if (this != std::addressof(other)) {
       axe(root);
-      node_allocator = std::allocator_traits<AllocatorType>::
+      node_allocator = std::allocator_traits<Allocator>::
           select_on_container_copy_construction(other.node_allocator);
       root = copy(other.root);
       node_count = other.node_count;
@@ -685,7 +685,7 @@ template <typename Type, typename AllocatorType> class tree
   //!
   //! @complexity Constant.
   //!
-  //! @exceptions Same exceptions specification as the allocator `AllocatorType`
+  //! @exceptions Same exceptions specification as the allocator `Allocator`
   //! move assignment operator, if any.
   constexpr tree &operator=(tree &&other) noexcept
   {
@@ -760,7 +760,7 @@ template <typename Type, typename AllocatorType> class tree
   {
     if (this != std::addressof(other)) {
       axe(root);
-      node_allocator = std::allocator_traits<AllocatorType>::
+      node_allocator = std::allocator_traits<Allocator>::
           select_on_container_copy_construction(other.node_allocator);
       root = copy(other.root);
       node_count = other.node_count;
@@ -786,7 +786,7 @@ template <typename Type, typename AllocatorType> class tree
   //!
   //! @complexity Constant.
   //!
-  //! @exceptions Same exceptions specification as the allocator `AllocatorType`
+  //! @exceptions Same exceptions specification as the allocator `Allocator`
   //! move assignment operator, if any.
   constexpr tree &assign(tree &&other) noexcept
   {
@@ -1206,9 +1206,9 @@ template <typename Type, typename AllocatorType> class tree
     return { node };
   }
 
-  template <typename InputIteratorType>
-  constexpr iterator insert(const_iterator position, InputIteratorType first,
-                            InputIteratorType last);
+  template <typename InputIterator>
+  constexpr iterator insert(const_iterator position, InputIterator first,
+                            InputIterator last);
 
   constexpr iterator insert(const_iterator position,
                             std::initializer_list<Type> initializers);
@@ -1220,10 +1220,10 @@ template <typename Type, typename AllocatorType> class tree
   //! equivalenent to placement-new to construct the element in-place, usable in
   //! evaluation of constant expressions, at a location provided by the
   //! container. The `arguments` are forwarded to the constructor as
-  //! `std::forward<ArgumentsType>(arguments)...`. No iterators or references
+  //! `std::forward<Arguments>(arguments)...`. No iterators or references
   //! are invalidated. Inserts at the root position as the new root.
   //!
-  //! @tparam ArgumentsType The argument types to forward to the constructor of
+  //! @tparam Arguments The argument types to forward to the constructor of
   //! the element.
   //!
   //! @param arguments The arguments to forward to the constructor of the
@@ -1236,16 +1236,16 @@ template <typename Type, typename AllocatorType> class tree
   //! @benchmark
   //! @image{inline} html "benchmark/emplace_front_cumulative.svg"
   //! @image{inline} html "benchmark/emplace_front_incremental.svg"
-  template <typename... ArgumentsType>
-  constexpr reference emplace_front(ArgumentsType &&... arguments)
+  template <typename... Arguments>
+  constexpr reference emplace_front(Arguments &&... arguments)
   {
     // The allocated node is in-place construced and recorded in every
     // following statements.
     internal_node_type *node = node_allocator.allocate(1);
 
     // Insert the new node...
-    std::construct_at(node, std::forward<ArgumentsType>(arguments)..., root,
-                      root, nullptr, nullptr, nullptr);
+    std::construct_at(node, std::forward<Arguments>(arguments)..., root, root,
+                      nullptr, nullptr, nullptr);
     // ...as the new root node.
     if (root) {
       root->parent = node;
@@ -1264,13 +1264,13 @@ template <typename Type, typename AllocatorType> class tree
   //! equivalenent to placement-new to construct the element in-place, usable in
   //! evaluation of constant expressions, at a location provided by the
   //! container. The `arguments` are forwarded to the constructor as
-  //! `std::forward<ArgumentsType>(arguments)...`. The element is directly
+  //! `std::forward<Arguments>(arguments)...`. The element is directly
   //! before the `position` iterator in the container topology as the new left
   //! sibling. No iterators or references are invalidated. Inserts at the root
   //! position as the new root. Inserts before the beginning `begin()` position
   //! as the new root. Inserts before the ending `end()` position.
   //!
-  //! @tparam ArgumentsType The argument types to forward to the constructor of
+  //! @tparam Arguments The argument types to forward to the constructor of
   //! the element.
   //!
   //! @param position The constant iterator before which the new element will be
@@ -1282,9 +1282,8 @@ template <typename Type, typename AllocatorType> class tree
   //! @return The iterator pointing to the inserted element.
   //!
   //! @complexity Constant.
-  template <typename... ArgumentsType>
-  constexpr iterator emplace(const_iterator position,
-                             ArgumentsType &&... arguments)
+  template <typename... Arguments>
+  constexpr iterator emplace(const_iterator position, Arguments &&... arguments)
   {
     // The allocated node is in-place construced and recorded in every
     // following statements.
@@ -1294,9 +1293,9 @@ template <typename Type, typename AllocatorType> class tree
     if (internal_node_type *position_node = position.node) {
       // ...as the new left child...
       if (position_node->parent) {
-        std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
-                          nullptr, nullptr, position_node->left_sibling,
-                          position_node, position_node->parent);
+        std::construct_at(node, std::forward<Arguments>(arguments)..., nullptr,
+                          nullptr, position_node->left_sibling, position_node,
+                          position_node->parent);
         position_node->left_sibling = node;
         // ...with a left sibling node.
         if (internal_node_type *left_node = node->left_sibling) {
@@ -1309,7 +1308,7 @@ template <typename Type, typename AllocatorType> class tree
       }
       // ...as the new root.
       else {
-        std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
+        std::construct_at(node, std::forward<Arguments>(arguments)...,
                           position_node, position_node);
         position_node->parent = node;
         root = node;
@@ -1319,8 +1318,8 @@ template <typename Type, typename AllocatorType> class tree
     else {
       // ... as the last child of the root node.
       if (root) {
-        std::construct_at(node, std::forward<ArgumentsType>(arguments)...,
-                          nullptr, nullptr, root->last_child, nullptr, root);
+        std::construct_at(node, std::forward<Arguments>(arguments)..., nullptr,
+                          nullptr, root->last_child, nullptr, root);
         if (!root->first_child) {
           root->first_child = node;
         }
@@ -1331,7 +1330,7 @@ template <typename Type, typename AllocatorType> class tree
       }
       // ...as the sole, and root node.
       else {
-        std::construct_at(node, std::forward<ArgumentsType>(arguments)...);
+        std::construct_at(node, std::forward<Arguments>(arguments)...);
         root = node;
       }
     }
@@ -1637,7 +1636,7 @@ template <typename Type, typename AllocatorType> class tree
   //! the ending `end()` position as the sole child of the last node if present,
   //! or as the root if the container is empty.
   //!
-  //! @tparam ArgumentsType The argument types to forward to the constructor of
+  //! @tparam Arguments The argument types to forward to the constructor of
   //! the element.
   //!
   //! @param parent The parent node for which the element will be
@@ -1654,9 +1653,9 @@ template <typename Type, typename AllocatorType> class tree
   //! CopyInsertable into `*this`, the container will use the throwing move
   //! constructor. If it throws, the guarantee is waived and the effects are
   //! unspecified.
-  template <typename... ArgumentsType>
-  constexpr internal_node_type *
-  emplace_last_child(internal_node_type *parent, ArgumentsType &&... arguments)
+  template <typename... Arguments>
+  constexpr internal_node_type *emplace_last_child(internal_node_type *parent,
+                                                   Arguments &&... arguments)
   {
     // The allocated child node is in-place construced and recorded in every
     // following statements.
@@ -1665,8 +1664,8 @@ template <typename Type, typename AllocatorType> class tree
     // Insert the new node...
     // ...as the last child of the position node...
     if (parent) {
-      std::construct_at(child, std::forward<ArgumentsType>(arguments)...,
-                        nullptr, nullptr, parent->last_child, nullptr, parent);
+      std::construct_at(child, std::forward<Arguments>(arguments)..., nullptr,
+                        nullptr, parent->last_child, nullptr, parent);
       parent->last_child = child;
 
       // ...with a left sibling node.
@@ -1683,8 +1682,8 @@ template <typename Type, typename AllocatorType> class tree
     else {
       // ... as the last child of the root node.
       if (root) {
-        std::construct_at(child, std::forward<ArgumentsType>(arguments)...,
-                          nullptr, nullptr, root->last_child, nullptr, root);
+        std::construct_at(child, std::forward<Arguments>(arguments)..., nullptr,
+                          nullptr, root->last_child, nullptr, root);
         if (!root->first_child) {
           root->first_child = child;
         }
@@ -1695,7 +1694,7 @@ template <typename Type, typename AllocatorType> class tree
       }
       // ...as the sole, and root node.
       else {
-        std::construct_at(child, std::forward<ArgumentsType>(arguments)...);
+        std::construct_at(child, std::forward<Arguments>(arguments)...);
         root = child;
       }
     }
@@ -1713,7 +1712,7 @@ template <typename Type, typename AllocatorType> class tree
   //! iterators or references are invalidated. The new element is in-place
   //! constructed and moved, or copied.
   //!
-  //! @tparam ArgumentsType The argument types to forward to the constructor of
+  //! @tparam Arguments The argument types to forward to the constructor of
   //! the element.
   //!
   //! @param arguments The construction data of the element to insert.
@@ -1723,16 +1722,15 @@ template <typename Type, typename AllocatorType> class tree
   //! @exceptions Strong exception guarantees: no effect on
   //! exception. The `Allocator::allocate()` allocation or the element copy/move
   //! constructor/assignment may throw.
-  template <typename... ArgumentsType>
-  constexpr void emplace_root(ArgumentsType &&... arguments)
+  template <typename... Arguments>
+  constexpr void emplace_root(Arguments &&... arguments)
   {
     // The allocated node is in-place construced and recorded in every
     // following statements.
     internal_node_type *node = node_allocator.allocate(1);
 
     // Insert the new node and prepare it to be the new root...
-    std::construct_at(node, std::forward<ArgumentsType>(arguments)..., root,
-                      root);
+    std::construct_at(node, std::forward<Arguments>(arguments)..., root, root);
 
     // ... by displacing the previous root.
     if (root) {
@@ -1844,10 +1842,10 @@ template <typename Type, typename AllocatorType> class tree
 //!
 //! @complexity Linear in the size of the container. Constant if the size of the
 //! compared containers are different, linear otherwise.
-template <typename Type, typename AllocatorType>
+template <typename Type, typename Allocator>
 [[nodiscard]] constexpr bool
-operator==(const fcarouge::tree<Type, AllocatorType> &lhs,
-           const fcarouge::tree<Type, AllocatorType> &rhs)
+operator==(const fcarouge::tree<Type, Allocator> &lhs,
+           const fcarouge::tree<Type, Allocator> &rhs)
 {
   return lhs.size() == rhs.size();
 }
@@ -1883,10 +1881,10 @@ operator==(const fcarouge::tree<Type, AllocatorType> &lhs,
 //! elements in `lhs` and `rhs` are unordered; `std::strong::equal` otherwise.
 //!
 //! @complexity Linear in the size of the container.
-template <typename Type, typename AllocatorType>
+template <typename Type, typename Allocator>
 [[nodiscard]] constexpr auto
-operator<=>(const fcarouge::tree<Type, AllocatorType> &lhs,
-            const fcarouge::tree<Type, AllocatorType> &rhs);
+operator<=>(const fcarouge::tree<Type, Allocator> &lhs,
+            const fcarouge::tree<Type, Allocator> &rhs);
 
 //! @brief Inserts a human-interpretable representation of a container into a
 //! character stream.
@@ -1899,21 +1897,20 @@ operator<=>(const fcarouge::tree<Type, AllocatorType> &lhs,
 //! according to the depth of their nodes. The tree topology is symbolized via
 //! the `├──`, `└──`, and `│` characters.
 //!
-//! @tparam CharType The type of the character of the stream.
+//! @tparam Char The type of the character of the stream.
 //! @tparam Traits The character type operations specification class.
 //! @tparam Type The type of the contained data in the tree elements.
-//! @tparam AllocatorType The type of the allocator for the nodes of the tree
+//! @tparam Allocator The type of the allocator for the nodes of the tree
 //! elements.
 //!
 //! @param output_stream The character stream to write to.
 //! @param tree The tree to be written.
 //!
 //! @return The character stream `output_stream` that was operated on.
-template <typename CharType, typename Traits, typename Type,
-          typename AllocatorType>
-std::basic_ostream<CharType, Traits> &
-operator<<(std::basic_ostream<CharType, Traits> &output_stream,
-           const fcarouge::tree<Type, AllocatorType> &tree)
+template <typename Char, typename Traits, typename Type, typename Allocator>
+std::basic_ostream<Char, Traits> &
+operator<<(std::basic_ostream<Char, Traits> &output_stream,
+           const fcarouge::tree<Type, Allocator> &tree)
 {
   // If there is a root...
   if (const auto *root = tree.begin().node) {
@@ -1923,9 +1920,9 @@ operator<<(std::basic_ostream<CharType, Traits> &output_stream,
 
     // ...by using a character queue to contain the indented topology, growing,
     // shrinking, while walking the tree...
-    using margin_allocator_type = typename std::allocator_traits<
-        AllocatorType>::template rebind_alloc<char>;
-    std::basic_string<CharType, Traits, margin_allocator_type> margin{ "    " };
+    using margin_allocator_type =
+        typename std::allocator_traits<Allocator>::template rebind_alloc<char>;
+    std::basic_string<Char, Traits, margin_allocator_type> margin{ "    " };
 
     auto pop4_utf8 = [&margin]() {
       for (auto character_count = 4; character_count--;) {
