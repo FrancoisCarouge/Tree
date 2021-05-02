@@ -1,0 +1,6 @@
+<map id="fcarouge::tree::erase" name="fcarouge::tree::erase">
+<area shape="rect" id="node1" title="Removes the specified element including its sub&#45;tree." alt="" coords="5,71,144,97"/>
+<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#af63299a9395faadd2122e4975bf61b7c" title="Isolates the specified element including its sub&#45;tree." alt="" coords="207,5,351,32"/>
+<area shape="rect" id="node3" href="$structfcarouge_1_1tree_1_1internal__node__type.html#aed9a41b774eac12a54e573904a428031" title="Finds the nearest right sibling of itself or ancestor." alt="" coords="192,56,367,112"/>
+<area shape="rect" id="node4" href="$classfcarouge_1_1tree.html#aba65ec2d60dfbce363c20b49d78d7b2a" title="Recursively erases the specified element including its sub&#45;tree." alt="" coords="210,136,349,163"/>
+</map>

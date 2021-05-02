@@ -1,7 +1,7 @@
 var structfcarouge_1_1tree_1_1insert__return__type =
 [
-    [ "node_type", "structfcarouge_1_1tree_1_1insert__return__type.html#a77f1d6d50d26ffb370db0c108ec4be83", null ],
-    [ "inserted", "structfcarouge_1_1tree_1_1insert__return__type.html#a3321189934000899dd270ed5d4407fd2", null ],
-    [ "node", "structfcarouge_1_1tree_1_1insert__return__type.html#a594bf684d6109ce570dbc35933ba0e48", null ],
-    [ "position", "structfcarouge_1_1tree_1_1insert__return__type.html#adf0b0aabf76dc5f86e2bfce55f15a997", null ]
+    [ "node_type", "structfcarouge_1_1tree_1_1insert__return__type.html#a39a947143948529b2867aa00cb421c62", null ],
+    [ "inserted", "structfcarouge_1_1tree_1_1insert__return__type.html#a8b0206b53074a681dd3f8bb02dbc8d5e", null ],
+    [ "node", "structfcarouge_1_1tree_1_1insert__return__type.html#abee30ccefb6aae6ffee472ee64b8c32e", null ],
+    [ "position", "structfcarouge_1_1tree_1_1insert__return__type.html#a7b7da2fb9c5c7145fe0af0037c63032b", null ]
 ];

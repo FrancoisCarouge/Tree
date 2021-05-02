@@ -113,16 +113,16 @@ Variables</h2></td></tr>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree_string</a> greeting;</div>
 <div class="line"> </div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a> = greeting.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(greeting.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), <span class="stringliteral">&quot;Hello&quot;</span>);</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a> = greeting.<a class="code" href="classfcarouge_1_1tree.html#a05a0d21cc5958b57c1f30359fc4df06a">emplace</a>(greeting.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>(), <span class="stringliteral">&quot;Hello&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  </div>
-<div class="line">  greeting.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(<a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a>, <span class="stringliteral">&quot;,&quot;</span>);</div>
+<div class="line">  greeting.<a class="code" href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">push</a>(<a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a>, <span class="stringliteral">&quot;,&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> bang = greeting.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(<a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a>, <span class="stringliteral">&quot;!&quot;</span>);</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> bang = greeting.<a class="code" href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">push</a>(<a class="code" href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">root</a>, <span class="stringliteral">&quot;!&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  </div>
-<div class="line">  greeting.<a class="code" href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">emplace</a>(bang, <span class="stringliteral">&quot;World&quot;</span>);</div>
+<div class="line">  greeting.<a class="code" href="classfcarouge_1_1tree.html#a05a0d21cc5958b57c1f30359fc4df06a">emplace</a>(bang, <span class="stringliteral">&quot;World&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  </div>
 <div class="line">  std::cout &lt;&lt; greeting &lt;&lt; std::endl;</div>
@@ -130,9 +130,9 @@ Variables</h2></td></tr>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00103">tree.hpp:104</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a217fb2d8d248bedec9126214e8c891a2"><div class="ttname"><a href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00905">tree.hpp:905</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a47c5f13aa881897e4acae42c4ae544e5"><div class="ttname"><a href="classfcarouge_1_1tree.html#a47c5f13aa881897e4acae42c4ae544e5">fcarouge::tree::emplace</a></div><div class="ttdeci">constexpr iterator emplace(const_iterator position, ArgumentsType &amp;&amp;... arguments)</div><div class="ttdoc">Inserts a constructed in-place element into the container before the position iterator as the new lef...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01286">tree.hpp:1286</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_ace557ab09e595974d1250f1c8f8d0388"><div class="ttname"><a href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">fcarouge::tree::push</a></div><div class="ttdeci">constexpr iterator push(const_iterator position, const_reference value)</div><div class="ttdoc">Inserts a copied element into the container after the last child of the position iterator as the new ...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01431">tree.hpp:1431</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a05a0d21cc5958b57c1f30359fc4df06a"><div class="ttname"><a href="classfcarouge_1_1tree.html#a05a0d21cc5958b57c1f30359fc4df06a">fcarouge::tree::emplace</a></div><div class="ttdeci">constexpr iterator emplace(const_iterator position, Arguments &amp;&amp;... arguments)</div><div class="ttdoc">Inserts a constructed in-place element into the container before the position iterator as the new lef...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01286">tree.hpp:1286</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a2af420501458626bcf8199faee60490e"><div class="ttname"><a href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">fcarouge::tree::push</a></div><div class="ttdeci">constexpr iterator push(const_iterator position, const_reference value)</div><div class="ttdoc">Inserts a copied element into the container after the last child of the position iterator as the new ...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01430">tree.hpp:1430</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a5f4dadf01e84f750474e57e1da42af18"><div class="ttname"><a href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00905">tree.hpp:905</a></div></div>
 <div class="ttc" id="anamespaceanonymous__namespace_02depth_8cpp_03_html_aae2adf4c204200232a3d3aba48c65001"><div class="ttname"><a href="namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001">anonymous_namespace{depth.cpp}::root</a></div><div class="ttdeci">auto root</div><div class="ttdef"><b>Definition:</b> <a href="depth_8cpp_source.html#l00053">depth.cpp:53</a></div></div>
 </div><!-- fragment -->
 <p>Traditional hello world demonstration. </p>
@@ -151,7 +151,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02hello__world_8cpp_03.html">anonymous_namespace{hello_world.cpp}</a></li>
-    <li class="footer">Generated on Sun May 2 2021 02:55:28 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun May 2 2021 04:52:18 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

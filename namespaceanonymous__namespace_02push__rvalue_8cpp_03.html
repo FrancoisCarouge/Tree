@@ -117,7 +117,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000118">Test:</a></b></dt><dd>Verify the post conditions on a non-trivial tree built by pushing elements.</dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000119">Test:</a></b></dt><dd>Verify the post conditions on a non-trivial tree built by pushing elements.</dd></dl>
 <div class="dotgraph">
 <img src="dot_inline_dotgraph_13.png" alt="dot_inline_dotgraph_13.png" border="0" usemap="#dot_inline_dotgraph_13.map"/>
 </div>
@@ -140,31 +140,31 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> auffay_linden;</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> element =</div>
-<div class="line">      auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 42);</div>
+<div class="line">      auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>(), 42);</div>
 <div class="line"> </div>
-<div class="line">  assert(1 == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() &amp;&amp;</div>
+<div class="line">  assert(1 == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">size</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container must have one node upon pushing one value.&quot;</span>);</div>
 <div class="line">  assert(*element == 42 &amp;&amp; <span class="stringliteral">&quot;The solely pushed element iterator value must be &quot;</span></div>
 <div class="line">                           <span class="stringliteral">&quot;equal to pushed value.&quot;</span>);</div>
-<div class="line">  assert(element == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>() &amp;&amp;</div>
+<div class="line">  assert(element == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The solely pushed element iterator must be equal to the container&#39;s &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;beginning iterator.&quot;</span>);</div>
-<div class="line">  assert(*element == *auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>() &amp;&amp;</div>
+<div class="line">  assert(*element == *auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The solely pushed element iterator value must be equal to the &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;container&#39;s beginning iterator value.&quot;</span>);</div>
-<div class="line">  assert(*element == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a1452f7fc3685dd1e35314f1488f04693">front</a>() &amp;&amp;</div>
+<div class="line">  assert(*element == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a1cafa151ab382b85f01fd8dd34ad3bcd">front</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The solely pushed element iterator value must be equal to the &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;container&#39;s front value.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00103">tree.hpp:104</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a1452f7fc3685dd1e35314f1488f04693"><div class="ttname"><a href="classfcarouge_1_1tree.html#a1452f7fc3685dd1e35314f1488f04693">fcarouge::tree::front</a></div><div class="ttdeci">constexpr reference front()</div><div class="ttdoc">Returns a reference to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00872">tree.hpp:872</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a217fb2d8d248bedec9126214e8c891a2"><div class="ttname"><a href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00905">tree.hpp:905</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a93d87b031d97d57d50ad5965585a6e79"><div class="ttname"><a href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01003">tree.hpp:1003</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_ace557ab09e595974d1250f1c8f8d0388"><div class="ttname"><a href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">fcarouge::tree::push</a></div><div class="ttdeci">constexpr iterator push(const_iterator position, const_reference value)</div><div class="ttdoc">Inserts a copied element into the container after the last child of the position iterator as the new ...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01431">tree.hpp:1431</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a1cafa151ab382b85f01fd8dd34ad3bcd"><div class="ttname"><a href="classfcarouge_1_1tree.html#a1cafa151ab382b85f01fd8dd34ad3bcd">fcarouge::tree::front</a></div><div class="ttdeci">constexpr reference front()</div><div class="ttdoc">Returns a reference to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00872">tree.hpp:872</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a2af420501458626bcf8199faee60490e"><div class="ttname"><a href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">fcarouge::tree::push</a></div><div class="ttdeci">constexpr iterator push(const_iterator position, const_reference value)</div><div class="ttdoc">Inserts a copied element into the container after the last child of the position iterator as the new ...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01430">tree.hpp:1430</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a5f4dadf01e84f750474e57e1da42af18"><div class="ttname"><a href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00905">tree.hpp:905</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_aa946524fdb109e331233986f44048c7b"><div class="ttname"><a href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01003">tree.hpp:1003</a></div></div>
 <div class="ttc" id="astructfcarouge_1_1tree_1_1const__iterator_html"><div class="ttname"><a href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree::const_iterator</a></div><div class="ttdoc">Type to identify and traverse the constant elements of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00315">tree.hpp:315</a></div></div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000108">Test:</a></b></dt><dd>Verify the post conditions on pushing a moved element upon the beginning iterator of an empty container. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000114">Test:</a></b></dt><dd>Verify the post conditions on pushing a moved element upon the beginning iterator of an empty container. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00042">42</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
 
@@ -184,26 +184,26 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> auffay_linden;</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> element =</div>
-<div class="line">      auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">end</a>(), 42);</div>
+<div class="line">      auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>(), 42);</div>
 <div class="line"> </div>
-<div class="line">  assert(1 == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() &amp;&amp;</div>
+<div class="line">  assert(1 == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">size</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container must have one node upon pushing one value.&quot;</span>);</div>
 <div class="line">  assert(*element == 42 &amp;&amp; <span class="stringliteral">&quot;The solely pushed element iterator value must be &quot;</span></div>
 <div class="line">                           <span class="stringliteral">&quot;equal to pushed value.&quot;</span>);</div>
-<div class="line">  assert(element == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>() &amp;&amp;</div>
+<div class="line">  assert(element == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The solely pushed element iterator must be equal to the container&#39;s &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;beginning iterator.&quot;</span>);</div>
-<div class="line">  assert(*element == *auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>() &amp;&amp;</div>
+<div class="line">  assert(*element == *auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The solely pushed element iterator value must be equal to the &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;container&#39;s beginning iterator value.&quot;</span>);</div>
-<div class="line">  assert(*element == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a1452f7fc3685dd1e35314f1488f04693">front</a>() &amp;&amp;</div>
+<div class="line">  assert(*element == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a1cafa151ab382b85f01fd8dd34ad3bcd">front</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The solely pushed element iterator value must be equal to the &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;container&#39;s front value.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_afca5d640f5205c58695f271bea0fd8ac"><div class="ttname"><a href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00946">tree.hpp:946</a></div></div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000110">Test:</a></b></dt><dd>Verify the post conditions on pushing a moved element upon the ending iterator of an empty container. </dd></dl>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_aee5d504629130357d1cea2d53e151f66"><div class="ttname"><a href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00946">tree.hpp:946</a></div></div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000115">Test:</a></b></dt><dd>Verify the post conditions on pushing a moved element upon the ending iterator of an empty container. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00066">66</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
 
@@ -222,19 +222,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> auffay_linden;</div>
-<div class="line">  auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">end</a>(), 41);</div>
-<div class="line">  auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">end</a>(), 42);</div>
+<div class="line">  auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>(), 41);</div>
+<div class="line">  auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>(), 42);</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> element =</div>
-<div class="line">      auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">end</a>(), 43);</div>
+<div class="line">      auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>(), 43);</div>
 <div class="line"> </div>
-<div class="line">  assert(3 == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() &amp;&amp;</div>
+<div class="line">  assert(3 == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">size</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container must have three nodes upon pushing a third value.&quot;</span>);</div>
 <div class="line">  assert(*element == 43 &amp;&amp; <span class="stringliteral">&quot;The pushed element iterator value must be &quot;</span></div>
 <div class="line">                           <span class="stringliteral">&quot;equal to the pushed value.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000116">Test:</a></b></dt><dd>Verify the post conditions on pushing three elements by value upon the ending iterator of a container containing a single value, exercising pushing upon the root with child. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000118">Test:</a></b></dt><dd>Verify the post conditions on pushing three elements by value upon the ending iterator of a container containing a single value, exercising pushing upon the root with child. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00123">123</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
 
@@ -253,18 +253,18 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> auffay_linden;</div>
-<div class="line">  auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 41);</div>
+<div class="line">  auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>(), 41);</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> element =</div>
-<div class="line">      auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 42);</div>
+<div class="line">      auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>(), 42);</div>
 <div class="line"> </div>
-<div class="line">  assert(2 == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() &amp;&amp;</div>
+<div class="line">  assert(2 == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">size</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container must have two nodes upon pushing a second value.&quot;</span>);</div>
 <div class="line">  assert(*element == 42 &amp;&amp; <span class="stringliteral">&quot;The pushed element iterator value must be &quot;</span></div>
 <div class="line">                           <span class="stringliteral">&quot;equal to pushed value.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000112">Test:</a></b></dt><dd>Verify the post conditions on pushing another moved element upon the beginning iterator of a container containing a single value. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000116">Test:</a></b></dt><dd>Verify the post conditions on pushing another moved element upon the beginning iterator of a container containing a single value. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00090">90</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
 
@@ -283,18 +283,18 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> auffay_linden;</div>
-<div class="line">  auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">end</a>(), 41);</div>
+<div class="line">  auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>(), 41);</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> element =</div>
-<div class="line">      auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#ace557ab09e595974d1250f1c8f8d0388">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">end</a>(), 42);</div>
+<div class="line">      auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">push</a>(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>(), 42);</div>
 <div class="line"> </div>
-<div class="line">  assert(2 == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() &amp;&amp;</div>
+<div class="line">  assert(2 == auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">size</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container must have two nodes upon pushing a second value.&quot;</span>);</div>
 <div class="line">  assert(*element == 42 &amp;&amp; <span class="stringliteral">&quot;The pushed element iterator value must be &quot;</span></div>
 <div class="line">                           <span class="stringliteral">&quot;equal to pushed value.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000114">Test:</a></b></dt><dd>Verify the post conditions on pushing another moved element upon the ending iterator of a container containing a single value. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000117">Test:</a></b></dt><dd>Verify the post conditions on pushing another moved element upon the ending iterator of a container containing a single value. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="push__rvalue_8cpp_source.html#l00106">106</a> of file <a class="el" href="push__rvalue_8cpp_source.html">push_rvalue.cpp</a>.</p>
 
@@ -306,7 +306,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02push__rvalue_8cpp_03.html">anonymous_namespace{push_rvalue.cpp}</a></li>
-    <li class="footer">Generated on Sun May 2 2021 02:55:28 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun May 2 2021 04:52:18 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

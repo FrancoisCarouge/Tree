@@ -118,38 +118,38 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> allouville_oak;</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree&lt;int&gt;::iterator</a> node =</div>
-<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 42);</div>
+<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>(), 42);</div>
 <div class="line"> </div>
-<div class="line">  assert(1 == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() &amp;&amp;</div>
+<div class="line">  assert(1 == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">size</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container must contain one element as built.&quot;</span>);</div>
-<div class="line">  assert(node == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>() &amp;&amp;</div>
+<div class="line">  assert(node == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning iterator must be equal to the expected &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;root node.&quot;</span>);</div>
 <div class="line">  assert(</div>
-<div class="line">      42 == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>() &amp;&amp;</div>
+<div class="line">      42 == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() &amp;&amp;</div>
 <div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning iterator value must be equal to the expected &quot;</span></div>
 <div class="line">      <span class="stringliteral">&quot;root node value.&quot;</span>);</div>
 <div class="line">  assert(</div>
-<div class="line">      *node == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>() &amp;&amp;</div>
+<div class="line">      *node == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() &amp;&amp;</div>
 <div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning iterator value must be equal to the expected &quot;</span></div>
 <div class="line">      <span class="stringliteral">&quot;root node value.&quot;</span>);</div>
-<div class="line">  assert(*node == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a4d914f8d4ce69f0ecd580e7ddb5d16d1">cbegin</a>() &amp;&amp;</div>
+<div class="line">  assert(*node == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0e0c0413cac0cb6f03821382f6069e0a">cbegin</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s constant beginning iterator value must be equal to &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;the expected root node value.&quot;</span>);</div>
-<div class="line">  assert(*node == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a1452f7fc3685dd1e35314f1488f04693">front</a>() &amp;&amp;</div>
+<div class="line">  assert(*node == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a1cafa151ab382b85f01fd8dd34ad3bcd">front</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s front node value must be equal to the expected root &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;node value.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00103">tree.hpp:104</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a1452f7fc3685dd1e35314f1488f04693"><div class="ttname"><a href="classfcarouge_1_1tree.html#a1452f7fc3685dd1e35314f1488f04693">fcarouge::tree::front</a></div><div class="ttdeci">constexpr reference front()</div><div class="ttdoc">Returns a reference to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00872">tree.hpp:872</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a217fb2d8d248bedec9126214e8c891a2"><div class="ttname"><a href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00905">tree.hpp:905</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a4d914f8d4ce69f0ecd580e7ddb5d16d1"><div class="ttname"><a href="classfcarouge_1_1tree.html#a4d914f8d4ce69f0ecd580e7ddb5d16d1">fcarouge::tree::cbegin</a></div><div class="ttdeci">constexpr const_iterator cbegin() const noexcept</div><div class="ttdoc">Returns a constant iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00931">tree.hpp:931</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a8edd8fee6cbdf845fa8d765f8400fbfa"><div class="ttname"><a href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">fcarouge::tree::insert</a></div><div class="ttdeci">constexpr iterator insert(const_iterator position, const_reference value)</div><div class="ttdoc">Inserts a copied element into the container before the position iterator as the new left sibling.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01077">tree.hpp:1077</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a93d87b031d97d57d50ad5965585a6e79"><div class="ttname"><a href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01003">tree.hpp:1003</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a0c07ae48c086303171eb22ddf09fd1a9"><div class="ttname"><a href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">fcarouge::tree::insert</a></div><div class="ttdeci">constexpr iterator insert(const_iterator position, const_reference value)</div><div class="ttdoc">Inserts a copied element into the container before the position iterator as the new left sibling.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01077">tree.hpp:1077</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a0e0c0413cac0cb6f03821382f6069e0a"><div class="ttname"><a href="classfcarouge_1_1tree.html#a0e0c0413cac0cb6f03821382f6069e0a">fcarouge::tree::cbegin</a></div><div class="ttdeci">constexpr const_iterator cbegin() const noexcept</div><div class="ttdoc">Returns a constant iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00931">tree.hpp:931</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a1cafa151ab382b85f01fd8dd34ad3bcd"><div class="ttname"><a href="classfcarouge_1_1tree.html#a1cafa151ab382b85f01fd8dd34ad3bcd">fcarouge::tree::front</a></div><div class="ttdeci">constexpr reference front()</div><div class="ttdoc">Returns a reference to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00872">tree.hpp:872</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a5f4dadf01e84f750474e57e1da42af18"><div class="ttname"><a href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00905">tree.hpp:905</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_aa946524fdb109e331233986f44048c7b"><div class="ttname"><a href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01003">tree.hpp:1003</a></div></div>
 <div class="ttc" id="astructfcarouge_1_1tree_1_1iterator_html"><div class="ttname"><a href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree::iterator</a></div><div class="ttdoc">Type to identify and traverse the elements of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00215">tree.hpp:215</a></div></div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000074">Test:</a></b></dt><dd>Verify the post conditions on inserting an element at the beginning iterator of an emptry tree. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000075">Test:</a></b></dt><dd>Verify the post conditions on inserting an element at the beginning iterator of an emptry tree. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="insert__rvalue_8cpp_source.html#l00039">39</a> of file <a class="el" href="insert__rvalue_8cpp_source.html">insert_rvalue.cpp</a>.</p>
 
@@ -169,32 +169,32 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> allouville_oak;</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree&lt;int&gt;::iterator</a> node =</div>
-<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">end</a>(), 42);</div>
+<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>(), 42);</div>
 <div class="line"> </div>
-<div class="line">  assert(1 == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() &amp;&amp;</div>
+<div class="line">  assert(1 == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">size</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container must contain one element as built.&quot;</span>);</div>
-<div class="line">  assert(node == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>() &amp;&amp;</div>
+<div class="line">  assert(node == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning iterator must be equal to the expected &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;root node.&quot;</span>);</div>
 <div class="line">  assert(</div>
-<div class="line">      42 == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>() &amp;&amp;</div>
+<div class="line">      42 == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() &amp;&amp;</div>
 <div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning iterator value must be equal to the expected &quot;</span></div>
 <div class="line">      <span class="stringliteral">&quot;root node value.&quot;</span>);</div>
 <div class="line">  assert(</div>
-<div class="line">      *node == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>() &amp;&amp;</div>
+<div class="line">      *node == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() &amp;&amp;</div>
 <div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning iterator value must be equal to the expected &quot;</span></div>
 <div class="line">      <span class="stringliteral">&quot;root node value.&quot;</span>);</div>
-<div class="line">  assert(*node == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a4d914f8d4ce69f0ecd580e7ddb5d16d1">cbegin</a>() &amp;&amp;</div>
+<div class="line">  assert(*node == *allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0e0c0413cac0cb6f03821382f6069e0a">cbegin</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s constant beginning iterator value must be equal to &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;the expected root node value.&quot;</span>);</div>
-<div class="line">  assert(*node == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a1452f7fc3685dd1e35314f1488f04693">front</a>() &amp;&amp;</div>
+<div class="line">  assert(*node == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a1cafa151ab382b85f01fd8dd34ad3bcd">front</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s front node value must be equal to the expected root &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;node value.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_afca5d640f5205c58695f271bea0fd8ac"><div class="ttname"><a href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00946">tree.hpp:946</a></div></div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000076">Test:</a></b></dt><dd>Verify the post conditions on inserting an element at the ending iterator of an emptry tree. </dd></dl>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_aee5d504629130357d1cea2d53e151f66"><div class="ttname"><a href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00946">tree.hpp:946</a></div></div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000078">Test:</a></b></dt><dd>Verify the post conditions on inserting an element at the ending iterator of an emptry tree. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="insert__rvalue_8cpp_source.html#l00069">69</a> of file <a class="el" href="insert__rvalue_8cpp_source.html">insert_rvalue.cpp</a>.</p>
 
@@ -214,20 +214,20 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> allouville_oak;</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree&lt;int&gt;::iterator</a> node33 =</div>
-<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), 33);</div>
-<div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree&lt;int&gt;::iterator</a> node3 = allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(node33, 3);</div>
+<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>(), 33);</div>
+<div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree&lt;int&gt;::iterator</a> node3 = allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(node33, 3);</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree&lt;int&gt;::iterator</a> node333 =</div>
-<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#afca5d640f5205c58695f271bea0fd8ac">end</a>(), 333);</div>
+<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>(), 333);</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;int&gt;::const_iterator</a> node0 =</div>
-<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a217fb2d8d248bedec9126214e8c891a2">begin</a>(), -1);</div>
-<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(node3, 1);</div>
-<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(node3, 2);</div>
-<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(node33, 31);</div>
-<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(node33, 32);</div>
-<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(node333, 331);</div>
-<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a8edd8fee6cbdf845fa8d765f8400fbfa">insert</a>(node333, 332);</div>
+<div class="line">      allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>(), -1);</div>
+<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(node3, 1);</div>
+<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(node3, 2);</div>
+<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(node33, 31);</div>
+<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(node33, 32);</div>
+<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(node333, 331);</div>
+<div class="line">  allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0c07ae48c086303171eb22ddf09fd1a9">insert</a>(node333, 332);</div>
 <div class="line"> </div>
-<div class="line">  assert(10 == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a93d87b031d97d57d50ad5965585a6e79">size</a>() &amp;&amp;</div>
+<div class="line">  assert(10 == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">size</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container must contain 10 elements as built.&quot;</span>);</div>
 <div class="line">  assert(-1 == *node0 &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s node iterator value must be equal to the expected &quot;</span></div>
@@ -268,7 +268,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000078">Test:</a></b></dt><dd>Verify the post conditions on inserting an element at the root iterator. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000079">Test:</a></b></dt><dd>Verify the post conditions on inserting an element at the root iterator. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="insert__rvalue_8cpp_source.html#l00099">99</a> of file <a class="el" href="insert__rvalue_8cpp_source.html">insert_rvalue.cpp</a>.</p>
 
@@ -310,7 +310,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02insert__rvalue_8cpp_03.html">anonymous_namespace{insert_rvalue.cpp}</a></li>
-    <li class="footer">Generated on Sun May 2 2021 02:55:28 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun May 2 2021 04:52:18 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
