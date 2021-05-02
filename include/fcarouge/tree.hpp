@@ -323,10 +323,10 @@ template <typename Type, typename AllocatorType> class tree
     using difference_type = tree::difference_type;
 
     //! @brief The reference type of the contained data elements.
-    using reference = tree::reference;
+    using reference = tree::const_reference;
 
     //! @brief The pointer type of the contained data elements.
-    using pointer = tree::pointer;
+    using pointer = tree::const_pointer;
 
     //! @brief The LegacyForwardIterator requirements category of the iterator.
     using iterator_category = std::forward_iterator_tag;
