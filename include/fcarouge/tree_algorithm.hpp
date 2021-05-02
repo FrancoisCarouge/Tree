@@ -60,10 +60,9 @@ namespace fcarouge
 //!
 //! @complexity Linear in depth that is, at worst linear in size of the other
 //! container.
-template <typename IteratorType>
-[[nodiscard]] constexpr
-    typename std::iterator_traits<IteratorType>::difference_type
-    depth(IteratorType position)
+template <typename Iterator>
+[[nodiscard]] constexpr typename std::iterator_traits<Iterator>::difference_type
+depth(Iterator position)
 {
   auto depth = 0;
   const auto *ancestor = position.node;
@@ -75,7 +74,6 @@ template <typename IteratorType>
 }
 
 //! @}
-
 } // namespace fcarouge
 
 #endif // FCAROUGE_TREE_ALGORITHM_HPP
