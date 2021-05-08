@@ -44,5 +44,7 @@ var tree__fwd_8hpp =
     [ "tree_uintmax_t", "tree__fwd_8hpp.html#a6339ad55e3f99a4a3a437fb34e13b3d8", null ],
     [ "tree_uintptr_t", "tree__fwd_8hpp.html#a37edb71aaf9b50bec8b41904e760e40f", null ],
     [ "tree_wchar_t", "tree__fwd_8hpp.html#ad3855f2615c30ddecb8baab7878a9c55", null ],
-    [ "tree_wstring", "tree__fwd_8hpp.html#a80a2f298466170e035dd30f87636387d", null ]
+    [ "tree_wstring", "tree__fwd_8hpp.html#a80a2f298466170e035dd30f87636387d", null ],
+    [ "TreeMemberConstIterator", "tree__fwd_8hpp.html#a6a8bda944ec7306b90d4fb9b45163348", null ],
+    [ "TreeMemberIterator", "tree__fwd_8hpp.html#aa332597beab331cea8c242be8a72101f", null ]
 ];

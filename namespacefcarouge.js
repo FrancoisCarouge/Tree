@@ -47,5 +47,7 @@ var namespacefcarouge =
     [ "tree_uintptr_t", "namespacefcarouge.html#a37edb71aaf9b50bec8b41904e760e40f", null ],
     [ "tree_wchar_t", "namespacefcarouge.html#ad3855f2615c30ddecb8baab7878a9c55", null ],
     [ "tree_wstring", "namespacefcarouge.html#a80a2f298466170e035dd30f87636387d", null ],
-    [ "depth", "namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48", null ]
+    [ "depth", "namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48", null ],
+    [ "TreeMemberConstIterator", "namespacefcarouge.html#a6a8bda944ec7306b90d4fb9b45163348", null ],
+    [ "TreeMemberIterator", "namespacefcarouge.html#aa332597beab331cea8c242be8a72101f", null ]
 ];

@@ -32,30 +32,33 @@ var NAVTREE =
       [ "Library", "index.html#autotoc_md16", null ],
       [ "File include/fcarouge/tree.hpp", "index.html#autotoc_md17", [
         [ "Includes", "index.html#autotoc_md18", null ],
-        [ "Namespaces", "index.html#autotoc_md19", null ],
-        [ "Classes", "index.html#autotoc_md20", null ]
+        [ "Classes", "index.html#autotoc_md19", null ],
+        [ "Non-Member Functions", "index.html#autotoc_md20", null ]
       ] ],
       [ "File include/fcarouge/tree_fwd.hpp", "index.html#autotoc_md21", [
-        [ "Type Aliases", "index.html#autotoc_md22", null ],
-        [ "Includes", "index.html#autotoc_md23", null ]
+        [ "Includes", "index.html#autotoc_md22", null ],
+        [ "Forward Declarations", "index.html#autotoc_md23", null ],
+        [ "Type Aliases", "index.html#autotoc_md24", null ],
+        [ "Concepts", "index.html#autotoc_md25", null ]
       ] ],
-      [ "File include/fcarouge/tree_iterator.hpp", "index.html#autotoc_md24", null ],
-      [ "File include/fcarouge/tree_iterator_fwd.hpp", "index.html#autotoc_md25", null ],
-      [ "File include/fcarouge/tree_algorithm.hpp", "index.html#autotoc_md26", [
-        [ "Observing Operations", "index.html#autotoc_md27", null ]
+      [ "File include/fcarouge/tree_iterator.hpp", "index.html#autotoc_md26", null ],
+      [ "File include/fcarouge/tree_iterator_fwd.hpp", "index.html#autotoc_md27", null ],
+      [ "File include/fcarouge/tree_algorithm.hpp", "index.html#autotoc_md28", [
+        [ "Observing Operations", "index.html#autotoc_md29", null ]
       ] ],
-      [ "Class fcarouge::tree", "index.html#autotoc_md28", [
-        [ "Template Parameters", "index.html#autotoc_md29", null ],
-        [ "Member Types", "index.html#autotoc_md30", null ],
-        [ "Member Functions", "index.html#autotoc_md31", [
-          [ "Element Access", "index.html#autotoc_md32", null ],
-          [ "Iterators", "index.html#autotoc_md33", null ],
-          [ "Capacity", "index.html#autotoc_md34", null ],
-          [ "Modifiers", "index.html#autotoc_md35", null ]
+      [ "Namespaces", "index.html#autotoc_md30", null ],
+      [ "Class fcarouge::tree", "index.html#autotoc_md31", [
+        [ "Template Parameters", "index.html#autotoc_md32", null ],
+        [ "Member Types", "index.html#autotoc_md33", null ],
+        [ "Member Functions", "index.html#autotoc_md34", [
+          [ "Element Access", "index.html#autotoc_md35", null ],
+          [ "Iterators", "index.html#autotoc_md36", null ],
+          [ "Capacity", "index.html#autotoc_md37", null ],
+          [ "Modifiers", "index.html#autotoc_md38", null ]
         ] ]
       ] ],
-      [ "Hard Lessons Learned", "index.html#autotoc_md36", null ],
-      [ "License", "index.html#autotoc_md37", null ]
+      [ "Hard Lessons Learned", "index.html#autotoc_md39", null ],
+      [ "License", "index.html#autotoc_md40", null ]
     ] ],
     [ "Contributor Covenant Code of Conduct", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html", [
       [ "Our Pledge", "md__c_o_d_e__o_f__c_o_n_d_u_c_t.html#autotoc_md1", null ],
@@ -72,8 +75,8 @@ var NAVTREE =
       [ "Security Policy", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md11", null ]
     ] ],
     [ "Security Policy", "md__s_e_c_u_r_i_t_y.html", [
-      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md39", null ],
-      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md40", null ]
+      [ "Supported Versions", "md__s_e_c_u_r_i_t_y.html#autotoc_md42", null ],
+      [ "Reporting a Vulnerability", "md__s_e_c_u_r_i_t_y.html#autotoc_md43", null ]
     ] ],
     [ "Test List", "test.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -108,9 +111,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"insert__lvalue_8cpp.html#a4e707fecb8265f0375c7d908d896c8dd",
-"namespacefcarouge.html#aa68a35e729f4cfc5b40b89ccc99d985f"
+"annotated.html",
+"insert__lvalue_8cpp.html#a15258abfeec9990bfd6a25b46f8d1e6b",
+"namespacefcarouge.html#aa0ca4a7e7481c797a0dca13c5135e554"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

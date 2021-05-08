@@ -1,13 +1,13 @@
 <map id="include/fcarouge/tree.hpp" name="include/fcarouge/tree.hpp">
-<area shape="rect" id="node1" title="Tree container types and canonical operations definitions header." alt="" coords="261,5,428,32"/>
+<area shape="rect" id="node1" title="Tree container types and canonical operations definitions header." alt="" coords="240,5,407,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,71,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="95,80,157,107"/>
 <area shape="rect" id="node4" title=" " alt="" coords="182,80,235,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="284,155,352,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="310,80,379,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="600,155,655,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="523,80,606,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="631,80,683,107"/>
-<area shape="rect" id="node10" href="$tree__fwd_8hpp.html" title="Forward companion header for the tree container library types." alt="" coords="403,80,499,107"/>
-<area shape="rect" id="node11" title=" " alt="" coords="421,155,482,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="207,155,275,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="531,80,601,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="299,155,353,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="463,155,546,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="625,80,677,107"/>
+<area shape="rect" id="node10" href="$tree__fwd_8hpp.html" title="Forward companion header for the tree container library types." alt="" coords="361,80,457,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="378,155,439,181"/>
 </map>
