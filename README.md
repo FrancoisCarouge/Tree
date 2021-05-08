@@ -79,15 +79,18 @@ Hello
   - [Library](#library)
   - [File include/fcarouge/tree.hpp](#file-includefcarougetreehpp)
     - [Includes](#includes)
-    - [Namespaces](#namespaces)
     - [Classes](#classes)
+    - [Non-Member Functions](#non-member-functions)
   - [File include/fcarouge/tree_fwd.hpp](#file-includefcarougetree_fwdhpp)
-    - [Type Aliases](#type-aliases)
     - [Includes](#includes-1)
+    - [Forward Declarations](#forward-declarations)
+    - [Type Aliases](#type-aliases)
+    - [Concepts](#concepts)
   - [File include/fcarouge/tree_iterator.hpp](#file-includefcarougetree_iteratorhpp)
   - [File include/fcarouge/tree_iterator_fwd.hpp](#file-includefcarougetree_iterator_fwdhpp)
   - [File include/fcarouge/tree_algorithm.hpp](#file-includefcarougetree_algorithmhpp)
     - [Observing Operations](#observing-operations)
+  - [Namespaces](#namespaces)
   - [Class fcarouge::tree](#class-fcarougetree)
     - [Template Parameters](#template-parameters)
     - [Member Types](#member-types)
@@ -116,17 +119,19 @@ Container definition.
 | `<type_traits>` | Standard type traits support. |
 | `<utility>` | Standard moving and forwarding resources support. |
 
-### Namespaces
-
-| Namespace | Definition |
-| --- | --- |
-| `fcarouge` | François Carouge's projects namespace. |
-
 ### Classes
 
 | Class | Definition |
 | --- | --- |
-| `tree` | Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. |
+| `tree` | Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. Fully defined as `template <typename Type, typename Allocator = std::allocator<Type>> class tree`. |
+
+### Non-Member Functions
+
+| Function | Definition |
+| --- | --- |
+| operator== | Lexicographically compares the values in the container. |
+| operator<=> | Lexicographically compares the values in the container. |
+| operator<< | Stream input converts the container representation as a FormattedOutputFunction. |
 
 ## File include/fcarouge/tree_fwd.hpp
 
@@ -135,6 +140,20 @@ Minimal forward declaration header for the container.
 - forward declares the `tree` class, and
 - defines its common type aliases, and
 - includes its minimum necessary standard library dependencies.
+
+### Includes
+
+| Include | Definition |
+| --- | --- |
+| `<cstdint>` | Standard fixed width integer types support. |
+| `<memory>` | Standard construction, allocation, and addressing support. |
+| `<string>` | Standard string support. |
+
+### Forward Declarations
+
+| Declaration | Definition |
+| --- | --- |
+| `tree` | Generic non-linear non-associative unordered recursively referenced collection of nodes, each containing a value. Fully defined as `template <typename Type, typename Allocator = std::allocator<Type>> class tree`. |
 
 ### Type Aliases
 
@@ -188,13 +207,12 @@ Type aliases are provided for a variety of fundamental and standard types, in th
 | `tree_u32string` | `tree<std::u32string>` |
 | `tree_wstring` | `tree<std::wstring>` |
 
-### Includes
+### Concepts
 
-| Include | Definition |
+| Concept | Definition |
 | --- | --- |
-| `<cstdint>` | Standard fixed width integer types support. |
-| `<memory>` | Standard construction, allocation, and addressing support. |
-| `<string>` | Standard string support. |
+| `TreeMemberConstIterator` | Tree container member constant container iterators concept. |
+| `TreeMemberIterator` | Tree container member iterators concept. |
 
 ## File include/fcarouge/tree_iterator.hpp
 
@@ -213,6 +231,12 @@ Container's algorithms definitions.
 | Observing Operation | Definition |
 | --- | --- |
 | `depth` | Depth of the path from the root, top element to the iterated node. |
+
+## Namespaces
+
+| Namespace | Definition |
+| --- | --- |
+| `fcarouge` | François Carouge's projects namespace. |
 
 ## Class fcarouge::tree
 

@@ -54,6 +54,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <string>
 // std::string std::u16string std::u32string std::u8string std::wstring
 
+#include <type_traits>
+// std::is_same_v
+
 //! @namespace fcarouge Francois Carouge's projects namespace. Lowers the name
 //! conflict probability in large projects. Use using-declarations or
 //! namespace-alias-definition per your project guidelines.
@@ -162,6 +165,37 @@ using tree_wstring = tree<std::wstring, Allocator>;
 
 //! @}
 
+//! @name Concepts
+//! @{
+
+//! @brief Tree member constant container iterators concept.
+//!
+//! @details Supports cv-qualifiers and references.
+//!
+//! @tparam ConstIterator The type to check for tree member constant container
+//! iterator constaints.
+template <typename ConstIterator>
+concept TreeMemberConstIterator = std::is_same_v<
+    ConstIterator,
+    std::remove_cvref_t<typename tree<typename std::iterator_traits<
+        ConstIterator>::value_type>::const_iterator>>;
+
+//! @brief Tree member iterators concept.
+//!
+//! @details Tree member constant container iterators are included. Supports
+//! cv-qualifiers and references.
+//!
+//! @tparam Iterator The type to check for tree member container iterator
+//! constaints.
+template <typename Iterator>
+concept TreeMemberIterator =
+    std::is_same_v<
+        Iterator,
+        std::remove_cvref_t<typename tree<
+            typename std::iterator_traits<Iterator>::value_type>::iterator>> ||
+    TreeMemberConstIterator<Iterator>;
+
+//! @}
 } // namespace fcarouge
 
 #endif // FCAROUGE_TREE_FWD_HPP
