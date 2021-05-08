@@ -57,9 +57,10 @@ namespace
   assert(auffay_linden.begin() != auffay_linden.end() &&
          "The container's beginning and ending iterators must not be "
          "equal upon pushing in an element.");
-  assert(auffay_linden.cbegin() != auffay_linden.cend() &&
-         "The container's beginning and ending constant iterators must "
-         "not be equal upon pushing in an element.");
+  assert(
+      auffay_linden.cbegin() != auffay_linden.cend() &&
+      "The container's beginning and ending constant container iterators must "
+      "not be equal upon pushing in an element.");
 
   return 0;
 }();
@@ -89,9 +90,10 @@ namespace
   assert(auffay_linden.begin() != auffay_linden.end() &&
          "The container's beginning and ending iterators must not be "
          "equal upon pushing in four elements.");
-  assert(auffay_linden.cbegin() != auffay_linden.cend() &&
-         "The container's beginning and ending constant iterators must "
-         "not be equal upon pushing in four elements.");
+  assert(
+      auffay_linden.cbegin() != auffay_linden.cend() &&
+      "The container's beginning and ending constant container iterators must "
+      "not be equal upon pushing in four elements.");
 
   return 0;
 }();

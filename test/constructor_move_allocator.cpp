@@ -105,8 +105,8 @@ namespace
          "The container's beginning and ending iterators must not be equal on "
          "move-constructing a tree.");
   assert(allouville_oak.cbegin() != allouville_oak.cend() &&
-         "The container's beginning and ending constant iterators must not be "
-         "equal on move-constructing a tree.");
+         "The container's beginning and ending constant container iterators "
+         "must not be equal on move-constructing a tree.");
 
   return 0;
 }();

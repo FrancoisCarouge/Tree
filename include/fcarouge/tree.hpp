@@ -310,8 +310,8 @@ template <typename Type, typename Allocator> class tree
   //! @brief Type to identify and traverse the constant elements of the
   //! container.
   //!
-  //! @details The iteration order of the standard constant iterator is
-  //! unspecified, except that each element is visited only once.
+  //! @details The iteration order of the standard constant container iterator
+  //! is unspecified, except that each element is visited only once.
   struct const_iterator {
     //! @name Public Member Types
     //! @{
@@ -336,21 +336,22 @@ template <typename Type, typename Allocator> class tree
     //! @name Public Member Functions
     //! @{
 
-    //! @brief Default constructor needed for non-aggregate constant iterator.
+    //! @brief Default constructor needed for non-aggregate constant container
+    //! iterator.
     //!
     //! @details The default constructor is provided to allow simple default
     //! construction since the conversion constructor makes the constant
     //! iterator a non-aggregate type.
     constexpr const_iterator() noexcept = default;
 
-    //! @brief Implicit iterator to constant iterator conversion.
+    //! @brief Implicit iterator to constant container iterator conversion.
     //!
     //! @details The regular, i.e. non-constant, iterator type is implicitely
-    //! convertible to the constant iterator type per requirements. The
-    //! conversion is performed through a (non-explicit) converting constructor.
-    //! A conversion operator is not implemented to avoid disabling implicit
-    //! move. Consequently the constant iterator is no longer an aggregate type
-    //! hence disabling aggregate initialization.
+    //! convertible to the constant container iterator type per requirements.
+    //! The conversion is performed through a (non-explicit) converting
+    //! constructor. A conversion operator is not implemented to avoid disabling
+    //! implicit move. Consequently the constant container iterator is no longer
+    //! an aggregate type hence disabling aggregate initialization.
     //!
     //! @note No conversion assignment operator is supported following the
     //! majority of Standard Template Library (STL) vendors implementation.
@@ -359,11 +360,12 @@ template <typename Type, typename Allocator> class tree
     {
     }
 
-    //! @brief Implicit node pointer to constant iterator conversion.
+    //! @brief Implicit node pointer to constant container iterator conversion.
     //!
     //! @details Aggregate initialization is not available per implicit iterator
     //! conversion construction. The node pointer type is implicitely
-    //! convertible to the constant iterator type to allow list initialization.
+    //! convertible to the constant container iterator type to allow list
+    //! initialization.
     constexpr const_iterator(internal_node_type *node) noexcept : node{ node }
     {
     }
@@ -907,10 +909,11 @@ template <typename Type, typename Allocator> class tree
     return { root };
   }
 
-  //! @brief Returns a constant iterator to the container's first element.
+  //! @brief Returns a constant container iterator to the container's first
+  //! element.
   //!
-  //! @details If the container is empty, the returned constant iterator will be
-  //! equal to `end()`.
+  //! @details If the container is empty, the returned constant container
+  //! iterator will be equal to `end()`.
   //!
   //! @return Constant iterator to the first element.
   //!
@@ -920,10 +923,11 @@ template <typename Type, typename Allocator> class tree
     return { root };
   }
 
-  //! @brief Returns a constant iterator to the container's first element.
+  //! @brief Returns a constant container iterator to the container's first
+  //! element.
   //!
-  //! @details If the container is empty, the returned constant iterator will be
-  //! equal to `end()`.
+  //! @details If the container is empty, the returned constant container
+  //! iterator will be equal to `end()`.
   //!
   //! @return Constant iterator to the first element.
   //!
@@ -938,7 +942,7 @@ template <typename Type, typename Allocator> class tree
   //!
   //! @details This element acts as a placeholder; attempting to access it
   //! results in undefined behavior. If the container is empty, the returned
-  //! constant iterator will be equal to `begin()`.
+  //! constant container iterator will be equal to `begin()`.
   //!
   //! @return Iterator to the element following the last element.
   //!
@@ -948,11 +952,12 @@ template <typename Type, typename Allocator> class tree
     return {};
   }
 
-  //! @brief Returns a constant iterator to the element past the last element.
+  //! @brief Returns a constant container iterator to the element past the last
+  //! element.
   //!
   //! @details This element acts as a placeholder; attempting to access it
   //! results in undefined behavior. If the container is empty, the returned
-  //! constant iterator will be equal to `begin()`.
+  //! constant container iterator will be equal to `begin()`.
   //!
   //! @return Constant iterator to the element following the last element.
   //!
@@ -962,11 +967,12 @@ template <typename Type, typename Allocator> class tree
     return {};
   }
 
-  //! @brief Returns a constant iterator to the element past the last element.
+  //! @brief Returns a constant container iterator to the element past the last
+  //! element.
   //!
   //! @details This element acts as a placeholder; attempting to access it
   //! results in undefined behavior. If the container is empty, the returned
-  //! constant iterator will be equal to `begin()`.
+  //! constant container iterator will be equal to `begin()`.
   //!
   //! @return Constant iterator to the element following the last element.
   //!
@@ -1066,9 +1072,9 @@ template <typename Type, typename Allocator> class tree
   //! the beginning `begin()` position as the new root. Inserts before the
   //! ending `end()` position.
   //!
-  //! @param position The constant iterator before which the new element will be
-  //! constructed. The iterator may be the beginning `begin()` or ending `end()`
-  //! iterator.
+  //! @param position The constant container iterator before which the new
+  //! element will be constructed. The iterator may be the beginning `begin()`
+  //! or ending `end()` iterator.
   //! @param value The value to copy in the the element node.
   //!
   //! @return The iterator pointing to the inserted element.
@@ -1141,9 +1147,9 @@ template <typename Type, typename Allocator> class tree
   //! the beginning `begin()` position as the new root. Inserts before the
   //! ending `end()` position.
   //!
-  //! @param position The constant iterator before which the new element will be
-  //! constructed. The iterator may be the beginning `begin()` or ending `end()`
-  //! iterator.
+  //! @param position The constant container iterator before which the new
+  //! element will be constructed. The iterator may be the beginning `begin()`
+  //! or ending `end()` iterator.
   //! @param value The value to move in the the element node.
   //!
   //! @return The iterator pointing to the inserted element.
@@ -1273,9 +1279,9 @@ template <typename Type, typename Allocator> class tree
   //! @tparam Arguments The argument types to forward to the constructor of
   //! the element.
   //!
-  //! @param position The constant iterator before which the new element will be
-  //! constructed. The iterator may be the beginning `begin()` or ending `end()`
-  //! iterator.
+  //! @param position The constant container iterator before which the new
+  //! element will be constructed. The iterator may be the beginning `begin()`
+  //! or ending `end()` iterator.
   //! @param arguments The arguments to forward to the constructor of the
   //! element.
   //!
@@ -1379,8 +1385,8 @@ template <typename Type, typename Allocator> class tree
   //! removed, that is the node and all nodes in its sub-tree. If the erased
   //! node is the root, the tree is empty.
   //!
-  //! @param position The constant iterator to the element to remove with its
-  //! subtree.
+  //! @param position The constant container iterator to the element to remove
+  //! with its subtree.
   //!
   //! @return Iterator following the last removed element. If `position` refers
   //! to the last element, then the `end()` iterator is returned.
@@ -1407,9 +1413,9 @@ template <typename Type, typename Allocator> class tree
   //! the ending `end()` position as the sole child of the last node if present,
   //! or as the root if the container is empty.
   //!
-  //! @param position The parent node constant iterator for which the element
-  //! will be inserted as the last child. The iterator may be the beginning
-  //! `begin()` or ending `end()` iterator.
+  //! @param position The parent node constant container iterator for which the
+  //! element will be inserted as the last child. The iterator may be the
+  //! beginning `begin()` or ending `end()` iterator.
   //! @param value The data of the element to insert.
   //!
   //! @return The iterator pointing to the inserted element.
@@ -1444,9 +1450,9 @@ template <typename Type, typename Allocator> class tree
   //! the ending `end()` position as the sole child of the last node if present,
   //! or as the root if the container is empty.
   //!
-  //! @param position The parent node constant iterator for which the element
-  //! will be inserted as the last child. The iterator may be the beginning
-  //! `begin()` or ending `end()` iterator.
+  //! @param position The parent node constant container iterator for which the
+  //! element will be inserted as the last child. The iterator may be the
+  //! beginning `begin()` or ending `end()` iterator.
   //! @param value The data of the element to insert.
   //!
   //! @return The iterator pointing to the inserted element.

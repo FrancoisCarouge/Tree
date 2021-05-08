@@ -58,7 +58,7 @@ namespace
       "constant equivalent type.");
   static_assert(!std::is_convertible_v<fcarouge::tree<char>::const_iterator,
                                        fcarouge::tree<char>::iterator>,
-                "The container's constant iterator type cannot be implicitely "
+                "The constant container iterator type cannot be implicitely "
                 "convertible to its non-constant equivalent type.");
 
   return 0;
