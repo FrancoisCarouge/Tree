@@ -34,10 +34,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
 namespace
 {
-//! @test Verify the constant iterator meets the forward iterator concept.
+//! @test Verify the constant container iterator meets the forward iterator
+//! concept.
 [[maybe_unused]] constexpr auto forward_iterator = []() {
   static_assert(std::forward_iterator<fcarouge::tree<int>::const_iterator>,
-                "The container's constant iterator must meet the forward "
+                "The constant container iterator must meet the forward "
                 "iterator concept.");
 
   return 0;

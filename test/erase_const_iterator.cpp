@@ -49,8 +49,8 @@ namespace
          "The container's beginning and ending iterators must be equal on "
          "erasing the sole element of a container.");
   assert(allouville_oak.cbegin() == allouville_oak.cend() &&
-         "The container's beginning and ending constant iterators must be "
-         "equal on erasing the sole element of a container.");
+         "The container's beginning and ending constant container iterators "
+         "must be equal on erasing the sole element of a container.");
   assert(iterator == allouville_oak.cend() &&
          "The iterator following the erased element must be the constant "
          "ending iterator.");
@@ -98,8 +98,8 @@ namespace
          "The container's beginning and ending iterators must be equal on "
          "erasing its root.");
   assert(allouville_oak.cbegin() == allouville_oak.cend() &&
-         "The container's beginning and ending constant iterators must be "
-         "equal on erasing its root.");
+         "The container's beginning and ending constant container iterators "
+         "must be equal on erasing its root.");
   assert(iterator == allouville_oak.cend() &&
          "The iterator following the erased last element must be the constant "
          "ending iterator.");

@@ -65,9 +65,10 @@ namespace
   assert(gouy_yew.begin() != gouy_yew.end() &&
          "The container's beginning and ending iterators must not be "
          "equal on construction by value.");
-  assert(gouy_yew.cbegin() != gouy_yew.cend() &&
-         "The container's beginning and ending constant iterators must "
-         "not be equal on construction by value.");
+  assert(
+      gouy_yew.cbegin() != gouy_yew.cend() &&
+      "The container's beginning and ending constant container iterators must "
+      "not be equal on construction by value.");
   assert('v' == gouy_yew.front() &&
          "The container's front value and value used for construction "
          "must be equal.");

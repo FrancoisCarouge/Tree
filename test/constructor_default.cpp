@@ -68,10 +68,9 @@ namespace
       allouville_oak.begin() == allouville_oak.end(),
       "The container's beginning and ending iterators must be equal on "
       "default construction.");
-  static_assert(
-      allouville_oak.cbegin() == allouville_oak.cend(),
-      "The container's beginning and ending constant iterators must be "
-      "equal on default construction.");
+  static_assert(allouville_oak.cbegin() == allouville_oak.cend(),
+                "The container's beginning and ending constant container "
+                "iterators must be equal on default construction.");
 
   return 0;
 }();
@@ -88,8 +87,8 @@ namespace
          "The container's beginning and ending iterators must be equal on "
          "default construction.");
   assert(allouville_oak.cbegin() == allouville_oak.cend() &&
-         "The container's beginning and ending constant iterators must be "
-         "equal on default construction.");
+         "The container's beginning and ending constant container iterators "
+         "must be equal on default construction.");
 
   return 0;
 }();

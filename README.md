@@ -21,7 +21,7 @@ Tree data structure for C++: generic non-linear non-associative unordered recurs
 
 - to represent, store, walk, manipulate, and search some **hierarchical** information with the purpose of deciding, routing, sorting, or composing results,
 
-**...but often you really don't!**
+**...but often you really don't.**
 
 - when one of the standard associative containers do better: `std::unordered_map`, `std::unordered_set`, `std::unordered_multimap`, `std::unordered_multiset`, or
 - when one of the standard sorted associative containers do better: `std::map`, `std::set`, `std::multi_map`, `std::multi_set`, or

@@ -64,9 +64,9 @@ namespace
   assert(bunodiere_beech.empty() && "The container must be empty.");
   assert(bunodiere_beech.begin() == bunodiere_beech.end() &&
          "The container's beginning and ending iterators must be equal.");
-  assert(
-      bunodiere_beech.cbegin() == bunodiere_beech.cend() &&
-      "The container's beginning and ending constant iterators must be equal.");
+  assert(bunodiere_beech.cbegin() == bunodiere_beech.cend() &&
+         "The container's beginning and ending constant container iterators "
+         "must be equal.");
 
   return 0;
 }();

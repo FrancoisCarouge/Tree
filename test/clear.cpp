@@ -46,10 +46,9 @@ namespace
   assert(
       maucomble_boxwood.begin() == maucomble_boxwood.end() &&
       "The cleared container's beginning and ending iterators must be equal.");
-  assert(
-      maucomble_boxwood.cbegin() == maucomble_boxwood.cend() &&
-      "The cleared container's beginning and ending constant iterators must be "
-      "equal.");
+  assert(maucomble_boxwood.cbegin() == maucomble_boxwood.cend() &&
+         "The cleared container's beginning and ending constant container "
+         "iterators must be equal.");
 
   return 0;
 }();
@@ -67,10 +66,9 @@ namespace
   assert(
       maucomble_boxwood.begin() == maucomble_boxwood.end() &&
       "The cleared container's beginning and ending iterators must be equal.");
-  assert(
-      maucomble_boxwood.cbegin() == maucomble_boxwood.cend() &&
-      "The cleared container's beginning and ending constant iterators must be "
-      "equal.");
+  assert(maucomble_boxwood.cbegin() == maucomble_boxwood.cend() &&
+         "The cleared container's beginning and ending constant container "
+         "iterators must be equal.");
 
   return 0;
 }();
@@ -111,10 +109,9 @@ namespace
   assert(
       maucomble_boxwood.begin() == maucomble_boxwood.end() &&
       "The cleared container's beginning and ending iterators must be equal.");
-  assert(
-      maucomble_boxwood.cbegin() == maucomble_boxwood.cend() &&
-      "The cleared container's beginning and ending constant iterators must be "
-      "equal.");
+  assert(maucomble_boxwood.cbegin() == maucomble_boxwood.cend() &&
+         "The cleared container's beginning and ending constant container "
+         "iterators must be equal.");
 
   return 0;
 }();

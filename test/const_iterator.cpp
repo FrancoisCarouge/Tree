@@ -43,14 +43,16 @@ namespace
 {
 //! @test Verify basic traits for the container default `const_iterator` type.
 [[maybe_unused]] constexpr auto traits = []() {
-  // The container's constant iterator cannot be an aggregate type because the
-  // iterator must be implicitely convertible to this constant iterator.
+  // The constant container iterator cannot be an aggregate type
+  // because the iterator must be implicitely convertible to this constant
+  // container iterator.
   static_assert(
       std::is_copy_constructible_v<fcarouge::tree<char>::const_iterator>,
-      "The container's constant iterator type must be copy constructible.");
+      "The constant container iterator type must be copy "
+      "constructible.");
   static_assert(std::is_trivially_copy_constructible_v<
                     fcarouge::tree<char>::const_iterator>,
-                "The container's constant iterator type must be trivially copy "
+                "The constant container iterator type must be trivially copy "
                 "constructible.");
   static_assert(
       std::is_convertible_v<fcarouge::tree<char>::iterator,
@@ -59,7 +61,7 @@ namespace
       "constant equivalent type.");
   static_assert(!std::is_convertible_v<fcarouge::tree<char>::const_iterator,
                                        fcarouge::tree<char>::iterator>,
-                "The container's constant iterator type cannot be implicitely "
+                "The constant container iterator type cannot be implicitely "
                 "convertible to its non-constant equivalent type.");
 
   return 0;
