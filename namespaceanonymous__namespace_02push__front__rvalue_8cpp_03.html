@@ -128,16 +128,17 @@ Variables</h2></td></tr>
 <div class="line">  assert(auffay_linden.begin() != auffay_linden.end() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must not be &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;equal upon pushing in four elements.&quot;</span>);</div>
-<div class="line">  assert(auffay_linden.cbegin() != auffay_linden.cend() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending constant iterators must &quot;</span></div>
-<div class="line">         <span class="stringliteral">&quot;not be equal upon pushing in four elements.&quot;</span>);</div>
+<div class="line">  assert(</div>
+<div class="line">      auffay_linden.cbegin() != auffay_linden.cend() &amp;&amp;</div>
+<div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning and ending constant container iterators must &quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;not be equal upon pushing in four elements.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00103">tree.hpp:104</a></div></div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000107">Test:</a></b></dt><dd>Verify the post conditions on pushing front two moved elements in a non-empty container. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000113">Test:</a></b></dt><dd>Verify the post conditions on pushing front two moved elements in a non-empty container. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="push__front__rvalue_8cpp_source.html#l00068">68</a> of file <a class="el" href="push__front__rvalue_8cpp_source.html">push_front_rvalue.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="push__front__rvalue_8cpp_source.html#l00069">69</a> of file <a class="el" href="push__front__rvalue_8cpp_source.html">push_front_rvalue.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,21 +170,22 @@ Variables</h2></td></tr>
 <div class="line">  assert(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() != auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>() &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must not be &quot;</span></div>
 <div class="line">         <span class="stringliteral">&quot;equal upon pushing in an element.&quot;</span>);</div>
-<div class="line">  assert(auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a0e0c0413cac0cb6f03821382f6069e0a">cbegin</a>() != auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a3ac209f34e0f1b0af7bd671e90eb4551">cend</a>() &amp;&amp;</div>
-<div class="line">         <span class="stringliteral">&quot;The container&#39;s beginning and ending constant iterators must &quot;</span></div>
-<div class="line">         <span class="stringliteral">&quot;not be equal upon pushing in an element.&quot;</span>);</div>
+<div class="line">  assert(</div>
+<div class="line">      auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a0e0c0413cac0cb6f03821382f6069e0a">cbegin</a>() != auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a3ac209f34e0f1b0af7bd671e90eb4551">cend</a>() &amp;&amp;</div>
+<div class="line">      <span class="stringliteral">&quot;The container&#39;s beginning and ending constant container iterators must &quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;not be equal upon pushing in an element.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a0e0c0413cac0cb6f03821382f6069e0a"><div class="ttname"><a href="classfcarouge_1_1tree.html#a0e0c0413cac0cb6f03821382f6069e0a">fcarouge::tree::cbegin</a></div><div class="ttdeci">constexpr const_iterator cbegin() const noexcept</div><div class="ttdoc">Returns a constant iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00931">tree.hpp:931</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a1cafa151ab382b85f01fd8dd34ad3bcd"><div class="ttname"><a href="classfcarouge_1_1tree.html#a1cafa151ab382b85f01fd8dd34ad3bcd">fcarouge::tree::front</a></div><div class="ttdeci">constexpr reference front()</div><div class="ttdoc">Returns a reference to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00872">tree.hpp:872</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a25db6e32589bf903925fe712740b6109"><div class="ttname"><a href="classfcarouge_1_1tree.html#a25db6e32589bf903925fe712740b6109">fcarouge::tree::empty</a></div><div class="ttdeci">constexpr bool empty() const noexcept</div><div class="ttdoc">Checks if the container has no elements.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00991">tree.hpp:991</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a3ac209f34e0f1b0af7bd671e90eb4551"><div class="ttname"><a href="classfcarouge_1_1tree.html#a3ac209f34e0f1b0af7bd671e90eb4551">fcarouge::tree::cend</a></div><div class="ttdeci">constexpr const_iterator cend() const noexcept</div><div class="ttdoc">Returns a constant iterator to the element past the last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00974">tree.hpp:974</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a5f4dadf01e84f750474e57e1da42af18"><div class="ttname"><a href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00905">tree.hpp:905</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_aa946524fdb109e331233986f44048c7b"><div class="ttname"><a href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01003">tree.hpp:1003</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_acf8a675389de0e841b489421a59179b6"><div class="ttname"><a href="classfcarouge_1_1tree.html#acf8a675389de0e841b489421a59179b6">fcarouge::tree::push_front</a></div><div class="ttdeci">constexpr void push_front(const_reference value)</div><div class="ttdoc">Prepends a copied element to the beginning of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01487">tree.hpp:1487</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_aee5d504629130357d1cea2d53e151f66"><div class="ttname"><a href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00946">tree.hpp:946</a></div></div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000106">Test:</a></b></dt><dd>Verify the post conditions on pushing front a moved element in an empty container. </dd></dl>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a0e0c0413cac0cb6f03821382f6069e0a"><div class="ttname"><a href="classfcarouge_1_1tree.html#a0e0c0413cac0cb6f03821382f6069e0a">fcarouge::tree::cbegin</a></div><div class="ttdeci">constexpr const_iterator cbegin() const noexcept</div><div class="ttdoc">Returns a constant container iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00935">tree.hpp:935</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a1cafa151ab382b85f01fd8dd34ad3bcd"><div class="ttname"><a href="classfcarouge_1_1tree.html#a1cafa151ab382b85f01fd8dd34ad3bcd">fcarouge::tree::front</a></div><div class="ttdeci">constexpr reference front()</div><div class="ttdoc">Returns a reference to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00874">tree.hpp:874</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a25db6e32589bf903925fe712740b6109"><div class="ttname"><a href="classfcarouge_1_1tree.html#a25db6e32589bf903925fe712740b6109">fcarouge::tree::empty</a></div><div class="ttdeci">constexpr bool empty() const noexcept</div><div class="ttdoc">Checks if the container has no elements.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00997">tree.hpp:997</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a3ac209f34e0f1b0af7bd671e90eb4551"><div class="ttname"><a href="classfcarouge_1_1tree.html#a3ac209f34e0f1b0af7bd671e90eb4551">fcarouge::tree::cend</a></div><div class="ttdeci">constexpr const_iterator cend() const noexcept</div><div class="ttdoc">Returns a constant container iterator to the element past the last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00980">tree.hpp:980</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a5f4dadf01e84f750474e57e1da42af18"><div class="ttname"><a href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00907">tree.hpp:907</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_aa946524fdb109e331233986f44048c7b"><div class="ttname"><a href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01009">tree.hpp:1009</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_acf8a675389de0e841b489421a59179b6"><div class="ttname"><a href="classfcarouge_1_1tree.html#acf8a675389de0e841b489421a59179b6">fcarouge::tree::push_front</a></div><div class="ttdeci">constexpr void push_front(const_reference value)</div><div class="ttdoc">Prepends a copied element to the beginning of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01493">tree.hpp:1493</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_aee5d504629130357d1cea2d53e151f66"><div class="ttname"><a href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00950">tree.hpp:950</a></div></div>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000112">Test:</a></b></dt><dd>Verify the post conditions on pushing front a moved element in an empty container. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="push__front__rvalue_8cpp_source.html#l00042">42</a> of file <a class="el" href="push__front__rvalue_8cpp_source.html">push_front_rvalue.cpp</a>.</p>
 
@@ -195,7 +197,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02push__front__rvalue_8cpp_03.html">anonymous_namespace{push_front_rvalue.cpp}</a></li>
-    <li class="footer">Generated on Sun May 2 2021 04:52:18 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 8 2021 19:29:19 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

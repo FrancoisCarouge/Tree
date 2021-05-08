@@ -109,9 +109,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="test"><dt><b><a class="el" href="test.html#_test000018">Test:</a></b></dt><dd>Verify the pointer access to the element. </dd></dl>
+<dl class="test"><dt><b><a class="el" href="test.html#_test000017">Test:</a></b></dt><dd>Verify the pointer access to the element. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="const__iterator_8cpp_source.html#l00069">69</a> of file <a class="el" href="const__iterator_8cpp_source.html">const_iterator.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="const__iterator_8cpp_source.html#l00071">71</a> of file <a class="el" href="const__iterator_8cpp_source.html">const_iterator.cpp</a>.</p>
 
 </div>
 </div>
@@ -137,12 +137,14 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  </div>
 <div class="line">  </div>
+<div class="line">  </div>
 <div class="line">  static_assert(</div>
 <div class="line">      std::is_copy_constructible_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;char&gt;::const_iterator</a>&gt;,</div>
-<div class="line">      <span class="stringliteral">&quot;The container&#39;s constant iterator type must be copy constructible.&quot;</span>);</div>
+<div class="line">      <span class="stringliteral">&quot;The constant container iterator type must be copy &quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;constructible.&quot;</span>);</div>
 <div class="line">  static_assert(std::is_trivially_copy_constructible_v&lt;</div>
 <div class="line">                    <a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;char&gt;::const_iterator</a>&gt;,</div>
-<div class="line">                <span class="stringliteral">&quot;The container&#39;s constant iterator type must be trivially copy &quot;</span></div>
+<div class="line">                <span class="stringliteral">&quot;The constant container iterator type must be trivially copy &quot;</span></div>
 <div class="line">                <span class="stringliteral">&quot;constructible.&quot;</span>);</div>
 <div class="line">  static_assert(</div>
 <div class="line">      std::is_convertible_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree&lt;char&gt;::iterator</a>,</div>
@@ -151,14 +153,14 @@ Variables</h2></td></tr>
 <div class="line">      <span class="stringliteral">&quot;constant equivalent type.&quot;</span>);</div>
 <div class="line">  static_assert(!std::is_convertible_v&lt;<a class="code" href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree&lt;char&gt;::const_iterator</a>,</div>
 <div class="line">                                       <a class="code" href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree&lt;char&gt;::iterator</a>&gt;,</div>
-<div class="line">                <span class="stringliteral">&quot;The container&#39;s constant iterator type cannot be implicitely &quot;</span></div>
+<div class="line">                <span class="stringliteral">&quot;The constant container iterator type cannot be implicitely &quot;</span></div>
 <div class="line">                <span class="stringliteral">&quot;convertible to its non-constant equivalent type.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
 <div class="ttc" id="astructfcarouge_1_1tree_1_1const__iterator_html"><div class="ttname"><a href="structfcarouge_1_1tree_1_1const__iterator.html">fcarouge::tree::const_iterator</a></div><div class="ttdoc">Type to identify and traverse the constant elements of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00315">tree.hpp:315</a></div></div>
 <div class="ttc" id="astructfcarouge_1_1tree_1_1iterator_html"><div class="ttname"><a href="structfcarouge_1_1tree_1_1iterator.html">fcarouge::tree::iterator</a></div><div class="ttdoc">Type to identify and traverse the elements of the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00215">tree.hpp:215</a></div></div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000017">Test:</a></b></dt><dd>Verify basic traits for the container default <code>const_iterator</code> type. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000015">Test:</a></b></dt><dd>Verify basic traits for the container default <code>const_iterator</code> type. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="const__iterator_8cpp_source.html#l00045">45</a> of file <a class="el" href="const__iterator_8cpp_source.html">const_iterator.cpp</a>.</p>
 
@@ -170,7 +172,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02const__iterator_8cpp_03.html">anonymous_namespace{const_iterator.cpp}</a></li>
-    <li class="footer">Generated on Sun May 2 2021 04:52:17 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat May 8 2021 19:29:18 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
