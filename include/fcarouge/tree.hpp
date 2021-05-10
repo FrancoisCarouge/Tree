@@ -89,17 +89,17 @@ namespace fcarouge
 //! Core Guidelines in its design tradeoffs,
 //! - intelligibly documented for the wider audience.
 //!
-//! @tparam Type The type of the contained data elements. The requirements that
-//! are imposed on the elements depend on the actual operations performed on the
-//! container. Generally, it is required that element type meets the
-//! requirements of Erasable, but member functions impose stricter requirements.
-//! This container (but not its members) can be instantiated with an incomplete
-//! element type if the allocator satisfies the allocator completeness
-//! requirements.
-//! @tparam Allocator The allocator type that is used to acquire/release
-//! memory and to construct/destroy the elements in that memory. The allocator
-//! type must meet the Allocator requirements. The type of value of the
-//! allocator must match the type of the value of the container.
+//! @tparam Type The type template parameter of the contained data elements. The
+//! requirements that are imposed on the elements depend on the actual
+//! operations performed on the container. Generally, it is required that
+//! element type meets the requirements of Erasable, but member functions impose
+//! stricter requirements. This container (but not its members) can be
+//! instantiated with an incomplete element type if the allocator satisfies the
+//! allocator completeness requirements.
+//! @tparam Allocator The allocator type template parameter that is used to
+//! acquire/release memory and to construct/destroy the elements in that memory.
+//! The allocator type must meet the Allocator requirements. The type of value
+//! of the allocator must match the type of the value of the container.
 template <typename Type, typename Allocator> class tree
 {
   public:
@@ -194,7 +194,8 @@ template <typename Type, typename Allocator> class tree
     //! @}
   };
 
-  //! @brief Element allocator type rebind to internal node allocator type.
+  //! @brief The internal element allocator type rebind to internal node
+  //! allocator type.
   using internal_node_allocator_type = typename std::allocator_traits<
       Allocator>::template rebind_alloc<internal_node_type>;
 
@@ -1229,8 +1230,8 @@ template <typename Type, typename Allocator> class tree
   //! `std::forward<Arguments>(arguments)...`. No iterators or references
   //! are invalidated. Inserts at the root position as the new root.
   //!
-  //! @tparam Arguments The argument types to forward to the constructor of
-  //! the element.
+  //! @tparam Arguments The arguments type template parameter pack to forward to
+  //! the constructor of the element.
   //!
   //! @param arguments The arguments to forward to the constructor of the
   //! element.
@@ -1276,8 +1277,8 @@ template <typename Type, typename Allocator> class tree
   //! position as the new root. Inserts before the beginning `begin()` position
   //! as the new root. Inserts before the ending `end()` position.
   //!
-  //! @tparam Arguments The argument types to forward to the constructor of
-  //! the element.
+  //! @tparam Arguments The arguments type template parameter pack to forward to
+  //! the constructor of the element.
   //!
   //! @param position The constant container iterator before which the new
   //! element will be constructed. The iterator may be the beginning `begin()`
@@ -1642,8 +1643,8 @@ template <typename Type, typename Allocator> class tree
   //! the ending `end()` position as the sole child of the last node if present,
   //! or as the root if the container is empty.
   //!
-  //! @tparam Arguments The argument types to forward to the constructor of
-  //! the element.
+  //! @tparam Arguments The arguments type template parameter pack to forward to
+  //! the constructor of the element.
   //!
   //! @param parent The parent node for which the element will be
   //! inserted as the last child. Emplacing a node without a parent places the
@@ -1718,8 +1719,8 @@ template <typename Type, typename Allocator> class tree
   //! iterators or references are invalidated. The new element is in-place
   //! constructed and moved, or copied.
   //!
-  //! @tparam Arguments The argument types to forward to the constructor of
-  //! the element.
+  //! @tparam Arguments The arguments type template parameter pack to forward to
+  //! the constructor of the element.
   //!
   //! @param arguments The construction data of the element to insert.
   //!
@@ -1903,11 +1904,13 @@ operator<=>(const fcarouge::tree<Type, Allocator> &lhs,
 //! according to the depth of their nodes. The tree topology is symbolized via
 //! the `├──`, `└──`, and `│` characters.
 //!
-//! @tparam Char The type of the character of the stream.
-//! @tparam Traits The character type operations specification class.
-//! @tparam Type The type of the contained data in the tree elements.
-//! @tparam Allocator The type of the allocator for the nodes of the tree
+//! @tparam Char The type template parameter of the character of the stream.
+//! @tparam Traits The character type template parameter operations
+//! specification class.
+//! @tparam Type The type template parameter of the contained data in the tree
 //! elements.
+//! @tparam Allocator The type template parameter of the allocator for the nodes
+//! of the tree elements.
 //!
 //! @param output_stream The character stream to write to.
 //! @param tree The tree to be written.
