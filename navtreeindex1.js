@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"index.html#autotoc_md39":[0,11],
+"index.html#autotoc_md40":[0,12],
+"insert__lvalue_8cpp.html":[7,0,4,26],
 "insert__lvalue_8cpp.html#a15258abfeec9990bfd6a25b46f8d1e6b":[7,0,4,26,4],
 "insert__lvalue_8cpp.html#a4c4127942ea827f2541438579c54c172":[7,0,4,26,1],
 "insert__lvalue_8cpp.html#a4e707fecb8265f0375c7d908d896c8dd":[7,0,4,26,2],
@@ -220,8 +223,10 @@ var NAVTREEINDEX1 =
 "namespacefcarouge.html":[5,0,43],
 "namespacefcarouge.html#a026fcf7acfcf837196151bbc33421630":[5,0,43,37],
 "namespacefcarouge.html#a063d4f6ac5575e3f793fd3696fea31dc":[5,0,43,25],
-"namespacefcarouge.html#a0db76fc7e1774afc608219042ac64421":[5,0,43,50],
+"namespacefcarouge.html#a0db76fc7e1774afc608219042ac64421":[5,0,43,52],
+"namespacefcarouge.html#a0e3bbd8adda8b7c84368c16fb3b74c4c":[5,0,43,53],
 "namespacefcarouge.html#a0e9b323c5b67ab550b5eb5541ac0b1ff":[5,0,43,39],
+"namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b":[5,0,43,49],
 "namespacefcarouge.html#a19f4f857ec159527f6a82383e1b963db":[5,0,43,31],
 "namespacefcarouge.html#a1fe0bcb05144b4d81e51fd498dd1bef6":[5,0,43,34],
 "namespacefcarouge.html#a31369853093956b4c38d84cbca4a4b2e":[5,0,43,30],
@@ -238,16 +243,11 @@ var NAVTREEINDEX1 =
 "namespacefcarouge.html#a6167ea721df81e274ebc8b8e43f9c592":[5,0,43,6],
 "namespacefcarouge.html#a6339ad55e3f99a4a3a437fb34e13b3d8":[5,0,43,43],
 "namespacefcarouge.html#a64afbd45545fe91656fc5d42b54448a6":[5,0,43,20],
-"namespacefcarouge.html#a6a8bda944ec7306b90d4fb9b45163348":[5,0,43,48],
+"namespacefcarouge.html#a6a8bda944ec7306b90d4fb9b45163348":[5,0,43,50],
 "namespacefcarouge.html#a724091f280101c7466d5cc7f0ac35b74":[5,0,43,40],
 "namespacefcarouge.html#a72f5e0205748fd65814cadef48873177":[5,0,43,14],
 "namespacefcarouge.html#a7c9537fc8b526a57272ad3369b5ab0a4":[5,0,43,3],
 "namespacefcarouge.html#a7f35e8a1cd03ac4b7816ceb97857b46e":[5,0,43,41],
 "namespacefcarouge.html#a7fd995c776673bdac80b54674cf1641d":[5,0,43,8],
-"namespacefcarouge.html#a80a2f298466170e035dd30f87636387d":[5,0,43,46],
-"namespacefcarouge.html#a847291e27daff06fdba37d857da2f4e7":[5,0,43,22],
-"namespacefcarouge.html#a877e27d2dd48381bee1b85d304230475":[5,0,43,36],
-"namespacefcarouge.html#a8d0cadd3fad6818f6c6ee4461892af4f":[5,0,43,17],
-"namespacefcarouge.html#a95b53fb2dc769024eb7a83b0f587a882":[5,0,43,21],
-"namespacefcarouge.html#a960bdb6dc18ddaa866beef17c4a1cfb2":[5,0,43,12]
+"namespacefcarouge.html#a80a2f298466170e035dd30f87636387d":[5,0,43,46]
 };

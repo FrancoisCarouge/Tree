@@ -119,21 +119,39 @@ $(document).ready(function(){initNavTree('tree__iterator__fwd_8hpp_source.html',
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef FCAROUGE_TREE_ITERATOR_FWD_HPP</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define FCAROUGE_TREE_ITERATOR_FWD_HPP</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefcarouge.html">fcarouge</a></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tree__fwd_8hpp.html">tree_fwd.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefcarouge.html">fcarouge</a></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;} <span class="comment">// namespace fcarouge</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// FCAROUGE_TREE_ITERATOR_FWD_HPP</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ConstIterator&gt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="namespacefcarouge.html#ab7fc94aad2c73a05b13bc280f0e62648">   64</a></span>&#160;concept <a class="code" href="namespacefcarouge.html#ab7fc94aad2c73a05b13bc280f0e62648">TreeConstIterator</a> = TreeMemberConstIterator&lt;ConstIterator&gt;;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> NonConstIterator&gt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="namespacefcarouge.html#a0e3bbd8adda8b7c84368c16fb3b74c4c">   73</a></span>&#160;concept <a class="code" href="namespacefcarouge.html#a0e3bbd8adda8b7c84368c16fb3b74c4c">TreeNonConstIterator</a> = TreeMemberNonConstIterator&lt;NonConstIterator&gt;;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator&gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">   83</a></span>&#160;concept <a class="code" href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">TreeIterator</a> =</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    TreeConstIterator&lt;Iterator&gt; || TreeNonConstIterator&lt;Iterator&gt; ||</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    TreeMemberIterator&lt;Iterator&gt;;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// namespace fcarouge</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// FCAROUGE_TREE_ITERATOR_FWD_HPP</span></div>
 <div class="ttc" id="anamespacefcarouge_html"><div class="ttname"><a href="namespacefcarouge.html">fcarouge</a></div></div>
+<div class="ttc" id="anamespacefcarouge_html_a0e3bbd8adda8b7c84368c16fb3b74c4c"><div class="ttname"><a href="namespacefcarouge.html#a0e3bbd8adda8b7c84368c16fb3b74c4c">fcarouge::TreeNonConstIterator</a></div><div class="ttdeci">concept TreeNonConstIterator</div><div class="ttdoc">Tree non-constant container iterators concept.</div><div class="ttdef"><b>Definition:</b> <a href="tree__iterator__fwd_8hpp_source.html#l00073">tree_iterator_fwd.hpp:73</a></div></div>
+<div class="ttc" id="anamespacefcarouge_html_a10ef467d38bfe8b9cfb8bbb77bed989b"><div class="ttname"><a href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">fcarouge::TreeIterator</a></div><div class="ttdeci">concept TreeIterator</div><div class="ttdoc">Tree iterators concept.</div><div class="ttdef"><b>Definition:</b> <a href="tree__iterator__fwd_8hpp_source.html#l00083">tree_iterator_fwd.hpp:83</a></div></div>
+<div class="ttc" id="anamespacefcarouge_html_ab7fc94aad2c73a05b13bc280f0e62648"><div class="ttname"><a href="namespacefcarouge.html#ab7fc94aad2c73a05b13bc280f0e62648">fcarouge::TreeConstIterator</a></div><div class="ttdeci">concept TreeConstIterator</div><div class="ttdoc">Tree constant container iterators concept.</div><div class="ttdef"><b>Definition:</b> <a href="tree__iterator__fwd_8hpp_source.html#l00064">tree_iterator_fwd.hpp:64</a></div></div>
+<div class="ttc" id="atree__fwd_8hpp_html"><div class="ttname"><a href="tree__fwd_8hpp.html">tree_fwd.hpp</a></div><div class="ttdoc">Forward companion header for the tree container library types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_533ca38e4d6dcb24d3c950d504c67ecf.html">fcarouge</a></li><li class="navelem"><a class="el" href="tree__iterator__fwd_8hpp.html">tree_iterator_fwd.hpp</a></li>
-    <li class="footer">Generated on Mon May 10 2021 03:53:03 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon May 10 2021 06:11:19 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -261,6 +261,18 @@ Variables</h2></td></tr>
 <tr class="memitem:aa332597beab331cea8c242be8a72101f"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#aa332597beab331cea8c242be8a72101f">TreeMemberIterator</a></td></tr>
 <tr class="memdesc:aa332597beab331cea8c242be8a72101f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tree member iterators concept.  <a href="namespacefcarouge.html#aa332597beab331cea8c242be8a72101f">More...</a><br /></td></tr>
 <tr class="separator:aa332597beab331cea8c242be8a72101f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7fc94aad2c73a05b13bc280f0e62648"><td class="memTemplParams" colspan="2">template&lt;typename ConstIterator &gt; </td></tr>
+<tr class="memitem:ab7fc94aad2c73a05b13bc280f0e62648"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#ab7fc94aad2c73a05b13bc280f0e62648">TreeConstIterator</a> = <a class="el" href="namespacefcarouge.html#a6a8bda944ec7306b90d4fb9b45163348">TreeMemberConstIterator</a>&lt;ConstIterator&gt;</td></tr>
+<tr class="memdesc:ab7fc94aad2c73a05b13bc280f0e62648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tree constant container iterators concept.  <a href="namespacefcarouge.html#ab7fc94aad2c73a05b13bc280f0e62648">More...</a><br /></td></tr>
+<tr class="separator:ab7fc94aad2c73a05b13bc280f0e62648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e3bbd8adda8b7c84368c16fb3b74c4c"><td class="memTemplParams" colspan="2">template&lt;typename NonConstIterator &gt; </td></tr>
+<tr class="memitem:a0e3bbd8adda8b7c84368c16fb3b74c4c"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a0e3bbd8adda8b7c84368c16fb3b74c4c">TreeNonConstIterator</a> = <a class="el" href="namespacefcarouge.html#a0db76fc7e1774afc608219042ac64421">TreeMemberNonConstIterator</a>&lt;NonConstIterator&gt;</td></tr>
+<tr class="memdesc:a0e3bbd8adda8b7c84368c16fb3b74c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tree non-constant container iterators concept.  <a href="namespacefcarouge.html#a0e3bbd8adda8b7c84368c16fb3b74c4c">More...</a><br /></td></tr>
+<tr class="separator:a0e3bbd8adda8b7c84368c16fb3b74c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ef467d38bfe8b9cfb8bbb77bed989b"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:a10ef467d38bfe8b9cfb8bbb77bed989b"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">TreeIterator</a></td></tr>
+<tr class="memdesc:a10ef467d38bfe8b9cfb8bbb77bed989b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tree iterators concept.  <a href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">More...</a><br /></td></tr>
+<tr class="separator:a10ef467d38bfe8b9cfb8bbb77bed989b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Francois Carouge's projects namespace. Lowers the name conflict probability in large projects. Use using-declarations or namespace-alias-definition per your project guidelines. </p>
@@ -1128,6 +1140,63 @@ template&lt;typename Iterator &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ab7fc94aad2c73a05b13bc280f0e62648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7fc94aad2c73a05b13bc280f0e62648">&#9670;&nbsp;</a></span>TreeConstIterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ConstIterator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept fcarouge::TreeConstIterator = <a class="el" href="namespacefcarouge.html#a6a8bda944ec7306b90d4fb9b45163348">TreeMemberConstIterator</a>&lt;ConstIterator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tree constant container iterators concept. </p>
+<p>Supports cv-qualifiers and references.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ConstIterator</td><td>The type template parameter to check for tree constant container iterator constaints. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="tree__iterator__fwd_8hpp_source.html#l00064">64</a> of file <a class="el" href="tree__iterator__fwd_8hpp_source.html">tree_iterator_fwd.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a10ef467d38bfe8b9cfb8bbb77bed989b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10ef467d38bfe8b9cfb8bbb77bed989b">&#9670;&nbsp;</a></span>TreeIterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Iterator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept fcarouge::TreeIterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    TreeConstIterator&lt;Iterator&gt; || TreeNonConstIterator&lt;Iterator&gt; ||</div>
+<div class="line">    TreeMemberIterator&lt;Iterator&gt;</div>
+</div><!-- fragment -->
+<p>Tree iterators concept. </p>
+<p>All tree iterators are included. Supports cv-qualifiers and references.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Iterator</td><td>The type template parameter to check for tree container iterator constaints. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="tree__iterator__fwd_8hpp_source.html#l00083">83</a> of file <a class="el" href="tree__iterator__fwd_8hpp_source.html">tree_iterator_fwd.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a6a8bda944ec7306b90d4fb9b45163348"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a8bda944ec7306b90d4fb9b45163348">&#9670;&nbsp;</a></span>TreeMemberConstIterator</h2>
 
@@ -1221,13 +1290,40 @@ template&lt;typename NonConstIterator &gt; </div>
 
 </div>
 </div>
+<a id="a0e3bbd8adda8b7c84368c16fb3b74c4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e3bbd8adda8b7c84368c16fb3b74c4c">&#9670;&nbsp;</a></span>TreeNonConstIterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename NonConstIterator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept fcarouge::TreeNonConstIterator = <a class="el" href="namespacefcarouge.html#a0db76fc7e1774afc608219042ac64421">TreeMemberNonConstIterator</a>&lt;NonConstIterator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tree non-constant container iterators concept. </p>
+<p>Supports cv-qualifiers and references.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ConstIterator</td><td>The type template parameter to check for tree non-constant container iterator constaints. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="tree__iterator__fwd_8hpp_source.html#l00073">73</a> of file <a class="el" href="tree__iterator__fwd_8hpp_source.html">tree_iterator_fwd.hpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li>
-    <li class="footer">Generated on Mon May 10 2021 03:53:04 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Mon May 10 2021 06:11:20 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
