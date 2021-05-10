@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"namespacefcarouge.html#a98e926aefef18d0ac68e930520487fe8":[5,0,43,9],
 "namespacefcarouge.html#aa0ca4a7e7481c797a0dca13c5135e554":[5,0,43,18],
 "namespacefcarouge.html#aa1b4070870240086d82cf5901bb5031a":[5,0,43,23],
 "namespacefcarouge.html#aa332597beab331cea8c242be8a72101f":[5,0,43,49],
@@ -165,6 +166,7 @@ var NAVTREEINDEX2 =
 "tree__fwd_8hpp.html":[7,0,1,0,2],
 "tree__fwd_8hpp.html#a026fcf7acfcf837196151bbc33421630":[7,0,1,0,2,35],
 "tree__fwd_8hpp.html#a063d4f6ac5575e3f793fd3696fea31dc":[7,0,1,0,2,23],
+"tree__fwd_8hpp.html#a0db76fc7e1774afc608219042ac64421":[7,0,1,0,2,47],
 "tree__fwd_8hpp.html#a0e9b323c5b67ab550b5eb5541ac0b1ff":[7,0,1,0,2,37],
 "tree__fwd_8hpp.html#a19f4f857ec159527f6a82383e1b963db":[7,0,1,0,2,29],
 "tree__fwd_8hpp.html#a1fe0bcb05144b4d81e51fd498dd1bef6":[7,0,1,0,2,32],
