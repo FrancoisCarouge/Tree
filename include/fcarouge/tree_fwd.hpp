@@ -172,8 +172,8 @@ using tree_wstring = tree<std::wstring, Allocator>;
 //!
 //! @details Supports cv-qualifiers and references.
 //!
-//! @tparam ConstIterator The type to check for tree member constant container
-//! iterator constaints.
+//! @tparam ConstIterator The type template parameter to check for tree member
+//! constant container iterator constaints.
 template <typename ConstIterator>
 concept TreeMemberConstIterator = std::is_same_v<
     ConstIterator,
@@ -184,8 +184,8 @@ concept TreeMemberConstIterator = std::is_same_v<
 //!
 //! @details Supports cv-qualifiers and references.
 //!
-//! @tparam ConstIterator The type to check for tree member non-constant
-//! container iterator constaints.
+//! @tparam ConstIterator The type template parameter to check for tree member
+//! non-constant container iterator constaints.
 template <typename NonConstIterator>
 concept TreeMemberNonConstIterator = std::is_same_v<
     NonConstIterator,
@@ -197,8 +197,8 @@ concept TreeMemberNonConstIterator = std::is_same_v<
 //! @details All tree member iterators are included. Supports cv-qualifiers and
 //! references.
 //!
-//! @tparam Iterator The type to check for tree member container iterator
-//! constaints.
+//! @tparam Iterator The type template parameter to check for tree member
+//! container iterator constaints.
 template <typename Iterator>
 concept TreeMemberIterator =
     TreeMemberNonConstIterator<Iterator> || TreeMemberConstIterator<Iterator>;
