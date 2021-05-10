@@ -57,6 +57,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <utility>
 // std::forward std::move
 
+#include "tree_iterator_fwd.hpp"
+
 #include "tree_fwd.hpp"
 
 //! @namespace fcarouge Francois Carouge's projects namespace. Lowers the name
@@ -203,6 +205,144 @@ template <typename Type, typename Allocator> class tree
   using internal_node_allocator_traits =
       std::allocator_traits<internal_node_allocator_type>;
 
+  //! @brief The internal iterator type definition.
+  //!
+  //! @tparam Const The non-type template parameter specialized to provide the
+  //! constant and non-constant container iterators.
+  template <bool Const> struct internal_iterator_type {
+    //! @name Public Member Types
+    //! @{
+
+    //! @brief The type of the contained data elements.
+    using value_type = tree::value_type;
+
+    //! @brief Signed integer type to represent element distances.
+    using difference_type = tree::difference_type;
+
+    //! @brief The reference type of the contained data elements.
+    using reference =
+        std::conditional_t<Const, tree::const_reference, tree::reference>;
+
+    //! @brief The pointer type of the contained data elements.
+    using pointer =
+        std::conditional_t<Const, tree::const_pointer, tree::pointer>;
+
+    //! @brief The LegacyForwardIterator requirements category of the iterator.
+    using iterator_category = std::forward_iterator_tag;
+
+    //! @}
+
+    //! @name Public Observer Member Functions
+    //! @{
+
+    //! @brief Accesses the stored element data.
+    //!
+    //! @details Indirection operator. Dereferences the iterator to obtain the
+    //! container's stored value. The behavior is undefined if the iterator is
+    //! invalid.
+    //!
+    //! @return Reference to the element if the iterator is dereferencable.
+    [[nodiscard]] constexpr reference operator*() const noexcept
+    {
+      return node->data;
+    }
+
+    //! @brief Points to the stored element.
+    //!
+    //! @details Member access operator. Dereferenceable pointer or pointer-like
+    //! object of the container's stored value from this iterator. The behavior
+    //! is undefined if the iterator is invalid.
+    //!
+    //! @return Pointer to the container's stored value iterator.
+    [[nodiscard]] constexpr pointer operator->() const noexcept
+    {
+      return std::pointer_traits<pointer>::pointer_to(node->data);
+    }
+
+    //! @}
+
+    //! @name Public Modifier Member Functions
+    //! @{
+
+    //! @brief Prefix increments the iterator.
+    //!
+    //! @return Reference to the next iterator.
+    constexpr internal_iterator_type &operator++() noexcept
+    {
+      if (node->first_child) {
+        node = node->first_child;
+      } else {
+        node = node->next_ancestor_sibling();
+      }
+
+      return *this;
+    }
+
+    //! @brief Postfix increments the iterator.
+    //!
+    //! @return Reference to the next iterator.
+    constexpr internal_iterator_type operator++(int) noexcept
+    {
+      internal_iterator_type temporary_iterator = *this;
+      if (node->first_child) {
+        node = node->first_child;
+      } else {
+        node = node->next_ancestor_sibling();
+      }
+
+      return temporary_iterator;
+    }
+
+    //! @}
+
+    //! @name Public Conversion Function
+    //! @{
+
+    //! @brief Converts to tree non-constant container iterators.
+    //!
+    //! @details Allows conversion accross tree non-constant container
+    //! iterators.
+    //!
+    //! @tparam OtherIterator The tree non-constant container iterator
+    //! type-constraint template parameter to convert this iterator to.
+    //!
+    //! @return The converted tree non-constant container iterator.
+    template <TreeNonConstIterator OtherIterator>
+    operator OtherIterator() const &requires(!Const)
+    {
+      return OtherIterator{ node };
+    }
+
+    //! @brief Converts to tree constant container iterators.
+    //!
+    //! @details Allows conversion to constant container iterators.
+    //!
+    //! @tparam OtherIterator The tree constant container iterator
+    //! type-constraint template parameter to convert this iterator to.
+    //!
+    //! @return The converted tree constant container iterator.
+    template <TreeConstIterator OtherIterator> operator OtherIterator() const &
+    {
+      return OtherIterator{ node };
+    }
+
+    //! @}
+
+    [[nodiscard]] constexpr bool
+    operator==(const internal_iterator_type &other) const noexcept
+    {
+      return other.node == node;
+    }
+
+    //! @name Public Member Variables
+    //! @{
+
+    //! @brief The pointer to the node represented by the iterator.
+    internal_node_type *node = nullptr;
+
+    //! @}
+  };
+
   //! @}
 
   public:
@@ -213,239 +353,17 @@ template <typename Type, typename Allocator> class tree
   //!
   //! @details The iteration order of the standard iterator is unspecified,
   //! except that each element is visited only once.
-  struct iterator {
-    //! @name Public Member Types
-    //! @{
+  using iterator = internal_iterator_type<false>;
 
-    //! @brief The type of the contained data elements.
-    using value_type = tree::value_type;
-
-    //! @brief Signed integer type to represent element distances.
-    using difference_type = tree::difference_type;
-
-    //! @brief The reference type of the contained data elements.
-    using reference = tree::reference;
-
-    //! @brief The pointer type of the contained data elements.
-    using pointer = tree::pointer;
-
-    //! @brief The LegacyForwardIterator requirements category of the iterator.
-    using iterator_category = std::forward_iterator_tag;
-
-    //! @}
-
-    //! @name Public Observer Member Functions
-    //! @{
-
-    //! @brief Indirection operator.
-    //!
-    //! @details Dereferences the iterator to obtain the container's stored
-    //! value. The behavior is undefined if the iterator is invalid.
-    //!
-    //! @return Reference to the element if the iterator is dereferencable.
-    [[nodiscard]] constexpr reference operator*() const noexcept
-    {
-      return node->data;
-    }
-
-    //! @brief Member access operator.
-    //!
-    //! @details Dereferenceable pointer or pointer-like object of the
-    //! container's stored value from this iterator. The behavior is undefined
-    //! if the iterator is invalid.
-    //!
-    //! @return Pointer to the container's stored value iterator.
-    [[nodiscard]] constexpr pointer operator->() const noexcept
-    {
-      return std::pointer_traits<pointer>::pointer_to(node->data);
-    }
-
-    //! @}
-
-    //! @name Public Modifier Member Functions
-    //! @{
-
-    //! @brief Prefix increments the iterator.
-    //!
-    //! @return Reference to the next iterator.
-    constexpr iterator &operator++() noexcept
-    {
-      if (node->first_child) {
-        node = node->first_child;
-      } else {
-        node = node->next_ancestor_sibling();
-      }
-
-      return *this;
-    }
-
-    //! @brief Postfix increments the iterator.
-    //!
-    //! @return Reference to the next iterator.
-    constexpr iterator operator++(int) noexcept
-    {
-      iterator temporary_iterator = *this;
-      if (node->first_child) {
-        node = node->first_child;
-      } else {
-        node = node->next_ancestor_sibling();
-      }
-
-      return temporary_iterator;
-    }
-
-    //! @}
-
-    [[nodiscard]] constexpr bool
-    operator==(const iterator &other) const noexcept = default;
-
-    //! @name Public Member Variables
-    //! @{
-
-    //! @brief The pointer to the node represented by the iterator.
-    internal_node_type *node = nullptr;
-
-    //! @}
-  };
-
-  //! @brief Type to identify and traverse the constant elements of the
+  //! @brief Type to identify and traverse the elements of the constant
   //! container.
   //!
   //! @details The iteration order of the standard constant container iterator
   //! is unspecified, except that each element is visited only once.
-  struct const_iterator {
-    //! @name Public Member Types
-    //! @{
-
-    //! @brief The type of the contained data elements.
-    using value_type = tree::value_type;
-
-    //! @brief Signed integer type to represent element distances.
-    using difference_type = tree::difference_type;
-
-    //! @brief The reference type of the contained data elements.
-    using reference = tree::const_reference;
-
-    //! @brief The pointer type of the contained data elements.
-    using pointer = tree::const_pointer;
-
-    //! @brief The LegacyForwardIterator requirements category of the iterator.
-    using iterator_category = std::forward_iterator_tag;
-
-    //! @}
-
-    //! @name Public Member Functions
-    //! @{
-
-    //! @brief Default constructor needed for non-aggregate constant container
-    //! iterator.
-    //!
-    //! @details The default constructor is provided to allow simple default
-    //! construction since the conversion constructor makes the constant
-    //! iterator a non-aggregate type.
-    constexpr const_iterator() noexcept = default;
-
-    //! @brief Implicit iterator to constant container iterator conversion.
-    //!
-    //! @details The regular, i.e. non-constant, iterator type is implicitely
-    //! convertible to the constant container iterator type per requirements.
-    //! The conversion is performed through a (non-explicit) converting
-    //! constructor. A conversion operator is not implemented to avoid disabling
-    //! implicit move. Consequently the constant container iterator is no longer
-    //! an aggregate type hence disabling aggregate initialization.
-    //!
-    //! @note No conversion assignment operator is supported following the
-    //! majority of Standard Template Library (STL) vendors implementation.
-    constexpr const_iterator(const iterator &iterator) noexcept
-            : node{ iterator.node }
-    {
-    }
-
-    //! @brief Implicit node pointer to constant container iterator conversion.
-    //!
-    //! @details Aggregate initialization is not available per implicit iterator
-    //! conversion construction. The node pointer type is implicitely
-    //! convertible to the constant container iterator type to allow list
-    //! initialization.
-    constexpr const_iterator(internal_node_type *node) noexcept : node{ node }
-    {
-    }
-
-    //! @}
-
-    //! @name Public Observer Member Functions
-    //! @{
-
-    //! @brief Indirection operator.
-    //!
-    //! @details Dereferences the iterator to obtain the container's stored
-    //! value. The behavior is undefined if the iterator is invalid.
-    //!
-    //! @return Reference to the element if the iterator is dereferencable.
-    [[nodiscard]] constexpr reference operator*() const noexcept
-    {
-      return node->data;
-    }
-
-    //! @brief Member access operator.
-    //!
-    //! @details Dereferenceable pointer or pointer-like object of the
-    //! container's stored value from this iterator. The behavior is undefined
-    //! if the iterator is invalid.
-    //!
-    //! @return Pointer to the container's stored value iterator.
-    [[nodiscard]] constexpr pointer operator->() const noexcept
-    {
-      return std::pointer_traits<pointer>::pointer_to(node->data);
-    }
-
-    //! @}
-
-    //! @name Public Modifier Member Functions
-    //! @{
-
-    //! @brief Prefix increments the iterator.
-    //!
-    //! @return Reference to the next iterator.
-    constexpr const_iterator &operator++() noexcept
-    {
-      if (node->first_child) {
-        node = node->first_child;
-      } else {
-        node = node->next_ancestor_sibling();
-      }
-
-      return *this;
-    }
-
-    //! @brief Postfix increments the iterator.
-    //!
-    //! @return Reference to the next iterator.
-    constexpr const_iterator operator++(int) noexcept
-    {
-      const_iterator temporary_iterator = *this;
-      if (node->first_child) {
-        node = node->first_child;
-      } else {
-        node = node->next_ancestor_sibling();
-      }
-
-      return temporary_iterator;
-    }
-
-    //! @}
-
-    [[nodiscard]] constexpr bool
-    operator==(const const_iterator &other) const noexcept = default;
-
-    //! @name Public Member Variables
-    //! @{
-
-    //! @brief The pointer to the node represented by the iterator.
-    internal_node_type *node = nullptr;
-
-    //! @}
-  };
+  // The more I read about the const template, the more I think the iterator
+  // should be templated on const and this is certainly the case for the
+  // iterator.
+  using const_iterator = internal_iterator_type<true>;
 
   //! @brief The node handle type of the container.
   //!

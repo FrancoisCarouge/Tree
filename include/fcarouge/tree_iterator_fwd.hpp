@@ -39,6 +39,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #ifndef FCAROUGE_TREE_ITERATOR_FWD_HPP
 #define FCAROUGE_TREE_ITERATOR_FWD_HPP
 
+#include "tree_fwd.hpp"
+
 //! @namespace fcarouge Francois Carouge's projects namespace. Lowers the name
 //! conflict probability in large projects. Use using-declarations or
 //! namespace-alias-definition per your project guidelines.
@@ -49,6 +51,40 @@ namespace fcarouge
 
 //! @}
 
+//! @name Concepts
+//! @{
+
+//! @brief Tree constant container iterators concept.
+//!
+//! @details Supports cv-qualifiers and references.
+//!
+//! @tparam ConstIterator The type template parameter to check for tree constant
+//! container iterator constaints.
+template <typename ConstIterator>
+concept TreeConstIterator = TreeMemberConstIterator<ConstIterator>;
+
+//! @brief Tree non-constant container iterators concept.
+//!
+//! @details Supports cv-qualifiers and references.
+//!
+//! @tparam ConstIterator The type template parameter to check for tree
+//! non-constant container iterator constaints.
+template <typename NonConstIterator>
+concept TreeNonConstIterator = TreeMemberNonConstIterator<NonConstIterator>;
+
+//! @brief Tree iterators concept.
+//!
+//! @details All tree iterators are included. Supports cv-qualifiers and
+//! references.
+//!
+//! @tparam Iterator The type template parameter to check for tree container
+//! iterator constaints.
+template <typename Iterator>
+concept TreeIterator =
+    TreeConstIterator<Iterator> || TreeNonConstIterator<Iterator> ||
+    TreeMemberIterator<Iterator>;
+
+//! @}
 } // namespace fcarouge
 
 #endif // FCAROUGE_TREE_ITERATOR_FWD_HPP
