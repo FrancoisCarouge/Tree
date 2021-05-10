@@ -180,20 +180,28 @@ concept TreeMemberConstIterator = std::is_same_v<
     std::remove_cvref_t<typename tree<typename std::iterator_traits<
         ConstIterator>::value_type>::const_iterator>>;
 
+//! @brief Tree member non-constant container iterators concept.
+//!
+//! @details Supports cv-qualifiers and references.
+//!
+//! @tparam ConstIterator The type to check for tree member non-constant
+//! container iterator constaints.
+template <typename NonConstIterator>
+concept TreeMemberNonConstIterator = std::is_same_v<
+    NonConstIterator,
+    std::remove_cvref_t<typename tree<typename std::iterator_traits<
+        NonConstIterator>::value_type>::iterator>>;
+
 //! @brief Tree member iterators concept.
 //!
-//! @details Tree member constant container iterators are included. Supports
-//! cv-qualifiers and references.
+//! @details All tree member iterators are included. Supports cv-qualifiers and
+//! references.
 //!
 //! @tparam Iterator The type to check for tree member container iterator
 //! constaints.
 template <typename Iterator>
 concept TreeMemberIterator =
-    std::is_same_v<
-        Iterator,
-        std::remove_cvref_t<typename tree<
-            typename std::iterator_traits<Iterator>::value_type>::iterator>> ||
-    TreeMemberConstIterator<Iterator>;
+    TreeMemberNonConstIterator<Iterator> || TreeMemberConstIterator<Iterator>;
 
 //! @}
 } // namespace fcarouge
