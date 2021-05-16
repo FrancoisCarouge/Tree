@@ -62,10 +62,12 @@ namespace fcarouge
 //!
 //! @complexity Linear in depth that is, at worst linear in size of the other
 //! container.
-[[nodiscard]] constexpr auto depth(TreeIterator auto position) ->
-    typename std::iterator_traits<decltype(position)>::difference_type
+[[nodiscard]] constexpr auto depth(TreeIterator auto position)
 {
-  auto depth = 0;
+  using difference_type =
+      typename std::iterator_traits<decltype(position)>::difference_type;
+
+  difference_type depth = 0;
   const auto *ancestor = position.node;
   while ((ancestor = ancestor->parent)) {
     ++depth;
