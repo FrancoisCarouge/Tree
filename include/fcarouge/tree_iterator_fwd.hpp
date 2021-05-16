@@ -39,6 +39,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #ifndef FCAROUGE_TREE_ITERATOR_FWD_HPP
 #define FCAROUGE_TREE_ITERATOR_FWD_HPP
 
+#include <type_traits>
+// std::is_same_v
+
 #include "tree_fwd.hpp"
 
 //! @namespace fcarouge Francois Carouge's projects namespace. Lowers the name
@@ -48,6 +51,18 @@ namespace fcarouge
 {
 //! @name Forward Type Declarations
 //! @{
+
+template <TreeMemberIterator Iterator>
+struct depth_first_pre_order_iterator_type;
+
+//! @}
+
+//! @name Type Aliases
+//! @{
+
+template <typename Type>
+using depth_first_pre_order_iterator =
+    depth_first_pre_order_iterator_type<typename tree<Type>::iterator>;
 
 //! @}
 
@@ -70,7 +85,13 @@ concept TreeConstIterator = TreeMemberConstIterator<ConstIterator>;
 //! @tparam ConstIterator The type template parameter to check for tree
 //! non-constant container iterator constaints.
 template <typename NonConstIterator>
-concept TreeNonConstIterator = TreeMemberNonConstIterator<NonConstIterator>;
+concept TreeNonConstIterator =
+    std::is_same_v<
+        NonConstIterator,
+        std::remove_cvref_t<depth_first_pre_order_iterator<
+            std::remove_cvref_t<typename tree<typename std::iterator_traits<
+                NonConstIterator>::value_type>::iterator::value_type>>>> ||
+    TreeMemberNonConstIterator<NonConstIterator>;
 
 //! @brief Tree iterators concept.
 //!

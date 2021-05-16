@@ -147,8 +147,8 @@ template <typename Type, typename Allocator> class tree
 
   //! @brief Branch node data structure type.
   //!
-  //! @details Internal implementation details of the node data structure type
-  //! containing the element data.
+  //! @details The internal implementation details of the node data structure
+  //! type containing the element data.
   struct internal_node_type {
     //! @name Public Member Types
     //! @{
@@ -280,7 +280,7 @@ template <typename Type, typename Allocator> class tree
 
     //! @brief Postfix increments the iterator.
     //!
-    //! @return Reference to the next iterator.
+    //! @return Next iterator.
     constexpr internal_iterator_type operator++(int) noexcept
     {
       internal_iterator_type temporary_iterator = *this;
@@ -328,16 +328,31 @@ template <typename Type, typename Allocator> class tree
 
     //! @}
 
+    //! @name Public Comparison Function
+    //! @{
+
+    //! @brief Compares the iterators.
+    //!
+    //! @details Checks if the iterators point to the same element.
+    //!
+    //! @param other The iterator to evaluate.
+    //!
+    //! @return `true` if the iterators point to the same element, `false`
+    //! otherwise.
+    //!
+    //! @complexity Constant.
     [[nodiscard]] constexpr bool
     operator==(const internal_iterator_type &other) const noexcept
     {
-      return other.node == node;
+      return node == other.node;
     }
 
-    //! @name Public Member Variables
+    //! @}
+
+    //! @name Internal Implementation Member Variables
     //! @{
 
-    //! @brief The pointer to the node represented by the iterator.
+    //! @brief The internal pointer to the node represented by the iterator.
     internal_node_type *node = nullptr;
 
     //! @}
