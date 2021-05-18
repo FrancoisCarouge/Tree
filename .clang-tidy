@@ -1,9 +1,9 @@
 Checks: '*,
+        -cert-dcl21-cpp,
         -fuchsia-overloaded-operator,
         -google-explicit-constructor,
         -hicpp-explicit-conversions,
-        -modernize-use-trailing-return-type,
-        -cert-dcl21-cpp'
+        -modernize-use-trailing-return-type'
 
 CheckOptions:
   - key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic

@@ -38,6 +38,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 #include <iterator>
 // std::iterator_traits
 
+#include "tree_iterator_fwd.hpp"
+
 //! @namespace fcarouge Francois Carouge's projects namespace. Lowers the name
 //! conflict probability in large projects. Use using-declarations or
 //! namespace-alias-definition per your project guidelines.
@@ -60,11 +62,12 @@ namespace fcarouge
 //!
 //! @complexity Linear in depth that is, at worst linear in size of the other
 //! container.
-template <typename Iterator>
-[[nodiscard]] constexpr typename std::iterator_traits<Iterator>::difference_type
-depth(Iterator position)
+[[nodiscard]] constexpr auto depth(TreeIterator auto position)
 {
-  auto depth = 0;
+  using difference_type =
+      typename std::iterator_traits<decltype(position)>::difference_type;
+
+  difference_type depth = 0;
   const auto *ancestor = position.node;
   while ((ancestor = ancestor->parent)) {
     ++depth;
