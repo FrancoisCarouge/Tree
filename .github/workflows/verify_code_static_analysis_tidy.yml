@@ -19,10 +19,4 @@ jobs:
     - name: install
       run: sudo apt install clang-tidy-10 g++-10
     - name: tidy
-      run: clang-tidy-10 \
-      include/fcarouge/tree_algorithm.hpp \
-      include/fcarouge/tree_fwd.hpp \
-      include/fcarouge/tree_iterator_fwd.hpp \
-      include/fcarouge/tree_iterator.hpp \
-      include/fcarouge/tree.hpp \
-      --warnings-as-errors=* -- -std=c++2a
+      run: clang-tidy-10 include/fcarouge/tree_algorithm.hpp include/fcarouge/tree_fwd.hpp include/fcarouge/tree_iterator_fwd.hpp include/fcarouge/tree_iterator.hpp include/fcarouge/tree.hpp --warnings-as-errors=* -- -std=c++2a

@@ -1,6 +1,7 @@
 Checks: '*,
         -cert-dcl21-cpp,
         -fuchsia-overloaded-operator,
+        -fuchsia-trailing-return,
         -google-explicit-constructor,
         -hicpp-explicit-conversions,
         -modernize-use-trailing-return-type'
