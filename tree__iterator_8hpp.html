@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('tree__iterator_8hpp.html',''); initRes
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
 <div class="title">tree_iterator.hpp File Reference</div>  </div>
@@ -92,26 +93,118 @@ $(document).ready(function(){initNavTree('tree__iterator_8hpp.html',''); initRes
 
 <p>Tree iterators header.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &quot;<a class="el" href="tree__iterator__fwd_8hpp_source.html">tree_iterator_fwd.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tree__fwd_8hpp_source.html">tree_fwd.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for tree_iterator.hpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="tree__iterator_8hpp__incl.png" border="0" usemap="#ainclude_2fcarouge_2tree__iterator_8hpp" alt=""/></div>
+<map name="ainclude_2fcarouge_2tree__iterator_8hpp" id="ainclude_2fcarouge_2tree__iterator_8hpp">
+<area shape="rect" title="Tree iterators header." alt="" coords="85,5,228,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,68,121"/>
+<area shape="rect" title=" " alt="" coords="72,244,140,271"/>
+<area shape="rect" title=" " alt="" coords="330,244,413,271"/>
+<area shape="rect" href="tree__iterator__fwd_8hpp.html" title="Forward companion header for the tree container&#39;s iterator types." alt="" coords="195,95,337,121"/>
+<area shape="rect" href="tree__fwd_8hpp.html" title="Forward companion header for the tree container library types." alt="" coords="158,169,254,196"/>
+<area shape="rect" title=" " alt="" coords="165,244,226,271"/>
+<area shape="rect" title=" " alt="" coords="251,244,305,271"/>
+</map>
+</div>
+</div>
 <p><a href="tree__iterator_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1depth__first__pre__order__iterator__type.html">fcarouge::depth_first_pre_order_iterator_type&lt; Iterator &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pre-order depth-first tree traversal iterator.  <a href="structfcarouge_1_1depth__first__pre__order__iterator__type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacefcarouge"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html">fcarouge</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Deduction Guides</div></td></tr>
+<tr class="memitem:ac8df0929bd32ff3496bef2904017ce60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#ac8df0929bd32ff3496bef2904017ce60">fcarouge::depth_first_pre_order_iterator_type</a> (TreeMemberIterator auto position) -&gt; depth_first_pre_order_iterator_type&lt; decltype(position)&gt;</td></tr>
+<tr class="separator:ac8df0929bd32ff3496bef2904017ce60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Non-Member Functions</div></td></tr>
+<tr class="memitem:aeb48f003e0ac915b6eef67616e87ff3f"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tree__iterator_8hpp.html#aeb48f003e0ac915b6eef67616e87ff3f">operator==</a> (const <a class="el" href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">fcarouge::TreeIterator</a> auto &amp;lhs, const <a class="el" href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">fcarouge::TreeIterator</a> auto &amp;rhs)</td></tr>
+<tr class="memdesc:aeb48f003e0ac915b6eef67616e87ff3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the iterators.  <a href="tree__iterator_8hpp.html#aeb48f003e0ac915b6eef67616e87ff3f">More...</a><br /></td></tr>
+<tr class="separator:aeb48f003e0ac915b6eef67616e87ff3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Tree iterators header. </p>
 <p>The header contains the non-member iterators defined and applicable to the tree container. </p>
 
 <p class="definition">Definition in file <a class="el" href="tree__iterator_8hpp_source.html">tree_iterator.hpp</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="aeb48f003e0ac915b6eef67616e87ff3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb48f003e0ac915b6eef67616e87ff3f">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">fcarouge::TreeIterator</a> auto &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">fcarouge::TreeIterator</a> auto &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compares the iterators. </p>
+<p>Checks if the iterators point to the same element.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The iterator to compare. </td></tr>
+    <tr><td class="paramname">rhs</td><td>The other iterator to compare.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the iterators point to the same element, <code>false</code> otherwise.</dd></dl>
+<dl class="section user"><dt>Complexity</dt><dd>Constant. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tree__iterator_8hpp_source.html#l00279">279</a> of file <a class="el" href="tree__iterator_8hpp_source.html">tree_iterator.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;{</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keywordflow">return</span> lhs.node == rhs.node;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_533ca38e4d6dcb24d3c950d504c67ecf.html">fcarouge</a></li><li class="navelem"><a class="el" href="tree__iterator_8hpp.html">tree_iterator.hpp</a></li>
-    <li class="footer">Generated on Mon May 10 2021 06:11:19 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 18 2021 04:16:55 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

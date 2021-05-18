@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['insert_5freturn_5ftype_296',['insert_return_type',['../structfcarouge_1_1tree_1_1insert__return__type.html',1,'fcarouge::tree']]],
-  ['internal_5fiterator_5ftype_297',['internal_iterator_type',['../structfcarouge_1_1tree_1_1internal__iterator__type.html',1,'fcarouge::tree']]],
-  ['internal_5fnode_5ftype_298',['internal_node_type',['../structfcarouge_1_1tree_1_1internal__node__type.html',1,'fcarouge::tree']]]
+  ['depth_5ffirst_5fpre_5forder_5fiterator_5ftype_299',['depth_first_pre_order_iterator_type',['../structfcarouge_1_1depth__first__pre__order__iterator__type.html',1,'fcarouge']]]
 ];

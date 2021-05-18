@@ -132,7 +132,7 @@ Variables</h2></td></tr>
 <div class="line">  std::multiset&lt;int&gt; depths;</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02for_8cpp_03.html#a12b38b0e2a57c166e10e74e97cef3162">iterator</a> = auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>(); <a class="code" href="namespaceanonymous__namespace_02for_8cpp_03.html#a12b38b0e2a57c166e10e74e97cef3162">iterator</a> != auffay_linden.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>();</div>
 <div class="line">       ++<a class="code" href="namespaceanonymous__namespace_02for_8cpp_03.html#a12b38b0e2a57c166e10e74e97cef3162">iterator</a>) {</div>
-<div class="line">    depths.insert(<a class="code" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">depth</a>(<a class="code" href="namespaceanonymous__namespace_02for_8cpp_03.html#a12b38b0e2a57c166e10e74e97cef3162">iterator</a>));</div>
+<div class="line">    depths.insert(<a class="code" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">depth</a>(<a class="code" href="namespaceanonymous__namespace_02for_8cpp_03.html#a12b38b0e2a57c166e10e74e97cef3162">iterator</a>));</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  assert(expected_depths == depths &amp;&amp;</div>
@@ -141,11 +141,11 @@ Variables</h2></td></tr>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00105">tree.hpp:106</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a2af420501458626bcf8199faee60490e"><div class="ttname"><a href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">fcarouge::tree::push</a></div><div class="ttdeci">constexpr iterator push(const_iterator position, const_reference value)</div><div class="ttdoc">Inserts a copied element into the container after the last child of the position iterator as the new ...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01355">tree.hpp:1355</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_a5f4dadf01e84f750474e57e1da42af18"><div class="ttname"><a href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00826">tree.hpp:826</a></div></div>
-<div class="ttc" id="aclassfcarouge_1_1tree_html_aee5d504629130357d1cea2d53e151f66"><div class="ttname"><a href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00869">tree.hpp:869</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a2af420501458626bcf8199faee60490e"><div class="ttname"><a href="classfcarouge_1_1tree.html#a2af420501458626bcf8199faee60490e">fcarouge::tree::push</a></div><div class="ttdeci">constexpr iterator push(const_iterator position, const_reference value)</div><div class="ttdoc">Inserts a copied element into the container after the last child of the position iterator as the new ...</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l01370">tree.hpp:1370</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_a5f4dadf01e84f750474e57e1da42af18"><div class="ttname"><a href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00841">tree.hpp:841</a></div></div>
+<div class="ttc" id="aclassfcarouge_1_1tree_html_aee5d504629130357d1cea2d53e151f66"><div class="ttname"><a href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00884">tree.hpp:884</a></div></div>
 <div class="ttc" id="anamespaceanonymous__namespace_02for_8cpp_03_html_a12b38b0e2a57c166e10e74e97cef3162"><div class="ttname"><a href="namespaceanonymous__namespace_02for_8cpp_03.html#a12b38b0e2a57c166e10e74e97cef3162">anonymous_namespace{for.cpp}::iterator</a></div><div class="ttdeci">auto iterator</div><div class="ttdef"><b>Definition:</b> <a href="for_8cpp_source.html#l00078">for.cpp:78</a></div></div>
-<div class="ttc" id="anamespacefcarouge_html_a58ab2e0d3298d3480a647fed89258c48"><div class="ttname"><a href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">fcarouge::depth</a></div><div class="ttdeci">constexpr std::iterator_traits&lt; Iterator &gt;::difference_type depth(Iterator position)</div><div class="ttdoc">Depth of the path from the root, top element to the iterated node.</div><div class="ttdef"><b>Definition:</b> <a href="tree__algorithm_8hpp_source.html#l00065">tree_algorithm.hpp:65</a></div></div>
+<div class="ttc" id="anamespacefcarouge_html_a3c85670c018c7b8f7f0f78abb0986c92"><div class="ttname"><a href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">fcarouge::depth</a></div><div class="ttdeci">constexpr auto depth(TreeIterator auto position)</div><div class="ttdoc">Depth of the path from the root, top element to the iterated node.</div><div class="ttdef"><b>Definition:</b> <a href="tree__algorithm_8hpp_source.html#l00065">tree_algorithm.hpp:65</a></div></div>
 <div class="ttc" id="astructfcarouge_1_1tree_1_1internal__iterator__type_html"><div class="ttname"><a href="structfcarouge_1_1tree_1_1internal__iterator__type.html">fcarouge::tree::internal_iterator_type</a></div><div class="ttdoc">The internal iterator type definition.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00212">tree.hpp:212</a></div></div>
 </div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000048">Test:</a></b></dt><dd>Verify the depth of all the nodes of a complex container.</dd></dl>
 <div class="dotgraph">
@@ -169,12 +169,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> maucomble_boxwood(42);</div>
-<div class="line">  assert(0 == <a class="code" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">depth</a>(maucomble_boxwood.begin()) &amp;&amp;</div>
+<div class="line">  assert(0 == <a class="code" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">depth</a>(maucomble_boxwood.begin()) &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The root depth must be equal to zero.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000046">Test:</a></b></dt><dd>Verify the depth of the root. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000047">Test:</a></b></dt><dd>Verify the depth of the root. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="depth_8cpp_source.html#l00053">53</a> of file <a class="el" href="depth_8cpp_source.html">depth.cpp</a>.</p>
 
@@ -193,12 +193,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= []() {</div>
 <div class="line">  <span class="keyword">const</span> <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;int&gt;</a> maucomble_boxwood(42);</div>
-<div class="line">  assert(0 == <a class="code" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">depth</a>(maucomble_boxwood.begin()) &amp;&amp;</div>
+<div class="line">  assert(0 == <a class="code" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">depth</a>(maucomble_boxwood.begin()) &amp;&amp;</div>
 <div class="line">         <span class="stringliteral">&quot;The root depth must be equal to zero.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}()</div>
-</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000045">Test:</a></b></dt><dd>Verify the depth of the root on a constant container. </dd></dl>
+</div><!-- fragment --><dl class="test"><dt><b><a class="el" href="test.html#_test000046">Test:</a></b></dt><dd>Verify the depth of the root on a constant container. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="depth_8cpp_source.html#l00044">44</a> of file <a class="el" href="depth_8cpp_source.html">depth.cpp</a>.</p>
 
@@ -210,7 +210,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceanonymous__namespace_02depth_8cpp_03.html">anonymous_namespace{depth.cpp}</a></li>
-    <li class="footer">Generated on Mon May 10 2021 06:11:20 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 18 2021 04:16:56 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

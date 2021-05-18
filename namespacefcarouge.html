@@ -95,6 +95,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfcarouge_1_1tree.html">tree</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tree data structure for C++.  <a href="classfcarouge_1_1tree.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfcarouge_1_1depth__first__pre__order__iterator__type.html">depth_first_pre_order_iterator_type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pre-order depth-first tree traversal iterator.  <a href="structfcarouge_1_1depth__first__pre__order__iterator__type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfcarouge_1_1null__allocator.html">null_allocator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stateless perfectly fallible null allocator.  <a href="classfcarouge_1_1null__allocator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -237,14 +240,19 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a80a2f298466170e035dd30f87636387d"><td class="memTemplParams" colspan="2">template&lt;typename Allocator  = std::allocator&lt;std::wstring&gt;&gt; </td></tr>
 <tr class="memitem:a80a2f298466170e035dd30f87636387d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a80a2f298466170e035dd30f87636387d">tree_wstring</a> = <a class="el" href="classfcarouge_1_1tree.html">tree</a>&lt; std::wstring, Allocator &gt;</td></tr>
 <tr class="separator:a80a2f298466170e035dd30f87636387d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedcbc5e591a5fa3053773a7a6bcb3b7e"><td class="memTemplParams" colspan="2">template&lt;typename Type &gt; </td></tr>
+<tr class="memitem:aedcbc5e591a5fa3053773a7a6bcb3b7e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#aedcbc5e591a5fa3053773a7a6bcb3b7e">depth_first_pre_order_iterator</a> = <a class="el" href="structfcarouge_1_1depth__first__pre__order__iterator__type.html">depth_first_pre_order_iterator_type</a>&lt; typename <a class="el" href="classfcarouge_1_1tree.html">tree</a>&lt; Type &gt;::iterator &gt;</td></tr>
+<tr class="separator:aedcbc5e591a5fa3053773a7a6bcb3b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Observing Operations</div></td></tr>
-<tr class="memitem:a58ab2e0d3298d3480a647fed89258c48"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
-<tr class="memitem:a58ab2e0d3298d3480a647fed89258c48"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::iterator_traits&lt; Iterator &gt;::difference_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">depth</a> (Iterator position)</td></tr>
-<tr class="memdesc:a58ab2e0d3298d3480a647fed89258c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Depth of the path from the root, top element to the iterated node.  <a href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">More...</a><br /></td></tr>
-<tr class="separator:a58ab2e0d3298d3480a647fed89258c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c85670c018c7b8f7f0f78abb0986c92"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">depth</a> (<a class="el" href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">TreeIterator</a> auto position)</td></tr>
+<tr class="memdesc:a3c85670c018c7b8f7f0f78abb0986c92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Depth of the path from the root, top element to the iterated node.  <a href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">More...</a><br /></td></tr>
+<tr class="separator:a3c85670c018c7b8f7f0f78abb0986c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Deduction Guides</div></td></tr>
+<tr class="memitem:ac8df0929bd32ff3496bef2904017ce60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#ac8df0929bd32ff3496bef2904017ce60">depth_first_pre_order_iterator_type</a> (<a class="el" href="namespacefcarouge.html#aa332597beab331cea8c242be8a72101f">TreeMemberIterator</a> auto position) -&gt; <a class="el" href="structfcarouge_1_1depth__first__pre__order__iterator__type.html">depth_first_pre_order_iterator_type</a>&lt; decltype(position)&gt;</td></tr>
+<tr class="separator:ac8df0929bd32ff3496bef2904017ce60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -266,7 +274,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:ab7fc94aad2c73a05b13bc280f0e62648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tree constant container iterators concept.  <a href="namespacefcarouge.html#ab7fc94aad2c73a05b13bc280f0e62648">More...</a><br /></td></tr>
 <tr class="separator:ab7fc94aad2c73a05b13bc280f0e62648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e3bbd8adda8b7c84368c16fb3b74c4c"><td class="memTemplParams" colspan="2">template&lt;typename NonConstIterator &gt; </td></tr>
-<tr class="memitem:a0e3bbd8adda8b7c84368c16fb3b74c4c"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a0e3bbd8adda8b7c84368c16fb3b74c4c">TreeNonConstIterator</a> = <a class="el" href="namespacefcarouge.html#a0db76fc7e1774afc608219042ac64421">TreeMemberNonConstIterator</a>&lt;NonConstIterator&gt;</td></tr>
+<tr class="memitem:a0e3bbd8adda8b7c84368c16fb3b74c4c"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefcarouge.html#a0e3bbd8adda8b7c84368c16fb3b74c4c">TreeNonConstIterator</a></td></tr>
 <tr class="memdesc:a0e3bbd8adda8b7c84368c16fb3b74c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tree non-constant container iterators concept.  <a href="namespacefcarouge.html#a0e3bbd8adda8b7c84368c16fb3b74c4c">More...</a><br /></td></tr>
 <tr class="separator:a0e3bbd8adda8b7c84368c16fb3b74c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10ef467d38bfe8b9cfb8bbb77bed989b"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
@@ -277,6 +285,24 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Francois Carouge's projects namespace. Lowers the name conflict probability in large projects. Use using-declarations or namespace-alias-definition per your project guidelines. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="aedcbc5e591a5fa3053773a7a6bcb3b7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedcbc5e591a5fa3053773a7a6bcb3b7e">&#9670;&nbsp;</a></span>depth_first_pre_order_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacefcarouge.html#aedcbc5e591a5fa3053773a7a6bcb3b7e">fcarouge::depth_first_pre_order_iterator</a> = typedef <a class="el" href="structfcarouge_1_1depth__first__pre__order__iterator__type.html">depth_first_pre_order_iterator_type</a>&lt;typename <a class="el" href="classfcarouge_1_1tree.html">tree</a>&lt;Type&gt;::iterator&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="tree__iterator__fwd_8hpp_source.html#l00064">64</a> of file <a class="el" href="tree__iterator__fwd_8hpp_source.html">tree_iterator_fwd.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a4cc31af5f136f14f19ca18ca084a78e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4cc31af5f136f14f19ca18ca084a78e2">&#9670;&nbsp;</a></span>tree_bool</h2>
 
@@ -1088,21 +1114,19 @@ template&lt;typename Allocator  = std::allocator&lt;std::wstring&gt;&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a58ab2e0d3298d3480a647fed89258c48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58ab2e0d3298d3480a647fed89258c48">&#9670;&nbsp;</a></span>depth()</h2>
+<a id="a3c85670c018c7b8f7f0f78abb0986c92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c85670c018c7b8f7f0f78abb0986c92">&#9670;&nbsp;</a></span>depth()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename Iterator &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::iterator_traits&lt;Iterator&gt;::difference_type fcarouge::depth </td>
+          <td class="memname">constexpr auto fcarouge::depth </td>
           <td>(</td>
-          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">TreeIterator</a> auto&#160;</td>
           <td class="paramname"><em>position</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1127,16 +1151,37 @@ template&lt;typename Iterator &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="tree__algorithm_8hpp_source.html#l00065">65</a> of file <a class="el" href="tree__algorithm_8hpp_source.html">tree_algorithm.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">depth</a> = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> *ancestor = position.node;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">while</span> ((ancestor = ancestor-&gt;parent)) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ++<a class="code" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">depth</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">depth</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="ttc" id="anamespacefcarouge_html_a58ab2e0d3298d3480a647fed89258c48"><div class="ttname"><a href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">fcarouge::depth</a></div><div class="ttdeci">constexpr std::iterator_traits&lt; Iterator &gt;::difference_type depth(Iterator position)</div><div class="ttdoc">Depth of the path from the root, top element to the iterated node.</div><div class="ttdef"><b>Definition:</b> <a href="tree__algorithm_8hpp_source.html#l00065">tree_algorithm.hpp:65</a></div></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">using</span> difference_type =</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keyword">typename</span> std::iterator_traits&lt;decltype(position)&gt;::difference_type;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  difference_type <a class="code" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">depth</a> = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> *ancestor = position.node;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">while</span> ((ancestor = ancestor-&gt;parent)) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ++<a class="code" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">depth</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">depth</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="ttc" id="anamespacefcarouge_html_a3c85670c018c7b8f7f0f78abb0986c92"><div class="ttname"><a href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">fcarouge::depth</a></div><div class="ttdeci">constexpr auto depth(TreeIterator auto position)</div><div class="ttdoc">Depth of the path from the root, top element to the iterated node.</div><div class="ttdef"><b>Definition:</b> <a href="tree__algorithm_8hpp_source.html#l00065">tree_algorithm.hpp:65</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="ac8df0929bd32ff3496bef2904017ce60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8df0929bd32ff3496bef2904017ce60">&#9670;&nbsp;</a></span>depth_first_pre_order_iterator_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfcarouge_1_1depth__first__pre__order__iterator__type.html">fcarouge::depth_first_pre_order_iterator_type</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacefcarouge.html#aa332597beab331cea8c242be8a72101f">TreeMemberIterator</a> auto&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="structfcarouge_1_1depth__first__pre__order__iterator__type.html">depth_first_pre_order_iterator_type</a>&lt; decltype(position)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -1163,7 +1208,7 @@ template&lt;typename ConstIterator &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="tree__iterator__fwd_8hpp_source.html#l00064">64</a> of file <a class="el" href="tree__iterator__fwd_8hpp_source.html">tree_iterator_fwd.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tree__iterator__fwd_8hpp_source.html#l00079">79</a> of file <a class="el" href="tree__iterator__fwd_8hpp_source.html">tree_iterator_fwd.hpp</a>.</p>
 
 </div>
 </div>
@@ -1193,7 +1238,7 @@ template&lt;typename Iterator &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="tree__iterator__fwd_8hpp_source.html#l00083">83</a> of file <a class="el" href="tree__iterator__fwd_8hpp_source.html">tree_iterator_fwd.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tree__iterator__fwd_8hpp_source.html#l00104">104</a> of file <a class="el" href="tree__iterator__fwd_8hpp_source.html">tree_iterator_fwd.hpp</a>.</p>
 
 </div>
 </div>
@@ -1299,11 +1344,19 @@ template&lt;typename NonConstIterator &gt; </div>
 template&lt;typename NonConstIterator &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">concept fcarouge::TreeNonConstIterator = <a class="el" href="namespacefcarouge.html#a0db76fc7e1774afc608219042ac64421">TreeMemberNonConstIterator</a>&lt;NonConstIterator&gt;</td>
+          <td class="memname">concept fcarouge::TreeNonConstIterator</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    std::is_same_v&lt;</div>
+<div class="line">        NonConstIterator,</div>
+<div class="line">        std::remove_cvref_t&lt;<a class="code" href="namespacefcarouge.html#aedcbc5e591a5fa3053773a7a6bcb3b7e">depth_first_pre_order_iterator</a>&lt;</div>
+<div class="line">            std::remove_cvref_t&lt;<span class="keyword">typename</span> tree&lt;<span class="keyword">typename</span> std::iterator_traits&lt;</div>
+<div class="line">                NonConstIterator&gt;::value_type&gt;::iterator::value_type&gt;&gt;&gt;&gt; ||</div>
+<div class="line">    TreeMemberNonConstIterator&lt;NonConstIterator&gt;</div>
+<div class="ttc" id="anamespacefcarouge_html_aedcbc5e591a5fa3053773a7a6bcb3b7e"><div class="ttname"><a href="namespacefcarouge.html#aedcbc5e591a5fa3053773a7a6bcb3b7e">fcarouge::depth_first_pre_order_iterator</a></div><div class="ttdeci">depth_first_pre_order_iterator_type&lt; typename tree&lt; Type &gt;::iterator &gt; depth_first_pre_order_iterator</div><div class="ttdef"><b>Definition:</b> <a href="tree__iterator__fwd_8hpp_source.html#l00064">tree_iterator_fwd.hpp:65</a></div></div>
+</div><!-- fragment -->
 <p>Tree non-constant container iterators concept. </p>
 <p>Supports cv-qualifiers and references.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -1313,7 +1366,7 @@ template&lt;typename NonConstIterator &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="tree__iterator__fwd_8hpp_source.html#l00073">73</a> of file <a class="el" href="tree__iterator__fwd_8hpp_source.html">tree_iterator_fwd.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tree__iterator__fwd_8hpp_source.html#l00088">88</a> of file <a class="el" href="tree__iterator__fwd_8hpp_source.html">tree_iterator_fwd.hpp</a>.</p>
 
 </div>
 </div>
@@ -1323,7 +1376,7 @@ template&lt;typename NonConstIterator &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefcarouge.html">fcarouge</a></li>
-    <li class="footer">Generated on Mon May 10 2021 06:11:20 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 18 2021 04:16:56 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

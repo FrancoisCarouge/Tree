@@ -122,34 +122,39 @@ $(document).ready(function(){initNavTree('tree__algorithm_8hpp_source.html','');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;iterator&gt;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// std::iterator_traits</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefcarouge.html">fcarouge</a></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator&gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;[[nodiscard]] constexpr <span class="keyword">typename</span> std::iterator_traits&lt;Iterator&gt;::difference_type</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">   65</a></span>&#160;<a class="code" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">depth</a>(Iterator position)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tree__iterator__fwd_8hpp.html">tree_iterator_fwd.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacefcarouge.html">fcarouge</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">   65</a></span>&#160;[[nodiscard]] constexpr <span class="keyword">auto</span> <a class="code" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">depth</a>(<a class="code" href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">TreeIterator</a> <span class="keyword">auto</span> position)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">auto</span> <a class="code" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">depth</a> = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> *ancestor = position.node;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">while</span> ((ancestor = ancestor-&gt;parent)) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ++<a class="code" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">depth</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">depth</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">using</span> difference_type =</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keyword">typename</span> std::iterator_traits&lt;decltype(position)&gt;::difference_type;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  difference_type <a class="code" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">depth</a> = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> *ancestor = position.node;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">while</span> ((ancestor = ancestor-&gt;parent)) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ++<a class="code" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">depth</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;} <span class="comment">// namespace fcarouge</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">depth</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// FCAROUGE_TREE_ALGORITHM_HPP</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;} <span class="comment">// namespace fcarouge</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// FCAROUGE_TREE_ALGORITHM_HPP</span></div>
 <div class="ttc" id="anamespacefcarouge_html"><div class="ttname"><a href="namespacefcarouge.html">fcarouge</a></div></div>
-<div class="ttc" id="anamespacefcarouge_html_a58ab2e0d3298d3480a647fed89258c48"><div class="ttname"><a href="namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48">fcarouge::depth</a></div><div class="ttdeci">constexpr std::iterator_traits&lt; Iterator &gt;::difference_type depth(Iterator position)</div><div class="ttdoc">Depth of the path from the root, top element to the iterated node.</div><div class="ttdef"><b>Definition:</b> <a href="tree__algorithm_8hpp_source.html#l00065">tree_algorithm.hpp:65</a></div></div>
+<div class="ttc" id="anamespacefcarouge_html_a10ef467d38bfe8b9cfb8bbb77bed989b"><div class="ttname"><a href="namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b">fcarouge::TreeIterator</a></div><div class="ttdeci">concept TreeIterator</div><div class="ttdoc">Tree iterators concept.</div><div class="ttdef"><b>Definition:</b> <a href="tree__iterator__fwd_8hpp_source.html#l00104">tree_iterator_fwd.hpp:104</a></div></div>
+<div class="ttc" id="anamespacefcarouge_html_a3c85670c018c7b8f7f0f78abb0986c92"><div class="ttname"><a href="namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92">fcarouge::depth</a></div><div class="ttdeci">constexpr auto depth(TreeIterator auto position)</div><div class="ttdoc">Depth of the path from the root, top element to the iterated node.</div><div class="ttdef"><b>Definition:</b> <a href="tree__algorithm_8hpp_source.html#l00065">tree_algorithm.hpp:65</a></div></div>
+<div class="ttc" id="atree__iterator__fwd_8hpp_html"><div class="ttname"><a href="tree__iterator__fwd_8hpp.html">tree_iterator_fwd.hpp</a></div><div class="ttdoc">Forward companion header for the tree container's iterator types.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_533ca38e4d6dcb24d3c950d504c67ecf.html">fcarouge</a></li><li class="navelem"><a class="el" href="tree__algorithm_8hpp.html">tree_algorithm.hpp</a></li>
-    <li class="footer">Generated on Mon May 10 2021 06:11:19 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 18 2021 04:16:55 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

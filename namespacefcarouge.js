@@ -1,7 +1,9 @@
 var namespacefcarouge =
 [
     [ "tree", "classfcarouge_1_1tree.html", "classfcarouge_1_1tree" ],
+    [ "depth_first_pre_order_iterator_type", "structfcarouge_1_1depth__first__pre__order__iterator__type.html", "structfcarouge_1_1depth__first__pre__order__iterator__type" ],
     [ "null_allocator", "classfcarouge_1_1null__allocator.html", "classfcarouge_1_1null__allocator" ],
+    [ "depth_first_pre_order_iterator", "namespacefcarouge.html#aedcbc5e591a5fa3053773a7a6bcb3b7e", null ],
     [ "tree_bool", "namespacefcarouge.html#a4cc31af5f136f14f19ca18ca084a78e2", null ],
     [ "tree_char", "namespacefcarouge.html#a7c9537fc8b526a57272ad3369b5ab0a4", null ],
     [ "tree_char16_t", "namespacefcarouge.html#a35e631c4826d0dd04e211f12271a35d7", null ],
@@ -47,7 +49,8 @@ var namespacefcarouge =
     [ "tree_uintptr_t", "namespacefcarouge.html#a37edb71aaf9b50bec8b41904e760e40f", null ],
     [ "tree_wchar_t", "namespacefcarouge.html#ad3855f2615c30ddecb8baab7878a9c55", null ],
     [ "tree_wstring", "namespacefcarouge.html#a80a2f298466170e035dd30f87636387d", null ],
-    [ "depth", "namespacefcarouge.html#a58ab2e0d3298d3480a647fed89258c48", null ],
+    [ "depth", "namespacefcarouge.html#a3c85670c018c7b8f7f0f78abb0986c92", null ],
+    [ "depth_first_pre_order_iterator_type", "namespacefcarouge.html#ac8df0929bd32ff3496bef2904017ce60", null ],
     [ "TreeConstIterator", "namespacefcarouge.html#ab7fc94aad2c73a05b13bc280f0e62648", null ],
     [ "TreeIterator", "namespacefcarouge.html#a10ef467d38bfe8b9cfb8bbb77bed989b", null ],
     [ "TreeMemberConstIterator", "namespacefcarouge.html#a6a8bda944ec7306b90d4fb9b45163348", null ],

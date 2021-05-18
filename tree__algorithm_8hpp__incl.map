@@ -1,4 +1,10 @@
 <map id="include/fcarouge/tree_algorithm.hpp" name="include/fcarouge/tree_algorithm.hpp">
-<area shape="rect" id="node1" title="Tree algorithms header." alt="" coords="5,5,148,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="45,95,108,121"/>
+<area shape="rect" id="node1" title="Tree algorithms header." alt="" coords="28,5,171,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,68,121"/>
+<area shape="rect" id="node3" href="$tree__iterator__fwd_8hpp.html" title="Forward companion header for the tree container&#39;s iterator types." alt="" coords="92,95,235,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="71,244,154,271"/>
+<area shape="rect" id="node5" href="$tree__fwd_8hpp.html" title="Forward companion header for the tree container library types." alt="" coords="161,169,257,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="178,244,239,271"/>
+<area shape="rect" id="node7" title=" " alt="" coords="264,244,332,271"/>
+<area shape="rect" id="node8" title=" " alt="" coords="356,244,411,271"/>
 </map>
