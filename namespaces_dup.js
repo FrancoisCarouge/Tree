@@ -86,6 +86,10 @@ var namespaces_dup =
       [ "root", "namespaceanonymous__namespace_02depth_8cpp_03.html#aae2adf4c204200232a3d3aba48c65001", null ],
       [ "root_const", "namespaceanonymous__namespace_02depth_8cpp_03.html#ae87a6bf2fc0eac54c6acf8c161ad130d", null ]
     ] ],
+    [ "anonymous_namespace{depth_first_pre_order_iterator.cpp}", "namespaceanonymous__namespace_02depth__first__pre__order__iterator_8cpp_03.html", [
+      [ "bidirectional_iterator", "namespaceanonymous__namespace_02depth__first__pre__order__iterator_8cpp_03.html#a728702fea5d267151e1d1600b3720f8c", null ],
+      [ "iterate", "namespaceanonymous__namespace_02depth__first__pre__order__iterator_8cpp_03.html#ab58965581295b91c613ca0bef2fd8930", null ]
+    ] ],
     [ "anonymous_namespace{destructor.cpp}", "namespaceanonymous__namespace_02destructor_8cpp_03.html", [
       [ "compile", "namespaceanonymous__namespace_02destructor_8cpp_03.html#a8eb8e4e317d9a2a39791ea67fca6f5e9", null ],
       [ "run", "namespaceanonymous__namespace_02destructor_8cpp_03.html#a6ddd2f3f7f799d68dd95bdee668a7082", null ],
