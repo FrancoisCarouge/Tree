@@ -7,13 +7,14 @@ on:
     branches: [ develop ]
 
 jobs:
-  build:
+  cppcheck:
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
-    - name: update
+    - name: Checkout
+      uses: actions/checkout@v2.3.4
+    - name: Update
       run: sudo apt update
-    - name: install
+    - name: Install
       run: sudo apt install cppcheck
-    - name: check
+    - name: Check
       run: cppcheck --verbose --suppressions-list=.cppcheck --error-exitcode=1 --enable=all -I include .
