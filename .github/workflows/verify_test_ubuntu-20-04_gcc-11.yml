@@ -1,4 +1,4 @@
-name: "Test Undefined Behavior: Sanitizer"
+name: "Test: Ubuntu 20.04 GCC 11"
 
 on:
   push:
@@ -15,8 +15,8 @@ jobs:
     - name: Update
       run: sudo apt update
     - name: Install
-      run: sudo apt install gcc-10 g++-10
+      run: sudo apt install gcc-11 g++-11
     - name: Build
-      run: gcc-10 sample/*.cpp test/*.cpp src/*.cpp -Iinclude -std=c++20 -g -fsanitize=undefined -lstdc++
-    - name: Test
-      run: UBSAN_OPTIONS=verbosity=2 ./a.out
+      run: gcc-11 sample/*.cpp test/*.cpp src/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2a -lstdc++
+    - name: Run
+      run: ./a.out
