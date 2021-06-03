@@ -34,12 +34,17 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
 
 #include <type_traits>
 // std::is_default_constructible_v std::is_nothrow_default_constructible_v
+// std::is_standard_layout_v
 
 namespace
 {
 //! @test Verify the default construction exists and its exception
 //! specification.
 [[maybe_unused]] constexpr auto traits = []() {
+  static_assert(
+      std::is_standard_layout_v<fcarouge::tree<char>>,
+      "The container is a standard layout class type by design choice "
+      "which may help with memory and cross language communication.");
   // The container cannot satisty trivial default construction because it is not
   // a scalar type, trivially copyable class, or array of such type/class. It
   // has non-static members with default initializers. The destructor is user
