@@ -217,9 +217,6 @@ var namespaces_dup =
       [ "constructor_rvalue", "namespaceanonymous__namespace_02size_8cpp_03.html#ace01ffcefc9c987a99425b8ad05ff637", null ],
       [ "multiple", "namespaceanonymous__namespace_02size_8cpp_03.html#a7615593d728f3267bd2165215c7fdc89", null ]
     ] ],
-    [ "anonymous_namespace{standard_layout.cpp}", "namespaceanonymous__namespace_02standard__layout_8cpp_03.html", [
-      [ "traits", "namespaceanonymous__namespace_02standard__layout_8cpp_03.html#a2dabf92b63ec1ca381eb40b8155ea11e", null ]
-    ] ],
     [ "fcarouge", "namespacefcarouge.html", "namespacefcarouge" ],
     [ "std", null, [
       [ "allocator_traits< fcarouge::null_allocator< Type > >", "structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4.html", "structstd_1_1allocator__traits_3_01fcarouge_1_1null__allocator_3_01_type_01_4_01_4" ]

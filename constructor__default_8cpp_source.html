@@ -123,61 +123,66 @@ $(document).ready(function(){initNavTree('constructor__default_8cpp_source.html'
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// std::is_default_constructible_v std::is_nothrow_default_constructible_v</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html">   38</a></span>&#160;<span class="keyword">namespace</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a3e10a5c3114e785073348634e7cdcce6">   42</a></span>&#160;[[maybe_unused]] constexpr <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a3e10a5c3114e785073348634e7cdcce6">traits</a> = []() {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// The container cannot satisty trivial default construction because it is not</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// a scalar type, trivially copyable class, or array of such type/class. It</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// has non-static members with default initializers. The destructor is user</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// provided.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  static_assert(</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      std::is_default_constructible_v&lt;<a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a>&gt;,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="stringliteral">&quot;The container must satisfy the DefaultConstructible requirement.&quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  static_assert(</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      std::is_nothrow_default_constructible_v&lt;<a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a>&gt;,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="stringliteral">&quot;The container must satisfy the non-throwing &quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="stringliteral">&quot;DefaultConstructible requirement with the default standard allocator.&quot;</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a0ed460e1c9cb4f3f745ae3456f51bbf0">   60</a></span>&#160;[[maybe_unused]] constexpr <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a0ed460e1c9cb4f3f745ae3456f51bbf0">compile</a> = []() {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  constexpr <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a> allouville_oak;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// std::is_standard_layout_v</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html">   39</a></span>&#160;<span class="keyword">namespace</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a3e10a5c3114e785073348634e7cdcce6">   43</a></span>&#160;[[maybe_unused]] constexpr <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a3e10a5c3114e785073348634e7cdcce6">traits</a> = []() {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  static_assert(</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      std::is_standard_layout_v&lt;<a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a>&gt;,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="stringliteral">&quot;The container is a standard layout class type by design choice &quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="stringliteral">&quot;which may help with memory and cross language communication.&quot;</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// The container cannot satisty trivial default construction because it is not</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// a scalar type, trivially copyable class, or array of such type/class. It</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// has non-static members with default initializers. The destructor is user</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// provided.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  static_assert(</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      std::is_default_constructible_v&lt;<a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a>&gt;,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="stringliteral">&quot;The container must satisfy the DefaultConstructible requirement.&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  static_assert(</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      std::is_nothrow_default_constructible_v&lt;<a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a>&gt;,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="stringliteral">&quot;The container must satisfy the non-throwing &quot;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="stringliteral">&quot;DefaultConstructible requirement with the default standard allocator.&quot;</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}();</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  static_assert(allouville_oak.empty(),</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="stringliteral">&quot;The container must be empty on default construction.&quot;</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  static_assert(0 == allouville_oak.size(),</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="stringliteral">&quot;The container must have zero node on default construction.&quot;</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  static_assert(</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      allouville_oak.begin() == allouville_oak.end(),</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must be equal on &quot;</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="stringliteral">&quot;default construction.&quot;</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  static_assert(allouville_oak.cbegin() == allouville_oak.cend(),</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="stringliteral">&quot;The container&#39;s beginning and ending constant container &quot;</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="stringliteral">&quot;iterators must be equal on default construction.&quot;</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#ac014563fddb82372534e7b58385fe62e">   79</a></span>&#160;[[maybe_unused]] <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#ac014563fddb82372534e7b58385fe62e">run</a> = []() {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">const</span> <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a> allouville_oak;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  assert(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a25db6e32589bf903925fe712740b6109">empty</a>() &amp;&amp;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;         <span class="stringliteral">&quot;The container must be empty on default construction.&quot;</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  assert(0 == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">size</a>() &amp;&amp;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;         <span class="stringliteral">&quot;The container must have zero node on default construction.&quot;</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  assert(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>() &amp;&amp;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;         <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must be equal on &quot;</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;         <span class="stringliteral">&quot;default construction.&quot;</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  assert(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0e0c0413cac0cb6f03821382f6069e0a">cbegin</a>() == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a3ac209f34e0f1b0af7bd671e90eb4551">cend</a>() &amp;&amp;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;         <span class="stringliteral">&quot;The container&#39;s beginning and ending constant container iterators &quot;</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;         <span class="stringliteral">&quot;must be equal on default construction.&quot;</span>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a0ed460e1c9cb4f3f745ae3456f51bbf0">   65</a></span>&#160;[[maybe_unused]] constexpr <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a0ed460e1c9cb4f3f745ae3456f51bbf0">compile</a> = []() {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  constexpr <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a> allouville_oak;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  static_assert(allouville_oak.empty(),</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="stringliteral">&quot;The container must be empty on default construction.&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  static_assert(0 == allouville_oak.size(),</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="stringliteral">&quot;The container must have zero node on default construction.&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  static_assert(</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      allouville_oak.begin() == allouville_oak.end(),</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must be equal on &quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="stringliteral">&quot;default construction.&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  static_assert(allouville_oak.cbegin() == allouville_oak.cend(),</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="stringliteral">&quot;The container&#39;s beginning and ending constant container &quot;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="stringliteral">&quot;iterators must be equal on default construction.&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#ac014563fddb82372534e7b58385fe62e">   84</a></span>&#160;[[maybe_unused]] <span class="keyword">auto</span> <a class="code" href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#ac014563fddb82372534e7b58385fe62e">run</a> = []() {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">const</span> <a class="code" href="classfcarouge_1_1tree.html">fcarouge::tree&lt;char&gt;</a> allouville_oak;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  assert(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a25db6e32589bf903925fe712740b6109">empty</a>() &amp;&amp;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;         <span class="stringliteral">&quot;The container must be empty on default construction.&quot;</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  assert(0 == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">size</a>() &amp;&amp;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;         <span class="stringliteral">&quot;The container must have zero node on default construction.&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  assert(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">begin</a>() == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">end</a>() &amp;&amp;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;         <span class="stringliteral">&quot;The container&#39;s beginning and ending iterators must be equal on &quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;         <span class="stringliteral">&quot;default construction.&quot;</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  assert(allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a0e0c0413cac0cb6f03821382f6069e0a">cbegin</a>() == allouville_oak.<a class="code" href="classfcarouge_1_1tree.html#a3ac209f34e0f1b0af7bd671e90eb4551">cend</a>() &amp;&amp;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;         <span class="stringliteral">&quot;The container&#39;s beginning and ending constant container iterators &quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;         <span class="stringliteral">&quot;must be equal on default construction.&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html"><div class="ttname"><a href="classfcarouge_1_1tree.html">fcarouge::tree</a></div><div class="ttdoc">A tree data structure for C++.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00105">tree.hpp:106</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a0e0c0413cac0cb6f03821382f6069e0a"><div class="ttname"><a href="classfcarouge_1_1tree.html#a0e0c0413cac0cb6f03821382f6069e0a">fcarouge::tree::cbegin</a></div><div class="ttdeci">constexpr const_iterator cbegin() const noexcept</div><div class="ttdoc">Returns a constant container iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00869">tree.hpp:869</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a25db6e32589bf903925fe712740b6109"><div class="ttname"><a href="classfcarouge_1_1tree.html#a25db6e32589bf903925fe712740b6109">fcarouge::tree::empty</a></div><div class="ttdeci">constexpr bool empty() const noexcept</div><div class="ttdoc">Checks if the container has no elements.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00931">tree.hpp:931</a></div></div>
@@ -185,9 +190,9 @@ $(document).ready(function(){initNavTree('constructor__default_8cpp_source.html'
 <div class="ttc" id="aclassfcarouge_1_1tree_html_a5f4dadf01e84f750474e57e1da42af18"><div class="ttname"><a href="classfcarouge_1_1tree.html#a5f4dadf01e84f750474e57e1da42af18">fcarouge::tree::begin</a></div><div class="ttdeci">constexpr iterator begin() noexcept</div><div class="ttdoc">Returns an iterator to the container's first element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00841">tree.hpp:841</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_aa946524fdb109e331233986f44048c7b"><div class="ttname"><a href="classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b">fcarouge::tree::size</a></div><div class="ttdeci">constexpr size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00943">tree.hpp:943</a></div></div>
 <div class="ttc" id="aclassfcarouge_1_1tree_html_aee5d504629130357d1cea2d53e151f66"><div class="ttname"><a href="classfcarouge_1_1tree.html#aee5d504629130357d1cea2d53e151f66">fcarouge::tree::end</a></div><div class="ttdeci">constexpr iterator end() noexcept</div><div class="ttdoc">Returns an iterator to the element past the container's last element.</div><div class="ttdef"><b>Definition:</b> <a href="tree_8hpp_source.html#l00884">tree.hpp:884</a></div></div>
-<div class="ttc" id="anamespaceanonymous__namespace_02constructor__default_8cpp_03_html_a0ed460e1c9cb4f3f745ae3456f51bbf0"><div class="ttname"><a href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a0ed460e1c9cb4f3f745ae3456f51bbf0">anonymous_namespace{constructor_default.cpp}::compile</a></div><div class="ttdeci">constexpr auto compile</div><div class="ttdef"><b>Definition:</b> <a href="constructor__default_8cpp_source.html#l00060">constructor_default.cpp:60</a></div></div>
-<div class="ttc" id="anamespaceanonymous__namespace_02constructor__default_8cpp_03_html_a3e10a5c3114e785073348634e7cdcce6"><div class="ttname"><a href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a3e10a5c3114e785073348634e7cdcce6">anonymous_namespace{constructor_default.cpp}::traits</a></div><div class="ttdeci">constexpr auto traits</div><div class="ttdef"><b>Definition:</b> <a href="constructor__default_8cpp_source.html#l00042">constructor_default.cpp:42</a></div></div>
-<div class="ttc" id="anamespaceanonymous__namespace_02constructor__default_8cpp_03_html_ac014563fddb82372534e7b58385fe62e"><div class="ttname"><a href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#ac014563fddb82372534e7b58385fe62e">anonymous_namespace{constructor_default.cpp}::run</a></div><div class="ttdeci">auto run</div><div class="ttdef"><b>Definition:</b> <a href="constructor__default_8cpp_source.html#l00079">constructor_default.cpp:79</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02constructor__default_8cpp_03_html_a0ed460e1c9cb4f3f745ae3456f51bbf0"><div class="ttname"><a href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a0ed460e1c9cb4f3f745ae3456f51bbf0">anonymous_namespace{constructor_default.cpp}::compile</a></div><div class="ttdeci">constexpr auto compile</div><div class="ttdef"><b>Definition:</b> <a href="constructor__default_8cpp_source.html#l00065">constructor_default.cpp:65</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02constructor__default_8cpp_03_html_a3e10a5c3114e785073348634e7cdcce6"><div class="ttname"><a href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#a3e10a5c3114e785073348634e7cdcce6">anonymous_namespace{constructor_default.cpp}::traits</a></div><div class="ttdeci">constexpr auto traits</div><div class="ttdef"><b>Definition:</b> <a href="constructor__default_8cpp_source.html#l00043">constructor_default.cpp:43</a></div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02constructor__default_8cpp_03_html_ac014563fddb82372534e7b58385fe62e"><div class="ttname"><a href="namespaceanonymous__namespace_02constructor__default_8cpp_03.html#ac014563fddb82372534e7b58385fe62e">anonymous_namespace{constructor_default.cpp}::run</a></div><div class="ttdeci">auto run</div><div class="ttdef"><b>Definition:</b> <a href="constructor__default_8cpp_source.html#l00084">constructor_default.cpp:84</a></div></div>
 <div class="ttc" id="atree_8hpp_html"><div class="ttname"><a href="tree_8hpp.html">tree.hpp</a></div><div class="ttdoc">Tree container types and canonical operations definitions header.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -195,7 +200,7 @@ $(document).ready(function(){initNavTree('constructor__default_8cpp_source.html'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="constructor__default_8cpp.html">constructor_default.cpp</a></li>
-    <li class="footer">Generated on Thu Jun 3 2021 01:40:15 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Thu Jun 3 2021 02:14:55 for Tree by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
