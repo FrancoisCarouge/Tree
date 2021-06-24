@@ -1,16 +1,17 @@
 <map id="test/assign_copy.cpp" name="test/assign_copy.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="367,5,511,32"/>
-<area shape="rect" id="node2" href="$tree_8hpp.html" title="Tree container types and canonical operations definitions header." alt="" coords="319,80,442,107"/>
-<area shape="rect" id="node14" title=" " alt="" coords="467,80,532,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,71,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="95,155,157,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="182,155,235,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="268,304,336,331"/>
-<area shape="rect" id="node7" title=" " alt="" coords="310,155,379,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="391,304,445,331"/>
-<area shape="rect" id="node9" title=" " alt="" coords="611,304,694,331"/>
-<area shape="rect" id="node10" title=" " alt="" coords="505,155,557,181"/>
-<area shape="rect" id="node11" href="$tree__iterator__fwd_8hpp.html" title="Forward companion header for the tree container&#39;s iterator types." alt="" coords="581,155,724,181"/>
-<area shape="rect" id="node12" href="$tree__fwd_8hpp.html" title="Forward companion header for the tree container library types." alt="" coords="454,229,550,256"/>
-<area shape="rect" id="node13" title=" " alt="" coords="471,304,533,331"/>
+<area shape="rect" id="node1" title=" " alt="" coords="431,5,575,32"/>
+<area shape="rect" id="node2" href="$tree_8hpp.html" title="Tree container types and canonical operations definitions header." alt="" coords="383,80,505,107"/>
+<area shape="rect" id="node15" title=" " alt="" coords="530,80,595,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,80,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="105,155,170,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="194,155,257,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="281,155,335,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="367,304,435,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="409,155,479,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="490,304,545,331"/>
+<area shape="rect" id="node10" title=" " alt="" coords="711,304,793,331"/>
+<area shape="rect" id="node11" title=" " alt="" coords="605,155,657,181"/>
+<area shape="rect" id="node12" href="$tree__iterator__fwd_8hpp.html" title="Forward companion header for the tree container&#39;s iterator types." alt="" coords="681,155,823,181"/>
+<area shape="rect" id="node13" href="$tree__fwd_8hpp.html" title="Forward companion header for the tree container library types." alt="" coords="553,229,649,256"/>
+<area shape="rect" id="node14" title=" " alt="" coords="571,304,632,331"/>
 </map>

@@ -1,4 +1,6 @@
 <map id="operator==" name="operator==">
-<area shape="rect" id="node1" title="Compares the contents of two containers." alt="" coords="5,5,91,32"/>
-<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b" title="Returns the number of elements in the container." alt="" coords="139,5,268,32"/>
+<area shape="rect" id="node1" title="Compares the contents of two containers." alt="" coords="5,56,91,83"/>
+<area shape="rect" id="node2" href="$classfcarouge_1_1tree.html#a0e0c0413cac0cb6f03821382f6069e0a" title="Returns a constant container iterator to the container&#39;s first element." alt="" coords="139,5,283,32"/>
+<area shape="rect" id="node3" href="$classfcarouge_1_1tree.html#a3ac209f34e0f1b0af7bd671e90eb4551" title="Returns a constant container iterator to the element past the last element." alt="" coords="143,56,278,83"/>
+<area shape="rect" id="node4" href="$classfcarouge_1_1tree.html#aa946524fdb109e331233986f44048c7b" title="Returns the number of elements in the container." alt="" coords="146,107,275,133"/>
 </map>

@@ -40,6 +40,7 @@ var dir_13e138d54eb8818da29c3992edef070a =
     [ "operator_assignment_lvalue.cpp", "operator__assignment__lvalue_8cpp.html", "operator__assignment__lvalue_8cpp" ],
     [ "operator_assignment_move.cpp", "operator__assignment__move_8cpp.html", "operator__assignment__move_8cpp" ],
     [ "operator_assignment_rvalue.cpp", "operator__assignment__rvalue_8cpp.html", "operator__assignment__rvalue_8cpp" ],
+    [ "operator_equality.cpp", "operator__equality_8cpp.html", "operator__equality_8cpp" ],
     [ "operator_insertion.cpp", "operator__insertion_8cpp.html", "operator__insertion_8cpp" ],
     [ "push_front_lvalue.cpp", "push__front__lvalue_8cpp.html", "push__front__lvalue_8cpp" ],
     [ "push_front_rvalue.cpp", "push__front__rvalue_8cpp.html", "push__front__rvalue_8cpp" ],

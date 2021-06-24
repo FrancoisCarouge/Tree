@@ -182,6 +182,11 @@ var namespaces_dup =
     [ "anonymous_namespace{operator_assignment_rvalue.cpp}", "namespaceanonymous__namespace_02operator__assignment__rvalue_8cpp_03.html", [
       [ "all_replace_all", "namespaceanonymous__namespace_02operator__assignment__rvalue_8cpp_03.html#a0237b7e4ca1d13e66aeacdfaeaf70188", null ]
     ] ],
+    [ "anonymous_namespace{operator_equality.cpp}", "namespaceanonymous__namespace_02operator__equality_8cpp_03.html", [
+      [ "complex", "namespaceanonymous__namespace_02operator__equality_8cpp_03.html#a6a0827c0d532beab4328fb358c0ebee5", null ],
+      [ "empty", "namespaceanonymous__namespace_02operator__equality_8cpp_03.html#abd05dd169d4c9061b1595d732c6db6cf", null ],
+      [ "single_element", "namespaceanonymous__namespace_02operator__equality_8cpp_03.html#a41b69d6093ca35c5c34f0b2161fd6f34", null ]
+    ] ],
     [ "anonymous_namespace{operator_insertion.cpp}", "namespaceanonymous__namespace_02operator__insertion_8cpp_03.html", [
       [ "complex", "namespaceanonymous__namespace_02operator__insertion_8cpp_03.html#a75d8a09bf50e40d9a59c2e164488b988", null ],
       [ "empty", "namespaceanonymous__namespace_02operator__insertion_8cpp_03.html#ac78eedc56d14669debd7232980e6a7d6", null ]
