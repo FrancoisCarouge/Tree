@@ -58,7 +58,7 @@ namespace fcarouge
 //! @param position The iterator to the element for which to obtain the depth.
 //! The iterator may be the beginning `begin()` or ending `end()` iterator.
 //!
-//! @return Current depth of the iterator.
+//! @return Current depth of the iterator, as the iterator `difference_type`.
 //!
 //! @complexity Linear in depth that is, at worst linear in size of the other
 //! container.
