@@ -110,6 +110,7 @@ Container definition.
 
 | Include | Definition |
 | --- | --- |
+| `<algorithm>` | Standard algorithmic support. |
 | `<cstddef>` | Standard size and pointer difference types support. |
 | `<iterator>` | Standard input iterator tag support. |
 | `<limits>` | Standard fundamental numeric types properties support. |
