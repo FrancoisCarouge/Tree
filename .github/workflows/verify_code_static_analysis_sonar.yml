@@ -1,0 +1,39 @@
+name: "Test Static Analysis: Sonar"
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  sonar:
+    runs-on: ubuntu-latest
+    steps:
+    - name: install
+      run: sudo apt install gcc-10 g++-10 unzip
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: "Sonar Wrapper"
+      run: |
+        wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
+        unzip -q build-wrapper-linux-x86.zip
+        export PATH=$PATH:$(pwd)/build-wrapper-linux-x86
+        # Hack fix: https://community.sonarsource.com/t/sonarqube-c-ubuntu-build-wrapper-ld-preload-error/300/16
+        cp build-wrapper-linux-x86/libinterceptor-x86_64.so build-wrapper-linux-x86/libinterceptor-haswell.so
+        # Sonar doesn't support C++20: https://community.sonarsource.com/t/sonarqube-developer-edition-7-8-unsupported-value-of-cplusplus-macro-201709l/19729/7
+        build-wrapper-linux-x86-64 --out-dir build gcc-10 sample/*.cpp test/*.cpp src/*.cpp -Iinclude -Wall -Wextra -pedantic -std=c++2a -lstdc++
+    - name: "Sonar Scanner"
+      run: |
+        wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.5.0.2216-linux.zip
+        unzip -q sonar-scanner-cli-4.5.0.2216-linux.zip
+        export PATH=$PATH:$(pwd)/sonar-scanner-cli-4.5.0.2216-linux/bin
+        sudo GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} SONAR_TOKEN=${{ secrets.SONAR_TOKEN }} sonar-scanner-4.5.0.2216-linux/bin/sonar-scanner
+
+# Sonar Cloud scanner Github action v1.4 doesn't work. Java execution error.
+#- name: "SonarCloud Scan"
+#  uses: SonarSource/sonarcloud-github-action@v1.4
+#  env:
+#    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
